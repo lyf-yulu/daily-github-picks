@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-11</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-11 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/x1xhlol" target="_blank">AI 编程助手系统提示词合集</a></span>
+    <span class="stars">⭐ 393 <span class="stars-today">(+393 today)</span></span>
+  </div>
+  <p class="one-liner">主流 AI 编程工具系统提示词与内部工具汇总</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">JSON</span><span class="tag">Plain Text Prompts</span><span class="tag">Tool Schema (OpenAI Function Calling 风格)</span>
+  </div>
+  <div class="summary">该仓库由 x1xhlol 维护，是目前社区中规模最大、覆盖面最广的 AI 编程助手与 Agent 类产品「系统提示词（System Prompts）、内部工具（Internal Tools）以及 AI 模型配置」的开源汇编集合。项目收录了 Augment Code、Claude Code、Cluely、CodeBuddy、Comet、Cursor、Devin AI、Junie、Kiro、Leap.new、Lovable、Manus、NotionAI、Orchids.app、Perplexity、Poke、Qoder、Replit、Same.dev、Trae、Traycer AI、VSCode Agent、Warp.dev、Windsurf、Xcode、Z.ai Code、Dia 以及 v0 等近 30 款主流商业与开源产品的提示词原文与工具定义。每个产品通常以独立目录组织，内部包含 Prompt.txt、Tools.json 等文件，便于研究人员对比不同厂商在角色设定、安全护栏、工具调用协议、代码生成约束、上下文管理策略等方面的工程实践。该资源对 Prompt 工程、Agent 架构设计、LLM 安全研究以及自研编程助手的从业者具有极高参考价值，能够直观看到一线产品如何编排工具链、约束模型行为以及处理多轮交互。仓库为纯文本与 JSON 结构，无运行时依赖，更新频繁，通过 GitHub Sponsors 维持持续整理。</div>
+  <div class="why-notable">这是研究商业级 AI 编程助手「黑盒」最直接的一手资料库。Cursor、Claude Code、Devin、Windsurf、v0 等顶级产品的 Prompt 与工具协议在此集中呈现，让开发者可以学习行业头部团队如何设计 Agent 行为边界、工具调用规范与上下文策略，对自研 Coding Agent 或做 LLM 安全/越狱研究具有不可替代的参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">仓库内容组织结构</p>
+    <div class="mermaid">graph TD
+  A[仓库根目录] --> B[Cursor]
+  A --> C[Claude Code]
+  A --> D[Devin AI]
+  A --> E[Windsurf]
+  A --> F[v0]
+  A --> G[其他 20+ 产品]
+  B --> B1[Prompt.txt]
+  B --> B2[Tools.json]
+  C --> C1[Prompt.txt]
+  C --> C2[Tools.json]
+  D --> D1[Prompt.txt]
+  E --> E1[Prompt.txt]
+  F --> F1[Prompt.txt]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">典型 AI 编程助手运行时数据流</p>
+    <div class="mermaid">graph LR
+  U[开发者输入] --> SP[系统提示词 System Prompt]
+  SP --> LLM[底层大模型]
+  U --> LLM
+  LLM -->|决策| TC[工具调用 Tool Call]
+  TC --> FS[文件读写]
+  TC --> SH[Shell 执行]
+  TC --> WEB[联网检索]
+  FS --> LLM
+  SH --> LLM
+  WEB --> LLM
+  LLM --> R[回复与代码变更]
+  R --> U</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/x1xhlol" target="_blank">sponsors/x1xhlol</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ferdinandobons/brand-docs" target="_blank">BrandDocs 品牌文档生成器</a></span>
+    <span class="stars">⭐ 144</span>
+  </div>
+  <p class="one-liner">AI 智能体专用的品牌文档生成技能包</p>
+  <div class="tags">
+    <span class="tag">Agent Skills（Claude Code / Codex）</span><span class="tag">Microsoft Word (.docx)</span><span class="tag">Microsoft PowerPoint (.pptx)</span><span class="tag">Microsoft Excel (.xlsx)</span><span class="tag">Office Open XML</span>
+  </div>
+  <div class="summary">BrandDocs 是一套面向 AI 智能体的技能（agent skills）集合，专注于解决企业在使用通用 AI 文档生成工具时面临的品牌一致性难题。其核心定位是：让 AI 智能体学习用户已有的 Word、PowerPoint 和 Excel 模板，并基于这些模板生成符合品牌规范的新文档。与市面上常见的通用 AI 文档生成器不同，BrandDocs 通过结构化的方式从根本上保证生成结果保留原有的品牌元素、文档结构、样式定义以及 Excel 公式，避免了 AI 生成文档时常见的格式错乱、品牌偏离、公式失效等问题。该项目专为 Claude Code、Codex 等兼容的 AI 编程智能体设计，作为可加载的技能模块被调用。在功能上，BrandDocs 覆盖 Office 三件套的主要文档类型，包括用于撰写报告与提案的 Word、用于商务汇报的 PowerPoint 以及用于财务建模与数据分析的 Excel。其技术路径强调“by construction”（构造式保真），即不通过事后修复而是在生成阶段就锁定品牌规范。这一思路对于咨询公司、品牌团队、企业内部办公自动化等强依赖模板一致性的场景尤为契合。</div>
+  <div class="why-notable">在 AI 文档生成赛道日益拥挤的当下，BrandDocs 切入了一个被普遍忽视但企业刚需的痛点——品牌与模板一致性。它不与 ChatGPT、Gemini 这类通用生成器正面竞争，而是作为 Agent 生态中的“技能层”嵌入工作流，体现了 AI 智能体技能化、模块化的最新趋势。对于希望将 AI 能力落地到合规、品牌敏感场景的团队，这类“保真生成”方案可能比从零生成更具实用价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">BrandDocs 工作流</p>
+    <div class="mermaid">graph TD
+  A[用户已有模板<br/>Word/PPT/Excel] --> B[模板学习模块]
+  B --> C[提取品牌元素<br/>样式/结构/公式]
+  C --> D[BrandDocs 技能包]
+  E[AI 智能体<br/>Claude Code / Codex] --> D
+  F[用户生成需求] --> E
+  D --> G[构造式生成引擎]
+  G --> H[品牌一致的<br/>新文档输出]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">与通用 AI 文档生成器的差异</p>
+    <div class="mermaid">graph LR
+  A[生成需求] --> B{生成路径}
+  B -->|通用 AI| C[自由生成]
+  C --> D[事后修复格式]
+  D --> E[品牌易偏离]
+  B -->|BrandDocs| F[模板约束生成]
+  F --> G[源头锁定样式与公式]
+  G --> H[品牌一致性保证]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ferdinandobons/brand-docs" target="_blank">ferdinandobons/brand-docs</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/xuansenpa1/skillrevise" target="_blank">SkillRevise</a></span>
+    <span class="stars">⭐ 50</span>
+  </div>
+  <p class="one-liner">基于轨迹的LLM智能体技能修订框架</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">LLM API</span><span class="tag">Agent Framework</span>
+  </div>
+  <div class="summary">SkillRevise 是一个面向 LLM 驱动智能体（Agent）的技能修订框架，专注于解决大模型自动生成的 Agent Skills 在实际执行中可能存在的缺陷与偏差问题。项目提出 trace-conditioned revision（轨迹条件修订）方法，即通过收集智能体执行技能时产生的运行轨迹（trace），将这些真实执行信号作为条件输入，反馈给 LLM 对原始技能脚本进行有针对性的迭代修订，从而提升技能的鲁棒性、正确率与可复用性。该仓库为论文配套的官方开源实现，预期包含技能生成、轨迹采集、修订流水线、评测脚本等核心模块。由于 README 内容当前仅为简介，技术栈细节需以实际代码为准，但典型实现通常基于 Python 与主流 LLM API。该项目对希望提升 Agent 自我改进能力、构建可靠工具调用与技能库的研究者具有参考价值。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能修订数据流</p>
+    <div class="mermaid">graph LR
+  A[LLM 生成初始技能] --> B[Agent 执行技能]
+  B --> C[采集执行轨迹 Trace]
+  C --> D{是否存在错误或低效}
+  D -->|是| E[Trace-Conditioned 修订]
+  E --> F[LLM 输出修订后技能]
+  F --> B
+  D -->|否| G[入库为可复用技能]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统模块架构</p>
+    <div class="mermaid">graph TD
+  U[用户任务] --> SG[技能生成器 Skill Generator]
+  SG --> SR[技能仓库 Skill Repo]
+  SR --> EX[执行引擎 Executor]
+  EX --> TR[轨迹记录器 Tracer]
+  TR --> RV[修订器 Reviser]
+  RV --> SR
+  EX --> EV[评测模块 Evaluator]
+  EV --> RV</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/xuansenpa1/skillrevise" target="_blank">xuansenpa1/skillrevise</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/agentlas-ai/Hephaestus" target="_blank">Hephaestus</a></span>
+    <span class="stars">⭐ 50</span>
+  </div>
+  <p class="one-liner">一句话生成 AI 智能体团队的无代码引擎</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">Cursor</span><span class="tag">Multi-Agent Orchestration</span><span class="tag">Natural Language DSL</span>
+  </div>
+  <div class="summary">Hephaestus 是 Agentlas 平台背后的核心引擎，定位为无代码 AI Agent 构建器。它的核心能力是把用户输入的一句自然语言需求，直接转化为可运行的单个智能体或多智能体协作团队，免去了手工编排 Prompt、定义角色、配置工作流的繁琐过程。项目将自身定位为 CrewAI、LangGraph、AutoGen 等主流多智能体框架的无代码替代方案，但在落地形态上做了差异化：不绑定单一运行时，而是直接运行于 Claude Code、Codex、Cursor 等开发者已经在使用的 AI 编码环境之上，借助这些宿主提供的模型调用、工具执行与上下文管理能力。这种设计让用户无需自建后端或部署额外服务，即可在熟悉的 IDE/CLI 中拥有一套可扩展的 Agent 编排体系，适合希望快速验证多智能体协作场景、又不想陷入框架学习成本的开发者与团队。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">从一句话到多智能体团队的生成流程</p>
+    <div class="mermaid">graph TD
+  A[用户一句话需求] --> B[Hephaestus 引擎]
+  B --> C{单 Agent 还是团队?}
+  C -->|单 Agent| D[生成角色与提示词]
+  C -->|多 Agent| E[拆解任务 + 分配角色]
+  E --> F[编排协作工作流]
+  D --> G[运行于宿主环境]
+  F --> G
+  G --> H[Claude Code]
+  G --> I[Codex]
+  G --> J[Cursor]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Hephaestus 在 Agentlas 生态中的位置</p>
+    <div class="mermaid">graph LR
+  U[开发者] --> AG[Agentlas 产品层]
+  AG --> HP[Hephaestus 引擎]
+  HP --> NL[自然语言解析]
+  HP --> OR[Agent 编排器]
+  HP --> RT[宿主适配层]
+  RT --> CC[Claude Code]
+  RT --> CX[Codex]
+  RT --> CR[Cursor]
+  OR -.对标.-> X[CrewAI / LangGraph / AutoGen]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/agentlas-ai/Hephaestus" target="_blank">agentlas-ai/Hephaestus</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/JimLiu/baoyu-design" target="_blank">豹语设计 (Baoyu Design)</a></span>
+    <span class="stars">⭐ 736</span>
+  </div>
+  <p class="one-liner">本地运行的 Claude Design 技能包</p>
+  <div class="tags">
+    <span class="tag">Claude Agent Skills</span><span class="tag">Markdown 提示词工程</span><span class="tag">HTML/CSS/JavaScript (单文件输出)</span><span class="tag">Cursor / Claude Code 等 Agent 宿主</span>
+  </div>
+  <div class="summary">豹语设计 (baoyu-design) 是一个将 Claude Design 能力封装为 Agent Skill 的开源项目，让用户无需依赖 claude.ai/design 在线服务，即可在 Cursor、Claude Code 等本地 AI 编程环境中调用 Claude 的设计生成能力。项目核心目标是把 Anthropic 官方的设计技能下沉到本地工作流，使开发者和设计师可以直接在自己熟悉的编辑器或终端中，通过自然语言指令产出高质量的 UI 界面与原型成果。其产出形式统一为自包含 (self-contained) 的单文件 HTML，内联样式与脚本，便于预览、分享、版本管理和二次迭代。支持的产物类型涵盖 UI 模型 (mockup)、可交互原型 (prototype)、演示幻灯片 (deck) 以及线框图 (wireframe) 四大场景，覆盖产品设计从概念到展示的完整链路。该 Skill 遵循 Claude Agent Skills 的规范，通过 Markdown 描述能力边界与提示词模板，运行时由宿主 Agent (如 Claude Code) 加载并调用。项目特别推荐搭配 Claude Opus 4.8 模型使用，以获得最佳的视觉表现与交互逻辑生成效果，对低算力模型也保持兼容。整体上它是一个轻量但实用的工程化封装，把云端封闭体验转化为可本地化、可定制、可嵌入团队工具链的标准化技能模块。</div>
+  <div class="why-notable">随着 Anthropic 力推 Agent Skills 生态，将官方在线产品能力反向移植为本地 Skill 是一个值得关注的趋势。该项目以最小成本打通了 Claude Design 在 Cursor、Claude Code 等本地环境的使用路径，免去了在 claude.ai/design 与编程工具间反复切换的成本，且产物为可直接交付的单文件 HTML，对设计驱动的快速原型、产品评审、AI 辅助前端开发都有直接价值，是观察 Skills 生态如何替代封闭 SaaS 体验的代表性样本。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与调用流程</p>
+    <div class="mermaid">graph TD
+  U[设计师/开发者] -->|自然语言指令| H[Agent 宿主<br/>Cursor / Claude Code]
+  H -->|加载 Skill| S[baoyu-design Skill]
+  S -->|提示词与规范| M[Claude 模型<br/>推荐 Opus 4.8]
+  M -->|生成内容| O[自包含 HTML 文件]
+  O --> P1[UI Mockup]
+  O --> P2[交互原型]
+  O --> P3[演示幻灯片]
+  O --> P4[线框图]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">本地 Skill 与云端 Design 对比</p>
+    <div class="mermaid">flowchart LR
+  subgraph Cloud[云端方案]
+    A1[claude.ai/design] --> A2[在线生成]
+    A2 --> A3[复制粘贴回 IDE]
+  end
+  subgraph Local[本地 Skill 方案]
+    B1[IDE 内输入需求] --> B2[baoyu-design Skill]
+    B2 --> B3[直接产出 HTML 到工作区]
+  end
+  Cloud -. 切换成本高 .-> Local</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/JimLiu/baoyu-design" target="_blank">JimLiu/baoyu-design</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
