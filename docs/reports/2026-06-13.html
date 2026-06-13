@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-13</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-13 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/DanMcInerney/architect-loop" target="_blank">architect-loop</a></span>
+    <span class="stars">⭐ 118</span>
+  </div>
+  <p class="one-liner">Claude架构师与Codex构建者协同闭环</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skills</span><span class="tag">OpenAI Codex CLI (>=0.133)</span><span class="tag">Bash / PowerShell 安装脚本</span><span class="tag">Git worktree</span><span class="tag">Python (tests/validate_skills.py)</span><span class="tag">Markdown 规格与门控文件</span>
+  </div>
+  <div class="summary">architect-loop 是一个跨厂商 AI 代理协作框架，以 Claude Code Skill 形式实现「架构师-构建者」分工循环。项目让 Claude Fable 担任规划与评审的架构师角色，由 GPT-5.5 Codex 担任实施与研究的构建者，仓库本身作为唯一的共享记忆。它无需 API Key，直接复用用户已有的 Claude 付费订阅与 ChatGPT 订阅额度。
+
+核心提供两条命令：`/architect` 负责构建闭环，Fable 在每个工作块先写规格与验收门（gates）并提交至 `docs/gates/`，然后将任务切分为 1-4 个不重叠的车道（lane），每条车道在独立 git worktree 中由全新的 `codex exec` 进程并行执行；构建者无提交权限，最终由 Fable 在新会话中亲自跑门控命令、审阅 diff，再合并通过的车道。`/architect-research` 则用于决策前的研究，遵循 scout-first 模式：先由廉价 Codex 侦察员绘制主题图谱，Fable 据此动态设计 3-6 条研究车道，并行 Codex 研究员在硬预算下采集带 URL、日期、引文与置信度的证据，最后由 Fable 进行对抗性证伪与撰写。
+
+所有设计都附带论文与工程实践引用（见 DESIGN.md），强调外部冻结门、worktree 隔离、防记忆腐烂的简短 HANDOFF 索引以及活性检查与停滞分诊等运维细节。</div>
+  <div class="why-notable">它把近年来关于 AI 代理协作的多项研究结论（弱规划者比弱执行者更致命、代理会刷可见测试、记忆文件会腐烂、生产级 deep-research 用规划者动态分解而非固定车道）凝练成一套可直接安装的工作流，并以跨厂商方式同时榨取 Claude 与 Codex 两个订阅的能力上限——这种用 Skill 文件而非新框架来落地多代理工程实践的做法，对正在探索 agent loop 的开发者很有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">/architect 构建闭环</p>
+    <div class="mermaid">graph TD
+  U[用户 /architect] --> F1[Fable 架构师会话]
+  F1 -->|写规格+门控| G[docs/gates 冻结]
+  F1 -->|切分 1-4 车道| L[docs/lanes]
+  L --> W1[worktree 车道1<br/>codex exec xhigh]
+  L --> W2[worktree 车道2<br/>codex exec xhigh]
+  L --> W3[worktree 车道N<br/>codex exec xhigh]
+  W1 --> R[原始结果上报]
+  W2 --> R
+  W3 --> R
+  R --> F2[Fable 新会话评审]
+  F2 -->|跑门控命令+读 diff| J{通过?}
+  J -->|是| M[提交并合并]
+  J -->|否| D[丢弃 worktree<br/>从 freeze commit 重派]
+  M --> H[更新 HANDOFF.md]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">/architect-research 研究闭环</p>
+    <div class="mermaid">graph LR
+  Q[研究问题] --> S[Codex Scout<br/>~10 次检索绘图]
+  S --> P[Fable 设计 3-6 条<br/>主题特定车道]
+  P --> C{重叠/缺口检查}
+  C --> R1[Codex 研究员1]
+  C --> R2[Codex 研究员2]
+  C --> R3[Codex 研究员N]
+  R1 --> E[带 URL/日期/引文/置信度<br/>的证据池]
+  R2 --> E
+  R3 --> E
+  E --> X[专家观点二轮采集]
+  X --> V[Fable 对抗性证伪<br/>≥2 独立来源]
+  V --> W[单作者撰写<br/>决策导向报告]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/DanMcInerney/architect-loop" target="_blank">DanMcInerney/architect-loop</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/lj1270998580-crypto/Agnes-help-skill" target="_blank">Agnes AI 帮助中心 Skill</a></span>
+    <span class="stars">⭐ 68</span>
+  </div>
+  <p class="one-liner">Agnes AI 免费API接入助手与Skill</p>
+  <div class="tags">
+    <span class="tag">Markdown (SKILL.md)</span><span class="tag">HTML/CSS/JavaScript (单文件交互助手)</span><span class="tag">Agnes AI REST API</span><span class="tag">GitHub Raw (版本检查)</span>
+  </div>
+  <div class="summary">本项目是 Agnes AI 全模态 API（文本、图像、视频）的非官方帮助资源集合，专为接入 Agnes 2.0 免费模型 API 而打造。仓库包含三大核心资产：通用支持 Skill（SKILL.md）、交互式 HTML 接入助手（agnes-ai-assistant.html）以及完整 API 文档（agnes-ai-api-documentation.md）。Skill 兼容 OpenClaw、Claude Code、Claude Desktop、Hermes、Codex、WorkBuddy、Cherry Studio、Opencode、Kimi Work 等主流 AI 工具，加载后可让 Agent 自动指导新手完成接入、诊断 401/400/429/500/503 等错误码、排查视频排队与图像生成问题，并直接在对话中调用文生图、图生图与视频生成能力。HTML 助手提供 4 步接入向导、模型速查、代码生成器、可搜索 FAQ 与 8 类智能诊断。所有文件均内置 GitHub 版本检查与更新提醒机制，确保信息同步官方最新文档。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Skill 接入与调用流程</p>
+    <div class="mermaid">graph TD
+  U[开发者] -->|复制安装链接| A[AI 工具 Agent]
+  A -->|加载| S[SKILL.md]
+  S -->|检查更新| G[GitHub Repo]
+  S -->|读取| D[API 文档 MD]
+  U -->|配置| K[Agnes API Key]
+  U -->|自然语言指令| A
+  A -->|调用| API[Agnes API Hub]
+  API --> T[文本 agnes-2.0-flash]
+  API --> I[图像 agnes-image-2.1-flash]
+  API --> V[视频 agnes-video-v2.0]
+  V -->|video_id 轮询| A
+  A -->|返回结果| U</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">仓库三大资产与使用场景</p>
+    <div class="mermaid">graph LR
+  R[Agnes-help-skill 仓库] --> H[HTML 助手]
+  R --> S[SKILL.md]
+  R --> M[API 文档 MD]
+  H -->|浏览器打开| N[新手向导/FAQ/诊断]
+  S -->|放入 Skill 目录| AG[Agent 自动排错与生图生视频]
+  M -->|Agent 读取| DEV[开发者集成参考]
+  N --> O[完成接入]
+  AG --> O
+  DEV --> O</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/lj1270998580-crypto/Agnes-help-skill" target="_blank">lj1270998580-crypto/Agnes-help-skill</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/xuansenpa1/skillrevise" target="_blank">SkillRevise</a></span>
+    <span class="stars">⭐ 50</span>
+  </div>
+  <p class="one-liner">基于执行轨迹修订LLM代理技能</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">pytest</span><span class="tag">OpenAI API</span><span class="tag">ALFWorld</span><span class="tag">CLI</span>
+  </div>
+  <div class="summary">SkillRevise 是论文《SkillRevise: Improving LLM-Authored Agent Skills via Trace-Conditioned Skill Revision》的官方代码发布。项目将代理技能视为可执行的产物，针对冷启动场景下 LLM 生成技能不够可靠的问题，提出轨迹条件化的技能修订框架：先由 LLM 撰写初始技能并执行任务，再通过验证器反馈进行失败诊断，从可复用的原则记忆库中检索修复经验，结合执行锚点修订技能，重新执行候选并通过效用门控选出最优版本。框架由任务级 Diagnosis、可复用 Principle Memory 和带锚点的 Revision Operator 三部分构成。仓库提供统一的 SkillsBench 风格基准接口，内置 SkillsBench、SkillLearnBench-Random、SWE-Skills-Bench-Hard 三套基准包。在 GPT-5.5 主实验中，三轮修订预算下 SkillRevise 在三个基准上均显著超越无技能基线和一次性 Skill-Creator，并展现出跨模型迁移能力。技术栈以 Python 为主，提供 CLI、命令式 LLM 客户端和 pytest 测试。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">SkillRevise 修订流水线</p>
+    <div class="mermaid">graph TD
+  A[任务输入] --> B[LLM 撰写初始技能]
+  B --> C[执行任务获取轨迹]
+  C --> D[验证器反馈]
+  D --> E{是否通过?}
+  E -- 否 --> F[诊断模块 Diagnosis]
+  F --> G[原则记忆 Principle Memory]
+  G --> H[锚定修订 Revision Operator]
+  H --> I[候选技能]
+  I --> C
+  E -- 是 --> J[效用门控选择]
+  J --> K[输出最优技能]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">代码模块结构</p>
+    <div class="mermaid">graph LR
+  CLI[skillrevise CLI] --> Core[core 执行循环/指标/产物]
+  CLI --> Method[method 撰写/诊断/修订]
+  CLI --> Bench[benchmarks 基准加载]
+  Method --> LLM[llm 命令式客户端]
+  Bench --> Data[(data 基准包)]
+  Core --> Reports[报告与 artifacts]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/xuansenpa1/skillrevise" target="_blank">xuansenpa1/skillrevise</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/JimLiu/baoyu-design" target="_blank">baoyu-design 本地化 Claude Design</a></span>
+    <span class="stars">⭐ 829</span>
+  </div>
+  <p class="one-liner">把 Claude Design 装进本地 Agent</p>
+  <div class="tags">
+    <span class="tag">Markdown (Skill 定义)</span><span class="tag">HTML/CSS/JS (自包含产物)</span><span class="tag">JSX 脚手架组件</span><span class="tag">Node.js / npx skills CLI</span><span class="tag">Python 3 (本地预览服务器)</span><span class="tag">Claude Opus 4.8 (推荐模型)</span>
+  </div>
+  <div class="summary">baoyu-design 把 claude.ai/design 背后的设计引擎打包成一个可移植的 Agent Skill，让用户在 Cursor、Claude Code、Claude Desktop、Codex 等任意支持文件操作的本地编码 Agent 中直接生成精美的 UI 稿、可交互原型、线框图、落地页、仪表盘、移动应用与幻灯片，全部以自包含 HTML 形式输出到 designs/<project>/ 目录，无需访问官网、无需额外订阅、也无需上传素材。技能本体由纯 Markdown 加少量 JSX/JS 脚手架组成，无构建、无运行时：SKILL.md 作为入口编排整个流程，system-prompt.md 沉淀设计方法论与工艺标准，references/ 中按 Cursor、Claude Code、Codex 分别维护工具映射，built-in-skills/ 提供幻灯片、移动端、导入导出等专项 Prompt，starter-components/ 预置 iOS/Android/macOS/浏览器外壳、画布、幻灯片舞台、时间轴动画引擎、可调参面板等组件。功能矩阵覆盖高保真设计、原型、线框、设计系统、Figma .fig 离线解码、GitHub 仓库导入、PDF/PPTX/Canva 导出、Gemini 图像生成等。推荐搭配 Claude Opus 4.8，并通过 npx skills add 一键安装到 70+ 种 Agent，或直接把仓库 URL 丢给 Agent 自行拉取。</div>
+  <div class="why-notable">在 Agent Skill 这一新兴形态尚未形成事实标准的当下，baoyu-design 提供了一个高完成度、可直接套用的范例：它把一个原本依赖云端的复杂设计工作流拆解为方法论、工具映射、专项技能、起步组件四层结构，既证明了纯 Markdown + 少量脚手架就能驱动出接近官网水准的设计产物，也展示了如何写出能跨 Cursor/Claude Code/Codex 多 Agent 复用的 Skill。对于想理解 Skills 生态、构建自有 Agent 能力包，或希望把设计环节彻底纳入代码仓库工作流的团队，这是一份兼具工程示范与即用价值的参考实现。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Skill 加载与执行流程</p>
+    <div class="mermaid">graph TD
+  U[用户在本地 Agent 发起设计需求] --> A[Agent 读取 SKILL.md]
+  A --> M[加载 system-prompt.md 设计方法论]
+  A --> D{检测运行环境}
+  D -->|Cursor| RC[references/cursor.md]
+  D -->|Claude Code| RA[references/claude.md]
+  D -->|Codex| RX[references/codex.md]
+  M --> S[按需加载 built-in-skills 专项技能]
+  S --> C[调用 starter-components 脚手架]
+  C --> H[生成自包含 HTML 到 designs/项目/]
+  H --> P[本地 localhost 预览]
+  P --> L[指点式二轮编辑回到源代码]
+  L --> H</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能能力矩阵</p>
+    <div class="mermaid">graph LR
+  Core[baoyu-design Skill]
+  Core --> Design[核心设计: 高保真 / 原型 / 线框]
+  Core --> Deck[幻灯片: 演讲稿 / 备注]
+  Core --> Mobile[移动与动效: 原型 / 动画 / 音效]
+  Core --> System[设计系统: 创建 / 使用 / 预览 / 组件]
+  Core --> Import[导入: Figma .fig / GitHub / HTML]
+  Core --> Export[导出: HTML / PDF / PPTX / Canva / Figma]
+  Core --> AI[AI 资产: Gemini 图像 / Claude 调用 / 读 PDF]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/JimLiu/baoyu-design" target="_blank">JimLiu/baoyu-design</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/s0912758806p/agentic-sop-to-work" target="_blank">Agentic SOP Kit</a></span>
+    <span class="stars">⭐ 159</span>
+  </div>
+  <p class="one-liner">把人工SOP变成确定性闸门工作流</p>
+  <div class="tags">
+    <span class="tag">Python 3.8+</span><span class="tag">Claude Code Plugin</span><span class="tag">JSON Schema</span><span class="tag">Mermaid</span><span class="tag">Shell Hooks</span>
+  </div>
+  <div class="summary">agentic-sop-kit 是一个 Claude Code 插件，旨在把人工执行的标准作业流程（Human SOP）工程化为 LLM 可以安全、可重复执行的 agentic workflow。它定位为方法论加可携工具包，而不是聊天机器人，专为受监管、高风险、不能出错的场景设计。项目通过四个机制系统性封堵 LLM 的常见失败模式：事实仅来源于输入、缺失内容必须标注【待補】以杜绝臆造；确定性逻辑全部写进代码、硬闸门 hermetic 且零 LLM 介入以避免假自主；所有产出标记为 DRAFT 并由人工核准以保证可追责；通过 audit skill 与 Stop-hook 回归闸门防止退化为 mega-agent。核心引擎 run.py 提供 cmd_gate、schema_gate、trace_gate、recompute_gate 四种逐步硬闸门，支持 cmd 白名单、--plan 乾跑、forward-only branch、map_over 逐项处理，以及封顶自动修复 fix-loop（默认 3 次）。插件包含两个自动触发 Skill（agentic-sop 与 agentic-workflow-audit）、一个 /sop-flow 指令以及 SessionStart 与 Stop 两个 Hook。kit/ 目录可复制到任意专案，附 FE、BE、DB、AI 免依赖范例。</div>
+  <div class="why-notable">在 agentic 工程普遍滑向 mega-agent 与 prompt 堆叠的当下，这个项目用一种克制的工程哲学回应 LLM 的可信度问题：把可确定的事交还给代码，把不可确定的事标注为待补，把高风险判定交还给人。它把『硬闸门、回归测试、人工核准』三件事制度化为插件级强制力，而非散文式承诺，对受监管行业落地 AI 工作流具有方法论参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">SOP 到 Agentic Workflow 的转化流程</p>
+    <div class="mermaid">flowchart LR
+    SOP[人工 SOP] -->|拆解| SK[单工具 Skill\nI/O 契约]
+    SK -->|编排| RUN[run.py\nsteps/branch/map]
+    RUN --> G{逐步硬闸门\ncmd/schema/trace/recompute}
+    G -->|通过| DR[DRAFT 产出]
+    G -->|失败| FIX[自动修复\n封顶重跑]
+    FIX --> RUN
+    DR --> HUMAN[人工核准]
+    REG[Stop-hook 回归闸门] -.守护每次变更.-> SK</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">插件组件与项目结构</p>
+    <div class="mermaid">graph TD
+    MP[marketplace.json] --> PLUGIN[agentic-sop-kit 插件]
+    PLUGIN --> SKILLS[Skills]
+    PLUGIN --> CMDS[Commands]
+    PLUGIN --> HOOKS[Hooks]
+    PLUGIN --> KIT[可携 kit/]
+    SKILLS --> S1[agentic-sop\n方法论入口]
+    SKILLS --> S2[agentic-workflow-audit\n只读稽核者]
+    CMDS --> C1[/sop-flow\n执行编排]
+    HOOKS --> H1[SessionStart\n依赖检查]
+    HOOKS --> H2[Stop\n回归闸门]
+    KIT --> K1[lib/ 引擎]
+    KIT --> K2[workflow/ 流程定义]
+    KIT --> K3[examples/ FE/BE/DB/AI]
+    KIT --> K4[tests/ 回归测试]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/s0912758806p/agentic-sop-to-work" target="_blank">s0912758806p/agentic-sop-to-work</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
