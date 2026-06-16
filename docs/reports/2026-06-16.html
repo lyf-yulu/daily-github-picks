@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-16</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-16 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/nelsonwerd/idea-to-ship-skills" target="_blank">Idea-to-Ship Skills</a></span>
+    <span class="stars">⭐ 57</span>
+  </div>
+  <p class="one-liner">从想法到上线的可组合 AI 技能套件</p>
+  <div class="tags">
+    <span class="tag">Claude Agent Skills</span><span class="tag">OpenAI Codex</span><span class="tag">Prompt Engineering</span><span class="tag">Markdown</span>
+  </div>
+  <div class="summary">Idea-to-Ship Skills 是一套面向 Claude 与 OpenAI Codex 的可组合 Agent Skills（智能体技能）集合，目标是把一个模糊的产品想法系统化地推进到验证、排期、构建和上线。项目把工作流划分为两个层级：手动层（manual tier）包含 ideate（构思发散）、deep-dive（深度调研）、prompt-pack（提示词包）三个技能，帮助开发者在人机协作下打磨想法；自动层（autonomous tier）包含 autopilot（自动驾驶）和 build-loop（构建循环）两个技能，让 Agent 自主执行需求拆解、代码生成与迭代验证。这种分层设计既保留了人工介入的灵活性，又能在思路成熟后切换到全自动模式持续推进交付。整体定位为大模型 Agent 的工程化能力扩展包，适合产品原型验证、独立开发者快速 ship 项目以及 AI 驱动的研发流水线场景。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Idea-to-Ship 工作流</p>
+    <div class="mermaid">graph LR
+  A[模糊想法] --> B[ideate 构思]
+  B --> C[deep-dive 调研]
+  C --> D[prompt-pack 提示词包]
+  D --> E{是否进入自动层}
+  E -- 是 --> F[autopilot 自动驾驶]
+  F --> G[build-loop 构建循环]
+  E -- 否 --> H[人工迭代]
+  G --> I[已上线产品]
+  H --> I</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能分层架构</p>
+    <div class="mermaid">graph TD
+  S[Composable Agent Skills] --> M[手动层 Manual Tier]
+  S --> AU[自动层 Autonomous Tier]
+  M --> M1[ideate]
+  M --> M2[deep-dive]
+  M --> M3[prompt-pack]
+  AU --> A1[autopilot]
+  AU --> A2[build-loop]
+  M1 & M2 & M3 --> R[Claude / OpenAI Codex 运行时]
+  A1 & A2 --> R</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/nelsonwerd/idea-to-ship-skills" target="_blank">nelsonwerd/idea-to-ship-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/DanMcInerney/architect-loop" target="_blank">Architect-Loop 跨厂商智能体协作骨架</a></span>
+    <span class="stars">⭐ 454</span>
+  </div>
+  <p class="one-liner">Claude 当架构师，Codex 当工程师，仓库做记忆</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skill</span><span class="tag">Anthropic Claude API</span><span class="tag">OpenAI Codex / GPT-5 系列 API</span><span class="tag">Git 仓库作为状态存储</span><span class="tag">Markdown 规约文档 (设计稿 / ADR / TODO)</span>
+  </div>
+  <div class="summary">Architect-Loop 是一个面向 Claude Code 的 Skill（技能扩展），目标是把两家厂商的旗舰编码模型组合成一条研究背书的智能体协作流水线。其核心设计哲学是角色分工：以 Claude（README 中标注为 Fable 5 系列）担任 architect，负责需求拆解、技术选型、接口契约和实施计划；以 GPT-5 Codex 担任 builder，负责把架构师产出的规格落地为可运行代码、补丁和测试。两者之间不直接共享上下文，而是通过 Git 仓库本身作为持久化记忆层进行交接：架构师把决策与计划写入仓库（如设计文档、TODO、ADR、测试规约），构建者读取这些产物并以提交、Diff、测试结果回写状态，下一轮架构师再基于仓库当前状态继续推理。这种 repo-as-memory 的模式回避了跨厂商 API 之间无法共享会话的问题，同时利用版本控制天然提供可回滚、可审计的轨迹。项目以 Skill 形式分发，意味着开发者可在 Claude Code 中一键加载该工作流模板，让 Claude 自动按既定协议调用 Codex 子代理，形成稳定的规划-实现-验证循环，适合中长期、多步骤的代码演进任务。</div>
+  <div class="why-notable">在多数 agent 框架仍困在单厂商单模型的当下，这个项目用极简的方式回答了一个真实痛点：如何让擅长规划的模型和擅长写码的模型协作，又不被会话隔离卡住。把仓库本身当作共享黑板是个朴素却有效的工程取舍，对想搭建跨厂商编码代理的团队有直接借鉴意义。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">架构师-构建者循环</p>
+    <div class="mermaid">graph LR
+  U[开发者需求] --> A[Claude 架构师]
+  A -->|写入计划/ADR/测试规约| R[(Git 仓库 - 共享记忆)]
+  R -->|读取规格| B[GPT-5 Codex 构建者]
+  B -->|提交代码/补丁/测试结果| R
+  R -->|读取当前状态| A
+  A -->|交付| U</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单轮迭代数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant Dev as 开发者
+  participant Skill as Claude Code Skill
+  participant Arch as Claude 架构师
+  participant Repo as Git 仓库
+  participant Build as Codex 构建者
+  Dev->>Skill: 提出任务
+  Skill->>Arch: 加载 architect 角色
+  Arch->>Repo: 写入设计与 TODO
+  Skill->>Build: 调度 builder 角色
+  Build->>Repo: 读取规格
+  Build->>Repo: 提交实现与测试
+  Repo->>Arch: 反馈当前状态
+  Arch->>Dev: 汇报进度或下一步计划</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/DanMcInerney/architect-loop" target="_blank">DanMcInerney/architect-loop</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ruvnet/agent-harness-generator" target="_blank">Agent Harness Generator</a></span>
+    <span class="stars">⭐ 84</span>
+  </div>
+  <p class="one-liner">AI 代理的元脚手架生成器</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">npx CLI</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">RVM 沙箱</span><span class="tag">Witness 签名</span>
+  </div>
+  <div class="summary">Agent Harness Generator 是一个面向 AI 代理的元级（meta-harness）脚手架工具，用于快速生成专属、品牌化、聚焦特定领域的代理运行框架。开发者可以通过它一键搭建带有独立 npx CLI 的代理项目，内置 MCP（Model Context Protocol）服务器、持久化记忆模块、学习反馈循环以及由 witness 签名的可信发布机制。该工具兼容当下主流的代理生态，包括 Claude Code、Codex、pi.dev、Hermes、OpenClaw，以及提供硬件隔离沙箱的 RVM 运行环境，方便团队在不同的代理后端之间复用同一套 harness 结构。其定位是为代理工程化提供标准化、可分发、可验证的项目骨架，降低从原型到可信发布的工程成本。技术栈以 Node.js / npx CLI 为入口，配合 MCP 协议进行能力暴露，并通过签名机制保障供应链可信。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Harness 生成与运行架构</p>
+    <div class="mermaid">graph TD
+  A[开发者] -->|npx 调用| B[Agent Harness Generator]
+  B --> C[生成专属 Agent Harness]
+  C --> D[npx CLI 入口]
+  C --> E[MCP 服务器]
+  C --> F[记忆模块]
+  C --> G[学习循环]
+  C --> H[Witness 签名发布]
+  E --> I{代理后端}
+  I --> I1[Claude Code]
+  I --> I2[Codex]
+  I --> I3[pi.dev]
+  I --> I4[Hermes]
+  I --> I5[OpenClaw]
+  I --> I6[RVM 硬件沙箱]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">学习循环与可信发布数据流</p>
+    <div class="mermaid">flowchart LR
+  U[用户任务] --> CLI[npx CLI]
+  CLI --> MCP[MCP 服务器]
+  MCP --> AG[代理执行]
+  AG --> MEM[记忆存储]
+  MEM --> LL[学习循环]
+  LL --> AG
+  AG --> ART[构建产物]
+  ART --> WS[Witness 签名]
+  WS --> REL[可信发布]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ruvnet/agent-harness-generator" target="_blank">ruvnet/agent-harness-generator</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/cobusgreyling/loop-engineering" target="_blank">Loop Engineering 工具集</a></span>
+    <span class="stars">⭐ 265</span>
+  </div>
+  <p class="one-liner">面向AI编码代理的循环工程实践框架</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">CLI</span><span class="tag">LLM Agents</span><span class="tag">Prompt Engineering</span>
+  </div>
+  <div class="summary">Loop Engineering 是一个面向 AI 编码代理（AI Coding Agents）的实践型工具集与模式库，旨在帮助开发者设计能够提示、编排并持续优化 AI 代理的系统化工作流。项目灵感来源于 Addy Osmani 与 Boris Cherny 在 AI 辅助编程领域的研究，将传统的「Prompt Engineering」升级为「Loop Engineering」，强调代理在持续循环中的自我反馈、审计与成本控制。仓库提供了三款核心 CLI 工具：loop-init 用于快速初始化一个具备循环结构的代理项目脚手架，包含预置的提示模板、目录约定与配置文件；loop-audit 用于审计代理执行过程中的提示链路、上下文使用与决策轨迹，帮助识别冗余调用与潜在的失控循环；loop-cost 则聚焦于多轮代理调用的 Token 与 API 成本估算，支持按任务、按模型维度统计开销，便于团队在生产环境中预算管理。除工具外，项目还沉淀了一套可复用的设计模式与启动模板（starters），覆盖任务分解、检查点、回滚、人机协同审批等典型场景，使开发者能够将零散的 Prompt 实验转化为可度量、可治理的工程实践。整体定位介于框架与方法论之间，既适合个人开发者搭建实验环境，也可为团队构建生产级 Agent 系统提供参考骨架。</div>
+  <div class="why-notable">在 AI 编码代理快速普及的背景下，多数项目仍停留在 Prompt 层面，而本仓库率先提出「Loop Engineering」的系统化视角，将代理运行的可观测性、成本与治理纳入核心设计。它不仅给出概念，还以 CLI 工具的形式落地了审计与成本两大刚需能力，对正在构建生产级 Agent 系统的团队具有直接的工程参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Loop Engineering 工具链架构</p>
+    <div class="mermaid">graph TD
+  A[开发者] --> B[loop-init<br/>项目脚手架]
+  B --> C[Agent 项目<br/>提示模板 + 配置]
+  C --> D[AI 编码代理<br/>循环执行]
+  D --> E[loop-audit<br/>过程审计]
+  D --> F[loop-cost<br/>成本统计]
+  E --> G[决策轨迹分析]
+  F --> H[Token/API 开销报告]
+  G --> I[优化反馈]
+  H --> I
+  I --> D</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">代理循环数据流</p>
+    <div class="mermaid">flowchart LR
+  U[任务输入] --> P[提示编排]
+  P --> M[LLM 调用]
+  M --> R[结果评估]
+  R -->|未达标| P
+  R -->|达标| O[输出交付]
+  M -.记录.-> L[审计日志]
+  M -.计费.-> C[成本账本]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/cobusgreyling/loop-engineering" target="_blank">cobusgreyling/loop-engineering</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/darricke/claude-fable-5-desktop-free" target="_blank">Claude Fable 5 Desktop Free（疑似仿冒/SEO 仓库）</a></span>
+    <span class="stars">⭐ 68</span>
+  </div>
+  <p class="one-liner">缺乏实质内容的关键词堆砌仓库</p>
+  <div class="tags">
+    
+  </div>
+  <div class="summary">该仓库名为 darricke/claude-fable-5-desktop-free，从仓库描述与 README 内容来看，仅由一串与 Claude、Anthropic、LLM、聊天机器人、API、提示词缓存、多模态、视觉、推理、编码代理、上下文窗口、订阅计划等相关的关键词堆叠而成，没有任何实际的源代码、文档结构、安装说明或使用示例。其命名暗示其想伪装成 Anthropic Claude 的桌面免费版本，但 Anthropic 并未发布名为 'Claude Fable 5' 的模型，且官方桌面客户端也不会通过此类第三方仓库分发。这类仓库通常是利用搜索引擎优化（SEO）吸引流量，或诱导用户下载可疑可执行文件、泄露 API Key、安装恶意软件的钓鱼项目。建议用户保持警惕，不要克隆运行其中任何二进制文件，获取 Claude 相关服务请前往 anthropic.com 或 claude.ai 官方渠道。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">可疑仓库识别流程</p>
+    <div class="mermaid">graph TD
+  A[用户搜索 Claude 免费版] --> B[进入该 GitHub 仓库]
+  B --> C{README 是否仅关键词堆砌?}
+  C -->|是| D[判定为 SEO/钓鱼仓库]
+  C -->|否| E[继续审查代码与许可证]
+  D --> F[避免下载与执行]
+  D --> G[前往 anthropic.com 官方渠道]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/darricke/claude-fable-5-desktop-free" target="_blank">darricke/claude-fable-5-desktop-free</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
