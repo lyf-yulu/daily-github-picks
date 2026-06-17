@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-17</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-17 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/DanMcInerney/architect-loop" target="_blank">architect-loop 跨厂商智能体协作环</a></span>
+    <span class="stars">⭐ 484</span>
+  </div>
+  <p class="one-liner">Claude 当架构师，Codex 当建造者</p>
+  <div class="tags">
+    <span class="tag">Claude Code (Claude Fable)</span><span class="tag">OpenAI Codex CLI (>=0.133)</span><span class="tag">Bash / PowerShell 安装脚本</span><span class="tag">git worktree</span><span class="tag">Markdown skill 规约</span><span class="tag">Python 校验脚本</span>
+  </div>
+  <div class="summary">architect-loop 是一个面向 Claude Code 的技能（skill）包，把 Anthropic 的 Claude Fable 与 OpenAI 的 GPT-5.5 Codex 拼成一个跨厂商的智能体闭环：Fable 负责规划与评审，Codex 负责实现与调研，仓库本身则承担长期记忆。项目通过两个斜杠命令暴露能力：/architect 触发构建循环，由 Fable 把任务切成单 PR 切片并提前把验收门槛写入 docs/gates/，再分派 1–4 条 lane 到独立 git worktree 中的 codex exec 实例并行执行；建造者无提交权，Fable 在新会话中亲自跑门控命令、对照 spec 审 diff，再合并通过的 lane。/architect-research 则是研究循环，先用便宜的 Codex 侦察员扫描主题，再由 Fable 按主题设计 3–6 条带预算约束的 lane 并行检索，最后做对抗性证伪、双源核验并撰写带引用的决策报告。设计上强调几条经验：弱规划比弱执行更致命、frozen 外部门控胜过信任 agent、记忆文件易腐烂所以 HANDOFF 只做短目录、生产级深度研究系统采用规划者动态分解而非固定 lane。安装只需克隆仓库执行 install 脚本并全局安装 Codex CLI，依托现有 Claude 与 ChatGPT 订阅运行，默认无需 API Key。</div>
+  <div class="why-notable">它把当下两类最强代码模型的优势用一种可复现的工程化方式拼起来，并把多智能体研究里被反复验证的几条原则（规划者强于执行者、外部冻结门控、新会话评审、规划器动态分解）落到具体的 skill 文件和门控命令里，是难得一份既有理论引用又能 30 秒上手的多 agent 协作模板。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">/architect 构建循环</p>
+    <div class="mermaid">graph TD
+  U[用户 /architect] --> F1[Fable 架构会话]
+  F1 -->|写 spec 与 gates| G[docs/gates/ 冻结门控]
+  F1 -->|切分 1-4 lane| D[Dispatch 派发]
+  D --> W1[worktree lane1<br/>codex exec xhigh]
+  D --> W2[worktree lane2<br/>codex exec xhigh]
+  D --> W3[worktree laneN<br/>codex exec xhigh]
+  W1 --> R[原始结果上报]
+  W2 --> R
+  W3 --> R
+  R --> F2[Fable 新会话裁判]
+  F2 -->|跑门控+审 diff| C{是否通过}
+  C -->|通过| M[提交并合并]
+  C -->|失败| X[丢弃 worktree<br/>从冻结点重派]
+  M --> H[更新 HANDOFF.md]
+  X --> D</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">/architect-research 研究循环</p>
+    <div class="mermaid">graph LR
+  Q[用户提问] --> S[Codex 侦察员<br/>~10 次检索绘制主题地图]
+  S --> P[Fable 按主题设计<br/>3-6 条 lane]
+  P --> L1[Lane: 学术滚雪球]
+  P --> L2[Lane: 仓库依赖证据]
+  P --> L3[Lane: 生产模式挖掘]
+  P --> L4[Lane: 专家追踪 第二波]
+  L1 --> V[Fable 核验<br/>双源+对抗证伪]
+  L2 --> V
+  L3 --> V
+  L4 --> V
+  V --> W[单作者撰写<br/>决策导向报告]
+  W --> PRD[喂给 /architect 的 PRD]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/DanMcInerney/architect-loop" target="_blank">DanMcInerney/architect-loop</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ruvnet/agent-harness-generator" target="_blank">MetaHarness 智能体脚手架工厂</a></span>
+    <span class="stars">⭐ 118</span>
+  </div>
+  <p class="one-liner">为任意仓库生成专属 AI 智能体框架</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">npx CLI</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Claude Code / OpenAI Codex / Hermes / OpenClaw</span><span class="tag">GitHub Actions</span><span class="tag">GitHub Pages (Studio Web UI)</span><span class="tag">RVM 微管理程序</span>
+  </div>
+  <div class="summary">MetaHarness（agent-harness-generator）是一个用于生成定制化 AI 智能体框架的「元脚手架」工具，由 ruvnet 开发并以 MIT 协议开源。它的定位不是又一个智能体框架，而是「生产智能体框架的工厂」——给定一个 GitHub 仓库地址或空白起点，它能在 60 秒内、在浏览器或终端中本地生成一套与目标仓库高度契合的智能体工具链，包括仓库感知的 CLI、编码智能体、本地 MCP 服务器、项目级记忆命名空间、基于实际文件结构生成的技能、治理策略、发布闸门以及证人签名的产物溯源。生成结果是一个可直接 npm 发布的 zip 包，带有用户自己的品牌和 npx CLI 入口。项目支持九大宿主环境，包括 Claude Code、OpenAI Codex、pi.dev、Hermes、OpenClaw、RVM 硬件隔离沙箱、GitHub Copilot、OpenCode 以及 GitHub Actions CI/CD。MCP 作为一等适配层接入，采用默认拒绝策略，提供 off/local/remote 三种模式并自带 mcp-scan 静态扫描器（类比「npm audit for agent tools」）。配套的 @metaharness/router 还能基于自有评测数据将每次请求路由到「足够好的最便宜模型」，配合 DRACO 基准测试证明小模型可以以约十分之一成本达到前沿质量。项目内置 19 个垂直模板覆盖编码、DevOps 等场景，并提供 score、analyze-repo、wizard 等子命令，全程仅做静态分析、不执行仓库代码。</div>
+  <div class="why-notable">它跳出了「再造一个 Agent 框架」的内卷思路，把智能体框架本身作为可被生成、可被品牌化、可被组织内分发的产物，并把安全（默认拒绝 MCP、静态扫描、证人签名）与成本（智能路由 + 小模型基准）作为一等公民。对希望在团队/组织内规模化落地仓库感知型 AI 智能体的工程团队，这是一个少见的同时解决「定制化、安全治理、成本控制」三难问题的工程化方案。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">MetaHarness 生成与分发架构</p>
+    <div class="mermaid">graph TD
+  A[用户仓库或空白起点] --> B{入口选择}
+  B -->|浏览器| C[Studio Web UI]
+  B -->|终端| D[npx metaharness CLI]
+  B -->|向导| E[--wizard 交互式]
+  C --> F[analyze-repo 静态分析]
+  D --> F
+  E --> F
+  F --> G[推荐 Agents/Skills/Slash/MCP 工具]
+  G --> H[生成定制 Harness 包]
+  H --> H1[CLI 入口 npx your-name]
+  H --> H2[本地 MCP Server 默认拒绝]
+  H --> H3[项目级 Memory 命名空间]
+  H --> H4[治理策略 + 发布闸门]
+  H --> H5[证人签名 Provenance]
+  H --> I[npm publish 私有/公共包]
+  I --> J[团队成员 npx @your-org/your-harness]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">多宿主适配与模型路由数据流</p>
+    <div class="mermaid">graph LR
+  U[开发者请求] --> R[@metaharness/router]
+  R -->|读取自有评测日志| L[(Eval Logs)]
+  R -->|选择最便宜达标模型| M1[小模型 0.10$]
+  R --> M2[中端模型]
+  R --> M3[前沿模型]
+  M1 --> H[Harness 运行时]
+  M2 --> H
+  M3 --> H
+  H --> A1[Claude Code]
+  H --> A2[OpenAI Codex]
+  H --> A3[pi.dev]
+  H --> A4[Hermes]
+  H --> A5[OpenClaw]
+  H --> A6[RVM 硬件隔离]
+  H --> A7[GitHub Copilot]
+  H --> A8[OpenCode]
+  H --> A9[GitHub Actions CI/CD]
+  H --> S[mcp-scan 静态安全扫描]
+  S -->|HIGH 退出 1| G[发布闸门]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ruvnet/agent-harness-generator" target="_blank">ruvnet/agent-harness-generator</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/omnigent-ai/omnigent" target="_blank">Omnigent 元代理框架</a></span>
+    <span class="stars">⭐ 2,794</span>
+  </div>
+  <p class="one-liner">统一调度多种 AI 编码代理的元框架</p>
+  <div class="tags">
+    <span class="tag">Python 3.12+</span><span class="tag">uv / pip / Homebrew 分发</span><span class="tag">Node.js 22 LTS（Claude/Codex/Pi harness CLI）</span><span class="tag">tmux（终端复用）</span><span class="tag">bubblewrap (bwrap) / macOS seatbelt 沙箱</span><span class="tag">YAML（自定义代理定义）</span><span class="tag">Modal / Daytona / Islo 云沙箱</span><span class="tag">Web UI（本地 6767 端口）</span><span class="tag">可选 Databricks 集成</span>
+  </div>
+  <div class="summary">Omnigent 是一个面向 AI 代理的「元 harness（元外壳）」开源项目，旨在为 Claude Code、Codex、Cursor、Pi 以及用户自定义代理提供统一的抽象层，让开发者可以在不重写代码的前提下自由切换或组合不同的代理 harness。项目核心定位是把「编码代理的运行时」标准化：通过 YAML 即可定义自己的代理，再交由 Omnigent 统一管理会话、终端、文件与子代理状态。它在跨设备协作上着力很深，会话可以从终端起步，无缝迁移到浏览器或手机端，团队成员还能加入同一活动会话进行实时观摩、共同驾驶或 fork 出独立分支。安全治理方面提供 policies 机制，可在风险动作前要求人工审批、限制工具访问范围或设定花费上限，并通过 macOS seatbelt 与 Linux bubblewrap (bwrap) 对每个代理终端做 OS 级沙箱隔离。运行环境方面除本地外还支持 Modal、Daytona、Islo 等云端一次性沙箱，便于无本地依赖地跑代理。模型接入层兼容 Anthropic / OpenAI 官方 API key、Claude / ChatGPT 订阅以及任意兼容网关，并可选 Databricks 工作区作为模型提供方。仓库附带 Polly（多代理编码编排者，将任务并行下发到不同 vendor 的子代理并交叉评审）和 Debby（双头脑暴 + /debate 互辩）两个示例代理，演示编排与多模型协同的典型用法。</div>
+  <div class="why-notable">在 AI 编码代理生态高速分化的当下，Omnigent 不绑定单一 vendor，而是把「代理本身」抽象为可插拔单元，并把多代理协作、跨设备会话、策略治理与沙箱隔离做成一等公民。它解决了开发者在 Claude Code、Codex、Cursor 等工具间来回切换、难以编排互评、缺乏统一安全边界的真实痛点，对探索多代理工作流与团队化 AI 协作有较强工程参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Omnigent 整体架构</p>
+    <div class="mermaid">graph TD
+  U[用户 终端/浏览器/手机/桌面App] --> S[Omnigent Server + Web UI :6767]
+  S --> P[Policies 审批/限额/工具白名单]
+  S --> H[Meta-Harness 抽象层]
+  H --> C1[Claude Code]
+  H --> C2[Codex]
+  H --> C3[Cursor CLI]
+  H --> C4[Pi]
+  H --> C5[YAML 自定义代理]
+  H --> SB[沙箱层]
+  SB --> L1[macOS seatbelt]
+  SB --> L2[Linux bwrap]
+  SB --> L3[Modal/Daytona/Islo 云沙箱]
+  H --> M[模型层 Anthropic/OpenAI/Databricks/兼容网关]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Polly 多代理编排数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant User as 用户
+  participant Polly as Polly 编排者
+  participant W1 as Worktree A (Claude)
+  participant W2 as Worktree B (Codex)
+  participant Rev as 跨厂商评审者
+  User->>Polly: 提交任务
+  Polly->>W1: 拆分子任务并下发
+  Polly->>W2: 拆分子任务并下发
+  W1-->>Polly: Diff A
+  W2-->>Polly: Diff B
+  Polly->>Rev: 路由到不同 vendor 评审
+  Rev-->>Polly: 评审意见
+  Polly-->>User: 汇总结果待合并</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/omnigent-ai/omnigent" target="_blank">omnigent-ai/omnigent</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/001TMF/harness-forge" target="_blank">Harness Forge</a></span>
+    <span class="stars">⭐ 60</span>
+  </div>
+  <p class="one-liner">让 Claude Code 自我进化脚手架的原生技能</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skill</span><span class="tag">Claude Code Workflow / Agent</span><span class="tag">Python</span><span class="tag">JavaScript (workflow 脚本)</span><span class="tag">Markdown (SKILL.md / references)</span>
+  </div>
+  <div class="summary">Harness Forge 是一个 Claude Code 技能（skill），将 Meta-Harness（Lee 等人 2026）方法原生化重实现，用于在模型权重固定的前提下，自动优化围绕模型的脚手架——包括记忆、检索、上下文构造、摘要、提示模板与工具选择逻辑。它通过 propose（提出候选）→ score（打分）→ Pareto（保留帕累托最优前沿）→ repeat 的端到端循环来演化 harness 代码，质量上升、成本下降，并尊重质量底线。相比原始 Python 参考实现约 1260 行的 claude_wrapper.py 与 meta_harness.py，Harness Forge 借助 Claude Code 原生的 Agent、Workflow、parallel 等能力，将外层编排压缩到约 75 行，仅保留不可省略的 0 成本确定性打分器作为核心领域逻辑。项目提供一键安装脚本、插件市场入口、可运行的 memory-summary 示例，以及帕累托前沿计算脚本，并强调防止 frozen-replay 缺陷、抗 Goodhart 底线与 held-out 评估纪律。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Meta-Harness 演化循环</p>
+    <div class="mermaid">graph TD
+  A[Incumbent Harness 初始候选] --> B[Frontier 帕累托前沿]
+  B --> C[Propose 并行提出 k 个变体]
+  C --> D[Validate 导入与类型检查]
+  D --> E[Score 0成本确定性打分]
+  E --> F[Pareto Merge 质量上升 成本下降]
+  F --> B
+  B --> G[Final 在保留测试集上最终评估]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">原生编排架构</p>
+    <div class="mermaid">graph LR
+  U[用户提示] --> S[meta-harness Skill]
+  S --> W[Workflow 外层循环]
+  W -->|parallel| P1[Proposer Agent 1]
+  W -->|parallel| P2[Proposer Agent 2]
+  W -->|parallel| P3[Proposer Agent k]
+  P1 --> SC[Scorer 脚本 0成本]
+  P2 --> SC
+  P3 --> SC
+  SC --> PA[pareto.py 前沿合并]
+  PA --> L[(results.jsonl 运行日志)]
+  PA --> W</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/001TMF/harness-forge" target="_blank">001TMF/harness-forge</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/LearnPrompt/luban-skill" target="_blank">鲁班 Luban</a></span>
+    <span class="stars">⭐ 368</span>
+  </div>
+  <p class="one-liner">把能用的Skill打磨成公共资产的工坊</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skills</span><span class="tag">Markdown (SKILL.md 工作流)</span><span class="tag">Claude Code Plugin Marketplace</span><span class="tag">skills.sh / npx skills</span><span class="tag">Python (回放验证脚本 backtest_scoring.py)</span><span class="tag">GitHub Actions</span>
+  </div>
+  <div class="summary">鲁班（Luban）是 LearnPrompt 出品的一个 Agent Skill 打磨工坊，定位是把'自己能用'的 Skill 升级为'能被理解、能被安装、能被传播、能被验证、能持续进化'的公共资产。它面向已经写过 Skill 但发布后无人使用、缺乏可复现证据、不知如何优化的开发者，提供一套结构化的审视与改写工作流。鲁班的核心方法论由五个动作构成：验料（挑战 Skill 是否值得存在）、访行（联网对标同行、看清生态位）、过尺（用结构、实测、活体三把尺打分）、慢刨（冻结基线、单提交单面、过验证门才保留）、回炉（发布后留回炉清单，从反馈进入下一轮）。它以 Claude Code Skill 形式分发，可通过 npx skills add 或 plugin marketplace 安装，对话触发后会先输出一份带 URL 的同行对标和三把尺评分，并在用户授权前停手不改一字。最终交付包括一份 13 节《打磨报告》、一张可截图的'出师证书'，以及沉淀进仓库的验证脚本与项目规矩。实战战绩是把 ai-news-radar 从 v0.6 打磨到 v0.7.0，揪出 Actions 全绿下静默停更 8 天的数据链路，用 83,725 条历史数据回放清除 327 条假 AI、零误伤。</div>
+  <div class="why-notable">在 Agent Skill 生态野蛮生长、人人都能写但少有人能让自己 Skill 被装、被复用的当下，鲁班用'工坊师傅'的隐喻把抽象的'打磨'具象成可执行的五步流程，并显式吸收了 hv-analysis 的横纵分析、darwin-skill 的棘轮评测、microsoft/SkillOpt 的 validation-gated 编辑等前沿方法论，形成一个有方法论传承、有真实战绩、有授权边界的 meta-skill。它对任何想把 prompt 工程或 Agent 工具沉淀成公共资产的团队都具备直接借鉴价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">鲁班五动作工作流</p>
+    <div class="mermaid">graph LR
+  A[用户提交 Skill] --> B[验料<br/>挑战是否值得存在]
+  B -->|值得| C[访行<br/>联网对标同行]
+  B -->|朽木| Z[直说不值得]
+  C --> D[过尺<br/>结构·实测·活体三把尺]
+  D --> E[给出三个打磨方向]
+  E -->|等待用户授权| F[慢刨<br/>冻结基线·过验证门]
+  F --> G[回炉<br/>发布+对标观察清单]
+  G --> H[出师证书+打磨报告]
+  G -.反馈.-> B</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">打磨产物与沉淀资产</p>
+    <div class="mermaid">graph TD
+  S[原始 Skill] --> L[鲁班工坊]
+  L --> R1[13节《打磨报告》<br/>验料/对标/评分/改写片段]
+  L --> R2[出师证书<br/>前后分数+新定位+绝活]
+  L --> R3[验证脚本入库<br/>如 backtest_scoring.py]
+  L --> R4[项目明文规矩<br/>如≥14天回放]
+  R1 --> U[Skill 作者]
+  R2 --> U
+  R3 --> Repo[GitHub 仓库]
+  R4 --> Repo</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/LearnPrompt/luban-skill" target="_blank">LearnPrompt/luban-skill</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
