@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-18</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-18 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/dzcmemory-web/bazi-ziwei-skill" target="_blank">八字紫微 Skill</a></span>
+    <span class="stars">⭐ 143</span>
+  </div>
+  <p class="one-liner">AI 命理排盘与综合印证 Skill</p>
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">Node.js >= 18</span><span class="tag">lunar-typescript</span><span class="tag">SKILL.md 开放标准</span><span class="tag">HTML 模板渲染</span><span class="tag">Markdown 提示词工程</span>
+  </div>
+  <div class="summary">bazi-ziwei-skill 是一款遵循 SKILL.md 开放标准的命理分析 Skill，可装入 Claude Code、Claude Desktop、Codex、Cursor、Hermes、OpenClaw 等支持该标准的 AI Agent。项目针对纯 LLM 排盘易出错的痛点，将「排盘」「补层」「分析」「渲染」拆分为四个独立环节：八字四柱、紫微十二宫、大运流年由内置算法库（源自开源项目 Yiqi，MIT 协议）确定性计算，避免 LLM 在日柱、日主、格局等基础环节出错；在排盘之上再补一层格局、旺衰、调候、刑冲合害、盖头截脚等算法，为 LLM 提供有据可依的输入；LLM 只负责文字分析，HTML 视觉则交给固定模板填槽。功能上提供八字独立、紫微独立、八字+紫微综合印证三种分析模式，支持 Markdown 长文深度版与单文件 HTML 水墨风海报版两种呈现形态，海报包含紫微 12 宫盘、八字四柱盘与六维交叉对账，可截图分享。算法层基于 Node.js 18+ 与 TypeScript，仅依赖 lunar-typescript 完成农历换算，所有排盘在本地完成、无需联网，隐私友好。仓库还附带合成示例命盘与海报成品，并提供命令行直接排盘的脚本入口。</div>
+  <div class="why-notable">在 LLM 命理类工具普遍依赖模型「猜排盘」的现状下，本项目以「算法精准排盘 + 格局补层 + 双体系交叉印证」的工程化思路给出了一个可复用范式：把确定性计算与生成式分析严格分层，并通过 SKILL.md 标准实现跨 Agent 通用。这一拆分思路对其他需要严谨基础数据的垂直领域 Skill（法律、医疗、财税等）具有直接借鉴价值，海报式 HTML 输出也展示了 LLM 结构化生成 + 固定模板渲染的优雅落地方式。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">数据流：从生辰到海报</p>
+    <div class="mermaid">graph LR
+  A[用户生辰] --> B[run-chart.ts<br/>算法层排盘]
+  B --> C[chart.json]
+  C --> D[dump-text.ts]
+  D --> E[chart.txt<br/>LLM 友好文本盘]
+  E --> F{分析模式}
+  F -->|长文| G[Markdown 散文提示词]
+  F -->|海报| H[严格 JSON 提示词]
+  G --> I[Markdown 深度报告]
+  H --> J[analysis.json]
+  J --> K[render.ts + 海报模板]
+  K --> L[单文件 HTML 水墨海报]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">分层架构：算法 / 提示词 / 模板</p>
+    <div class="mermaid">graph TD
+  subgraph Agent[AI Agent 层]
+    A1[Claude Code]
+    A2[Codex]
+    A3[Cursor]
+    A4[Hermes / OpenClaw]
+  end
+  Agent --> S[SKILL.md 入口]
+  S --> C[calculator 算法层]
+  S --> P[prompts 提示词层]
+  S --> T[templates 模板层]
+  C --> C1[yiqi-core 排盘核心]
+  C --> C2[bazi-enrich 格局/旺衰/调候补层]
+  P --> P1[八字独立]
+  P --> P2[紫微独立]
+  P --> P3[综合印证长文]
+  P --> P4[综合印证海报 JSON]
+  T --> T1[report-zonghe-poster.html]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/dzcmemory-web/bazi-ziwei-skill" target="_blank">dzcmemory-web/bazi-ziwei-skill</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sorathiya123/claude-ai-free-desktop-app" target="_blank">Claude AI 免费桌面客户端</a></span>
+    <span class="stars">⭐ 66</span>
+  </div>
+  <p class="one-liner">声称免费访问 Claude 的桌面应用</p>
+  <div class="tags">
+    <span class="tag">未公开（仓库无源码）</span><span class="tag">声称兼容 Ollama / LM Studio</span><span class="tag">声称支持 OpenRouter / DeepSeek / NVIDIA NIM 路由</span><span class="tag">目标平台：Windows / macOS / Linux 桌面</span>
+  </div>
+  <div class="summary">该仓库自称为一款跨平台（Windows / macOS / Linux）的非官方 Claude AI 桌面客户端，宣传可免费使用 Anthropic 的 Claude 模型，并提供多模态聊天、图像分析、文件上传、编程辅助、长上下文、系统托盘、快捷键、对话历史导出和自定义系统提示等功能；同时声称支持代理/路由（OpenRouter、DeepSeek 等）以及本地大模型（Ollama、LM Studio）集成。然而仓库中并未公开任何源代码，README 只提供一个 free-claude-app.zip 下载链接，并要求用户在系统提示风险时添加杀毒软件白名单，且 README 充斥大量 SEO 关键词（VS Code、JetBrains、CLI、NVIDIA NIM 等），版权信息标注为 2026 年，呈现出典型的可疑分发模式。从公开内容看，无法验证其声称的功能，建议谨慎对待，优先使用 Anthropic 官方渠道。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">宣称的系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户] --> APP[桌面客户端]
+  APP --> UI[聊天/图像/文件 UI]
+  APP --> CFG[代理与路由配置]
+  CFG --> R1[OpenRouter / DeepSeek]
+  CFG --> R2[NVIDIA NIM]
+  CFG --> R3[本地 LLM<br/>Ollama / LM Studio]
+  R1 --> C[Claude 模型]
+  R2 --> C
+  R3 --> LM[本地模型推理]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">分发与安装流程（含风险点）</p>
+    <div class="mermaid">flowchart LR
+  GH[GitHub Releases] -->|下载 ZIP| L[本地解压]
+  L --> EXE[运行可执行文件]
+  EXE -.可疑.-> AV[提示添加杀毒白名单]
+  EXE --> CFG[按应用内指引配置访问]
+  CFG --> USE[开始使用]
+  classDef risk fill:#ffe5e5,stroke:#c00;
+  class AV risk;</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sorathiya123/claude-ai-free-desktop-app" target="_blank">Sorathiya123/claude-ai-free-desktop-app</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/DanMcInerney/architect-loop" target="_blank">architect-loop</a></span>
+    <span class="stars">⭐ 500</span>
+  </div>
+  <p class="one-liner">Claude 规划 + Codex 执行的双代理协作环</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skills</span><span class="tag">OpenAI Codex CLI (>=0.133)</span><span class="tag">Bash / PowerShell 安装脚本</span><span class="tag">Git Worktree</span><span class="tag">Markdown 规范文档</span><span class="tag">Python (skills 校验脚本)</span>
+  </div>
+  <div class="summary">architect-loop 是一个面向 Claude Code 的技能（Skill）项目，将跨厂商的 AI 代理协作模式产品化：由 Claude（代号 Fable）担任架构师负责规划、设计与评审，由 OpenAI 的 GPT-5.5 Codex 担任建造者负责实现与研究，仓库本身则充当唯一的共享记忆。项目通过两条命令暴露能力：/architect 驱动构建循环，Fable 先在 docs/gates/ 写入只读验收门，再把任务切成 1–4 条互不重叠的 lane，每条 lane 在独立 git worktree 中由全新 codex exec 进程并行执行，最后 Fable 亲自跑门控命令、对照 diff 与意图判定再合并；/architect-research 驱动研究循环，先由廉价 Codex 侦察员勘察主题，Fable 据此为每个课题动态设计 3–6 条研究 lane，并行 Codex 研究员在严格预算与引用规范下作业，最后由 Fable 完成对抗性核验并独自撰写报告。设计上强调外部冻结门、worktree 隔离、新会话评审、HANDOFF 短目录式记忆等经过文献佐证的工程实践，默认无需 API Key，直接复用用户已有的 Claude Code 与 ChatGPT 订阅额度。</div>
+  <div class="why-notable">这是少见的把'跨厂商代理协作'从 Twitter 灵感落到可复现工程的开源实现：每条规则都附带文献依据（DESIGN.md），并直面代理工程的真问题——规划薄弱、共享文件互相踩踏、测试可被博弈、长上下文记忆腐化。对正在搭建多代理系统的团队，它提供了一份可直接借鉴的拓扑与门控范式。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">/architect 构建循环架构</p>
+    <div class="mermaid">graph TD
+  U[开发者] -->|/architect| F1[Fable 架构师会话]
+  F1 -->|写规格与验收门| G[docs/gates 只读门]
+  F1 -->|切分 1-4 条 lane| L[docs/lanes 任务说明]
+  L --> W1[worktree-1<br/>codex exec]
+  L --> W2[worktree-2<br/>codex exec]
+  L --> W3[worktree-N<br/>codex exec]
+  W1 --> R[原始结果与 diff]
+  W2 --> R
+  W3 --> R
+  R --> F2[Fable 全新会话<br/>判定与整合]
+  G --> F2
+  F2 -->|跑门控命令| T{门控通过?}
+  T -->|是| M[合并到主干]
+  T -->|否| D[丢弃 worktree<br/>从冻结点重派]
+  M --> H[docs/HANDOFF.md<br/>短目录式记忆]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">/architect-research 研究循环数据流</p>
+    <div class="mermaid">flowchart LR
+  Q[研究问题] --> S[Codex 侦察员<br/>~10 次检索映射主题]
+  S --> P[Fable 设计 3-6 条<br/>主题专属 lane]
+  P -->|检查重叠与缺口| P
+  P --> A[Codex 研究员 A]
+  P --> B[Codex 研究员 B]
+  P --> C[Codex 研究员 C]
+  A --> E[Findings: URL+日期<br/>+引文+置信度]
+  B --> E
+  C --> E
+  E --> V[Fable 核验<br/>≥2 独立来源 + 反证检索]
+  V --> WR[单作者撰写<br/>面向决策的报告]
+  WR --> PRD[输出为构建循环 PRD]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/DanMcInerney/architect-loop" target="_blank">DanMcInerney/architect-loop</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ruvnet/agent-harness-generator" target="_blank">MetaHarness 智能体脚手架工厂</a></span>
+    <span class="stars">⭐ 164</span>
+  </div>
+  <p class="one-liner">为任意仓库定制专属 AI 代理工具链</p>
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">Node.js / npx CLI</span><span class="tag">Model Context Protocol (MCP)</span><span class="tag">Claude Code / OpenAI Codex / Hermes</span><span class="tag">GitHub Actions</span><span class="tag">RVM 微虚拟机沙箱</span><span class="tag">Mermaid / GitHub Pages Studio</span>
+  </div>
+  <div class="summary">MetaHarness（agent-harness-generator）是 ruvnet 开源的「元工具链生成器」，定位是为每个代码仓库铸造一套专属的 AI Agent Harness，而非又一个 Agent 框架。用户只需提供 GitHub URL 或空白模板，即可在浏览器或终端中通过 `npx metaharness` 在 60 秒内生成一份可发布到 npm 的 .zip 包，包含仓库感知的 CLI、本地 MCP 服务器、按项目作用域的记忆命名空间、由实际文件结构推导的技能、治理策略，以及由见证者签名的发布溯源。生成的 harness 默认适配九大宿主：Claude Code、OpenAI Codex、pi.dev、Hermes、OpenClaw、RVM 硬件隔离沙箱、GitHub Copilot、OpenCode 以及非交互式的 GitHub Actions CI/CD。项目还内置 `metaharness score` 静态评分（不执行仓库代码），可在搭建前预估适配度、构建成功率、工具安全性与单次运行成本；并提供 `@metaharness/router` 路由器，根据自有评测数据自动选择性价比最高的模型，DRACO 基准实测可让小模型以约十分之一成本达到前沿模型质量。MCP 被设计为可插拔适配面，默认禁用网络、Shell、写文件，配套 `harness mcp-scan` 工具像 `npm audit` 一样静态审计代理工具的危险授权。仓库已通过 568 项测试，并提供 19 个垂直模板（编码、DevOps 等）开箱即用。</div>
+  <div class="why-notable">在 Agent 框架同质化严重的当下，MetaHarness 反向定位为「Agent 框架的工厂」，把模型当作可替换部件，把 harness（脚手架本身）作为产品；它将仓库分析、记忆作用域、治理策略、签名发布、跨宿主适配与成本路由整合为一条可复现的流水线，且默认离线、默认拒绝危险权限。这种「先评分再搭建、生成即拥有、按仓库定制」的范式，对希望在企业内规模化推广 AI 编码代理而又担心安全与成本失控的团队，具备直接落地价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">MetaHarness 生成与分发流程</p>
+    <div class="mermaid">graph TD
+  A[GitHub 仓库 URL 或空白模板] --> B[npx metaharness]
+  B --> C{静态分析 score}
+  C -->|不执行代码| D[推荐 Agents/Skills/MCP 工具]
+  D --> E[生成 Harness 包]
+  E --> F[CLI + MCP Server]
+  E --> G[作用域记忆 + 治理策略]
+  E --> H[见证者签名溯源]
+  F --> I[发布到 npm 私有 Scope]
+  I --> J[团队成员 npx @org/your-harness]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">多宿主适配与安全网关</p>
+    <div class="mermaid">graph LR
+  H[Harness 输出] --> CC[Claude Code]
+  H --> CX[OpenAI Codex]
+  H --> PI[pi.dev]
+  H --> HM[Hermes]
+  H --> OC[OpenClaw]
+  H --> RVM[RVM 硬件沙箱]
+  H --> CP[GitHub Copilot]
+  H --> OK[OpenCode]
+  H --> GA[GitHub Actions]
+  H --> MCP[MCP 适配层]
+  MCP --> P[默认拒绝策略]
+  P --> SCAN[harness mcp-scan 静态审计]
+  P --> AUDIT[审计日志 / 30s 超时 / 8 次每轮]
+  H --> R["@metaharness/router 模型路由"]
+  R --> M1[低价模型]
+  R --> M2[前沿模型]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ruvnet/agent-harness-generator" target="_blank">ruvnet/agent-harness-generator</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/omnigent-ai/omnigent" target="_blank">Omnigent</a></span>
+    <span class="stars">⭐ 3,506</span>
+  </div>
+  <p class="one-liner">统一编排多种AI Agent的元框架</p>
+  <div class="tags">
+    <span class="tag">Python 3.12+</span><span class="tag">uv / pip / Homebrew</span><span class="tag">Node.js 22 LTS (Claude/Codex/Pi CLI)</span><span class="tag">tmux</span><span class="tag">bubblewrap (Linux) / seatbelt (macOS)</span><span class="tag">Modal / Daytona / Islo 云沙箱</span><span class="tag">YAML (Agent 定义)</span><span class="tag">Web UI + macOS 桌面应用</span>
+  </div>
+  <div class="summary">Omnigent 是一个开源的 AI 智能体框架与元 harness（meta-harness），旨在为 Claude Code、Codex、Cursor、Pi 以及用户自定义的 Agent 提供统一的编排与协作层。开发者无需重写代码即可在不同 Agent harness 之间自由切换或组合，并能在同一会话中让多个 Agent 协同工作，例如让一个 Agent 评审另一个 Agent 的产出，或将任务拆分给各有所长的 Agent 并行处理。项目主打跨设备协作：会话可在终端、浏览器、手机之间无缝延续，消息、子 Agent、终端与文件均保持同步，团队成员还可共享会话进行实时观摩、共驾或 fork 分叉。模型层面兼容官方 API Key、Claude/ChatGPT 订阅及任意兼容网关，并可选 Databricks 工作区作为模型提供方。运行时支持本地 macOS seatbelt、Linux bubblewrap 沙箱隔离，也可推送到 Modal、Daytona、Islo 等云端一次性沙箱中执行，免去本地依赖。治理方面提供策略系统（policies），可在风险操作前暂停等待审批、限制工具调用范围或设定花销上限，粒度覆盖整个服务器、单个 Agent 或单条会话。仓库内置 Polly（多 Agent 编码编排者）与 Debby（双脑头脑风暴伙伴）两个示例 Agent，便于快速上手。整体基于 Python 3.12+，通过 uv/pip/Homebrew 一键安装，附带本地 Web UI 与 macOS 桌面应用。</div>
+  <div class="why-notable">在 AI Coding Agent 百花齐放、各家 harness 各自为政的当下，Omnigent 把 Claude Code、Codex、Cursor、Pi 等异构 Agent 抽象到同一编排层，让「多 Agent 互审、跨厂商协同」从概念变成可落地的工作流，配合策略治理与云沙箱，明显比单一 harness 更接近企业级生产可用。跨设备会话与团队共享会话的设计，也指向了 Agent 协作工具的下一个形态。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与多 Harness 编排</p>
+    <div class="mermaid">graph TD
+  U[用户 终端/浏览器/手机/桌面App] --> S[Omnigent 服务器 + Web UI :6767]
+  S --> P[策略层 Policies<br/>审批/预算/工具限制]
+  P --> O[Orchestrator 编排器<br/>Polly / Debby / 自定义YAML]
+  O --> H1[Claude Code Harness]
+  O --> H2[Codex Harness]
+  O --> H3[Cursor Harness]
+  O --> H4[Pi Harness]
+  O --> H5[OpenAI Agents / 自定义]
+  H1 & H2 & H3 & H4 & H5 --> SB[沙箱层]
+  SB --> L1[本地 bwrap/seatbelt]
+  SB --> L2[Modal 云沙箱]
+  SB --> L3[Daytona 云沙箱]
+  SB --> L4[Islo 云沙箱]
+  S --> M[模型网关<br/>Anthropic / OpenAI / Databricks / 兼容API]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">多 Agent 协作会话流</p>
+    <div class="mermaid">sequenceDiagram
+  participant User as 用户
+  participant Polly as Polly 编排者
+  participant CC as Claude Code 子Agent
+  participant CX as Codex 子Agent
+  participant Rev as 跨厂商评审Agent
+  User->>Polly: 提交编码任务
+  Polly->>Polly: 拆解任务 + 分配 git worktree
+  par 并行执行
+    Polly->>CC: 子任务A
+    Polly->>CX: 子任务B
+  end
+  CC-->>Polly: 提交 diff A
+  CX-->>Polly: 提交 diff B
+  Polly->>Rev: 路由给非同厂商评审
+  Rev-->>Polly: 评审反馈
+  Polly-->>User: 汇总结果待合并</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/omnigent-ai/omnigent" target="_blank">omnigent-ai/omnigent</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
