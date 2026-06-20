@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-20</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-20 · 共 2 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sorathiya123/claude-ai-free-desktop-app" target="_blank">Claude AI 免费桌面客户端（声称）</a></span>
+    <span class="stars">⭐ 140</span>
+  </div>
+  <p class="one-liner">声称免费访问 Claude 的桌面应用（高风险）</p>
+  <div class="tags">
+    
+  </div>
+  <div class="summary">该仓库自称是一个跨平台（Windows / macOS / Linux）桌面客户端，号称为用户提供免费访问 Anthropic Claude AI 的能力，宣传卖点包括多模态对话、图像分析、文件上传、编程辅助、长上下文、系统托盘、快捷键、代理与路由配置，以及与 Ollama、LM Studio、OpenRouter、NVIDIA NIM、DeepSeek 等本地或第三方 LLM 的兼容。然而仓库本身并未提供任何源代码、构建脚本、依赖清单或技术实现细节，所有功能描述均停留在 README 的营销文案层面，下载入口指向单一的 free-claude-app.zip 压缩包，且 README 关键词大量堆砌（claude code、anthropic、proxy、free api、vscode extension、jetbrains、cli 等），描述充斥 SEO 词汇并自带「需添加杀毒软件白名单」「访问方式可能不稳定」等提示。综合命名仿冒、无源码、单一可执行下载、关键词堆砌、规避杀毒等典型特征，该项目高度疑似伪装成 AI 工具的恶意软件分发渠道，而非真实的开源桌面客户端。Anthropic 官方并未提供此类「免费 Claude」桥接，README 自身也声明与 Anthropic 无任何关联。</div>
+  <div class="why-notable">值得关注的不是它的功能，而是它的风险信号：仿冒知名 AI 品牌、无源码、要求关闭杀毒、单一二进制下载，是社区中常见的伪装成「免费 AI 客户端」的恶意软件分发模式。建议读者不要下载运行该 zip，遇到类似仓库可作为反面案例参考，识别 GitHub 上利用热门 AI 关键词进行投毒的套路。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">可疑分发链路</p>
+    <div class="mermaid">graph TD
+  A[用户搜索 free claude] --> B[GitHub 仓库 README]
+  B --> C[Release 页面 free-claude-app.zip]
+  C --> D[本地解压可执行文件]
+  D --> E[提示添加杀毒白名单]
+  E --> F{无源码可审计}
+  F --> G[潜在恶意行为风险]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">可疑特征识别</p>
+    <div class="mermaid">graph LR
+  R[仓库] --> S1[关键词堆砌 SEO]
+  R --> S2[无源码 仅二进制]
+  R --> S3[要求杀毒例外]
+  R --> S4[仿冒 Anthropic 品牌]
+  S1 --> X[高风险信号]
+  S2 --> X
+  S3 --> X
+  S4 --> X</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sorathiya123/claude-ai-free-desktop-app" target="_blank">Sorathiya123/claude-ai-free-desktop-app</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/agiwhitelist/tokdiet" target="_blank">tokdiet</a></span>
+    <span class="stars">⭐ 68</span>
+  </div>
+  <p class="one-liner">给AI Agent上下文瘦身的本地代理</p>
+  <div class="tags">
+    <span class="tag">Node.js (>=20)</span><span class="tag">TypeScript</span><span class="tag">SQLite</span><span class="tag">SSE 流式代理</span><span class="tag">Claude Code Plugin</span>
+  </div>
+  <div class="summary">tokdiet 是一个本地流式反向代理，部署在 AI 编程代理（Claude Code、Cursor、Codex）与模型 API（Anthropic、OpenAI、Gemini、MiniMax）之间。它对每一次请求计量 token 数量与美元成本，对臃肿的上下文进行智能压缩以削减按 token 计费的 API 开销，同时通过 shadow-eval 影子评测验证回答质量未下降。项目核心理念是把上下文视作虚拟内存：热数据保留，冷数据可恢复地分页到本地 SQLite，而不是盲目删除。它对 Claude Code 的 prompt caching 和 extended thinking 特性做了专门兼容，遇到 cache_control 边界与签名 thinking 块绝不改写，并采用 fail-open 策略确保异常时透明转发。基于 66 任务 A/B 基准测试，token 输入降低约 71%，质量与基线持平（64/66 vs 63/66）。配套提供 ccusage 风格的本地仪表盘、SQLite 存储和 Claude Code 插件市场安装方式，API key 全程不落盘不入日志。</div>
+  <div class="why-notable">在一众只会展示账单或盲目压缩的工具中，tokdiet 是少数同时做到削减成本并以 LLM-judge + 影子评测量化证明质量未退化的方案，并对 Claude Code 的缓存与 thinking 块做了精细兼容。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与请求流</p>
+    <div class="mermaid">graph LR
+  A[AI Agent<br/>Claude Code/Cursor/Codex] -->|请求 + API Key| B[tokdiet 代理<br/>localhost:7787]
+  B --> C[拦截器<br/>识别 Provider]
+  C --> D[计量器<br/>Token + 成本]
+  D --> E[预算控制<br/>会话/日/仓库]
+  E --> F[压缩器<br/>去重/省略/中段摘要]
+  F --> G[质量护栏<br/>shadow-eval + safe-mode]
+  G -->|byte-faithful 转发| H[模型 API<br/>Anthropic/OpenAI/Gemini/MiniMax]
+  H -->|SSE 流式| B
+  B -->|逐 token 回传| A
+  G --> I[(SQLite 存储)]
+  I --> J[本地仪表盘<br/>:7878]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">上下文虚拟内存机制</p>
+    <div class="mermaid">graph TD
+  A[原始上下文] --> B{冷热分析}
+  B -->|热数据<br/>近期/Pinned/相关| C[保留在 Prompt 中]
+  B -->|冷数据<br/>陈旧/冗余| D[生成可恢复 Stub]
+  D --> E[(SQLite 持久化<br/>按 ID 存全文)]
+  C --> F[发送到模型 API]
+  D --> F
+  F --> G[响应]
+  G --> H[Shadow-Eval 影子评测]
+  H -->|质量下降| I[触发 Safe-Mode<br/>停止压缩]
+  H -->|质量持平| J[继续压缩策略]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/agiwhitelist/tokdiet" target="_blank">agiwhitelist/tokdiet</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
