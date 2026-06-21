@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-21</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-21 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sorathiya123/claude-ai-free-desktop-app" target="_blank">Claude AI 免费桌面客户端（可疑仓库）</a></span>
+    <span class="stars">⭐ 179</span>
+  </div>
+  <p class="one-liner">声称免费使用 Claude 的可执行包仓库</p>
+  <div class="tags">
+    <span class="tag">未公开（仓库无源码，仅发布预编译 Windows/macOS/Linux 二进制）</span>
+  </div>
+  <div class="summary">该仓库自称是一个跨平台的非官方 Claude AI 桌面客户端，宣传支持 Windows、macOS 和 Linux，提供聊天、编码辅助、图像分析、长上下文、系统托盘、快捷键、代理与路由、Ollama/LM Studio 等本地 LLM 集成、对话导出与自定义系统提示等功能，并通过 GitHub Release 下载 free-claude-app.zip 压缩包安装使用。然而，仓库存在多处明显异常：一是仓库内未提供任何可审计的源码，README 同时声明欢迎贡献却只发布预编译压缩包；二是描述与文件名堆砌大量 SEO 关键词（anthropic free api、deepseek、ollama、jetbrains、vscode 等），与实际内容关联薄弱；三是引导用户在杀毒软件报警时'添加白名单例外'，这是恶意软件分发的典型话术；四是版权标注为 2026 年，README 截图日期为未来时间；五是 Anthropic 官方并未提供合法的免费 API 访问途径，所谓'free Claude access'机制不透明。综合判断，此仓库更接近通过 GitHub Release 分发可执行文件的可疑项目，而非可信的开源桌面客户端，不建议下载运行。</div>
+  <div class="why-notable">这个项目值得关注的原因不在于技术价值，而在于它是研究 GitHub 上'免费 AI 客户端'类社会工程攻击的典型样本：通过蹭 Claude、Ollama、DeepSeek 等热门关键词获取搜索流量，以 MIT 协议和精美 README 包装可信度，再引导用户运行未签名的可执行文件并关闭杀毒。建议安全研究者关注此类模式，普通用户避免下载，如需 Claude 桌面体验请使用 Anthropic 官方应用或开源且源码可审计的客户端。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">README 宣称的架构</p>
+    <div class="mermaid">graph TD
+  A[用户桌面应用] --> B[本地代理/路由层]
+  B --> C[Anthropic Claude API]
+  B --> D[OpenRouter/NVIDIA NIM]
+  B --> E[本地 LLM: Ollama / LM Studio]
+  A --> F[对话历史/导出]
+  A --> G[系统托盘与快捷键]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">分发与风险路径</p>
+    <div class="mermaid">flowchart LR
+  R[GitHub 仓库 README] -->|SEO 关键词吸引| U[用户]
+  U -->|点击 Release 链接| Z[free-claude-app.zip]
+  Z --> X[解压执行未签名二进制]
+  X -->|README 提示| AV[添加杀毒白名单]
+  AV --> RISK[潜在恶意行为执行风险]
+  R -.无源码.-> AUDIT[无法审计]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sorathiya123/claude-ai-free-desktop-app" target="_blank">Sorathiya123/claude-ai-free-desktop-app</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/lokikill123/codex-token-skills" target="_blank">Codex Token Skills</a></span>
+    <span class="stars">⭐ 77</span>
+  </div>
+  <p class="one-liner">Codex CLI 省 token 利器</p>
+  <div class="tags">
+    <span class="tag">Codex CLI</span><span class="tag">DeepSeek V4 Pro</span><span class="tag">Markdown</span><span class="tag">Shell</span>
+  </div>
+  <div class="summary">Codex Token Skills 是一套专为 DeepSeek V4 Pro 在 Codex CLI 环境下优化的 skill 集合，核心目标是利用前缀缓存机制大幅降低 token 消耗。项目包含两个 skill：token-saver 通过 Smart 双模式策略，对简单任务禁止 preamble、计划、解释和验证输出，对复杂任务允许简短交流但严格控制冗余，实测可节省 60-80% token；memory 则通过 MEMORY.md 文件实现全局持久记忆，在上下文窗口被压缩后自动恢复用户偏好、项目结构和历史决策，每次仅消耗约 800 token 即可保持跨对话一致性。项目的关键设计原则是 skill 文件一次写定永不修改，将动态内容放到项目级 AGENTS.md，从而最大化前缀缓存命中率，节省 50% 以上的上下文处理成本。安装方式简单，可通过 git clone 或 skill-installer 部署到 ~/.codex/skills/ 目录。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">前缀缓存优化架构</p>
+    <div class="mermaid">graph LR
+  A[System Prompt<br/>固定] --> D[前缀缓存命中区]
+  B[AGENTS.md<br/>项目级动态] --> D
+  C[SKILL.md<br/>冻结不变] --> D
+  D --> E[User Message<br/>变动部分]
+  E --> F[DeepSeek V4 Pro]
+  F --> G[节省 50%+ Token]
+  style D fill:#90EE90
+  style C fill:#FFD700</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">双 Skill 协作流程</p>
+    <div class="mermaid">graph TD
+  A[用户输入] --> B{任务类型判断}
+  B -->|简单任务| C[token-saver<br/>极简模式]
+  B -->|复杂任务| D[token-saver<br/>受控交流模式]
+  C --> E[输出: 路径 + done]
+  D --> F[简短结构化输出]
+  G[memory skill] -.读取.-> H[MEMORY.md]
+  H -.恢复.-> I[用户偏好/项目结构/历史决策]
+  I --> B
+  E --> J[上下文压缩]
+  F --> J
+  J -.写入.-> H</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/lokikill123/codex-token-skills" target="_blank">lokikill123/codex-token-skills</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/zyn26/minimax-m3-desktop-app-free-api" target="_blank">MiniMax M3 桌面应用免费 API</a></span>
+    <span class="stars">⭐ 73</span>
+  </div>
+  <p class="one-liner">MiniMax M3 模型桌面端免费 API 接入项目</p>
+  <div class="tags">
+    <span class="tag">MiniMax M3 LLM</span><span class="tag">Hugging Face API</span><span class="tag">本地 LLM 推理</span><span class="tag">Agentic AI 框架</span><span class="tag">桌面应用</span>
+  </div>
+  <div class="summary">该仓库以 MiniMax M3 模型为核心，宣称提供桌面端应用与免费 API 访问能力，目标是让开发者无需复杂部署即可调用大语言模型完成各类 AI 任务。项目描述中涵盖了 1M 超长上下文窗口、稀疏注意力（MSA）架构、原生多模态、计算机使用与控制（Computer Use）、自主编码助手以及多智能体 Agentic AI 框架等概念，并提及在 SWE-Bench Pro 等软件工程基准上的应用场景，覆盖工作流自动化、多智能体协作等方向。同时提到与 Hugging Face 的 API 接入以及本地 LLM 推理能力，意在打通云端调用与本地部署两条路径。需要注意的是，仓库 README 当前仅由关键词堆叠组成，缺少安装说明、使用示例、架构文档和源码细节，更像是一个 SEO 导向的占位仓库，实际可用性与功能完成度需要进一步验证后再做评估。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构概览</p>
+    <div class="mermaid">graph TD
+  U[用户/开发者] --> D[桌面应用]
+  D --> API[免费 API 网关]
+  API --> HF[Hugging Face 接入]
+  API --> L[本地 LLM 推理]
+  HF --> M[MiniMax M3 模型]
+  L --> M
+  M --> AG[Agentic 多智能体框架]
+  AG --> CU[计算机控制]
+  AG --> CA[自主编码助手]
+  AG --> WF[工作流自动化]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant App as 桌面客户端
+  participant API as 免费 API
+  participant M3 as MiniMax M3
+  U->>App: 输入指令/多模态内容
+  App->>API: 转发请求
+  API->>M3: 调用 1M 上下文推理
+  M3-->>API: 返回生成结果
+  API-->>App: 流式响应
+  App-->>U: 展示结果或执行操作</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/zyn26/minimax-m3-desktop-app-free-api" target="_blank">zyn26/minimax-m3-desktop-app-free-api</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/agiwhitelist/tokdiet" target="_blank">TokDiet</a></span>
+    <span class="stars">⭐ 69</span>
+  </div>
+  <p class="one-liner">AI编码代理的本地计费与降本代理</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">流式 HTTP 反向代理</span><span class="tag">Anthropic / OpenAI / Gemini / MiniMax API</span><span class="tag">本地 Web Dashboard</span>
+  </div>
+  <div class="summary">TokDiet 是一个面向 AI 编码代理（Claude Code、Cursor、Codex）的本地流式反向代理，位于代理与各大模型 API（Anthropic、OpenAI、Gemini、MiniMax）之间。它会实时拦截并转发请求与响应流，对每一次调用进行 token 用量与美元成本的精细计量，类似 ccusage 风格的度量，并通过本地实时仪表盘可视化展示。其核心增值在于上下文压缩：当上下文体积膨胀、推高按 token 计费的 API 支出时，TokDiet 会在保留语义完整性的前提下精简冗余内容，从而显著降低成本。同时它内置 shadow-eval 影子评估机制，对压缩前后的输出质量进行对比验证，证明降本不会牺牲生成质量。整体方案部署在本地，对开发者透明，无需更换客户端即可接入，适合希望追踪、审计并优化大模型调用成本的个人与团队。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph LR
+  A[AI 编码代理<br/>Claude Code / Cursor / Codex] --> B[TokDiet 本地反向代理]
+  B --> C[上下文压缩器]
+  B --> D[Token 与成本计量]
+  B --> E[Shadow-Eval 质量评估]
+  C --> F[模型 API<br/>Anthropic / OpenAI / Gemini / MiniMax]
+  F --> B
+  D --> G[本地实时 Dashboard]
+  E --> G</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求处理数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant Agent as 编码代理
+  participant Proxy as TokDiet 代理
+  participant Comp as 上下文压缩
+  participant API as 模型 API
+  participant Dash as 本地仪表盘
+  Agent->>Proxy: 发送请求(含上下文)
+  Proxy->>Comp: 检测并压缩冗余上下文
+  Comp->>API: 转发精简后请求
+  API-->>Proxy: 流式返回响应
+  Proxy-->>Agent: 透传响应流
+  Proxy->>Proxy: 统计 token 与美元成本
+  Proxy->>Dash: 上报计量与评估数据
+  Proxy->>Proxy: Shadow-Eval 对比质量</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/agiwhitelist/tokdiet" target="_blank">agiwhitelist/tokdiet</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/001TMF/harness-forge" target="_blank">Harness-Forge</a></span>
+    <span class="stars">⭐ 67</span>
+  </div>
+  <p class="one-liner">让 Claude Code 自我进化脚手架</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">Claude Code Skills</span><span class="tag">Pareto 多目标优化</span><span class="tag">Prompt Engineering</span><span class="tag">RAG / 检索增强</span>
+  </div>
+  <div class="summary">Harness-Forge 是 Meta-Harness（Lee et al. 2026）的原生复现实现，将 Claude Code 转化为一个能够自我演化的元脚手架（Meta-Harness）。项目的核心思想是：在保持底层模型固定不变的前提下，通过迭代演化模型周边的脚手架组件——包括记忆（memory）、检索（retrieval）、上下文（context）和提示词（prompts），来持续提升整体智能体的表现。其工作机制基于一个原生的 propose→score→Pareto 三阶段循环：首先生成候选脚手架方案，然后对候选方案进行多维度评分，最后通过 Pareto 前沿筛选保留在多目标上均表现优秀的方案。这种方式避免了对模型本身的微调成本，转而通过优化模型外围的工程化组件来获得性能增益，是一种轻量但有效的智能体自进化范式。项目以 Claude Code Skill 的形式交付，方便集成到现有 Claude Code 工作流中。</div>
+  <div class="why-notable">在不微调模型的前提下，通过 Pareto 进化脚手架组件实现智能体自我提升，是一种新颖的轻量级自进化范式。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Propose-Score-Pareto 演化循环</p>
+    <div class="mermaid">graph LR
+  A[当前脚手架] --> B[Propose<br/>提出候选变体]
+  B --> C[Score<br/>多维度评分]
+  C --> D[Pareto 筛选<br/>保留前沿方案]
+  D --> E[更新脚手架]
+  E --> A
+  D -.淘汰.-> F[劣势方案]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Meta-Harness 系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户任务] --> CC[Claude Code<br/>固定模型]
+  subgraph Harness[可演化脚手架层]
+    M[Memory 记忆]
+    R[Retrieval 检索]
+    CTX[Context 上下文]
+    P[Prompts 提示词]
+  end
+  CC <--> Harness
+  Harness --> EVO[Meta-Harness<br/>演化引擎]
+  EVO -->|propose-score-pareto| Harness
+  CC --> OUT[任务输出]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/001TMF/harness-forge" target="_blank">001TMF/harness-forge</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
