@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-22</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-22 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/mukul975" target="_blank">AgentSkills 网络安全技能库</a></span>
+    <span class="stars">⭐ 361 <span class="stars-today">(+361 today)</span></span>
+  </div>
+  <p class="one-liner">面向AI智能体的754项结构化网络安全技能集</p>
+  <div class="tags">
+    <span class="tag">agentskills.io 标准</span><span class="tag">MITRE ATT&CK</span><span class="tag">NIST CSF 2.0</span><span class="tag">MITRE ATLAS</span><span class="tag">D3FEND</span><span class="tag">NIST AI RMF</span><span class="tag">Markdown/YAML 技能定义</span>
+  </div>
+  <div class="summary">该项目是一个面向AI智能体的网络安全技能标准化库，提供 754 项结构化的网络安全技能定义，覆盖 26 个安全领域。项目遵循 agentskills.io 标准规范，将每项技能与五大权威安全框架进行映射对齐，包括 MITRE ATT&CK（攻击战术与技术）、NIST CSF 2.0（网络安全框架）、MITRE ATLAS（AI系统对抗威胁）、D3FEND（防御技术知识图谱）以及 NIST AI RMF（AI风险管理框架），从而让AI智能体在执行红队、蓝队、合规审计、漏洞分析等任务时具备可追溯、可审计的能力基础。该技能库具备良好的工具链兼容性，可直接接入 Claude Code、GitHub Copilot、Codex CLI、Cursor、Gemini CLI 等 20 余个主流 AI 编程与代理平台，让开发者和安全工程师在不同 IDE 或 CLI 环境中快速调用统一的安全技能描述。项目采用 Apache 2.0 开源协议，便于企业在内部安全运营、SOC 自动化、威胁建模、AI 安全治理等场景下二次开发与商业化使用。整体上，它扮演了AI智能体与传统安全知识体系之间的「翻译层」，把分散的安全标准转化为机器可读、可组合、可执行的技能模块。</div>
+  <div class="why-notable">在 AI 智能体加速进入安全运营领域的当下，缺乏统一、可审计的能力描述标准是落地的核心瓶颈。该项目以五大权威框架为锚点，把 754 项安全技能转化为机器可读的标准模块，相当于为 AI 安全代理提供了一套通用的「能力词典」，既解决了跨平台复用问题，也为合规与可追溯审计奠定了基础，对构建可信的 AI 驱动安全自动化体系具有标杆意义。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能库架构与框架映射</p>
+    <div class="mermaid">graph TD
+  A[AgentSkills 技能库<br/>754 项技能] --> B[26 个安全领域分类]
+  B --> C1[MITRE ATT&CK]
+  B --> C2[NIST CSF 2.0]
+  B --> C3[MITRE ATLAS]
+  B --> C4[D3FEND]
+  B --> C5[NIST AI RMF]
+  A --> D[agentskills.io 标准]
+  D --> E1[Claude Code]
+  D --> E2[GitHub Copilot]
+  D --> E3[Cursor]
+  D --> E4[Gemini CLI]
+  D --> E5[Codex CLI 等 20+ 平台]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">AI 智能体调用数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 安全工程师
+  participant Agent as AI 智能体
+  participant Skills as AgentSkills 库
+  participant FW as 安全框架映射
+  U->>Agent: 下发安全任务<br/>(如威胁狩猎)
+  Agent->>Skills: 检索匹配技能
+  Skills->>FW: 查询 ATT&CK / D3FEND 标签
+  FW-->>Skills: 返回战术技术上下文
+  Skills-->>Agent: 输出结构化技能定义
+  Agent->>U: 执行并生成可审计报告</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/mukul975" target="_blank">sponsors/mukul975</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/asgeirtj" target="_blank">主流 AI 系统提示词合集</a></span>
+    <span class="stars">⭐ 282 <span class="stars-today">(+282 today)</span></span>
+  </div>
+  <p class="one-liner">汇集主流 AI 产品系统提示词</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">Plain Text</span><span class="tag">Git</span>
+  </div>
+  <div class="summary">该仓库由 asgeirtj 维护，是一个持续更新的系统提示词（System Prompts）档案库，专门收集和整理来自各大主流 AI 厂商及产品的系统提示词原文。覆盖范围相当广泛：Anthropic 旗下的 Claude Fable 5、Opus 4.8、Claude Code、Claude Design 等系列；OpenAI 旗下的 ChatGPT 5.5 Thinking、GPT 5.5 Instant、Codex 等模型；Google 旗下的 Gemini 3.5 Flash、3.1 Pro 以及 Antigravity；以及 xAI 的 Grok、Cursor、GitHub Copilot、VS Code 内置助手、Perplexity 等开发者和搜索类 AI 工具。项目以纯文本/Markdown 形式归档这些提示词，便于研究者、提示词工程师和 AI 产品开发者对比不同厂商在身份设定、能力声明、安全护栏、工具调用规范、响应风格等方面的设计差异。仓库定位偏向研究与参考资料库，没有复杂的代码逻辑或运行时依赖，核心价值在于内容本身的全面性与时效性，作者承诺会随着各产品迭代而定期更新。对于希望理解大型语言模型如何被'调教'成具体产品形态、如何平衡能力与安全、以及如何编排工具使用流程的从业者来说，这是一份珍贵的一手对照素材。</div>
+  <div class="why-notable">系统提示词通常被厂商视为商业机密，公开整理并交叉对比的资料极为稀缺。该仓库将分散的逆向提取成果集中归档，让研究者能够直接观察 Claude、GPT、Gemini、Grok 等顶级模型在身份塑造、工具调用、安全策略上的真实写法，是研究 LLM 产品化与提示词设计范式的重要参考。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">仓库内容组织结构</p>
+    <div class="mermaid">graph TD
+  A[系统提示词合集] --> B[Anthropic]
+  A --> C[OpenAI]
+  A --> D[Google]
+  A --> E[xAI 及其他]
+  B --> B1[Claude Fable 5]
+  B --> B2[Opus 4.8]
+  B --> B3[Claude Code]
+  B --> B4[Claude Design]
+  C --> C1[ChatGPT 5.5 Thinking]
+  C --> C2[GPT 5.5 Instant]
+  C --> C3[Codex]
+  D --> D1[Gemini 3.5 Flash]
+  D --> D2[Gemini 3.1 Pro]
+  D --> D3[Antigravity]
+  E --> E1[Grok]
+  E --> E2[Cursor]
+  E --> E3[GitHub Copilot]
+  E --> E4[VS Code]
+  E --> E5[Perplexity]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">研究者使用流程</p>
+    <div class="mermaid">graph LR
+  U[研究者/开发者] --> R[克隆仓库]
+  R --> S[选择目标厂商]
+  S --> P[阅读提示词原文]
+  P --> C[横向对比分析]
+  C --> O1[提炼设计模式]
+  C --> O2[复用安全策略]
+  C --> O3[改进自有 Prompt]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/asgeirtj" target="_blank">sponsors/asgeirtj</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sorathiya123/claude-ai-free-desktop-app" target="_blank">Claude AI 免费桌面客户端（可疑项目）</a></span>
+    <span class="stars">⭐ 180</span>
+  </div>
+  <p class="one-liner">声称免费访问 Claude 的可疑桌面应用</p>
+  <div class="tags">
+    
+  </div>
+  <div class="summary">该仓库自称是一个跨平台（Windows/macOS/Linux）的非官方桌面客户端，宣传可让用户免费访问 Anthropic 的 Claude AI，并罗列了大量功能：多模态对话、代码助手、长上下文、系统托盘、热键、代理/路由支持、本地 LLM（Ollama、LM Studio）兼容、对话导出等。然而仓库本身并不包含实际源代码，仅有一份 README 与一个指向 GitHub Releases 的 zip 下载链接（free-claude-app.zip）。README 中存在多处典型的可疑信号：声称免费提供需付费的商业服务、要求用户在杀毒软件提示时『添加例外』、版权标注为 2026 年、描述区堆砌了大量与项目本身关联不大的 SEO 关键词（nvidia nim、openrouter、deepseek、vscode extension、jetbrains 等）、缺乏构建脚本、依赖清单、技术文档与提交历史。综合判断，这更像是借 Claude 热度进行流量诱导或潜在恶意软件分发的『仅发布二进制』型仓库，而非真正的开源桌面客户端项目。功能描述无法通过源码核实，所谓的『免费访问机制』也未给出任何技术说明。</div>
+  <div class="why-notable">该项目并不值得作为开源学习对象关注，反而值得作为风险案例警示：仓库不开放源码、只发布打包 zip、要求关闭杀毒软件、用『免费 Claude』作为诱饵，且描述充斥无关 SEO 关键词，符合可疑/潜在恶意软件分发仓库的常见特征。建议不要下载运行其发布的二进制文件；如确需使用 Claude，请通过 Anthropic 官方渠道，本地 LLM 路由可考虑成熟开源项目如 LiteLLM、Open WebUI、Jan、LM Studio 等。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">仓库内容与分发结构</p>
+    <div class="mermaid">graph TD
+  A[GitHub 仓库 README] -->|仅链接| B[Releases: free-claude-app.zip]
+  B --> C[解压可执行文件]
+  C --> D[用户本地运行]
+  A -.无源码.-> X[缺失: 构建脚本/依赖/提交历史]
+  D -.README 提示.-> Y[添加杀毒白名单]
+  Y --> Z[潜在风险: 无法审计的二进制]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">README 宣称的功能 vs 实际可验证内容</p>
+    <div class="mermaid">graph LR
+  subgraph 宣称功能
+    F1[Claude 免费访问]
+    F2[多模态/图像分析]
+    F3[本地 LLM 集成]
+    F4[代理与路由]
+    F5[系统托盘/热键]
+  end
+  subgraph 可验证内容
+    V1[README 文案]
+    V2[Releases 中的 zip]
+  end
+  F1 -->|无实现代码| V1
+  F2 -->|无实现代码| V1
+  F3 -->|无实现代码| V1
+  F4 -->|无实现代码| V1
+  F5 -->|无实现代码| V1
+  V1 --> V2</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sorathiya123/claude-ai-free-desktop-app" target="_blank">Sorathiya123/claude-ai-free-desktop-app</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/zyn26/minimax-m3-desktop-app-free-api" target="_blank">Minimax M3 桌面客户端（非官方）</a></span>
+    <span class="stars">⭐ 111</span>
+  </div>
+  <p class="one-liner">声称免费访问 Minimax M3 的第三方桌面应用</p>
+  <div class="tags">
+    <span class="tag">未公开（仅提供预编译二进制 ZIP）</span><span class="tag">推测为 Electron 或同类跨平台桌面框架</span><span class="tag">依赖第三方'代理/路由器'转发至 Minimax M3</span>
+  </div>
+  <div class="summary">该仓库自称是一款非官方的跨平台桌面客户端，宣传可在 Windows、macOS 与 Linux 上免费访问 Minimax AI 的 M3 大模型，提供推理、编程、创意写作以及多模态图像分析等能力。README 列出的功能包括现代聊天界面、对话历史与搜索、系统托盘与快捷键、自定义系统提示词、代理与路由器支持、对话导出、深色/浅色主题以及文件与图片上传。安装方式仅提供一个名为 MiniMaxM3.zip 的二进制压缩包下载链接，要求用户解压后直接运行可执行文件，并在提示时'添加杀毒软件例外'。仓库未公开任何源码、构建脚本、依赖清单或技术实现细节，README 中的'查看源码以确保透明'的说法与实际情况不符。项目采用 MIT 许可证，版权标注为 2026 年，作者声明与 Minimax AI 无任何官方关联，并提示访问方式可能不稳定或随时失效。综合来看，该仓库属于以'免费白嫖商业大模型'为卖点的可执行文件分发型项目，文档以营销话术为主，缺乏可验证的工程信息，需谨慎对待。</div>
+  <div class="why-notable">需要重点提醒：该项目具有典型的可疑二进制分发特征——仓库内无源码、只放发行版 ZIP、要求用户关闭或放行杀毒软件、以'免费访问付费大模型'为引流卖点、README 充斥关键词堆砌且与仓库名不一致（描述中的 -free-api 后缀在 README 中并未出现）。这类模式在 GitHub 上常被用于传播信息窃取类恶意软件或滥用他人 API 凭证。在没有可审计源码的情况下，不建议直接下载运行；如确有研究需要，应在隔离环境中执行并先经 VirusTotal 等多引擎扫描。值得关注的不是其技术价值，而是作为一类常见可疑分发模式的样本。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">声称的运行链路</p>
+    <div class="mermaid">graph LR
+  U[用户桌面] --> A[MiniMaxM3.exe 客户端]
+  A --> P[第三方代理 / Router]
+  P --> M[Minimax M3 服务]
+  M --> P
+  P --> A
+  A --> U</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">可疑分发模式风险点</p>
+    <div class="mermaid">graph TD
+  R[GitHub 仓库] -->|仅发布| Z[MiniMaxM3.zip 二进制]
+  Z --> E[可执行文件]
+  E --> X1[要求关闭杀毒例外]
+  E --> X2[无源码可审计]
+  E --> X3[未知网络外联]
+  X1 --> RISK[潜在安全风险]
+  X2 --> RISK
+  X3 --> RISK</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/zyn26/minimax-m3-desktop-app-free-api" target="_blank">zyn26/minimax-m3-desktop-app-free-api</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/lokikill123/codex-token-skills" target="_blank">Codex Token 节省技能包</a></span>
+    <span class="stars">⭐ 78</span>
+  </div>
+  <p class="one-liner">为 Codex CLI 节省 60-80% Token 成本</p>
+  <div class="tags">
+    <span class="tag">Codex CLI</span><span class="tag">DeepSeek V4 Pro</span><span class="tag">Prefix Cache</span><span class="tag">Skills 插件机制</span>
+  </div>
+  <div class="summary">codex-token-skills 是一个面向 Codex CLI 与 DeepSeek V4 Pro 模型的 Token 成本优化工具集，主要由 token-saver 与 memory 两个核心 Skill 组成。项目通过前缀缓存（prefix-cache）优化策略，将稳定的系统提示与上下文前缀固定下来，并配合记忆机制复用历史会话信息，从而显著减少每次请求中重复传输的 Token 数量，官方声称可降低 60-80% 的 Token 开销。该工具适用于需要长期、高频调用大模型进行代码生成、问答和自动化任务的开发场景，能够在保持回答质量的同时压缩调用成本。整体定位为 Codex CLI 的成本优化扩展包，重点服务于使用 DeepSeek V4 Pro 模型的开发者。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[开发者] --> C[Codex CLI]
+  C --> S1[token-saver Skill]
+  C --> S2[memory Skill]
+  S1 --> P[Prefix Cache 前缀缓存]
+  S2 --> M[历史会话记忆库]
+  P --> API[DeepSeek V4 Pro API]
+  M --> API
+  API --> R[模型响应]
+  R --> U</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Token 节省数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant CLI as Codex CLI
+  participant TS as token-saver
+  participant MEM as memory
+  participant LLM as DeepSeek V4 Pro
+  U->>CLI: 输入指令
+  CLI->>MEM: 读取相关历史上下文
+  MEM-->>CLI: 精简上下文
+  CLI->>TS: 组装请求并标记前缀
+  TS->>LLM: 携带可缓存前缀的请求
+  LLM-->>TS: 命中缓存仅计费增量 Token
+  TS-->>CLI: 返回响应
+  CLI-->>U: 输出结果</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/lokikill123/codex-token-skills" target="_blank">lokikill123/codex-token-skills</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
