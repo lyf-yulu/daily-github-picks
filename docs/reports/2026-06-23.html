@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-23</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-23 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/mukul975" target="_blank">AI 代理网络安全技能库</a></span>
+    <span class="stars">⭐ 956 <span class="stars-today">(+956 today)</span></span>
+  </div>
+  <p class="one-liner">为 AI 代理提供 817 项结构化安全技能</p>
+  <div class="tags">
+    <span class="tag">agentskills.io 技能标准</span><span class="tag">Markdown 结构化技能定义</span><span class="tag">MITRE ATT&CK / ATLAS / D3FEND / F3</span><span class="tag">NIST CSF 2.0 / AI RMF</span><span class="tag">Claude Code / GitHub Copilot / Cursor / Gemini CLI 等 Agent 平台</span>
+  </div>
+  <div class="summary">该项目是一个面向 AI 代理（AI Agents）的结构化网络安全技能库，由社区维护并遵循 agentskills.io 标准，采用 Apache 2.0 许可证开源。仓库内汇集了 817 项结构化的网络安全技能，覆盖 29 个安全领域，并系统性地映射到 6 大业界主流框架，包括 MITRE ATT&CK（攻击战术与技术）、NIST CSF 2.0（网络安全框架）、MITRE ATLAS（针对 AI 系统的对抗威胁）、D3FEND（防御性技术知识图）、NIST AI RMF（AI 风险管理框架）以及 MITRE F3（反欺诈框架）。这种多框架对齐的设计，使 AI 代理在执行红队、蓝队、合规审计、AI 安全治理与反欺诈等任务时，能够直接调用与行业标准一致的能力描述。项目兼容性强，可在 20 多个主流 AI 编程与代理平台中使用，包括 Claude Code、GitHub Copilot、Codex CLI、Cursor、Gemini CLI 等，开发者只需将技能包接入对应的 Agent 环境，即可让 AI 拥有从威胁建模、漏洞分析到事件响应、AI 模型对抗防御的端到端安全知识。整体上，项目定位为 AI 时代的「安全技能即数据」基础设施，旨在让安全知识标准化、机读化并可被代理直接调度。</div>
+  <div class="why-notable">AI 代理正在成为新一代安全运营的执行者，但行业普遍缺少与权威框架对齐的标准化技能资产。该项目用一套开放标准把 6 大框架、29 个领域、817 项技能整合成可被 AI 直接调用的知识包，相当于为安全代理提供了「通用技能操作系统」，对从事 AI 安全、SOC 自动化、红蓝队工具链与合规自动化的团队有较高复用价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能库整体架构</p>
+    <div class="mermaid">graph TD
+  A[开发者 / 安全团队] --> B[AI 代理平台<br/>Claude Code / Copilot / Cursor / Gemini CLI]
+  B --> C[agentskills.io 标准接口]
+  C --> D[817 项结构化技能库]
+  D --> E1[29 个安全领域]
+  D --> F[框架映射层]
+  F --> G1[MITRE ATT&CK]
+  F --> G2[NIST CSF 2.0]
+  F --> G3[MITRE ATLAS]
+  F --> G4[D3FEND]
+  F --> G5[NIST AI RMF]
+  F --> G6[MITRE F3 反欺诈]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">AI 代理调用技能的数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant A as AI 代理
+  participant S as 技能库
+  participant M as 框架映射
+  U->>A: 提出安全任务（如威胁建模）
+  A->>S: 按 agentskills.io 检索技能
+  S->>M: 解析框架标签 ATT&CK / ATLAS 等
+  M-->>A: 返回结构化能力与流程
+  A-->>U: 输出对齐标准的安全分析结果</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/mukul975" target="_blank">sponsors/mukul975</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sorathiya123/claude-ai-free-desktop-app" target="_blank">Claude AI 免费桌面客户端（信息不足）</a></span>
+    <span class="stars">⭐ 182</span>
+  </div>
+  <p class="one-liner">声称免费使用 Claude 的桌面代理项目</p>
+  <div class="tags">
+    
+  </div>
+  <div class="summary">该仓库自称为一款面向 Windows、Linux、macOS 的免费 Claude Code AI 桌面应用，宣传内容涵盖代理服务器、Anthropic 免费 API、本地 LLM 路由、Nvidia NIM、OpenRouter、DeepSeek、Ollama、LM Studio、VSCode 扩展、JetBrains 插件以及 CLI 终端编码助手等多种关键词。然而，从公开可见的信息来看，仓库描述与 README 内容完全一致，均为一串关键词堆砌，没有提供任何实际的项目说明、安装方式、使用文档、源代码结构、架构设计或运行示例。也未见许可证、贡献指南、依赖列表或截图等基本要素。综合判断，该项目目前仅停留在标题与关键词层面，缺乏可验证的功能实现与技术细节，无法据此评估其真实能力、代码质量与安全性。鉴于其大量堆砌热门 AI 工具与「免费 Anthropic API」之类的诱导性词汇，存在明显的 SEO 关键词堆砌或诱导点击的风险，使用者在尝试之前应保持高度警惕，避免向不明来源的代理服务器或客户端输入 API Key、账号凭据或敏感代码。建议关注官方 Anthropic Claude 客户端及主流开源 LLM 路由方案（如 LiteLLM、OpenRouter 官方 SDK 等）以获得可靠替代。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">宣传中的概念架构（仅基于关键词推测）</p>
+    <div class="mermaid">graph TD
+  U[开发者] --> D[桌面客户端]
+  U --> E[IDE 扩展 VSCode/JetBrains]
+  U --> C[CLI 终端]
+  D --> P[代理服务器]
+  E --> P
+  C --> P
+  P --> R[LLM 路由层]
+  R --> A[Anthropic Claude]
+  R --> O[OpenRouter]
+  R --> N[Nvidia NIM]
+  R --> K[DeepSeek]
+  R --> L1[Ollama]
+  R --> L2[LM Studio]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sorathiya123/claude-ai-free-desktop-app" target="_blank">Sorathiya123/claude-ai-free-desktop-app</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/zyn26/minimax-m3-desktop-app-free-api" target="_blank">MiniMax M3 桌面应用免费 API</a></span>
+    <span class="stars">⭐ 186</span>
+  </div>
+  <p class="one-liner">MiniMax M3 模型免费 API 接入项目</p>
+  <div class="tags">
+    
+  </div>
+  <div class="summary">该仓库名为 minimax-m3-desktop-app-free-api，从仓库名称与描述来看，项目定位为面向开发者的 MiniMax M3 大模型免费 API 接入与桌面应用集成方案。描述中罗列了一系列与新一代大模型相关的关键词，包括 1M 超长上下文窗口、稀疏注意力（MSA, Mixture of Sparse Attention）架构、原生多模态能力、计算机使用与控制（Computer Use）、自主编码助手、Agentic AI 框架、SWE-Bench Pro 软件工程基准、工作流自动化与多智能体协作，以及 Hugging Face API 接入与本地 LLM 推理等方向。然而需要指出的是，仓库的 README 内容仅是这些关键词的堆叠，并未提供任何实际的代码、安装说明、使用示例、架构文档或运行方式说明。整个仓库目前看不到具体功能实现、依赖列表或调用流程，更接近于一个 SEO 关键词聚合页面或占位仓库，而不是一个可投入使用的开源项目。对于希望调用 MiniMax M3 模型的开发者来说，建议优先关注 MiniMax 官方渠道与 Hugging Face 上的正式发布，对此类仅有关键词描述、缺乏可验证内容的仓库保持审慎态度，避免误用来源不明的 API 中转或凭据收集服务。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">仓库内容现状示意</p>
+    <div class="mermaid">graph TD
+  A[仓库名: minimax-m3-desktop-app-free-api] --> B[描述: 关键词列表]
+  A --> C[README: 与描述完全相同]
+  B --> D{是否包含可运行代码?}
+  C --> D
+  D -->|否| E[无安装说明]
+  D -->|否| F[无 API 调用示例]
+  D -->|否| G[无架构文档]
+  E --> H[判定: 占位/SEO 仓库]
+  F --> H
+  G --> H</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/zyn26/minimax-m3-desktop-app-free-api" target="_blank">zyn26/minimax-m3-desktop-app-free-api</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/lidge-jun/opencodex" target="_blank">OpenCodex</a></span>
+    <span class="stars">⭐ 88</span>
+  </div>
+  <p class="one-liner">Codex 通用 LLM 代理网关</p>
+  <div class="tags">
+    <span class="tag">Node.js/TypeScript 或 Python（代理服务）</span><span class="tag">OpenAI Codex CLI/SDK 兼容协议</span><span class="tag">HTTP/SSE 流式转发</span><span class="tag">多 LLM Provider SDK（Anthropic、Gemini、Ollama 等）</span>
+  </div>
+  <div class="summary">OpenCodex 是一个面向 OpenAI Codex 生态的通用提供商代理（Universal Provider Proxy），其核心定位是充当一层兼容性中间层，让开发者能够在 Codex CLI、Codex App 以及 Codex SDK 中接入任意第三方大语言模型（LLM），而不再局限于 OpenAI 官方模型。通过该代理，用户可将原本指向 OpenAI 接口的请求透明地转发到 Anthropic Claude、Google Gemini、本地 Ollama、DeepSeek、Qwen 等不同后端，实现一次配置、多端复用。项目的功能亮点在于协议适配与请求/响应格式的双向转换，统一抽象出 Codex 所需的 API 规范，并屏蔽各家厂商在鉴权、消息结构、流式输出上的差异。对于希望在企业内网、私有模型或低成本模型上使用 Codex 工具链的开发者而言，OpenCodex 提供了零侵入的接入方案，是扩展 Codex 模型生态的关键基础设施。</div>
+  <div class="why-notable">在 Codex 工具链快速发展的背景下，该项目填补了模型自由切换的生态空缺，让任意 LLM 都能享受 Codex 的开发者体验。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph LR
+  A[Codex CLI] --> P[OpenCodex 代理]
+  B[Codex App] --> P
+  C[Codex SDK] --> P
+  P --> D[OpenAI]
+  P --> E[Anthropic Claude]
+  P --> F[Google Gemini]
+  P --> G[本地 Ollama]
+  P --> H[其他 LLM]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求转换数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant C as Codex 客户端
+  participant X as OpenCodex
+  participant L as 目标 LLM
+  C->>X: Codex/OpenAI 格式请求
+  X->>X: 协议解析与转换
+  X->>L: 厂商专属 API 调用
+  L-->>X: 流式响应
+  X->>X: 响应格式归一化
+  X-->>C: Codex 兼容流式输出</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/lidge-jun/opencodex" target="_blank">lidge-jun/opencodex</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/agiwhitelist/tokdiet" target="_blank">TokDiet</a></span>
+    <span class="stars">⭐ 69</span>
+  </div>
+  <p class="one-liner">AI编码代理的本地计费与省钱代理</p>
+  <div class="tags">
+    <span class="tag">反向代理</span><span class="tag">流式 HTTP</span><span class="tag">LLM API 集成</span><span class="tag">本地仪表盘</span><span class="tag">Token 计量</span>
+  </div>
+  <div class="summary">TokDiet 是一款部署在本地的流式反向代理，位于 AI 编码代理（Claude Code、Cursor、Codex）与各大模型 API（Anthropic、OpenAI、Gemini、MiniMax）之间。它的核心定位是为按 Token 计费的开发场景提供透明的成本监控与优化：一方面以 ccusage 风格逐请求计量 Token 消耗与美元成本，并通过本地实时仪表盘呈现使用趋势；另一方面通过上下文压缩（context compaction）技术裁剪冗余的对话历史与无效上下文，从源头降低 API 调用支出。为了确保压缩不会牺牲输出质量，项目还内置了 shadow-eval 影子评估机制，对压缩前后的响应进行对照验证，量化质量影响。整体方案兼顾省钱、可观测和可信三大诉求，适合重度使用 AI 编程助手的个人与团队在本地侧透明管理多家模型供应商的支出。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与数据流</p>
+    <div class="mermaid">graph LR
+  A[AI 编码代理\nClaude Code/Cursor/Codex] --> B[TokDiet 本地代理]
+  B --> C[上下文压缩器]
+  C --> D{模型路由}
+  D --> E[Anthropic API]
+  D --> F[OpenAI API]
+  D --> G[Gemini API]
+  D --> H[MiniMax API]
+  E --> I[流式响应聚合]
+  F --> I
+  G --> I
+  H --> I
+  I --> J[Token 计量与成本核算]
+  J --> K[本地仪表盘]
+  J --> L[Shadow-Eval 质量评估]
+  I --> A</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求处理流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant Agent as 编码代理
+  participant Proxy as TokDiet
+  participant Eval as Shadow-Eval
+  participant LLM as 模型 API
+  Agent->>Proxy: 发送对话请求
+  Proxy->>Proxy: 压缩冗余上下文
+  Proxy->>LLM: 转发精简请求
+  LLM-->>Proxy: 流式返回 Token
+  Proxy-->>Agent: 透传响应
+  Proxy->>Proxy: 计量 Token 与 USD
+  Proxy->>Eval: 异步对照评估
+  Eval-->>Proxy: 质量分数
+  Proxy->>Proxy: 写入仪表盘</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/agiwhitelist/tokdiet" target="_blank">agiwhitelist/tokdiet</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
