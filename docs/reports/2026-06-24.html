@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-24</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-24 · 共 4 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/mukul975" target="_blank">AI安全技能库</a></span>
+    <span class="stars">⭐ 1,041 <span class="stars-today">(+1041 today)</span></span>
+  </div>
+  <p class="one-liner">面向AI智能体的结构化网络安全技能集合</p>
+  <div class="tags">
+    <span class="tag">结构化数据（JSON/YAML）</span><span class="tag">agentskills.io 标准规范</span><span class="tag">MITRE ATT&CK</span><span class="tag">NIST CSF 2.0</span><span class="tag">MITRE ATLAS</span><span class="tag">D3FEND</span><span class="tag">NIST AI RMF</span><span class="tag">MITRE F3</span><span class="tag">Apache 2.0</span>
+  </div>
+  <div class="summary">该项目是一个专为AI智能体设计的结构化网络安全技能库，收录了817项经过系统化整理的网络安全技能条目。项目的核心定位是为Claude Code、GitHub Copilot、Codex CLI、Cursor、Gemini CLI等20余个AI编程平台提供统一的安全能力标准，遵循agentskills.io规范。
+
+在框架覆盖方面，该项目同时映射了六大权威安全框架：MITRE ATT&CK（攻击战术与技术）、NIST CSF 2.0（网络安全框架）、MITRE ATLAS（AI系统对抗威胁图谱）、D3FEND（防御性对策知识图谱）、NIST AI RMF（AI风险管理框架）以及MITRE F3（反欺诈框架）。这种多框架交叉映射使得每项技能都具备跨标准的互操作性，便于不同安全体系下的团队直接复用。
+
+技能内容横跨29个安全领域，涵盖从威胁检测、漏洞分析、事件响应到AI系统安全、欺诈防范等多个维度，形成完整的安全能力图谱。项目以Apache 2.0协议开源，允许商业使用与二次分发，降低了企业和开发者的采用门槛。
+
+从使用场景来看，该技能库可直接集成到AI辅助编程工具中，使AI智能体在代码审查、安全建议、威胁建模等任务中具备规范化的安全知识基础，有效弥补通用大模型在专业安全领域的知识碎片化问题。</div>
+  <div class="why-notable">当前AI智能体大规模进入安全工程领域，但缺乏统一的技能标准导致各平台能力参差不齐。该项目率先以结构化方式将六大主流安全框架融合为AI可消费的技能格式，填补了AI Agent与专业安全知识体系之间的空白，有望成为AI安全能力的事实标准。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能映射架构</p>
+    <div class="mermaid">graph TD
+  A[817项结构化安全技能] --> B[MITRE ATT&CK]
+  A --> C[NIST CSF 2.0]
+  A --> D[MITRE ATLAS]
+  A --> E[D3FEND]
+  A --> F[NIST AI RMF]
+  A --> G[MITRE F3]
+  A --> H[29个安全领域]
+  H --> I[AI平台集成层]
+  I --> J[Claude Code]
+  I --> K[GitHub Copilot]
+  I --> L[Cursor / Gemini CLI]
+  I --> M[20+ 其他平台]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能使用数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant Dev as 开发者
+  participant Agent as AI智能体
+  participant Lib as 技能库
+  participant FW as 安全框架
+  Dev->>Agent: 发起安全相关任务
+  Agent->>Lib: 查询匹配技能条目
+  Lib->>FW: 关联框架标准(ATT&CK/NIST等)
+  FW-->>Lib: 返回标准化指导
+  Lib-->>Agent: 返回结构化技能与建议
+  Agent-->>Dev: 输出符合安全标准的响应</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/mukul975" target="_blank">sponsors/mukul975</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/lidge-jun/opencodex" target="_blank">OpenCodex</a></span>
+    <span class="stars">⭐ 102</span>
+  </div>
+  <p class="one-liner">让 Codex 接入任意 LLM 的本地代理</p>
+  <div class="tags">
+    <span class="tag">Bun</span><span class="tag">TypeScript</span><span class="tag">OpenAI Responses API</span><span class="tag">Anthropic Messages API</span><span class="tag">Google Gemini API</span><span class="tag">launchd / systemd / Task Scheduler</span>
+  </div>
+  <div class="summary">OpenCodex 是一个轻量级本地代理工具，专为 OpenAI Codex CLI、App 和 SDK 设计，核心目标是打破 Codex 只能使用 OpenAI 模型的限制，让开发者可以将 Claude、Gemini、Grok、DeepSeek、Kimi、Qwen、Ollama 等 40 余个主流 LLM 提供商无缝接入 Codex 工作流。
+
+其工作原理是在本地启动一个监听 10100 端口的代理服务，将 Codex 发出的 OpenAI Responses API 请求拦截并翻译成目标提供商所支持的协议格式，目前实现了五种协议适配器：Anthropic Messages、Google Gemini、Azure OpenAI、OpenAI Responses 直通，以及覆盖绝大多数兼容端点的 OpenAI Chat Completions。流式输出、工具调用、推理 token、图像理解等能力在双向传输中均得到完整支持。
+
+在使用体验上，OpenCodex 提供 Web 仪表盘（`ocx gui`）和交互式 CLI（`ocx init`）两种配置方式，支持通过 provider/model 语法精确路由模型，路由后的模型会直接出现在 Codex App 的模型选择器中。OAuth 登录支持 Anthropic、xAI 和 Kimi，避免手动管理 API Key。代理可作为系统服务（launchd / systemd / Task Scheduler）在后台常驻，`ocx stop` 可完整还原 Codex 原始配置，无任何残留。
+
+技术上基于 Bun 运行时构建，支持 macOS、Linux、Windows 三平台原生运行，无需 WSL。整体设计极为克制，安装一条命令，启动一条命令，对现有 Codex 使用习惯零侵入。</div>
+  <div class="why-notable">Codex CLI 生态正快速扩张，但官方仅支持 OpenAI 模型，OpenCodex 以极低的接入成本（一条 npm install）填补了这一空白。其协议适配层设计通用，理论上可覆盖任何 OpenAI 兼容端点，对于希望在企业内网用私有部署模型（Ollama/vLLM）驱动 Codex 的团队而言，这是目前最轻量、侵入性最低的方案。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph LR
+  A[Codex CLI / App / SDK] -->|POST /v1/responses| B[opencodex 本地代理\nlocalhost:10100]
+  B --> C{协议适配器}
+  C -->|anthropic| D[Anthropic Claude]
+  C -->|google| E[Google Gemini]
+  C -->|openai-chat| F[Grok / Kimi / DeepSeek\nOllama / OpenRouter / ...]
+  C -->|azure-openai| G[Azure OpenAI]
+  C -->|openai-responses| H[OpenAI 直通]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求路由流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant User as 用户
+  participant Codex as Codex CLI
+  participant Proxy as opencodex
+  participant LLM as 目标 LLM
+  User->>Codex: codex -m anthropic/claude-opus-4-8 "..."
+  Codex->>Proxy: POST /v1/responses
+  Proxy->>Proxy: 解析 provider/model 前缀\n选择 Anthropic 适配器
+  Proxy->>LLM: POST /v1/messages (Anthropic 格式)
+  LLM-->>Proxy: 流式响应
+  Proxy-->>Codex: 转换为 Responses API 流
+  Codex-->>User: 输出结果</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/lidge-jun/opencodex" target="_blank">lidge-jun/opencodex</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/umacloud/umadev" target="_blank">AI编码项目总监</a></span>
+    <span class="stars">⭐ 96</span>
+  </div>
+  <p class="one-liner">为AI编码工具套上商业级九阶段交付流水线</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">OpenCode</span><span class="tag">Agent框架</span><span class="tag">流水线编排</span>
+  </div>
+  <div class="summary">umadev 是一个定位为「AI编码项目总监」的 Agent 框架，旨在驱动用户已登录的主流 AI 编码工具（Claude Code、Codex、OpenCode），在其之上叠加一套9阶段可治理的商业级交付流水线。项目的核心价值在于将散乱的 AI 辅助编码行为纳入结构化的项目管理框架，使其具备需求分析、方案设计、任务拆解、编码执行、审查、测试、集成、发布和复盘等完整交付环节。每个阶段均可设置治理节点，支持人工介入与审批，从而满足企业级交付对可控性和可审计性的要求。与直接使用 AI 编码助手相比，umadev 更侧重于项目交付的全生命周期管理，填补了 AI 编码工具在工程化流程上的空白。目标用户为需要将 AI 编码能力落地到真实商业项目的团队和个人开发者。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">9阶段交付流水线</p>
+    <div class="mermaid">graph LR
+  A[需求分析] --> B[方案设计]
+  B --> C[任务拆解]
+  C --> D[编码执行]
+  D --> E[代码审查]
+  E --> F[测试验证]
+  F --> G[集成构建]
+  G --> H[发布部署]
+  H --> I[复盘归档]
+  style D fill:#f9f,stroke:#333</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户/团队] --> DIR[umadev 项目总监 Agent]
+  DIR --> P[9阶段流水线引擎]
+  P --> CC[Claude Code]
+  P --> CD[Codex]
+  P --> OC[OpenCode]
+  P --> GOV{治理节点}
+  GOV -- 人工审批 --> P
+  CC & CD & OC --> OUT[代码产物/交付物]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/umacloud/umadev" target="_blank">umacloud/umadev</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/calesthio" target="_blank">AI视频生产工作室</a></span>
+    <span class="stars">⭐ 3,592 <span class="stars-today">(+3592 today)</span></span>
+  </div>
+  <p class="one-liner">开源智能体视频全流程生产系统</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">AI Agent Framework</span><span class="tag">LLM API</span><span class="tag">FFmpeg</span><span class="tag">多模态生成模型</span>
+  </div>
+  <div class="summary">calesthio 是全球首个开源的智能体视频生产系统，致力于将 AI 编程助手转化为完整的视频制作工作室。项目的核心理念是通过智能体（Agent）驱动的方式，覆盖从创意策划到最终输出的全链路视频生产流程。系统内置 12 条生产流水线，涵盖脚本撰写、镜头规划、素材生成、剪辑合成、字幕配音等典型视频制作环节，形成端到端的自动化闭环。在工具层面，项目提供 52 个专用工具模块，每个工具针对视频生产中的特定子任务进行封装，便于智能体调用和组合。更为突出的是，系统拥有超过 500 个智能体技能（Agent Skills），这些技能可被编排调度，使 AI 助手具备专业级视频制作能力。该项目采用开源策略，打破了传统视频生产工具对专业软件和人力的高度依赖，让开发者和内容创作者能够以代码驱动的方式完成复杂视频项目。其模块化的流水线设计使得各环节可独立扩展或替换，具备较强的可定制性。对于希望将 AI Agent 能力应用于创意生产领域的团队而言，该项目提供了一套完整的参考实现，有望成为 AI 原生内容生产工具链的重要基础设施。</div>
+  <div class="why-notable">首个以智能体流水线为核心的开源视频生产系统，将 AI coding assistant 的能力边界延伸至创意媒体生产领域，500+ agent skills 的规模在同类项目中极为罕见，具备成为 AI 原生视频工具链事实标准的潜力。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统总体架构</p>
+    <div class="mermaid">graph TD
+  User[用户/AI编程助手] --> Orchestrator[智能体调度器]
+  Orchestrator --> P1[流水线1: 脚本生成]
+  Orchestrator --> P2[流水线2: 镜头规划]
+  Orchestrator --> P3[流水线3: 素材生成]
+  Orchestrator --> P4[流水线4: 剪辑合成]
+  Orchestrator --> PN[...共12条流水线]
+  P1 & P2 & P3 & P4 & PN --> Skills[500+ Agent Skills]
+  Skills --> Tools[52个工具模块]
+  Tools --> Output[最终视频输出]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">视频生产数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant A as Agent调度器
+  participant T as 工具层(52 Tools)
+  participant M as 多模态模型
+  participant O as 输出合成
+  U->>A: 输入创意/需求
+  A->>A: 选择流水线(12条)
+  A->>T: 调用技能(500+ Skills)
+  T->>M: 文本/图像/音频生成
+  M-->>T: 返回媒体素材
+  T-->>A: 素材就绪
+  A->>O: 触发合成流水线
+  O-->>U: 输出成品视频</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/calesthio" target="_blank">sponsors/calesthio</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
