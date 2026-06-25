@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-25</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-25 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/mindmuxai/brain.md" target="_blank">brain.md</a></span>
+    <span class="stars">⭐ 65</span>
+  </div>
+  <p class="one-liner">为编码 Agent 打造的项目持久记忆层</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">Markdown</span><span class="tag">Shell</span><span class="tag">Git Hooks</span><span class="tag">MCP</span>
+  </div>
+  <div class="summary">brain.md 是一个面向编码 Agent（如 Claude Code、Codex 等）的持久化记忆层标准与工具集。它通过在项目仓库中维护一份纯 Markdown 的 BRAIN.md 协议文件以及 brain/ 目录，将项目中难以从代码和 git 历史还原的耐久知识——决策理由、需求约束、放弃的方案——固化下来，使其跨越会话、机器和模型继续生效。项目本身是工具包而非具体大脑：通过 brain-setup 脚手架、brain-bootstrap 知识种子、brain-page 读写手册和 brain-ingest 摄取等 Skills 协作。其核心是一个零依赖的 Node CLI，所有写入都经由 CLI 完成，页面包含可重写的 compiled_truth 与只追加的 timeline，update-truth 通过原子写入保证理解变更必留痕迹。设计上以 Agent 无关、仓库原生、构造即正确为原则，无需校验器即可保证不变量。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[开发者] --> A[编码 Agent<br/>Claude Code / Codex]
+  A -->|读取协议| P[BRAIN.md]
+  A -->|读写调用| C[brain CLI<br/>零依赖 Node]
+  C -->|原子写入| B[brain/ 目录]
+  B --> R[root 页面]
+  B --> D[decision / 知识页]
+  D --> T1[compiled_truth<br/>可重写]
+  D --> T2[timeline<br/>只追加]
+  G[Git 仓库] -.携带.-> P
+  G -.携带.-> B</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">知识写入数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant A as Agent
+  participant CLI as brain CLI
+  participant FS as brain/ 文件
+  U->>A: 提出决策或新理解
+  A->>CLI: create-page / update-truth
+  CLI->>CLI: 生成 frontmatter
+  CLI->>FS: 原子写入 compiled_truth
+  CLI->>FS: 追加 timeline 证据
+  CLI-->>A: ✓ page indexed
+  Note over FS: 数周后新会话
+  A->>CLI: read-page <id>
+  CLI->>FS: 读取真相 + 历史
+  CLI-->>A: 返回决策与理由
+  A-->>U: 还原上下文</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/mindmuxai/brain.md" target="_blank">mindmuxai/brain.md</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/lidge-jun/opencodex" target="_blank">opencodex</a></span>
+    <span class="stars">⭐ 111</span>
+  </div>
+  <p class="one-liner">让 Codex 接入任意 LLM 的本地代理</p>
+  <div class="tags">
+    <span class="tag">Bun 1.1+</span><span class="tag">TypeScript/JavaScript</span><span class="tag">Node.js (npm 分发)</span><span class="tag">OpenAI Responses API</span><span class="tag">Anthropic Messages API</span><span class="tag">Google Gemini API</span><span class="tag">Azure OpenAI</span><span class="tag">OAuth 2.0</span><span class="tag">launchd / systemd / Task Scheduler</span>
+  </div>
+  <div class="summary">opencodex 是一款轻量级本地代理工具，定位为 OpenAI Codex 的「通用提供商代理（Universal Provider Proxy）」。它将 Codex 的 Responses API 翻译为各家 LLM 提供商的协议，使 Codex CLI、App 与 SDK 无需等待 OpenAI 官方支持，即可直接调用 Claude、Gemini、Grok、GLM、DeepSeek、Kimi、Qwen、Ollama 等 40 多个模型服务。项目通过 5 类协议适配器覆盖 Anthropic Messages、Google Gemini、Azure OpenAI、OpenAI Responses 透传以及通用 OpenAI 兼容 Chat Completions 端点，完整支持流式输出、工具调用、推理 token 与图像等双向能力。安装方面通过 npm 全局安装 @bitkyc08/opencodex，运行在 Bun 1.1+ 之上，原生支持 macOS（launchd）、Linux（systemd 用户单元）和 Windows（Task Scheduler），无需 WSL。使用上提供 ocx init 交互式配置、ocx start 启动代理、ocx gui 打开本地 Web 仪表盘（localhost:10100）来添加提供商，支持 OAuth 登录（xAI、Anthropic、Kimi）、API Key 与环境变量引用，并能自动从 /v1/models 发现模型。模型路由采用 provider/model 语法，路由后的模型会出现在 Codex App 的选择器中并支持推理强度控制。此外还提供子代理委派、为非 OpenAI 模型注入 gpt-5.4-mini 的联网搜索与图像理解 sidecar、后台服务与 codex-shim 两种自启方式，以及干净卸载恢复原生 Codex 配置等能力。</div>
+  <div class="why-notable">OpenAI Codex 生态此前严重依赖官方模型支持节奏，opencodex 以一个本地代理巧妙解耦，让开发者能用 Claude、Gemini、Grok、本地 Ollama 等任意模型驱动 Codex 工作流，并保持流式、工具调用、推理 token、图像等高级特性的完整保真度。其在协议翻译、跨平台服务托管、OAuth 认证、模型自动发现、子代理路由以及干净可逆的注入卸载机制上的工程完成度，使其不仅是 hack 式适配，而是一个可日常依赖的生产力工具，对希望摆脱单一供应商绑定、追求多模型混合编排的开发者具有较高参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph LR
+  A[Codex CLI/App/SDK] -->|/v1/responses| B[opencodex 本地代理]
+  B --> C{协议适配器}
+  C -->|anthropic| D[Anthropic Claude]
+  C -->|google| E[Google Gemini]
+  C -->|openai-chat| F[xAI / Kimi / DeepSeek / GLM / Ollama 等]
+  C -->|azure-openai| G[Azure OpenAI]
+  C -->|openai-responses| H[OpenAI 官方]
+  B -.联网搜索/图像.-> I[gpt-5.4-mini Sidecar]
+  J[Web 仪表盘 :10100] --- B</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求与路由数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant C as Codex CLI
+  participant P as opencodex 代理
+  participant R as 路由器
+  participant L as LLM 提供商
+  U->>C: codex -m "anthropic/claude-opus-4-8" "..."
+  C->>P: POST /v1/responses (流式)
+  P->>R: 解析 provider/model
+  R->>R: 选择适配器 + 鉴权(OAuth/Key)
+  R->>L: 转换为目标协议请求
+  L-->>R: 流式响应/工具调用/推理 token
+  R-->>P: 反向翻译为 Responses API
+  P-->>C: SSE 流回传
+  C-->>U: 终端实时输出</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/lidge-jun/opencodex" target="_blank">lidge-jun/opencodex</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/umacloud/umadev" target="_blank">UmaDev</a></span>
+    <span class="stars">⭐ 102</span>
+  </div>
+  <p class="one-liner">AI 项目总监，带队交付商业级产品</p>
+  <div class="tags">
+    <span class="tag">Rust 1.87+</span><span class="tag">Claude Code / Codex / OpenCode CLI</span><span class="tag">TUI / CLI</span><span class="tag">OpenAPI 契约</span><span class="tag">BM25 + 向量检索</span><span class="tag">Mermaid</span><span class="tag">npm 分发</span>
+  </div>
+  <div class="summary">UmaDev 是一个本地运行的 AI 项目总监 Agent，脱胎于早期的 super-dev 项目，使用 Rust 重写为单二进制跨平台工具。它不直接调用模型 API，而是加载用户已登录的 Claude Code、Codex 或 OpenCode 作为大脑，通过常驻持续会话驱动一支由产品经理、架构师、UI/UX 设计师、前后端工程师、QA、安全红队、运维和总监组成的虚拟团队，把一句需求交付成可上线产品。核心设计围绕 UMADEV_HOST_SPEC_V1 规范，建立了智能路由、可视化 DAG 计划、固件注入加 repo-map 代码库感知、9 阶段流水线、每步确定性验收地板和交付证明六层闭环。干活角色串行写主会话，评审角色 fork 只读分叉并行审查，通过黑板文件和结构化裁决沟通，避免多 Agent 互聊放大幻觉。系统内置 112 条治理规则、OpenAPI 契约校验、本地 BM25 加向量混合检索的知识库，跑完后产出 PRD、架构文档、UIUX 文档、HTML 成绩单和打包的 proof-pack 作为可审计证据。强调 fail-open 兜底、持久化对话与跨会话续接、踩坑沉淀自学习，让 AI 编码从聊完即完升级为带证据链的工程交付。</div>
+  <div class="why-notable">在多数 AI 编码工具还停留在补全和单 Agent 写代码时，UmaDev 用规范驱动的 9 阶段流水线、确定性地板和团队角色席位重新定义了 AI 项目交付，配合 proof-pack 审计证据和不绑定模型端点的设计，给出了一条把 AI 编码工程化、可治理、可验收的可行路径。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">9 阶段交付流水线</p>
+    <div class="mermaid">flowchart LR
+    A[一句需求] --> B[产品经理<br/>拆解+调研]
+    B --> C[架构师 与 设计师<br/>架构+UIUX 并行]
+    C --> D{文档确认门<br/>团队评审+用户拍板}
+    D --> E[技术负责人<br/>Spec与任务]
+    E --> F[前端工程师<br/>照设计系统实现]
+    F --> G{预览确认门}
+    G --> H[后端工程师<br/>照契约实现]
+    H --> I[QA 安全 运维<br/>质量门与红队]
+    I --> J[交付包<br/>总监验收+证据]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">四层运行架构</p>
+    <div class="mermaid">flowchart TB
+    User[用户输入需求] --> UI[UmaDev TUI/CLI]
+    UI --> Director[umadev-agent<br/>流程引擎与质量门]
+    Director --> Spec[umadev-spec<br/>HOST_SPEC_V1]
+    Director --> Knowledge[umadev-knowledge<br/>BM25+向量]
+    Director --> Governance[umadev-governance<br/>112 条规则]
+    Director --> Contract[umadev-contract<br/>OpenAPI 校验]
+    Director --> Runtime[umadev-runtime<br/>统一接口]
+    Runtime --> Host[umadev-host<br/>驱动 Claude/Codex/OpenCode]
+    Runtime --> Offline[离线模板兜底]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/umacloud/umadev" target="_blank">umacloud/umadev</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/y-times-y/y" target="_blank">y - 可塑型编码代理</a></span>
+    <span class="stars">⭐ 62</span>
+  </div>
+  <p class="one-liner">可自我重塑的可塑型编码代理应用</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">AI Coding Agent</span>
+  </div>
+  <div class="summary">y 是一款可塑型（malleable）的编码代理应用，旨在为开发者提供一个高度灵活、可自定义的 AI 辅助编程环境。该项目集成了 Claude Code 与 Codex 两大主流编码代理能力，用户既可以借助这些 AI 模型构建自己的项目，也可以在运行过程中实时修改和重塑 y 应用本身。这种自我修改（self-modifying）的设计理念是项目的核心特色，它打破了传统工具与用户之间的边界，让应用本身成为可编辑的对象。开发者可以根据自己的工作流和偏好，动态调整代理的行为、界面和功能，而无需重启或重新部署。这种方式特别适合追求极致定制化的高级开发者，以及希望探索 AI 驱动开发新范式的研究者与极客。由于 README 信息有限，具体技术栈细节未明确披露，但从功能定位看，项目核心依赖于 Claude Code 与 Codex 等 AI 编码代理的 API 集成。</div>
+  <div class="why-notable">项目以可塑型（malleable software）理念为核心，让 AI 编码代理不仅服务于项目构建，还能反过来重塑自身，体现了元编程与自我修改软件的前沿思想。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[开发者] --> Y[y 应用]
+  Y --> CC[Claude Code 代理]
+  Y --> CX[Codex 代理]
+  CC --> P[用户项目]
+  CX --> P
+  CC -.重塑.-> Y
+  CX -.重塑.-> Y</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">自我重塑数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant Y as y 应用
+  participant A as AI 代理
+  U->>Y: 提出修改需求
+  Y->>A: 转发指令
+  A->>A: 生成代码变更
+  A->>Y: 应用变更到自身
+  Y-->>U: 实时反馈新形态</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/y-times-y/y" target="_blank">y-times-y/y</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/calesthio" target="_blank">Calesthio 智能视频制作系统</a></span>
+    <span class="stars">⭐ 3,719 <span class="stars-today">(+3719 today)</span></span>
+  </div>
+  <p class="one-liner">把AI编程助手变成视频制作工作室</p>
+  <div class="tags">
+    <span class="tag">Agent Skills 框架</span><span class="tag">AI 编程助手集成（Claude Code / Cursor 等）</span><span class="tag">视频处理工具链（推测含 ffmpeg）</span><span class="tag">Pipeline 编排</span>
+  </div>
+  <div class="summary">Calesthio 自称是全球首个开源的、具备智能体（Agentic）能力的视频制作系统。其核心定位是把现有的 AI 编程助手（例如 Claude Code、Cursor、Copilot 等）扩展为一套完整的视频制作工作室，让用户通过自然语言指令就能完成从脚本、剪辑、特效到导出的全流程视频生产。项目以三组关键数字概括其能力规模：12 条流水线（Pipelines）覆盖视频制作的不同阶段，52 个工具（Tools）提供原子化的操作能力，以及 500+ 个智能体技能（Agent Skills）作为可复用的高层动作单元。这种「Pipelines + Tools + Skills」的三层架构是当前 Agent 工程化的典型范式：流水线负责编排，工具负责执行具体动作（如调用 ffmpeg、剪辑、字幕生成、转码等），技能则封装领域知识与最佳实践，让 LLM 在不同情境下选择合适的执行路径。由于 README 信息有限，具体技术栈与依赖需结合仓库源码进一步确认，但从「agentic」「coding assistant」等关键词推断，项目极可能基于 Python 生态、配合 ffmpeg 等视频处理工具，并以 MCP 或自定义 Agent Skill 协议与编程助手对接。对开源社区而言，它把通用编程 Agent 的能力域从代码扩展到了多媒体创作，是 Agent 应用场景外延的一次有趣尝试。</div>
+  <div class="why-notable">该项目把 Agent 应用从代码补全推向了多媒体内容生产这一更复杂的工作流，验证了「工具 + 技能」式 Agent 架构在非编码领域的可迁移性；同时它以开源方式提供了一个可参考的大规模 Skills 组织样板（500+ 技能），对希望搭建自有 Agent 体系的团队具有结构借鉴价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统三层架构</p>
+    <div class="mermaid">graph TD
+  U[用户/创作者] -->|自然语言指令| A[AI 编程助手]
+  A --> P[12 条 Pipelines 流水线编排层]
+  P --> S[500+ Agent Skills 技能层]
+  S --> T[52 个 Tools 工具层]
+  T --> M[媒体处理引擎<br/>ffmpeg 等]
+  T --> F[文件系统/素材库]
+  M --> O[成品视频输出]
+  F --> M</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">视频生产数据流</p>
+    <div class="mermaid">graph LR
+  I[创意需求] --> SC[脚本生成 Skill]
+  SC --> ST[分镜/素材采集 Pipeline]
+  ST --> ED[剪辑工具 Tool]
+  ED --> FX[特效与字幕 Skill]
+  FX --> AU[音频处理 Tool]
+  AU --> EX[导出与转码 Pipeline]
+  EX --> OUT[最终视频]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/calesthio" target="_blank">sponsors/calesthio</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
