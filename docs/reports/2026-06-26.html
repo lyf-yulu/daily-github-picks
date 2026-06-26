@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-26</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-26 · 共 2 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/mukul975" target="_blank">AI 代理网络安全技能库</a></span>
+    <span class="stars">⭐ 571 <span class="stars-today">(+571 today)</span></span>
+  </div>
+  <p class="one-liner">817 项 AI 代理网络安全技能集</p>
+  <div class="tags">
+    <span class="tag">agentskills.io 标准规范</span><span class="tag">Markdown / YAML 技能描述</span><span class="tag">MITRE ATT&CK / ATLAS / D3FEND / F3</span><span class="tag">NIST CSF 2.0 / NIST AI RMF</span><span class="tag">Apache 2.0 License</span>
+  </div>
+  <div class="summary">该项目是一个面向 AI 代理（AI Agents）的结构化网络安全技能库，共包含 817 项标准化技能，覆盖 29 个安全领域。项目遵循 agentskills.io 标准，将每项技能映射到六大业界主流安全框架：MITRE ATT&CK（攻击战术与技术）、NIST CSF 2.0（网络安全框架）、MITRE ATLAS（AI 系统对抗威胁矩阵）、D3FEND（防御对策本体）、NIST AI RMF（AI 风险管理框架）以及 MITRE F3（反欺诈框架）。通过这种多框架交叉映射，项目为 AI 代理在执行安全任务时提供了统一、可溯源的能力描述。技能库设计为与主流 AI 编码与代理平台原生兼容，包括 Claude Code、GitHub Copilot、Codex CLI、Cursor、Gemini CLI 等 20 余个平台，开发者可直接将这些技能注入到自己的 AI 工作流中，构建具备红队渗透、蓝队防御、合规审计、AI 安全治理与反欺诈等能力的智能代理。项目采用 Apache 2.0 开源许可，强调可重用性与企业落地友好性。覆盖领域涉及威胁检测、漏洞管理、事件响应、身份认证、云安全、AI 模型安全等。整体定位为「AI 代理的安全能力知识底座」，弥合了传统安全框架与新一代生成式 AI 代理之间的鸿沟，使 AI 代理具备可被审计、可被组合的标准化安全技能。</div>
+  <div class="why-notable">在 AI 代理快速渗透到安全运营场景的当下，缺乏可标准化、可审计的能力描述是行业痛点。该项目用一套统一的技能格式打通了六大主流安全框架，并直接对接主流 AI 编码代理生态，相当于为「安全 AI 代理」提供了 SDK 级的知识库；尤其将 AI 自身安全（ATLAS、AI RMF）和反欺诈（F3）一并纳入，前瞻性强，对企业构建合规可控的 AI 安全代理具有较高参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能库整体架构</p>
+    <div class="mermaid">graph TD
+  A[817 项网络安全技能] --> B[29 个安全领域]
+  A --> C[agentskills.io 标准]
+  B --> D[框架映射层]
+  D --> D1[MITRE ATT&CK]
+  D --> D2[NIST CSF 2.0]
+  D --> D3[MITRE ATLAS]
+  D --> D4[D3FEND]
+  D --> D5[NIST AI RMF]
+  D --> D6[MITRE F3]
+  C --> E[AI 代理平台适配]
+  E --> E1[Claude Code]
+  E --> E2[GitHub Copilot]
+  E --> E3[Cursor]
+  E --> E4[Codex CLI]
+  E --> E5[Gemini CLI]
+  E --> E6[其他 20+ 平台]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">AI 代理调用技能的数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 安全工程师
+  participant Agent as AI 代理
+  participant Skills as 技能库
+  participant FW as 框架映射
+  U->>Agent: 下达安全任务
+  Agent->>Skills: 查询匹配技能
+  Skills->>FW: 解析框架标签
+  FW-->>Skills: 返回 ATT&CK/CSF 等上下文
+  Skills-->>Agent: 返回结构化技能
+  Agent->>U: 执行并输出可审计结果</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/mukul975" target="_blank">sponsors/mukul975</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ikarma/claude-mythos-ai-anthropic-desktop-app" target="_blank">Claude Mythos AI 仓库</a></span>
+    <span class="stars">⭐ 65</span>
+  </div>
+  <p class="one-liner">信息不足，疑似 SEO 关键词堆砌仓库</p>
+  <div class="tags">
+    
+  </div>
+  <div class="summary">该仓库名为 claude-mythos-ai-anthropic-desktop-app，从仓库名与描述看似乎宣称是一个围绕 Anthropic Claude 大语言模型的桌面应用项目，并提及 Glasswing 网络安全代理、漏洞研究、软件工程代理、多步推理、循环深度 Transformer（RDT）、OpenMythos、Claude Fable 5 以及多智能体工作流等诸多概念。然而仓库的 README 内容与描述完全一致，仅由一串关键词堆叠组成，没有提供任何安装说明、代码结构、运行示例、依赖列表或功能文档，也未给出技术栈、架构图或使用方式。基于现有公开信息，无法验证其是否包含实际可运行代码或具备所声称的能力，整体更像是利用热门 AI 关键词进行 SEO 引流或占位的仓库。建议读者在使用或引用前直接查看仓库源码与提交历史，谨慎甄别其真实性与可用性，并优先参考 Anthropic 官方渠道获取 Claude 相关的可信资源。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">README 信息流分析</p>
+    <div class="mermaid">graph TD
+  A[仓库名称] --> B[关键词描述]
+  B --> C[README 内容]
+  C --> D{是否包含<br/>功能说明?}
+  D -->|否| E[仅关键词堆叠]
+  D -->|是| F[可分析架构]
+  E --> G[无法验证项目真实性]
+  G --> H[建议查看源码与提交记录]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ikarma/claude-mythos-ai-anthropic-desktop-app" target="_blank">ikarma/claude-mythos-ai-anthropic-desktop-app</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
