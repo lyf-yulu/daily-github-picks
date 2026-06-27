@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-27</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-27 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ikarma/claude-mythos-ai-anthropic-desktop-app" target="_blank">Claude Mythos AI Desktop</a></span>
+    <span class="stars">⭐ 87</span>
+  </div>
+  <p class="one-liner">声称提供 Claude 免费访问的非官方桌面客户端</p>
+  <div class="tags">
+    <span class="tag">未公开（仓库无源代码，仅分发预编译二进制）</span><span class="tag">桌面应用（推测为 Electron 或类似框架，未经证实）</span>
+  </div>
+  <div class="summary">该仓库自称为 Anthropic Claude『Mythos』模型的非官方第三方桌面客户端，支持 Windows、macOS 和 Linux 三大平台，宣传卖点包括原生桌面体验、多模态能力（图像分析、文档理解）、代码生成与调试、长上下文对话以及现代化聊天界面。仓库本身并未提供任何源代码，仅在 README 中放置了一个指向 Releases 中 Claude-Mythos.zip 压缩包的下载链接，并明确声明与 Anthropic 无任何关联。从仓库特征看，README 充斥 SEO 关键词堆砌（cybersecurity agent、vulnerability research、RDT 等与项目主题无关的词），版权年份标为 2026，且要求用户运行未经签名的二进制文件，符合 GitHub 上常见的伪装成『破解版 AI 客户端』的可疑分发模式。建议读者在不审计二进制的情况下不要执行该程序，并优先使用 Anthropic 官方渠道。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">用户获取与使用流程</p>
+    <div class="mermaid">graph TD
+  A[用户访问 GitHub 仓库] --> B[点击 Releases 下载 Claude-Mythos.zip]
+  B --> C[本地解压并运行未签名可执行文件]
+  C --> D[按应用内引导配置访问]
+  D --> E[与所谓 Claude Mythos 模型对话]
+  C -.潜在风险.-> F[二进制未审计 可能含恶意代码]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">项目可信度评估视角</p>
+    <div class="mermaid">graph LR
+  A[仓库特征] --> B[无源代码]
+  A --> C[仅二进制分发]
+  A --> D[README 关键词堆砌]
+  A --> E[版权 2026 异常]
+  A --> F[声明非官方 与 Anthropic 无关]
+  B --> G[可信度低]
+  C --> G
+  D --> G
+  G --> H[建议改用 Anthropic 官方渠道]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ikarma/claude-mythos-ai-anthropic-desktop-app" target="_blank">ikarma/claude-mythos-ai-anthropic-desktop-app</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/shreyashankar/error-discovery-skill" target="_blank">错误发现技能</a></span>
+    <span class="stars">⭐ 72</span>
+  </div>
+  <p class="one-liner">为AI代理提供交互式错误分析能力</p>
+  <div class="tags">
+    <span class="tag">Python 标准库</span><span class="tag">HTML/CSS/JavaScript</span><span class="tag">Markdown (SKILL.md)</span><span class="tag">JSONL/CSV/JSON 数据格式</span>
+  </div>
+  <div class="summary">Error Discovery Skill 是一个面向 AI 代理的交互式错误分析技能包，旨在帮助开发者系统化地排查 LLM 输出或代理轨迹中的失败模式。用户只需将 JSONL/CSV/JSON 格式的 LLM 输出数据集交给代理，它就会自动识别内容类型（如文章、代理轨迹、代码、结构化输出等），并基于格式塔原则设计视觉编码方案（用颜色区分类别、用间距体现层级、用透明度突出重要性）。随后，技能会用 Python 标准库启动一个零依赖的单文件 HTML 审阅应用，对数据进行聚类并挑选包含聚类代表和随机样本的多样化初始集合。在用户阅读样本并留下自由文本笔记的同时，代理持续监控标注、归纳失败模式分类、追踪覆盖度，并主动提议新的样本以填补盲区。整个技能以 SKILL.md 形式分发，任何能读取文件的代理（如 Claude Code）都能加载并执行。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">错误发现工作流</p>
+    <div class="mermaid">graph TD
+  A[用户提供数据集<br/>JSONL/CSV/JSON] --> B[读取并识别内容类型]
+  B --> C[基于格式塔原则<br/>设计视觉编码]
+  C --> D[生成单文件 HTML<br/>Python stdlib 服务]
+  D --> E[聚类并挑选<br/>多样化初始样本]
+  E --> F[用户审阅<br/>留下自由笔记]
+  F --> G[代理监控标注]
+  G --> H[归纳失败模式分类]
+  H --> I{覆盖度足够?}
+  I -->|否| J[提议新样本<br/>填补盲区]
+  J --> F
+  I -->|是| K[输出错误分析报告]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Skill 加载与调用关系</p>
+    <div class="mermaid">graph LR
+  A[SKILL.md<br/>纯 Markdown 指令] --> B[Claude Code<br/>~/.claude/skills]
+  A --> C[其他 AI 代理<br/>粘贴指令]
+  B --> D[执行错误分析任务]
+  C --> D
+  D --> E[读取 traces.jsonl]
+  E --> F[启动审阅 UI 与<br/>交互循环]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/shreyashankar/error-discovery-skill" target="_blank">shreyashankar/error-discovery-skill</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/AIScientists-Dev/academic-humanizer" target="_blank">学术润色器</a></span>
+    <span class="stars">⭐ 71</span>
+  </div>
+  <p class="one-liner">去除AI写作痕迹的学术编辑技能</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">Claude Code Skill</span><span class="tag">Codex</span><span class="tag">MorphMind</span><span class="tag">Prompt Engineering</span>
+  </div>
+  <div class="summary">Academic Humanizer 是一个面向学术论文与科研基金申请书（NSF、NIH）的 AI 文风净化工具，以 Claude Code、Codex 和 MorphMind 的 Skill 形式分发。项目针对通用 humanizer 工具会破坏学术精确性的问题，由实际撰写 NSF、CAREER、NIH R01 的研究团队，通过对比 AI 草稿与团队已发表论文及获资助提案，手工整理出改写规则。它通过六层处理流水线工作：通用 AI 痕迹清单、学术专属痕迹识别、学术惯例保留、论点与证据匹配、语气与发表场所校准、以及面向 NSF/NIH 结构的基金申请模式。工具会去除诸如 In recent years、paves the way、delve、长句和破折号等典型 AI 表达，同时确保数字、引用、符号、定义和合理的被动语态完整保留，将过强的动词降级以匹配证据强度。核心实现是一个纯 SKILL.md 加示例文件，可直接挂载到任意支持 Skill 的代码代理上。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">六层改写流水线</p>
+    <div class="mermaid">graph TD
+  A[原始AI草稿] --> L1[Layer1 通用AI痕迹清单]
+  L1 --> L2[Layer2 学术专属痕迹]
+  L2 --> L3[Layer3 保留学术惯例]
+  L3 --> L4[Layer4 论点与证据匹配]
+  L4 --> L5[Layer5 语气与发表场所校准]
+  L5 --> L6[Layer6 NSF/NIH 基金模式]
+  L6 --> O[净化后稿件]
+  O -.审计.-> L1</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">用户调用流程</p>
+    <div class="mermaid">graph LR
+  U[研究者] -->|/academic-humanizer| S[SKILL.md]
+  U -->|粘贴段落或 main.tex| S
+  U -->|可选 voice/venue 参数| S
+  S --> E[Claude Code / Codex / MorphMind]
+  E --> R[改写结果]
+  R --> U</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/AIScientists-Dev/academic-humanizer" target="_blank">AIScientists-Dev/academic-humanizer</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/amplifthq/opentag" target="_blank">OpenTag</a></span>
+    <span class="stars">⭐ 295</span>
+  </div>
+  <p class="one-liner">开源版 @agent 提及，工作流中召唤 AI</p>
+  <div class="tags">
+    <span class="tag">TypeScript 5.7</span><span class="tag">Node.js 22.x</span><span class="tag">pnpm 9.x</span><span class="tag">SQLite</span><span class="tag">GitHub API</span><span class="tag">Slack API</span><span class="tag">Claude Code CLI</span><span class="tag">Codex CLI</span><span class="tag">Mermaid</span>
+  </div>
+  <div class="summary">OpenTag 是一个开源的「@agent 提及」协议与运行时，让开发者在 GitHub、Slack 等工作工具中通过 @ 提及方式调用 AI 代理（如 Claude Code、Codex 或自定义执行器），并将结果回传到原始线程，形成可审计的闭环。其设计灵感来自 Claude Tag，但坚持开源与本地优先：项目不再把上下文复制到独立的 AI 工作区，而是把 Agent 带到团队真正发生工作的会话里。架构核心由轻量调度器（dispatcher）、运行器（runner，含本地守护进程 opentagd 与托管运行器）、执行器（executor，如 claude --print、codex exec）以及双向适配器（GitHub、Slack，实验性支持 Telegram 与 Lark）组成。每次 @ 提及会被规范化为一次有作用域的 Work Request，调度器负责持久化、租约、审计与回调；运行器仅认领显式绑定的 Project Target，执行器在隔离分支 opentag/<runId> 上工作，并具备脏工作区保护。模型返回的建议动作（标签、Review、后续运行、PR 提交等）可在源线程通过 approve/apply/reject/continue 等回复指令进行审批，形成 Apply Plan 或子运行回退。当前 v0 版本已支持 GitHub Issue/PR 评论闭环、Slack 线程回调以及完整的协议运行时，多租户托管控制平面仍在演进中。</div>
+  <div class="why-notable">OpenTag 抓住了一个正在兴起的交互范式：在工作发生的地方 @ 提及 Agent，而非进入独立的 AI 聊天工作区。它把这个范式做成了一套开源、本地优先、可审计的协议（Work Thread、Context Packet、Audit Trail、Apply Plan），并且对外部写操作设置了显式的权限与审批门槛。对希望在企业内自托管 AI 代码代理、又担心权限与审计失控的团队，这是一个少见的、贴近真实工程治理的开源参考实现。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">OpenTag 请求流转架构</p>
+    <div class="mermaid">flowchart LR
+  A[工作应用提及<br/>GitHub/Slack] --> B[规范化的 Work Request]
+  B --> C[轻量 Dispatcher<br/>租约/审计/回调]
+  C --> D[已授权 Runner<br/>本地 opentagd 或托管]
+  D --> E[Executor<br/>Claude Code/Codex/自定义]
+  E --> F[源线程回调<br/>评论/PR/指标]
+  F -.审批回复.-> C</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">建议动作的审批与执行闭环</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant T as 源线程
+  participant D as Dispatcher
+  participant R as Runner/Executor
+  R->>T: 最终回调 + 建议动作列表
+  U->>T: 回复 approve 1 / apply label
+  T->>D: submitThreadAction
+  D->>D: 记录审批 + 生成 Apply Plan
+  alt 适配器可直接写入
+    D->>T: 执行外部写操作 (PR/标签等)
+  else 需更多模型工作
+    D->>R: 创建携带上下文的子运行
+    R->>T: 子运行回调
+  end</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/amplifthq/opentag" target="_blank">amplifthq/opentag</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/y-times-y/y" target="_blank">y 可塑形编码代理桌面应用</a></span>
+    <span class="stars">⭐ 80</span>
+  </div>
+  <p class="one-liner">可自我改造的本地编码代理工作台</p>
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">pnpm</span><span class="tag">Electron（推断，macOS 桌面端打包）</span><span class="tag">Claude Code CLI</span><span class="tag">OpenAI Codex CLI</span><span class="tag">Git</span>
+  </div>
+  <div class="summary">y 是一款面向 macOS（Apple Silicon）的桌面级编码代理应用，以聊天为主交互界面，将 Claude Code 与 OpenAI Codex 等本地 CLI 代理统一编排在一个可塑形工作区中。其核心理念是让软件在使用过程中保持可塑性：通过名为 Modify 的受保护改造通道，用户可以让 y 实时修改自身界面，生成的 UI 变更会经过编译、渲染和 diff 审查，确认无误后保留，渲染异常则回滚。架构上分为受保护的 Kernel（负责认证、引擎适配、文件系统边界、终端桥接、Modify 通道与回滚机制）和可变的 Userland（聊天 UI 与可被改造的应用表层），既实现自我修改又锁定信任边界。功能上支持 Claude Code 与 Codex 并行运行、隔离工作区下的多代理协作、文件树/终端/diff 视图，以及基于快照的回滚。隐私方面，聊天内容、项目文件与终端命令均不上传，仅收集基础产品分析数据。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Kernel 与 Userland 分层架构</p>
+    <div class="mermaid">graph TD
+  U[用户] -->|聊天交互| UI[Userland 聊天 UI]
+  U -->|改造请求| MOD[Modify 改造通道]
+  subgraph Kernel[受保护 Kernel]
+    AUTH[认证与会话]
+    ADAPT[本地引擎适配器]
+    FS[文件系统边界]
+    TERM[终端桥接]
+    MOD
+    ROLL[回滚快照]
+    ANALY[分析控制]
+  end
+  subgraph Userland[可变 Userland]
+    UI
+    SURF[应用表层组件]
+  end
+  MOD -->|生成 diff| SURF
+  SURF -->|渲染失败| ROLL
+  ADAPT -->|官方 CLI| CC[Claude Code CLI]
+  ADAPT -->|官方 CLI| CX[Codex CLI]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Modify 改造与 diff 审查流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant M as Modify 通道
+  participant K as Kernel
+  participant L as Userland UI
+  U->>M: 描述要修改的界面
+  M->>K: 生成代码与 diff
+  K->>L: 编译并渲染新 UI
+  L-->>U: 展示 diff 与预览
+  alt 渲染安全
+    U->>K: 选择保留
+    K->>L: 提交变更并保存快照
+  else 渲染异常或不满意
+    U->>K: 选择回滚
+    K->>L: 恢复至已知良好快照
+  end</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/y-times-y/y" target="_blank">y-times-y/y</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
