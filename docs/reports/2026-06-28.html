@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-28</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-28 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ikarma/claude-mythos-ai-anthropic-desktop-app" target="_blank">Claude Mythos AI Desktop</a></span>
+    <span class="stars">⭐ 88</span>
+  </div>
+  <p class="one-liner">声称免费访问 Claude 的非官方桌面客户端</p>
+  <div class="tags">
+    <span class="tag">未公开（仓库未提供源码或构建配置）</span>
+  </div>
+  <div class="summary">该仓库自称为 Anthropic Claude（命名为 Claude Mythos）的非官方桌面客户端，宣称支持 Windows、macOS、Linux 三大平台，主打原生界面、多模态能力（图像分析、文档理解）以及面向开发者和创作者的代码生成、长上下文对话等功能。然而需要特别提示的是：仓库中并未包含任何可审查的源代码，README 仅提供一个指向 Releases 的 Claude-Mythos.zip 二进制压缩包下载链接，且宣称可免费访问 Anthropic 的付费模型，这与典型的开源项目特征不符。此类「免费访问商业大模型」的可执行文件分发模式，常见于伪装成 AI 工具的恶意软件、信息窃取程序或加密货币挖矿载荷传播渠道。README 中虽列出 MIT 许可证和 VirusTotal 扫描建议，但缺乏构建脚本、依赖清单与代码实现，无法验证其真实功能。建议谨慎对待，不要直接运行下载的可执行文件。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">宣称的使用流程</p>
+    <div class="mermaid">graph TD
+  A[用户访问 GitHub Releases] --> B[下载 Claude-Mythos.zip]
+  B --> C[解压并运行可执行文件]
+  C --> D[按应用内指引配置访问]
+  D --> E[与 Claude Mythos 对话/编码/分析图像]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">风险评估视角</p>
+    <div class="mermaid">graph LR
+  A[README 宣称] --> B{是否有源码?}
+  B -- 否 --> C[仅 ZIP 二进制下载]
+  C --> D[无法审计行为]
+  D --> E[潜在风险: 窃密/挖矿/恶意载荷]
+  A --> F{是否为官方?}
+  F -- 否 --> G[Anthropic 未授权]
+  G --> H[可能违反 ToS]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ikarma/claude-mythos-ai-anthropic-desktop-app" target="_blank">ikarma/claude-mythos-ai-anthropic-desktop-app</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/kevin333353/jobsmith" target="_blank">Jobsmith 求职 AI 副驾</a></span>
+    <span class="stars">⭐ 86</span>
+  </div>
+  <p class="one-liner">台湾求职多代理 AI co-pilot</p>
+  <div class="tags">
+    <span class="tag">Python 3.11+</span><span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">React 19</span><span class="tag">TypeScript 5</span><span class="tag">Vite</span><span class="tag">SQLite</span><span class="tag">Server-Sent Events</span><span class="tag">PyInstaller</span><span class="tag">Claude Code CLI</span><span class="tag">Codex CLI</span>
+  </div>
+  <div class="summary">Jobsmith 是一款专为台湾求职市场打造的开源多代理 AI 求职 co-pilot，覆盖从找职缺到模拟面试的完整流程。它支持上传履历后由 AI 推导关键字，并行搜索 104、Yourator、LinkedIn、Cake 四大平台，按适配度分批串流排序；提供履历健检（依台湾 ATS 惯例评分）、客制化投递包（履历、求职信、面试准备、公司情报）以及逐题反馈的模拟面试。投递包生成采用 LangGraph StateGraph 在后台并行运行，离开页面或刷新都不会中断，并通过 Critic 反思循环提升输出质量（评测显示通过率从 60% 提升至 100%）。LLM 后端可灵活切换：默认使用本机 Claude Code 或 Codex CLI 订阅免 API key 运行，也支持 BYOK 接入任何 OpenAI 相容端点（DeepSeek、Gemini、Groq、Ollama、vLLM 等）。所有履历记忆、搜索纪录与投递包均本机 SQLite 保存，注重隐私。</div>
+  <div class="why-notable">结合本机 CLI 订阅免 key 调用与 BYOK 双模式，配合多代理后台并行与 Critic 反思循环，在垂直求职场景中将 AI Agent 工程化落地到桌面应用</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户浏览器] -->|HTTP/SSE/轮询| API[FastAPI 后端]
+  API --> LG[LangGraph StateGraph<br/>每任务独立 checkpointer]
+  API --> SRC[职缺来源聚合器]
+  API --> DB[(SQLite<br/>投递包/记忆/搜索)]
+  SRC --> S1[104]
+  SRC --> S2[Yourator]
+  SRC --> S3[LinkedIn]
+  SRC --> S4[Cake]
+  LG --> LLM{LLM 后端切换}
+  LLM --> C1[claude_cli<br/>本机订阅]
+  LLM --> C2[codex_cli<br/>本机订阅]
+  LLM --> C3[openai BYOK<br/>OpenAI 相容端点]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">投递包多代理流程</p>
+    <div class="mermaid">graph LR
+  JD[解析 JD] --> M[匹配评分]
+  M --> CI[公司情报]
+  CI --> R[客制履历]
+  R --> CL[求职信]
+  CL --> IP[面试准备]
+  IP --> CR{Critic 品管反思}
+  CR -->|未通过| R
+  CR -->|通过| OUT[进入「我的投递包」<br/>进行中→待审→已核可]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/kevin333353/jobsmith" target="_blank">kevin333353/jobsmith</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/shreyashankar/error-discovery-skill" target="_blank">错误发现技能 (Error Discovery Skill)</a></span>
+    <span class="stars">⭐ 76</span>
+  </div>
+  <p class="one-liner">为 AI 智能体提供交互式错误分析能力</p>
+  <div class="tags">
+    <span class="tag">Python 标准库 HTTP Server</span><span class="tag">HTML/CSS/JavaScript (单文件)</span><span class="tag">Markdown (SKILL.md)</span><span class="tag">JSONL/CSV/JSON 数据格式</span><span class="tag">聚类算法</span>
+  </div>
+  <div class="summary">Error Discovery Skill 是一个面向 AI 智能体的交互式错误分析技能包，核心定位是帮助开发者对 LLM 输出或 Agent 轨迹数据集进行系统化的失败模式挖掘。用户只需提供一份 JSONL、CSV 或 JSON 格式的数据文件，智能体便会自动识别内容类型（文章、Agent 轨迹、代码或结构化输出等），并基于 Gestalt 视觉设计原则（颜色编码类别、间距体现层级、透明度表达重要性）生成可视化编码方案。随后它会通过 Python 标准库启动本地服务，渲染一个零依赖的单文件 HTML 审阅界面。系统会对数据进行聚类，挑选聚类代表与随机样本作为初始审阅集，并进入一个交互循环：实时监控标注者的自由文本批注，自动归类失败模式，跟踪覆盖度，并主动推荐新样本以填补空白区域。整个技能以纯 Markdown 形式承载于 SKILL.md，可被 Claude Code 等任意能读取文件的 Agent 直接加载使用。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">错误发现工作流</p>
+    <div class="mermaid">graph TD
+  A[用户提供数据集<br/>JSONL/CSV/JSON] --> B[读取并识别内容类型]
+  B --> C[设计可视化编码<br/>Gestalt 原则]
+  C --> D[聚类与初始采样<br/>聚类代表+随机样本]
+  D --> E[Python stdlib 启动<br/>单文件 HTML 审阅 UI]
+  E --> F[用户写自由文本批注]
+  F --> G[Agent 归类失败模式<br/>跟踪覆盖度]
+  G --> H{覆盖是否充分?}
+  H -->|否| I[推荐新样本填补空白]
+  I --> E
+  H -->|是| J[输出失败模式报告]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能加载与调用机制</p>
+    <div class="mermaid">graph LR
+  A[SKILL.md<br/>纯 Markdown 指令] --> B[Claude Code<br/>~/.claude/skills]
+  A --> C[其他 Agent<br/>粘贴到指令中]
+  B --> D[Agent 运行时]
+  C --> D
+  D --> E[读取本地数据集]
+  E --> F[启动审阅服务]
+  F --> G[与用户交互标注]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/shreyashankar/error-discovery-skill" target="_blank">shreyashankar/error-discovery-skill</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/amplifthq/opentag" target="_blank">OpenTag</a></span>
+    <span class="stars">⭐ 330</span>
+  </div>
+  <p class="one-liner">Slack 与 GitHub 的 @agent 智能路由器</p>
+  <div class="tags">
+    <span class="tag">Slack Events API</span><span class="tag">GitHub Webhooks / Apps</span><span class="tag">OpenAI Codex</span><span class="tag">Anthropic Claude Code</span><span class="tag">Webhook 路由服务</span>
+  </div>
+  <div class="summary">OpenTag 是一个开源的 @agent 提及（mentions）路由系统，旨在为 Slack 与 GitHub 两大协作平台提供统一的 AI 编码助手入口。它的核心定位是：当团队成员在 Slack 频道或 GitHub Issue、PR 评论中通过 @agent 形式标记任务时，OpenTag 会自动捕获这些被标记的请求，将其路由到合适的 AI 编码代理（如 OpenAI Codex、Anthropic Claude Code 等），并把执行结果回写到原始的讨论线程中，形成完整的对话闭环。
+
+这种设计把原本割裂的「沟通工具」与「AI 编码工具」整合到团队日常工作流中，开发者无需切换上下文，只需在熟悉的 Slack 或 GitHub 评论框里 @ 一下，就能让 AI 完成代码生成、Bug 修复、PR 审查、问题分析等任务，结果直接以线程回复形式呈现，便于团队协作讨论与追溯。
+
+项目采用开源策略，意味着团队可以自部署、自定义路由规则，避免将代码与对话内容交给闭源 SaaS。从功能定位看，它解决了多 AI Agent 并存时的「调度与分发」问题，可视为面向团队协作场景的 AI Agent 网关。由于 README 内容极简，具体技术栈尚未公开披露，但从功能推断需要 Slack Events API、GitHub Webhooks、以及 Codex、Claude Code 的 CLI 或 API 集成能力。</div>
+  <div class="why-notable">随着 Codex、Claude Code 等命令行 AI 编码助手快速普及，团队面临的新问题是「如何把这些单机 CLI 工具接入协作流程」。OpenTag 提出了一个极简却务实的答案：用 @mention 作为通用调用协议，把 Slack 和 GitHub 变成 AI Agent 的前端界面。它代表了一类新兴的「AI Agent 网关」产品形态，对希望在团队中规模化使用多种 AI 编码工具、又不愿被单一厂商锁定的工程组织而言，具有较强的参考与落地价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[Slack 用户 @agent] --> C[OpenTag 路由服务]
+  B[GitHub Issue/PR @agent] --> C
+  C --> D{路由策略}
+  D -->|代码生成| E[OpenAI Codex]
+  D -->|代码理解/修改| F[Claude Code]
+  E --> G[结果聚合器]
+  F --> G
+  G --> H[Slack 线程回复]
+  G --> I[GitHub 评论回复]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求处理数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant S as Slack/GitHub
+  participant O as OpenTag
+  participant A as AI Agent (Codex/Claude)
+  U->>S: 发送 @agent 任务描述
+  S->>O: Webhook 推送事件
+  O->>O: 解析 mention 与上下文
+  O->>A: 转发任务到对应 Agent
+  A-->>O: 返回执行结果
+  O->>S: 以线程回复写回结果
+  S-->>U: 用户在原线程查看结果</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/amplifthq/opentag" target="_blank">amplifthq/opentag</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/y-times-y/y" target="_blank">y 可塑编码代理</a></span>
+    <span class="stars">⭐ 81</span>
+  </div>
+  <p class="one-liner">可自我重塑的可塑化编码代理应用</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">AI Coding Agent</span>
+  </div>
+  <div class="summary">y 是一款定位为「可塑（malleable）」的编码代理应用，核心理念是将 AI 编码代理本身作为可被实时修改的对象。它集成了 Anthropic 的 Claude Code 与 OpenAI 的 Codex 两大主流代码生成模型，用户既可以借助这些代理来构建自己的项目，也可以在运行时直接重塑 y 应用本身的功能与界面，实现「用代理改造代理」的自举式开发体验。这种设计打破了传统工具固定形态的限制，使开发者能够根据自己的工作流定制代理行为、扩展功能模块或调整交互方式。项目适合希望深度定制 AI 编程助手、探索代理可编程性以及追求个性化开发环境的工程师。由于公开 README 内容非常精简，具体的技术栈、运行方式和架构细节尚不明确，需要查阅源码以进一步了解实现细节。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[开发者] --> Y[y 应用界面]
+  Y --> CC[Claude Code 代理]
+  Y --> CX[Codex 代理]
+  CC --> P[用户项目代码]
+  CX --> P
+  CC -.实时重塑.-> Y
+  CX -.实时重塑.-> Y</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">自举式工作流</p>
+    <div class="mermaid">flowchart LR
+  A[用户提出需求] --> B{需求类型}
+  B -->|构建项目| C[调用代理生成代码]
+  B -->|改造 y 本身| D[代理修改 y 源码]
+  C --> E[输出项目产物]
+  D --> F[热更新 y 功能]
+  F --> A</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/y-times-y/y" target="_blank">y-times-y/y</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
