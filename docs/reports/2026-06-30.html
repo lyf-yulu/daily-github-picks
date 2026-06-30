@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-06-30</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-06-30 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/gamedev-skills/awesome-gamedev-agent-skills" target="_blank">Awesome GameDev Agent Skills</a></span>
+    <span class="stars">⭐ 181</span>
+  </div>
+  <p class="one-liner">AI 编程代理的游戏开发技能库</p>
+  <div class="tags">
+    <span class="tag">SKILL.md (Agent Skills 格式)</span><span class="tag">Markdown</span><span class="tag">Python (校验脚本)</span><span class="tag">Node.js / npx (skills CLI)</span><span class="tag">Claude Code Plugin Marketplace</span><span class="tag">Godot 4.x / GDScript / C#</span><span class="tag">Unity 6 LTS / C#</span><span class="tag">Unreal Engine</span><span class="tag">Phaser / PixiJS / three.js (Web)</span><span class="tag">Bevy / pygame / LÖVE / Roblox</span>
+  </div>
+  <div class="summary">awesome-gamedev-agent-skills 是一个面向 AI 编程代理（Agent）的游戏开发技能集合，提供 66 个原创、版本锁定的技能文件以及一个智能路由（Router），用于将游戏开发专业能力注入到 Claude Code、Cursor、Codex、Copilot、Gemini CLI、Windsurf、Kiro 等主流 AI 编程工具中。项目采用便携的 SKILL.md 格式，单一文件可跨多种代理工具原生加载，无需任何转换。核心机制是按需加载：开发者只需用自然语言描述需求（例如“给我的 Godot 角色添加二段跳”），Router 会自动检测项目所属引擎（通过 project.godot、*.uproject 等指纹文件）、解析任务意图，然后精准加载对应的引擎基础技能、概念技能和题材技能，避免上下文污染。覆盖引擎包括 Godot 4.x、Unity 6 LTS、Unreal、Phaser、PixiJS、three.js、Bevy、pygame、LÖVE 与 Roblox，并扩展到平台运动、Tilemap、物理、动画、Shader、多人联机、存档系统、程序化生成、Roguelike、RPG、Steam/itch 发布等横向主题。所有技能均基于一手官方文档撰写、与具体引擎版本绑定，并通过 validate-skills.py 校验脚本保证一致性。安装方式简洁，一条 npx skills add 命令即可完成所有代理工具的自动适配，也提供 Claude Code 插件市场作为替代入口。</div>
+  <div class="why-notable">它把“给 AI 代理装游戏开发大脑”这件事产品化了：用一个 Router 解决了多技能选择难题，用版本锁定 + 一手文档解决了 LLM 在游戏引擎 API 上常见的幻觉，又用 SKILL.md 标准格式打通了 Claude Code、Cursor、Copilot 等异构生态。对于希望让 AI 真正胜任 Godot、Unity、Unreal 项目协作的开发者，这是一个可直接复用的工程级范式，也为“Agent Skills”这一新兴生态提供了高质量的开源参考实现。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Router 技能加载流程</p>
+    <div class="mermaid">graph TD
+  A[开发者自然语言请求] --> B[Router 解析]
+  B --> C{检测引擎指纹}
+  C -->|project.godot| D[Godot 技能集]
+  C -->|*.uproject| E[Unreal 技能集]
+  C -->|Unity 项目| F[Unity 技能集]
+  C -->|无法判断| G[向用户询问]
+  B --> H[解析任务/题材]
+  H --> I[概念技能 如 save-systems]
+  H --> J[题材技能 如 platformer/roguelike]
+  D --> K[组合加载: 引擎 + 概念 + 题材]
+  E --> K
+  F --> K
+  I --> K
+  J --> K
+  K --> L[AI 代理生成代码]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能分发与多代理兼容架构</p>
+    <div class="mermaid">graph LR
+  R[awesome-gamedev-agent-skills 仓库] --> S[66 个 SKILL.md + Router]
+  S --> V[validate-skills.py 校验]
+  S --> N[npx skills CLI]
+  S --> P[Claude Plugin Marketplace]
+  N --> A1[Claude Code]
+  N --> A2[Cursor]
+  N --> A3[Codex]
+  N --> A4[GitHub Copilot]
+  N --> A5[Gemini CLI]
+  N --> A6[Windsurf / Cline / Kiro]
+  P --> A1
+  A1 --> U[开发者项目 Godot/Unity/Unreal/Web 等]
+  A2 --> U
+  A3 --> U
+  A4 --> U
+  A5 --> U
+  A6 --> U</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/gamedev-skills/awesome-gamedev-agent-skills" target="_blank">gamedev-skills/awesome-gamedev-agent-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ikarma/claude-mythos-ai-anthropic-desktop-app" target="_blank">Claude Mythos AI Desktop（疑似可疑分发）</a></span>
+    <span class="stars">⭐ 174</span>
+  </div>
+  <p class="one-liner">声称提供 Claude 免费访问的可疑桌面客户端</p>
+  <div class="tags">
+    <span class="tag">未公开（仓库未提供源代码）</span><span class="tag">声称支持 Windows / macOS / Linux 桌面端</span><span class="tag">推测为 Electron 或类似 WebView 封装（无法验证）</span>
+  </div>
+  <div class="summary">该仓库自称为一款跨平台（Windows / macOS / Linux）的桌面客户端，宣传可免费访问 Anthropic 旗下所谓的 'Claude Mythos' 大模型，并强调多模态理解、代码生成、长上下文对话与创意写作等能力。README 提供了 UI 截图、特性列表与一个指向 Releases 中 Claude-Mythos.zip 的下载链接，要求用户下载、解压并运行可执行文件，再按 '应用内引导' 完成所谓的免费接入配置。然而从技术编辑视角审视，该项目存在多处明显疑点：第一，'Claude Mythos' 并非 Anthropic 公开发布的真实模型名称，描述中堆砌的 'frontier model''recurrent depth transformer''glasswing cybersecurity agent' 等关键词更像是为搜索引擎投放设计的 SEO 噪音；第二，仓库不提供任何源代码、构建脚本、依赖清单或技术架构说明，仅通过预编译 ZIP 分发二进制，与 MIT 开源声明明显矛盾；第三，README 主动建议用户 '上传到 VirusTotal 扫描'，这是恶意软件分发仓库常见的反向心理话术；第四，'免费获得收费商业模型访问' 的承诺在合规与技术上均不可行。综合判断，这更可能是一个借助 AI 热点进行二进制投递的可疑项目，而非真正的开源桌面客户端。</div>
+  <div class="why-notable">值得关注的并非其声称的技术价值，而是它作为典型案例展示了当前 AI 热潮下的供应链与下载分发风险：项目挂上 'open source / MIT' 标签却不提供任何源码，借助 Anthropic 与 Claude 的品牌效应包装可执行文件，再以 'free access' 吸引用户下载。开发者与安全研究者可将其作为辨识可疑 AI 工具仓库的范本，重点核查：是否有真实源码、模型名称是否真实存在、是否仅分发二进制、README 是否充满 SEO 关键词与免责话术。在未做沙箱与逆向分析前，不建议下载或运行该 ZIP。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">可疑分发流程梳理</p>
+    <div class="mermaid">graph TD
+  A[用户被 SEO 关键词吸引] --> B[进入 GitHub 仓库]
+  B --> C{仓库内容}
+  C -->|无源码| D[Releases 中的 ZIP]
+  C -->|README 宣传| E[免费访问 Claude 承诺]
+  D --> F[用户下载并解压]
+  F --> G[运行未签名可执行文件]
+  G --> H[应用内 引导配置 ]
+  H --> I[潜在风险: 凭证窃取 / 远控 / 挖矿]
+  E -.诱导.-> F</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">可疑信号核查清单</p>
+    <div class="mermaid">flowchart LR
+  R[仓库审查] --> S1[模型名称是否真实存在]
+  R --> S2[是否提供完整源码]
+  R --> S3[是否仅分发二进制 ZIP]
+  R --> S4[README 是否堆砌 SEO 关键词]
+  R --> S5[是否主动提示自查病毒]
+  R --> S6[License 与实际开放程度是否一致]
+  S1 --> X[Claude Mythos: 否]
+  S2 --> X
+  S3 --> X
+  S4 --> X
+  S5 --> X
+  S6 --> X
+  X[多项命中 -> 高风险]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ikarma/claude-mythos-ai-anthropic-desktop-app" target="_blank">ikarma/claude-mythos-ai-anthropic-desktop-app</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/kevin333353/jobsmith" target="_blank">Jobsmith 求职 AI 副驾</a></span>
+    <span class="stars">⭐ 107</span>
+  </div>
+  <p class="one-liner">台湾求职市场多代理 AI co-pilot</p>
+  <div class="tags">
+    <span class="tag">Python 3.11+</span><span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">SQLite</span><span class="tag">Server-Sent Events</span><span class="tag">React 19</span><span class="tag">TypeScript 5</span><span class="tag">Vite</span><span class="tag">PyInstaller</span><span class="tag">Claude Code CLI / Codex CLI</span><span class="tag">Ollama / llama.cpp</span>
+  </div>
+  <div class="summary">Jobsmith 是一款针对台湾求职市场的开源多代理（multi-agent）AI 求职 co-pilot，覆盖从找职缺、履历健检、客制投递包生成到模拟面试的完整流程。其核心差异化在于默认对接本机已登入的 Claude Code 或 Codex CLI 订阅作为 AI 引擎，免去自行申请 API key 的门槛，也支持 Ollama、llama.cpp 等本机模型以及任何 OpenAI 相容端点的 BYOK 模式，强调资料本机化与隐私可控。功能上，它会上传履历后由 AI 推导关键词，并行抓取 104、Yourator、LinkedIn、Cake 等台湾主流职缺来源，并以 SSE 分批串流方式即时评分排序；用户可在职缺工作台一键触发投递包生成，由多个 agent 协同完成 JD 解析、匹配评分、公司情报、客制履历、求职信、面试准备与品管反思。整个生成过程作为背景工作运行，离开页面或重新整理都不中断，多个职缺可并行处理，完成后进入「我的投递包」按生命周期状态（进行中→待审→已核可）逐一核可、汇出 Word 或开启模拟面试。技术层面基于 FastAPI 后端 + LangGraph StateGraph 多代理编排（各自记忆体 checkpointer 支持并行），前端使用 React 19 + Vite + TypeScript，并以 PyInstaller 打包成 Windows exe 与 macOS unsigned dmg。CLI 后端还做了模型自动分层：解析用 haiku、生成用 sonnet、Critic/Supervisor 用 opus。</div>
+  <div class="why-notable">在 AI Agent 项目同质化严重的当下，Jobsmith 提供了一个少见的『订阅复用』思路——把开发者本机已付费的 Claude Code 或 Codex CLI 当成免 key 推理引擎，并辅以本机模型与 BYOK 三档可切换的后端，大幅降低了 multi-agent 应用的使用门槛。配合 LangGraph 背景并行编排、Supervisor 反思迴圈带来的可量化品质提升，以及对台湾求职市场（104 / Cake / Yourator）的高度在地化整合，使它既是实用的求职工具，也是研究多代理工程实践与本地化 LLM 落地的优质参考。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户浏览器] -->|HTTP / SSE / 轮询| F[FastAPI 后端]
+  F --> G[LangGraph StateGraph<br/>每个投递包独立实例]
+  F --> J[职缺来源抓取<br/>104 / Yourator / LinkedIn / Cake]
+  F --> D[(App SQLite<br/>投递包·记忆·搜寻)]
+  G --> L{LLM 后端切换}
+  L --> C1[claude_cli 订阅]
+  L --> C2[codex_cli 订阅]
+  L --> C3[Ollama / llama.cpp 本机模型]
+  L --> C4[BYOK OpenAI 相容端点]
+  J --> F
+  G --> D</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">投递包多代理流程</p>
+    <div class="mermaid">flowchart LR
+  A[JD 解析<br/>haiku] --> B[匹配评分<br/>sonnet]
+  B --> C[公司情报<br/>sonnet]
+  C --> D[客制履历<br/>sonnet]
+  D --> E[求职信<br/>sonnet]
+  E --> F[面试准备<br/>sonnet]
+  F --> G{Critic 品管<br/>opus}
+  G -->|未过| D
+  G -->|通过| H[写入 SQLite<br/>状态: 待审]
+  H --> I[用户核可 / 汇出 Word / 模拟面试]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/kevin333353/jobsmith" target="_blank">kevin333353/jobsmith</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/shreyashankar/error-discovery-skill" target="_blank">错误发现技能（Error Discovery Skill）</a></span>
+    <span class="stars">⭐ 88</span>
+  </div>
+  <p class="one-liner">为AI智能体打造的交互式错误分析技能</p>
+  <div class="tags">
+    <span class="tag">Python 标准库</span><span class="tag">HTML/CSS/JavaScript</span><span class="tag">Markdown (SKILL.md)</span><span class="tag">JSONL/CSV/JSON</span>
+  </div>
+  <div class="summary">Error Discovery Skill 是一个面向AI智能体的错误分析技能包，核心是一份 SKILL.md 指令文件，任何能读取文件的智能体（如 Claude Code）都可遵循其规则执行。它将 JSONL/CSV/JSON 格式的 LLM 输出或追踪数据作为输入，自动识别内容类型（文章、智能体轨迹、代码、结构化输出等），并基于格式塔原则设计可视化编码——用颜色区分类别、用间距体现层级、用透明度表达重要性。随后，它使用 Python 标准库服务器生成一个零依赖的单文件 HTML 审阅应用，对数据进行聚类并挑选多样化的初始样本（聚类代表加随机抽样）。在交互循环中，技能持续监控人工标注，将自由文本笔记归类为失败模式，跟踪覆盖度，并主动提出新样本以填补盲区。整体定位是把人类评审与智能体自动归纳结合，加速 LLM 应用的错误分析与故障模式发现。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">整体工作流</p>
+    <div class="mermaid">graph TD
+  A[LLM 轨迹数据集<br/>JSONL/CSV/JSON] --> B[识别内容类型]
+  B --> C[基于格塔原则<br/>设计可视化编码]
+  C --> D[Python stdlib 服务器<br/>单文件 HTML 审阅应用]
+  A --> E[聚类与多样化采样]
+  E --> D
+  D --> F[人类阅读并写下<br/>自由文本笔记]
+  F --> G[智能体归类失败模式<br/>跟踪覆盖度]
+  G --> H[提出新样本<br/>填补盲区]
+  H --> D</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">交互式标注循环</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户/评审者
+  participant W as HTML 审阅界面
+  participant A as AI 智能体
+  participant D as 数据集
+  A->>D: 读取并聚类
+  A->>W: 推送初始多样化样本
+  U->>W: 阅读并留下笔记
+  W->>A: 同步标注内容
+  A->>A: 归纳失败模式与覆盖度
+  A->>W: 推送新样本以填补盲区
+  loop 直至覆盖充分
+    U->>W: 继续标注
+    A->>W: 持续补充样本
+  end</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/shreyashankar/error-discovery-skill" target="_blank">shreyashankar/error-discovery-skill</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ahmadrj80/claude-fable-5-free-desktop-app" target="_blank">Claude Fable 5 桌面客户端（可疑项目）</a></span>
+    <span class="stars">⭐ 82</span>
+  </div>
+  <p class="one-liner">声称免费访问 Claude 的可疑下载仓库</p>
+  <div class="tags">
+    <span class="tag">未公开（仓库无源码）</span><span class="tag">GitHub Releases 二进制分发</span><span class="tag">ZIP 打包桌面应用</span>
+  </div>
+  <div class="summary">该仓库自称是 Anthropic 所谓 Claude Fable 5 模型的免费桌面客户端，提供 Windows、macOS、Linux 三平台支持，宣传具备多模态、长上下文、代码生成、创意写作等能力，并通过 Releases 页面提供 claude-fable5-app.zip 下载包。然而 Anthropic 并未发布过名为 Claude Fable 5 或 Mythos-class 的模型，README 中没有任何源码、构建脚本或技术实现细节，仓库仅由营销话术、徽章和图片构成，并引导用户下载未签名的压缩包。此类模式与典型的恶意软件分发或盗版破解骗局高度一致，存在窃取凭证、植入木马或加密劫持的风险。即便 README 自我标注 MIT 许可并建议用户用 VirusTotal 扫描，也无法替代源码透明度。建议不要下载和运行其发布的二进制文件，如需使用 Claude，请通过 claude.ai 或 Anthropic 官方 API 访问。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">可疑下载链路与风险点</p>
+    <div class="mermaid">graph TD
+  A[用户被SEO关键词吸引] --> B[GitHub仓库README]
+  B --> C[点击Releases下载zip]
+  C --> D[解压并运行未签名可执行文件]
+  D --> E{潜在风险}
+  E --> F[凭证窃取]
+  E --> G[木马/后门]
+  E --> H[挖矿或勒索]
+  B -.无源码.-> X[无法审计]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ahmadrj80/claude-fable-5-free-desktop-app" target="_blank">ahmadrj80/claude-fable-5-free-desktop-app</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
