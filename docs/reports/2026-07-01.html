@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-01</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-01 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/gamedev-skills/awesome-gamedev-agent-skills" target="_blank">游戏开发 AI 智能体技能库</a></span>
+    <span class="stars">⭐ 190</span>
+  </div>
+  <p class="one-liner">一键安装的跨引擎游戏开发 AI 技能包</p>
+  <div class="tags">
+    <span class="tag">Agent Skills (SKILL.md 格式)</span><span class="tag">Godot 4.x / GDScript / C#</span><span class="tag">Unity 6 LTS / C#</span><span class="tag">Unreal Engine</span><span class="tag">Phaser / PixiJS / three.js (Web)</span><span class="tag">Bevy (Rust) / pygame / LÖVE / Roblox</span><span class="tag">Python (技能校验脚本)</span><span class="tag">npm CLI (skills) 与 Claude 插件市场</span>
+  </div>
+  <div class="summary">awesome-gamedev-agent-skills 是一个面向 AI 编程助手的游戏开发能力扩展库，提供 66 个原创、版本锁定的 Agent Skill 以及一个主路由（router）技能。它采用可移植的 SKILL.md 格式，无需任何转换即可在 Claude Code、Cursor、Windsurf、Cline、Codex、Gemini CLI、GitHub Copilot、Kiro 等数十种主流 AI 编程工具中原生加载。项目覆盖 Godot、Unity、Unreal、Phaser、PixiJS、three.js、Bevy、pygame、LÖVE、Roblox 等十大主流游戏引擎，横跨 2D/3D、Web 和原生平台。使用者只需通过 `npx skills add` 或 Claude 插件市场一条命令即可完成安装，随后用自然语言描述任务（例如“给我的 Godot 角色加个二段跳”），路由会自动识别项目引擎指纹（如 `project.godot`、`*.uproject`）、解析任务类型（概念、题材、发布流程），并按“引擎基础 → 概念 → 题材粘合”的顺序按需加载相关技能，避免一次性塞入全部上下文。技能按引擎、玩法品类（平台跳跃、Roguelike、RPG）、通用系统（存档、着色器、AI、程序化生成）与发行流程（Steam、itch.io）分为 8 大类，每个技能均基于官方一手文档编写、锁定到特定引擎版本，并由配套 Python 校验脚本 `validate-skills.py` 验证质量。</div>
+  <div class="why-notable">它把“AI 助手的游戏开发能力”从零散的 Prompt 技巧升级为可分发、可版本化、可校验的标准化技能包，是 Agent Skills 生态在垂直领域的一次高完成度落地——跨引擎覆盖广、路由机制解耦了用户表达与技能选择、且天然兼容主流 AI 编程工具链，对游戏开发者和 AI 工具使用者都具备直接可用的工程价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">路由加载技能的整体流程</p>
+    <div class="mermaid">graph TD
+  U[开发者自然语言请求] --> R[Router 主路由技能]
+  R --> D1[引擎指纹检测]
+  D1 -->|project.godot| E1[Godot 技能组]
+  D1 -->|*.uproject| E2[Unreal 技能组]
+  D1 -->|Unity 项目| E3[Unity 技能组]
+  D1 -->|Web/其他| E4[Web/其他引擎技能组]
+  R --> D2[任务意图解析]
+  D2 --> C[概念技能: 存档/着色器/AI]
+  D2 --> G[题材技能: 平台/RPG/Roguelike]
+  D2 --> W[发行技能: Steam/itch.io]
+  E1 --> L[按需加载最小技能集]
+  E2 --> L
+  E3 --> L
+  E4 --> L
+  C --> L
+  G --> L
+  W --> L
+  L --> A[AI 助手生成代码]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装与运行时架构</p>
+    <div class="mermaid">graph LR
+  Repo[awesome-gamedev-agent-skills 仓库] -->|npx skills add| CLI[skills CLI]
+  Repo -->|claude plugin install| CM[Claude 插件市场]
+  CLI --> Detect[检测已安装的 AI 助手]
+  Detect --> T1[Claude Code]
+  Detect --> T2[Cursor / Windsurf]
+  Detect --> T3[Codex / Copilot]
+  Detect --> T4[Gemini CLI / Kiro]
+  CM --> T1
+  T1 --> SK[SKILL.md 文件集]
+  T2 --> SK
+  T3 --> SK
+  T4 --> SK
+  SK --> V[validate-skills.py 校验]
+  SK --> RT[运行时按需加载]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/gamedev-skills/awesome-gamedev-agent-skills" target="_blank">gamedev-skills/awesome-gamedev-agent-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/diegosouzapw" target="_blank">免费 AI 网关聚合器</a></span>
+    <span class="stars">⭐ 387 <span class="stars-today">(+387 today)</span></span>
+  </div>
+  <p class="one-liner">统一接入 231+ AI 服务商的免费网关</p>
+  <div class="tags">
+    <span class="tag">AI Gateway</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">A2A (Agent-to-Agent)</span><span class="tag">PWA</span><span class="tag">Desktop App</span><span class="tag">多模态 API</span>
+  </div>
+  <div class="summary">该项目是一个面向开发者的免费 AI 网关聚合平台，主打「一个端点，接入 231+ 服务商（含 50+ 免费渠道）」的核心定位。它能够将 Claude Code、Codex、Cursor、Cline、Copilot 等主流 AI 编程工具无缝对接到 Claude、GPT、Gemini 等免费大模型上，帮助开发者以近乎零成本的方式持续使用 AI 辅助编程。项目在核心链路上采用了自研的 RTK+Caveman 双层堆叠压缩算法，可在保证语义完整的前提下，将请求与上下文的 token 消耗压缩 15%-95%，显著降低调用成本并延展有效上下文长度。同时，网关内置智能自动回退机制，当某个上游模型限流、失效或响应异常时，可无感切换到备用服务商，保障调用稳定性。项目还支持 MCP（Model Context Protocol）与 A2A（Agent-to-Agent）等新兴协议，兼容多模态 API 输入输出，并提供 Desktop 客户端与 PWA 两种形态，覆盖桌面与移动使用场景。整体来看，项目聚焦「让开发者永不停止编码」这一朴素诉求，用工程手段抹平不同厂商 API 差异，降低模型使用门槛。</div>
+  <div class="why-notable">在 AI 编程工具订阅费用高企、上游服务商频繁变动的当下，该项目通过「聚合 + 压缩 + 回退」三件套显著降低了持续使用 AI 编码的门槛，尤其对预算有限的独立开发者和学生群体有直接价值；同时对 MCP/A2A 等新协议的原生适配也让它具备面向未来 Agent 生态的想象空间。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与调用链路</p>
+    <div class="mermaid">graph TD
+  A[开发者 IDE/客户端<br/>Claude Code / Cursor / Cline / Copilot] --> B[统一网关端点]
+  B --> C{路由与协议适配}
+  C --> D[RTK+Caveman<br/>堆叠压缩层]
+  D --> E{智能调度器<br/>自动回退}
+  E --> F[免费 Claude 渠道]
+  E --> G[免费 GPT 渠道]
+  E --> H[免费 Gemini 渠道]
+  E --> I[其他 228+ 服务商]
+  C --> J[MCP / A2A 协议桥]
+  C --> K[多模态 API 处理]
+  B --> L[Desktop 客户端]
+  B --> M[PWA 前端]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求压缩与回退数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户/IDE
+  participant G as 网关
+  participant C as 压缩层(RTK+Caveman)
+  participant S as 调度器
+  participant P1 as 主服务商
+  participant P2 as 备用服务商
+  U->>G: 发送 Prompt 请求
+  G->>C: 上下文压缩(15%-95%)
+  C->>S: 精简后请求
+  S->>P1: 优先调用免费主渠道
+  alt 主渠道失败/限流
+    P1--xS: 异常响应
+    S->>P2: 自动回退
+    P2-->>S: 返回结果
+  else 正常
+    P1-->>S: 返回结果
+  end
+  S-->>G: 聚合响应
+  G-->>U: 返回最终结果</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/diegosouzapw" target="_blank">sponsors/diegosouzapw</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Abhinesh2004/mirage-cortex" target="_blank">RealmForge</a></span>
+    <span class="stars">⭐ 152</span>
+  </div>
+  <p class="one-liner">LLM智能体群模拟持久化叙事世界</p>
+  <div class="tags">
+    <span class="tag">LLM (llama.cpp / 云端 API)</span><span class="tag">向量数据库 (RAG 记忆检索)</span><span class="tag">时间序列数据库 (事件 Chronicle)</span><span class="tag">图存储 (SQLite 至分布式 KV)</span><span class="tag">RESTful API</span><span class="tag">Webhook 事件广播</span><span class="tag">TUI 终端界面</span>
+  </div>
+  <div class="summary">RealmForge 是一个开源的生成式智能体群（Agent Swarm）编排平台，定位于构建具备持久状态与叙事连贯性的模拟世界。项目面向世界观构建者、游戏设计师以及研究涌现社会行为的学者，试图弥合大语言模型的创造性与持久化模拟所需结构之间的鸿沟。其核心是结构化世界模型（SWM）：一张由智能体、地点、物品与概念组成的有向图，每个实体带有属性、库存与叙事历史，智能体基于共享的图状现实进行读写，避免了对话之间遗忘世界的问题。系统架构分为三层：Conductor 编排层负责 Tick 队列与 Epoch 循环调度，防止图写入竞态并暴露 REST API；Cortex Pool 作为 LLM 接口层，聚合本地 llama.cpp 与云端 API，负责提示词组装、路由与压缩；Index 持久化层则由世界图、时间序列的 Chronicle 事件日志与向量记忆库构成，支撑 RAG 式的智能体回忆。特色能力包括感知半径造成的信息不对称、Persona Script 加 State Vector 的多身份编排、以欲望竞价驱动的叙事市场（Narrative Market）、多语言角色互动，以及以 Epoch 为单位的非线性时间推进。前端提供 TUI 反应式控制台与 Webhook 子系统，可对接 Web 面板、Discord 机器人或直播叠层。</div>
+  <div class="why-notable">该仓库在描述上试图切入 2026 年 LLM 世界建模与智能体群模拟的前沿方向，理念上融合了 AgentOS、生成式智能体与知识图谱三条路径，narrative market 与感知半径的设计对 NPC 模拟与社会仿真研究有一定参考价值。需要提示的是：仓库名 mirage-cortex 与 README 中的 RealmForge 品牌不一致，且 README 中仅提供指向外部 GitHub Pages 的下载按钮，未见实际源码与提交历史披露，建议在实际使用前核实代码可用性与来源可信度。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统三层架构</p>
+    <div class="mermaid">graph TD
+  subgraph Conductor[编排层 Conductor]
+    TQ[Tick 队列]
+    EC[Epoch 循环]
+    API[REST API]
+  end
+  subgraph Cortex[LLM 接口层 Cortex Pool]
+    PA[Prompt 组装]
+    CR[Cortex Router]
+    PC[Prompt 压缩]
+  end
+  subgraph Index[持久化层 Index]
+    SWM[世界图 SWM]
+    CH[Chronicle 事件日志]
+    MS[向量记忆库]
+  end
+  UI[TUI/Webhook 客户端] --> API
+  API --> TQ --> EC
+  EC --> PA
+  PA --> CR --> LLM[(LLM 后端)]
+  LLM --> PC --> EC
+  EC --> SWM
+  EC --> CH
+  PA --> MS
+  MS --> PA</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单个 Epoch 内的智能体行动数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant C as Conductor
+  participant A as Agent
+  participant M as Memory Store
+  participant W as World Graph
+  participant L as LLM
+  C->>A: 触发行动 (Epoch Tick)
+  A->>W: 查询感知半径内实体
+  A->>M: 检索相关记忆 (RAG)
+  A->>L: 组装 Persona+感知+记忆 Prompt
+  L-->>A: 返回意图与对白
+  A->>W: 写入状态变更
+  A->>C: 提交事件
+  C->>W: 记录 Chronicle 日志
+  C->>M: 更新情感摘要</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Abhinesh2004/mirage-cortex" target="_blank">Abhinesh2004/mirage-cortex</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sakshxm1/hermes-agency-orchestrator" target="_blank">OrchestralFlow 编排框架</a></span>
+    <span class="stars">⭐ 152</span>
+  </div>
+  <p class="one-liner">把 Claude Code 多智能体编排成交响乐</p>
+  <div class="tags">
+    <span class="tag">Claude Code (Opus 4.8)</span><span class="tag">.claude 清单文件</span><span class="tag">Multi-Agent Orchestration</span><span class="tag">Prompt Engineering</span>
+  </div>
+  <div class="summary">OrchestralFlow 是一个以「交响乐」为隐喻的 Claude Code 多智能体编排框架概念方案，目标是把单一大模型调用扩展为具备成本感知的多角色协作系统。项目将 /goal 视为指挥棒，将 Skills 视为演奏技法，将 Subagents 视为声部演奏者，将 Agent Teams 视为弦乐、木管、打击乐等乐团分部，并通过 Conductor Agent 负责元推理、成本仲裁与动态重规划。核心机制包括：Cost Ladder 成本阶梯，根据任务的新颖性与复杂度矩阵，把简单查询下放到 Tutti 低价智能体，把架构决策交给 Soloist，把跨切面推理留给 Conductor；UltraCode 压缩层通过识别重复结构模式生成「音乐动机」，声称可降低约 40% Token 消耗；动态乐谱生成允许工作流在执行中变调切换团队；实时热替换机制在检测到智能体疲劳时轮换角色；失败保护乐章会在成本超支超过 15% 时自动插入重构乐章。执行流程被划分为主题声明、呈示、发展、再现和尾声五个乐章，最终生成 After-Action Score 反哺下一次目标声明。项目自称零依赖，仅通过单个 .claude 清单文件即可运行。需要注意的是，仓库以 README 概念阐述为主并附带外链下载按钮，实际可运行代码与实现细节未在文档中给出。</div>
+  <div class="why-notable">该仓库的看点在于用音乐编排隐喻重新组织多智能体工作流的思路，特别是把成本阶梯显式建模到调度层，对研究 Agent 团队装配与 Token 预算控制的开发者有一定启发。但需提醒：README 中的 Download 按钮指向 github.io 外链，仓库并未提供可审计的实现代码，内容更接近营销性概念稿而非可用工程项目，下载与执行外部产物前请谨慎核验来源。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">OrchestralFlow 编排架构</p>
+    <div class="mermaid">graph TD
+  G[/goal 指挥棒/] --> C[Conductor Agent 元推理与成本仲裁]
+  C --> S[Strings 数据处理组]
+  C --> W[Winds 逻辑与 API 组]
+  C --> P[Percussion 基础设施组]
+  S --> U[UltraCode 动机压缩层]
+  W --> U
+  P --> U
+  U --> O[代码产出与 After-Action Score]
+  O -.反馈.-> C</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">五乐章执行流程</p>
+    <div class="mermaid">flowchart LR
+  M1[乐章一 主题声明 /goal] --> M2[乐章二 呈示 技能拆解]
+  M2 --> M3[乐章三 发展 团队装配]
+  M3 --> M4[乐章四 再现 并行执行与纠偏]
+  M4 --> M5[乐章五 尾声 自优化复盘]
+  M5 -.经验回灌.-> M1
+  M4 -->|成本超 15%| R[插入重构乐章]
+  R --> M4</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sakshxm1/hermes-agency-orchestrator" target="_blank">Sakshxm1/hermes-agency-orchestrator</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/amplifthq/opentag" target="_blank">OpenTag</a></span>
+    <span class="stars">⭐ 381</span>
+  </div>
+  <p class="one-liner">在 Slack/GitHub 中 @召唤本地编码智能体</p>
+  <div class="tags">
+    <span class="tag">Node.js 20+</span><span class="tag">TypeScript</span><span class="tag">pnpm</span><span class="tag">npm (@opentag scope)</span><span class="tag">Slack Socket Mode</span><span class="tag">GitHub Webhooks</span><span class="tag">Lark/Feishu API</span><span class="tag">Codex CLI</span><span class="tag">Claude Code CLI</span>
+  </div>
+  <div class="summary">OpenTag 是一个开源工具，让团队可以在日常使用的协作平台（Slack、GitHub、Lark/飞书）中通过 @提及的方式召唤本地编码智能体完成任务。它监听指定平台的消息事件，将带标签的请求路由到本机运行的 Codex 或 Claude Code，然后把执行结果回传到同一条会话线程中。整个 CLI 流程采用本地优先架构：没有 OpenTag 云服务，平台凭证以私有文件权限存储在用户机器上，编码智能体直接在本地代码检出目录上运行，平台 API 仅接收确认、回复及用户批准的操作所需的最小消息。核心设计亮点是「源线程操作回执」机制：当智能体建议执行系统级变更时，OpenTag 会在原始会话线程中渲染紧凑回执，明示将要发生的变更、是否可执行，以及当前的安全决策，只有在调度器确认已配置适配器可执行时才显示 Apply 按钮。项目提供 opentag setup、start、status、doctor 等命令，通过四个问题（监听平台、编码智能体、本地项目、平台凭证）完成引导式配置。运行时由本地 dispatcher、runner 和平台 listener 三部分组成，配置保存在 ~/.config/opentag/config.json，隔离 worktree 存放于 ~/.local/state/opentag。已发布 v0.3.0，通过 npm 以 @opentag 作用域发布 CLI、local-runtime、core 三个主要包，要求 Node.js 20+。</div>
+  <div class="why-notable">把「@某人」这一最自然的协作动作直接映射到编码智能体，弥合了团队沟通与 AI 编码之间的操作鸿沟。相比常见的云端 AI 助手，它坚持本地执行 + 线程内审批的模式，兼顾了企业代码隐私与协作透明度，特别适合已经在用 Codex 或 Claude Code 的团队将其扩展为面向全队的可召唤能力。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与消息流</p>
+    <div class="mermaid">flowchart LR
+  U[团队成员] -->|@opentag 提及| P[Slack / GitHub / Lark]
+  P --> L[OpenTag 平台监听器]
+  L --> D[本地 Dispatcher]
+  D --> R[本地 Runner]
+  R --> E{编码智能体}
+  E --> C1[Codex]
+  E --> C2[Claude Code]
+  C1 --> RP[结果回执]
+  C2 --> RP
+  RP -->|回传到原线程| P
+  D -.配置.-> CFG[~/.config/opentag/config.json]
+  R -.隔离 worktree.-> ST[~/.local/state/opentag]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">源线程操作回执审批流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant User as 用户
+  participant Thread as 会话线程
+  participant Agent as 编码智能体
+  participant Disp as 本地 Dispatcher
+  participant Sys as 目标系统(如 GitHub)
+  User->>Thread: @opentag investigate this
+  Thread->>Agent: 转发请求
+  Agent->>Disp: 提议系统变更
+  Disp->>Disp: 校验适配器是否就绪
+  alt 适配器就绪
+    Disp->>Thread: 渲染回执 (含 Apply 按钮)
+    User->>Thread: 点击 Apply 批准
+    Thread->>Sys: 执行变更 (如创建 PR)
+    Sys-->>Thread: 返回结果
+  else 未就绪
+    Disp->>Thread: 显示 setup / attention needed
+  end</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/amplifthq/opentag" target="_blank">amplifthq/opentag</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
