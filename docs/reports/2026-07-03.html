@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-03</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-03 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/affaan-m" target="_blank">Agent Harness 性能优化系统</a></span>
+    <span class="stars">⭐ 486 <span class="stars-today">(+486 today)</span></span>
+  </div>
+  <p class="one-liner">面向AI编码代理的性能优化框架</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">Opencode</span><span class="tag">Cursor</span><span class="tag">Agent Harness</span>
+  </div>
+  <div class="summary">该项目是一个面向AI编码代理（Agent Harness）的性能优化系统，旨在为 Claude Code、Codex、Opencode、Cursor 等主流 AI 编程助手提供统一的能力增强层。项目从五个维度切入代理的运行时表现：Skills（技能）、Instincts（直觉）、Memory（记忆）、Security（安全）和 Research-first Development（研究先行开发范式）。通过 Skills 模块，代理可以调用预置或自定义的能力组件；Instincts 模块负责在缺乏明确指令时给出合理的默认决策，减少反复试错；Memory 模块解决跨会话上下文丢失问题，让代理具备长期记忆；Security 模块在代理执行敏感操作前引入约束和审查机制；Research-first 理念则强调在写代码之前先阅读、检索、验证，避免盲目编码带来的返工。该系统定位为「跨 harness 的通用增强层」，而非绑定单一 IDE 或模型，因此可以在不同代理运行环境之间迁移复用配置和策略。目前项目主要以理念和方法论呈现，README 内容较为概要，具体实现细节需在仓库源码中进一步查阅。整体来看，它试图把「如何让 AI 代理更聪明地写代码」这一模糊问题工程化，转化为一组可组合、可复用的模块。</div>
+  <div class="why-notable">随着 AI 编码代理进入生产环境，单纯依赖模型能力已经不够，如何构建代理侧的记忆、安全与决策框架成为下一阶段的核心竞争点。该项目跨 harness 抽象通用能力，思路契合当前 agentic coding 的发展趋势，对研究代理工程化的开发者具有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构总览</p>
+    <div class="mermaid">graph TD
+  User[开发者] --> Harness[AI 编码 Harness]
+  Harness --> Claude[Claude Code]
+  Harness --> Codex[Codex]
+  Harness --> Opencode[Opencode]
+  Harness --> Cursor[Cursor]
+  Harness --> Core[性能优化核心层]
+  Core --> Skills[Skills 技能模块]
+  Core --> Instincts[Instincts 直觉模块]
+  Core --> Memory[Memory 记忆模块]
+  Core --> Security[Security 安全模块]
+  Core --> Research[Research-first 研究先行]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">代理任务执行数据流</p>
+    <div class="mermaid">graph LR
+  A[用户输入任务] --> B[Research 调研阶段]
+  B --> C[Memory 读取历史上下文]
+  C --> D[Instincts 生成默认决策]
+  D --> E[Skills 调用具体能力]
+  E --> F[Security 安全校验]
+  F --> G[执行并输出结果]
+  G --> H[Memory 写回新记忆]
+  H --> A</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sakshxm1/hermes-agency-orchestrator" target="_blank">OrchestralFlow 管弦乐编排框架</a></span>
+    <span class="stars">⭐ 155</span>
+  </div>
+  <p class="one-liner">把 Claude Code 多智能体当交响乐团来指挥</p>
+  <div class="tags">
+    <span class="tag">Claude Code (Opus 4.8)</span><span class="tag">.claude manifest 声明式配置</span><span class="tag">多 Agent 编排（Conductor / Soloist / Tutti）</span><span class="tag">零外部依赖（无 pip / npm）</span>
+  </div>
+  <div class="summary">OrchestralFlow（仓库名 hermes-agency-orchestrator）是一个以「管弦乐团」为隐喻的 Claude Code 多智能体编排框架，作者将其定位为在 Skills、Subagents、Agent Teams 与成本阶梯之间进行动态调度的声明式编排层。项目核心思想是把 `/goal` 视为指挥棒，用户只需声明高层意图，系统即把任务解析为「主题对象」，再经过五个「乐章」——主题声明、呈示部（Skill 映射）、发展部（Agent Team 组装）、再现部（并行执行与反馈）、终曲（自我优化），完成从意图到代码的转译。项目强调三大特性：一是 Cost Ladder 成本阶梯，根据任务复杂度自动将子任务路由到 Tutti、Soloist、Conductor 三级智能体，实现动态成本控制；二是 UltraCode 压缩层，通过识别重复结构模式并编码为「音乐动机」，声称最高可节省 40% 的 token 成本；三是零依赖，声称整个框架由单个 `.claude` manifest 文件承载，无需 pip、npm 或 curl。此外还包含实时 Agent 热切换、跨语言 `/goal` 支持、安全乐章检查点等能力。需要注意的是，README 用大量音乐比喻构建概念，但仓库未展示实际代码或 manifest 内容，主要下载入口指向外部 github.io 页面，实用性与真实性需自行甄别。</div>
+  <div class="why-notable">该仓库把「多智能体编排 + 成本感知路由」这两个当前 Claude Code 生态里最受关注的话题，用一套完整的音乐隐喻串了起来，读起来像是一份关于 2026 年 Agent 工作流走向的思想实验，对于设计自己的 Agent 团队分层与成本控制策略有一定参考价值。但也要指出：README 通篇偏概念叙事，未附实际 manifest 或代码示例，且下载入口跳转到外部静态站点，建议关注思想模型即可，落地前需谨慎验证仓库真实性。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">五乐章执行流程</p>
+    <div class="mermaid">graph LR
+  A[用户声明 /goal] --> B[乐章 I 主题声明<br/>解析为 Theme Object]
+  B --> C[乐章 II 呈示部<br/>Skill 原子化分解]
+  C --> D[乐章 III 发展部<br/>动态组装 Agent Team]
+  D --> E[乐章 IV 再现部<br/>并行执行 + Conductor 监督]
+  E --> F{偏离主题?}
+  F -->|是| G[发出 Dynamic Rehearsal Marker<br/>动态修正]
+  G --> E
+  F -->|否| H[乐章 V 终曲<br/>生成 After-Action Score]
+  H --> A</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">分层架构与成本阶梯</p>
+    <div class="mermaid">graph TD
+  U[/goal 意图/] --> C[Conductor Agent<br/>元推理·成本仲裁·重规划]
+  C --> S1[Strings 弦乐组<br/>数据处理]
+  C --> S2[Winds 木管组<br/>API 与逻辑]
+  C --> S3[Percussion 打击乐组<br/>基础设施]
+  S1 --> UC[UltraCode 压缩层<br/>Motif 复用 · Token 优化]
+  S2 --> UC
+  S3 --> UC
+  UC --> CL[Cost Ladder<br/>Tutti / Soloist / Conductor 三级路由]
+  CL --> OUT[代码产出 + Safety Movement 检查点]
+  OUT -.超支 15%.-> R[自动插入 Refactor Movement]
+  R --> CL</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sakshxm1/hermes-agency-orchestrator" target="_blank">Sakshxm1/hermes-agency-orchestrator</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Abhinesh2004/mirage-cortex" target="_blank">RealmForge</a></span>
+    <span class="stars">⭐ 151</span>
+  </div>
+  <p class="one-liner">LLM 智能体群模拟持久化叙事世界</p>
+  <div class="tags">
+    <span class="tag">Python（推测）</span><span class="tag">REST API</span><span class="tag">llama.cpp / 云端 LLM API</span><span class="tag">向量数据库（用于 RAG 记忆）</span><span class="tag">时间序列数据库（事件日志）</span><span class="tag">SQLite / 分布式 KV 存储</span><span class="tag">TUI 终端界面</span><span class="tag">Webhook / JSON 事件流</span>
+  </div>
+  <div class="summary">RealmForge 是一个开源的生成式智能体群（Agent Swarm）编排平台，旨在构建具备持久化状态与叙事连贯性的模拟世界。项目定位介于游戏 NPC 原型、世界观构建工具与 LLM 社会行为研究平台之间，核心理念是让每个由 LLM 驱动的角色拥有独立记忆、目标与人际关系，并在跨会话的共享世界中演化，从而涌现出未经预设脚本的故事线、经济系统与社会结构。其核心创新是结构化世界模型（SWM）——一个由实体（角色、地点、物品、概念）构成的有向图，智能体通过感知半径（Perception Radius）读取与写入图状态，从而实现信息不对称与探索机制。系统在此之上构建了三层架构：Conductor 编排层负责基于 Tick/Epoch 的调度与 REST API 暴露；Cortex Pool 负责 LLM 提示装配、模型路由（从 llama.cpp 到云端 API）与上下文压缩；Index 持久层则将世界图、时间序列的 Chronicle 事件日志、以及向量化记忆存储起来以支持 RAG。此外，项目还提供叙事市场（Narrative Market）作为剧情涌现引擎、多语言人格支持、以及 TUI Reactive Console 与 Webhook 子系统用于实时观测与外部集成。需要提醒的是，仓库名 mirage-cortex 与 README 描述的 RealmForge 不一致，且 README 中包含指向 GitHub Pages 的下载按钮，实际代码可用性与项目真实性建议在克隆前进一步核实。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">RealmForge 三层架构</p>
+    <div class="mermaid">graph TD
+  UI[Reactive Console / Webhook 客户端] -->|REST| C[Conductor 编排层]
+  C -->|调度 Tick/Epoch| AG[Agent 群]
+  AG -->|提示请求| CP[Cortex Pool LLM 接口]
+  CP -->|路由| L1[本地 llama.cpp]
+  CP -->|路由| L2[云端 LLM API]
+  AG -->|读写| IDX[Index 持久层]
+  IDX --> WG[World Graph 世界图]
+  IDX --> CH[Chronicle 事件日志]
+  IDX --> MEM[Vector Memory 向量记忆]
+  CP -.RAG 检索.-> MEM</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Epoch 循环与叙事涌现数据流</p>
+    <div class="mermaid">flowchart LR
+  A[Epoch 开始] --> B[读取全局事件]
+  B --> C[环境事件生成\n风暴/节日/龙袭]
+  C --> D[采集 Agent 欲望\n形成 Narrative Market 竞标]
+  D --> E[World Conductor\n选择主线冲突]
+  E --> F[激活 Agent 执行动作]
+  F --> G[写入 World Graph\n更新关系与库存]
+  G --> H[Chronicler 记录事件]
+  H --> I[记忆摘要入向量库]
+  I --> A</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Abhinesh2004/mirage-cortex" target="_blank">Abhinesh2004/mirage-cortex</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ahmadrj80/claude-fable-5-free-desktop-app" target="_blank">Claude Fable 5 桌面客户端（可疑项目）</a></span>
+    <span class="stars">⭐ 147</span>
+  </div>
+  <p class="one-liner">疑似恶意软件分发的伪造 AI 客户端</p>
+  <div class="tags">
+    <span class="tag">未公开源代码</span><span class="tag">仅提供预打包 ZIP 二进制文件</span><span class="tag">无法验证实际技术栈</span>
+  </div>
+  <div class="summary">该仓库自称为 Anthropic「Claude Fable 5」的免费桌面客户端，宣称提供 Mythos 级 AI 模型的免订阅访问，支持 Windows、macOS 和 Linux 三平台，具备推理、代码生成、创意写作、多模态理解等能力。然而经过技术审查，该项目存在多项严重可疑迹象：第一，Anthropic 官方从未发布过名为「Claude Fable 5」或「Mythos-class」的模型，这是杜撰的产品名；第二，仓库中不包含任何源代码，仅通过 Release 页面提供一个 claude-fable5-app.zip 压缩包下载，与开源项目的常规形态不符；第三，README 采用大量营销式话术堆砌关键词（frontier reasoning、agentic workflows、long horizon autonomy 等），明显针对搜索引擎优化，目标是诱导用户搜索「免费 Claude」时进入；第四，README 自曝「非官方客户端」并建议用户使用 VirusTotal 扫描，属于典型的免责话术；第五，同类模式（GitHub 上以 zip 包分发的破解版/免费版付费软件）在 2024 至 2025 年间被多次报告为信息窃取木马（infostealer）的分发渠道。综合判断，这更可能是伪装成 AI 工具的恶意软件分发仓库，而非真实的技术项目。</div>
+  <div class="why-notable">值得关注的原因并非技术价值，而是安全警示意义。该仓库是 GitHub 上「伪 AI 工具 + 免费下载」类可疑项目的典型样本，帮助读者识别此类通过热门模型名义诱导下载的社会工程学攻击模式。建议不要下载运行其 ZIP 文件；如已下载，应在隔离环境使用 VirusTotal 及本地杀软扫描，并检查系统凭据、浏览器 Cookie、加密钱包等敏感数据是否泄露。获取 Claude 请仅通过 claude.ai 及 Anthropic 官方 API。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">可疑分发流程</p>
+    <div class="mermaid">graph TD
+  A[用户搜索 免费 Claude] --> B[SEO 关键词命中 GitHub 仓库]
+  B --> C[README 营销页面]
+  C --> D[Releases 页下载 ZIP]
+  D --> E[解压运行未知二进制]
+  E --> F{潜在风险}
+  F --> G[凭据窃取]
+  F --> H[后门植入]
+  F --> I[加密货币劫持]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">红旗特征核对</p>
+    <div class="mermaid">graph LR
+  R[仓库审查] --> R1[产品名不存在于官方]
+  R --> R2[无源代码]
+  R --> R3[仅 ZIP 二进制]
+  R --> R4[关键词堆砌 README]
+  R --> R5[自称非官方 + 免责话术]
+  R1 --> X[高风险判定]
+  R2 --> X
+  R3 --> X
+  R4 --> X
+  R5 --> X</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ahmadrj80/claude-fable-5-free-desktop-app" target="_blank">ahmadrj80/claude-fable-5-free-desktop-app</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Kulaxyz/self-learning-skills" target="_blank">自学习技能包</a></span>
+    <span class="stars">⭐ 897</span>
+  </div>
+  <p class="one-liner">让AI编码助手自动沉淀经验的元技能</p>
+  <div class="tags">
+    <span class="tag">Agent Skills 开放标准</span><span class="tag">Markdown (SKILL.md / AGENTS.md)</span><span class="tag">Cursor Rules (.mdc)</span><span class="tag">Claude Code Plugin</span><span class="tag">npx skills CLI</span><span class="tag">JSON 清单 (skills.sh.json / marketplace.json)</span>
+  </div>
+  <div class="summary">self-learning-skills 是一个面向 AI 编码代理（Claude Code、Cursor、Codex、Aider、Zed、Gemini CLI 等）的自我改进型技能包。它解决的核心痛点是：每次会话中辛苦调试出的操作路径（如生产数据库连接方式、密钥位置、部署命令、验证步骤）会随会话结束而消散，下一次会话又需从零重学。该项目提供一个元技能（meta-skill），教会代理识别刚刚获得的可复用『黄金路径』时刻，并将其固化到工具能自动加载的位置，让下次会话直接掌握流程而非重新摸索。工作循环分三步：识别时机（多次尝试才成功的任务、非显而易见的命令、易复发的运维流程）、无需提示自动捕获（记录步骤与失败教训）、下次自动复用。项目按工具差异化落地：Claude Code 写入 skills/<name>/SKILL.md，Cursor 落到 .cursor/rules/learned/，其他基于 AGENTS.md 的代理则追加到标准指令文件。它还设计了分级路由（技能/备忘/丢弃）与晋升规则（需通过验证、命名失败模式、至少排除一条死路），避免把未经证实的猜测固化。安全上明确不写入任何密钥值，仅记录密钥所在位置。基于开放的 Agent Skills 标准构建，可通过 npx skills 或 Claude Code 插件市场安装。</div>
+  <div class="why-notable">这是把『AI 代理的经验』本身当作一等公民来工程化的思路：不解决具体任务，而解决『经验流失』这一元问题。它用极轻的形态（几个 Markdown 模板加安装脚本）覆盖了主流 AI 编码工具生态，并用『晋升规则』这样的社区智慧防止知识库劣化。对于团队协作场景尤其有价值，被采纳的黄金路径可随 git 共享，让整个团队的 AI 助手共享同一套已验证工作流，是可复用的 AI 记忆工程模式范例。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">自学习循环流程</p>
+    <div class="mermaid">flowchart LR
+  A[会话中的调试/操作] --> B{识别黄金路径时刻}
+  B -->|多次尝试成功<br/>非显而易见命令<br/>用户说记住这个| C[分级路由]
+  C -->|多步骤流程| D[晋升检查]
+  C -->|单条事实| E[写入 MEMORY.md]
+  C -->|一次性| F[丢弃]
+  D -->|通过验证<br/>命名失败模式<br/>排除死路| G[固化为 Skill/Rule]
+  D -->|条件不足| E
+  G --> H[下次会话自动加载]
+  E --> H
+  H --> A</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">多工具适配架构</p>
+    <div class="mermaid">graph TD
+  Core[self-learning 元技能核心] --> S1[skills/self-learning/SKILL.md]
+  Core --> S2[.cursor/rules/self-learning.mdc]
+  Core --> S3[AGENTS.md 通用版本]
+  S1 --> T1[Claude Code / Codex<br/>按 skill 描述匹配加载]
+  S2 --> T2[Cursor<br/>按 rule 描述与 globs 加载]
+  S3 --> T3[Zed / Aider / Gemini CLI<br/>常驻指令文件]
+  T1 --> H1[产出 skills/&lt;name&gt;/SKILL.md]
+  T2 --> H2[产出 .cursor/rules/learned/*.mdc]
+  T3 --> H3[追加到 AGENTS.md 或 MEMORY.md]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Kulaxyz/self-learning-skills" target="_blank">Kulaxyz/self-learning-skills</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
