@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-04</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-04 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sakshxm1/hermes-agency-orchestrator" target="_blank">OrchestralFlow 编排框架</a></span>
+    <span class="stars">⭐ 155</span>
+  </div>
+  <p class="one-liner">把 Claude Code 多智能体编排比作交响乐</p>
+  <div class="tags">
+    <span class="tag">Claude Code (Opus)</span><span class="tag">.claude manifest 声明式配置</span><span class="tag">多 Agent 编排（Subagents / Agent Teams）</span><span class="tag">Prompt 压缩（UltraCode）</span><span class="tag">GitHub Pages 静态站点</span>
+  </div>
+  <div class="summary">OrchestralFlow（仓库名 hermes-agency-orchestrator）自称是一个面向 Claude Code 的零依赖、声明式多智能体编排框架，将 Skills、Subagents、Agent Teams 与 Cost Ladder 等概念类比为交响乐团中的乐器技法、乐手、声部与力度变化，用户通过一条 /goal 指令即可像指挥家一样调度一整支「AI 乐团」完成代码生成任务。项目主打五大理念：动态乐谱生成（Generative Score 可在执行中改换阵容）、成本阶梯自动路由（简单任务下沉到 Tutti 廉价代理，架构决策交给 Soloist，元推理交给 Conductor）、UltraCode 无损提示压缩（宣称可省 40% token）、跨语言 /goal 解析、实时 Agent 热替换以及内建的 Safety Movement 校验（超预算 15% 自动插入重构乐章）。工作流被组织为五个乐章：主题声明、呈示部（技能映射）、发展部（Agent 团组装：Strings 数据、Winds 逻辑、Percussion 运维）、再现部（并行执行与动态排练标记）与尾声（After-Action Score 自我优化）。需要注意的是，仓库中并未提供可运行源码，README 主要由营销性描述和一个指向 GitHub Pages 的下载按钮构成，实际能力无法从代码层面验证，读者接触此类「下载即用」链接时需保持警惕。</div>
+  <div class="why-notable">该仓库的概念叙事（Cost Ladder、Agent Team 热替换、乐章化工作流）对思考 Claude Code 多代理编排范式有一定启发价值，但仓库本身几乎不含源码，核心入口是一个指向 GitHub Pages 的 Download 按钮，具有典型的「营销页 + 外链下载」特征，来源可疑。建议只把 README 当作概念文本阅读，不要下载或执行其分发的任何二进制或脚本，需要落地时应参考 Anthropic 官方 Subagents / Skills 文档自行实现。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">OrchestralFlow 分层架构</p>
+    <div class="mermaid">graph TD
+  U[用户 /goal 意图] --> C[Conductor Agent 指挥家<br/>元推理与成本仲裁]
+  C --> S[Strings 数据声部]
+  C --> W[Winds 逻辑声部]
+  C --> P[Percussion 运维声部]
+  S --> UC[UltraCode 压缩层<br/>Motif 复用与 Token 优化]
+  W --> UC
+  P --> UC
+  UC --> OUT[生成代码 / 服务产物]
+  C -. 成本阶梯路由 .-> T[Tutti 低成本代理]
+  C -. 成本阶梯路由 .-> SO[Soloist 中成本代理]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">五乐章执行流</p>
+    <div class="mermaid">flowchart LR
+  M1[乐章一<br/>Theme 主题声明<br/>解析 /goal] --> M2[乐章二<br/>Exposition 技能映射<br/>拆分原子 Skills]
+  M2 --> M3[乐章三<br/>Development 团组装<br/>动态分配 Agent Team]
+  M3 --> M4[乐章四<br/>Recapitulation 执行<br/>并行运行 + 排练标记]
+  M4 --> M5[乐章五<br/>Coda 自我优化<br/>After-Action Score]
+  M5 -. 反馈至下一次 /goal .-> M1
+  M4 -->|超预算 15%| RF[插入 Refactor Movement]
+  RF --> M4</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sakshxm1/hermes-agency-orchestrator" target="_blank">Sakshxm1/hermes-agency-orchestrator</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Abhinesh2004/mirage-cortex" target="_blank">RealmForge（领域熔炉）</a></span>
+    <span class="stars">⭐ 151</span>
+  </div>
+  <p class="one-liner">生成式智能体群驱动的持久化叙事模拟世界</p>
+  <div class="tags">
+    <span class="tag">Python（推断）</span><span class="tag">有向图 / 邻接表世界模型</span><span class="tag">SQLite 及分布式 KV 存储</span><span class="tag">向量数据库（RAG 记忆）</span><span class="tag">时序数据库（事件编年史）</span><span class="tag">llama.cpp / 云端 LLM API</span><span class="tag">RESTful API</span><span class="tag">Webhook 事件广播</span><span class="tag">TUI 终端可视化</span>
+  </div>
+  <div class="summary">RealmForge 是一个开源的生成式智能体群编排平台，旨在为持久化、叙事连贯的模拟世界提供底层框架。项目的核心创新是「结构化世界模型」（Structured World Model, SWM）——以有向图形式存储智能体、地点、物品与概念等实体，让 LLM 驱动的角色在共享现实中读写状态，从根本上解决传统对话式智能体「会话即遗忘」的问题。系统采用三层架构：Conductor 编排层负责 Tick 队列调度与 Epoch 时钟推进，处理事件与冲突优先级；Cortex Pool 管理 LLM 请求路由、Prompt 组装与压缩，支持 llama.cpp 本地模型与云端 API 混合部署；Index 持久层则保存世界图、事件编年史与向量记忆库，实现 RAG 式的真实回忆。功能层面引入感知半径、关系衰减、Persona 脚本、多语言角色互动、叙事市场（Narrative Market）以及随机环境事件等机制，可催生涌现式剧情与复杂社会经济系统。项目附带 TUI 反应式控制台实时可视化世界图，并通过 Webhook 广播 JSON 事件，便于对接 Web 前端、Twitch 直播覆盖层或 Discord 机器人，面向世界观创作者、游戏 NPC 设计师与 LLM 社会行为研究者。</div>
+  <div class="why-notable">RealmForge 的价值在于把「LLM 智能体」从单轮对话推向持久化模拟：通过结构化世界图 + Epoch 时钟 + 叙事市场三件套，形成了一个可复用的『虚拟社会操作系统』雏形。对世界观创作、深度 NPC 原型以及多智能体社会行为研究都具有参考意义，尤其是 Prompt 压缩与向量记忆的组合思路，回应了长上下文成本高、角色易失忆两大痛点。需要留意的是，README 目前偏概念叙述，缺少代码样例与依赖清单，读者可结合仓库源码进一步核验其成熟度。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三层系统架构</p>
+    <div class="mermaid">graph TD
+  UI[TUI 控制台 / Web 前端 / Discord Bot] -->|REST / Webhook| C[Conductor 编排层]
+  C -->|Tick 调度| AG[智能体群 Agent Swarm]
+  AG -->|Prompt 请求| CP[Cortex Pool LLM 接口层]
+  CP -->|路由| L1[本地 llama.cpp]
+  CP -->|路由| L2[云端 LLM API]
+  CP -->|Prompt 压缩| SUM[小模型摘要器]
+  AG -->|读写状态| IDX[Index 持久层]
+  IDX --> WG[World Graph 世界图]
+  IDX --> CH[Chronicle 事件编年史]
+  IDX --> MEM[Memory Store 向量记忆]
+  C -->|环境事件| WG</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单个 Epoch 的智能体行动数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant C as Conductor
+  participant A as Agent
+  participant CP as Cortex Pool
+  participant M as Memory Store
+  participant W as World Graph
+  participant CH as Chronicle
+  C->>A: 触发 Tick（进入 Epoch）
+  A->>W: 查询感知半径内实体
+  A->>M: 检索相关记忆（RAG）
+  A->>CP: 组装 Prompt 并请求
+  CP-->>A: 返回行动决策
+  A->>W: 写入状态变更
+  A->>CH: 记录事件日志
+  CH->>M: 归纳情感摘要回写记忆
+  C->>C: 推进叙事市场与全局时钟</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Abhinesh2004/mirage-cortex" target="_blank">Abhinesh2004/mirage-cortex</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Kulaxyz/self-learning-skills" target="_blank">self-learning-skills 自学习技能</a></span>
+    <span class="stars">⭐ 797</span>
+  </div>
+  <p class="one-liner">让 AI 编程助手把踩坑经验沉淀成可复用技能</p>
+  <div class="tags">
+    <span class="tag">Agent Skills 开源标准</span><span class="tag">Markdown（SKILL.md / AGENTS.md / .mdc）</span><span class="tag">Claude Code Plugin / Marketplace</span><span class="tag">Cursor Rules</span><span class="tag">npx skills CLI</span><span class="tag">Shell 脚本</span>
+  </div>
+  <div class="summary">self-learning-skills 是一个面向 AI 编程助手（Claude Code、Cursor、Codex、Zed、Aider、Gemini CLI 等）的自我进化『元技能』。它解决了一个长期痛点：每次会话中辛苦调试得到的『黄金路径』——比如如何连接生产数据库、凭据在哪里、部署命令是什么、如何在线验证等——会随会话结束而蒸发，下次又要从零重新摸索。该项目并不直接完成开发工作，而是教会 Agent 识别『刚刚赚到一段可复用经验』的时刻，并将其自动持久化到工具会自动加载的位置。核心循环由三步组成：识别时机（多次尝试才成功、非显然命令、用户显式说 remember this 等）→ 无需提示地自主抓取（选定作用域与命名，同时记录『什么行不通』）→ 下次会话自动加载复用。项目为不同工具提供了对应适配：Claude Code 落地为 skills/<name>/SKILL.md，Cursor 落地为 .cursor/rules/learned/<name>.mdc，其他 Agent 则追加到 AGENTS.md。它还引入了分诊机制（技能 / 备忘 / 跳过）与晋升规则（必须同时具备通过验证、命名失败模式、排除的死路），避免把未验证的猜测固化。安全上明确不写入任何秘钥值，只记录秘钥所在位置。</div>
+  <div class="why-notable">这是一个把『AI 会遗忘』这个日常痛点转化为工程化解法的巧妙尝试。它没有堆砌复杂框架，而是用一个跨工具通用的 Markdown 约定 + 分诊 + 晋升规则，把 Agent 的一次性经验沉淀为长期资产，同时用『只记位置不记值』守住秘钥安全底线。对于重度使用 AI 编码助手的团队，这种可共享、可 Git 管理的『黄金路径库』有明显的复利价值，且思路可直接迁移到自研 Agent 生态中。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">自学习循环</p>
+    <div class="mermaid">graph TD
+  A[会话进行中] --> B{识别黄金路径时机}
+  B -->|多次尝试才成功/非显然命令/用户说 remember this| C[分诊]
+  B -->|普通操作| A
+  C -->|多步可复用流程| D[晋升检查]
+  C -->|单条事实/纠正| E[写入 MEMORY 备忘]
+  C -->|一次性| F[跳过]
+  D -->|通过验证 + 命名失败模式 + 排除死路| G[生成 Skill/Rule]
+  D -->|条件不全| E
+  G --> H[持久化到工具指定位置]
+  H --> I[下次会话自动加载]
+  I --> A</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">跨工具落地映射</p>
+    <div class="mermaid">graph LR
+  S[self-learning 元技能] --> C1[Claude Code / Codex]
+  S --> C2[Cursor]
+  S --> C3[Zed / Aider / Gemini CLI]
+  C1 --> P1[skills/&lt;name&gt;/SKILL.md]
+  C2 --> P2[.cursor/rules/learned/&lt;name&gt;.mdc]
+  C3 --> P3[AGENTS.md 追加条目]
+  P1 --> L1[按 skill description 匹配加载]
+  P2 --> L2[按 rule description / globs 加载]
+  P3 --> L3[始终读取的标准指令文件]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Kulaxyz/self-learning-skills" target="_blank">Kulaxyz/self-learning-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/lingbol088-spec/reverse-flow-skill" target="_blank">reverse-flow-skill 逆向流程技能</a></span>
+    <span class="stars">⭐ 314</span>
+  </div>
+  <p class="one-liner">AI Agent 本地 CTF 逆向工程技能包</p>
+  <div class="tags">
+    <span class="tag">Markdown Skill 定义 (SKILL.md)</span><span class="tag">OpenAI Agents YAML 配置</span><span class="tag">Python 辅助脚本</span><span class="tag">Codex Skills 生态</span><span class="tag">PowerShell 安装脚本</span>
+  </div>
+  <div class="summary">reverse-flow-skill 是一个面向 AI Agent / Codex 的本地 CTF 逆向工程流程技能包，通过启动词『真心为你』进入逆向模式，为智能体在本地沙盒、CTF、crackme、wargame 及授权训练靶场中执行逆向任务提供稳定的工作流。项目将逆向过程拆解为『分析 → 报告 → 逆向 → 深度逆向 → 漏洞研判 → 用户选择下一步』六阶段流水线，覆盖样本分诊、工具链审计、静态分析、深度逆向、漏洞研判到报告输出的完整闭环。技能采用『英文内核提示词 + 中文用户交互』的双语设计：内部执行规则、工具选择与流程控制使用英文以提升模型稳定性，而启动词、报告结构与下一步菜单则保持中文，兼顾模型可靠性与用户体验。项目内置口语化需求归一化能力，可将『解锁 XX』『去除 XX』『绕过反调试』『拿 flag』等模糊表达自动映射到 feature gate 定位、check routine 分析、anti-debug 处理等具体动作，并强调在副本上给出 patch 或调试方案。仓库通过 SKILL.md、agents/openai.yaml 等文件描述技能定义，并提供 create_case、triage_artifact、tool_audit、report_from_triage 等 Python 脚本用于案例创建、样本分诊、工具审计与报告生成，安装方式为将技能目录复制到 Codex 的 skills 目录下，遵循 MIT 协议开源。</div>
+  <div class="why-notable">该项目把『AI Agent + 逆向工程』这一新兴场景固化成可复用的技能包，用工作流约束替代自由发挥，显著降低智能体在 CTF/crackme 场景下的输出漂移；同时其双语提示词架构与口语化归一化表，对想要构建垂直领域 Agent Skill 的开发者具有很好的参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">逆向流程工作流</p>
+    <div class="mermaid">graph LR
+  Start[启动词 真心为你] --> A[分析 Triage]
+  A --> B[报告 Initial Report]
+  B --> C[逆向 Static/Dynamic]
+  C --> D[深度逆向 Deep RE]
+  D --> E[漏洞研判 Vuln Assess]
+  E --> F{用户选择下一步}
+  F -->|继续深入| C
+  F -->|导出结果| G[最终报告]
+  F -->|结束| End[退出模式]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能组件与脚本关系</p>
+    <div class="mermaid">graph TD
+  User[中文用户输入] --> Skill[reverse-flow SKILL.md]
+  Skill --> Agent[agents/openai.yaml 内核英文提示]
+  Skill --> Norm[口语化需求归一化]
+  Agent --> S1[create_case.py 创建案例]
+  Agent --> S2[triage_artifact.py 样本分诊]
+  Agent --> S3[tool_audit.py 工具链审计]
+  S1 --> Work[work/case 目录]
+  S2 --> Work
+  S3 --> Work
+  Work --> S4[report_from_triage.py 报告生成]
+  S4 --> Report[中文分析报告]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/lingbol088-spec/reverse-flow-skill" target="_blank">lingbol088-spec/reverse-flow-skill</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/PROrunner926/copilot-cache-scout" target="_blank">MindMirror</a></span>
+    <span class="stars">⭐ 151</span>
+  </div>
+  <p class="one-liner">多智能体对话缓存策略成本基准</p>
+  <div class="tags">
+    <span class="tag">Python 3.11+</span><span class="tag">D3.js</span><span class="tag">YAML 配置</span><span class="tag">HTML/CSS 仪表盘</span><span class="tag">OpenAI 兼容代理接口</span>
+  </div>
+  <div class="summary">MindMirror（仓库名 copilot-cache-scout）自称是一款针对多轮 AI 对话的诊断工具包，用于衡量三种缓存策略下的真实 Token 成本：朴素记忆保留（Naive Memory Retention）、提示级缓存（Prompt-Level Caching），以及项目主打的“图书馆员摘要模式”（Librarian-Pattern Digest）。该模式借鉴人类图书馆员维护主题索引的方式，动态维护对话状态的语义压缩图谱，宣称在多智能体代码评审场景下相较提示缓存能降低 27%–41% 的 Token 消耗。工具原本为在 GitHub Copilot 代理上运行 Claude Opus 4.6 的评审场景设计，现已扩展为通用对话式 AI 分析框架，支持 3–7 个评审 Agent、2–50 轮对话深度的压力测试，并输出 JSON 报告、CSV 时间线以及基于 D3.js 的响应式可视化仪表盘。附加功能包括多语言（英日中德法）输出、暗色/亮色主题、对话回放动画、PDF/PNG 导出等。需要注意的是，README 中提到的 “Claude Opus 4.6” 目前并不存在，多处“Download”按钮指向外部 GitHub Pages 而非源码，仓库名与项目名不一致，宣传口吻偏营销化，实际代码与所述功能是否匹配需读者自行核实。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三种缓存架构对比数据流</p>
+    <div class="mermaid">graph LR
+  U[多轮对话输入] --> P[Proxy 代理层]
+  P --> A[朴素记忆<br/>全量拼接]
+  P --> B[提示级缓存<br/>最近N轮+摘要]
+  P --> C[图书馆员摘要<br/>动态语义索引]
+  A --> M[Token 计量器]
+  B --> M
+  C --> M
+  M --> R[JSON 报告]
+  M --> T[CSV 时间线]
+  R --> V[D3.js 仪表盘]
+  T --> V</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">多智能体代码评审 Harness 结构</p>
+    <div class="mermaid">graph TD
+  CFG[config.template.yaml] --> RUN[mindmirror.run]
+  RUN --> AG[Agent 池 3-7 个]
+  AG --> REV[代码评审轮次 2-50]
+  REV --> CACHE{缓存策略}
+  CACHE --> LOG[Token 与延迟日志]
+  LOG --> HTML[cost_summary.html]
+  LOG --> MAP[Mnemonic Map 可视化]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/PROrunner926/copilot-cache-scout" target="_blank">PROrunner926/copilot-cache-scout</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
