@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-05</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-05 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Kulaxyz/token-diet" target="_blank">token-diet</a></span>
+    <span class="stars">⭐ 456</span>
+  </div>
+  <p class="one-liner">为编程 AI 代理持续削减 token 消耗的效率插件</p>
+  <div class="tags">
+    <span class="tag">Shell（install.sh 安装脚本）</span><span class="tag">Node.js（bench/bench.mjs 基准测试）</span><span class="tag">Markdown / AGENTS.md 规则注入</span><span class="tag">Claude Code SessionStart Hook</span><span class="tag">Cursor / Windsurf / Cline Rules 文件</span><span class="tag">Anthropic API（测试基准）</span>
+  </div>
+  <div class="summary">token-diet 是一个面向主流 AI 编程代理（Claude Code、Codex、Cursor、Windsurf、Cline）的 token 效率优化工具，以「始终在线」的方式注入到代理的工作流中，无需每次手动触发。其核心理念是在不损失正确性的前提下，系统性地压缩整个会话周期内的 token 消耗，涵盖回复、文档、测试、代码生成、上下文读取和工具调用等各个环节。
+
+项目的工作原理是通过安装脚本自动检测当前使用的 AI 代理类型，并将一套「精简指令集」注入到对应的会话触发机制中：Claude Code 使用 SessionStart 钩子，Codex 使用 AGENTS.md 常驻上下文文件，Cursor/Windsurf/Cline 则通过规则文件实现常驻加载。这样每次会话启动时，精简策略即自动生效。
+
+功能层面，token-diet 从六个维度进行优化：回复方面要求直接给出答案，去除「当然！以下是……」式的无效开场和结尾客套；文档与注释只保留解释「为什么」的关键信息；测试只覆盖关键路径和边界场景，上限 10 个/会话；代码遵循 YAGNI 原则，只实现被明确要求的功能；上下文读取优先 grep 精准定位，避免整文件读取；工具调用则批量合并独立请求并在信息充分时立即停止。
+
+项目提供三档强度：默认 on 档全量启用、lite 档仅优化沟通与产物输出、ultra 档启用电报式极简回复风格。实测数据（基于真实 Sonnet 5 会话）显示：输出型会话（建议、规划、解释）token 输出减少 81%、账单降低 54%；代码修改+测试场景账单降低 22%；以读取为主的场景账单降低 17%；三类场景平均账单节省 31%，且正确性在所有测试中均未下降。</div>
+  <div class="why-notable">AI 编程代理的 token 成本在高频使用场景下已成为实际痛点，而 token-diet 提供了一种无侵入、跨工具链的系统级解决方案。它不依赖模型微调或代理私有接口，而是利用各代理现有的「会话初始化」机制注入约束指令，具备极强的可移植性和零维护成本。更重要的是，它将「简洁」的边界划定得非常清晰——仅作用于输出，绝不压缩推理过程和关键验证，这使其在工程实践中可信赖。对于重度依赖 AI 编程代理的团队或个人开发者，这是一个低风险、高回报的效率杠杆。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装与激活流程</p>
+    <div class="mermaid">flowchart TD
+    A[用户执行 install.sh] --> B{自动检测代理类型}
+    B --> C[Claude Code]
+    B --> D[Codex]
+    B --> E[Cursor / Windsurf / Cline]
+    C --> F[注入 SessionStart Hook]
+    D --> G[写入 AGENTS.md 常驻上下文]
+    E --> H[写入 Rules 规则文件]
+    F --> I[每次会话自动加载 token-diet 指令]
+    G --> I
+    H --> I
+    I --> J[AI 代理以精简模式运行]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Token 优化策略分层</p>
+    <div class="mermaid">graph LR
+    A[token-diet 策略体系] --> B[回复层]
+    A --> C[产物层]
+    A --> D[上下文层]
+    A --> E[工具调用层]
+    B --> B1[直接给答案，无客套开场/结尾]
+    C --> C1[文档只写 why]
+    C --> C2[测试仅关键路径，≤10个/会话]
+    C --> C3[代码遵循 YAGNI]
+    D --> D1[grep 精准定位，不整文件读取]
+    D --> D2[批量读取，减少轮次]
+    E --> E1[独立调用批量合并]
+    E --> E2[信息足够立即停止]
+    A --> F[护栏]
+    F --> F1[推理不压缩]
+    F --> F2[支付/认证/数据安全测试不跳过]
+    F --> F3[代码/命令/报错原文不修改]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Kulaxyz/token-diet" target="_blank">Kulaxyz/token-diet</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Archive228/loopkit" target="_blank">loopkit</a></span>
+    <span class="stars">⭐ 152</span>
+  </div>
+  <p class="one-liner">33 个编码智能体即插即用技能库</p>
+  <div class="tags">
+    <span class="tag">Markdown (SKILL.md)</span><span class="tag">Bash 安装脚本</span><span class="tag">Claude Code / MCP 协议</span><span class="tag">JSON 配置</span>
+  </div>
+  <div class="summary">loopkit 是一个面向编码类 AI 智能体（Claude Code、Cursor、Codex、Gemini CLI 等）的技能集合与最小化运行框架。项目核心是 33 个经过实战打磨的 Skill 文件，分为 9 个赛道：智能体/LLM 工程、调试、安全、前端、测试、重构、文档、数据、Git/运维，另外附带一个专门用于对抗性验证的 review 赛道，覆盖智能体伪装『完成』时常见的 11 种偷懒模式。每个 Skill 都是一段聚焦的指令集，只有在触发条件匹配时才被加载，从而让智能体在具体场景下专业化响应，避免『每次提示都为所有能力付 token』的浪费，也降低了幻觉与虚构 API 的概率。除技能库外，安装脚本还会在目标目录写入一套最小 harness：60 行的 CLAUDE.md 常驻上下文、settings.json 权限白名单与写入即格式化钩子、verifier 对抗验证子智能体、MCP 服务器接线、跨会话 MEMORY.md 索引，以及 Plan→Act→Verify 循环执行脚本 run.sh。用户可通过 curl 一键安装，默认保留已有文件，可用 FORCE=1 覆盖。项目理念参考 Anthropic 的 Building Effective Agents 与 Claude Code 官方文档，将智能体工程模式蒸馏成可即插即用的规范。MIT 许可，鼓励 Fork 定制。</div>
+  <div class="why-notable">在多数智能体工具还停留在『大而全的系统提示』阶段时，loopkit 用触发式懒加载 Skill 的方式把提示工程模块化，配合对抗性 Verifier 与 Plan→Act→Verify 循环，直击当下编码智能体最痛的『虚构 API、假通过测试、改名当修复』问题。它把 Anthropic 官方的智能体工程理念做成了任何 CLI 智能体都能秒接入的落地方案，且完全 MIT 开源、可 Fork，适合作为团队自建 AI 编码规范的起点。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">loopkit 安装与运行架构</p>
+    <div class="mermaid">graph TD
+  A[用户执行 install.sh] --> B[写入 .claude 目录]
+  B --> C[CLAUDE.md 常驻上下文]
+  B --> D[settings.json 权限白名单]
+  B --> E[skills/ 33 个 Skill]
+  B --> F[agents/verifier.md 对抗验证子智能体]
+  B --> G[.mcp.json MCP 接线]
+  B --> H[MEMORY.md 跨会话记忆]
+  B --> I[run.sh 循环执行器]
+  J[编码智能体<br/>Claude Code / Cursor / Codex / Gemini] --> C
+  J --> E
+  J --> F
+  I --> J</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Plan→Act→Verify 技能触发流程</p>
+    <div class="mermaid">flowchart LR
+  U[用户提示] --> P[Plan 规划阶段]
+  P --> M{匹配 Skill 触发词}
+  M -->|安全场景| S1[owasp-review / authz-check]
+  M -->|调试场景| S2[systematic-debugging / bisect-regression]
+  M -->|测试场景| S3[write-failing-test-first]
+  M -->|其他| S4[对应 Skill 懒加载]
+  S1 --> A[Act 执行]
+  S2 --> A
+  S3 --> A
+  S4 --> A
+  A --> V[Verify 对抗验证子智能体]
+  V -->|发现伪造完成| P
+  V -->|通过| D[交付结果]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Archive228/loopkit" target="_blank">Archive228/loopkit</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/asgeirtj" target="_blank">AI系统提示词提取集</a></span>
+    <span class="stars">⭐ 471 <span class="stars-today">(+471 today)</span></span>
+  </div>
+  <p class="one-liner">主流AI模型系统提示词的公开提取与归档</p>
+  <div class="tags">
+    <span class="tag">Markdown（文档格式）</span><span class="tag">Git（版本管理与内容追踪）</span><span class="tag">GitHub（托管与分发平台）</span>
+  </div>
+  <div class="summary">本项目是一个专注于提取和归档主流商业AI模型系统提示词（System Prompt）的开源仓库，由用户asgeirtj维护并定期更新。项目涵盖范围广泛，涉及当前业界最具代表性的多家AI公司及其旗舰产品：Anthropic方面包括Claude Fable 5、Opus 4.8、Claude Code和Claude Design；OpenAI方面包括ChatGPT 5.5 Thinking、GPT 5.5 Instant和Codex；Google方面包括Gemini 3.5 Flash、3.1 Pro和Antigravity；xAI方面包括Grok；以及Cursor、GitHub Copilot、VS Code AI助手、Perplexity等第三方AI集成工具。系统提示词是决定AI模型行为、角色定位、能力边界和输出风格的核心配置，通常由各公司作为商业机密加以保护。本项目通过技术手段将这些提示词从各平台提取出来，集中公开，为研究者、开发者和对AI底层机制感兴趣的用户提供了难得的第一手参考资料。项目的核心价值在于透明化AI行为机制，帮助社区理解不同模型的设计哲学、安全边界设定方式以及角色扮演指令的构造方法，对AI安全研究、提示词工程（Prompt Engineering）实践以及竞品分析均具有重要参考意义。仓库内容持续更新，随着各AI公司产品迭代而同步补充最新版本的系统提示词。</div>
+  <div class="why-notable">系统提示词是AI产品行为的「宪法」，各大公司均视其为核心商业机密。本仓库将多家顶级AI公司的最新模型提示词集中公开，不仅揭示了业界在安全限制、角色设定、能力边界上的设计差异，也为外界审视AI对齐策略提供了罕见的透明窗口。对于提示词工程师、AI安全研究者和独立开发者而言，这是目前覆盖最广、更新最及时的同类参考资源之一。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">项目内容覆盖范围</p>
+    <div class="mermaid">graph TD
+  A[AI系统提示词提取集] --> B[Anthropic]
+  A --> C[OpenAI]
+  A --> D[Google]
+  A --> E[xAI及第三方]
+  B --> B1[Claude Fable 5]
+  B --> B2[Opus 4.8]
+  B --> B3[Claude Code]
+  B --> B4[Claude Design]
+  C --> C1[ChatGPT 5.5 Thinking]
+  C --> C2[GPT 5.5 Instant]
+  C --> C3[Codex]
+  D --> D1[Gemini 3.5 Flash]
+  D --> D2[Gemini 3.1 Pro]
+  D --> D3[Antigravity]
+  E --> E1[Grok]
+  E --> E2[Cursor]
+  E --> E3[Copilot / VS Code]
+  E --> E4[Perplexity]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统提示词提取与使用数据流</p>
+    <div class="mermaid">flowchart LR
+  A[AI平台接口/客户端] -->|逆向/探测| B[提取系统提示词]
+  B --> C[整理入仓库]
+  C --> D[GitHub公开归档]
+  D --> E1[提示词工程师参考]
+  D --> E2[AI安全研究者分析]
+  D --> E3[开发者竞品对比]
+  D --> E4[社区讨论与传播]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/asgeirtj" target="_blank">sponsors/asgeirtj</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sakshxm1/hermes-agency-orchestrator" target="_blank">OrchestralFlow 智能体交响编排框架</a></span>
+    <span class="stars">⭐ 156</span>
+  </div>
+  <p class="one-liner">用交响乐比喻编排 Claude Code 多智能体</p>
+  <div class="tags">
+    <span class="tag">Claude Code (Opus 系列)</span><span class="tag">.claude Manifest 声明式配置</span><span class="tag">原生 Prompt 编排 (无 pip/npm 依赖)</span><span class="tag">UltraCode Prompt 压缩</span>
+  </div>
+  <div class="summary">OrchestralFlow 是一个受 Claude Code 多智能体能力启发的声明式代理编排框架，其核心理念是把代码生成流水线类比为一支交响乐团：/goal 相当于指挥棒，Skills 是演奏技法，Subagents 是乐手，Agent Teams 是乐团分部。项目主打「成本阶梯」(Cost Ladder)——按子任务的复杂度将请求自动路由到不同层级的智能体：简单查询交给合奏智能体 Tutti，架构决策交给独奏智能体 Soloist，元推理与跨切面问题交给指挥智能体 Conductor，且每 5 个乐章重新评估一次。执行流程被组织为五个乐章：主题声明、技能映射(呈示部)、动态团队组装(展开部)、并行执行与反馈(再现部)、以及生成事后评分的尾声。项目宣称零依赖，仅通过单一 .claude 清单文件加载，并内置 UltraCode 压缩层，声称可以将 Prompt 令牌开销降低 40%。其余特性还包括长任务中的智能体热切换、多语言 /goal 解析、以及在成本超支 15% 时自动插入重构乐章的安全检查机制。</div>
+  <div class="why-notable">该仓库在概念表达上颇具巧思，用交响乐术语系统性地映射了 Skills、Subagents、Agent Teams 与成本控制之间的关系，对理解 Claude Code 多智能体分层与预算感知路由是一个有趣的思维模型。不过需要提醒的是：README 中提到的 Claude Code 版本号、40% 压缩率等数据未见实测依据，且页面顶部的 Download 按钮指向 github.io 外链而非仓库源码，实际实现是否与描述一致需读者自行核实，建议将其视为理念性作品而非可直接落地的工程框架。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">OrchestralFlow 分层架构</p>
+    <div class="mermaid">graph TD
+    U[用户 /goal 意图声明] --> C[Conductor Agent 指挥智能体<br/>元推理 · 成本仲裁 · 实时重规划]
+    C --> S[Strings Team<br/>数据处理]
+    C --> W[Winds Team<br/>业务逻辑与 API]
+    C --> P[Percussion Team<br/>基础设施与 CI/CD]
+    S --> UL[UltraCode 压缩层<br/>动机识别 · Token 优化]
+    W --> UL
+    P --> UL
+    UL --> OUT[生成代码 & 事后评分]
+    C -. Cost Ladder 路由 .-> T[Tutti 低成本]
+    C -. Cost Ladder 路由 .-> SO[Soloist 中成本]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">五乐章执行流程</p>
+    <div class="mermaid">flowchart LR
+    M1[乐章 I<br/>Theme 主题声明] --> M2[乐章 II<br/>Exposition 技能映射]
+    M2 --> M3[乐章 III<br/>Development 团队组装]
+    M3 --> M4[乐章 IV<br/>Recapitulation 执行与反馈]
+    M4 --> M5[乐章 V<br/>Coda 自我优化]
+    M5 -. After-Action Score 经验回流 .-> M1
+    M4 -. 成本超支 15% .-> R[插入 Refactor 重构乐章]
+    R --> M4</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sakshxm1/hermes-agency-orchestrator" target="_blank">Sakshxm1/hermes-agency-orchestrator</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ahmadrj80/claude-fable-5-free-desktop-app" target="_blank">Claude Fable 5 桌面客户端（可疑）</a></span>
+    <span class="stars">⭐ 155</span>
+  </div>
+  <p class="one-liner">疑似伪装成 AI 客户端的可疑下载仓库</p>
+  <div class="tags">
+    <span class="tag">预编译二进制（未公开）</span><span class="tag">GitHub Releases 分发</span><span class="tag">MIT License（声明）</span>
+  </div>
+  <div class="summary">该仓库自称是一款名为「Claude Fable 5 Free Desktop App」的免费桌面客户端，宣称可让用户免订阅使用 Anthropic 所谓的「Mythos 级」大模型 Claude Fable 5，支持 Windows、macOS 与 Linux，并提供推理、代码生成、创意写作、多模态图像与文档理解、长上下文对话等能力。README 强调「原生桌面体验」「简洁聊天界面」「开发者与创作者友好」，并以 MIT 许可证、Release 徽章、系统需求、快速上手四步走等常见开源项目结构进行包装。然而，经核查存在多处严重疑点：其一，Anthropic 官方从未发布过名为「Claude Fable 5」或「Mythos-class」的模型，这是一个虚构名称；其二，仓库不提供任何源代码、构建脚本或依赖清单，仅提供一个预编译的 claude-fable5-app.zip 压缩包供下载；其三，README 中出现「2026 年 6 月」的截图时间戳，与真实发布时间不符；其四，声称「免费无订阅」访问商业闭源模型，本身违反 Anthropic 服务条款。综合判断，该仓库高度疑似恶意软件分发或社会工程学钓鱼项目，借用 Claude 品牌与开源项目模板诱导用户下载可执行文件。不建议下载、解压或运行其中任何二进制文件。</div>
+  <div class="why-notable">该仓库值得关注并非因为技术价值，而是作为一个典型的「伪开源恶意软件分发」样本：它利用热门 AI 品牌名、伪造的模型版本号、标准化 README 徽章与跨平台承诺，构建可信外观，实则只发放不可审计的二进制包。对开发者与安全研究者而言，它是一个提醒——在 GitHub 上评估 AI 相关项目时，应核查模型名称真实性、是否提供源代码、Release 产物是否可复现构建，以及 README 中的时间戳与截图是否合理，避免被同类钓鱼仓库诱骗。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">可疑分发链路</p>
+    <div class="mermaid">graph TD
+  A[用户搜索 Claude 免费客户端] --> B[进入 GitHub 仓库]
+  B --> C[被 README 徽章与品牌包装吸引]
+  C --> D[点击下载 claude-fable5-app.zip]
+  D --> E[解压运行未签名可执行文件]
+  E --> F{潜在风险}
+  F --> G[恶意代码执行]
+  F --> H[凭据或数据窃取]
+  F --> I[无法访问所谓 Claude Fable 5]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">识别可疑 AI 仓库的判断流程</p>
+    <div class="mermaid">flowchart TD
+  A[发现 AI 客户端仓库] --> B{模型名是否官方存在?}
+  B -- 否 --> X[高度可疑]
+  B -- 是 --> C{是否提供源代码?}
+  C -- 否, 仅二进制 --> X
+  C -- 是 --> D{Release 可复现构建?}
+  D -- 否 --> Y[谨慎评估]
+  D -- 是 --> Z[相对可信]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ahmadrj80/claude-fable-5-free-desktop-app" target="_blank">ahmadrj80/claude-fable-5-free-desktop-app</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
