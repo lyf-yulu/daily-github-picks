@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-06</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-06 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Kulaxyz/token-diet" target="_blank">token-diet</a></span>
+    <span class="stars">⭐ 585</span>
+  </div>
+  <p class="one-liner">编码 Agent 通用的 Token 瘦身技能</p>
+  <div class="tags">
+    <span class="tag">Bash 安装脚本</span><span class="tag">Node.js 基准工具</span><span class="tag">Anthropic API</span><span class="tag">Claude Code Hooks</span><span class="tag">AGENTS.md / Cursor Rules / Windsurf Rules / Cline Rules</span>
+  </div>
+  <div class="summary">token-diet 是一个面向编码类 AI Agent（Claude Code、Codex、Cursor、Windsurf、Cline 等）的常驻式 Token 节省技能。它通过在会话初始化阶段注入一份指令，让 Agent 在整个会话周期内自动收敛输出：回复直接给结论、避免寒暄和收尾；文档、注释、交接说明只保留必要信息；测试聚焦关键与边界路径且单次不超过 10 条；代码遵循 YAGNI 原则，不生成死代码；上下文读取先 grep 再定点读行、批量合并、避免重读；工具调用并行且在拿到足够信息后立即停止；对宽泛搜索委派给更廉价的子 Agent。项目提供 on、lite、ultra、off 四档强度，其中 ultra 采用电报式风格进一步压缩对话，但保证代码、命令、错误原文等关键内容原样保留，不牺牲正确性。安装通过一行 curl 脚本完成，自动识别目标 Agent，可全局或仅当前仓库生效，并支持运行时通过 /token-diet 指令切换等级。作者在 Sonnet 5 上给出了真实基准：输出平均减少约 53%，账单平均下降约 31%，输出密集型场景最高可省 54%。</div>
+  <div class="why-notable">在 AI 编码 Agent 大规模落地的当下，Token 成本已是实际生产痛点。token-diet 用极轻量方式（一份 prompt 指令 + 各 Agent 的常驻注入通道）就跨平台解决了成本问题，并给出可复现的基准数据，避免了对模型或框架的侵入式改造，具有很强的普适性和即时可用性。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装与常驻注入流程</p>
+    <div class="mermaid">graph TD
+  A[用户执行 install.sh] --> B{检测目标 Agent}
+  B -->|Claude Code| C[写入 SessionStart Hook]
+  B -->|Codex| D[写入 AGENTS.md]
+  B -->|Cursor/Windsurf/Cline| E[写入规则文件]
+  C --> F[会话启动时自动加载指令]
+  D --> F
+  E --> F
+  F --> G[Agent 按 on/lite/ultra 规则输出]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Token 瘦身作用域</p>
+    <div class="mermaid">graph LR
+  A[token-diet 指令] --> B[回复层: 去寒暄/去收尾]
+  A --> C[文档与注释: 只留关键 why]
+  A --> D[测试: 关键与边界路径 ≤10]
+  A --> E[代码: YAGNI 无死码]
+  A --> F[上下文: grep 优先 定点读取]
+  A --> G[工具调用: 并行 早停]
+  A --> H[子 Agent: 委派宽泛搜索]
+  B & C & D & E & F & G & H --> I[输出 -53% 账单 -31%]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Kulaxyz/token-diet" target="_blank">Kulaxyz/token-diet</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Archive228/loopkit" target="_blank">loopkit</a></span>
+    <span class="stars">⭐ 312</span>
+  </div>
+  <p class="one-liner">33 个即插即用的编码 Agent 技能包</p>
+  <div class="tags">
+    <span class="tag">Shell</span><span class="tag">Markdown (SKILL.md)</span><span class="tag">Claude Code</span><span class="tag">MCP</span><span class="tag">JSON</span><span class="tag">Cursor / Codex / Gemini CLI</span>
+  </div>
+  <div class="summary">loopkit 是一个面向编码类 AI Agent 的开源技能库，由 33 个经过实战打磨的 skill 文件以及一套极简的 .claude 运行骨架组成，目标是让 Claude Code、Cursor、Codex、Gemini CLI 等任意读取 SKILL.md 的编码 Agent 都能输出更干净、更少臆测的代码。项目核心理念是：原生 Agent 在缺少约束时会靠猜，进而虚构 API、写出永远通过的假测试或做出改名式的伪修复；而每个 skill 都是一段紧凑、可复用的指令集，只在触发条件命中时才被加载，让 Agent 在特定场景下专业化，同时避免每次提示都为所有技能付出 token 成本。33 个技能被划分为 9 条轨道，覆盖 agent/LLM 工程（上下文预算、spec 优先、工具克制、子 Agent 扇出）、系统化调试、安全审查（OWASP、鉴权、输入校验、密钥扫描、依赖审计）、前端设计系统与可访问性、TDD 与 flaky 测试、重构、文档与决策记录、SQL 与数据迁移、Git 提交与 PR 规范，以及一个对抗式 verifier 用于识破 Agent 常见的 11 种偷懒手法。安装脚本会在当前目录写入 .claude/CLAUDE.md 标准上下文、settings.json 权限白名单、verifier 子 Agent、全部技能文件、.mcp.json、MEMORY.md 跨会话记忆索引以及 Plan→Act→Verify 循环运行器 run.sh，构成完整的 Loop and Harness 骨架。MIT 协议，鼓励 fork 后按团队实际情况调整。</div>
+  <div class="why-notable">在多数人还在给 Agent 写巨型 system prompt 时，loopkit 提出用可组合的技能文件 + 触发式加载来分摊上下文，并配套一个仅 7 文件 5 步的 Loop and Harness 参考实现。它把 Anthropic 关于 Building Effective Agents 的方法论落成了可直接 curl 到项目里的工程模板，尤其是 adversarial-verify 这类专门识破 Agent 假装完成的技能，对追求可交付质量的团队具有较高参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装后目录结构与加载关系</p>
+    <div class="mermaid">graph TD
+  U[开发者项目目录] --> C[.claude/]
+  C --> CM[CLAUDE.md 标准上下文]
+  C --> ST[settings.json 权限白名单+hook]
+  C --> AG[agents/verifier.md 对抗式校验]
+  C --> SK[skills/ 33 个 SKILL.md]
+  U --> MCP[.mcp.json MCP 接线]
+  U --> MEM[MEMORY.md 跨会话记忆]
+  U --> RUN[run.sh 循环运行器]
+  SK --> T1[agent/llm]
+  SK --> T2[debug]
+  SK --> T3[security]
+  SK --> T4[frontend]
+  SK --> T5[testing]
+  SK --> T6[refactor/docs/data/git]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Plan→Act→Verify 循环与技能触发</p>
+    <div class="mermaid">flowchart LR
+  P[Plan\n读取 CLAUDE.md + MEMORY.md] --> M{匹配触发条件?}
+  M -- 命中 --> L[按需加载对应 skill]
+  M -- 未命中 --> A[Act 执行工具调用]
+  L --> A
+  A --> V[Verify\nverifier 子 Agent 对抗审查]
+  V -- 通过 --> D[提交/输出]
+  V -- 发现造假 --> P</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Archive228/loopkit" target="_blank">Archive228/loopkit</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/easylink-ai-open/agent-runtime" target="_blank">agent-runtime</a></span>
+    <span class="stars">⭐ 141</span>
+  </div>
+  <p class="one-liner">厂商中立的独立 Agent 运行时内核</p>
+  <div class="tags">
+    <span class="tag">Python 3.11</span><span class="tag">uv (包管理)</span><span class="tag">pytest</span><span class="tag">OpenAI Chat Completions API</span><span class="tag">Anthropic API</span><span class="tag">Apache License 2.0</span>
+  </div>
+  <div class="summary">agent-runtime 是一个独立、可复用的 Agent 运行时核心库，专注于沉淀「请求 → 工具调用 → 循环 → 收尾」这一稳定的 Agent 主循环逻辑，与具体产品应用（如会话、存储、沙箱、品牌策略等）彻底解耦。项目通过一套厂商中立的数据模型（Message、TextPart、ImagePart、ToolCallPart、LLMRequest、LLMResponse 等）来描述会话与模型调用，避免直接依赖 OpenAI 或 Anthropic 的原始字典结构，并内置了对应的 wire converter 在中立模型与各厂商线上格式之间转换。使用方只需传入 LLMConfig，即可自动构建对应的 HTTP 客户端；同时通过 ModelClient、ToolDispatcher、SystemPromptProvider、CacheStrategy 四大注入协议，允许产品层灵活替换工具分发、系统提示词组装、缓存策略等实现。运行时还提供了协作模式（CollaborationMode，只提供机制不硬编码策略）、生命周期 Hooks、迭代预算、Token 估算、上下文压缩（SummarizingCompactor）、流式回调、模型重试、工具错误容错、人机交互暂停（WaitingForUserInput）与中断处理等生产级能力。项目坚持「内核只做机制、产品层做策略」的边界划分，TurnResult 只承载消息与元数据，不与持久化耦合，测试也完全基于 fake 与 monkeypatch，不依赖网络与数据库。</div>
+  <div class="why-notable">在 Agent 框架普遍与业务、存储、Web 服务器深度耦合的当下，agent-runtime 提供了一个罕见的「纯内核」样板：它把 Agent 循环、协作模式、Hooks、上下文压缩等稳定逻辑抽出来，用中立类型作为边界，产品层只需组合协议即可接入自己的工具、记忆、沙箱与持久化。这种「机制与策略分离」的架构对想自研 Agent 平台、又不愿被 LangChain/LlamaIndex 等重型框架绑定的团队具有很高的参考价值，代码规模可控、测试无外部依赖，也非常适合作为学习 Agent 内核实现的样例。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">运行时分层与注入协议</p>
+    <div class="mermaid">graph TD
+  P[产品层<br/>工具/记忆/沙箱/持久化] -->|注入| A[Agent 主循环]
+  P -->|LLMConfig| A
+  A --> MC[ModelClient 协议]
+  A --> TD[ToolDispatcher 协议]
+  A --> SP[SystemPromptProvider 协议]
+  A --> CS[CacheStrategy 协议]
+  A --> H[AgentHooks 生命周期]
+  A --> CM[CollaborationMode 机制]
+  MC --> WC[Wire Converter]
+  WC --> OAI[OpenAI HTTP]
+  WC --> ANT[Anthropic HTTP]
+  A --> TR[TurnResult<br/>消息 + 元数据]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单次 Turn 的循环数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 调用方
+  participant L as Agent Loop
+  participant C as Compactor
+  participant M as ModelClient
+  participant T as ToolDispatcher
+  U->>L: ask(prompt)
+  L->>L: on_messages_initialized
+  loop 每轮迭代
+    L->>C: 检查上下文预算
+    C-->>L: 压缩后的 messages
+    L->>M: complete / stream (LLMRequest)
+    M-->>L: LLMResponse (含 ToolCallPart)
+    alt 有工具调用
+      L->>T: execute(name, arguments)
+      T-->>L: ToolResultPart 或错误消息
+    else 无工具调用
+      L->>L: finalize
+    end
+  end
+  L-->>U: TurnResult (messages + usage)</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/easylink-ai-open/agent-runtime" target="_blank">easylink-ai-open/agent-runtime</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/soullive/GPT-5.6-Sol-Free" target="_blank">GPT-5.6-Sol-Free（可疑仿冒项目）</a></span>
+    <span class="stars">⭐ 75</span>
+  </div>
+  <p class="one-liner">疑似仿冒 OpenAI 名义分发的可执行文件</p>
+  <div class="tags">
+    <span class="tag">README 声称：Node.js</span><span class="tag">npm</span><span class="tag">Electron（推测，未验证）</span>
+  </div>
+  <div class="summary">该仓库自称提供 OpenAI 于 2026 年 6 月发布的旗舰推理模型 GPT-5.6-Sol 的免费桌面客户端，宣称在 TerminalBench 2.1 上达到 SOTA，超越 Claude Mythos 5，并提供 Sol / Terra / Luna 三种档位与超级推理模式。然而经审阅，仓库存在多项高风险特征：一是 OpenAI 并未发布名为 GPT-5.6-Sol 的模型，所述基准测试与竞品均无公开来源；二是仓库主体仅为一段 README，核心内容是从 Releases 下载 GPT-5.6.Sol-App.zip 的链接，而 README 中提到的源码构建流程（npm install / npm run dev）与仓库实际内容不匹配；三是使用 OpenAI 品牌但托管于个人账号，且承诺“免费 API 无需订阅”，这与官方分发模式不符。综合来看，该项目更像是借助 AI 热点、通过 GitHub Releases 分发未知二进制的社工/恶意软件投放模式，而非真实开源客户端。建议不要下载或执行其中的 ZIP 包。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">可疑分发链路</p>
+    <div class="mermaid">graph TD
+  A[用户被 SEO/关键词吸引] --> B[进入 GitHub 仓库 README]
+  B --> C{看到 OpenAI 品牌与基准宣传}
+  C --> D[点击 Releases 下载 ZIP]
+  D --> E[解压并运行未知可执行文件]
+  E --> F[潜在风险: 凭据窃取 / 后门 / 挖矿]
+  B -.仓库无实际源码.-> G[无法通过源码审计验证]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">宣传声明与实际内容对比</p>
+    <div class="mermaid">graph LR
+  subgraph 宣传
+    P1[GPT-5.6-Sol 官方模型]
+    P2[SOTA on TerminalBench 2.1]
+    P3[免费 API 无需订阅]
+    P4[npm 构建的桌面应用]
+  end
+  subgraph 现实
+    R1[OpenAI 未发布该模型]
+    R2[基准数据无来源]
+    R3[官方 API 需鉴权计费]
+    R4[仓库仅有 README 与 ZIP]
+  end
+  P1 --- R1
+  P2 --- R2
+  P3 --- R3
+  P4 --- R4</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/soullive/GPT-5.6-Sol-Free" target="_blank">soullive/GPT-5.6-Sol-Free</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/7-e1even/learn-agent" target="_blank">learn-agent</a></span>
+    <span class="stars">⭐ 72</span>
+  </div>
+  <p class="one-liner">从零手写生产级 AI Agent 笔记</p>
+  <div class="tags">
+    <span class="tag">Node.js 18+</span><span class="tag">JavaScript (.mjs)</span><span class="tag">OpenAI 兼容 API</span><span class="tag">DeepSeek / Kimi / GLM / OpenRouter / Ollama</span>
+  </div>
+  <div class="summary">learn-agent 是一套从零开发 AI Coding Agent 的渐进式中文学习笔记，机制全部从真实开源桌面 Agent 产品 Reina 剥离简化而来。项目由 15 篇课程组成（s01-s15），每篇聚焦一个真实翻车场景：循环预算、工具输出溢出、上下文压缩、Prompt 缓存、会话落盘、子代理看门狗、多 Agent 协作、权限审批、Provider 兼容、渐进式工具披露等。全部代码零依赖、单文件，Node 18+ 即可直接跑，兼容任何 OpenAI 风格 API（DeepSeek、Kimi、GLM、OpenRouter、Ollama），s12 甚至提供无需 API Key 的自测模式。项目定位于填补 Claude Code、Codex、Cursor 这类 coding agent 从「能跑 demo」到「能扛真实任务」之间的工程空白，帮助开发者理解压缩、缓存、子代理、权限等机制在生产环境中的真实做法，并附带主仓 Reina 的源码对照索引。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Agent 核心循环与机制分层</p>
+    <div class="mermaid">graph TD
+  U[用户输入] --> L[Agent 主循环 s01]
+  L --> T[工具调度 s02]
+  T --> EX[工具执行]
+  EX --> OB[输出预算与溢出 s04]
+  OB --> CTX[上下文管理]
+  CTX --> CP[压缩 s06]
+  CTX --> CA[Prompt 缓存 s07]
+  L --> LB[循环预算与纠偏 s03]
+  L --> ST[流式与中断 s05]
+  L --> PS[会话落盘恢复 s08]
+  T --> PM[权限审批 s13]
+  T --> PV[Provider 兼容 s14]
+  T --> TD[工具渐进披露 s15]
+  L --> SA[子代理 + 看门狗 s09]
+  SA --> MA[多 Agent 协作 s11]
+  CP --> L
+  CA --> L
+  PS --> L</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">学习路径：从核心循环到边界层</p>
+    <div class="mermaid">flowchart LR
+  A[s01 循环] --> B[s02 工具]
+  B --> C[s03 循环预算]
+  C --> D[s04 输出预算]
+  D --> E[s05 流式中断]
+  E --> F[s06 压缩]
+  F --> G[s07 缓存]
+  G --> H[s08 持久化]
+  H --> I[s09 子代理]
+  I --> J[s10 Prompt 组装]
+  J --> K[s11 多 Agent]
+  K --> L[s12 核心合体]
+  L --> M[s13 权限]
+  M --> N[s14 Provider 兼容]
+  N --> O[s15 工具披露]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/7-e1even/learn-agent" target="_blank">7-e1even/learn-agent</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
