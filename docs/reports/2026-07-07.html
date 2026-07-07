@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-07</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-07 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Kulaxyz/token-diet" target="_blank">token-diet</a></span>
+    <span class="stars">⭐ 596</span>
+  </div>
+  <p class="one-liner">为编码 AI 代理省 token 的常驻技能</p>
+  <div class="tags">
+    <span class="tag">Bash</span><span class="tag">Shell 脚本</span><span class="tag">Node.js (bench)</span><span class="tag">Anthropic API</span><span class="tag">Markdown 规则文件 (AGENTS.md 等)</span><span class="tag">Claude Code Hooks</span>
+  </div>
+  <div class="summary">token-diet 是一款面向主流编码 AI 代理（Claude Code、Codex、Cursor、Windsurf、Cline）的常驻 token 效率优化技能，目标是在保证回答正确性的前提下，全面削减整个会话中的 token 消耗，包括回复、文档、测试、代码、上下文读取以及工具调用等各个环节。项目通过一个 install.sh 脚本一键安装，可自动识别目标代理并注入相应的常驻指令：Claude Code 使用 SessionStart 钩子，Codex 使用 AGENTS.md，Cursor/Windsurf/Cline 则通过各自的 rule 文件，使技能在每次会话启动时都自动生效，无需用户手动触发。它提供 on、lite、ultra、off 四种档位，其中 ultra 会将聊天回复压缩为电报式表达，但代码、测试和文档仍保持精确。核心策略覆盖多个维度：回复直接给结论、不加寒暄；文档与注释只讲非显而易见的原因；测试聚焦关键路径和边界，并保护涉及金额、鉴权、数据丢失的用例；代码遵循 YAGNI 原则；上下文读取先用 grep 再按需读取具体行数；工具调用批量并行、够用即停；广度搜索委托给子代理。作者在真实 Sonnet 5 场景下给出实测数据，输出平均减少 53%，账单平均下降约 31%，最好情形节省高达 54%，且所有场景下正确性保持不变。</div>
+  <div class="why-notable">在 AI 编码代理普及但 token 成本高企的当下，token-diet 精准切中痛点：不改模型、不换工具，只靠一份规则文件就能给主流代理平均节省约 31% 账单，且作者公开了基准脚本和分档策略，实用性和可信度都较高，是编码 Agent 生态里少见的横跨多平台的效率工具。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装与常驻生效流程</p>
+    <div class="mermaid">graph TD
+  A[用户执行 install.sh] --> B{检测目标代理}
+  B -->|Claude Code| C[注入 SessionStart 钩子]
+  B -->|Codex| D[写入 AGENTS.md]
+  B -->|Cursor/Windsurf/Cline| E[写入 rule 文件]
+  C --> F[每次会话启动自动加载 token-diet 指令]
+  D --> F
+  E --> F
+  F --> G[代理按 on/lite/ultra 档位输出]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">会话中的 token 瘦身策略</p>
+    <div class="mermaid">graph LR
+  U[用户提问] --> A[代理会话]
+  A --> R[回复: 去寒暄, 报增量]
+  A --> C[代码: YAGNI, 无死代码]
+  A --> T[测试: 关键路径+边界, ≤10]
+  A --> D[文档/注释: 只讲非显而易见的 why]
+  A --> X[上下文: grep 优先, 按行读取, 批量]
+  A --> O[工具: 并行调用, 够用即停]
+  A --> S[子代理: 委托广度搜索]
+  R & C & T & D & X & O & S --> G[护栏: 正确性/关键测试/原样代码不可压缩]
+  G --> Y[更少 token, 相同结果]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Kulaxyz/token-diet" target="_blank">Kulaxyz/token-diet</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Archive228/loopkit" target="_blank">loopkit</a></span>
+    <span class="stars">⭐ 381</span>
+  </div>
+  <p class="one-liner">33个即插即用的编码智能体技能库</p>
+  <div class="tags">
+    <span class="tag">Bash</span><span class="tag">Markdown (SKILL.md)</span><span class="tag">Claude Code</span><span class="tag">MCP</span><span class="tag">Cursor</span><span class="tag">Codex</span><span class="tag">Gemini CLI</span>
+  </div>
+  <div class="summary">loopkit 是一个面向编码类 AI 智能体的技能库与最小化运行框架，收录了 33 个经过实战打磨的 Skill 文件，可直接放入 `.claude/skills/` 或任何能读取 SKILL.md 的智能体环境中使用，兼容 Claude Code、Cursor、Codex 与 Gemini CLI。每个 Skill 都是一段聚焦的指令集，仅在触发条件命中时才加载，避免了在每次对话中为所有技能支付 token 成本，同时让智能体从『瞎猜式生成』转向『专业化执行』，减少虚构 API、伪造测试、改名式修复等常见失败模式。33 个技能分为 9 大主题：智能体/LLM 使用（上下文预算、规范先行、工具克制、子智能体分发）、系统化调试、安全审计（OWASP、鉴权、输入校验、密钥扫描、依赖审查）、前端（设计系统、无障碍、加载空态错误态）、测试（失败测试先行、抖动测试猎手、覆盖率盲区、契约测试）、重构、文档、数据（SQL 审查、迁移编写、Schema 对比）、Git/运维以及对抗式验证。除了技能库，一键安装脚本还会附带一个最小可用的运行框架：60 行的 `CLAUDE.md` 常驻上下文、权限白名单与写入即格式化钩子、对抗验证子智能体、MCP 服务器接线、跨会话 MEMORY 索引，以及一个 Plan→Act→Verify 循环执行脚本 `run.sh`，构成完整的智能体工作闭环。</div>
+  <div class="why-notable">该项目把 Anthropic《Building Effective Agents》中的智能体工程模式落地为可直接 drop-in 的资产，解决了当前编码智能体的核心痛点——上下文膨胀与结果幻觉。它用『按需加载 Skill + 最小 Harness + 对抗验证』的三件套，提供了一种低成本、跨工具、可 fork 的团队级智能体工程范式，值得所有想把 AI 编码助手用得更严谨的开发者参考。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">loopkit 安装与运行架构</p>
+    <div class="mermaid">graph TD
+  A[install.sh 一键安装] --> B[.claude/ 目录]
+  A --> C[.mcp.json MCP 接线]
+  A --> D[MEMORY.md 跨会话记忆]
+  A --> E[run.sh 循环执行器]
+  B --> B1[CLAUDE.md 常驻上下文]
+  B --> B2[settings.json 权限与钩子]
+  B --> B3[agents/verifier.md 对抗验证子智能体]
+  B --> B4[skills/ 33 个 Skill 文件]
+  E --> F[编码智能体<br/>Claude Code / Cursor / Codex / Gemini]
+  B4 -.按触发加载.-> F
+  C --> F
+  D --> F
+  B3 -.验证输出.-> F</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Plan→Act→Verify 工作循环</p>
+    <div class="mermaid">flowchart LR
+  U[用户任务] --> P[Plan 规划<br/>spec-first / context-budget]
+  P --> AC[Act 执行<br/>加载相关 Skill]
+  AC --> V[Verify 验证<br/>adversarial-verify 子智能体]
+  V -->|通过| D[清洁提交 clean-commits]
+  V -->|失败| P
+  D --> R[交付结果]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Archive228/loopkit" target="_blank">Archive228/loopkit</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/asgeirtj" target="_blank">主流 AI 系统提示词汇编</a></span>
+    <span class="stars">⭐ 1,378 <span class="stars-today">(+1378 today)</span></span>
+  </div>
+  <p class="one-liner">汇集各大厂商 AI 产品系统提示词</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">纯文本文档</span>
+  </div>
+  <div class="summary">该仓库是一个持续更新的系统提示词（System Prompts）汇编项目，专注于收集并公开各大主流 AI 产品背后的系统提示词内容。收录范围覆盖了当前市场上最具影响力的 AI 厂商及其产品线：Anthropic 阵营包括 Claude Fable 5、Opus 4.8、Claude Code 与 Claude Design；OpenAI 阵营涵盖 ChatGPT 5.5 Thinking、GPT 5.5 Instant 以及 Codex；Google 阵营包括 Gemini 3.5 Flash、Gemini 3.1 Pro 和 Antigravity；xAI 阵营的 Grok 也在其中。此外还收录了 Cursor、GitHub Copilot、VS Code、Perplexity 等开发者工具与搜索产品的提示词。仓库以文本文档形式组织内容，无需复杂技术栈，便于研究者、提示词工程师和开发者直接检索、对比与借鉴。通过阅读这些一手素材，用户可以了解各家厂商在角色设定、能力边界、安全防护、工具调用、输出格式、拒答策略等方面的差异化设计思路，进而提炼出通用的提示词构造范式。该项目对提示词工程学习、AI 产品逆向研究、安全对齐研究以及构建自有 Agent 系统均有较高的参考价值，尤其适合希望深入理解主流大模型行为模式的从业者持续关注。</div>
+  <div class="why-notable">系统提示词是大模型产品最核心的隐性资产，直接决定了模型的人格、能力边界和安全行为。该仓库将各大厂商的一手提示词集中汇编并持续更新，为提示词工程、AI 安全对齐研究和自研 Agent 设计提供了极具价值的横向对比样本，是研究业界最佳实践的重要参考。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">仓库内容组织结构</p>
+    <div class="mermaid">graph TD
+  A[系统提示词汇编仓库] --> B[Anthropic]
+  A --> C[OpenAI]
+  A --> D[Google]
+  A --> E[xAI]
+  A --> F[开发者工具]
+  A --> G[搜索产品]
+  B --> B1[Claude Fable 5]
+  B --> B2[Opus 4.8]
+  B --> B3[Claude Code]
+  B --> B4[Claude Design]
+  C --> C1[ChatGPT 5.5 Thinking]
+  C --> C2[GPT 5.5 Instant]
+  C --> C3[Codex]
+  D --> D1[Gemini 3.5 Flash]
+  D --> D2[Gemini 3.1 Pro]
+  D --> D3[Antigravity]
+  E --> E1[Grok]
+  F --> F1[Cursor]
+  F --> F2[GitHub Copilot]
+  F --> F3[VS Code]
+  G --> G1[Perplexity]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">提示词研究应用流程</p>
+    <div class="mermaid">graph LR
+  A[访问仓库] --> B[选择目标厂商/产品]
+  B --> C[阅读原始提示词]
+  C --> D{分析维度}
+  D --> D1[角色设定]
+  D --> D2[能力边界]
+  D --> D3[安全策略]
+  D --> D4[工具调用]
+  D --> D5[输出格式]
+  D1 --> E[横向对比]
+  D2 --> E
+  D3 --> E
+  D4 --> E
+  D5 --> E
+  E --> F[提炼最佳实践]
+  F --> G[应用于自研产品]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/asgeirtj" target="_blank">sponsors/asgeirtj</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/easylink-ai-open/agent-runtime" target="_blank">agent-runtime</a></span>
+    <span class="stars">⭐ 172</span>
+  </div>
+  <p class="one-liner">中立可复用的 Agent 循环运行时内核</p>
+  <div class="tags">
+    <span class="tag">Python 3.11</span><span class="tag">uv 包管理</span><span class="tag">OpenAI Chat Completions API</span><span class="tag">Anthropic Messages API</span><span class="tag">pytest</span><span class="tag">Apache License 2.0</span>
+  </div>
+  <div class="summary">agent-runtime 是一个独立的 Agent 运行时核心库，由 easylink-ai-open 团队开源，专注于剥离产品耦合、提供可复用的 Agent 循环逻辑。它把「请求→工具调用→循环→收尾」这一稳定链路，连同上下文估算、迭代预算、协作模式和生命周期钩子等能力沉淀到一个中立层，不绑定任何数据库、Web 框架或业务包。项目在边界处使用中立的会话数据模型（Message、TextPart、ImagePart、ToolCallPart、ToolResultPart 以及 LLMRequest/LLMResponse/LLMStreamEvent），并内置 OpenAI 与 Anthropic 的线协议转换器与 HTTP Provider 客户端，用户只需传入 LLMConfig 即可发起真实模型调用。运行时通过 ModelClient、ToolDispatcher、SystemPromptProvider、CacheStrategy 四类注入协议开放扩展点，并提供 ToolRegistry、PromptParts、PromptCacheStrategy 等即用型基元。协作模式以数据结构形式描述（名称、开发者指令、被禁工具与效果类），内核只做机制不定策略。此外，循环内建了流式回调、模型重试与退避、工具异常转消息、Human-in-the-loop 暂停、可中断、Token 用量聚合以及基于 SummarizingCompactor 的上下文压缩等生产级能力，构成一个可直接嵌入产品层的稳健内核。</div>
+  <div class="why-notable">在 Agent 框架普遍与业务、存储、Web 服务深度耦合的当下，agent-runtime 坚持把「循环内核」与「产品外壳」彻底分离，用中立数据模型与协议注入换取长期可复用性；同时把流式、重试、HITL、上下文压缩这些通常各家重复造的生产能力沉淀进内核，非常适合作为自研 Agent 平台的底座或多产品共享的运行时基础设施。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">运行时分层与注入协议</p>
+    <div class="mermaid">graph TD
+  P[产品层\n工具实现/记忆/会话/沙箱/持久化] --> A[Agent 内核]
+  A --> L[Agent Loop\n请求→工具→循环→收尾]
+  L --> H[Hooks 生命周期]
+  L --> C[CollaborationMode 权限校验]
+  L --> B[预算与上下文压缩]
+  A -.注入.-> MC[ModelClient]
+  A -.注入.-> TD[ToolDispatcher]
+  A -.注入.-> SP[SystemPromptProvider]
+  A -.注入.-> CS[CacheStrategy]
+  MC --> WC[Wire Converter\nOpenAI / Anthropic]
+  WC --> API[(LLM Provider HTTP API)]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单轮对话数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant AG as Agent
+  participant LP as Loop
+  participant MC as ModelClient
+  participant TD as ToolDispatcher
+  U->>AG: ask(prompt)
+  AG->>LP: 启动一轮
+  LP->>LP: 预算检查 / 必要时 Compactor 压缩
+  LP->>MC: LLMRequest (中立模型)
+  MC-->>LP: LLMResponse / Stream 事件
+  alt 含 ToolCallPart
+    LP->>TD: 按名执行工具
+    TD-->>LP: ToolResultPart 或异常转消息
+    LP->>MC: 追加结果，继续下一轮
+  else 终止
+    LP-->>AG: TurnResult(messages, usage, flags)
+    AG-->>U: content + messages
+  end</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/easylink-ai-open/agent-runtime" target="_blank">easylink-ai-open/agent-runtime</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/lingbol088-spec/reverse-flow-skill" target="_blank">reverse-flow-skill</a></span>
+    <span class="stars">⭐ 416</span>
+  </div>
+  <p class="one-liner">AI Agent 本地 CTF 逆向工程流程技能</p>
+  <div class="tags">
+    <span class="tag">Markdown (SKILL.md)</span><span class="tag">YAML (agents/openai.yaml)</span><span class="tag">Python (分诊与报告脚本)</span><span class="tag">PowerShell (安装与调用示例)</span><span class="tag">Codex Skill / AI Agent 框架</span>
+  </div>
+  <div class="summary">reverse-flow-skill 是一款面向 AI Agent 与 Codex 的本地逆向工程流程技能包，通过启动词『真心为你』进入逆向模式，专门服务于本地 CTF、crackme、wargame、授权沙盒及离线样本分析等场景。项目将逆向任务拆解为『分析 → 报告 → 逆向 → 深度逆向 → 漏洞研判 → 用户选择下一步』的稳定流水线，让智能体能够按部就班地完成样本分诊、工具链检查、静态与深度逆向、漏洞研判和报告输出，避免陷入无序探索。设计上采用『英文内核提示词 + 中文用户交互』的双语架构：内部规则、工具选择与流程控制以英文书写以提升模型稳定性，而启动词、报告结构和下一步菜单则保持中文，同时对『解锁』『去除』『绕过反调试』『拿 flag』等口语化表达做了需求归一化映射，确保用户即便表达模糊也能被正确理解。技能以 SKILL.md 描述能力，附带 openai.yaml agent 配置以及一组 Python 脚本（create_case、triage_artifact、tool_audit、report_from_triage）用于生成分析工作区、样本分诊、工具审计和自动化报告。安装方式为将 skills/reverse-flow 目录复制到 Codex 技能目录即可加载使用。</div>
+  <div class="why-notable">在 AI Agent 技能生态中，专门面向 CTF 逆向工程的流程化技能包并不多见，本项目将模糊的逆向任务规范为可执行的六步流水线，并通过默认上下文与需求归一化降低用户表达成本，为安全研究者和 CTF 玩家提供了一个可直接接入 Codex 的开箱即用范式，具备较高的复用价值和二次开发潜力。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">逆向工作流</p>
+    <div class="mermaid">graph LR
+  A[用户输入『真心为你』] --> B[进入逆向模式]
+  B --> C[分析 样本分诊]
+  C --> D[报告 初步输出]
+  D --> E[逆向 静态分析]
+  E --> F[深度逆向]
+  F --> G[漏洞研判]
+  G --> H[用户选择下一步]
+  H --> C</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能包结构与脚本调用</p>
+    <div class="mermaid">graph TD
+  U[用户 / AI Agent] --> S[skills/reverse-flow]
+  S --> M[SKILL.md 内核提示词]
+  S --> Y[agents/openai.yaml]
+  S --> R[references 参考资料]
+  S --> P[scripts 脚本集]
+  P --> P1[create_case.py 建立案例]
+  P --> P2[triage_artifact.py 样本分诊]
+  P --> P3[tool_audit.py 工具审计]
+  P --> P4[report_from_triage.py 生成报告]
+  P1 --> W[work 分析工作区]
+  P2 --> W
+  P3 --> W
+  P4 --> W</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/lingbol088-spec/reverse-flow-skill" target="_blank">lingbol088-spec/reverse-flow-skill</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
