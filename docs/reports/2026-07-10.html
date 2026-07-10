@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-10</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-10 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Kulaxyz/token-diet" target="_blank">token-diet</a></span>
+    <span class="stars">⭐ 568</span>
+  </div>
+  <p class="one-liner">编码代理的常驻省 Token 技能</p>
+  <div class="tags">
+    <span class="tag">Bash 安装脚本</span><span class="tag">Claude Code SessionStart Hook</span><span class="tag">Codex AGENTS.md</span><span class="tag">Cursor/Windsurf/Cline 规则文件</span><span class="tag">Node.js 基准脚本</span><span class="tag">Anthropic API</span>
+  </div>
+  <div class="summary">token-diet 是一款面向主流编码代理（Claude Code、Codex、Cursor、Windsurf、Cline）的常驻式 Token 节流技能。它并非按需触发的命令，而是通过安装脚本将指令注入到各代理每次会话都会加载的通道中，从而在整段会话内持续生效，包括回复、文档、测试、代码、上下文读取与工具调用等各个环节。项目核心理念是「去脂留肌」：删除寒暄与冗余叙述，回答直接给出结论；文档与注释只保留必要的「为什么」；测试聚焦关键与边缘路径，每会话不超过 10 条且绝不省略涉及金钱、鉴权、数据丢失的用例；代码遵循 YAGNI；上下文读取先 grep 再按行读取，避免整文件加载；工具调用则批量并行、够用即停。项目提供 on、lite、ultra、off 四档强度，其中 ultra 采用电报式简写但保持代码与测试精确。安装采用一行 curl 脚本自动识别代理类型，支持全局或项目级安装，实现机制上对 Claude Code 使用 SessionStart 钩子，对 Codex 使用 AGENTS.md，对 Cursor/Windsurf/Cline 使用规则文件。基准测试基于真实 Sonnet 5 运行，平均账单下降约 31%，输出体量减少 30% 至 81%，且在所有场景下保持正确性。</div>
+  <div class="why-notable">它把「省 Token」从零散的 Prompt 技巧沉淀为一份可安装、可开关、可基准的常驻技能，跨五大编码代理统一生效，并用真实 Sonnet 5 数据证明账单下降约 31%、正确性无损，对所有按量付费的 AI 编码用户都有直接的成本价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装与常驻生效流程</p>
+    <div class="mermaid">graph TD
+  A[用户执行 install.sh] --> B{检测代理类型}
+  B -->|Claude Code| C[注入 SessionStart Hook]
+  B -->|Codex| D[写入 AGENTS.md]
+  B -->|Cursor/Windsurf/Cline| E[写入规则文件]
+  C --> F[每次会话自动加载指令]
+  D --> F
+  E --> F
+  F --> G[常驻 Token 节流策略生效]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">会话中的节流策略作用点</p>
+    <div class="mermaid">graph LR
+  U[用户提问] --> AG[编码代理]
+  AG --> R[回复: 去除寒暄, 直给结论]
+  AG --> C[代码: YAGNI, 无死代码]
+  AG --> T[测试: 关键+边缘, ≤10]
+  AG --> D[文档/注释: 只留 why]
+  AG --> CTX[上下文: grep 优先, 按行读取]
+  AG --> TL[工具: 批量并行, 够用即停]
+  R & C & T & D & CTX & TL --> OUT[更少 Token, 正确性不变]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Kulaxyz/token-diet" target="_blank">Kulaxyz/token-diet</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/asgeirtj" target="_blank">AI 系统提示词档案库</a></span>
+    <span class="stars">⭐ 1,125 <span class="stars-today">(+1125 today)</span></span>
+  </div>
+  <p class="one-liner">主流 AI 产品系统提示词汇总</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">纯文本文档</span><span class="tag">Git 版本管理</span>
+  </div>
+  <div class="summary">该仓库是一个专门收集与整理主流 AI 产品系统提示词（System Prompts）的开源档案库，由社区维护者 asgeirtj 持续更新。项目将来自各大 AI 厂商的对话式产品与编程助手的内部提示词进行提取和归档，覆盖范围极为广泛：Anthropic 家族包括 Claude Fable 5、Opus 4.8、Claude Code 与 Claude Design；OpenAI 家族包括 ChatGPT 5.5 Thinking、GPT 5.5 Instant 以及 Codex；Google 系列涵盖 Gemini 3.5 Flash、3.1 Pro 与 Antigravity；xAI 的 Grok 也在列。此外还包含众多基于大模型构建的开发者工具，例如 Cursor、GitHub Copilot、VS Code 内置 AI、Perplexity 等。仓库以纯文本或 Markdown 形式存储各版本 prompt，便于研究者对比不同厂商在角色设定、安全护栏、工具调用规范、代码风格约束等方面的设计取向。对于 Prompt Engineer、AI 应用开发者以及安全研究者而言，这类一手资料能揭示各家产品在指令层的差异化策略，也可作为自建 Agent 时的模板参考。项目通过 GitHub Sponsors 页面接受赞助，定期更新以跟进模型迭代。</div>
+  <div class="why-notable">系统提示词是 AI 产品的核心配方，直接决定模型的人格、能力边界与工具使用方式。该仓库将平时难以获取的各家旗舰产品 prompt 集中归档，让开发者可以直观对比 Claude、GPT、Gemini、Grok 在安全策略、代码规范、Agent 行为设计上的差异，是构建自研 AI 应用与 Agent 时极具价值的参考基线。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">仓库内容组织结构</p>
+    <div class="mermaid">graph TD
+  A[系统提示词档案库] --> B[Anthropic]
+  A --> C[OpenAI]
+  A --> D[Google]
+  A --> E[xAI]
+  A --> F[开发者工具]
+  B --> B1[Claude Fable 5]
+  B --> B2[Opus 4.8]
+  B --> B3[Claude Code]
+  B --> B4[Claude Design]
+  C --> C1[ChatGPT 5.5 Thinking]
+  C --> C2[GPT 5.5 Instant]
+  C --> C3[Codex]
+  D --> D1[Gemini 3.5 Flash]
+  D --> D2[Gemini 3.1 Pro]
+  D --> D3[Antigravity]
+  E --> E1[Grok]
+  F --> F1[Cursor]
+  F --> F2[Copilot]
+  F --> F3[VS Code]
+  F --> F4[Perplexity]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">提示词研究使用流程</p>
+    <div class="mermaid">graph LR
+  A[原始 AI 产品] -->|社区提取| B[Prompt 文本]
+  B --> C[仓库归档]
+  C --> D{研究者}
+  D --> E[对比分析]
+  D --> F[安全审计]
+  D --> G[自建 Agent 参考]
+  E --> H[洞察产品设计]
+  F --> H
+  G --> H</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/asgeirtj" target="_blank">sponsors/asgeirtj</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/YuanpingSong/ultracodex" target="_blank">ultracodex</a></span>
+    <span class="stars">⭐ 54</span>
+  </div>
+  <p class="one-liner">在 Codex CLI 上运行 Claude Code 工作流</p>
+  <div class="tags">
+    <span class="tag">Node.js (≥20)</span><span class="tag">TypeScript/JavaScript ES Modules</span><span class="tag">OpenAI Codex CLI</span><span class="tag">OpenCode</span><span class="tag">Claude Code</span><span class="tag">TOML 配置</span><span class="tag">JSON Schema</span><span class="tag">pnpm/npm</span>
+  </div>
+  <div class="summary">ultracodex 是一个让 Claude Code 的「一条提示衍生出一支智能体舰队」工作流脚本，无需修改即可运行在 OpenAI Codex CLI 或 OpenCode 上的桥接工具。它遵循「Fable 规划，Codex 执行，Fable 验证」的分工模式：由高端模型负责规划与审判，订阅制的执行方完成具体工作，验证后的结果回传至发起会话。项目提供 Agent Script 规范，用户通过 ES 模块编写脚本，调用 agent、parallel、pipeline、phase 等八个注入的全局函数，实现并行智能体、构建者-验证者循环、令牌预算控制。同时内置全屏 TUI 观察运行状态，支持后台脱离运行、断线续看，并通过 [route] 配置表将实现与对抗性审查分派到不同厂商。包内还附带作者技能文档与九种编排范式的示例阶梯，方便任何模型学习编写此类工作流。</div>
+  <div class="why-notable">在 AI 编程代理生态中，它首次实现了 Claude Code 工作流脚本在竞品 Codex CLI 上的无缝迁移，通过跨厂商模型协作显著降低高端模型使用成本，并抽象出可移植的 Agent Script 规范，为多智能体编排提供了统一的可验证语言。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">跨厂商规划-执行-验证架构</p>
+    <div class="mermaid">graph LR
+  U[用户提示] --> C[Claude Code Fable]
+  C -->|编写工作流脚本| UC[ultracodex CLI]
+  UC -->|route 路由| CX[Codex CLI 执行]
+  UC -->|route 路由| OC[OpenCode 执行]
+  CX --> V[Fable 验证]
+  OC --> V
+  V -->|验证结果回传| C
+  UC -.实时事件.-> TUI[全屏 TUI 监控]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Agent Script 编排三轴数据流</p>
+    <div class="mermaid">graph TD
+  S[Agent Script ES 模块] --> M[meta 元数据]
+  S --> B[异步主体]
+  B --> P1[phase 分组]
+  P1 --> PA[parallel 广度并行]
+  PA --> AG1[agent 智能体调用]
+  P1 --> PL[pipeline 流式管道]
+  PL --> AG2[逐项 stage 链]
+  P1 --> LP[while/for 深度循环]
+  LP --> AG3[构建者-验证者迭代]
+  AG1 --> BG[budget 令牌预算]
+  AG2 --> BG
+  AG3 --> BG
+  BG -->|超限抛出| END[终止]
+  AG1 --> R[结果返回会话]
+  AG2 --> R
+  AG3 --> R</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/YuanpingSong/ultracodex" target="_blank">YuanpingSong/ultracodex</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/pillar-labs/sail-skill" target="_blank">SAIL Skill 安全AI生命周期技能包</a></span>
+    <span class="stars">⭐ 130</span>
+  </div>
+  <p class="one-liner">AI安全生命周期评估的Agent Skill</p>
+  <div class="tags">
+    <span class="tag">SKILL.md 规范</span><span class="tag">Claude Code Plugin</span><span class="tag">Markdown 参考文件</span><span class="tag">Vercel skills CLI (npx skills)</span><span class="tag">OpenAI Codex skill-installer</span><span class="tag">SAIL V2 框架</span>
+  </div>
+  <div class="summary">SAIL Skill 是 Pillar Security 推出的开源 Agent Skill，将其 SAIL V2（Secure AI Lifecycle）安全框架封装为可跨多种 AI 助手运行的技能包。核心资产是一份覆盖 AI/Agent 全生命周期 7 个阶段、共 91 项风险的完整目录，每条风险都附带缓解措施及主流合规标准（ISO/IEC 42001、EU AI Act、OWASP LLM/Agentic、DASF、AIUC-1）的映射关系。技能以引用文件的形式在 Agent 需要时按需加载，确保输出内容基于真实的 SAIL ID 与映射，避免大模型幻觉出不存在的控制项。功能上，它可以对 LangGraph、MCP 等 AI Agent 系统做全量风险差距评估、生成 7 阶段安全路线图与成熟度画像、输出按合规框架组织的检查清单、编写供应商 RFP 问卷，以及回答类似 “SAIL 5.17 涵盖什么？” 的知识问答。在 Claude Code 中还提供 /sail、/sail:assess、/sail:roadmap、/sail:comply、/sail:rfp 五个斜杠命令作为快速入口。项目采用 SKILL.md 通用规范，兼容 Claude Code、Claude.ai/Desktop/Cowork、OpenAI Codex CLI、Google Antigravity、ChatGPT、opencode、pi 等主流 Agent 运行环境，同时作为 Claude Code 插件市场提供一键安装。</div>
+  <div class="why-notable">在 Agent Skill 这一新兴形态下，该项目把行业级 AI 安全框架产品化为可被任意 SKILL.md 兼容 Agent 直接调用的知识资产，解决了大模型做安全评估易幻觉、跨平台难复用两个痛点，是把合规知识工程化交付给 AI 助手的典型样板。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">SAIL Skill 跨平台加载架构</p>
+    <div class="mermaid">graph TD
+  A[用户提示/AI安全问题] --> B{Agent 运行环境}
+  B --> C[Claude Code]
+  B --> D[ChatGPT / Claude.ai]
+  B --> E[Codex CLI]
+  B --> F[Antigravity / opencode / pi]
+  C --> G[SKILL.md 触发器]
+  D --> G
+  E --> G
+  F --> G
+  G --> H[references/ 风险目录]
+  H --> I[91 条 SAIL 风险 + 缓解 + 合规映射]
+  I --> J[输出: 评估/路线图/合规清单/RFP]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">SAIL V2 评估数据流</p>
+    <div class="mermaid">flowchart LR
+  U[目标 AI/Agent 系统] --> S[/sail:assess 触发/]
+  S --> P1[生命周期7阶段拆解]
+  P1 --> R[对齐 91 条风险目录]
+  R --> M[映射合规框架\nISO42001/EU AI Act/OWASP/DASF/AIUC-1]
+  M --> O[SAIL-assessment.md\n差距分析 + 组件图 + 优先级]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/pillar-labs/sail-skill" target="_blank">pillar-labs/sail-skill</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/markfulton/claude-antigravity-agents" target="_blank">Claude Antigravity Agents</a></span>
+    <span class="stars">⭐ 99</span>
+  </div>
+  <p class="one-liner">让 Claude 委派任务给 Antigravity CLI</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skill</span><span class="tag">Google Antigravity CLI (agy)</span><span class="tag">Shell / CLI 集成</span>
+  </div>
+  <div class="summary">Claude Antigravity Agents 是一个面向 Claude Code 的技能（Skill）扩展，核心定位是把编码、代码审查、分析和研究等任务从 Claude 主会话中剥离，委派给 Google Antigravity CLI（agy）驱动的子代理去执行。通过这种代理编排机制，项目实现了三个核心价值：一是节省 token，把繁重的上下文处理下沉到子代理，主会话保持精简；二是引入第二个模型进行交叉验证或补充能力，形成多模型协作；三是支持并行工作，多个子任务可同时分派给不同 agy 实例，缩短端到端耗时。该技能适合在长链路开发、代码评审和调研型任务中使用，让 Claude Code 从单一执行者转变为任务调度中枢。技术上依托 Claude Code 的 Skill 机制以及 Google Antigravity CLI 工具链，通过命令行进程调用完成子代理的分派与结果回收。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[开发者] --> CC[Claude Code 主会话]
+  CC --> SK[Antigravity Agents Skill]
+  SK --> D{任务分派器}
+  D -->|编码| A1[agy 子代理 1]
+  D -->|审查| A2[agy 子代理 2]
+  D -->|分析研究| A3[agy 子代理 3]
+  A1 --> R[结果聚合]
+  A2 --> R
+  A3 --> R
+  R --> CC</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">任务委派数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 开发者
+  participant C as Claude Code
+  participant S as Skill
+  participant G as agy CLI
+  U->>C: 提交复杂任务
+  C->>S: 触发委派技能
+  S->>G: 并行调用子代理
+  G-->>S: 返回执行结果
+  S-->>C: 汇总回传
+  C-->>U: 输出最终答复</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/markfulton/claude-antigravity-agents" target="_blank">markfulton/claude-antigravity-agents</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
