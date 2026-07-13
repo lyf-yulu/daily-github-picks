@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-13</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-13 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/pillar-labs/sail-skill" target="_blank">SAIL Skill — AI 安全生命周期</a></span>
+    <span class="stars">⭐ 147</span>
+  </div>
+  <p class="one-liner">AI/Agent 安全评估的 SKILL.md 技能包</p>
+  <div class="tags">
+    <span class="tag">SKILL.md 规范</span><span class="tag">Markdown 参考文档</span><span class="tag">Claude Code Plugin Marketplace</span><span class="tag">Vercel skills CLI (npx skills)</span><span class="tag">OpenAI Codex skill-installer</span><span class="tag">Shell 安装脚本</span>
+  </div>
+  <div class="summary">SAIL Skill 是 Pillar Security 推出的一款 Agent 技能包，将其 SAIL V2（Secure AI Lifecycle，安全 AI 生命周期）框架封装为可在多种 AI 代理平台上一键安装的技能。核心内容是一份覆盖 7 个生命周期阶段、共 91 项 AI/Agent 风险的完整目录，每条风险都配有缓解措施和主流合规标准映射（ISO/IEC 42001、EU AI Act、OWASP LLM/Agentic、DASF、AIUC-1）。技能被设计为按需读取的参考文件，让 Agent 在回答 AI 安全相关问题时，都能引用真实的 SAIL 编号与映射，避免凭空捏造控制项。功能上，它可以对某个 Agent 或系统做完整的差距分析、生成安全路线图与成熟度评估、输出合规检查表、优先级排序控制、跨团队对齐材料，以及供应商 RFP 问卷。项目同时是 Claude Code 的插件市场，在 Claude Code 中额外提供 /sail、/sail:assess、/sail:roadmap、/sail:comply、/sail:rfp 五个斜杠命令，支持一键运行智能默认工作流。安装方式覆盖 Claude Code、Claude.ai/Desktop/Cowork、OpenAI Codex CLI、Google Antigravity、pi、ChatGPT、opencode 等所有兼容 SKILL.md 规范的 Agent 环境，并针对 AI Agent 自主安装场景提供了详细的操作指引。</div>
+  <div class="why-notable">AI Agent 安全正处于工程落地的关键期，SAIL Skill 把一份体系化的 91 项风险目录变成 Agent 可以随时调用的"知识底座"，让任何兼容 SKILL.md 的 AI 助手都能一键具备企业级 AI 安全评估能力。它同时展示了 SKILL.md 作为跨平台 Agent 能力分发标准的潜力，一次编写、多端复用，对希望构建可复用 Agent 专业技能的团队具有很强的参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">SAIL Skill 跨平台安装架构</p>
+    <div class="mermaid">graph TD
+  A[sail-skill 仓库] --> B[sail/skills/sail/ SKILL.md + references/]
+  A --> C[dist/sail-skill.zip]
+  B --> D[Claude Code 插件市场]
+  B --> E[Codex skill-installer]
+  B --> F[npx skills Antigravity/pi]
+  B --> G[opencode 本地目录]
+  C --> H[Claude.ai / Desktop / Cowork 上传]
+  C --> I[ChatGPT Skills 上传]
+  D --> J[AI Agent 运行时]
+  E --> J
+  F --> J
+  G --> J
+  H --> J
+  I --> J
+  J --> K[按需读取 91 项风险目录]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">用户请求到 SAIL 评估输出的数据流</p>
+    <div class="mermaid">graph LR
+  U[用户提问或 /sail 命令] --> T{触发 SAIL 技能}
+  T --> R[读取 SKILL.md 与 references]
+  R --> C[91 项风险目录]
+  R --> M[合规框架映射<br/>ISO42001/EU AI Act/OWASP/DASF/AIUC-1]
+  C --> W[工作流引擎]
+  M --> W
+  W --> O1[SAIL 差距评估报告]
+  W --> O2[7 阶段安全路线图]
+  W --> O3[合规检查表]
+  W --> O4[厂商 RFP 问卷]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/pillar-labs/sail-skill" target="_blank">pillar-labs/sail-skill</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/markfulton/claude-antigravity-agents" target="_blank">Claude Antigravity Agents 协作技能</a></span>
+    <span class="stars">⭐ 102</span>
+  </div>
+  <p class="one-liner">让 Claude Code 委派任务给 Gemini 子代理</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skills</span><span class="tag">Google Antigravity CLI (agy)</span><span class="tag">Gemini 模型</span><span class="tag">Markdown (SKILL.md)</span><span class="tag">Git worktree</span><span class="tag">Bash / PowerShell</span>
+  </div>
+  <div class="summary">Claude Antigravity Agents 是一个为 Claude Code 设计的技能包（Skill），核心是一份名为 antigravity-agents 的 SKILL.md 指令文件。安装后，Claude Code 从单一执行者升级为编排者（Orchestrator）：它负责撰写自包含的任务简报，通过非交互方式（agy -p）调用 Google Antigravity CLI 启动后台子代理，由 Gemini 等模型执行繁重工作，同时 Claude 继续处理当前任务，形成真正的并行开发流。项目主打三大价值：一是节省 Claude 令牌与上下文，将全仓审计、大规模重构、研究调研等重活外包；二是引入独立的第二模型（Gemini）提供交叉验证意见；三是通过并行 fan-out 提升整体吞吐。安全模型是设计核心，遵循「子代理绝不写入 Claude 正在编辑的文件」的铁律：只读任务如代码审查、架构分析、依赖审计运行在沙箱模式；写文件任务如编码与重构则在独立 git worktree 或副本仓库中执行。任何子代理返回的产出，Claude 都会通过 git diff、类型检查与构建流程进行验证后再合并，避免盲信。安装仅需克隆仓库并复制到 ~/.claude/skills 目录，Windows、macOS、Linux 均兼容。</div>
+  <div class="why-notable">该项目提出了一种务实的多代理协作范式：不同厂商的编码代理（Anthropic Claude 与 Google Gemini）通过 CLI 层松耦合协同，主代理专注编排与验证，副代理承担重活，既省令牌又能获得跨模型的独立第二意见。相较于纯粹的单模型 Agent 循环，它用「隔离 + 验证」两条工程化护栏解决了多代理并发中最棘手的文件冲突与信任问题，落地成本极低（一个 SKILL.md 文件），是 AI 编程工作流演进的一个具有参考价值的样本。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">编排与委派流程</p>
+    <div class="mermaid">flowchart LR
+    U[开发者] --> C[Claude Code<br/>编排者]
+    C -->|撰写简报| B[agy -p 任务]
+    B --> J{任务类型}
+    J -->|只读| S[沙箱模式<br/>代码审查/分析]
+    J -->|写文件| W[独立 worktree<br/>编码/重构]
+    C -. 继续本地开发 .-> C
+    S --> R[子代理结果]
+    W --> R
+    R -->|git diff · typecheck · build| V[Claude 验证]
+    V -->|通过| M[合并到主线]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">任务隔离与安全模型</p>
+    <div class="mermaid">graph TD
+    T[委派任务] --> Q{是否写文件?}
+    Q -->|否| RO[只读沙箱]
+    Q -->|是| RW[隔离写入区]
+    RO --> A1[代码审查]
+    RO --> A2[架构安全分析]
+    RO --> A3[依赖审计]
+    RO --> A4[第二意见]
+    RW --> B1[Git Worktree]
+    RW --> B2[独立仓库副本]
+    A1 & A2 & A3 & A4 & B1 & B2 --> V[Claude 验证层]
+    V --> OK[信任并采纳]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/markfulton/claude-antigravity-agents" target="_blank">markfulton/claude-antigravity-agents</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/haiou-666/haiou-codex" target="_blank">海鸥 codeX 版</a></span>
+    <span class="stars">⭐ 62</span>
+  </div>
+  <p class="one-liner">Codex 中文人格与安全研究增强包</p>
+  <div class="tags">
+    <span class="tag">Codex</span><span class="tag">AGENTS.md</span><span class="tag">Prompt Engineering</span><span class="tag">Markdown</span>
+  </div>
+  <div class="summary">海鸥 codeX 版是一套面向 OpenAI Codex 的本地增强配置包，旨在通过定制化的配置文件与 Prompt 体系，为 Codex 注入更贴近中文技术语境的人格特征与专业能力。项目核心由三部分组成：自定义的 AGENTS.md 用于定义智能体的行为准则与身份设定；模块化的 Prompt 集合负责在不同场景下引导 Codex 的输出风格与思考路径；专业 Skill 模块则聚焦于安全研究工作流，提供漏洞分析、渗透测试辅助、代码审计等专业能力支持。整体设计强调即插即用，使用者可以将该配置包部署到本地 Codex 环境中，快速获得一个更直接、更中文化、更适合安全领域从业者使用的 AI 编程助手。项目适合中文安全研究人员、开发者与技术团队作为 Codex 的开箱即用增强方案。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[中文用户/安全研究员] --> C[Codex 本地环境]
+  C --> P[haiou-codex 配置包]
+  P --> A[AGENTS.md<br/>人格与行为准则]
+  P --> M[模块化 Prompt<br/>场景化引导]
+  P --> S[专业 Skill<br/>安全研究工作流]
+  A --> O[增强后的 Codex 输出]
+  M --> O
+  S --> O
+  O --> U</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求处理流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant C as Codex
+  participant H as haiou-codex
+  U->>C: 提交任务请求
+  C->>H: 加载 AGENTS.md 人格
+  C->>H: 匹配模块化 Prompt
+  C->>H: 调用安全 Skill
+  H-->>C: 返回增强上下文
+  C-->>U: 输出中文专业结果</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/haiou-666/haiou-codex" target="_blank">haiou-666/haiou-codex</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ohad6k/ditto" target="_blank">Ditto</a></span>
+    <span class="stars">⭐ 137</span>
+  </div>
+  <p class="one-liner">从AI编码日志挖掘你的工作画像</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">Claude Code Skills</span><span class="tag">Codex Plugin</span><span class="tag">npx / skills.sh bootstrap</span><span class="tag">Cursor / Gemini 适配器</span>
+  </div>
+  <div class="summary">Ditto 是一个本地化的开源工具，它把你与 Claude Code、Codex、Copilot CLI 等 AI 编码代理的历史会话日志挖掘成一份私有的 you.md 工作画像，让新会话中的 AI 代理不再从零开始认识你。与传统的 memory 机制（你显式告诉模型的信息）不同，Ditto 读取的是原始会话日志而非 CLAUDE.md 或规则文件，从真实工作证据中提炼你的隐性规则：你如何定义『完成』、你会当场拒绝什么样的代码、你在何时要求提供证明、什么样的 agent 行为会让你叫停任务，以及你真正投入工作时的语言风格。挖掘结果按工作、设计、写作分层组织，确保针对不同任务加载合适的画像切片。工具运行完全本地化，敏感信息会先做脱敏处理，日志不离开本机。核心命令 python ditto.py --card 可生成一张可分享的画像卡片，包含 archetype、按不同会话证据排序的核心法则、覆盖统计和一句尖锐的自我认知。项目提供 npx skills add 一键 bootstrap，同时为 Codex 提供原生插件 ditto:mine / work / design / write，并通过适配器支持 Cursor、Gemini 等多家代理。运行前会先打印只读的成本计划等待用户批准，避免意外消耗模型额度。整个项目用纯 Python 实现，零依赖。</div>
+  <div class="why-notable">它把『AI 记忆』这个话题从显式提示转向了行为考古：不是让你再写一份规则文档，而是把你已经产生的会话数据视为最诚实的行为证据，反向挖掘出你自己都没写下来的工作准则。README 中的 Reddit 实测（168 赞、88K 浏览）提供了可验证的效果对比，加上零依赖 + 跨代理 + 本地脱敏的工程克制，让它在众多 AI agent 记忆项目里显得独具视角，也预示了 personal LLM profile 这一新兴方向的落地形态。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Ditto 数据流</p>
+    <div class="mermaid">graph TD
+  A[Claude Code / Codex / Copilot 原始会话日志] --> B[本地读取 & 脱敏]
+  B --> C[仅保留用户消息, 剔除工具输出/文件转储]
+  C --> D[分片切块]
+  D --> E[Worker Agent 逐片分析]
+  E --> F[提取模式: 完成定义 / 拒绝规则 / 证据要求 / 停止信号]
+  F --> G[合并重复特征]
+  G --> H[you.md 私有画像]
+  H --> I[分层: 工作 / 设计 / 写作]
+  I --> J[新任务前由 Agent 预加载]
+  H --> K[--card 生成可分享画像卡]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">跨代理集成架构</p>
+    <div class="mermaid">graph LR
+  U[用户] -->|run ditto| BOOT[skills.sh bootstrap]
+  BOOT --> PLAN[只读成本计划 + 用户批准]
+  PLAN --> MINE[ditto.py 挖掘引擎]
+  MINE --> PROF[(本地 you.md 画像)]
+  PROF --> CC[Claude Code Skill]
+  PROF --> CX[Codex 原生插件<br/>mine/work/design/write]
+  PROF --> CUR[Cursor 适配器]
+  PROF --> GEM[Gemini 适配器]
+  CC --> AGENT[AI Agent 会话]
+  CX --> AGENT
+  CUR --> AGENT
+  GEM --> AGENT</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ohad6k/ditto" target="_blank">ohad6k/ditto</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/cozytab/fable5-mode" target="_blank">Fable-Mode 工作纪律协议</a></span>
+    <span class="stars">⭐ 105</span>
+  </div>
+  <p class="one-liner">用工作纪律让弱模型逼近前沿输出</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skill</span><span class="tag">Python 3 (标准库)</span><span class="tag">Bash 安装脚本</span><span class="tag">Claude Code Hooks (SessionStart/PreToolUse/PostToolUse/Stop)</span><span class="tag">Markdown (SKILL.md / SPEC.md / LEDGER.md)</span>
+  </div>
+  <div class="summary">fable5-mode 是一个面向 Claude Code 的 Skill 加钩子（Hook）套件，核心命题是「输出质量 = 模型能力 × 工作纪律」。它不试图让 Opus 4.8 变成 Fable 5 那样的前沿模型，而是把前沿模型隐含的「工作习惯」显式化并强制执行，从而在中低端模型上补齐流程层面的落差。项目提炼了六条纪律：计划闸门（先写 docs/SPEC.md 与可机器验证的验收条件）、小卡片执行（每张卡在全新上下文中运行，两次失败即升级）、对抗式自检（关键输出走 refute pass 或 N 方案+评审+合成）、真实产品验证（跑通端到端并留下截图/日志证据）、上下文卫生（SPEC/PROGRESS 作为外部记忆）、检查点自治（长任务加看门狗与可恢复检查点）。落地上，四个 Hook 把最常被偷懒的规则变成硬约束：SessionStart 注入纪律画像；PreToolUse 的 Spawn Guard 拦截未建 ledger 的分派以及越级请求更强模型；PostToolUse 在连续 3 次命令失败时注入归因阶梯；Stop 钩子在 ledger 有未完成项或已完成项缺少证据时阻止收尾。同时提供 fable_lint.py 做 SPEC 与证据的一次性检查。设计上按项目 opt-in（.fable/ 目录）、失败开放、循环安全、支持豁免，可安全全局注册。</div>
+  <div class="why-notable">它把「Prompt 工程」推进到「过程工程」——不是靠更花哨的提示词，而是通过外部账本、钩子拦截和证据校验，把模型难以自觉遵守的工作纪律变成可机械执行的流程。对于希望以低成本模型完成严肃工程任务、或研究 Agent 可靠性与自我校验机制的团队，这是一份少见的、可直接复用的工程化蓝本。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Fable-Mode 整体架构</p>
+    <div class="mermaid">graph TD
+  U[用户请求 use fable mode] --> CC[Claude Code 会话]
+  CC --> SK[SKILL.md 六条纪律]
+  CC --> LD[.fable/LEDGER.md 任务账本]
+  CC --> SPEC[docs/SPEC.md 计划与验收]
+  subgraph Hooks 强制层
+    H1[SessionStart<br/>Profile Injector]
+    H2[PreToolUse<br/>Spawn Guard]
+    H3[PostToolUse<br/>Fail-Streak Reminder]
+    H4[Stop<br/>Close Guard]
+  end
+  CC --> H1
+  CC --> H2
+  CC --> H3
+  CC --> H4
+  H2 --> LD
+  H4 --> LD
+  H1 --> LD
+  LINT[fable_lint.py] -.CI 校验.-> SPEC
+  LINT -.CI 校验.-> LD</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单张任务卡执行流</p>
+    <div class="mermaid">flowchart LR
+  A[写入 SPEC 任务卡<br/>含机器可验证验收] --> B{Plan Gate 通过?}
+  B -- 否 --> A
+  B -- 是 --> C[新上下文执行卡片]
+  C --> D[运行验收命令]
+  D -->|通过| E[Adversarial Refute<br/>关键输出反驳]
+  D -->|失败1次| C
+  D -->|失败2次| F[升级/换方案]
+  E --> G[真实产品端到端验证<br/>留下证据]
+  G --> H[LEDGER 标记 [x] + evidence]
+  H --> I{Close Guard 检查}
+  I -- 未完成或缺证据 --> C
+  I -- 通过 --> J[结束回合]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/cozytab/fable5-mode" target="_blank">cozytab/fable5-mode</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
