@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-14</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-14 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/markfulton/claude-antigravity-agents" target="_blank">Claude Antigravity Agents 技能包</a></span>
+    <span class="stars">⭐ 102</span>
+  </div>
+  <p class="one-liner">让 Claude Code 委派任务给 Gemini 子代理</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skill (SKILL.md)</span><span class="tag">Google Antigravity CLI (agy)</span><span class="tag">Gemini 模型</span><span class="tag">Git worktree</span><span class="tag">Bash / PowerShell 安装脚本</span><span class="tag">Markdown 指令文件</span>
+  </div>
+  <div class="summary">Claude Antigravity Agents 是一个面向 Claude Code 的技能包（Skill），核心是一份名为 antigravity-agents 的 SKILL.md 指令文件。它把 Claude Code 从单打独斗的编码助手升级为编排器（Orchestrator），能够将耗时的重活转交给 Google Antigravity CLI（agy）在后台异步执行。agy 是 Google 推出的自主终端编码代理，底层由 Gemini 等模型驱动，因此该技能相当于让 Claude 调度另一个模型作为副手协同工作。使用者只需自然语言下达任务，Claude 会自动撰写自包含任务简报、通过 agy -p 非交互式启动子代理、继续处理当前工作，待子代理完成后再收集结果并通过 git diff、类型检查和构建流程进行验证后才采信。该项目定义了严格的安全模型：只读类任务（代码审查、架构分析、依赖审计、第二意见）在沙箱中运行；写文件类任务（编码、重构）则在隔离的 git worktree 或独立仓库中执行，确保子代理永远不会与 Claude 正在编辑的文件产生冲突。项目支持 macOS、Linux 与 Windows PowerShell 环境，安装只需克隆仓库并把技能目录复制到 ~/.claude/skills/ 下，Claude Code 会在下次启动时按需加载。</div>
+  <div class="why-notable">它给出了一种极简却有效的多代理协作范式：不写复杂框架，仅用一份 Markdown 指令就把 Anthropic 与 Google 两家旗舰编码代理串联起来，形成成本更低、吞吐更高的跨模型工作流。对于关注 AI 编码代理编排、token 成本控制以及多模型互验证的开发者，这是一个可直接复用、思路清晰的参考实现。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">编排与验证工作流</p>
+    <div class="mermaid">flowchart LR
+    U[用户提问] --> C[Claude Code 编排器]
+    C -->|撰写自包含简报| B[agy -p 后台任务]
+    B --> J{任务类型}
+    J -->|只读分析| S[沙箱模式]
+    J -->|写文件| W[隔离 worktree]
+    C -. 并行继续主任务 .-> C
+    S --> R[子代理结果]
+    W --> R
+    R --> V[git diff / typecheck / build 验证]
+    V -->|通过| M[合入主分支]
+    V -->|失败| C</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">任务隔离策略矩阵</p>
+    <div class="mermaid">graph TD
+    A[委派任务] --> B{是否写文件}
+    B -->|否| RO[只读沙箱]
+    RO --> R1[代码审查]
+    RO --> R2[架构与安全分析]
+    RO --> R3[依赖审计]
+    RO --> R4[跨模型第二意见]
+    B -->|是| WR[隔离写入区]
+    WR --> W1[git worktree 编码任务]
+    WR --> W2[独立仓库大型重构]
+    R1 & R2 & R3 & R4 & W1 & W2 --> P[与 Claude 主任务并行]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/markfulton/claude-antigravity-agents" target="_blank">markfulton/claude-antigravity-agents</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/haiou-666/haiou-codex" target="_blank">海鸥 codeX 版</a></span>
+    <span class="stars">⭐ 79</span>
+  </div>
+  <p class="one-liner">Codex 中文安全研究增强配置包</p>
+  <div class="tags">
+    <span class="tag">Codex</span><span class="tag">AGENTS.md</span><span class="tag">Prompt Engineering</span><span class="tag">Markdown</span>
+  </div>
+  <div class="summary">海鸥 codeX 版是一套面向 OpenAI Codex 的本地增强配置包，旨在通过配置层的定制来重塑 Codex 的行为模式和工作流。项目通过自定义 AGENTS.md 文件为 Codex 注入更直接、更符合中文技术语境的人格设定，减少默认助手化表达带来的信息损耗。同时，项目采用模块化 Prompt 设计，将不同场景下的提示词拆分组合，便于按需加载和维护。此外，项目内置面向安全研究领域的专业 Skill 组件，为渗透测试、漏洞分析、代码审计等安全工作流提供开箱即用的能力扩展。整体而言，这是一个轻量级的 Codex 定制化方案，通过配置驱动而非二次开发的方式，让 Codex 更贴合中文安全研究者的实际使用场景与专业需求。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">配置包架构</p>
+    <div class="mermaid">graph TD
+  A[用户/安全研究者] --> B[Codex CLI]
+  B --> C[haiou-codex 配置层]
+  C --> D[AGENTS.md<br/>中文技术人格]
+  C --> E[模块化 Prompt<br/>场景化提示词]
+  C --> F[专业 Skill<br/>安全研究工作流]
+  D --> G[增强后的 Codex]
+  E --> G
+  F --> G
+  G --> H[渗透测试]
+  G --> I[漏洞分析]
+  G --> J[代码审计]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Prompt 加载流程</p>
+    <div class="mermaid">flowchart LR
+  A[用户输入任务] --> B{任务类型判定}
+  B -->|安全研究| C[加载 Security Skill]
+  B -->|通用开发| D[加载基础 Prompt]
+  B -->|代码审计| E[加载审计 Prompt]
+  C --> F[合并 AGENTS.md 人格]
+  D --> F
+  E --> F
+  F --> G[Codex 执行]
+  G --> H[返回中文结构化结果]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/haiou-666/haiou-codex" target="_blank">haiou-666/haiou-codex</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/coreyhaines31" target="_blank">Claude Code 营销技能包</a></span>
+    <span class="stars">⭐ 299 <span class="stars-today">(+299 today)</span></span>
+  </div>
+  <p class="one-liner">为 AI 代理注入营销专业能力</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">AI Agent Skills</span><span class="tag">Markdown</span><span class="tag">Prompt Engineering</span>
+  </div>
+  <div class="summary">该仓库定位为面向 Claude Code 及各类 AI 编码代理的营销技能扩展集合，旨在把营销行业的专业知识以「Skills」形式封装，供 AI 代理在执行任务时按需调用。项目覆盖的能力范围包括转化率优化（CRO）、文案写作（Copywriting）、搜索引擎优化（SEO）、数据分析（Analytics）以及增长工程（Growth Engineering）五大方向，涵盖了现代数字营销团队的核心工作职责。通过将这些营销领域的最佳实践、方法论和工作流程抽象为可复用的技能模块，开发者与营销人员可以在 Claude Code 环境中直接调度这些能力，让 AI 代理在编写落地页文案、优化 SEO 结构、设计 A/B 测试方案、埋点分析、生成增长实验假设等任务上具备接近专业营销人员的产出水准。项目本质上是一种「提示词/技能工程」资产，通过标准化的技能定义让 AI 代理从通用助手升级为具备特定营销工种能力的专家型代理。当前仓库描述极为简短，README 尚未提供详细的技能清单、目录结构或调用示例，具体的技能加载机制推测将遵循 Claude Code Skills 的标准约定，通过 Markdown 描述文件与元数据来定义。适合关注 AI Agent 应用落地、营销自动化以及提示词工程的团队参考。</div>
+  <div class="why-notable">该项目代表了 AI 代理从「通用助手」向「行业专家」演进的一种典型模式：不再依赖用户临场撰写提示词，而是把营销领域的专业方法论沉淀为可复用的技能资产。对于希望将 Claude Code 用于营销自动化、增长实验或内容生产的团队，这类垂直技能包能显著降低使用门槛并提升产出专业度，同时也为其他领域（法律、财务、设计等）的技能化封装提供了参考范式。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能调用架构</p>
+    <div class="mermaid">graph TD
+  A[用户任务请求] --> B[Claude Code 代理]
+  B --> C{任务类型识别}
+  C -->|落地页优化| D[CRO 技能]
+  C -->|文案生成| E[Copywriting 技能]
+  C -->|搜索优化| F[SEO 技能]
+  C -->|数据洞察| G[Analytics 技能]
+  C -->|增长实验| H[Growth Engineering 技能]
+  D --> I[结构化营销产出]
+  E --> I
+  F --> I
+  G --> I
+  H --> I</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">营销工作流数据流</p>
+    <div class="mermaid">flowchart LR
+  A[业务目标] --> B[SEO 关键词研究]
+  B --> C[Copywriting 内容创作]
+  C --> D[CRO 页面优化]
+  D --> E[Analytics 埋点分析]
+  E --> F[Growth 实验假设]
+  F --> D</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/coreyhaines31" target="_blank">sponsors/coreyhaines31</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ohad6k/ditto" target="_blank">Ditto</a></span>
+    <span class="stars">⭐ 164</span>
+  </div>
+  <p class="one-liner">挖掘AI会话日志生成你的专属agent画像</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">Claude Code Skills</span><span class="tag">Codex Plugin</span><span class="tag">npx/skills.sh bootstrap</span><span class="tag">Markdown (you.md)</span>
+  </div>
+  <div class="summary">Ditto 是一个本地化的开源工具，旨在解决 AI 编程 agent「每次都像第一次认识你」的问题。它从用户在 Claude Code、Codex、Copilot CLI、OpenCode 等编程 agent 中的原始会话日志出发，挖掘出用户在实际工作中沉淀下来但从未明文写下的隐性规则：如何定义「完成」、会立刻拒绝哪类代码、如何调试、如何设计 UI、真正投入工作时的表达风格等，最终生成一份私有的 you.md 工作画像，供 agent 在每次任务开始前加载。与 CLAUDE.md 或 memory 机制不同，Ditto 不依赖用户显式告知，而是从真实历史行为中提炼「已被工作证明」的偏好，并分为工作、设计、写作等独立层，按任务加载对应人格。工具用 Python 编写，零依赖，全流程本地运行，日志不出本机，处理前会先做脱敏。运行时先输出只读的挖掘计划、成本估算与去重后的 token 数，需用户批准后才发起模型调用。挖掘完成后可通过 python ditto.py --card 生成可分享的画像卡片，包含 archetype、按会话证据排序的核心法则、覆盖统计以及一条犀利的自我洞察。安装方式包括跨 agent 的 npx skills add 引导脚本，以及原生 Codex 插件，提供 ditto:mine、ditto:work、ditto:design、ditto:write 等命名空间命令。</div>
+  <div class="why-notable">Ditto 提出了一个新颖的视角：与其让用户手写 prompt 或 memory，不如把 agent 已有的会话日志当成最诚实的行为数据源，反向蒸馏出个人工作风格。作者用它生成的 Reddit 帖子拿到 200 赞、10 万次浏览，形成了「用工具生成的内容验证工具本身」的闭环叙事，展示了 profile-as-context 相比传统 memory 的实际效果，对研究 agent 个性化、上下文工程和多 agent 生态的开发者都具有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Ditto 数据流</p>
+    <div class="mermaid">graph TD
+  A[Claude Code / Codex / Copilot / OpenCode 原始日志] --> B[本地读取与脱敏]
+  B --> C[抽取用户消息, 剔除工具输出与助手回复]
+  C --> D[分片 + 多 agent 并行分析]
+  D --> E[提取隐性规则: 完成标准 / 拒绝模式 / 调试风格]
+  E --> F[合并重复特征生成 you.md]
+  F --> G1[work 层]
+  F --> G2[design 层]
+  F --> G3[write 层]
+  G1 --> H[Agent 任务前加载对应画像]
+  G2 --> H
+  G3 --> H
+  F --> I[python ditto.py --card 生成可分享卡片]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">运行与安装架构</p>
+    <div class="mermaid">graph LR
+  U[用户] -->|npx skills add| S[跨 agent bootstrap]
+  U -->|codex plugin add| P[原生 Codex 插件]
+  S --> CC[Claude Code Skill]
+  S --> CX[Codex]
+  S --> CU[Cursor 适配器]
+  S --> GM[Gemini 适配器]
+  P --> CMD[ditto:mine / work / design / write]
+  CC --> PLAN[只读挖掘计划 + 成本估算]
+  CX --> PLAN
+  CMD --> PLAN
+  PLAN -->|用户批准| RUN[模型挖掘执行]
+  RUN --> PROFILE[本地 you.md 画像]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ohad6k/ditto" target="_blank">ohad6k/ditto</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/JWM0203/MeetingCopilot" target="_blank">MeetingCopilot 会议面试助手</a></span>
+    <span class="stars">⭐ 99</span>
+  </div>
+  <p class="one-liner">隐形实时会议面试提词助手</p>
+  <div class="tags">
+    <span class="tag">Electron</span><span class="tag">Node.js 20+</span><span class="tag">TypeScript</span><span class="tag">Python 3.10/3.11</span><span class="tag">FunASR</span><span class="tag">PyTorch</span><span class="tag">Whisper large-v3-turbo (ONNX)</span><span class="tag">DirectML</span><span class="tag">transformers.js</span><span class="tag">OpenAI 兼容 LLM (DeepSeek)</span><span class="tag">阿里云 DashScope</span><span class="tag">MiMo / Gemini 视觉模型</span><span class="tag">BlackHole (macOS)</span>
+  </div>
+  <div class="summary">MeetingCopilot 是一款面向 Windows 与 macOS 的实时会议与面试副驾工具，主打对对方语音的实时转写和第一人称口播式答案生成，并具备防录屏采集能力。它通过 Windows 系统回环或 macOS 虚拟音频设备（如 BlackHole）直接捕获对方声音，无需以机器人身份加入会议；同时独立通道转写用户自己的麦克风。ASR 层支持四种可切换后端：本地 FunASR 流式、本地 Whisper turbo（DirectML）、阿里云 fun-asr-realtime 以及 MiMo 分段模式，中英文自动切换。答案由用户自带 Key 的 OpenAI 兼容 LLM（推荐 DeepSeek）生成，采用结论先行、STAR 结构或技术三段式，并结合本地解析的简历与 JD，避免虚构经历。此外还提供滚动面试备忘、前缀缓存预热、区域截图视觉问答、全局隐藏热键与中英双语 UI 等能力。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[对方语音<br/>Windows Loopback / macOS BlackHole] --> C[音频采集层]
+  B[用户麦克风] --> C
+  C --> D{ASR 后端选择}
+  D --> D1[本地 FunASR 流式]
+  D --> D2[本地 Whisper Turbo<br/>DirectML]
+  D --> D3[阿里云 fun-asr-realtime]
+  D --> D4[MiMo 分段]
+  D1 --> E[实时字幕<br/>中英自动切换]
+  D2 --> E
+  D3 --> E
+  D4 --> E
+  E --> F[问题类型检测<br/>行为/技术/闲聊]
+  G[简历 / JD<br/>本地解析] --> H[LLM 提示构造]
+  I[滚动面试备忘] --> H
+  F --> H
+  H --> J[OpenAI 兼容 LLM<br/>DeepSeek 等 BYOK]
+  J --> K[第一人称口播答案<br/>提词器输出]
+  J --> I
+  L[区域截图] --> M[视觉模型<br/>MiMo / Gemini]
+  M --> K
+  K --> N[Electron UI<br/>防录屏 + 全局隐藏热键]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">一次问答的数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant Peer as 对方语音
+  participant Cap as 音频采集
+  participant ASR as 流式 ASR
+  participant UI as Electron UI
+  participant Ctx as 简历/JD/备忘
+  participant LLM as BYOK LLM
+  Peer->>Cap: 系统回环 / 虚拟设备
+  Cap->>ASR: PCM 音频流
+  ASR-->>UI: 灰色部分字幕 (partial)
+  ASR->>UI: 最终转写 + 语种标记
+  UI->>UI: 问题类型识别
+  UI->>Ctx: 拉取简历/JD/滚动备忘
+  Ctx->>LLM: 构造提示 (前缀缓存命中)
+  LLM-->>UI: 流式口播答案
+  UI->>Ctx: 异步更新面试备忘</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/JWM0203/MeetingCopilot" target="_blank">JWM0203/MeetingCopilot</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
