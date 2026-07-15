@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-15</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-15 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/haiou-666/haiou-codex" target="_blank">海鸥 codeX 版</a></span>
+    <span class="stars">⭐ 93</span>
+  </div>
+  <p class="one-liner">Codex 中文人格与安全研究增强包</p>
+  <div class="tags">
+    <span class="tag">Codex CLI</span><span class="tag">AGENTS.md</span><span class="tag">Markdown Prompt</span><span class="tag">Skill 模块</span>
+  </div>
+  <div class="summary">海鸥 codeX 版是一套面向 OpenAI Codex 的本地增强配置包，定位为 Codex CLI 的中文化与专业化配置层。项目通过自定义的 AGENTS.md 文件、模块化 Prompt 模板以及面向特定领域的专业 Skill，为 Codex 注入更加直接、务实的中文技术人格，弱化默认的英文表达风格与保守话术倾向。除人格重塑外，该配置包还内置了面向安全研究工作流的场景化能力，例如漏洞分析、代码审计、渗透测试辅助等方向的提示词与操作规范，让 Codex 在处理安全类任务时具备更清晰的上下文与工具调用约定。整体采用轻量化的配置文件形式分发，用户只需将相关 Markdown 与 Prompt 文件放置到 Codex 识别的目录中即可生效，无需额外的运行时依赖，便于个人开发者与安全研究人员在本地快速部署与迭代。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">配置加载与调用架构</p>
+    <div class="mermaid">graph TD
+  U[用户/安全研究员] -->|输入指令| C[Codex CLI]
+  C -->|加载| A[AGENTS.md 中文人格]
+  C -->|加载| P[模块化 Prompt]
+  C -->|加载| S[专业 Skill 集合]
+  A --> E[增强后的 Codex 引擎]
+  P --> E
+  S --> E
+  E -->|中文技术输出| U</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安全研究工作流数据流</p>
+    <div class="mermaid">flowchart LR
+  T[任务描述] --> R[人格与角色注入]
+  R --> M{任务类型}
+  M -->|代码审计| SA[审计 Skill]
+  M -->|漏洞分析| SV[漏洞 Skill]
+  M -->|渗透辅助| SP[渗透 Skill]
+  SA --> O[结构化中文报告]
+  SV --> O
+  SP --> O</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/haiou-666/haiou-codex" target="_blank">haiou-666/haiou-codex</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ohad6k/ditto" target="_blank">Ditto</a></span>
+    <span class="stars">⭐ 179</span>
+  </div>
+  <p class="one-liner">从AI编程日志挖掘个人工作画像</p>
+  <div class="tags">
+    <span class="tag">Python（零依赖）</span><span class="tag">Model Context Protocol (MCP over stdio)</span><span class="tag">Claude Code Skills / Codex Plugin 生态</span><span class="tag">npx skills 分发</span>
+  </div>
+  <div class="summary">Ditto 是一个开源的本地化工具，用于从开发者与 AI 编程代理（Claude Code、Codex、Copilot CLI、OpenCode、Google Antigravity 等）的历史会话日志中，挖掘出使用者真实的工作习惯与偏好，并生成一份私有的 you.md 工作画像。它的核心理念是「不是记忆，而是证据」：记忆是你明确告诉模型的内容，而 Ditto 挖掘的是你的实际工作过程所证明的事实——你如何定义『完成』、你会立即拒绝什么样的代码、什么时候要求验证、什么样的代理行为会让你终止任务、以及你在真正工作时的表达方式。工具会读取原始会话日志，剥离工具输出、错误粘贴和助手回复，只保留用户自己的语言，然后分片交给代理分析归纳，最终合并出分层画像（work、design、writing 三层，按任务加载对应部分）。使用者可通过 python ditto.py --card 生成可分享的画像卡片，展示原型定位、按证据条数排序的规则、覆盖统计和一句核心洞见。分发上，Ditto 提供跨代理 bootstrap（npx skills add）、Claude Code 与 Codex 原生插件（含 mine/work/design/write 四个技能），以及一个基于 stdio 的 MCP 服务器，暴露 load_ditto_profile 工具，供 Claude Desktop、Cursor 等任意 MCP 客户端在任务前加载画像。项目采用 Python 实现，零依赖，MIT 协议，所有日志处理均在本地完成且会先做敏感信息脱敏。</div>
+  <div class="why-notable">Ditto 提出了一个反直觉但很有说服力的视角：AI 代理最缺的不是更多的 prompt 或 memory，而是对使用者真实工作方式的证据化理解。它把会话日志作为一种被长期忽视的一手数据源，用『挖掘 + 分层 + 任务前加载』的范式，把个人工作习惯转成可复用的代理配置。作者用 Ditto 本身写的 Reddit 帖子拿到 200 赞、102K 浏览，形成了产品即案例的自证闭环。加之零依赖、本地运行、多代理兼容（含 MCP），对关注 AI 编程工作流个性化与隐私的开发者具有较强的参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Ditto 数据流：从会话日志到代理画像</p>
+    <div class="mermaid">graph TD
+  A[Claude Code / Codex / Copilot CLI 日志] --> B[本地读取与脱敏]
+  B --> C[剥离工具输出与助手回复]
+  C --> D[仅保留用户消息]
+  D --> E[分片交由代理归纳模式]
+  E --> F[合并去重生成分层 you.md]
+  F --> G1[work 层]
+  F --> G2[design 层]
+  F --> G3[writing 层]
+  G1 --> H[任务前加载对应层]
+  G2 --> H
+  G3 --> H
+  F --> I[python ditto.py --card 生成画像卡片]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Ditto 分发与集成架构</p>
+    <div class="mermaid">graph LR
+  U[开发者] -->|npx skills add| BS[跨代理 Bootstrap]
+  U -->|codex plugin add| CX[Codex 原生插件]
+  U -->|/plugin install| CC[Claude Code 原生插件]
+  U -->|MCP stdio| MCP[Ditto MCP Server]
+  BS --> P[本地 you.md 画像]
+  CX --> P
+  CC --> P
+  MCP -->|load_ditto_profile| P
+  P --> AG1[Claude Code]
+  P --> AG2[Codex]
+  P --> AG3[Cursor]
+  P --> AG4[Claude Desktop 等 MCP 客户端]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ohad6k/ditto" target="_blank">ohad6k/ditto</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/JWM0203/MeetingCopilot" target="_blank">MeetingCopilot 会议面试助手</a></span>
+    <span class="stars">⭐ 127</span>
+  </div>
+  <p class="one-liner">面试实时转录与提词器助手</p>
+  <div class="tags">
+    <span class="tag">Electron</span><span class="tag">Node.js 20+</span><span class="tag">TypeScript</span><span class="tag">Python 3.10/3.11</span><span class="tag">FunASR</span><span class="tag">PyTorch (CUDA / MPS / CPU)</span><span class="tag">Whisper large-v3-turbo ONNX</span><span class="tag">DirectML</span><span class="tag">transformers.js</span><span class="tag">DeepSeek / OpenAI 兼容 LLM API</span><span class="tag">阿里云 DashScope</span><span class="tag">MiMo / Gemini 视觉模型</span><span class="tag">Windows loopback 音频 / macOS BlackHole</span>
+  </div>
+  <div class="summary">MeetingCopilot 是一款面向 Windows 与 Apple Silicon macOS 的实时会议 / 面试副驾工具，主打「隐身式」提词器体验。它直接捕获对方声音（Windows 使用系统 loopback，macOS 借助 BlackHole 等虚拟音频设备），无需任何会议机器人参与，并通过独立的麦克风通道分别转写自己的发言。ASR 后端可在四种方案间切换：本地 FunASR 流式（默认，Python sidecar 由主程序托管）、本地 Whisper turbo（DirectML GPU 离线兜底）、阿里云 fun-asr-realtime 逐字流式、以及 MiMo 分段云端识别，中英文可在同一会话中自动切换。答题侧采用 BYOK 的 OpenAI 兼容 LLM（推荐 DeepSeek），以第一人称、可直接朗读的口播文风生成回答：结论先行、行为题走 STAR、技术题按思路 → 要点 → 复杂度组织，并严格基于用户导入的简历 / JD（本地解析 md/txt/docx/pdf，不上传）。项目还提供滚动面试备忘、prefix-cache 预热以降低首字延迟、区域截图交给视觉模型问答、全局隐藏热键与 Windows 端窗口防录屏、中英文界面即时切换、多会话隔离、暗色 / 亮色主题以及内联翻译等能力，构成了一套完整的实战面试辅助系统。</div>
+  <div class="why-notable">它把「实时 ASR + LLM 提词器」这条被反复尝试的赛道做到了工程闭环：本地流式 FunASR 让隐私与成本可控，DeepSeek prefix-cache 预热和滚动备忘把长会话下的首字延迟与上下文一致性同时压住，再配合 Windows 端窗口级防录屏与全局隐藏热键，形成了「对端能听清、屏幕共享看不见、答案可朗读」的差异化体验，对研究实时语音 Agent、面试辅助与桌面隐身应用的开发者都具备参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[对端音频<br/>Win Loopback / macOS BlackHole] --> C[音频采集层]
+  B[本机麦克风] --> C
+  C --> D{ASR 后端切换}
+  D -->|默认| E[本地 FunASR<br/>Python sidecar]
+  D -->|离线兜底| F[本地 Whisper turbo<br/>DirectML/CPU]
+  D -->|云端逐字| G[阿里云 fun-asr-realtime]
+  D -->|云端分段| H[MiMo ASR]
+  E --> I[流式字幕 & 中英文自动识别]
+  F --> I
+  G --> I
+  H --> I
+  I --> J[问题类型检测<br/>行为/技术/闲聊]
+  J --> K[Prompt 构造器]
+  L[简历 / JD 本地解析<br/>md/txt/docx/pdf] --> K
+  M[滚动面试备忘] --> K
+  K --> N[OpenAI 兼容 LLM<br/>DeepSeek 推荐]
+  N --> O[第一人称提词器答案]
+  N --> M
+  O --> P[Electron 渲染层<br/>隐身窗口 + 全局热键]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">一次问答的数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 面试官语音
+  participant A as ASR 引擎
+  participant R as 渲染层(UI)
+  participant C as Prefix-Cache 预热
+  participant L as LLM(DeepSeek)
+  participant M as 滚动备忘
+  U->>A: 音频流
+  A-->>R: 灰色 partial 字幕(流式)
+  A->>R: final 文本 + 语种标记
+  R->>R: 判定问题类型
+  Note over C,L: 按 ▶ 时已用 1-token 请求预热 KV 缓存
+  R->>L: 简历+JD+备忘+问题 Prompt
+  L-->>R: 口播式答案流式返回
+  R->>M: 异步更新问题/事实/关注点
+  M-->>L: 下一轮复用，token 保持恒定</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/JWM0203/MeetingCopilot" target="_blank">JWM0203/MeetingCopilot</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/CWS6206/EasyLastSkill" target="_blank">EasyLastSkill 近期动态调研技能</a></span>
+    <span class="stars">⭐ 238</span>
+  </div>
+  <p class="one-liner">德语 Agent Skill，快速调研主题近 30 天动态</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">TOML 配置</span><span class="tag">Google News RSS</span><span class="tag">Hacker News Algolia API</span><span class="tag">GitHub Search API</span><span class="tag">Reddit RSS</span><span class="tag">arXiv API</span><span class="tag">Agent Skills / Codex Skill 规范</span>
+  </div>
+  <div class="summary">EasyLastSkill 是一款面向 Codex/Agent-Skills 生态的德语调研技能，由 Dr. René Bäder 开发并以 GPL v3 协议开源。它的核心定位是围绕某个主题快速抓取近段时间（默认 30 天）内的公开信号，并生成一份带来源引用、相关性评分和不确定性说明的紧凑德语报告。用户可以通过命令行传入关键词，指定回溯天数、输出格式（Markdown 或 HTML）以及保存路径，也可以启用「A vs B」比较模式对两个主题做横向对照。项目的 0.2 版本在合成质量上做了明显强化：报告结构划分为短结论、新信号、背景归纳与不确定性四段，并新增了针对人物、公司、产品、仓库和研究等不同类别的主题画像。数据来源覆盖 Google News RSS、Hacker News Algolia API、GitHub Search API、Reddit RSS、arXiv API、YouTube 公共 RSS 搜索以及可选的 Bluesky 搜索接口，全部为无需密钥的公开渠道。相关性打分综合考虑时效性、来源权重、社区互动和主题匹配度，遇到网络受限或结果不足时也会在输出中显式提示。项目还提供 easy-last-skill.toml 配置文件以及 build_skill_bundle.py 打包脚本，便于以 .skill 包形式集成到 Agent Skill 工具链中。</div>
+  <div class="why-notable">在 Agent Skill 生态中，多数示例仍以英文为主，EasyLastSkill 以德语原生输出并聚焦「近期动态调研」这一具体工作流，展示了 Skill 如何从通用 Chat 能力收敛为面向特定语种和场景的可复用工具。其无密钥多源聚合与显式的相关性评分、不确定性提示，也为构建可解释的 AI 调研管道提供了参考范式。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户 CLI 输入主题/天数/格式] --> S[easy_last_skill.py 入口]
+  C[easy-last-skill.toml 配置] --> S
+  S --> P[主题画像判定<br/>人物/公司/产品/仓库/研究]
+  P --> F[多源采集器]
+  F --> N[Google News RSS]
+  F --> H[Hacker News Algolia]
+  F --> G[GitHub Search API]
+  F --> R[Reddit RSS]
+  F --> A[arXiv API]
+  F --> Y[YouTube RSS]
+  F --> B[Bluesky 搜索 可选]
+  N & H & G & R & A & Y & B --> SC[相关性评分<br/>时效+权重+互动+匹配]
+  SC --> SY[德语合成器<br/>结论/新信号/归纳/不确定性]
+  SY --> M[Markdown 报告]
+  SY --> HT[HTML 报告]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">调研数据流</p>
+    <div class="mermaid">flowchart LR
+  Q[主题查询] --> T{是否含 vs/versus/gegen}
+  T -- 是 --> CMP[比较模式<br/>并行采集 A 与 B]
+  T -- 否 --> SIN[单主题模式]
+  CMP --> COL[信号采集与去重]
+  SIN --> COL
+  COL --> WIN[按最近 N 天过滤]
+  WIN --> RANK[相关性评分排序]
+  RANK --> SYN[生成德语报告段落]
+  SYN --> OUT[输出至终端或文件]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/CWS6206/EasyLastSkill" target="_blank">CWS6206/EasyLastSkill</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/wikidjon/ai-openclaw-cli" target="_blank">OpenFinClaw CLI</a></span>
+    <span class="stars">⭐ 135</span>
+  </div>
+  <p class="one-liner">自然语言驱动的量化研究团队</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">npm (@openfinclaw/cli)</span><span class="tag">Model Context Protocol (MCP)</span><span class="tag">JSON 配置</span><span class="tag">FEP v2.0 策略规范</span><span class="tag">Hub Gateway REST API</span>
+  </div>
+  <div class="summary">OpenFinClaw CLI（@openfinclaw/cli）是一款面向量化投研场景的命令行工具，通过 MCP（Model Context Protocol）协议将完整的量化工作流接入 Claude Code、Cursor、VS Code、Windsurf、Codex 等 20 多种 AI Agent 平台。用户只需一句自然语言 prompt，即可在终端或 IDE 内串起「研究 → 策略生成 → 回测 → 模拟交易 → 发布上榜」的端到端流程。工具内置 DeepAgent 分析引擎，提供 60 多种分析技能，涵盖技术面、基本面、情绪面、风险、择时和多因子等维度，覆盖美股、A 股、港股、加密货币和外汇五大市场。CLI 采用 npx 一键安装模式，install 向导会自动检测本地 AI 客户端并写入对应的 MCP 配置文件，同时将 fch_ API Key 以 chmod 600 权限持久化到 ~/.openfinclaw/config.json，并在 ~/.claude/skills/ 下注册 SKILL.md 以便 Claude Code 通过关键词自动触发。命令体系分为 DeepAgent、Strategy、Raw API 和系统命令四组，支持流式输出的 +verb 形式和面向脚本调用的原子三元组 research_submit/poll/finalize。社区侧提供类 Hugging Face 的策略交易所，用户可 leaderboard 浏览、fork 复制、validate 校验后 publish 到服务端进行统一回测排名，保证成绩真实可比。</div>
+  <div class="why-notable">它把「AI Agent + 量化投研」这两个高热赛道用 MCP 优雅缝合：不再需要为每个 IDE 或 Agent 单独适配，一次安装即可让 Claude Code、Cursor 等 20+ 客户端具备完整的多市场量化能力，并配套社区策略市场与服务端统一回测机制，为量化策略共享提供了「Hugging Face 式」的可信基础设施，具备较强的生态卡位价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与 MCP 集成</p>
+    <div class="mermaid">graph TD
+  U[用户自然语言 Prompt] --> A[AI Agent 客户端<br/>Claude Code / Cursor / VS Code ...]
+  A -->|MCP 协议| C[OpenFinClaw CLI<br/>@openfinclaw/cli serve]
+  C --> D[DeepAgent 分析引擎<br/>60+ 技能]
+  C --> S[策略工具组<br/>fork/validate/publish]
+  C --> R[Raw API 通道]
+  D --> H[Hub Gateway]
+  S --> H
+  R --> H
+  H --> M1[美股/A股/港股]
+  H --> M2[加密货币/外汇]
+  H --> LB[社区排行榜与回测集群]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">研究到发布的数据流</p>
+    <div class="mermaid">flowchart LR
+  P[Prompt] --> RS[research_submit]
+  RS --> RP[research_poll<br/>流式输出]
+  RP --> RF[research_finalize]
+  RF --> ST[策略定义 strategy.py + fep.yaml]
+  ST --> V[validate 本地校验]
+  V --> PB[publish 上传 zip]
+  PB --> BT[服务端统一回测]
+  BT --> LB[Leaderboard 排名]
+  LB -->|fork| ST</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/wikidjon/ai-openclaw-cli" target="_blank">wikidjon/ai-openclaw-cli</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
