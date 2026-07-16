@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-16</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-16 · 共 3 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/coreyhaines31" target="_blank">Claude Code 营销技能包</a></span>
+    <span class="stars">⭐ 340 <span class="stars-today">(+340 today)</span></span>
+  </div>
+  <p class="one-liner">为 AI 代理注入营销专家能力</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skills</span><span class="tag">Prompt Engineering</span><span class="tag">Markdown</span><span class="tag">AI Agent Framework</span>
+  </div>
+  <div class="summary">该仓库面向 Claude Code 及各类 AI 代理，提供一套聚焦营销领域的技能（Skills）集合，旨在让通用型编码助手具备市场营销专家的专业判断力与执行力。项目覆盖的核心方向包括转化率优化（CRO）、文案撰写（Copywriting）、搜索引擎优化（SEO）、数据分析（Analytics）以及增长工程（Growth Engineering）五大模块，形成从流量获取、内容创作到转化落地、数据回收的完整营销闭环。通过将行业最佳实践、方法论与提示词工程封装成可复用的技能模块，开发者与营销团队可以直接调用这些能力，让 AI 代理在编写落地页、优化转化漏斗、生成 SEO 友好内容、埋点分析和自动化增长实验等场景中输出更专业的结果。相较于通用 Prompt，该项目的价值在于把营销领域知识以工程化方式沉淀，便于在 Claude Code 的 Skills 体系中即插即用，也便于与其他 Agent 框架集成。对于希望借助 AI 提升 Marketing 生产力的独立开发者、SaaS 团队和增长黑客而言，是一份轻量但方向明确的能力扩展包，可显著缩短从想法到营销落地的路径。</div>
+  <div class="why-notable">在 AI 编码代理逐渐通用化的当下，垂直领域技能包是拉开效果差距的关键。该项目把营销这一强依赖经验与方法论的领域抽象成 Skills，帮助 Claude Code 从『能写代码』走向『能做增长』，对独立开发者和小型团队尤其具备杠杆价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能模块架构</p>
+    <div class="mermaid">graph TD
+  A[Claude Code / AI Agent] --> B[营销技能包]
+  B --> C[CRO 转化优化]
+  B --> D[Copywriting 文案]
+  B --> E[SEO 搜索优化]
+  B --> F[Analytics 数据分析]
+  B --> G[Growth Engineering 增长工程]
+  C --> H[落地页与转化实验]
+  D --> H
+  E --> H
+  F --> I[数据反馈与迭代]
+  G --> I
+  I --> B</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">营销工作流数据流</p>
+    <div class="mermaid">graph LR
+  U[用户需求] --> A[AI 代理调用技能]
+  A --> S[SEO 内容生成]
+  A --> C[文案与落地页]
+  S --> W[网站/渠道投放]
+  C --> W
+  W --> M[Analytics 埋点]
+  M --> O[CRO 实验建议]
+  O --> A</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/coreyhaines31" target="_blank">sponsors/coreyhaines31</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/JWM0203/MeetingCopilot" target="_blank">MeetingCopilot 会议面试副驾</a></span>
+    <span class="stars">⭐ 128</span>
+  </div>
+  <p class="one-liner">会议面试实时转录与答题提示器</p>
+  <div class="tags">
+    <span class="tag">Electron</span><span class="tag">Node.js 20+</span><span class="tag">Python 3.10/3.11</span><span class="tag">FunASR</span><span class="tag">PyTorch (CUDA / MPS / CPU)</span><span class="tag">Whisper large-v3-turbo (ONNX + DirectML)</span><span class="tag">transformers.js</span><span class="tag">OpenAI 兼容 LLM API (DeepSeek 推荐)</span><span class="tag">阿里云 DashScope fun-asr-realtime</span><span class="tag">MiMo / Gemini 视觉模型</span><span class="tag">Windows Loopback / macOS BlackHole 音频路由</span>
+  </div>
+  <div class="summary">MeetingCopilot 是一款面向 Windows 与 Apple Silicon macOS 的实时会议 / 面试副驾工具，核心定位是在不加入会议机器人的前提下，直接抓取对方声音，实时转录并借助大模型生成第一人称的口播式答案，形成 Teleprompter（提词器）体验。Windows 端通过系统 Loopback 抓取音频零配置即可使用，macOS 端则借助 BlackHole 等虚拟音频设备完成路由，同时独立通道转录用户自己的麦克风。项目支持 4 种可切换的 ASR 后端：本地 FunASR 流式（默认，自动拉起 Python 子进程）、本地 Whisper turbo（DirectML GPU 离线兜底）、阿里云 fun-asr-realtime、以及 MiMo 分段识别，具备中英双语自动切换、灰色 partial 字幕、行内翻译等能力。答案生成层采用 BYOK 模式接入任意 OpenAI 兼容 LLM（推荐 DeepSeek），支持按会话导入简历与 JD，本地解析不上传，并针对行为题使用 STAR、技术题使用「思路→要点→复杂度」结构，配合滚动式面试备忘录保持长会话一致性。此外还提供前缀缓存预热、区域截图问答（MiMo / Gemini 视觉模型）、防录屏/防截屏隐身窗口、全局隐藏热键、深浅主题与中英文界面独立切换等实用功能，整体面向 1:1 高强度技术与行为面试场景。</div>
+  <div class="why-notable">该项目把「面试作弊器」这类灰色刚需产品做成了工程完成度很高的开源实现：一方面用本地 FunASR + BYOK LLM 的架构规避了服务端成本与隐私风险，另一方面通过前缀缓存预热、滚动备忘录、问题类型识别等细节把端到端延迟压到亚秒级，并额外解决了屏幕共享隐身、双语无缝切换、区域截图视觉问答等实际使用中的痛点，是研究实时 ASR + LLM 流水线与 Electron 隐身窗口技术的高质量参考样本。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[对方音频 Loopback/BlackHole] --> B[音频采集层]
+  M[用户麦克风] --> B
+  B --> C{ASR 后端切换}
+  C -->|默认| C1[本地 FunASR 流式<br/>Python Sidecar]
+  C -->|离线| C2[Whisper turbo<br/>ONNX + DirectML]
+  C -->|云端| C3[阿里云 fun-asr-realtime]
+  C -->|分段| C4[MiMo ASR]
+  C1 --> D[实时字幕 + 语种检测]
+  C2 --> D
+  C3 --> D
+  C4 --> D
+  D --> E[问题类型识别<br/>行为/技术/闲聊]
+  R[简历/JD 本地解析] --> F
+  H[滚动面试备忘录] --> F
+  E --> F[LLM Prompt 组装]
+  F --> G[OpenAI 兼容 LLM<br/>DeepSeek 等]
+  G --> H
+  G --> I[提词器答案流式输出]
+  J[区域截图] --> K[视觉模型<br/>MiMo/Gemini]
+  K --> I
+  I --> UI[Electron 隐身窗口]
+  UI -.防捕获.-> S[屏幕共享/录屏]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单次问答数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant Peer as 对方发言
+  participant Cap as 音频采集
+  participant ASR as 流式 ASR
+  participant UI as Electron UI
+  participant LLM as BYOK LLM
+  participant Memo as 滚动备忘录
+  Peer->>Cap: 系统声音流
+  Cap->>ASR: PCM 音频块
+  ASR-->>UI: 灰色 partial 字幕
+  ASR->>UI: 最终句子 + 语种
+  UI->>UI: 问题类型识别
+  UI->>LLM: 简历+JD+备忘录+问题
+  Note over LLM: 前缀缓存命中<br/>prompt_cache_hit_tokens
+  LLM-->>UI: 流式第一人称答案
+  UI-->>Memo: 异步更新问答摘要
+  Memo->>UI: 下一轮上下文</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/JWM0203/MeetingCopilot" target="_blank">JWM0203/MeetingCopilot</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/vshulcz/deja-vu" target="_blank">deja-vu：编码代理的记忆层</a></span>
+    <span class="stars">⭐ 199</span>
+  </div>
+  <p class="one-liner">让 AI 编程助手记住历史会话</p>
+  <div class="tags">
+    <span class="tag">Go</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">JSONL / SQLite 日志解析</span><span class="tag">本地倒排索引 (records.bin + token buckets + manifest.json)</span><span class="tag">sqlite3 CLI (opencode 索引)</span><span class="tag">npm / Homebrew / Go module 分发</span>
+  </div>
+  <div class="summary">deja-vu 是一款面向 Claude Code、Codex CLI、opencode 等编码代理的本地记忆层工具，以单一零依赖二进制形式发布。这些代理会将每次对话写入本地日志文件，累计可达数 GB，deja-vu 通过解析 JSONL 与 SQLite 日志、构建本地倒排索引，将这些历史转化为可检索、可召回的记忆层。核心能力包括：毫秒级全文检索（3.3GB 语料中典型 7–9 ms）、通过 MCP 协议向代理暴露 recall 与 recall_context 工具、SessionStart 钩子实现自动上下文注入、索引期凭据脱敏（AWS Key、JWT、PEM、Bearer Token 等替换为 [redacted:<kind>]）、使用统计（deja stats）、会话分享（deja share 输出脱敏摘要）、以及基于共享目录或 SSH 的多机同步（append-only、幂等、带水位标记）。安装方式覆盖 curl 脚本、go install、npx、Homebrew，通过 deja install --all 可自动配置各代理的 MCP 与钩子并保留 .bak。索引存放于 ~/.cache/deja，采用增量策略，仅重新读取增长的会话文件，索引体积约为语料的 2.4%。所有数据不出本机，符合本地优先与隐私安全原则。</div>
+  <div class="why-notable">编码代理的对话历史通常是被忽视的高价值资产：里面沉淀着团队的调试路径与设计决策。deja-vu 用一个零依赖二进制把这些散落日志变成可被代理主动召回的记忆层，跨 harness 打通、脱敏、可同步、可分享，切中了 AI 编程工作流中的真实痛点，且工程实现克制、性能扎实、隐私友好，是当前 MCP 生态里少见的实用型基础设施项目。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[Claude Code 日志<br/>~/.claude/projects/*.jsonl] --> P[解析器]
+  B[Codex 日志<br/>~/.codex/sessions/**] --> P
+  C[opencode SQLite<br/>opencode.db] --> P
+  P --> R[凭据脱敏<br/>AWS/JWT/PEM/Token]
+  R --> IDX[(本地倒排索引<br/>~/.cache/deja)]
+  IDX --> CLI[deja CLI<br/>search/ctx/stats/share]
+  IDX --> MCP[MCP Server<br/>recall / recall_context]
+  IDX --> SYNC[sync export/import/ssh]
+  MCP --> AGENT[编码代理<br/>Claude/Codex/opencode]
+  SYNC -.append-only.-> IDX2[(其他机器索引)]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">自动召回数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 开发者
+  participant AG as 编码代理
+  participant HK as SessionStart Hook
+  participant DJ as deja mcp
+  participant IX as 本地索引
+  U->>AG: 启动新会话
+  AG->>HK: 触发 SessionStart
+  HK->>DJ: 查询当前项目近期记忆
+  DJ->>IX: 检索并生成 ≤2KB 摘要
+  IX-->>DJ: 匹配片段
+  DJ-->>AG: 注入上下文（只读）
+  U->>AG: 提问 / 调试
+  AG->>DJ: 调用 recall 工具
+  DJ->>IX: 全文检索
+  IX-->>AG: ≤4KB 匹配片段
+  AG-->>U: 引用历史方案作答</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/vshulcz/deja-vu" target="_blank">vshulcz/deja-vu</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
