@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-17</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-17 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/JimLiu/baocut" target="_blank">BaoCut Agent Skill</a></span>
+    <span class="stars">⭐ 132</span>
+  </div>
+  <p class="one-liner">让AI代理驱动BaoCut视频剪辑</p>
+  <div class="tags">
+    <span class="tag">skills.sh Agent Skill 规范</span><span class="tag">Shell / CLI 封装</span><span class="tag">Markdown (SKILL.md)</span><span class="tag">Node.js (npx 安装器)</span><span class="tag">macOS / BaoCut.app</span>
+  </div>
+  <div class="summary">BaoCut Agent Skill 是一个开源的 Agent Skill 项目，旨在让 AI 编程代理（如 Claude Code、Codex 及任何兼容 skills.sh 的代理）通过自然语言驱动 macOS 视频处理应用 BaoCut。它对 BaoCut 应用内置的 `baocut` 命令行工具进行了封装，让用户可以用一句话完成音视频转写、字幕生成与翻译、说话人识别校对、口播视频剪辑以及最终导出等复杂工作流。项目本身不包含转写或翻译引擎，而是作为中间层的技能路由，把用户的自然语言指令翻译成对本地 CLI 的具体调用，例如 `baocut --json auto talk.mp4 --lang zh` 进行一键转写、润色与翻译，或 `baocut export <projectId> --srt --translated --lang zh` 导出翻译后的 SRT 字幕。安装方式支持通过 `npx skills add` 一键完成，也支持无 Node.js 环境的手动 git clone 加软链方案，将 skill 全局挂载到 `~/.agents/skills/baocut` 并链接到各代理的 skills 目录。项目结构清晰，包含作为代理入口路由的 SKILL.md、按任务划分的 references 指南目录，以及一个能自动定位 `/Applications/BaoCut.app` 内 CLI 的 bin 解析脚本。整个方案仅支持 macOS，采用 MIT 协议开源。</div>
+  <div class="why-notable">它示范了 Agent Skill 这种新兴形态如何优雅地把桌面原生应用接入 AI 编程代理生态：不重造引擎，只做自然语言到 CLI 的路由与规范，就能让 Claude Code、Codex 直接完成转写、翻译、剪辑等重活。对于想给自家 macOS 工具加 AI 入口的开发者，是一份可直接参考的最小可行样板。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户自然语言指令] --> A[AI 代理 Claude Code / Codex]
+  A --> S[BaoCut Agent Skill]
+  S --> R[SKILL.md 路由]
+  R --> G[references 任务指南]
+  R --> B[bin/baocut 解析器]
+  B --> C[BaoCut.app 内置 CLI]
+  C --> E[转写 / 字幕 / 翻译 / 剪辑 / 导出]
+  E --> O[输出 SRT / 视频文件]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">字幕翻译数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant A as AI 代理
+  participant K as baocut skill
+  participant CLI as baocut CLI
+  U->>A: 转写并翻译 talk.mp4 为中文
+  A->>K: 调用 baocut skill
+  K->>CLI: baocut --json auto talk.mp4 --lang zh
+  CLI-->>K: 返回 projectId 与 JSON 结果
+  K->>CLI: baocut export <projectId> --srt --translated --lang zh
+  CLI-->>A: 生成翻译后的 SRT 文件
+  A-->>U: 返回结果与文件路径</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/JimLiu/baocut" target="_blank">JimLiu/baocut</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/haiou-666/haiou-codex" target="_blank">海鸥 codeX 版</a></span>
+    <span class="stars">⭐ 124</span>
+  </div>
+  <p class="one-liner">面向 Codex 的中文增强配置包</p>
+  <div class="tags">
+    <span class="tag">OpenAI Codex CLI</span><span class="tag">AGENTS.md 配置规范</span><span class="tag">Markdown Prompt 模板</span><span class="tag">Skill 模块化配置</span>
+  </div>
+  <div class="summary">海鸥 codeX 版是一套面向 OpenAI Codex 命令行工具的本地增强配置包，旨在通过自定义配置将通用 AI 编程助手改造为更贴合中文开发者与安全研究人员使用习惯的专业工作台。项目并不重写 Codex 本身，而是围绕 Codex 的扩展点进行分层定制：通过顶层的 AGENTS.md 注入更直接、更符合中文技术表达习惯的人格设定与响应规范；通过模块化的 Prompt 组合，将常用的开发、审计、研究场景拆分为可复用的提示词片段；通过专业 Skill 模块，为渗透测试、漏洞分析、逆向研究等安全场景提供工作流封装。整体思路是把 Codex 视为可编程的 Agent 运行时，将人格、流程、领域知识以配置文件的形式分离出来，便于版本化维护和按需加载。适用人群主要是使用 Codex 进行日常编码、代码审计以及安全研究的中文技术人员，可以在保持官方 Codex 更新的同时，获得更聚焦、更本土化的交互体验，避免每次开新会话都要重复给出上下文与角色设定。</div>
+  <div class="why-notable">该项目切中了当前 AI 编程工具本地化与专业化的两个关键痛点：一是官方 Codex 默认人格偏英文与保守，中文技术场景下沟通成本较高；二是安全研究这类高度流程化的领域缺乏成体系的 Prompt 与 Skill 封装。作者通过 AGENTS.md、Prompt、Skill 三层结构给出了一个可复制的定制范式，对希望把 Codex 打造成个人化工作台的开发者与红队人员具有直接的参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">配置分层架构</p>
+    <div class="mermaid">graph TD
+  U[中文开发者/安全研究员] --> C[Codex CLI]
+  C --> A[AGENTS.md 人格层]
+  C --> P[模块化 Prompt 层]
+  C --> S[专业 Skill 层]
+  A --> R[中文技术人格与响应规范]
+  P --> R
+  S --> W[安全研究工作流]
+  R --> O[增强后的 Codex 会话]
+  W --> O</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求处理数据流</p>
+    <div class="mermaid">graph LR
+  IN[用户输入] --> LD[加载 AGENTS.md]
+  LD --> PM[匹配 Prompt 模块]
+  PM --> SK{是否安全场景}
+  SK -->|是| SF[调用 Skill 工作流]
+  SK -->|否| GEN[通用编码流程]
+  SF --> MERGE[组合上下文]
+  GEN --> MERGE
+  MERGE --> CX[Codex 模型推理]
+  CX --> OUT[中文结构化回复]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/haiou-666/haiou-codex" target="_blank">haiou-666/haiou-codex</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/JWM0203/MeetingCopilot" target="_blank">MeetingCopilot 会议面试副驾</a></span>
+    <span class="stars">⭐ 130</span>
+  </div>
+  <p class="one-liner">Windows/macOS 实时隐身面试提词器</p>
+  <div class="tags">
+    <span class="tag">Electron</span><span class="tag">Node.js 20+</span><span class="tag">Python 3.10/3.11</span><span class="tag">FunASR</span><span class="tag">Whisper large-v3-turbo (ONNX + DirectML)</span><span class="tag">阿里云 DashScope fun-asr-realtime</span><span class="tag">DeepSeek / OpenAI 兼容 LLM</span><span class="tag">transformers.js</span><span class="tag">BlackHole (macOS 音频路由)</span>
+  </div>
+  <div class="summary">MeetingCopilot 是一款面向 Windows 与 Apple Silicon macOS 的实时会议/面试副驾工具，主打「实时听取对方语音 + 第一人称提词回答 + 防录屏捕获」三大能力。Windows 端通过系统 loopback 直接捕获对端音频，无需引入会议机器人；macOS 借助 BlackHole 等虚拟音频设备完成路由，同时独立麦克风通道转写用户自己的发言。ASR 支持四种可切换后端：默认本地 FunASR 流式（Python sidecar 由应用自动拉起与回收）、本地 Whisper turbo（DirectML GPU 离线兜底）、阿里云 fun-asr-realtime 字级流式、以及 MiMo 分段式，并原生支持中英文自动切换与灰色流式部分字幕。回答侧采用 BYOK 的 OpenAI 兼容 LLM（推荐 DeepSeek），生成结论先行、STAR/技术拆解结构化的口播式答案，且严格基于本地解析的简历与 JD，不臆造经历。项目还内置滚动式面试备忘、prefix cache 预热（首答走 KV 缓存命中）、区域截图问 VLM、深浅色主题、中英双语 UI、多会话隔离等工程细节，Windows 端窗口对录屏隐身，macOS 为尽力而为。</div>
+  <div class="why-notable">把「实时字幕 + 隐身窗口 + 简历接地的提词回答」这条链路做到了工程可用：本地 Python ASR sidecar 由 Electron 自动托管、LLM 侧用 1-token 请求预热 prefix cache 压低首答延迟、Windows 走系统 loopback 免装虚拟声卡、并配合窗口反录屏 API，是同类「面试外挂」中少见地把延迟、隐私（本地 ASR + 本地简历解析）和防截屏都认真处理过的开源实现。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  subgraph 音频输入
+    A1[Windows 系统 Loopback]
+    A2[macOS BlackHole 虚拟设备]
+    A3[本地麦克风]
+  end
+  A1 --> B[Electron 主进程音频采集]
+  A2 --> B
+  A3 --> B
+  B --> C{ASR 后端切换}
+  C -->|默认| C1[本地 FunASR Python Sidecar]
+  C -->|离线兜底| C2[Whisper Turbo ONNX + DirectML]
+  C -->|云端字级| C3[阿里云 fun-asr-realtime]
+  C -->|分段| C4[MiMo ASR]
+  C1 --> D[流式转写文本 中/英]
+  C2 --> D
+  C3 --> D
+  C4 --> D
+  D --> E[Renderer 提词器 UI]
+  F[简历/JD 本地解析 md/txt/docx/pdf] --> G[Prompt 组装器]
+  D --> G
+  H[滚动面试备忘] --> G
+  G --> I[BYOK LLM DeepSeek/OpenAI 兼容]
+  I -->|流式回答| E
+  I --> H
+  E --> J[防录屏窗口 + 全局隐藏热键]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单次问答数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant Other as 对端说话人
+  participant Cap as 音频捕获层
+  participant ASR as 流式 ASR
+  participant UI as 提词器 UI
+  participant Pre as Prefix Cache 预热
+  participant LLM as LLM (DeepSeek)
+  participant Memo as 滚动备忘
+  Other->>Cap: 语音流
+  Cap->>ASR: PCM 分片
+  ASR-->>UI: 灰色 partial 字幕
+  ASR->>UI: 最终句 + 语种标记
+  Note over UI: 问题类型识别<br/>行为/技术/闲聊
+  UI->>Pre: ▶ 启动时 1-token 预热
+  UI->>LLM: 简历 + JD + 备忘 + 问题
+  LLM-->>UI: 第一人称流式答案
+  LLM->>Memo: 异步更新问答摘要
+  Memo-->>LLM: 下一轮压缩上下文</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/JWM0203/MeetingCopilot" target="_blank">JWM0203/MeetingCopilot</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/vshulcz/deja-vu" target="_blank">deja-vu（deja）</a></span>
+    <span class="stars">⭐ 302</span>
+  </div>
+  <p class="one-liner">编码 Agent 的本地记忆检索层</p>
+  <div class="tags">
+    <span class="tag">Go（cmd/deja 主二进制）</span><span class="tag">MCP（Model Context Protocol，stdio server）</span><span class="tag">SQLite（读取 opencode / Cursor 索引所用的 sqlite3 CLI）</span><span class="tag">JSONL（同步与会话日志格式）</span><span class="tag">Shell / SSH / SCP（跨机同步通道）</span><span class="tag">npm 包 @vshulcz/deja-vu、Homebrew tap 与 GitHub Releases 分发</span>
+  </div>
+  <div class="summary">deja-vu 是一个面向编码 Agent 的本地记忆层，把 Claude Code、Codex、opencode、aider、Gemini CLI、Cursor、Antigravity、Grok Build 等工具默认写入本地的会话日志聚合成可检索的历史知识库。它以一个零依赖的单文件二进制形式分发，无需下载模型或运行后台服务，全部数据默认留在本机。核心能力围绕检索与召回展开：命令行 deja <query> 可在数 GB 日志上做毫秒级的多词与子串匹配搜索，deja ctx 输出可直接拼进 Prompt 的 Markdown 摘要；通过 deja install 一键把 MCP recall 工具接入各 Agent，让模型主动询问 “这个问题我们上次是怎么解决的”，--auto 模式则通过 SessionStart 钩子在会话启动时自动注入相关记忆。工程细节上，索引时会剥离 AWS Key、JWT、私钥等敏感信息，share 生成的会话摘要天然可安全外发；sync export/import 与 sync ssh 提供 append-only、幂等的多机同步；stats、statusline、resume、sources 等命令覆盖统计、状态栏、原生 Harness 中恢复会话、数据源检视等运维场景。安装渠道涵盖 curl 脚本、go install、npm 与 Homebrew，并支持 deja update 自校验升级。</div>
+  <div class="why-notable">编码 Agent 生态里“记忆”一直是缺口：每个 Harness 都在本地生成大量对话日志，却各自为政、无法检索。deja-vu 用一个零依赖二进制解决了跨 Harness 索引、MCP 召回、自动上下文注入、密钥脱敏与多机同步这一整套问题，工程完整度高（含 CI、OpenSSF Scorecard、校验升级），并且默认离线不外传数据。它把“Agent 记忆”从概念变成可以立刻接入现有工作流的基础设施，对每天用 Claude Code / Codex / Cursor 的开发者有直接生产力价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">整体架构与数据流</p>
+    <div class="mermaid">graph TD
+  subgraph Agents[本地编码 Agent]
+    A1[Claude Code]
+    A2[Codex]
+    A3[opencode]
+    A4[Cursor / Gemini / Grok / Antigravity / aider]
+  end
+  A1 -->|会话日志| L[(本地日志文件<br/>JSONL / SQLite)]
+  A2 --> L
+  A3 --> L
+  A4 --> L
+  L --> IDX[deja 索引器<br/>密钥脱敏 + 增量扫描]
+  IDX --> STORE[(本地记忆索引)]
+  STORE --> CLI[deja CLI<br/>search / ctx / stats / share]
+  STORE --> MCP[deja mcp<br/>recall / recall_context]
+  MCP --> Agents
+  CLI --> User[开发者终端]
+  STORE --> SYNC[deja sync<br/>export / import / ssh]
+  SYNC <-->|append-only JSONL| Remote[(其他机器 / 共享目录)]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">一次自动召回的调用时序</p>
+    <div class="mermaid">sequenceDiagram
+  participant Dev as 开发者
+  participant Agent as 编码 Agent
+  participant Hook as SessionStart 钩子
+  participant Deja as deja mcp
+  participant Idx as 本地索引
+  Dev->>Agent: 启动新会话
+  Agent->>Hook: 触发 SessionStart
+  Hook->>Deja: 请求当前项目最近记忆
+  Deja->>Idx: 查询 (project, recent)
+  Idx-->>Deja: ≤2KB 摘要
+  Deja-->>Agent: 注入只读上下文
+  Dev->>Agent: 提问：这个 bug 之前修过吗？
+  Agent->>Deja: 调用 MCP recall(query)
+  Deja->>Idx: 全库检索 + 排序
+  Idx-->>Deja: 命中片段 ≤4KB
+  Deja-->>Agent: 返回历史证据
+  Agent-->>Dev: 引用过往会话作答</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/vshulcz/deja-vu" target="_blank">vshulcz/deja-vu</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ucsandman/marketing-studio" target="_blank">Marketing Studio</a></span>
+    <span class="stars">⭐ 154</span>
+  </div>
+  <p class="one-liner">一键生成产品全套营销物料的 Agent 工作室</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skills</span><span class="tag">Remotion</span><span class="tag">Node.js 20+</span><span class="tag">Python 3.10+</span><span class="tag">Playwright</span><span class="tag">Blender (headless)</span><span class="tag">ElevenLabs API</span><span class="tag">ComfyUI</span><span class="tag">Zod</span>
+  </div>
+  <div class="summary">Marketing Studio 是一个面向 Claude Code 的 Agent 驱动型营销素材生成引擎。开发者只需在自己的产品仓库中输入 `/marketing` 命令，Agent 便会自动完成品牌调研、应用录制、素材渲染并将成品回传，一次运行即可产出六类完整发布物料：Blender + Remotion 制作的 Logo 揭示动画、带镜头推拉与光标的 Playwright 产品演示、30 至 90 秒的发布视频、ElevenLabs 生成的配音与配乐、按 X/LinkedIn/TikTok 分平台的社交短片，以及 OG 图、动态 OG 循环和 README GIF。流水线执行顺序经过精心设计：先跑成本最低的合成以尽早暴露品牌 token 问题，产品演示只录一次并复用给所有下游素材，音频在画面锁定后才配乐；磁盘上的 manifest 支持中断续跑。项目还内置内容简报生成、文案 Linter（拦截破折号、炒作词与 AI 味用语）、按品牌调节的胶片调色与运动风格、多宽高比响应式导出、名为 Mission Control 的本地审批画廊、成套音效库以及可直接粘贴的社媒发布包。品牌数据以 `brands/<id>.json` 配置并经 zod 校验，模板不硬编码品牌值，新增产品只需一份 JSON 与一个 Logo 组件。所有渲染集中在本仓库完成，产品仓库保持干净。</div>
+  <div class="why-notable">它把 AI Agent 从写代码延伸到了产品营销全链路交付，用一条命令替代了独立发行者原本需要设计师、剪辑师、配音师协作数周的工作；工程上也很讲究：先便宜后昂贵的渲染排序、content-hash 缓存避免重复录屏、断点续跑的 manifest、以及 zod 校验的品牌 token 体系，展现了把 Agent 编排做成生产级流水线的成熟思路，对希望复用 Claude Code Skills 构建垂直自动化的开发者极具借鉴价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与执行流水线</p>
+    <div class="mermaid">graph TD
+  U[开发者在产品仓库输入 /marketing] --> AG[Claude Code Agent]
+  AG --> BR[读取品牌 brands/id.json + 产品仓库信息]
+  BR --> BRIEF[生成 brief.json 内容简报]
+  BRIEF --> LINT[文案 Linter 校验]
+  LINT --> MC[Mission Control 审批画廊]
+  MC --> PIPE[渲染流水线]
+  PIPE --> S1[/logo-reveal 用 Blender + Remotion/]
+  PIPE --> S2[/product-demo 用 Playwright 录屏/]
+  PIPE --> S3[/launch-video 合成发布视频/]
+  PIPE --> S4[/audio-track 调用 ElevenLabs 配音配乐/]
+  PIPE --> S5[/social-clip 分平台社交短片/]
+  PIPE --> S6[/og-assets OG 图与 GIF/]
+  S1 & S2 & S3 & S4 & S5 & S6 --> EXPORT[多宽高比导出矩阵 16:9 / 9:16 / 1:1 / 4:5]
+  EXPORT --> KIT[Post Kit + manifest.json]
+  KIT --> OUT[回传到产品仓库]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">六步渲染顺序与依赖关系</p>
+    <div class="mermaid">flowchart LR
+  A[1. Logo Reveal 低成本先渲染] --> B[2. Product Demo 录制一次复用]
+  B --> C[3. Launch Video 画面锁定]
+  C --> D[4. Audio Track 配音配乐]
+  D --> E[5. Social Clips 分平台裁切]
+  E --> F[6. OG Assets 图片与循环]
+  B -. footage cache .-> E
+  B -. footage cache .-> F
+  C -. 已 picture-lock .-> D</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ucsandman/marketing-studio" target="_blank">ucsandman/marketing-studio</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
