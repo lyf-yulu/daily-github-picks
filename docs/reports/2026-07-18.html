@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-18</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-18 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/JimLiu/baocut" target="_blank">BaoCut Agent Skill</a></span>
+    <span class="stars">⭐ 153</span>
+  </div>
+  <p class="one-liner">AI 代理驱动的视频转写字幕剪辑技能包</p>
+  <div class="tags">
+    <span class="tag">skills.sh Agent Skill 规范</span><span class="tag">Shell / CLI 封装</span><span class="tag">macOS (BaoCut.app CLI)</span><span class="tag">Node.js (npx 安装器)</span><span class="tag">Markdown (SKILL.md 路由)</span>
+  </div>
+  <div class="summary">BaoCut Agent Skill 是一个开源的 Agent Skill 项目，作为 macOS 视频处理应用 BaoCut 的智能代理封装层，让 Claude Code、Codex 等兼容 skills.sh 规范的 AI 编码代理能够通过自然语言驱动 BaoCut 的命令行工具。项目定位在 AI Agent 与桌面应用之间的桥接层，用户只需用中英文对话（例如「转写并翻译字幕」或输入 /baocut 斜杠命令），代理便会自动调用 baocut CLI 完成视频转写、字幕生成与翻译、说话人识别、口播视频清理及导出等一整套工作流。项目本身不包含转写引擎，而是通过 skills/baocut/bin/baocut 解析器指向 /Applications/BaoCut.app/Contents/MacOS/baocut-cli 完成实际调用。安装方式提供两种：推荐使用 npx skills add 一键安装到 ~/.agents/skills/baocut 并自动关联多个代理，也支持通过 git clone 与符号链接的手动方式部署，无需 Node.js。目录结构包含 SKILL.md（代理入口路由）、references（分任务指南）与 bin（CLI 解析器），遵循 skills.sh 的技能包规范，采用 MIT 协议开源。</div>
+  <div class="why-notable">该项目是 AI Agent Skill 生态与本地桌面工具结合的典型样板：它示范了如何用极简的目录结构（SKILL.md + references + bin resolver）把一个复杂的 macOS 应用能力开放给多种 AI 编码代理复用，是研究 skills.sh 规范、Claude Code 扩展机制以及 AI 驱动多媒体工作流的优质参考。对内容创作者而言，它把视频剪辑与字幕翻译这类高频操作降维成一句自然语言指令，展示了 Agent 时代垂直工具的新交互范式。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户自然语言指令] --> A[AI Agent<br/>Claude Code / Codex]
+  A --> S[SKILL.md 路由]
+  S --> R[references 任务指南]
+  S --> B[bin/baocut 解析器]
+  B --> C[baocut-cli<br/>BaoCut.app]
+  C --> E1[转写引擎]
+  C --> E2[字幕翻译]
+  C --> E3[视频剪辑导出]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">典型调用数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant A as AI Agent
+  participant K as BaoCut Skill
+  participant CLI as baocut CLI
+  U->>A: 转写并翻译 talk.mp4 到中文
+  A->>K: 加载 SKILL.md 路由
+  K->>CLI: baocut --json auto talk.mp4 --lang zh
+  CLI-->>K: 返回 projectId 与 JSON 结果
+  K->>CLI: baocut export <id> --srt --translated --lang zh
+  CLI-->>A: 输出字幕文件路径
+  A-->>U: 返回结果与文件位置</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/JimLiu/baocut" target="_blank">JimLiu/baocut</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/CyberSunil/LLMVault" target="_blank">LLMVault</a></span>
+    <span class="stars">⭐ 152</span>
+  </div>
+  <p class="one-liner">面向 OWASP LLM Top 10 的漏洞靶场</p>
+  <div class="tags">
+    <span class="tag">Python 3.10+</span><span class="tag">Flask</span><span class="tag">Gunicorn</span><span class="tag">Docker / Docker Compose</span><span class="tag">Fernet (cryptography) 加密</span><span class="tag">SVG/PNG 前端渲染</span>
+  </div>
+  <div class="summary">LLMVault 是一个刻意设计为存在漏洞的 CTF 式训练平台，对标 WebGoat/KubeGoat，但专注于 AI 安全领域，聚焦 OWASP LLM Top 10（2025）十大风险类别。项目提供 25 个渐进解锁的实验：核心层 10 个覆盖提示注入、敏感信息泄露、供应链、数据投毒、输出处理、过度代理、系统提示泄露、向量与嵌入、错误信息、无限消耗等类别，每类一题；进阶层 10 个为多轮对话挑战，涵盖角色扮演越狱、碎片重建、Agent 工具链滥用、跨租户 RAG 内存泄漏、基于查询的模型抽取等真实攻击手法；专家层 5 个模拟真实世界已披露的漏洞攻击类，采用 Fernet AES 加密封装在 challenges/expert.enc，需运营方手动发放解密密钥才能解锁。每个实验都配套私有防御指南，形成攻防对照学习。平台采用 Flask 构建，后端脚本化确定性响应，无需 LLM API 密钥即可离线运行，进度以 data/progress.json 文件持久化，支持 Docker Compose 一键部署（gunicorn 单 worker 保证内存计分板一致）。前端提供响应式 UI、悬浮卡片、通关证书 SVG/PNG 导出、社交分享等玩家体验设计。</div>
+  <div class="why-notable">在 AI 安全教育资源仍稀缺的当下，LLMVault 填补了 WebGoat 类靶场在 LLM 领域的空白：不仅按 OWASP 官方 2025 分类系统组织内容，还创新性地把攻击、防御、多轮交互和真实攻击类合成为分级课程；脚本化确定性响应避免了对付费 API 的依赖，可完全离线复现，非常适合企业培训、CTF 出题人和红蓝队自建演练环境。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三层解锁式实验体系</p>
+    <div class="mermaid">graph LR
+  A[玩家注册<br/>锁定用户名] --> B[核心层<br/>10 个 OWASP 单类实验]
+  B -->|全部通关| C[进阶层<br/>10 个多轮攻击挑战]
+  C -->|全部通关| D[分享通关卡<br/>@CyberSunil]
+  D -->|获取密钥| E[专家层<br/>5 个加密真实攻击类]
+  B --> F[Beginner 绿卡]
+  C --> G[Master 蓝卡]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与数据流</p>
+    <div class="mermaid">graph TD
+  U[浏览器 UI] -->|HTTP| F[Flask app.py]
+  F --> L[脚本化漏洞助手<br/>确定性响应]
+  F --> S[Scoreboard<br/>内存计分]
+  F --> P[(data/progress.json<br/>持久化)]
+  F --> C[challenges/expert.enc<br/>Fernet 密文]
+  K[Expert Access Key] -->|人工派发| C
+  C -->|解密成功| L
+  F --> V[/card.svg 通关证书/]
+  V -->|前端导出| PNG[PNG 分享图]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/CyberSunil/LLMVault" target="_blank">CyberSunil/LLMVault</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/vshulcz/deja-vu" target="_blank">deja-vu</a></span>
+    <span class="stars">⭐ 336</span>
+  </div>
+  <p class="one-liner">编码 Agent 的本地记忆检索层</p>
+  <div class="tags">
+    <span class="tag">Go</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">SQLite / sqlite3 CLI</span><span class="tag">JSONL 追加式存储</span><span class="tag">Shell 安装脚本</span><span class="tag">npm / Homebrew / Go install 多渠道分发</span>
+  </div>
+  <div class="summary">deja-vu 是一个面向编码类 AI Agent 的本地记忆层工具，将 Claude Code、Codex、opencode、Cursor、Gemini CLI、aider、Antigravity、Grok Build、Qwen Code 等主流 Agent 已经写在本地的会话日志转化为可检索、可召回、可共享的知识库。项目以单一零依赖二进制形式分发，无需下载模型或运行后台服务，所有数据默认留在本地。核心能力包括：命令行全文搜索（deja <query>，支持多词 AND、正则、按 harness/project/时间/角色过滤，官方声称在 GB 级日志上约 12ms 返回），追溯性索引旧日志；通过 MCP 协议向 Agent 暴露 recall 工具，让 Agent 在对话中主动查询过往解决方案；--auto 模式在 SessionStart 钩子中自动注入相关上下文；索引期即对 API Key、JWT、私钥等敏感信息做脱敏，缓存本身可安全保留；提供 stats 使用统计与 SVG 分享卡、share 生成脱敏会话摘要、sync export/import 与 ssh 双向同步（追加式、幂等、带水印）；doctor 输出机器可读的自检 JSON；resume 直接跳回原生 Agent 会话。安装方式覆盖 curl、go install、npm、Homebrew，deja install --all/--auto 自动写入各 Agent 配置并保留 .bak。整体定位是把散落在各家 Agent 目录下的历史对话真正变成可用的团队与个人记忆。</div>
+  <div class="why-notable">编码 Agent 生态高速膨胀，但每家工具的会话日志相互隔离、无法搜索，用户每天都在重复解决自己已经解决过的问题。deja-vu 用一个零依赖二进制统一了九款主流 Agent 的历史，把 MCP 作为 Agent 侧接入协议、把本地文件作为可信数据源，既避免了云端记忆产品的隐私顾虑，又通过 SessionStart 自动召回真正做到无感集成，是 AI Agent 时代少见的把工程细节（脱敏、幂等同步、doctor 自检、跨机器 SSH）打磨到位的记忆基础设施。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  subgraph Agents[编码 Agent 会话日志]
+    A1[Claude Code]
+    A2[Codex]
+    A3[opencode]
+    A4[Cursor]
+    A5[Gemini CLI / aider / Grok / Qwen]
+  end
+  A1 --> P[deja 解析器]
+  A2 --> P
+  A3 --> P
+  A4 --> P
+  A5 --> P
+  P --> R[脱敏引擎<br/>API Key/JWT/私钥]
+  R --> IDX[(本地索引 index.db)]
+  IDX --> CLI[deja CLI<br/>search / ctx / stats / share]
+  IDX --> MCP[MCP Server<br/>recall 工具]
+  MCP --> AG[运行中的 Agent]
+  IDX --> SYNC[sync export/import<br/>ssh 同步]
+  SYNC -.追加式 JSONL.-> IDX2[(另一台机器)]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">自动召回数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 开发者
+  participant AG as 编码 Agent
+  participant HK as SessionStart Hook
+  participant D as deja (MCP)
+  participant DB as 本地索引
+  U->>AG: 启动新会话
+  AG->>HK: 触发 session-start
+  HK->>D: 请求相关记忆(项目上下文)
+  D->>DB: 查询历史会话
+  DB-->>D: 命中片段 (已脱敏)
+  D-->>AG: 注入上下文摘要
+  U->>AG: 提问 (无需显式检索)
+  AG->>D: 需要时调用 recall 工具
+  D->>DB: 二次检索
+  DB-->>AG: 返回精确答案</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/vshulcz/deja-vu" target="_blank">vshulcz/deja-vu</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/VKirill/claude-lane-stack" target="_blank">Claude Lane Stack</a></span>
+    <span class="stars">⭐ 125</span>
+  </div>
+  <p class="one-liner">单人 AI 编码工厂：一人一 PM 多工人</p>
+  <div class="tags">
+    <span class="tag">Claude Code (Anthropic)</span><span class="tag">Grok</span><span class="tag">Codex (GPT-5.6 Sol/Terra/Luna)</span><span class="tag">Bash / Shell 脚本</span><span class="tag">Git</span><span class="tag">YAML 任务卡</span><span class="tag">systemd (user-mode)</span><span class="tag">Mermaid</span>
+  </div>
+  <div class="summary">Claude Lane Stack 是一套面向单人开发者的多智能体（multi-agent）编码编排框架，基于 Claude Code 构建，把常见的『五个聊天窗口、手动合并分支』的混乱工作流改造成一条可检查的『AI 流水线』。用户只与一个名为 dev-orchestrator 的项目经理智能体（PM）对话，PM 负责拆分任务、生成 YAML 任务卡（存放于 .agents/runs/），并把工作分发给可选的工人车道：Grok 负责重写入、Codex 负责代码评审与项目 onboard。每张任务卡都声明『拥有路径』（file contracts），确保工人不越界；Codex 组成的评审车道对每次合并把关，检查通过后由 PM 自动合并到 main 分支。项目当前版本 v1.3.1，核心特性包括：Onboard 2.0（minimal/full 场景 + fast/deep 深度双轴，自动为成熟仓库生成『取证式护照』）、lane-ctl 与 user-systemd 结合的后台车道生命周期管理（解决长任务 2 分钟超时问题）、事件驱动的渐进式 accept（并行任务无需等待最慢者）、以及 /resume-project 冷启动恢复命令。整套系统仅依赖纯文本文件加 git，无需任务数据库或云服务，缺失的工人由 agents-doctor 自动降级到 claude-only 模式。文档覆盖 9 种语言，附完整新手指南。</div>
+  <div class="why-notable">它把『AI 结对编程』升级为『AI 团队协作』，用最朴素的 git 加文本文件方案解决了多智能体协同的三大痛点：上下文重复解释、文件互相覆盖、无人评审。对独立开发者和 vibe-coder 而言，这是少见的兼顾工程严谨性和低门槛的多智能体框架，且完全在本地可见可审计，没有黑盒平台锁定。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">多车道编排架构</p>
+    <div class="mermaid">flowchart LR
+    U[🧑 用户<br/>自然语言需求] --> PM[🤖 PM<br/>dev-orchestrator]
+    PM -->|生成任务卡| TC[🗂️ YAML 任务卡<br/>.agents/runs/]
+    TC --> W1[⚡ Claude<br/>轻量写入]
+    TC --> W2[🔧 Grok<br/>重写入 lane-bg]
+    W1 --> RV[🔍 Codex<br/>评审车道]
+    W2 --> RV
+    RV -->|通过| MAIN[(📦 main 分支)]
+    RV -->|问题| PM
+    PM -.->|自动合并| MAIN</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Onboard 2.0 双轴决策流</p>
+    <div class="mermaid">flowchart TD
+    Start[project-onboard .] --> Score{仓库评分}
+    Score -->|< 5| Min[🟢 minimal 场景]
+    Score -->|≥ 5 或 monorepo| Full[🟣 full 场景]
+    Min --> Depth{深度选择}
+    Full --> Depth
+    Depth -->|轻量| Fast[⚡ fast<br/>Terra 模型<br/>顶层目录扫描]
+    Depth -->|默认 full| Deep[🔬 deep<br/>Sol 模型<br/>入口+流程+测试]
+    Fast --> Out[📄 项目护照<br/>CLAUDE/AGENTS/ARCH]
+    Deep --> Out2[📄 护照 + 取证包<br/>MODULES/FLOWS/VERIFY]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/VKirill/claude-lane-stack" target="_blank">VKirill/claude-lane-stack</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/agutinbaigo28/financial-agent-api" target="_blank">AgentStack 企业级 AI 智能体平台</a></span>
+    <span class="stars">⭐ 129</span>
+  </div>
+  <p class="one-liner">生产级多智能体金融AI编排平台</p>
+  <div class="tags">
+    <span class="tag">TypeScript 5</span><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">Node.js >=20.9</span><span class="tag">Mastra (@mastra/core, rag, memory, ai-sdk)</span><span class="tag">LibSQL 向量检索</span><span class="tag">Zod Schema</span><span class="tag">AI SDK (Google/OpenAI/Anthropic)</span><span class="tag">Langfuse 可观测性</span><span class="tag">Better Auth + RBAC</span><span class="tag">Vitest</span><span class="tag">shadcn/ui + AI Elements</span>
+  </div>
+  <div class="summary">AgentStack 是一个基于 Mastra 框架构建的生产级 AI 智能体平台，专注于金融情报、RAG 检索管线、企业级可观测性与安全治理。项目内置 25+ 专业化智能体、57 个企业工具、10+ 工作流、12+ 主管网络（Supervisor Networks）以及 105 个 UI 组件（含 50+ AI Elements 与 55+ shadcn/ui 基础组件），通过 A2A/MCP 协议实现可扩展的智能体协同编排。在金融领域，平台集成了 Polygon、Finnhub、AlphaVantage 等 30+ 数据端点，覆盖行情、基本面、技术指标等场景。RAG 能力方面采用 LibSQL HNSW 向量检索（3072 维嵌入）配合 MDocument 分块、重排序与 GraphRAG 图遍历，实现开箱即用的语义检索。工作区管理支持 AgentFS、Daytona 与本地沙箱三种模式，并通过 LibSQL 持久化智能体、工作区、主管网络与鉴权状态。安全治理层集成 Better Auth、RBAC、路径穿越防护与 HTML 消毒，可观测性通过 TanStack Query 与 Langfuse 追踪每一次智能体调用、工具执行与工作流步骤。技术栈以 Next.js 16、React 19、TypeScript 5、Zod 全量类型校验为核心，测试覆盖率达 97%，主流 LLM 支持 Gemini 2.5、OpenAI、Claude。</div>
+  <div class="why-notable">AgentStack 将金融数据、RAG、多智能体协同与企业安全治理整合到单一 Mastra 技术栈中，填补了简单聊天机器人与企业级智能体编排之间的空白。其主管网络模式（委派钩子 + 评分）与 A2A/MCP 协议结合，为构建可审计、可追溯的复杂金融 AI 应用提供了完整参考实现，特别适合关注金融智能、工作区沙箱与生产可观测性的团队借鉴。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统整体架构</p>
+    <div class="mermaid">graph TD
+  U[用户/前端 Next.js 16 + React 19] --> API[API 层 + Better Auth/RBAC]
+  API --> SN[主管网络 Supervisor Networks x12+]
+  SN -->|委派钩子+评分| AG[专业智能体 x25+]
+  AG --> TL[企业工具 x57]
+  TL --> FIN[金融数据源<br/>Polygon/Finnhub/AlphaVantage]
+  TL --> WS[工作区<br/>AgentFS/Daytona/本地沙箱]
+  AG --> RAG[RAG 管线<br/>LibSQL HNSW 3072D + Rerank + GraphRAG]
+  AG --> LLM[LLM 提供方<br/>Gemini/OpenAI/Claude]
+  API --> DB[(LibSQL 持久化<br/>智能体/工作区/鉴权)]
+  SN --> OBS[Langfuse + TanStack 可观测性]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">金融情报 RAG 数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant S as 主管智能体
+  participant F as 金融工具集
+  participant R as RAG 引擎
+  participant V as LibSQL 向量库
+  participant L as LLM
+  U->>S: 提交金融分析请求
+  S->>F: 拉取 Polygon/Finnhub 行情与基本面
+  F-->>S: 结构化数据 (Zod 校验)
+  S->>R: 触发语义检索
+  R->>V: HNSW 近邻查询 + Rerank
+  V-->>R: 相关文档片段
+  R->>L: 组装上下文 + 提示词
+  L-->>S: 生成分析结论
+  S-->>U: 返回结果 + Langfuse 追踪链路</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/agutinbaigo28/financial-agent-api" target="_blank">agutinbaigo28/financial-agent-api</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
