@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-22</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-22 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/0xwilliamortiz/agents-council" target="_blank">Agent Council 智能体议会</a></span>
+    <span class="stars">⭐ 91</span>
+  </div>
+  <p class="one-liner">多 AI CLI 协作汇聚多元观点</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">Bash Shell</span><span class="tag">YAML</span><span class="tag">Claude Code Skill</span><span class="tag">Codex CLI</span><span class="tag">Gemini CLI</span>
+  </div>
+  <div class="summary">Agent Council 是一款面向 Claude Code 的多智能体协作插件（Skill），通过调用用户本地已安装的多种 AI CLI（如 Claude Code、Codex CLI、Gemini CLI 等）来收集多方观点，并由可配置的 Chairman（主席）综合出最终结论。项目灵感来自 Karpathy 的 LLM Council，但关键差异在于复用用户已有的 CLI 订阅，无需额外的 API 调用费用。整体流程分为三个阶段：所有成员并行接收同一问题并独立作答、汇总并格式化展示各方回答、由宿主 Agent 或指定 CLI 作为主席进行综合归纳。支持通过 npx 一键安装或以 Claude Code Plugin 形式接入，会根据机器上已存在的 CLI 自动生成 council.config.yaml 配置。提供 start/status/results/clean 等作业流命令，以及一次性执行模式，并针对宿主工具 UI 返回 wait JSON 以驱动原生进度视图，适合需要多视角评审、技术选型讨论的开发场景。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三阶段协作流程</p>
+    <div class="mermaid">graph LR
+  U[用户提问] --> H[宿主 Agent]
+  H --> S1[阶段1: 并行分发问题]
+  S1 --> M1[Codex CLI]
+  S1 --> M2[Gemini CLI]
+  S1 --> M3[其他 CLI]
+  M1 --> S2[阶段2: 汇总回答]
+  M2 --> S2
+  M3 --> S2
+  S2 --> S3[阶段3: 主席综合]
+  S3 --> R[最终建议]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">作业执行架构</p>
+    <div class="mermaid">graph TD
+  A[council.sh 入口] --> B[council-job.sh 后台作业]
+  B --> C[council-job.js 调度器]
+  C --> D1[worker: 成员1]
+  C --> D2[worker: 成员2]
+  C --> D3[worker: 成员N]
+  D1 --> E[作业目录 JOB_DIR]
+  D2 --> E
+  D3 --> E
+  E --> F[status 轮询]
+  E --> G[results 输出]
+  E --> H[clean 清理]
+  I[council.config.yaml] -.配置.-> C</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/0xwilliamortiz/agents-council" target="_blank">0xwilliamortiz/agents-council</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/diegosouzapw" target="_blank">免费 AI 网关聚合器</a></span>
+    <span class="stars">⭐ 2,034 <span class="stars-today">(+2034 today)</span></span>
+  </div>
+  <p class="one-liner">一个端点接入500+模型的免费AI网关</p>
+  <div class="tags">
+    <span class="tag">AI Gateway</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">A2A (Agent-to-Agent)</span><span class="tag">PWA</span><span class="tag">Desktop App</span><span class="tag">Token 压缩 (RTK/Caveman)</span>
+  </div>
+  <div class="summary">这是一个基于 MIT 协议开源的免费 AI 网关项目，旨在通过统一的 API 端点聚合来自 268+ 家提供商的 500+ 个大语言模型，其中包含 50+ 个可免费调用的服务，覆盖 Kimi、Claude、GPT、OpenAI、Gemini、GLM、DeepSeek、MiniMax 等主流模型。项目的核心定位是让开发者永不中断编码工作——通过配额感知的自动故障转移机制，当某个提供商达到限额或不可用时，网关会自动切换到备用通道，保证 AI 编码助手持续可用。在生态兼容性方面，该网关无缝对接 Claude Code、Codex、Cursor、OpenCode、Cline、Copilot 等主流 AI 编程工具，开发者无需修改客户端即可享受统一路由能力。技术亮点上，项目集成了 RTK 与 Caveman 双重压缩算法，可将 token 消耗降低 15% 到 95%，显著节省调用成本；同时支持 MCP（Model Context Protocol）与 A2A（Agent-to-Agent）协议，具备现代 Agent 生态的互操作能力。交付形态上提供桌面客户端与 PWA 渐进式 Web 应用两种方式，兼顾本地体验与跨平台便利。项目由 500+ 位社区贡献者共同构建，展现出较为活跃的开源协作氛围。</div>
+  <div class="why-notable">在 AI 编程助手日益成为核心生产力工具的当下，模型限额、账号封禁、成本高企是开发者面临的三大痛点。该项目以免费+MIT 协议+自动 fallback 三重组合直击这些痛点，同时通过 token 压缩带来的成本节约与主流工具的即插即用能力，形成了极高的实用价值。500+ 贡献者的社区规模也说明其获得了广泛认可，值得关注其架构演进与生态整合思路。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与请求路由</p>
+    <div class="mermaid">graph TD
+  A[开发者工具<br/>Claude Code / Cursor / Cline / Copilot] -->|统一 API| B[AI 网关入口]
+  B --> C[Token 压缩层<br/>RTK + Caveman]
+  C --> D[路由与配额调度]
+  D --> E{配额检测}
+  E -->|可用| F[主提供商<br/>Claude / GPT / Gemini]
+  E -->|超限| G[自动 Fallback]
+  G --> H[备用提供商<br/>Kimi / DeepSeek / GLM / MiniMax]
+  D --> I[MCP / A2A 协议适配]
+  I --> J[Agent 生态]
+  B --> K[桌面客户端 / PWA]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求处理数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 编程工具
+  participant G as AI 网关
+  participant C as 压缩引擎
+  participant R as 路由调度
+  participant P as 模型提供商
+  U->>G: 发送 Prompt 请求
+  G->>C: 应用 RTK/Caveman 压缩
+  C->>R: 传递精简 Payload
+  R->>R: 查询配额与优先级
+  R->>P: 调用首选模型
+  alt 配额充足
+    P-->>R: 返回响应
+  else 超限或失败
+    R->>P: 自动切换备用提供商
+    P-->>R: 返回响应
+  end
+  R-->>G: 聚合结果
+  G-->>U: 返回最终输出</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/diegosouzapw" target="_blank">sponsors/diegosouzapw</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/CyberSunil/LLMVault" target="_blank">LLMVault</a></span>
+    <span class="stars">⭐ 220</span>
+  </div>
+  <p class="one-liner">OWASP LLM Top 10 靶场训练平台</p>
+  <div class="tags">
+    <span class="tag">Python 3.10+</span><span class="tag">Flask</span><span class="tag">Gunicorn</span><span class="tag">Docker / Docker Compose</span><span class="tag">Fernet (cryptography)</span><span class="tag">SVG/PNG 前端渲染</span><span class="tag">JSON 文件持久化</span>
+  </div>
+  <div class="summary">LLMVault 是一个专为 AI 安全教育设计的、故意存在漏洞的 CTF 风格训练靶场，对标 WebGoat 与 KubeGoat，但聚焦于大语言模型应用安全。项目围绕 OWASP LLM Top 10 (2025) 构建了 25 个分层实验：核心层 10 个（每个 OWASP 类别对应一个基础实验，覆盖提示注入、敏感信息泄露、供应链、数据投毒、输出处理、过度代理、系统提示泄露、向量与嵌入、错误信息、无界消耗）；进阶层 10 个多轮对话挑战（角色扮演越狱、碎片重建、工具链攻击、跨租户 RAG 泄露、查询式模型抽取等）；专家层 5 个模拟真实世界漏洞的加密挑战，需通过完成前两层并向作者索取 Expert Access Key 后使用 Fernet 解密。每个实验都配有攻击与防御两面的教学内容，解题后会展示「Learn — the fix」防御课程面板。技术实现上采用 Flask 后端，脚本化确定性的假 LLM 响应保证离线可复现，无需真实 API Key；进度以 data/progress.json 持久化，避免引入数据库；支持 Docker Compose 一键部署，通过 gunicorn 单 worker 保障内存计分板一致性。玩家体验方面提供首次运行姓名锁定、引导教程、响应式布局、可分享的通关卡片（PNG/SVG 服务端渲染）与 LinkedIn/X 分享链。</div>
+  <div class="why-notable">在生成式 AI 安全人才严重短缺的当下，LLMVault 把抽象的 OWASP LLM Top 10 规范落成可动手复现的靶场，攻防并重且完全离线可跑，极大降低了 AI Red Team 培训门槛。它把 CTF 关卡机制、加密挑战解锁、社交分享通关卡等游戏化设计融入安全教育，是继 WebGoat 之后 AI 时代少见的成体系训练平台，对企业 AI 安全培训与个人渗透测试进阶均有直接参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[玩家浏览器] -->|HTTP| F[Flask app.py]
+  F --> L1[核心层 10 关]
+  F --> L2[进阶层 10 关<br/>多轮对话]
+  F --> L3[专家层 5 关<br/>Fernet 加密]
+  F --> S[脚本化脆弱 Assistant]
+  F --> P[(data/progress.json<br/>进度与计分板)]
+  F --> C[/card.svg<br/>通关卡片渲染/]
+  K[Expert Access Key] -.手动分发.-> L3
+  D[Docker Compose] --> G[Gunicorn 单 Worker] --> F</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">解题与解锁流程</p>
+    <div class="mermaid">flowchart LR
+  A[设置玩家名<br/>一次锁定] --> B[挑战核心层实验]
+  B --> H{需要提示?}
+  H -->|是 扣分| B
+  B --> C[提交 LLMVAULT flag]
+  C --> D[展示防御课程面板]
+  D --> E{10 核心全通?}
+  E -->|否| B
+  E -->|是| F[解锁进阶层多轮挑战]
+  F --> G{10 进阶全通?}
+  G -->|是| I[生成 Master 通关卡]
+  I --> J[社交分享并@CyberSunil]
+  J --> K[获取 Expert Access Key]
+  K --> M[Fernet 解密 expert.enc]
+  M --> N[进入专家层 5 关]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/CyberSunil/LLMVault" target="_blank">CyberSunil/LLMVault</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/smixs/mentor" target="_blank">mentor 会话洞察技能</a></span>
+    <span class="stars">⭐ 56</span>
+  </div>
+  <p class="one-liner">为 AI 编程代理生成个人工作复盘报告</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">uv</span><span class="tag">SKILL.md 技能规范</span><span class="tag">HTML/SVG</span><span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">skills.sh (npx)</span>
+  </div>
+  <div class="summary">mentor 是一款面向 AI 编程代理（Claude Code、Codex 等支持 SKILL.md 格式的代理）的会话洞察技能。它在本地读取 ~/.claude 下的 Claude Code 会话记录和 ~/.codex 下的 Codex rollout 文件，聚合近 30 天（可通过 --days 调整）的消息数、会话数、工具调用、编辑量、涉及文件与 token 消耗等指标，并交由代理生成八段式分析，最终输出一份自包含的 report.html 报告。报告涵盖工作主题聚类、工具与语言使用比例、亮点成果、摩擦点及可执行修复、值得尝试的能力、CLAUDE.md 追加建议、新工作流与趋势预测，特别强调对每个摩擦点给出可复用的 CLAUDE.md 配置行、Hook 或习惯调整。整个流程完全本地运行，转录内容不上传，保证隐私。技能由三段脚本驱动：collect.py 解析会话产出统计包，代理基于摘要撰写分析，render_report.py 将统计与分析合并渲染为带内嵌 SVG 图标、计数动效和动画图表的 HTML。可通过 skills.sh 一键安装，也支持手动 git clone 到技能目录。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统数据流</p>
+    <div class="mermaid">graph LR
+  A[~/.claude 会话记录] --> C[collect.py 解析统计]
+  B[~/.codex rollout 文件] --> C
+  C --> D[stats 数据摘要]
+  D --> E[AI 代理生成八段分析]
+  E --> F[render_report.py 合并渲染]
+  D --> F
+  F --> G[report.html 本地报告]
+  G --> H[开发者复盘与改进]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能调用流程</p>
+    <div class="mermaid">graph TD
+  U[开发者] -->|/mentor claude/codex/both| S[mentor 技能]
+  S --> P1[读取本地会话]
+  P1 --> P2[聚合指标]
+  P2 --> P3[主题聚类与摩擦识别]
+  P3 --> P4[生成修复建议]
+  P4 --> R[输出 HTML 报告]
+  R --> C[CLAUDE.md 追加/Hook 配置]
+  C -.下一周期.-> U</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/smixs/mentor" target="_blank">smixs/mentor</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/claude5fable/Claude-fable-5-free-desktop" target="_blank">Claude Fable 5 Free Desktop</a></span>
+    <span class="stars">⭐ 53</span>
+  </div>
+  <p class="one-liner">可疑的所谓Claude桌面客户端下载仓库</p>
+  <div class="tags">
+    <span class="tag">预打包 ZIP（无公开源码）</span><span class="tag">声称调用 Anthropic Claude API</span><span class="tag">面向 Windows 11 / macOS / Linux 桌面平台</span>
+  </div>
+  <div class="summary">该仓库自称为 Anthropic Claude AI 的第三方桌面客户端，宣传支持 Windows 11、macOS 和 Linux，并声称提供代码生成、创意写作、研究辅助等功能，宣称集成 Claude 3.5 Sonnet/Opus，支持 1M token 上下文、多日自主编码、Agent 任务、系统提示定制以及 Claude Code CLI。README 引导用户下载一个 ZIP 压缩包并以管理员身份运行，同时要求填入自己的 Anthropic API Key。然而仓库中没有公开源代码、构建脚本、依赖清单或版本历史，仅有营销式描述、SEO 关键词堆砌和外链下载。这种模式与常见的伪装成 AI 工具的恶意软件分发套路高度一致：缺乏可审计代码、要求管理员权限、诱导输入 API 密钥，存在密钥窃取、木马植入和账号封禁风险。建议不要下载运行，若需桌面客户端应使用 Anthropic 官方渠道或知名开源项目。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">可疑分发流程与风险点</p>
+    <div class="mermaid">graph TD
+  A[用户在GitHub看到仓库] --> B[README营销文案与关键词]
+  B --> C[点击Release下载ZIP]
+  C --> D[以管理员身份运行未知程序]
+  D --> E[输入Anthropic API Key]
+  E --> F{潜在风险}
+  F --> G[API Key 被窃取]
+  F --> H[本地木马 后门植入]
+  F --> I[账号被封或滥用扣费]
+  D -.无源码可审计.-> J[无法验证行为]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">与官方使用路径的对比</p>
+    <div class="mermaid">graph LR
+  subgraph 官方推荐
+    U1[开发者] --> O1[Anthropic官网/官方SDK]
+    O1 --> O2[API Key 本地保管]
+    O2 --> O3[调用Claude API]
+  end
+  subgraph 本仓库
+    U2[开发者] --> R1[第三方GitHub仓库]
+    R1 --> R2[下载未签名ZIP]
+    R2 --> R3[管理员权限执行]
+    R3 --> R4[Key与系统权限暴露]
+  end</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/claude5fable/Claude-fable-5-free-desktop" target="_blank">claude5fable/Claude-fable-5-free-desktop</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
