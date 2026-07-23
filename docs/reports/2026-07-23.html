@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-23</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-23 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/0xwilliamortiz/agents-council" target="_blank">Agent Council 多智能体议会</a></span>
+    <span class="stars">⭐ 94</span>
+  </div>
+  <p class="one-liner">汇聚多AI CLI观点并综合决策的技能插件</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">Bash Shell</span><span class="tag">YAML</span><span class="tag">Claude Code Skill</span><span class="tag">Codex CLI</span><span class="tag">Gemini CLI</span>
+  </div>
+  <div class="summary">Agent Council 是一个面向 Claude Code 和 Codex CLI 的多智能体协作技能插件，灵感来自 Karpathy 的 LLM Council。它通过调用用户本地已安装的 AI CLI（如 Claude Code、Codex CLI、Gemini CLI 等）来收集多方观点，再由一位可配置的主席（Chairman）综合得出最终结论。整个流程分为三个阶段：并行下发问题给各成员智能体、收集并格式化展示各家回复、由宿主智能体或指定 CLI 作为主席进行综合总结。与直接调用各厂商 API 的方案不同，该项目复用用户已订阅的 CLI，无需额外 API 费用。安装方式支持 npx 一键部署到 .claude/ 或 .codex/ 目录，也支持 Claude Code Plugin 市场安装。配置通过 council.config.yaml 声明成员、命令、颜色和 emoji，脚本层提供 start/status/results/clean/wait 等作业控制接口，便于在宿主工具 UI 中集成进度反馈。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三阶段议会流程</p>
+    <div class="mermaid">graph TD
+  U[用户提问] --> H[宿主智能体<br/>Claude Code / Codex CLI]
+  H --> S[council.sh 调度]
+  S --> P{阶段1:并行征询}
+  P --> M1[Codex CLI]
+  P --> M2[Gemini CLI]
+  P --> M3[其他成员 CLI]
+  M1 --> C[阶段2:汇总收集]
+  M2 --> C
+  M3 --> C
+  C --> Z[阶段3:主席综合<br/>Chairman]
+  Z --> R[最终建议返回用户]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装与运行架构</p>
+    <div class="mermaid">graph LR
+  A[npx agent-council] --> B[bin/install.js 安装器]
+  B --> C[.claude/skills/agent-council/]
+  B --> D[.codex/skills/agent-council/]
+  C --> E[council.config.yaml<br/>成员配置]
+  D --> E
+  E --> F[council.sh<br/>入口脚本]
+  F --> G[council-job.js<br/>作业调度]
+  G --> W[council-job-worker.js<br/>每个成员一个 worker]
+  W --> X[本地 AI CLI 进程]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/0xwilliamortiz/agents-council" target="_blank">0xwilliamortiz/agents-council</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/diegosouzapw" target="_blank">免费 AI 网关聚合器</a></span>
+    <span class="stars">⭐ 1,651 <span class="stars-today">(+1651 today)</span></span>
+  </div>
+  <p class="one-liner">一个端点接入 268+ AI 提供商</p>
+  <div class="tags">
+    <span class="tag">AI Gateway</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">A2A (Agent-to-Agent)</span><span class="tag">PWA</span><span class="tag">Desktop App</span><span class="tag">OpenAI Compatible API</span>
+  </div>
+  <div class="summary">该项目是一个基于 MIT 协议开源的免费 AI 网关，主打「Never stop coding」理念，通过统一的 API 端点聚合 268 家以上的 AI 服务提供商（其中 50 家以上完全免费），可访问 500 多个大语言模型，覆盖 Kimi、Claude、GPT、OpenAI、Gemini、GLM、DeepSeek、MiniMax 等主流厂商。项目在客户端兼容层面做得非常广泛，可无缝接入 Claude Code、Codex、Cursor、OpenCode、Cline 以及 GitHub Copilot 等主流 AI 编程工具，开发者无需修改现有工作流即可切换模型。核心能力上，网关提供配额感知的自动故障切换（Quota-aware auto-fallback），当某个上游达到额度上限或不可用时会自动路由到备用提供商，保障编码任务连续性。项目还内置了 RTK 与 Caveman 两种上下文压缩算法，宣称可节省 15% 到 95% 的 Token 消耗，显著降低调用成本。协议层面同时支持 MCP（Model Context Protocol）与 A2A（Agent-to-Agent）等新兴标准，方便构建智能体生态。交付形态上除了 API 服务外，还提供桌面客户端与 PWA 应用，覆盖多端使用场景。项目由 500 多位贡献者共同维护，社区规模较大。</div>
+  <div class="why-notable">在 AI 编码工具百花齐放但各家 API 割裂、成本高企的当下，该项目用一个统一端点打通 268+ 提供商与 500+ 模型，并通过免费通道+自动故障切换+Token 压缩三重手段直击开发者「额度焦虑」，还与 Claude Code、Cursor、Copilot 等主流工具原生兼容，500+ 贡献者的社区规模也说明其活跃度。对于需要在多模型之间灵活调度、又想控制成本的独立开发者与团队而言，它是一个值得关注的基础设施选项。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[开发者工具<br/>Claude Code/Cursor/Copilot/Cline] --> B[统一 API 端点]
+  B --> C[路由与配额管理]
+  C --> D[Token 压缩层<br/>RTK + Caveman]
+  D --> E{提供商适配}
+  E --> F[免费通道 50+]
+  E --> G[付费通道 200+]
+  F --> H[Kimi / GLM / DeepSeek 等]
+  G --> I[Claude / GPT / Gemini / MiniMax 等]
+  C -.配额耗尽.-> J[自动故障切换]
+  J --> E
+  B --> K[MCP / A2A 协议扩展]
+  A2[桌面客户端 / PWA] --> B</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求处理流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户/IDE
+  participant G as AI 网关
+  participant Q as 配额检查
+  participant C as 压缩模块
+  participant P as 上游提供商
+  U->>G: 发送模型请求
+  G->>Q: 检查目标提供商配额
+  alt 配额充足
+    Q-->>G: 通过
+    G->>C: 压缩上下文 (RTK/Caveman)
+    C->>P: 转发压缩后请求
+    P-->>G: 返回响应
+  else 配额不足
+    Q-->>G: 拒绝
+    G->>G: 选择备用提供商
+    G->>C: 压缩并转发
+    C->>P: 请求备用通道
+    P-->>G: 返回响应
+  end
+  G-->>U: 统一格式回传</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/diegosouzapw" target="_blank">sponsors/diegosouzapw</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/smixs/mentor" target="_blank">mentor 会话洞察技能</a></span>
+    <span class="stars">⭐ 59</span>
+  </div>
+  <p class="one-liner">为 AI 编码代理生成个人使用复盘报告</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">uv</span><span class="tag">SKILL.md 规范</span><span class="tag">HTML/SVG</span><span class="tag">npx skills CLI</span>
+  </div>
+  <div class="summary">mentor 是一款面向 AI 编码代理（Claude Code、Codex 及任何兼容 SKILL.md 格式的代理）的会话洞察技能。它在本地读取 ~/.claude 下的 Claude Code 会话记录和 ~/.codex 下的 Codex rollout 日志，聚合多次会话数据（消息数、会话数、工具调用、编辑次数、涉及文件、Token 用量、每日活跃度、工具使用比例、编程语言分布等），并生成一份自包含的 HTML 报告 report.html。报告分为八个板块：工作主题聚类、代理使用方式、亮点表现、摩擦点及对应修复建议、值得尝试的功能、可复制到 CLAUDE.md 的配置片段、新工作流建议以及趋势展望。核心价值在于摩擦分析：每个问题都对应可复用的修复方案（CLAUDE.md 配置行、hook 或习惯）。项目通过 npx skills add 一键安装，全部计算在本地进行，会话数据不上传外部，并支持 /mentor claude、/mentor codex、/mentor both 三种模式及 --days 时间窗口参数。默认输出英文，内置俄文界面。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">数据流架构</p>
+    <div class="mermaid">graph LR
+  A[~/.claude 会话记录] --> C[collect.py 统计聚合]
+  B[~/.codex rollout 日志] --> C
+  C --> D[stats 数据包]
+  D --> E[AI 代理生成八段分析]
+  E --> F[render_report.py 合并渲染]
+  D --> F
+  F --> G[report.html 本地报告]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">报告章节结构</p>
+    <div class="mermaid">graph TD
+  R[mentor 报告] --> S1[工作主题聚类]
+  R --> S2[代理使用方式]
+  R --> S3[做得好的地方]
+  R --> S4[摩擦点与修复]
+  R --> S5[值得尝试的功能]
+  R --> S6[CLAUDE.md 建议片段]
+  R --> S7[新工作流建议]
+  R --> S8[未来趋势]
+  S4 -.核心.-> F[可复用修复方案]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/smixs/mentor" target="_blank">smixs/mentor</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/KinetiNode/claude-fable-5-system-prompt-clean" target="_blank">通用 Fable 5 引擎系统提示词</a></span>
+    <span class="stars">⭐ 377</span>
+  </div>
+  <p class="one-liner">精简版 Claude 泄露系统提示词，跨模型通用</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">Prompt Engineering</span><span class="tag">System Instructions API</span><span class="tag">适配 ChatGPT / Gemini / Claude</span>
+  </div>
+  <div class="summary">该项目是对所谓「泄露的 Claude Fable 5 / Mythos 5 系统提示词」进行的轻量化重构版本。作者认为原始泄露版本长达约 12 万字符、约 3 万 Token，其中包含大量 Anthropic 专有的 XML 工具封装、环境变量与服务器端函数调用，直接迁移到 ChatGPT、Gemini 等非 Claude 模型时会引发上下文膨胀、延迟增加甚至语义混乱。项目通过剥离 Claude 原生 `<antml>` 等 XML 包装与平台绑定逻辑，将提示词压缩到约 500 Token，同时保留原架构中的核心行为骨架，包括自主推理、多轮长程规划、自我校验循环以及一系列反聊天机器人风格约束。产物是一份可直接粘贴到 OpenAI Developer Platform、Google AI Studio、GPTs 自定义指令或 Gemini Gems 面板中的 Markdown 系统提示词。它强调四条操作哲学：反聊天机器人的连续散文输出、结构化重构输入信息、禁止思考旁白、消除结尾套话式互动，使模型呈现资深工程师式的执行风格。技术栈层面本质是纯 Prompt Engineering 项目，仅依赖 Markdown 载体和目标 LLM 的 System Instructions 接口，不含运行时代码。</div>
+  <div class="why-notable">围绕「泄露系统提示词」的话题近来热度很高，本项目提供了一个可验证的跨模型迁移样本，对研究不同厂商提示词架构差异、Token 预算优化以及行为约束设计有直接参考价值。需要留意的是，仓库自述基于「泄露内容」，其真实性与合规性存在争议，使用前应自行评估法律与安全风险。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">提示词精简与跨模型部署流程</p>
+    <div class="mermaid">graph LR
+  A[原始泄露提示词<br/>~30000 Token] --> B{结构剥离}
+  B --> C[移除 antml XML 包装]
+  B --> D[移除 Claude 专有工具定义]
+  B --> E[保留行为骨架]
+  C --> F[精简 Markdown<br/>~500 Token]
+  D --> F
+  E --> F
+  F --> G[ChatGPT 自定义指令]
+  F --> H[Gemini Gems 面板]
+  F --> I[OpenAI / AI Studio<br/>System Instructions]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">核心行为约束体系</p>
+    <div class="mermaid">graph TD
+  P[Fable 5 行为内核] --> R1[反聊天机器人<br/>连续散文输出]
+  P --> R2[结构化再解构<br/>拒绝惰性摘要]
+  P --> R3[禁止思考旁白<br/>不输出元评论]
+  P --> R4[零互动陷阱<br/>去除套话结尾]
+  R1 --> O[高密度专家式回复]
+  R2 --> O
+  R3 --> O
+  R4 --> O</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/KinetiNode/claude-fable-5-system-prompt-clean" target="_blank">KinetiNode/claude-fable-5-system-prompt-clean</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/PromptPartner/agentsmith" target="_blank">AgentSmith 智能体运行框架</a></span>
+    <span class="stars">⭐ 314</span>
+  </div>
+  <p class="one-liner">通用型 AI 智能体操作外壳</p>
+  <div class="tags">
+    <span class="tag">Bash (setup.sh / verify.sh)</span><span class="tag">PowerShell 7+ (setup.ps1)</span><span class="tag">Claude Code / Codex / Gemini 等智能体协议</span><span class="tag">CLAUDE.md / AGENTS.md / GEMINI.md 规范文件</span><span class="tag">MCP (Model Context Protocol) 服务器与插件/钩子</span><span class="tag">Markdown 文档体系</span>
+  </div>
+  <div class="summary">AgentSmith 是一个通用、模型无关的 AI 智能体运行外壳（harness），目标是为 Claude Code、Codex、Gemini 等能读取 CLAUDE.md / AGENTS.md / GEMINI.md 的编码智能体提供一套可移植、经过实战打磨的操作系统。作者提出「智能体 = 模型 + 外壳」，认为模型只占结果的约 10%，而围绕它的规则、工具、记忆、护栏与反馈回路才是决定成败的 90%，本仓库正是把这 90% 抽象、复用化的产物。项目源自约 6 个月、数百次自主会话的真实工作沉淀，经过约五轮迭代，被拆成一个不变的通用「core」和一组可插拔的「work-type profiles」，覆盖软件开发、DevOps、市场推广、文档创作、数据处理、研究、设计、日常事务等场景。核心工作流为「安装 → 单任务 plan/implement/verify/ship → 用 verify.sh 跑真实校验 → 上下文用到约 25–30% 时自动 handoff 并沉淀经验改进外壳本身」。安装方式非常灵活：可以让智能体读取 AGENT-INSTALL.md 自助安装，也可以运行 setup.sh 向导（Windows 上对应 setup.ps1，需 PowerShell 7+），或高级用户直接传参；支持分层安装（全局 core + 项目级 profile）、安全模式（cautious/trusted）、MCP 服务器、插件包与钩子，且所有改动前会先备份。附带的 docs 目录提供哲学、首小时上手、安全模型、最佳实践等系统化文档。</div>
+  <div class="why-notable">在 AI 编码工具遍地开花的当下，AgentSmith 抓住了真正的杠杆点：不再纠结换哪个模型，而是把「如何让智能体稳定交付」的工程经验固化为可复用的外壳。它把「验证优先、上下文预算、早期 handoff、自主性分级、修系统而非修症状」这些通常只存在于资深使用者脑中的隐性知识，转成了一套跨模型、跨工种、可 diff、可版本化的规则组合，对希望把 Vibe Coding 升级为 AI 辅助工程的团队具有直接的落地参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">外壳组装与安装流程</p>
+    <div class="mermaid">graph TD
+  A[用户/智能体] -->|运行 setup.sh 或读 AGENT-INSTALL.md| B[Setup 向导]
+  B --> C[选择 Profile\n软件/DevOps/文档/研究...]
+  B --> D[选择 Scope\n项目/全局/便携]
+  B --> E[Safety 模式\ncautious/trusted]
+  C --> F[通用 Core 规则]
+  D --> F
+  E --> F
+  F --> G[组装出 CLAUDE.md / AGENTS.md / GEMINI.md]
+  G --> H[Claude Code / Codex / Gemini 等智能体加载]
+  H --> I[按外壳规则执行任务]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单任务执行与自演进回路</p>
+    <div class="mermaid">flowchart LR
+  T[单个跟踪任务] --> P[Plan 规划]
+  P --> IM[Implement 实现]
+  IM --> V[Verify\n运行 verify.sh + 失败测试先行]
+  V -->|通过| S[Ship 交付]
+  V -->|未通过| IM
+  S --> CTX{上下文≈25-30%?}
+  CTX -->|是| HO[Handoff\n写 recall prompt]
+  CTX -->|否| T
+  HO --> NEXT[下一会话干净续跑]
+  S --> LR[事故复盘]
+  LR --> RULE[修规则/加护栏]
+  RULE --> F[更新 Core/Profile]
+  F --> T</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/PromptPartner/agentsmith" target="_blank">PromptPartner/agentsmith</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
