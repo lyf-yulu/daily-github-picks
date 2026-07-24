@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-24</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-24 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/0xwilliamortiz/agents-council" target="_blank">Agent Council 智能体议会</a></span>
+    <span class="stars">⭐ 94</span>
+  </div>
+  <p class="one-liner">多 AI CLI 协作议事插件</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">Bash</span><span class="tag">YAML</span><span class="tag">Claude Code Skill</span><span class="tag">Codex CLI</span><span class="tag">Gemini CLI</span>
+  </div>
+  <div class="summary">Agent Council 是一款面向 Claude Code 的多智能体协作插件（Skill），灵感来自 Karpathy 的 LLM Council。它通过调用用户本地已安装的多个 AI CLI 工具（如 Claude Code、Codex CLI、Gemini CLI 等）来收集不同模型的独立意见，再由一个可配置的 Chairman（主席）智能体进行综合汇总，输出最终建议。与直接调用各厂商 API 的方案不同，Agent Council 复用现有 CLI 订阅，无需额外 API 费用。它采用三阶段流程：并行分发问题、收集展示各方观点、由主席合成结论，支持通过 npx 一键安装或作为 Claude Code 插件市场包安装，并可通过 council.config.yaml 灵活配置成员、命令、表情与颜色。脚本支持前台一次性执行与后台作业模式（start/status/results/clean），可与宿主 CLI 的原生 Plan/Todo UI 联动，适合需要多视角决策的开发场景。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与三阶段协作流程</p>
+    <div class="mermaid">graph TD
+  U[用户] -->|提出问题| H[宿主 CLI\nClaude Code / Codex]
+  H -->|执行| S[council.sh]
+  S --> J[council-job.js\n作业调度器]
+  J -->|并行分发| W1[Worker: Codex CLI]
+  J -->|并行分发| W2[Worker: Gemini CLI]
+  J -->|并行分发| W3[Worker: 其他 CLI]
+  W1 --> R[结果收集器]
+  W2 --> R
+  W3 --> R
+  R -->|阶段2 展示| H
+  H -->|阶段3 Chairman 综合| F[最终建议]
+  F --> U
+  C[council.config.yaml] -.配置成员/主席.-> J</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">命令执行时序</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant Host as 宿主 Agent
+  participant Sh as council.sh
+  participant Mem as 成员 CLI 群
+  U->>Host: 召集议会
+  Host->>Sh: start "问题"
+  Sh->>Mem: 并行调用各成员
+  Host->>Sh: wait / status
+  Mem-->>Sh: 返回各自意见
+  Sh-->>Host: results (JSON)
+  Host->>Host: 作为 Chairman 综合
+  Host-->>U: 输出最终结论
+  Host->>Sh: clean 清理作业</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/0xwilliamortiz/agents-council" target="_blank">0xwilliamortiz/agents-council</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/diegosouzapw" target="_blank">免费 AI 网关聚合平台</a></span>
+    <span class="stars">⭐ 1,929 <span class="stars-today">(+1929 today)</span></span>
+  </div>
+  <p class="one-liner">统一入口聚合290+AI服务商</p>
+  <div class="tags">
+    <span class="tag">AI Gateway</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">A2A Protocol</span><span class="tag">PWA</span><span class="tag">Desktop App</span><span class="tag">RTK/Caveman 压缩算法</span><span class="tag">OpenAI 兼容 API</span>
+  </div>
+  <div class="summary">该项目是一个基于 MIT 协议开源的免费 AI 网关服务，主打「Never stop coding（编码不中断）」的理念。它通过单一统一的 API 端点，聚合了 290+ 家 AI 服务提供商（其中 90+ 家提供免费额度），覆盖 500+ 个主流大模型，包括 Kimi、Claude、GPT、OpenAI、Gemini、GLM、DeepSeek、MiniMax 等。项目在生态兼容性上做得非常全面，可无缝对接 Claude Code、Codex、Cursor、OpenCode、Cline、Copilot 等主流 AI 编程工具，开发者无需修改现有工作流即可切换后端模型。核心能力方面，项目实现了配额感知的自动回退（Quota-aware auto-fallback）机制，当某个服务商额度耗尽或不可用时会自动切换到备用通道，保障调用稳定性；同时采用 RTK + Caveman 压缩算法，能够为 prompt 和上下文节省 15%–95% 的 token 消耗，显著降低使用成本。协议层面支持 MCP（Model Context Protocol）与 A2A（Agent-to-Agent）通信，并提供桌面客户端和 PWA 两种交付形态，兼顾本地体验与跨平台便捷性。项目由 500+ 位贡献者共同维护，社区规模可观。</div>
+  <div class="why-notable">在 AI 编程工具百花齐放但 API 成本高企的当下，这个项目提供了一条低门槛甚至零成本的路径：开发者用一个端点就能横跨 290+ 服务商，配合自动回退和 token 压缩，实际能把成本压到极低。加上对 Claude Code、Cursor 等主流工具的原生兼容，迁移几乎零成本；MIT 协议 + 500+ 贡献者的社区规模也说明它不是玩具级项目，对追求模型多样性与成本控制的团队非常值得关注。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[开发工具<br/>Claude Code/Cursor/Cline/Copilot] --> B[统一 API 端点]
+  P[Desktop / PWA 客户端] --> B
+  B --> C[配额感知路由层]
+  C --> D[RTK + Caveman<br/>Token 压缩]
+  D --> E{自动回退调度器}
+  E --> F1[免费服务商<br/>90+]
+  E --> F2[付费服务商<br/>200+]
+  F1 --> G[500+ 模型池<br/>Kimi/Claude/GPT/Gemini/GLM/DeepSeek]
+  F2 --> G
+  B -.MCP/A2A.-> H[外部 Agent 与工具]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求处理与回退流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户/IDE
+  participant GW as AI 网关
+  participant C as 压缩模块
+  participant Q as 配额检查
+  participant P1 as 首选服务商
+  participant P2 as 备用服务商
+  U->>GW: 发送 Prompt 请求
+  GW->>C: RTK+Caveman 压缩上下文
+  C-->>GW: 精简后的 Prompt (省 15-95% token)
+  GW->>Q: 查询目标模型配额
+  Q-->>GW: 返回可用性状态
+  GW->>P1: 转发请求
+  alt 请求成功
+    P1-->>GW: 返回结果
+  else 额度耗尽或失败
+    GW->>P2: 自动回退调用
+    P2-->>GW: 返回结果
+  end
+  GW-->>U: 统一格式响应</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/diegosouzapw" target="_blank">sponsors/diegosouzapw</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/smixs/mentor" target="_blank">mentor 会话洞察技能</a></span>
+    <span class="stars">⭐ 60</span>
+  </div>
+  <p class="one-liner">分析 AI 编程会话并生成周报</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">uv</span><span class="tag">SKILL.md 规范</span><span class="tag">HTML/SVG</span><span class="tag">skills.sh 分发</span>
+  </div>
+  <div class="summary">mentor 是一款面向 AI 编程代理（Claude Code、Codex 及任何兼容 SKILL.md 格式的代理）的会话洞察技能。它在本地读取 ~/.claude 与 ~/.codex 目录下的会话历史，聚合多次会话的消息数、工具调用、编辑次数、文件改动、令牌消耗等指标，并结合每日活动、工具占比、语言分布进行分析。最终输出一份自包含的 report.html 报告，涵盖工作主题聚类、代理使用模式、亮点成绩、摩擦点及修复建议、值得尝试的功能、CLAUDE.md 追加建议、新工作流以及趋势展望共八个板块。核心价值在于摩擦点分析：每条问题都对应可复用的修复方案，如 CLAUDE.md 配置、hook 或习惯调整，帮助开发者形成反馈闭环。所有数据处理都在本地完成，隐私可控，报告支持中英俄多语言，可通过 skills.sh 或手动 git clone 一键安装，推荐作为每周固定习惯运行。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">数据流与生成流程</p>
+    <div class="mermaid">graph LR
+  A[~/.claude 会话]:::src --> C[collect.py 解析聚合]
+  B[~/.codex 会话]:::src --> C
+  C --> D[统计摘要 JSON]
+  D --> E[AI 代理分析<br/>八大板块]
+  E --> F[render_report.py 合并]
+  D --> F
+  F --> G[report.html<br/>本地打开]
+  classDef src fill:#e1f5ff,stroke:#0288d1</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">报告章节结构</p>
+    <div class="mermaid">graph TD
+  R[mentor 报告] --> S1[工作主题]
+  R --> S2[代理使用方式]
+  R --> S3[做得好的地方]
+  R --> S4[摩擦点与修复]
+  R --> S5[值得尝试的功能]
+  R --> S6[CLAUDE.md 建议]
+  R --> S7[新的使用方式]
+  R --> S8[趋势展望]
+  S4 -.核心.-> F[可执行修复方案]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/smixs/mentor" target="_blank">smixs/mentor</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/KinetiNode/claude-fable-5-system-prompt-clean" target="_blank">通用 Fable 5 引擎系统提示词</a></span>
+    <span class="stars">⭐ 393</span>
+  </div>
+  <p class="one-liner">精简版跨模型通用系统提示词模板</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">LLM System Prompt Engineering</span><span class="tag">ChatGPT Custom Instructions</span><span class="tag">Gemini Gems</span><span class="tag">Google AI Studio</span>
+  </div>
+  <div class="summary">该项目自称是所谓「泄露的 Claude Fable 5 / Mythos 5 系统提示词」的精简优化版本，作者将原始约 12 万字符（约 3 万 token）的提示词内容压缩至约 500 token，声称在保留核心行为逻辑的同时大幅降低上下文占用与延迟。项目的主要思路是剥离 Anthropic 平台专属的 XML 工具包装（如 `<antml>` 标签）、服务端函数与安全覆写层，仅保留其所谓的「自主推理、多轮长程规划、自我验证循环以及反闲聊行为规则」等运行时哲学层内容，从而让提示词能够被 ChatGPT、Gemini 等非 Claude 系模型直接复用。仓库仅包含一个 `system_prompt.md` 文件，使用者可将其粘贴到 Google AI Studio、OpenAI Developer Platform 的系统指令位，或 ChatGPT 的自定义 GPT、Gemini Gems 构建器中即可生效。项目强调四大保留特征：反聊天机器人式的连续散文输出、对输入数据的结构化重构、禁止思考过程叙述、以及消除「需要帮助请告诉我」式的低价值互动尾句。需注意，README 中提及的「Fable 5」「Mythos 5」「Gemini 3.1 Pro」「ChatGPT 5.6」等名称并非公开发布的官方模型版本，「泄露」说法亦无第三方来源佐证，属于未经证实的社区传闻类内容，读者应审慎对待其真实性与合规风险。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">提示词精简与部署流程</p>
+    <div class="mermaid">graph LR
+  A[原始提示词<br/>约30000 token] --> B[剥离层]
+  B --> B1[移除 antml XML 标签]
+  B --> B2[删除平台专属工具定义]
+  B --> B3[去除服务端函数]
+  B1 --> C[核心行为规则保留]
+  B2 --> C
+  B3 --> C
+  C --> D[system_prompt.md<br/>约500 token]
+  D --> E1[ChatGPT 自定义指令]
+  D --> E2[Gemini Gems]
+  D --> E3[AI Studio 系统指令]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">保留的四大行为约束</p>
+    <div class="mermaid">graph TD
+  Core[核心操作哲学] --> R1[反聊天机器人<br/>禁止过度分点]
+  Core --> R2[结构化重构<br/>拒绝懒惰摘要]
+  Core --> R3[无思考旁白<br/>不输出元评论]
+  Core --> R4[零互动陷阱<br/>去除套话结尾]
+  R1 --> Out[高密度散文输出]
+  R2 --> Out
+  R3 --> Out
+  R4 --> Out</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/KinetiNode/claude-fable-5-system-prompt-clean" target="_blank">KinetiNode/claude-fable-5-system-prompt-clean</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/0xwilliamortiz/andrej-karpathy-skills" target="_blank">Karpathy 风格 Claude Code 行为准则</a></span>
+    <span class="stars">⭐ 169</span>
+  </div>
+  <p class="one-liner">把 Karpathy 踩坑心得变成 Claude Code 规则</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">CLAUDE.md 约定</span><span class="tag">Cursor Project Rules (.mdc)</span><span class="tag">Markdown</span>
+  </div>
+  <div class="summary">本项目是一份面向 Claude Code 的行为准则集合，灵感源自 Andrej Karpathy 关于大语言模型在编写代码时常见失误的公开笔记。作者将 Karpathy 指出的典型问题——擅自假设、隐藏困惑、过度设计、越界修改无关代码等——提炼为四条可执行的原则，并以一份 CLAUDE.md 文件的形式落地，使 AI 编程助手在真实项目中能够稳定遵循。四条原则分别是：Think Before Coding（先思考再动手，显式陈述假设、主动提出多种解释、必要时反问澄清）、Simplicity First（追求最小可行实现，拒绝投机性抽象与冗余错误处理）、Surgical Changes（外科手术式修改，只触碰必要行，不擅自改动风格与相邻代码）、Goal-Driven Execution（以可验证的成功标准替代模糊指令，例如先写复现测试再修复 Bug）。项目提供两种安装方式：通过 fastsetup 以 Claude Code 插件形式全局启用，或将原则追加到项目根目录的 CLAUDE.md。仓库还内置了 .cursor/rules/karpathy-guidelines.mdc，使 Cursor 用户也能复用同一套规则。整体偏向「谨慎优先于速度」，适合非平凡工程任务。</div>
+  <div class="why-notable">在「AI 编程助手」泛滥的当下，多数项目关注如何让模型写更多代码，而这份准则反其道行之，聚焦如何让模型少犯错、少越界、少过度设计。它把顶尖研究者的直觉经验固化为工程可复用的配置文件，是 Prompt 工程从「技巧」走向「规范」的一个典型样本，值得任何使用 Claude Code 或 Cursor 的团队直接借鉴。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">四原则约束下的执行流程</p>
+    <div class="mermaid">graph TD
+  A[用户任务] --> B{原则1: 先思考}
+  B -->|存在歧义| C[提问澄清]
+  B -->|清晰| D{原则2: 最简实现}
+  D --> E{原则4: 定义成功标准}
+  E --> F[编写验证测试]
+  F --> G{原则3: 外科手术式修改}
+  G --> H[执行代码变更]
+  H --> I[运行测试验证]
+  I -->|失败| H
+  I -->|通过| J[交付结果]
+  C --> B</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">规则分发架构</p>
+    <div class="mermaid">graph LR
+  R[karpathy-skills 仓库] --> P[Claude Code 插件]
+  R --> M[CLAUDE.md 模板]
+  R --> C[.cursor/rules/*.mdc]
+  P --> CC[Claude Code 全局生效]
+  M --> PR[单个项目根目录]
+  C --> CU[Cursor 编辑器]
+  CC --> DEV[开发者工作流]
+  PR --> DEV
+  CU --> DEV</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/0xwilliamortiz/andrej-karpathy-skills" target="_blank">0xwilliamortiz/andrej-karpathy-skills</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
