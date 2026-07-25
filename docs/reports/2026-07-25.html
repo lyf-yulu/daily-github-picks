@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-25</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-25 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/0xwilliamortiz/agents-council" target="_blank">Agent Council 智能体议会</a></span>
+    <span class="stars">⭐ 94</span>
+  </div>
+  <p class="one-liner">多AI CLI协作会诊插件</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">Bash Shell</span><span class="tag">YAML</span><span class="tag">Claude Code Skill</span><span class="tag">Codex CLI</span><span class="tag">Gemini CLI</span>
+  </div>
+  <div class="summary">Agent Council 是一款面向 Claude Code 的多智能体协作技能插件，灵感来自 Karpathy 的 LLM Council。它通过调用用户本地已安装的 AI CLI 工具（如 Claude Code、Codex CLI、Gemini CLI 等）并行收集多方观点，再由一位可配置的主席（Chairman）综合各方意见给出最终建议，帮助开发者从多元视角审视问题。与直接调用各家 LLM API 的方案不同，本项目复用已有 CLI 订阅，不产生额外 API 费用。工作流程分为三阶段：并行分发问题、收集展示各智能体回复、由宿主智能体或指定 CLI 作为主席进行综合。项目支持通过 npx 安装或 Claude Code 插件市场安装，自动识别 .claude/ 与 .codex/ 目录，并通过 council.config.yaml 灵活配置成员、命令、图标与颜色。核心执行由 council.sh 脚本驱动，支持 start/status/results/clean 及一次性 wait 模式，便于在宿主 CLI 的原生任务 UI 中呈现进度。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三阶段协作流程</p>
+    <div class="mermaid">graph TD
+  U[用户提问] --> H[宿主 CLI Claude/Codex]
+  H --> S[council.sh 启动任务]
+  S --> P{并行分发}
+  P --> A1[Codex CLI]
+  P --> A2[Gemini CLI]
+  P --> A3[其他成员 CLI]
+  A1 --> C[收集回复]
+  A2 --> C
+  A3 --> C
+  C --> V[展示各方观点]
+  V --> CH[主席综合 Chairman]
+  CH --> R[最终建议返回用户]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装与执行架构</p>
+    <div class="mermaid">graph LR
+  N[npx agent-council] --> I[install.js 安装器]
+  I --> D1[.claude/skills/agent-council/]
+  I --> D2[.codex/skills/agent-council/]
+  D1 --> CFG[council.config.yaml]
+  D2 --> CFG
+  CFG --> SH[council.sh 主脚本]
+  SH --> JOB[council-job.js 任务调度]
+  JOB --> W1[worker: 成员1]
+  JOB --> W2[worker: 成员2]
+  W1 --> OUT[结果聚合]
+  W2 --> OUT
+  OUT --> ST[status/results/clean]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/0xwilliamortiz/agents-council" target="_blank">0xwilliamortiz/agents-council</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/diegosouzapw" target="_blank">免费 AI 网关聚合平台</a></span>
+    <span class="stars">⭐ 1,841 <span class="stars-today">(+1841 today)</span></span>
+  </div>
+  <p class="one-liner">一个端点接入290+提供商500+模型</p>
+  <div class="tags">
+    <span class="tag">AI Gateway</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">A2A (Agent-to-Agent)</span><span class="tag">RTK 压缩</span><span class="tag">Caveman 压缩</span><span class="tag">PWA</span><span class="tag">Desktop 客户端</span><span class="tag">MIT 许可证</span>
+  </div>
+  <div class="summary">该项目是一个基于 MIT 协议开源的免费 AI 网关（AI Gateway），旨在为开发者提供统一的模型调用入口，让编程工作永不中断。项目通过单一 API 端点聚合了 290+ 家 AI 服务提供商（其中 90+ 家提供免费额度）和 500+ 种模型，覆盖 Kimi、Claude、GPT、OpenAI、Gemini、GLM、DeepSeek、MiniMax 等主流大模型。它天然兼容 Claude Code、Codex、Cursor、OpenCode、Cline、Copilot 等主流 AI 编程工具，开发者无需修改客户端即可无缝切换后端模型。核心功能亮点包括：配额感知的自动回退（Quota-aware auto-fallback），当某个提供商额度耗尽或不可用时自动切换到备用通道，保障调用连续性；基于 RTK 与 Caveman 的上下文压缩技术，可节省 15%-95% 的 token 消耗，显著降低使用成本；支持 MCP（Model Context Protocol）与 A2A（Agent-to-Agent）协议，方便与 AI Agent 生态集成；同时提供 Desktop 桌面端和 PWA 渐进式 Web 应用，覆盖多终端使用场景。项目由 500+ 位贡献者共同构建，社区活跃度高，是当前多模型统一接入方案中较为完整的开源实现之一。</div>
+  <div class="why-notable">在 AI 编程工具爆发的当下，模型碎片化与配额限制成为开发者痛点。该项目以 MIT 免费开源方式提供统一网关，兼具广度（500+ 模型）、经济性（token 压缩最高 95%）与生态兼容性（MCP/A2A、主流 IDE 工具），并拥有 500+ 贡献者的社区规模，是值得关注的多模型聚合基础设施方案。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[开发者工具<br/>Claude Code/Cursor/Copilot/Cline] --> B[统一 API 端点]
+  B --> C[配额感知路由层]
+  C --> D[Token 压缩<br/>RTK + Caveman]
+  D --> E{自动回退调度}
+  E --> F[免费提供商<br/>90+]
+  E --> G[付费提供商<br/>200+]
+  F --> H[500+ 模型<br/>Kimi/Claude/GPT/Gemini/DeepSeek]
+  G --> H
+  B -.MCP/A2A.-> I[Agent 生态]
+  A -.PWA/Desktop.-> B</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求调用与回退流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 客户端工具
+  participant GW as AI 网关
+  participant Q as 配额检查
+  participant C as 压缩模块
+  participant P1 as 首选提供商
+  participant P2 as 备用提供商
+  U->>GW: 发送模型请求
+  GW->>C: 上下文压缩(15-95%)
+  C->>Q: 查询可用配额
+  Q->>P1: 调用首选
+  alt 配额充足
+    P1-->>GW: 返回结果
+  else 配额耗尽/失败
+    Q->>P2: 自动回退
+    P2-->>GW: 返回结果
+  end
+  GW-->>U: 统一响应</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/diegosouzapw" target="_blank">sponsors/diegosouzapw</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/smixs/mentor" target="_blank">mentor</a></span>
+    <span class="stars">⭐ 62</span>
+  </div>
+  <p class="one-liner">AI 编程会话复盘技能</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">uv</span><span class="tag">Markdown (SKILL.md)</span><span class="tag">HTML/SVG</span><span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">skills.sh</span>
+  </div>
+  <div class="summary">mentor 是一款面向 AI 编程助手（Claude Code、Codex 等支持 SKILL.md 格式的智能体）的会话洞察技能。它在本地读取 ~/.claude 与 ~/.codex 下的会话历史与 rollout 记录，聚合多次会话的消息量、工具调用、编辑次数、涉及文件、token 消耗、每日活跃度、工具与语言使用比例等指标，随后由智能体基于真实提示与统计生成一份结构化分析，最终输出一份自包含的 report.html 报告。报告包含八个板块：工作主题聚类、智能体使用方式、亮点表现、摩擦点、值得尝试的功能、CLAUDE.md 补充建议、新用法与趋势展望，重点在于为每个摩擦点给出可复制的修复方案（如 CLAUDE.md 配置、hook 或习惯调整）。全流程本地运行，不上传任何数据，可通过 npx skills add 一键安装，也支持手动 git clone 到技能目录，并可作为每周复盘习惯运行。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">数据流与生成流程</p>
+    <div class="mermaid">graph LR
+  A[~/.claude 会话记录] --> C[collect.py 解析聚合]
+  B[~/.codex rollouts] --> C
+  C --> D[统计摘要 JSON]
+  D --> E[AI 智能体分析<br/>八大板块]
+  E --> F[render_report.py 合成]
+  D --> F
+  F --> G[report.html<br/>自包含报告]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能调用与使用场景</p>
+    <div class="mermaid">graph TD
+  U[开发者] -->|/mentor 命令或自然语言| S[mentor Skill]
+  S -->|claude| M1[Claude Code 会话]
+  S -->|codex| M2[OpenAI Codex 会话]
+  S -->|both| M3[跨智能体习惯分析]
+  M1 --> R[本地 HTML 报告]
+  M2 --> R
+  M3 --> R
+  R --> U2[每周复盘<br/>改进 CLAUDE.md 与工作流]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/smixs/mentor" target="_blank">smixs/mentor</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/kennethkhoocy/applied-micro-skills" target="_blank">应用微观经济学研究技能包</a></span>
+    <span class="stars">⭐ 57</span>
+  </div>
+  <p class="one-liner">Claude Code 与 Codex 的实证研究技能集</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">Python</span><span class="tag">Stata / pystata</span><span class="tag">pyfixest</span><span class="tag">CuPy</span><span class="tag">AsyncOpenAI / httpx</span><span class="tag">WRDS (Compustat/CRSP)</span><span class="tag">LaTeX</span><span class="tag">matplotlib</span><span class="tag">Pandoc</span>
+  </div>
+  <div class="summary">applied-micro-skills 是一个面向应用微观经济学实证研究的技能库，为 Claude Code 和 Codex 两大 AI 编码代理提供 18 个自成一体的技能模块，覆盖从文献检索、数据获取、分类标注、计量估计到表格图形与文档交付的完整研究流水线。项目的核心定位是可验证性：通过 adversarial-empirical-review 在隔离副本中从原始数据重跑整个流水线，确保论文中的数字可复现；LLM 方法簇则聚焦分类活动的漂移检测、金标准边界诊断、标注输入一致性核查及裁决表构建，避免机器标签的静默偏差。基础设施层包含 WRDS 安全登录、pystata 驱动、pyfixest GPU 加速与网格分片，以及事件研究 CAR 引擎（对齐 Stata 的 eventstudy2）。输出层提供 estout 风格 LaTeX 表格、Stata 风格 matplotlib 图形、引文放置校验、LaTeX 转 Word 及 Markdown 转 PDF 等能力，让实证论文的每一环节都可审计、可交付。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">实证研究流水线与技能映射</p>
+    <div class="mermaid">graph TD
+  A[文献检索<br/>lit-review-orchestrator] --> B[数据获取<br/>wrds / download-gated-pdfs]
+  B --> C[分类标注<br/>LLM 方法簇]
+  C --> C1[annotator-input-parity-check]
+  C --> C2[asyncopenai-concurrency]
+  C --> C3[llm-campaign-drift-gate]
+  C --> C4[llm-gold-bound-failure-check]
+  C --> C5[adjudication-sheets]
+  C --> D[计量估计<br/>event-study-cars / stata / pyfixest]
+  D --> E[表格与图形<br/>latex-empirical-tables / stata-style-figures]
+  E --> F[引文与交付<br/>cite-placement / latex-to-word / markdown-to-pdf]
+  F --> G[对抗性复现审计<br/>adversarial-empirical-review]
+  G -.回溯校验.-> B
+  G -.回溯校验.-> D
+  G -.回溯校验.-> E</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">LLM 分类活动漂移防护流程</p>
+    <div class="mermaid">flowchart LR
+  S[暂停的评分活动] --> R[请求恢复]
+  R --> G{drift-gate 金丝雀}
+  G -->|重发约 100 条缓存 prompt| P[对比新旧输出]
+  P -->|一致| OK[放行生产批量]
+  P -->|不一致| FAIL[定位供应商模型切换<br/>切分为两个变量]
+  OK --> Q[asyncopenai 并发池<br/>提升吞吐]
+  Q --> J[裁决表<br/>adjudication-sheets]
+  J --> H[人工复核]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/kennethkhoocy/applied-micro-skills" target="_blank">kennethkhoocy/applied-micro-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/KinetiNode/claude-fable-5-system-prompt-clean" target="_blank">通用版 Fable 5 系统提示词</a></span>
+    <span class="stars">⭐ 406</span>
+  </div>
+  <p class="one-liner">跨模型通用的精简版 Claude 系统提示词</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">Prompt Engineering</span><span class="tag">LLM System Prompt</span>
+  </div>
+  <div class="summary">该项目是对 Anthropic 公开的 Claude Fable 5 / Mythos 5 系统提示词进行的厂商中立化改造版本。原始提示词中包含大量专为 Claude 生产环境设计的基础设施内容，例如 XML 规范、工具接口、产品特定行为和内部实现指导，这些内容在迁移到其他前沿大模型时价值有限。项目通过过滤这些实现细节，保留可跨模型泛化的高价值行为指导原则，从而显著降低 token 消耗，提升上下文利用效率。仓库提供三个层次的版本以适配不同场景：core.md 为最小 token 的核心行为原则版本；balanced.md 为大多数场景推荐的平衡版本；complete.md 则保留了几乎所有厂商中立的行为指导。保留下来的内容涵盖用户意图理解、不确定性诚实处理、清晰自然的沟通、高质量代码生成、含权衡分析的实用建议、响应前的验证、客观纠错以及避免冗余元评论等关键能力。移除的内容包括 XML 包装、MCP 与工具基础设施、产品特定指令、UI 行为、存储与产物管理等。项目宣称已在 Claude、ChatGPT、Gemini、DeepSeek、Qwen、Grok、GLM 等主流模型上具备兼容性，使用者只需将对应 Markdown 文件粘贴到系统提示词字段即可。</div>
+  <div class="why-notable">该项目切入了一个具有争议性但价值明确的问题：当剥离厂商专属实现细节后，顶级模型的系统提示词中还有哪些行为原则真正值得沿用。它不是简单的提示词泄露搬运，而是通过结构化裁剪把 Claude 的行为工程经验转化为可移植资产，对希望构建自有 Agent 或对提示词工程感兴趣的开发者具有直接参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">提示词裁剪与分发流程</p>
+    <div class="mermaid">graph TD
+  A[Claude Fable 5 原始提示词] --> B{裁剪过滤}
+  B -->|移除| C[XML/MCP/工具接口/产品指令]
+  B -->|保留| D[通用行为原则]
+  D --> E[core.md 精简版]
+  D --> F[balanced.md 平衡版]
+  D --> G[complete.md 完整版]
+  E --> H[目标模型]
+  F --> H
+  G --> H
+  H --> I[Claude]
+  H --> J[ChatGPT]
+  H --> K[Gemini]
+  H --> L[DeepSeek/Qwen/Grok 等]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">版本选型决策</p>
+    <div class="mermaid">graph LR
+  A[使用者需求] --> B{优先目标?}
+  B -->|最低 token| C[core.md]
+  B -->|通用推荐| D[balanced.md]
+  B -->|最全行为覆盖| E[complete.md]
+  C --> F[粘贴到系统提示词字段]
+  D --> F
+  E --> F</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/KinetiNode/claude-fable-5-system-prompt-clean" target="_blank">KinetiNode/claude-fable-5-system-prompt-clean</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
