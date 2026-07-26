@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-26</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-26 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/0xwilliamortiz/agents-council" target="_blank">Agent Council 智能体议会</a></span>
+    <span class="stars">⭐ 111</span>
+  </div>
+  <p class="one-liner">多 AI CLI 协作汇聚多元观点</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">Shell (Bash)</span><span class="tag">YAML</span><span class="tag">Claude Code Skill</span><span class="tag">Codex CLI</span><span class="tag">Gemini CLI</span>
+  </div>
+  <div class="summary">Agent Council 是一个面向 Claude Code 与 Codex CLI 的多智能体协作插件（Skill），受 Karpathy 的 LLM Council 项目启发，但改为调用用户本机已安装的 AI 命令行工具（如 Claude Code、Codex CLI、Gemini CLI 等），而不是直连各厂商 API，因此在已有订阅前提下不产生额外调用费用。项目实现了一套三阶段协作流程：首先将用户问题并行分发给配置中列出的所有智能体成员，收集各自的独立回答；随后以格式化视图汇总展示各方观点；最后由宿主 CLI 作为 Chairman（主席）角色对全部意见进行综合，输出最终建议，也可通过配置指定专门的 Chairman 命令在脚本内完成综合。安装方式提供 npx 一键安装与 Claude Code 插件市场两种途径，安装器会自动检测本机可用的 CLI 并生成 council.config.yaml 模板，用户可自由添加成员、图标与颜色。核心执行脚本 council.sh 支持一次性调用与后台作业模式（start/status/wait/results/clean），并针对宿主工具 UI 提供 checklist、JSON 进度等多种输出形式，方便与 Codex 或 Claude 的原生任务面板集成。整体基于 Node.js 与 Shell 实现，强调轻量、可复现、易于自定义。</div>
+  <div class="why-notable">在 Agent 生态爆发的当下，该项目用极简的 Skill + Shell 方案解决了跨 CLI 多智能体协作的实际痛点，既避开了 MCP 的复杂度，又绕开了 API 计费问题，让订阅用户可以自由组合 Claude、Codex、Gemini 等主流工具进行多视角决策，是一个对个人开发者非常务实的协作范式参考。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三阶段协作流程</p>
+    <div class="mermaid">graph TD
+  U[用户提问] --> H[宿主 CLI\nClaude/Codex]
+  H --> S[council.sh]
+  S --> P{阶段1\n并行分发}
+  P --> M1[Codex CLI]
+  P --> M2[Gemini CLI]
+  P --> M3[其他成员 CLI]
+  M1 --> C[阶段2\n观点汇总]
+  M2 --> C
+  M3 --> C
+  C --> CH[阶段3\nChairman 综合]
+  CH --> R[最终建议]
+  R --> U</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装与配置结构</p>
+    <div class="mermaid">graph LR
+  A[npx agent-council] --> B{检测本机 CLI}
+  B -->|Claude Code| C[.claude/skills/agent-council/]
+  B -->|Codex CLI| D[.codex/skills/agent-council/]
+  C --> E[council.config.yaml]
+  D --> E
+  E --> F[chairman.role]
+  E --> G[members 列表]
+  G --> H[name/command/emoji/color]
+  F --> I[council.sh 调度]
+  H --> I</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/0xwilliamortiz/agents-council" target="_blank">0xwilliamortiz/agents-council</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/affaan-m" target="_blank">Agent Harness 性能优化系统</a></span>
+    <span class="stars">⭐ 377 <span class="stars-today">(+377 today)</span></span>
+  </div>
+  <p class="one-liner">为AI编码代理注入技能与记忆</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">Opencode</span><span class="tag">Cursor</span><span class="tag">Agent Harness 生态</span>
+  </div>
+  <div class="summary">该项目是一套面向 AI 编码代理（Agent Harness）的性能优化系统，旨在为 Claude Code、Codex、Opencode、Cursor 等主流 AI 编程助手提供统一的能力增强层。项目围绕五大核心维度构建：Skills（技能扩展）、Instincts（直觉决策）、Memory（记忆管理）、Security（安全防护）以及 Research-first Development（研究优先的开发范式），试图弥补当前 AI 编码工具在长期上下文保持、领域知识沉淀和安全边界控制方面的不足。通过将可复用的技能模块、行为直觉和持久化记忆注入到不同厂商的 Agent 中，开发者可以获得跨工具的一致体验，避免在切换 Agent 时重复配置。项目强调 research-first 理念，鼓励代理在动手写代码前先进行充分的上下文调研与方案验证，从而减少幻觉和返工。整体定位偏向元层工具（meta-tooling），并非替代现有 AI 编码助手，而是作为它们的性能与行为治理层存在，服务于对代码质量、安全合规和工程规范有较高要求的团队与个人开发者。由于仓库当前 README 信息较为精简，具体实现细节和技术栈尚待进一步公开。</div>
+  <div class="why-notable">在 AI 编码助手同质化严重的当下，该项目切入的是一个被忽视但价值极高的中间层：不做新的 Agent，而是为已有 Agent 提供技能、记忆和安全治理。这种元层思路能够沉淀跨工具通用的工程实践，避免开发者被单一厂商锁定，同时把 research-first、安全边界等企业级关注点前置到代理行为层，具备成为团队级 AI 编码基础设施的潜力。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[开发者] --> B[Agent Harness 优化层]
+  B --> C[Skills 技能库]
+  B --> D[Instincts 直觉规则]
+  B --> E[Memory 记忆存储]
+  B --> F[Security 安全策略]
+  B --> G[Research-first 调研模块]
+  C --> H[Claude Code]
+  D --> H
+  E --> I[Codex]
+  F --> J[Opencode]
+  G --> K[Cursor]
+  H --> L[代码产出]
+  I --> L
+  J --> L
+  K --> L</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Research-first 工作流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 开发者
+  participant H as Harness
+  participant M as 记忆库
+  participant A as AI Agent
+  U->>H: 提交编码任务
+  H->>M: 检索历史上下文
+  M-->>H: 返回相关记忆
+  H->>A: 注入技能与直觉
+  A->>A: 先调研再编码
+  A-->>H: 输出方案与代码
+  H->>H: 安全策略校验
+  H-->>U: 交付结果
+  H->>M: 沉淀新知识</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/smixs/mentor" target="_blank">mentor</a></span>
+    <span class="stars">⭐ 64</span>
+  </div>
+  <p class="one-liner">为AI编码代理生成会话洞察报告</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">uv</span><span class="tag">HTML</span><span class="tag">SVG</span><span class="tag">Markdown (SKILL.md)</span><span class="tag">skills.sh</span>
+  </div>
+  <div class="summary">mentor 是一个面向 AI 编码代理（Claude Code、Codex 及任何兼容 SKILL.md 格式的代理）的会话洞察技能。它在本地读取用户的 Claude Code 会话记录（~/.claude）与 OpenAI Codex 滚动日志（~/.codex），聚合多次会话数据，生成一份自包含的 HTML 报告，展示用户实际的工作方式：做了什么、时间浪费在哪里、以及具体的改进方案。报告包含八个板块，涵盖工作主题聚类、代理使用方式、成功经验、摩擦点、值得尝试的功能、可复制到 CLAUDE.md 的配置建议、新工作流以及趋势预测。核心价值在于摩擦分析部分，每个问题都对应可执行的修复方案（如 CLAUDE.md 配置、hook 或习惯调整），形成周度反馈闭环。工具由三个 Python 脚本驱动：collect.py 解析会话生成统计包，代理基于摘要撰写分析，render_report.py 合成最终 HTML。所有数据本地处理，不上传，通过 skills.sh 一键安装。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与数据流</p>
+    <div class="mermaid">graph LR
+  A[~/.claude 会话记录] --> C[collect.py 解析聚合]
+  B[~/.codex 滚动日志] --> C
+  C --> D[统计摘要 JSON]
+  D --> E[AI 代理分析<br/>八大板块洞察]
+  E --> F[render_report.py 合成]
+  D --> F
+  F --> G[report.html<br/>自包含单文件报告]
+  G --> H[浏览器打开]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">用户使用流程</p>
+    <div class="mermaid">flowchart TD
+  A[开发者] -->|npx skills add smixs/mentor| B[安装 skill]
+  B --> C{选择运行方式}
+  C -->|/mentor claude| D[仅 Claude 会话]
+  C -->|/mentor codex| E[仅 Codex 会话]
+  C -->|/mentor both| F[跨代理分析]
+  D --> G[生成 HTML 报告]
+  E --> G
+  F --> G
+  G --> H[识别摩擦点]
+  H --> I[应用 CLAUDE.md 修复建议]
+  I -->|每周循环| C</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/smixs/mentor" target="_blank">smixs/mentor</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/kennethkhoocy/applied-micro-skills" target="_blank">应用微观经济学研究技能包</a></span>
+    <span class="stars">⭐ 57</span>
+  </div>
+  <p class="one-liner">为 Claude Code 与 Codex 提供应用微观实证研究工具集</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">Stata (pystata)</span><span class="tag">pyfixest</span><span class="tag">AsyncOpenAI</span><span class="tag">httpx</span><span class="tag">pandas</span><span class="tag">LaTeX</span><span class="tag">matplotlib</span><span class="tag">CuPy</span><span class="tag">WRDS</span><span class="tag">Claude Code</span><span class="tag">Codex</span>
+  </div>
+  <div class="summary">applied-micro-skills 是一个面向应用微观经济学实证研究的技能库，为 Claude Code 与 Codex 两大 AI 编程助手提供 18 个自包含技能模块，覆盖从文献检索、数据获取、LLM 辅助分类、计量估计、表格图形制作到最终交付的完整研究流水线。项目将验证作为核心理念：adversarial-empirical-review 在隔离环境中重跑整个流水线以确保论文中的数字可从原始数据复现；LLM 方法集群包含标注输入一致性检查、金标准边界诊断、活动漂移守门等五个技能，防止分类活动因 provider 端模型变更或标签污染而失效。基础设施层面提供 WRDS 安全登录、pystata 驱动、pyfixest GPU 加速与网格分片、事件研究 CAR 引擎（与 Stata eventstudy2 对齐至浮点精度）。输出层面支持 estout 风格 LaTeX 表格、Stata 风格 matplotlib 图形、引用放置、LaTeX 转 Word、Markdown 转 PDF 等，帮助研究者高效产出发表级成果。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">实证研究流水线与技能映射</p>
+    <div class="mermaid">graph TD
+  A[文献检索] -->|lit-review-orchestrator| B[数据获取]
+  B -->|wrds / download-gated-pdfs| C[分类与标注]
+  C -->|annotator-input-parity-check| C1[LLM 分类活动]
+  C1 -->|asyncopenai-concurrency| C2[并发评分]
+  C2 -->|llm-campaign-drift-gate| C3[漂移检测]
+  C3 -->|adjudication-sheets| D[计量估计]
+  D -->|event-study-cars / stata / pyfixest| E[表格与图形]
+  E -->|latex-empirical-tables / stata-style-figures| F[验证]
+  F -->|adversarial-empirical-review| G[交付]
+  G -->|latex-to-word / markdown-to-pdf / cite-placement| H[发表稿]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">LLM 分类活动守门流程</p>
+    <div class="mermaid">flowchart LR
+  A[标注输入一致性] --> B{人类与模型读到同一文档?}
+  B -->|否| X[修复输入管道]
+  B -->|是| C[启动 AsyncOpenAI 并发评分]
+  C --> D[缓存 Prompt 与响应]
+  D --> E[活动暂停]
+  E --> F[恢复前发送百条金丝雀]
+  F --> G{与缓存分数一致?}
+  G -->|否| Y[定位 provider 模型切换点]
+  G -->|是| H[继续生产评分]
+  H --> I[金标准边界失败诊断]
+  I --> J[人工裁决表 adjudication-sheets]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/kennethkhoocy/applied-micro-skills" target="_blank">kennethkhoocy/applied-micro-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/KinetiNode/claude-fable-5-system-prompt-clean" target="_blank">通用版 Fable 5 系统提示词</a></span>
+    <span class="stars">⭐ 418</span>
+  </div>
+  <p class="one-liner">跨模型通用的 Claude 系统提示词精简版</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">Prompt Engineering</span><span class="tag">LLM System Prompt</span>
+  </div>
+  <div class="summary">本项目是对 Anthropic 公开的 Claude Fable 5 / Mythos 5 系统提示词的厂商中立化改造版本。原始提示词包含大量为 Claude 生产环境定制的基础设施内容，例如 XML 约定、工具接口、产品化行为规则以及内部实现指引，这些内容在迁移到其他前沿大模型时收益有限甚至产生干扰。作者通过系统性过滤，剥离了 Claude 专属实现细节，保留具有跨模型普适价值的行为准则，并使用干净的 Markdown 格式重新组织，使其可以直接投入 Gemini 3.1 Pro、ChatGPT 5.6、DeepSeek、Qwen、Grok、GLM 等主流指令跟随模型使用。仓库提供三档版本：core.md 追求最小 token 占用的核心原则，balanced.md 在体积与覆盖度之间取得平衡（推荐日常使用），complete.md 则保留了几乎全部与厂商无关的行为指引。保留的关键能力包括：理解用户真实意图、诚实处理不确定性、自然清晰的表达、高质量代码生成、带权衡分析的实用建议、回答前的自我校验以及客观纠错等。项目定位并非替代或超越 Anthropic 官方版本，而是提出一个不同的问题：剥离 Claude 专属实现后，哪些行为原则仍具有普适价值。使用者可将其粘贴到 API 的 system 字段，或作为自定义 GPT、Gemini Gems 的指令使用。</div>
+  <div class="why-notable">在系统提示词工程日益成为核心竞争力的当下，该项目从一份具备工业级打磨的 Claude 提示词中提炼出可跨模型迁移的行为原则，并给出三档 token 预算方案，对于构建多模型 Agent、需要在 Gemini / ChatGPT / 开源模型之间切换的开发者具有直接的复用价值，也为 prompt 减负与蒸馏提供了一个可参考的方法论样本。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">提示词过滤与分发流程</p>
+    <div class="mermaid">graph TD
+  A[Claude Fable 5 原始提示词] --> B{内容分类过滤}
+  B -->|剥离| C[XML 约定 / MCP 工具 / 产品化行为 / 存储与 UI 细节]
+  B -->|保留| D[通用行为准则]
+  D --> E[意图理解]
+  D --> F[诚实与不确定性处理]
+  D --> G[代码质量与权衡分析]
+  D --> H[自我校验与纠错]
+  E & F & G & H --> I[Markdown 重构]
+  I --> J[core.md 最小 token]
+  I --> K[balanced.md 推荐版]
+  I --> L[complete.md 完整版]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">多模型部署示意</p>
+    <div class="mermaid">graph LR
+  U[开发者 / Agent 构建者] --> P[选择版本 core / balanced / complete]
+  P --> S[粘贴至 System Prompt]
+  S --> C1[Claude]
+  S --> C2[ChatGPT 5.6]
+  S --> C3[Gemini 3.1 Pro]
+  S --> C4[DeepSeek / Qwen / GLM / Grok]
+  C1 & C2 & C3 & C4 --> R[一致的行为表现]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/KinetiNode/claude-fable-5-system-prompt-clean" target="_blank">KinetiNode/claude-fable-5-system-prompt-clean</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
