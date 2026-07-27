@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-27</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-27 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/0xwilliamortiz/agents-council" target="_blank">Agent Council</a></span>
+    <span class="stars">⭐ 202</span>
+  </div>
+  <p class="one-liner">多 AI 代理协作插件</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">Shell Script</span><span class="tag">JavaScript</span><span class="tag">YAML</span>
+  </div>
+  <div class="summary">Agent Council 是一个为 Claude Code 和 Codex CLI 设计的多 AI 代理协作技能插件，通过编排多个已安装的 AI CLI 工具（如 Codex CLI、Gemini CLI 等）来获取不同视角的意见并合成最终结论。该项目的核心优势在于零额外 API 成本——它直接调用本地已安装的 AI CLI 工具，而非像 Karpathy 的 LLM Council 那样直接调用各个 LLM 的付费 API。工作流程分为三个阶段：首先所有配置的 AI 代理并行接收问题并独立响应；然后收集并展示各代理的回复；最后由宿主代理（默认为 Claude Code/Codex CLI）担任主席角色，综合所有意见形成最终建议。项目支持通过 npx 安装或 Claude Code 插件市场安装，安装器会自动检测可用的 CLI 工具并生成配置文件。用户可以通过 YAML 配置文件自定义理事会成员、指定主席角色、设置命令参数和显示样式。项目提供了完整的脚本工具链，支持一键执行、任务管理、进度追踪和结果清理等功能，适合需要多模型交叉验证、技术选型决策或复杂问题分析的开发场景。</div>
+  <div class="why-notable">该项目巧妙解决了多模型协作的成本问题，通过复用本地 CLI 订阅避免了重复 API 付费，同时提供了比 MCP 更简单的技能扩展机制。三阶段共识流程设计清晰，特别适合需要多模型交叉验证的技术决策场景，对于同时订阅多个 AI 服务的开发者具有很高的实用价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三阶段工作流程</p>
+    <div class="mermaid">graph TD
+    A[用户提问] --> B[Stage 1: 并行分发]
+    B --> C1[Codex CLI]
+    B --> C2[Gemini CLI]
+    B --> C3[其他 AI CLI]
+    C1 --> D[Stage 2: 收集响应]
+    C2 --> D
+    C3 --> D
+    D --> E[Stage 3: 主席综合]
+    E --> F[最终建议]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph LR
+    A[宿主 Agent<br/>Claude Code/Codex CLI] --> B[council.sh]
+    B --> C[council.config.yaml]
+    C --> D1[Member: Codex CLI]
+    C --> D2[Member: Gemini CLI]
+    C --> D3[Member: 其他 CLI]
+    D1 --> E[Job Manager]
+    D2 --> E
+    D3 --> E
+    E --> F[结果汇总]
+    F --> A
+    B --> G[进度追踪<br/>status/wait/results]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/0xwilliamortiz/agents-council" target="_blank">0xwilliamortiz/agents-council</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/kennethkhoocy/applied-micro-skills" target="_blank">应用微观经济学研究技能库</a></span>
+    <span class="stars">⭐ 57</span>
+  </div>
+  <p class="one-liner">Claude/Codex 实证研究工具集</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">Stata (pystata)</span><span class="tag">pyfixest + CuPy (GPU 固定效应)</span><span class="tag">AsyncOpenAI + httpx</span><span class="tag">LaTeX</span><span class="tag">Pandas</span><span class="tag">WRDS API</span><span class="tag">Matplotlib</span>
+  </div>
+  <div class="summary">这是一个面向应用微观经济学实证研究的 AI 辅助技能库,为 Claude Code 和 Codex 提供 18 个独立技能模块。项目覆盖实证研究全流程:从数据获取(WRDS 连接、文献检索)、LLM 辅助分类标注(含漂移检测、一致性校验)、计量估计(事件研究、Stata/pyfixest 集成)到成果输出(LaTeX 表格、Stata 风格图表、引文校验)。核心亮点是可重现性审计工具 adversarial-empirical-review,能在隔离环境重跑整个分析流程并验证表格一致性。所有技能零依赖独立运行,可单独复制使用。技术栈以 Python 为主,集成 Stata、LaTeX、GPU 加速固定效应回归(pyfixest+CuPy)、异步 OpenAI 批处理等工具。特别关注 LLM 分类工作流的质量控制,提供标注者输入一致性检查、黄金标准边界失效诊断、模型漂移门控等五个验证模块。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">实证研究流程与技能分布</p>
+    <div class="mermaid">graph LR
+    A[文献获取] --> B[数据采集]
+    B --> C[分类标注]
+    C --> D[计量估计]
+    D --> E[表格图表]
+    E --> F[可重现性审计]
+    F --> G[交付发表]
+    
+    A -.-> A1[lit-review-orchestrator]
+    A -.-> A2[download-gated-pdfs]
+    B -.-> B1[wrds]
+    C -.-> C1[annotator-input-parity]
+    C -.-> C2[llm-drift-gate]
+    C -.-> C3[asyncopenai-pool]
+    D -.-> D1[event-study-cars]
+    D -.-> D2[stata/pyfixest]
+    E -.-> E1[latex-tables]
+    E -.-> E2[stata-figures]
+    F -.-> F1[adversarial-review]
+    G -.-> G1[latex-to-word]
+    G -.-> G2[cite-placement]
+    
+    style F1 fill:#ff6b6b
+    style C1 fill:#4ecdc4
+    style C2 fill:#4ecdc4
+    style D1 fill:#ffe66d</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">LLM 分类质量控制五步检查</p>
+    <div class="mermaid">graph TD
+    Start[开始 LLM 分类项目] --> Check1{标注者看到的
+文本一致吗?}
+    Check1 -->|否| Fix1[annotator-input-parity-check
+修复输入差异]
+    Check1 -->|是| Batch[异步批处理]
+    
+    Fix1 --> Batch
+    Batch --> Opt[asyncopenai-concurrency
+移除并发瓶颈]
+    Opt --> Pause{暂停后恢复?}
+    
+    Pause -->|是| Canary[llm-campaign-drift-gate
+金丝雀检测模型漂移]
+    Canary --> Drift{检测到漂移?}
+    Drift -->|是| Stop[停止,重新设计]
+    Drift -->|否| Continue
+    
+    Pause -->|否| Continue[继续运行]
+    Continue --> Valid{验证通过?}
+    
+    Valid -->|否| Diagnose[llm-gold-bound-failure
+诊断能否通过提示修复]
+    Diagnose --> Fixable{可修复?}
+    Fixable -->|否| Redesign[重新设计流程]
+    Fixable -->|是| Dispute
+    
+    Valid -->|是| Done[完成]
+    Dispute[争议案例] --> Adj[adjudication-sheets
+生成字节一致的裁决表]
+    Adj --> Human[人工裁决]
+    Human --> Done
+    
+    style Check1 fill:#ffe66d
+    style Canary fill:#ff6b6b
+    style Diagnose fill:#4ecdc4</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/kennethkhoocy/applied-micro-skills" target="_blank">kennethkhoocy/applied-micro-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/risa-labs-inc/BossConsole" target="_blank">BOSS Console</a></span>
+    <span class="stars">⭐ 198</span>
+  </div>
+  <p class="one-liner">首个开源多平台AI智能体操作台</p>
+  <div class="tags">
+    <span class="tag">Kotlin Multiplatform</span><span class="tag">Compose Multiplatform</span><span class="tag">JVM</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Fluck (嵌入式浏览器)</span><span class="tag">Supabase Edge Functions</span>
+  </div>
+  <div class="summary">BOSS Console 是首个开源的多平台 AI 智能体运行环境，为企业、科研和研究场景打造。它是一个原生 JVM 应用（非 Electron），支持多线程并发，可在笔记本到超算集群间无缝扩展。用户可接入任意 AI 编码智能体（Claude Code、Codex、Gemini、OpenCode），为其提供真实浏览器（Fluck 嵌入式浏览器）、终端（BossTerm）、代码编辑器、密钥管理和自动化能力。核心创新在于双向集成：智能体既是工作空间的使用者，也能通过 100+ MCP 工具感知和操控 BOSS 自身（标签页、终端输出、浏览器、Git 状态等），实现真正的态势感知和自主多步骤任务执行。采用 Apache-2.0 协议，基于 Kotlin Multiplatform 和 Compose Multiplatform 构建，支持 macOS、Windows、Linux（x64/ARM64）。内置细粒度权限治理（RBAC + 熔断开关）、热重载插件系统（Toolbox 应用商店）、可分享终端会话（二维码/多用户/端到端加密），并支持智能体自我演化工具。相比 Claude Desktop、Cursor、Windsurf 等闭源方案，BOSS 是唯一开源、模型无关、原生多线程的智能体平台。</div>
+  <div class="why-notable">BOSS Console 填补了 AI 智能体工具链的关键空白：它是唯一开源、模型无关、原生性能的多平台智能体运行环境。通过将智能体的执行环境本身暴露为 MCP 工具，实现了前所未有的态势感知和自主操控能力——智能体不仅使用工具完成任务,还能感知工作空间状态、调整自身行为,甚至在运行时演化工具。相比闭源的 Claude Desktop、Cursor 等方案,BOSS 提供完整的企业级治理(RBAC、审计)、真实浏览器自动化、跨设备终端共享等高级能力。对科研和企业用户而言,这是首个可完全自主掌控、审计和扩展的智能体基础设施,且 JVM 原生架构在高并发场景下性能远超 Electron 方案。热重载插件系统和智能体自我演化能力,使其成为探索人机协作新范式的理想平台。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">BOSS Console 系统架构</p>
+    <div class="mermaid">graph TB
+    subgraph BOSS["BOSS Console (JVM)"]]
+        UI["Compose Multiplatform UI"]
+        Core["核心引擎"]
+        Browser["Fluck 嵌入式浏览器"]
+        Term["BossTerm 终端"]
+        Editor["代码编辑器"]
+        Secrets["密钥管理器"]
+        Toolbox["Toolbox 插件系统"]
+        MCP["MCP 工具层 (100+ 工具)"]
+    end
+    
+    Agent["AI 智能体<br/>(Claude/Codex/Gemini/OpenCode)"]
+    User["👤 用户"]
+    Device["📱 远程设备<br/>(QR 码)"]
+    
+    User --> UI
+    Agent <-->|感知与控制| MCP
+    MCP --> Browser
+    MCP --> Term
+    MCP --> Editor
+    MCP --> Secrets
+    MCP --> Core
+    Toolbox -->|热重载| MCP
+    Term -->|E2E 加密共享| Device
+    
+    style BOSS fill:#e1f5ff
+    style Agent fill:#fff4e1
+    style MCP fill:#ffe1f5</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">智能体工作流与态势感知</p>
+    <div class="mermaid">sequenceDiagram
+    participant U as 用户
+    participant A as AI 智能体
+    participant M as MCP 工具层
+    participant B as BOSS 组件<br/>(浏览器/终端/编辑器)
+    
+    U->>A: 任务指令<br/>"部署网站并验证"
+    A->>M: mcp__boss__terminal_exec<br/>运行部署脚本
+    M->>B: 执行命令
+    B-->>M: 输出日志
+    A->>M: mcp__boss__terminal_tail<br/>读取终端输出
+    M-->>A: 返回日志<br/>(态势感知)
+    A->>M: mcp__boss__browser_navigate<br/>打开网站 URL
+    M->>B: 加载页面
+    A->>M: mcp__boss__browser_run_js<br/>验证页面元素
+    M->>B: 执行 JS
+    B-->>M: 验证结果
+    M-->>A: 返回结果
+    A->>U: 报告:<br/>"部署成功,网站可访问"
+    
+    Note over A,M: 智能体通过 MCP 工具<br/>感知工作空间状态<br/>自主完成多步骤任务</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/risa-labs-inc/BossConsole" target="_blank">risa-labs-inc/BossConsole</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/0xwilliamortiz/andrej-karpathy-skills" target="_blank">Karpathy 编程准则插件</a></span>
+    <span class="stars">⭐ 169</span>
+  </div>
+  <p class="one-liner">让 Claude 写出更严谨代码的行为规范</p>
+  <div class="tags">
+    <span class="tag">Claude Code Plugin</span><span class="tag">Markdown 规范文件</span><span class="tag">Cursor Rules</span><span class="tag">行为约束系统</span>
+  </div>
+  <div class="summary">这是一个将 Andrej Karpathy 关于 LLM 编程缺陷的观察转化为可执行规范的项目。Karpathy 指出 LLM 在编写代码时常犯三类错误：静默假设（不确认需求就自行决策）、过度工程（用 1000 行实现 100 行就能解决的问题）、意外副作用（修改无关代码和注释）。该项目将这些问题提炼为四大原则：编码前思考（明确假设、呈现权衡、主动质疑）、简洁优先（只实现需求、拒绝预测性功能）、外科手术式修改（只改必要部分、保持风格一致）、目标驱动执行（定义验证标准、循环直到通过）。提供两种安装方式：作为 Claude Code 插件全局生效，或在项目根目录创建 CLAUDE.md 文件。同时兼容 Cursor 编辑器，通过 .cursor/rules 目录实现相同约束。项目强调通过结构化规则减少非平凡任务中的高成本错误，而非拖慢简单任务。适合需要 AI 辅助编程但要求严格代码质量的开发团队。</div>
+  <div class="why-notable">该项目首次将顶尖研究者对 LLM 编程缺陷的洞察系统化为工程实践。四大原则直接针对 AI 编程的核心痛点：Claude 等模型常因静默假设导致需求偏离、因追求灵活性导致过度设计、因上下文理解偏差引入副作用。通过强制显式推理、限制改动范围、引入验证循环，项目在保持 AI 效率的同时显著提升代码质量。对于依赖 AI 辅助的专业团队，这是首个提供标准化行为护栏的开源方案，填补了 AI 编程工具链中质量控制的空白。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">四大原则决策流程</p>
+    <div class="mermaid">graph TD
+    A[收到编程任务] --> B{原则1: 需求明确?}
+    B -->|不明确| C[呈现多种理解/提出问题]
+    B -->|明确| D{原则2: 可简化?}
+    C --> D
+    D -->|是| E[重写为最小实现]
+    D -->|否| F{原则3: 改动范围}
+    E --> F
+    F --> G[仅修改必要代码]
+    G --> H{原则4: 有验证标准?}
+    H -->|无| I[定义成功标准]
+    H -->|有| J[执行并验证]
+    I --> J
+    J --> K{通过验证?}
+    K -->|否| L[分析失败原因]
+    L --> J
+    K -->|是| M[提交变更]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">项目部署模式</p>
+    <div class="mermaid">graph LR
+    A[开发者] --> B{选择部署方式}
+    B -->|全局约束| C[Claude Code 插件]
+    B -->|项目级约束| D[CLAUDE.md 文件]
+    C --> E[fastsetup 安装]
+    E --> F[plugin install 命令]
+    F --> G[全项目生效]
+    D --> H[创建/追加文件]
+    H --> I[项目根目录]
+    I --> J[项目级生效]
+    B -->|Cursor 用户| K[.cursor/rules]
+    K --> L[编辑器集成]
+    G --> M[四大原则约束]
+    J --> M
+    L --> M
+    M --> N[高质量 AI 代码]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/0xwilliamortiz/andrej-karpathy-skills" target="_blank">0xwilliamortiz/andrej-karpathy-skills</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/realchendahuang/pi-config" target="_blank">Pi Coding Agent 配置集</a></span>
+    <span class="stars">⭐ 95</span>
+  </div>
+  <p class="one-liner">17插件+18技能的Pi终端AI代理完整配置方案</p>
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">Pi Coding Agent</span><span class="tag">MCP Protocol</span><span class="tag">tree-sitter</span><span class="tag">ast-grep</span><span class="tag">Puppeteer</span>
+  </div>
+  <div class="summary">这是一个面向 Pi Coding Agent 的生产级配置集合，提供开箱即用的终端 AI 编码代理解决方案。包含 17 个精选插件覆盖代理编排、代码智能、上下文管理等核心场景，18 个全局技能沉淀最佳实践流程，以及 2 个 MCP 服务器（context7 文档检索、chrome-devtools 浏览器调试）。通过一键安装脚本和详尽的中文教程文档，用户可快速将 Pi 打造成支持多代理协作、token 优化、浏览器自动化的全能开发助手。项目深入讲解了 Pi 的插件驱动架构、Extension/Skill/MCP 三层扩展体系，并提供从轻量 Skill 编写到重量级 Extension 开发的完整指南，适合希望定制 AI 编码工作流的开发者学习和复刻。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Pi 核心架构分层</p>
+    <div class="mermaid">graph TD
+    A[用户交互层 TUI/RPC] --> B[代理循环 Agent Loop]
+    B --> C[模型抽象层 Providers]
+    B --> D[工具层 Tools]
+    D --> E[扩展系统 Extensions]
+    E --> F1[注册工具]
+    E --> F2[订阅事件]
+    E --> F3[拦截调用]
+    D --> G[Skills/Prompts]
+    G --> G1[SKILL.md 流程知识]
+    G --> G2[.md 提示模板]
+    D --> H[MCP Servers]
+    H --> H1[context7 文档]
+    H --> H2[chrome-devtools 浏览器]
+    style B fill:#e1f5ff
+    style E fill:#fff4e1
+    style H fill:#ffe1f5</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">插件能力矩阵</p>
+    <div class="mermaid">graph LR
+    A[17个插件] --> B[代理编排]
+    B --> B1[pi-subagents 多代理]
+    B --> B2[pi-goal 目标驱动]
+    B --> B3[pi-plan-mode 只读计划]
+    
+    A --> C[代码智能]
+    C --> C1[pi-lens AST分析]
+    C --> C2[pi-compact Token压缩]
+    C --> C3[pi-context-file 上下文管理]
+    
+    A --> D[工具增强]
+    D --> D1[pi-puppeteer 浏览器]
+    D --> D2[pi-marketplace 包市场]
+    D --> D3[pi-mcp-adapter MCP集成]
+    
+    A --> E[开发体验]
+    E --> E1[pi-command-palette 命令面板]
+    E --> E2[pi-keyboard-maestro 快捷键]
+    E --> E3[pi-auto-commit Git自动化]
+    
+    style B fill:#e3f2fd
+    style C fill:#f3e5f5
+    style D fill:#e8f5e9
+    style E fill:#fff3e0</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/realchendahuang/pi-config" target="_blank">realchendahuang/pi-config</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
