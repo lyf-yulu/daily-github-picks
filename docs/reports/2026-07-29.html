@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-29</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-29 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/affaan-m" target="_blank">Agent Harness 性能优化系统</a></span>
+    <span class="stars">⭐ 636 <span class="stars-today">(+636 today)</span></span>
+  </div>
+  <p class="one-liner">为 AI 编码智能体注入技能与记忆</p>
+  <div class="tags">
+    <span class="tag">Markdown / Prompt Engineering</span><span class="tag">Claude Code Skills</span><span class="tag">Agent Configuration</span><span class="tag">Memory Systems</span>
+  </div>
+  <div class="summary">该仓库定位为面向 AI 编码智能体的「性能优化系统」（Agent Harness Performance Optimization System），目标是为 Claude Code、Codex、Opencode、Cursor 等主流 AI 编程助手提供一套通用的能力增强框架。项目通过五大核心维度提升 Agent 的工作表现：Skills（可复用的技能模块）、Instincts（内建的行为直觉与默认判断规则）、Memory（跨会话的上下文记忆机制）、Security（安全约束与守护策略）以及 Research-first Development（以研究先行的开发方法论）。这种设计尝试解决当前 AI 编码助手常见的痛点——缺乏长期记忆、行动前调研不足、安全边界模糊、能力零散不可复用等问题。由于目前仅有仓库描述而无详细 README，项目具体实现形态（是配置集、Prompt 库、还是运行时中间件）尚需进一步查阅源码确认，但从命名与定位可推断其是一种跨编辑器、跨 Agent 平台通用的能力注入层，帮助开发者以统一方式管理和分发 Agent 的行为规范与知识资产。作为 GitHub Sponsors 页面下的项目，它也代表了社区对 Agent 工程化实践的持续投入方向。</div>
+  <div class="why-notable">在 AI 编码助手爆发式增长的当下，如何让 Agent 从「一次性生成」进化为「可持续协作」是关键课题。该项目正切中这一趋势，提出跨平台通用的 Harness 层设计，将技能、记忆、安全等要素模块化，具备成为 Agent 工程化标准实践的潜力，值得关注其后续演进。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[开发者] --> B[Agent Harness 层]
+  B --> C[Skills 技能模块]
+  B --> D[Instincts 行为直觉]
+  B --> E[Memory 记忆系统]
+  B --> F[Security 安全策略]
+  B --> G[Research-first 方法论]
+  C --> H[Claude Code]
+  D --> H
+  E --> I[Codex]
+  F --> J[Opencode]
+  G --> K[Cursor]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">工作流数据流</p>
+    <div class="mermaid">graph LR
+  A[用户任务] --> B{Instincts 判断}
+  B --> C[Research 调研阶段]
+  C --> D[Memory 检索上下文]
+  D --> E[Skills 调用技能]
+  E --> F{Security 校验}
+  F -->|通过| G[执行输出]
+  F -->|拦截| H[修正建议]
+  G --> I[写回 Memory]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/kennethkhoocy/applied-micro-skills" target="_blank">应用微观经济学技能包</a></span>
+    <span class="stars">⭐ 57</span>
+  </div>
+  <p class="one-liner">面向实证研究的 Claude Code 与 Codex 技能集</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">AsyncOpenAI</span><span class="tag">httpx</span><span class="tag">pandas</span><span class="tag">pyfixest</span><span class="tag">CuPy</span><span class="tag">Stata / pystata</span><span class="tag">LaTeX</span><span class="tag">Pandoc</span><span class="tag">matplotlib</span>
+  </div>
+  <div class="summary">applied-micro-skills 是一套面向 Claude Code 和 Codex 智能编程助手的技能集合，专为应用微观经济学的实证研究工作流打造。项目围绕一条完整的研究流水线组织了 18 个相互独立、可单独取用的技能：从文献综述编排、WRDS 数据获取、封禁 PDF 抓取，到 LLM 分类打标（含输入对齐检查、并发池优化、漂移守门、金标失败诊断、人工裁决表），再到事件研究 CAR 计算、Stata 与 pyfixest 高性能回归、estout 风格 LaTeX 表格、Stata 风格 matplotlib 图像，最后覆盖引用放置、LaTeX 转 Word 与 Markdown 转 PDF 的交付环节。项目最突出的定位是可复现性审计与验证：adversarial-empirical-review 会在隔离副本中从原始数据重跑整条流水线，要求再生表格与手稿逐字节一致，从而在投稿前把上游各阶段静默出错的风险压到最低。技术栈涵盖 Python、AsyncOpenAI、httpx、pandas、pyfixest（含 CuPy GPU 加速）、pystata、LaTeX 与 Pandoc。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">研究流水线与技能映射</p>
+    <div class="mermaid">graph LR
+  A[文献综述<br/>lit-review-orchestrator] --> B[数据获取<br/>wrds / download-gated-pdfs]
+  B --> C[LLM 分类打标]
+  C --> C1[annotator-input-parity-check]
+  C --> C2[asyncopenai-concurrency]
+  C --> C3[llm-campaign-drift-gate]
+  C --> C4[llm-gold-bound-failure-check]
+  C --> C5[adjudication-sheets]
+  C --> D[计量估计]
+  D --> D1[event-study-cars]
+  D --> D2[stata pystata]
+  D --> D3[pyfixest GPU / 分片]
+  D --> E[表格与图形<br/>latex-empirical-tables<br/>stata-style-figures]
+  E --> F[引用与交付<br/>cite-placement<br/>latex-to-word<br/>markdown-to-pdf]
+  F --> G[对抗式复现审计<br/>adversarial-empirical-review]
+  G -.回溯校验.-> B
+  G -.回溯校验.-> D
+  G -.回溯校验.-> E</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">LLM 分类活动守护流程</p>
+    <div class="mermaid">flowchart TD
+  Start([启动分类活动]) --> Parity[输入对齐检查<br/>人工与模型看到相同文档?]
+  Parity -->|通过| Pool[AsyncOpenAI + httpx 连接池<br/>解除吞吐瓶颈]
+  Pool --> Run[批量打分运行]
+  Run --> Pause{活动暂停/恢复?}
+  Pause -->|是| Canary[漂移金丝雀<br/>重发缓存 prompt 对比分数]
+  Canary -->|通过| Run
+  Canary -->|失败| Flip[定位模型别名切换<br/>拆分为两个变量]
+  Run --> Gate{验证门通过?}
+  Gate -->|失败| Diag[金标上界诊断<br/>是否任何 prompt 可通过?]
+  Diag --> Run
+  Gate -->|通过| Adj[人工裁决表<br/>字节一致证据]
+  Adj --> End([交付标注数据])</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/kennethkhoocy/applied-micro-skills" target="_blank">kennethkhoocy/applied-micro-skills</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sami-Uysal/awesome-open-ai-developer-tools" target="_blank">开源 AI 开发者工具精选清单</a></span>
+    <span class="stars">⭐ 51</span>
+  </div>
+  <p class="one-liner">开源 AI 开发栈全景导航目录</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">GitHub Pages</span><span class="tag">多语言文档</span><span class="tag">覆盖 Python / TypeScript / Rust 等生态</span>
+  </div>
+  <div class="summary">Awesome Open AI Developer Tools 是一份面向现代 AI 开发者的开源工具精选指南与目录，系统性梳理了从编码代理、本地推理、代理框架到向量数据库、RAG、评测与可观测性等 AI 开发全栈的开源方案。项目为每个条目回答三个核心问题：它做什么、可以替代哪个闭源产品、为什么值得选择，帮助开发者快速找到 GitHub Copilot、Cursor、Devin、Bolt.new 等商业工具的开源替代品。清单严格遵循 OSI 许可标准，源码可用但非 OSI 的工具会明确标注，且不含任何联盟或赞助链接。目录覆盖 aider、OpenCode、Cline、Continue、OpenHands、SWE-agent、Goose、Tabby、bolt.diy 等主流项目，标注编程语言、许可证、后端支持与差异化优势，并提供多语言版本（英文、土耳其语、简体中文、西班牙语）和配套网站，方便团队按层级构建自主可控的 AI 技术栈。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">开源 AI 开发栈分层架构</p>
+    <div class="mermaid">graph TD
+  A[开发者] --> B[编码代理层]
+  A --> C[应用构建层]
+  B --> B1[aider / Cline / Continue]
+  B --> B2[OpenHands / SWE-agent / Goose]
+  C --> C1[bolt.diy]
+  C --> C2[Open Design]
+  A --> D[代理框架与 MCP]
+  A --> E[推理层]
+  E --> E1[本地推理引擎]
+  E --> E2[推理服务器与网关]
+  A --> F[数据与检索]
+  F --> F1[向量数据库]
+  F --> F2[Embeddings 与 Rerankers]
+  F --> F3[RAG 框架]
+  A --> G[训练与微调]
+  A --> H[质量与运维]
+  H --> H1[评测 / 测试 / 护栏]
+  H --> H2[可观测性与 LLMOps]
+  A --> I[多模态: 语音/视觉]
+  A --> J[低代码可视化构建]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">工具选型决策流</p>
+    <div class="mermaid">flowchart LR
+  U[用户需求] --> Q1{替换哪个闭源工具?}
+  Q1 -->|Copilot / Cursor| T1[aider / Continue / Tabby]
+  Q1 -->|Devin| T2[OpenHands / SWE-agent / Goose]
+  Q1 -->|Bolt.new / v0| T3[bolt.diy]
+  T1 --> Q2{是否需本地推理?}
+  T2 --> Q2
+  T3 --> Q2
+  Q2 -->|是| L1[Ollama / LM Studio / llama.cpp]
+  Q2 -->|否| L2[OpenAI / Anthropic / Google API]
+  L1 --> R[集成 RAG + 评测 + 可观测性]
+  L2 --> R
+  R --> D[部署可自主可控的 AI 应用]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sami-Uysal/awesome-open-ai-developer-tools" target="_blank">Sami-Uysal/awesome-open-ai-developer-tools</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/NanmiCoder/open-image-prompts" target="_blank">开放图像提示词档案库</a></span>
+    <span class="stars">⭐ 126</span>
+  </div>
+  <p class="one-liner">本地优先的可溯源视觉提示词库</p>
+  <div class="tags">
+    <span class="tag">Python 3 (uv 管理)</span><span class="tag">Node.js 20.19+ / 22.12+</span><span class="tag">SQLite (只读 immutable 模式 + FTS 全文索引)</span><span class="tag">前端 Vite (5173 端口)</span><span class="tag">Docker (Node 22 + Python 3 运行时)</span><span class="tag">GitHub Releases 作为数据资产 CDN</span>
+  </div>
+  <div class="summary">Open Image Prompts 是一个开放、本地优先（local-first）的视觉提示词档案项目，致力于解决 AI 绘画场景中提示词与生成图像之间缺乏可追溯参考的问题。项目提供了两个可安装的 Agent Skills：img-gen-taste 负责将粗略需求转化为清晰的艺术方向；img-gen-prompts 则用于检索可溯源的提示词-图像参照对，并在本地打开对比画廊。公开数据集规模可观，包含 14,028 条源提示词、24,305 张图像、28,056 条双语翻译、163,135 个活跃的 v2 提示词标签，以及一个包含 185 个视觉标签的封闭分类体系。项目在工程层面做了精心设计：代码仓库本身保持精简，只跟踪应用代码、前端、API、Skills、分类法与轻量索引；而 SQLite 数据库（约 80MB）与按月打包的图像资产（合计约 4.3GB）通过 GitHub Releases 分发，并使用 sha256 校验完整性。用户可通过 start.sh / start.bat 一键启动，脚本会自动安装 uv、创建 Python 环境、拉取数据集并启动前后端服务；也支持通过 Docker 部署，构建阶段会执行数据校验、测试、lint 与生产构建。API 与 Skill 以只读不可变模式打开 SQLite，默认绑定 127.0.0.1 回环地址，绝不启动标注任务，安全边界清晰。</div>
+  <div class="why-notable">该项目在 AI 提示词生态中提供了少见的『开放 + 可溯源 + 本地优先』三合一方案：数据集不是黑盒，而是通过公开的 SQLite 与清单文件可完整校验；提示词与图像的对应关系可追溯，避免了社区中常见的『无图或图不对版』问题；Agent Skills 的形式让它天然可被 Claude 等编码代理直接调用，为 AI 绘画工作流提供了标准化的参考数据层。工程实践上的 Release 分发、sha256 校验、只读运行时、回环绑定等细节也体现了对可复现性与安全性的重视，适合作为构建垂直提示词库的参考范式。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">仓库与数据资产分离架构</p>
+    <div class="mermaid">graph TD
+  A[Git 仓库] -->|代码/Skills/分类法| B[本地 clone]
+  C[GitHub Releases] -->|prompts.db.gz ~80MB| B
+  C -->|images-YYYY-MM.tar.gz ~4.3GB| B
+  B --> D[.oip/runtime/prompts.db 只读]
+  B --> E[images/ 本地图像]
+  D --> F[FastAPI 服务 127.0.0.1]
+  E --> F
+  F --> G[前端画廊 :5173]
+  D --> H[Agent Skills]
+  H --> I[img-gen-taste 艺术方向]
+  H --> J[img-gen-prompts 溯源检索]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Skill 检索数据流</p>
+    <div class="mermaid">flowchart LR
+  U[用户 intent] --> S[img-gen-prompts]
+  S --> Q[SQLite FTS 查询]
+  Q --> R{匹配充分?}
+  R -->|是| E[results 精确匹配]
+  R -->|稀疏| X[related_results 视觉复核参照]
+  E --> G[本地对比画廊]
+  X --> G
+  G -->|图像缺失| F[回退源 URL]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/NanmiCoder/open-image-prompts" target="_blank">NanmiCoder/open-image-prompts</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/realchendahuang/pi-config" target="_blank">Pi Coding Agent 配置合集</a></span>
+    <span class="stars">⭐ 100</span>
+  </div>
+  <p class="one-liner">一键复刻的 Pi 终端代理配置</p>
+  <div class="tags">
+    <span class="tag">Pi (@earendil-works/pi-coding-agent)</span><span class="tag">TypeScript</span><span class="tag">Node.js / npm</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">ast-grep</span><span class="tag">tree-sitter</span><span class="tag">Bash</span>
+  </div>
+  <div class="summary">本仓库是作者个人使用的 Pi（一款开源终端 AI 编码代理，npm 包为 @earendil-works/pi-coding-agent）配置合集，整理成教程形式共享。项目打包了 17 个精选插件、18 个全局 Skill 和 2 个 MCP Server，配套一键安装脚本 install.sh，可自动执行 pi install 并合并 MCP 配置到 ~/.config/mcp/mcp.json。插件覆盖代理编排（pi-subagents 支持 single/chain/parallel/async/forked-context 五种模式）、目标驱动（pi-goal）、只读计划模式（pi-plan-mode）、AST 级代码理解（pi-lens 基于 ast-grep 与 tree-sitter，集成 LSP 诊断）等场景。README 还系统讲解了 Pi 的插件驱动代理循环架构，从 TUI 到 Extensions/Skills/Themes/Packages 的分层设计，以及 Skill、MCP、Extension 三档由轻到重的扩展方式，目标是把 Pi 打造成能多代理协作、省 token、能跑浏览器的全能终端编码代理。</div>
+  <div class="why-notable">作为经过实际使用筛选的 Pi 终端代理配置模板，一键脚本降低了新手上手门槛，README 兼具教程价值，能帮助开发者快速理解并复刻一套可用的多代理协作工作流。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Pi 分层架构</p>
+    <div class="mermaid">graph TD
+  A[TUI / RPC / Print 用户交互层] --> B[Agent Loop 代理循环]
+  B --> C[Providers / Models 多模型抽象]
+  B --> D[Tools 工具层]
+  D --> E[Extensions TypeScript 扩展]
+  D --> F[Skills / Prompts Markdown 过程知识]
+  E --> G[Packages npm/git/本地分发]
+  F --> G
+  H[Themes JSON 配色] --> G</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">代理循环与扩展挂载点</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant P as Pi Agent
+  participant E as Extension
+  participant M as Model
+  participant T as Tool
+  U->>P: 输入 prompt
+  P->>E: before_agent_start 事件
+  E-->>P: 注入消息/改系统提示
+  P->>M: 调用模型
+  M->>P: 请求调用工具
+  P->>E: tool_call 事件(可拦截)
+  E-->>P: 允许/阻止
+  P->>T: 执行工具
+  T->>P: 返回结果
+  P->>E: tool_result 事件(可改结果)
+  P->>M: 回传结果
+  M-->>P: 不再调工具
+  P->>E: agent_end / agent_settled
+  P-->>U: 输出结果</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/realchendahuang/pi-config" target="_blank">realchendahuang/pi-config</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
