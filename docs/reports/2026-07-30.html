@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-30</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-30 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/affaan-m" target="_blank">Agent Harness 性能优化系统</a></span>
+    <span class="stars">⭐ 857 <span class="stars-today">(+857 today)</span></span>
+  </div>
+  <p class="one-liner">为 AI 编程代理提供技能与记忆增强的性能优化框架</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">OpenCode</span><span class="tag">Cursor</span><span class="tag">Prompt / Skill 模板工程</span><span class="tag">Agent Memory 机制</span>
+  </div>
+  <div class="summary">该项目是一个面向 AI 编程代理（Agent）的性能优化系统，旨在通过统一的 harness（承载框架）为 Claude Code、Codex、OpenCode、Cursor 等主流 AI 编码工具提供能力增强层。项目的核心理念是围绕五大支柱构建代理的工作方式：Skills（可复用技能库）、Instincts（内建直觉与最佳实践）、Memory（跨会话记忆）、Security（安全护栏）以及 Research-first Development（研究优先的开发范式），意在解决当前 AI 编程助手在长任务中容易遗忘上下文、缺乏领域直觉、安全边界模糊以及先编码后思考等痛点。通过在代理运行时注入结构化的技能模板、行为准则和检索机制，让不同厂商的代理表现出更一致、更可靠、更符合工程规范的能力。项目采用工具无关（tool-agnostic）设计，可以横向覆盖多种代理运行环境，成为开发者自定义 AI 工作流的基础设施层。由于 README 内容极为精简，具体实现细节、配置格式和 CLI 接口尚需查阅仓库源码进一步确认，但从定位来看，它面向的是希望统一管理多套 AI 编程代理配置、追求高质量代码产出的进阶开发者与团队。</div>
+  <div class="why-notable">在 AI 编码助手百花齐放的当下，各家工具能力割裂、上下文遗忘、缺乏安全约束是普遍痛点。该项目试图建立一个跨代理的统一优化层，把工程实践中沉淀的直觉、记忆与安全规范抽象成可复用组件，代表了从「用 AI 写代码」到「治理 AI 写代码」的思路升级，对希望在团队内规模化落地 AI 编程的开发者具有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  Dev[开发者] --> Harness[Agent Harness 优化层]
+  Harness --> Skills[Skills 技能库]
+  Harness --> Instincts[Instincts 直觉规则]
+  Harness --> Memory[Memory 记忆存储]
+  Harness --> Security[Security 安全护栏]
+  Harness --> Research[Research-first 研究流程]
+  Skills --> Agents
+  Instincts --> Agents
+  Memory --> Agents
+  Security --> Agents
+  Research --> Agents
+  Agents[AI 编程代理] --> Claude[Claude Code]
+  Agents --> Codex[Codex]
+  Agents --> Opencode[OpenCode]
+  Agents --> Cursor[Cursor]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">任务执行数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 开发者
+  participant H as Harness
+  participant M as Memory
+  participant R as Research 模块
+  participant A as AI 代理
+  U->>H: 提交编码任务
+  H->>M: 加载历史上下文
+  H->>R: 触发研究优先流程
+  R-->>H: 返回调研结论
+  H->>A: 注入 Skills + Instincts + 安全策略
+  A-->>H: 产出代码变更
+  H->>M: 写回新记忆
+  H-->>U: 返回结果与依据</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/mikehasa/agentacct" target="_blank">agentacct</a></span>
+    <span class="stars">⭐ 528</span>
+  </div>
+  <p class="one-liner">本地优先的编码 Agent 用量与工作追踪仪表盘</p>
+  <div class="tags">
+    <span class="tag">Python 3.11+</span><span class="tag">pipx / uv (分发)</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Claude Code Hooks</span><span class="tag">OTLP (可选本地遥测接收)</span><span class="tag">本地文件存储 (~/.local/state/agentacct)</span><span class="tag">本地 HTTP Dashboard (127.0.0.1:8765)</span>
+  </div>
+  <div class="summary">agentacct 是一款面向 Claude Code、Codex、OpenCode、Cursor 等编码 Agent 的本地优先「Agent 工作情报」工具。它读取这些客户端本地已经生成的会话日志，将 Token 用量与 Agent 在工作中通过 MCP 记录的任务步骤、机器检查（如测试运行）关联起来，并在本机 127.0.0.1 上的仪表盘中呈现任务、工具使用、文件改动、测试结果、耗时与预估成本。项目强调隐私与诚实：所有状态以纯本地文件形式保存，不做任何远程遥测、账号或云同步，也从不请求或存储 Provider API Key；Token 数据来自客户端自身文件并明确标注为 client_reported，成本仅是本地价目表的估算而非发票。它以 pipx/uv 安装、通过 agentacct onboard 一次性完成全局或按项目安装，自动检测本地 Agent 日志并启动仪表盘。归因方面，每一条用量与工作的关联都会打上 exact/high/medium/low 置信度标签，宁可显示缺口也不做臆测；Claude Code 通过 Hook Bridge 捕获真实 session/transcript id，Codex 从会话日志中提取，其他客户端按能力矩阵有明确范围声明。项目采用 Python 3.11+，支持 macOS 与 Linux（Windows 需 WSL），当前处于早期 alpha，MIT 协议开源。</div>
+  <div class="why-notable">在 AI 编码 Agent 成本失控、用量口径混乱的当下，agentacct 用「本地优先 + 诚实标签」的姿态填补了一个真实缺口：它既不假装能给你一张发票，也不用云端 SaaS 换取观测能力，而是直接消费 Claude Code / Codex 已经写到本地的会话日志，并通过 MCP 让 Agent 自己记录工作步骤与机器检查，最后以置信度标签把「Agent 说做了什么」与「机器验证做了什么」分开呈现。这种对可验证性的克制，加上零 API Key、零遥测、零账号的隐私姿态，在 Agent 可观测性赛道里是一种少见且工程化程度较高的路径。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">双证据流合并架构</p>
+    <div class="mermaid">graph TD
+  subgraph 用量真相
+    A[Claude Code 本地会话日志]
+    B[Codex 本地会话日志]
+    C[其他客户端日志]
+  end
+  subgraph 工作意义
+    D[MCP: agentacct_record_section]
+    E[MCP: agentacct_record_machine_check]
+    F[Claude Code Hook Bridge]
+  end
+  A --> G[Usage Importer<br/>client_reported]
+  B --> G
+  C --> G
+  D --> H[Work Ledger]
+  E --> H
+  F --> H
+  G --> I[Join Engine<br/>exact/high/medium/low]
+  H --> I
+  I --> J[本地状态存储<br/>~/.local/state/agentacct]
+  J --> K[Dashboard<br/>127.0.0.1:8765]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">onboard 与运行时数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant CLI as agentacct CLI
+  participant Cfg as 客户端配置<br/>(~/.claude/*, ~/.codex/*)
+  participant Store as 本地状态存储
+  participant Dash as Dashboard 127.0.0.1:8765
+  participant Agent as 编码 Agent 会话
+  U->>CLI: pipx install agentacct
+  U->>CLI: agentacct onboard
+  CLI->>Cfg: 注册 MCP Server 与 Hook
+  CLI->>Store: 初始化全局 store 并首次同步
+  CLI->>Dash: 启动本地仪表盘
+  U->>Agent: 开启新会话（在任意仓库）
+  Agent->>Store: MCP 记录 section / machine_check
+  Agent->>Cfg: 写入本地会话日志
+  Store->>Dash: 合并用量 + 工作，附置信度标签
+  U->>Dash: 浏览任务、Token、估算成本</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/mikehasa/agentacct" target="_blank">mikehasa/agentacct</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sami-Uysal/awesome-open-ai-developer-tools" target="_blank">开源 AI 开发者工具精选</a></span>
+    <span class="stars">⭐ 56</span>
+  </div>
+  <p class="one-liner">开源 AI 开发栈的完整替代指南</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">Rust</span><span class="tag">GitHub Pages</span>
+  </div>
+  <div class="summary">Awesome Open AI Developer Tools 是一份面向现代 AI 开发者的开源工具精选目录，系统梳理了从底层推理到上层应用的完整开源 AI 技术栈。项目按功能划分为近 20 个类别，涵盖编码代理与结对编程、Prompt 转应用构建器、自主与持久化代理、代理沙箱与浏览器控制、代理框架与编排、模型上下文协议（MCP）、本地推理引擎、推理服务器与网关、聊天前端、向量数据库、嵌入与重排、RAG 框架、微调训练、评估测试与护栏、可观测性与 LLMOps、语音视觉多模态、低代码可视化构建器等。每个条目都回答三个核心问题：它做什么、替代哪个闭源产品、为何选它，并附有成熟度徽章（🟢 稳定 / 🟡 活跃 / 🟠 实验）以及许可证、语言、后端支持等元数据。项目仅收录 OSI 认证的开源工具，无广告与赞助链接，并提供英语、土耳其语、简体中文、西班牙语等多语言版本。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">开源 AI 开发栈分层架构</p>
+    <div class="mermaid">graph TD
+  A[应用层] --> A1[编码代理 aider/Cline/Continue]
+  A --> A2[Prompt 转应用 bolt.diy]
+  A --> A3[自主代理 OpenHands/SWE-agent]
+  B[编排与协议层] --> B1[代理框架]
+  B --> B2[MCP 协议]
+  B --> B3[代理沙箱]
+  C[数据与检索层] --> C1[向量数据库]
+  C --> C2[嵌入与重排]
+  C --> C3[RAG 框架]
+  D[模型服务层] --> D1[本地推理引擎]
+  D --> D2[推理服务器与网关]
+  D --> D3[微调训练]
+  E[运维与治理层] --> E1[评估与护栏]
+  E --> E2[可观测性 LLMOps]
+  A --> B
+  B --> C
+  B --> D
+  A --> E
+  D --> E</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">编码代理典型工作流</p>
+    <div class="mermaid">graph LR
+  U[开发者] --> IDE[IDE 或终端]
+  IDE --> AG[编码代理]
+  AG --> RM[仓库地图与上下文]
+  AG --> LSP[语言服务器]
+  AG --> LLM[LLM 后端<br/>Claude/GPT/本地模型]
+  LLM --> AG
+  AG --> EX[执行沙箱<br/>Docker/终端]
+  AG --> FS[文件编辑]
+  FS --> GIT[Git 自动提交]
+  EX --> AG
+  AG --> U</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sami-Uysal/awesome-open-ai-developer-tools" target="_blank">Sami-Uysal/awesome-open-ai-developer-tools</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/NanmiCoder/open-image-prompts" target="_blank">开放图像提示词档案库</a></span>
+    <span class="stars">⭐ 139</span>
+  </div>
+  <p class="one-liner">本地优先的可溯源视觉提示词库</p>
+  <div class="tags">
+    <span class="tag">Node.js 20+/22+</span><span class="tag">Python 3 (uv)</span><span class="tag">SQLite (FTS 只读模式)</span><span class="tag">前端 Vite (端口 5173)</span><span class="tag">Docker</span><span class="tag">GitHub Releases 数据分发</span><span class="tag">Agent Skills (npx skills)</span>
+  </div>
+  <div class="summary">Open Image Prompts 是一个开放、本地优先的视觉提示词档案库项目，围绕可溯源的「提示词-图像」引用关系构建，并提供两个可安装的 Agent Skills。项目通过 `img-gen-taste` 将粗略创作意图转化为清晰艺术方向，通过 `img-gen-prompts` 检索带图像佐证的提示词参考并打开本地对比画廊。公开数据集包含 14,028 条源提示词、24,305 张图像、28,056 条双语翻译、163,135 条 v2 有效标签，以及 185 个视觉标签构成的封闭分类体系。为保持仓库轻量，项目不使用 Git LFS，而是通过 GitHub Releases 分发数据资产：`scripts/fetch_dataset.py` 会下载约 80MB 的 SQLite 压缩包和可选的月度图像包（总计约 4.3GB），并进行 sha256 校验。用户可通过 `start.sh` 或 `start.bat` 一键启动，脚本会自动安装 uv、创建 Python 环境、拉取数据集、安装前端依赖并同时启动 API 与前端服务。项目也支持 Docker 化部署，API 默认仅绑定 127.0.0.1，SQLite 以只读不可变模式打开，安全边界清晰。公开数据集严格限定于运行时数据，不含标注候选、模型配置、评估表和历史标签，另有 72 条中英双语回归基准用于检索质量测试。</div>
+  <div class="why-notable">在 AIGC 提示词大量散落于社区截图与聊天记录的当下，该项目提供了一个稀有的开放、可溯源、本地优先的提示词-图像语料库，且以 Agent Skills 形式对接编码智能体，具备工程规范（数据/代码分离、只读 SQLite、回归基准、公开数据边界声明），为提示词工程和视觉检索研究提供了可复现的基座。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">仓库与数据资产分发架构</p>
+    <div class="mermaid">graph TD
+  A[用户 clone 仓库] --> B[代码/Skills/元数据]
+  B --> C{运行 npm run data:pull}
+  C -->|SQLite 归档 ~80MB| D[db/prompts.db.gz]
+  C -->|月度图像包 ~4.3GB| E[images/]
+  D --> F[.oip/runtime/prompts.db 只读]
+  E --> G[本地画廊预览]
+  F --> H[FastAPI 服务 127.0.0.1]
+  H --> I[前端 Vite :5173]
+  J[GitHub Releases] -.sha256 校验.-> C
+  K[data/dataset-manifest.json] --> C</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Agent Skills 检索流程</p>
+    <div class="mermaid">graph LR
+  U[用户创作意图] --> T[img-gen-taste]
+  T -->|艺术方向卡| P[img-gen-prompts]
+  P --> Q[oip.py search]
+  Q --> R[SQLite FTS 只读查询]
+  R --> M{精确匹配充足?}
+  M -->|是| X[results 精确结果]
+  M -->|否| Y[related_results 图像佐证参考]
+  X --> Z[本地对比画廊]
+  Y --> Z</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/NanmiCoder/open-image-prompts" target="_blank">NanmiCoder/open-image-prompts</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Optim-Agent/optim-plans" target="_blank">optim-plans</a></span>
+    <span class="stars">⭐ 115</span>
+  </div>
+  <p class="one-liner">人机协同的Agent计划与执行双环插件</p>
+  <div class="tags">
+    <span class="tag">Python 3.11+</span><span class="tag">Claude Skill</span><span class="tag">Codex Skill</span><span class="tag">Git worktree</span><span class="tag">Markdown</span><span class="tag">GitHub CLI (gh)</span><span class="tag">GitHub Actions CI</span>
+  </div>
+  <div class="summary">optim-plans 是一个面向 Claude 和 Codex 的人机协同（human-in-the-loop）规划插件，专为提升 Agentic Coding（智能体编程）的可靠性而设计。它通过引入两个闭环解决 Agent 常见的两类问题：一是「规划-精炼环」（Planning-refining ring），将模糊需求转化为可评审的 Markdown 计划，通过 Reviewer 或 Criticizer 反复迭代，将每个决策的疑问在写代码前解决；二是「执行-验证环」（Executing-validating ring），要求所有执行必须基于不可变的 manifest 与显式的人工批准才能启动，在受控的 Git worktree 与专用分支中串行推进任务，插入只读 validator 进行 safe-audit，并强制通过控制器验证与 Git 审计后才 checkpoint，最终干净通过则自动 fast-forward 集成回目标分支。项目产出物分为两类：一类是位于 docs/optim-plans/ 下的公开 Markdown 计划文档（PLAN_v1、评审意见、PLAN_v2、执行摘要），另一类是位于 .git/optim-plans/ 下可回放的机器状态（run.json、events.jsonl、controller.lock 等）。此外，$optim-plans:review-and-plan 子命令能先对仓库做全面审视，从文档、效率成本、功能完备度、用户体验、安全可恢复性五个维度产出排序改进建议，并强制引用 GitHub 开源项目作为佐证来源。整个方案以 Python 3.11+ 实现，附带 CI 与受测的 controller 原语，让 Agent 工作流兼具可审查性与安全性。</div>
+  <div class="why-notable">在 Agent 编程工具普遍追求「更自动」的趋势下，optim-plans 反其道而行，把「人类审批」和「显式门禁」作为一等公民，用 manifest 哈希、run worktree、controller.lock 等工程化手段把 Agent 的不确定性关进笼子。它同时兼容 Claude Skill 与 Codex Skill 两大生态，产出物是纯 Markdown 便于评审，机器状态可回放便于事后审计，非常适合关心 Agent 安全性、可复现性与团队协作规范的开发者参考借鉴。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">双环工作流架构</p>
+    <div class="mermaid">graph TD
+  U[用户意图] --> P1[PLAN_v1.md]
+  P1 --> R{Reviewer / Criticizer}
+  R -->|问答迭代| P1
+  R --> P2[PLAN_v2.md]
+  P2 --> M[不可变执行 Manifest]
+  M --> A{人工审批}
+  A -->|拒绝| STOP[中止]
+  A -->|批准| W[创建 run worktree 与分支]
+  W --> E[Executor 执行]
+  E --> V[只读 Validator]
+  V -->|失败且安全| E
+  V -->|通过| C[Controller 验证]
+  C --> G[Git 审计与 checkpoint]
+  G -->|干净通过| I[Fast-forward 集成]
+  G -->|drift/unsafe/超限| REC[Recovery]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">工件与状态存储布局</p>
+    <div class="mermaid">graph LR
+  subgraph 公开工件[docs/optim-plans/YYYY-MM-DD-topic/]
+    A1[PLAN_v1.md]
+    A2[PLAN_v1_reviewer_comments.md]
+    A3[PLAN_v2.md]
+    A4[EXECUTION_SUMMARY.md]
+  end
+  subgraph 机器状态[.git/optim-plans/]
+    B1[config.json]
+    B2[worktrees/active.json]
+    B3[runs/run.json]
+    B4[runs/events.jsonl]
+    B5[runs/runtime.json]
+    B6[runs/controller.lock]
+  end
+  A3 -.hash 绑定.-> B3
+  B6 -.互斥保护.-> B3</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Optim-Agent/optim-plans" target="_blank">Optim-Agent/optim-plans</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
