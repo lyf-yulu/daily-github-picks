@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-07-31</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-07-31 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/affaan-m" target="_blank">Agent Harness 性能优化系统</a></span>
+    <span class="stars">⭐ 804 <span class="stars-today">(+804 today)</span></span>
+  </div>
+  <p class="one-liner">为 AI 编码代理提供技能与记忆增强的框架</p>
+  <div class="tags">
+    <span class="tag">Prompt Engineering</span><span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">Opencode</span><span class="tag">Cursor</span><span class="tag">Agent Framework</span>
+  </div>
+  <div class="summary">该项目由 sponsors/affaan-m 维护，定位为一套面向 AI 编码代理（Agent Harness）的性能优化系统，旨在为 Claude Code、Codex、Opencode、Cursor 等主流 AI 编程助手提供统一的能力增强层。项目提出了五大核心支柱：Skills（可复用技能模块）、Instincts（直觉式默认行为）、Memory（跨会话记忆）、Security（安全防护）以及 Research-first Development（研究先行的开发范式），试图解决当前 AI 编码代理在长期任务中容易遗忘上下文、缺乏领域直觉、安全防护薄弱以及未经充分调研就动手写代码等痛点。通过将这些能力抽象为与具体 IDE 或 LLM 无关的通用协议层，开发者可以在不同 AI 工具之间共享同一套 Prompt 工程资产与工作流规范，从而获得一致且高质量的开发体验。由于 README 内容较为精简，具体的技术实现细节（如运行时、配置格式、插件机制等）尚需查阅仓库中的目录结构与源码。整体来看，这类项目属于 AI Agent 生态中新兴的“中间件”方向，聚焦于把零散的 Prompt 技巧和最佳实践工程化、产品化，为多代理协作与企业级落地打下基础。</div>
+  <div class="why-notable">在 AI 编码代理百花齐放但各自为战的当下，该项目尝试成为跨工具的通用能力层，把记忆、安全与研究方法论沉淀为可复用资产，对希望在多种 AI IDE 间保持一致工作流的团队具有较高参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[开发者] --> B[Agent Harness 优化层]
+  B --> C[Skills 技能库]
+  B --> D[Instincts 直觉规则]
+  B --> E[Memory 记忆系统]
+  B --> F[Security 安全策略]
+  B --> G[Research-first 研究模块]
+  C --> H[Claude Code]
+  D --> H
+  E --> I[Codex]
+  F --> J[Opencode]
+  G --> K[Cursor]
+  H --> L[代码输出]
+  I --> L
+  J --> L
+  K --> L</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">研究先行工作流</p>
+    <div class="mermaid">graph LR
+  A[用户需求] --> B[Research 调研阶段]
+  B --> C{是否理解充分}
+  C -- 否 --> B
+  C -- 是 --> D[Memory 读取历史上下文]
+  D --> E[Skills 匹配技能]
+  E --> F[Instincts 应用默认规范]
+  F --> G[生成代码]
+  G --> H[Security 安全校验]
+  H --> I[交付结果]
+  I --> J[写回 Memory]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/haorantang97/antibes-holiday" target="_blank">Antibes Holiday 手绘插画技能</a></span>
+    <span class="stars">⭐ 50</span>
+  </div>
+  <p class="one-liner">轻松黑笔插画风格 Agent 插件</p>
+  <div class="tags">
+    <span class="tag">Agent Skills</span><span class="tag">OpenAI Codex Plugin</span><span class="tag">Prompt Engineering</span><span class="tag">Markdown</span>
+  </div>
+  <div class="summary">Antibes Holiday 是一个便携式的手绘风格插画生成工具，同时以 Agent Skill 和 Codex 插件两种形态提供。项目定位于为 AI 助手（如 Claude Agent Skills 与 OpenAI Codex 生态）注入一种统一的视觉风格能力，具体表现为 '放松的黑色钢笔线条插画'——线条随性、构图轻盈，适合博客配图、笔记装饰、社交分享与产品氛围图。作为可移植的 Skill 模块，它可以被主流 AI Agent 框架直接加载，通过约定的 Skill 描述文件与提示词模板，将风格约束、构图指南和输出规范注入到多模态模型的绘图流程中；同时作为 Codex 插件，可在代码或内容生成场景中被调用，实现风格一致的插画产出。项目强调轻量、易嵌入、跨平台复用，无需额外训练即可获得稳定的风格化视觉输出。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户/开发者] --> A[AI Agent 宿主]
+  A --> S[Antibes Holiday Skill]
+  A --> P[Codex 插件形态]
+  S --> R[风格约束与提示词模板]
+  P --> R
+  R --> M[多模态生成模型]
+  M --> O[黑笔手绘插画输出]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">调用数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant A as Agent
+  participant K as Antibes Skill
+  participant M as 绘图模型
+  U->>A: 请求生成插画
+  A->>K: 加载风格 Skill
+  K-->>A: 返回风格化 Prompt
+  A->>M: 提交增强提示词
+  M-->>U: 返回黑笔风格插画</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/haorantang97/antibes-holiday" target="_blank">haorantang97/antibes-holiday</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/mikehasa/agentacct" target="_blank">AgentAcct 编程智能体审计面板</a></span>
+    <span class="stars">⭐ 538</span>
+  </div>
+  <p class="one-liner">追踪编程 Agent 的耗时、Token 与操作明细</p>
+  <div class="tags">
+    <span class="tag">待确认（README 未披露）</span>
+  </div>
+  <div class="summary">AgentAcct 是一个面向编程类 AI 智能体的本地优先审计与可视化面板，目标是让开发者清晰看到自己的 Coding Agent 究竟做了什么、花了多少代价。它把每一次任务拆解成一系列可追溯的工作步骤（work steps），逐步记录调用了哪些工具、修改了哪些文件、跑了哪些测试，以及消耗的时间和 Token 数量，从而把原本模糊的 Agent 行为量化成可对比、可复盘的数据。项目定位覆盖当前主流的编程 Agent 生态，兼容 Claude Code、Codex、OpenCode 等多种客户端，通过统一的仪表盘让用户在一个视图中横向比较不同 Agent 的效率、成本和风格差异。与常见的云端 Agent 观测平台不同，AgentAcct 强调 Local-first 部署理念：数据留在本机，无需注册登录，也不做任何遥测上报，天然规避源码泄露和使用行为外泄的风险，非常适合企业内部或对隐私敏感的个人开发者。凭借对任务、工具调用、文件变更、测试执行和 Token 计费的细粒度记录，它可作为 Agent 使用成本分析、Prompt 与工作流调优、以及团队内部 Agent 效果评估的基础设施。由于当前 README 内容较为精简，具体技术栈尚未公开披露，需结合仓库源码进一步确认。</div>
+  <div class="why-notable">在 Coding Agent 快速普及但成本与行为普遍黑盒的当下，AgentAcct 提供了一个稀缺的本地化可观测层：它不仅回答『Agent 做了什么』，还量化『花了多少 Token 和时间』，为 Agent 效果评估、成本控制和工作流优化提供数据基础。跨 Agent 的统一视图和零遥测的隐私姿态，使其在企业和独立开发者场景都具备较高实用价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与数据流</p>
+    <div class="mermaid">graph LR
+  A[Claude Code] --> C[本地采集层]
+  B[Codex] --> C
+  D[OpenCode] --> C
+  C --> E[任务/步骤解析器]
+  E --> F[(本地存储)]
+  F --> G[Dashboard 前端]
+  G --> H[开发者]
+  style F fill:#f5f5f5,stroke:#666
+  style C fill:#eef,stroke:#66a</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">任务拆解模型</p>
+    <div class="mermaid">graph TD
+  T[Task 任务] --> S1[Step 1 工作步骤]
+  T --> S2[Step 2 工作步骤]
+  T --> S3[Step N 工作步骤]
+  S1 --> M1[工具调用]
+  S1 --> M2[文件变更]
+  S1 --> M3[测试运行]
+  S1 --> M4[时间与 Token 消耗]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/mikehasa/agentacct" target="_blank">mikehasa/agentacct</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sami-Uysal/awesome-open-ai-developer-tools" target="_blank">开源 AI 开发者工具精选集</a></span>
+    <span class="stars">⭐ 63</span>
+  </div>
+  <p class="one-liner">开源 AI 开发工具与本地 LLM 精选导航</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">GitHub Actions</span>
+  </div>
+  <div class="summary">该仓库是一份面向现代 AI 开发者的精选指南与目录，聚焦于开源 AI 开发工具（devtools）、本地大语言模型（Local LLMs）、自主智能体（Autonomous Agents）以及各类 SaaS 服务的开源替代方案。项目定位为 awesome-list 类型的知识索引，旨在帮助开发者在快速演进的 AI 生态中，快速定位可自托管、可定制、可离线运行的工具链，降低对闭源 API 的依赖。内容组织上按类别划分，涵盖模型运行时、Agent 框架、向量数据库、RAG 工具、开发者辅助以及可替代 ChatGPT、Copilot、Notion AI 等商业产品的开源项目。作为社区驱动的资源汇总，仓库主要以 Markdown 文档形式维护，便于贡献者通过 PR 补充与更新，适合独立开发者、研究者及关注 AI 主权与本地化部署的团队作为技术选型参考。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">内容分类结构</p>
+    <div class="mermaid">graph TD
+  A[Awesome Open AI DevTools] --> B[开源开发工具]
+  A --> C[本地 LLM]
+  A --> D[自主智能体]
+  A --> E[SaaS 开源替代]
+  B --> B1[IDE 插件]
+  B --> B2[调试与评估]
+  C --> C1[模型运行时]
+  C --> C2[量化与推理]
+  D --> D1[Agent 框架]
+  D --> D2[任务编排]
+  E --> E1[ChatGPT 替代]
+  E --> E2[Copilot 替代]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">开发者使用流程</p>
+    <div class="mermaid">graph LR
+  U[AI 开发者] --> R[浏览精选目录]
+  R --> S{选择类别}
+  S --> L[本地 LLM]
+  S --> A[Agent 框架]
+  S --> T[开发工具]
+  L --> D[本地部署与集成]
+  A --> D
+  T --> D
+  D --> P[构建 AI 应用]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sami-Uysal/awesome-open-ai-developer-tools" target="_blank">Sami-Uysal/awesome-open-ai-developer-tools</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/realchendahuang/pi-config" target="_blank">Pi 编码代理配置</a></span>
+    <span class="stars">⭐ 105</span>
+  </div>
+  <p class="one-liner">Pi 编码代理一键安装配置方案</p>
+  <div class="tags">
+    <span class="tag">Pi coding agent</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Shell 安装脚本</span><span class="tag">插件与技能扩展体系</span>
+  </div>
+  <div class="summary">pi-config 是一个针对 Pi 编码代理（Pi coding agent）的完整配置方案，旨在为开发者提供开箱即用的 AI 辅助编程环境。项目通过一行命令的安装脚本，快速部署一整套预配置的开发工具链，让用户无需手动逐一安装和配置各类扩展组件即可获得完整的智能编码体验。该配置包整合了三大类核心资源：17 个插件（plugins）用于扩展编码代理的具体功能能力，18 个全局技能（global skills）为代理提供跨项目通用的知识和处理模式，2 个 MCP（Model Context Protocol）服务器则负责在代理与外部数据源、工具之间建立标准化的上下文桥梁。项目附带教程性质的 README 文档，帮助新手理解每个组件的作用、配置方式以及协同工作原理，降低了 AI 编码代理生态的上手门槛。整体上，该仓库定位为一个可复现、可分享的个人化开发环境模板，适合希望快速搭建 Pi 代理工作流的开发者参考或直接采用。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[用户] -->|一行安装命令| B[Installer 脚本]
+  B --> C[Pi Coding Agent 核心]
+  C --> D[17 个插件<br/>Plugins]
+  C --> E[18 个全局技能<br/>Global Skills]
+  C --> F[2 个 MCP 服务器]
+  F --> G[外部数据源/工具]
+  D --> H[增强编码能力]
+  E --> H
+  G --> H</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装与使用流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant S as 安装脚本
+  participant P as Pi Agent
+  participant M as MCP 服务器
+  U->>S: 执行一行安装命令
+  S->>P: 部署插件与技能
+  S->>M: 启动 MCP 服务器
+  M-->>P: 建立上下文通道
+  U->>P: 发起编码请求
+  P->>M: 获取外部上下文
+  M-->>P: 返回数据
+  P-->>U: 返回智能编码结果</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/realchendahuang/pi-config" target="_blank">realchendahuang/pi-config</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
