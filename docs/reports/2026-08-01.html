@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-01</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-01 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/haorantang97/antibes-holiday" target="_blank">Antibes Holiday 插画技能</a></span>
+    <span class="stars">⭐ 53</span>
+  </div>
+  <p class="one-liner">便携黑笔插画风格 Agent 技能包</p>
+  <div class="tags">
+    <span class="tag">Codex Plugin</span><span class="tag">Agent Skill (SKILL.md)</span><span class="tag">Markdown 参考文档</span><span class="tag">GitHub CLI (gh skill)</span><span class="tag">npx skills 安装器</span><span class="tag">YAML (agents/openai.yaml)</span>
+  </div>
+  <div class="summary">Antibes Holiday 是一款便携式视觉创作技能包，同时以 Agent Skill 和 Codex Plugin 两种形态发布，用于生成松弛感的原创黑笔插画、叙事场景、表现性笔触以及早期 Logo 探索。项目并不绑定特定艺术家身份，而是抽象出一套通用的视觉语法，涵盖物理笔触行为、速记式识别、克制的不完整感、因果式画面调度、主动留白与非平衡比例等要素。仓库通过 SKILL.md 定义执行流程，并以 style-system.md 与 prompt-recipes.md 作为组合式补充参考，配合笔触校准图与七张示例输出。它在具备图像生成能力的 Codex 环境下可完成完整绘制与编辑；在仅有栅格图像工具的 Agent 上会调用原生渲染器；无渲染能力时则优雅降级为可直接使用的提示词与校验清单，避免虚假声称完成绘图。安装方式支持 gh skill、npx skills 与 codex plugin marketplace 三种路径，采用 MIT 许可证。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">插件组成与安装流程</p>
+    <div class="mermaid">graph TD
+  A[haorantang97/antibes-holiday 仓库] --> B[plugins/antibes-holiday]
+  B --> B1[.codex-plugin/plugin.json]
+  B --> B2[skills/antibes-holiday/SKILL.md]
+  B --> B3[assets/examples 七张示例]
+  A --> C[references/]
+  C --> C1[style-system.md 绘图与构图系统]
+  C --> C2[prompt-recipes.md 提示词脚手架]
+  A --> D[assets/stroke-calibration.png]
+  B2 -.引用.-> C1
+  B2 -.引用.-> C2
+  A --> E{安装方式}
+  E --> E1[gh skill install]
+  E --> E2[npx skills add]
+  E --> E3[codex plugin marketplace add]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">运行时兼容性降级流程</p>
+    <div class="mermaid">graph TD
+  U[用户提出插画请求] --> S[SKILL.md 执行流程]
+  S --> Q{当前 Agent 能力?}
+  Q -->|Codex 内置图像生成| R1[完整生成与编辑工作流]
+  Q -->|具备栅格图像工具| R2[调用平台原生渲染器]
+  Q -->|无本地图像附件支持| R3[输出文本化笔触规格]
+  Q -->|无图像生成能力| R4[输出提示词 + 校验清单]
+  R1 --> O[产出插画]
+  R2 --> O
+  R3 --> P[可复用的规格文本]
+  R4 --> P</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/haorantang97/antibes-holiday" target="_blank">haorantang97/antibes-holiday</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/wutongyuonce/Trajex" target="_blank">Trajex</a></span>
+    <span class="stars">⭐ 50</span>
+  </div>
+  <p class="one-liner">AI 编码会话统一索引与浏览工具</p>
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">Node.js 22</span><span class="tag">Electron</span><span class="tag">SQLite (node:sqlite / better-sqlite3)</span><span class="tag">FTS5 全文检索</span><span class="tag">chokidar 文件监听</span><span class="tag">electron-vite</span>
+  </div>
+  <div class="summary">Trajex 是一个将 Claude Code、Codex、Kimi Code 与 Pi 等多种 AI 编码 Agent 产生的 JSONL 会话记录统一索引至同一个本地 SQLite 数据库的工具，衍生自 tommy0103/obelisk。它包含两个共享同一份索引的组件：面向 Agent 的 trajex CLI 支持毫秒级 JS 脚本查询与 FTS5 全文检索；面向人类的 Electron 桌面 App 提供 Sessions 浏览、Memory 管理、Activity 热力图与周月 Recap 卡片等直观界面。索引器会监听各 provider 的默认目录进行增量重建，支持根会话、子 Agent、workflow、tool calls、diffs 等多层数据的捕获。通过配套的 /trajex Skill，编码 Agent 能够自主编写查询脚本、以自然语言回答历史问题，并将有价值的结论沉淀为 markdown memory 供后续会话复用，实现会话历史的可检索与可复盘。</div>
+  <div class="why-notable">在 AI 编码 Agent 生态碎片化的当下，Trajex 通过一套统一的本地索引让分散的会话历史真正可查询、可复用，兼顾 Agent 自动化查询与人类可视化浏览两种使用场景。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  subgraph Sources[会话源 JSONL]
+    A1[Claude ~/.claude/projects]
+    A2[Codex ~/.codex/sessions]
+    A3[Kimi ~/.kimi-code/sessions]
+    A4[Pi ~/.pi/agent/sessions]
+  end
+  Sources --> B[Provider Adapters<br/>@trajex/core]
+  B --> C[(~/.trajex/trajex.sqlite<br/>统一 Schema + FTS5)]
+  C --> D[trajex CLI<br/>node:sqlite]
+  C --> E[Electron App<br/>better-sqlite3]
+  D --> F[Coding Agent<br/>JS 查询 + Skill]
+  E --> G[用户<br/>Sessions/Activity/Recap]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Agent 查询数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant A as Coding Agent
+  participant C as trajex CLI
+  participant DB as SQLite 索引
+  U->>A: /trajex 自然语言提问
+  A->>A: 依据 Skill 编写 JS 查询脚本
+  A->>C: trajex --query script
+  C->>DB: search/context/sql 调用
+  DB-->>C: JSON 结果
+  C-->>A: 结构化数据
+  A-->>U: 自然语言回答
+  opt 有价值结论
+    A->>C: trajex --attune 注册 memory
+    C->>DB: 写入 memory 关联
+  end</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/wutongyuonce/Trajex" target="_blank">wutongyuonce/Trajex</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sami-Uysal/awesome-open-ai-developer-tools" target="_blank">开源 AI 开发者工具精选指南</a></span>
+    <span class="stars">⭐ 68</span>
+  </div>
+  <p class="one-liner">开源 AI 开发栈全景导航目录</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">GitHub Pages</span><span class="tag">多语言文档</span>
+  </div>
+  <div class="summary">该仓库是一份面向现代 AI 开发者的精选清单与指南，系统梳理了开源 AI 技术栈的每一层，并对应给出可替代的闭源商业产品。内容覆盖编码智能体、Prompt 转应用构建器、自主智能体、智能体沙箱与浏览器控制、智能体框架与编排、Model Context Protocol (MCP)、本地推理引擎、推理服务器与网关、聊天前端、向量数据库、Embeddings 与 Rerankers、RAG 框架、微调训练、评估测试与护栏、可观测性与 LLMOps、语音视觉多模态、低代码可视化构建器等十余个类别。每个条目围绕三个问题展开：它做什么、能替代什么闭源产品、为什么选它，并附带成熟度徽章（稳定/活跃/实验）与许可证提示。项目坚持仅收录 OSI 许可证工具，无广告与赞助位，并提供英语、土耳其语、简体中文、西班牙语等多语言版本，是快速搭建自主可控 AI 开发栈的实用参考。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">开源 AI 开发栈分层架构</p>
+    <div class="mermaid">graph TD
+  A[开发者] --> B[编码智能体层]
+  A --> C[自主智能体与编排]
+  B --> D[Agent 框架 / MCP]
+  C --> D
+  D --> E[推理层]
+  E --> E1[本地推理引擎]
+  E --> E2[推理服务器与网关]
+  D --> F[数据与检索层]
+  F --> F1[向量数据库]
+  F --> F2[Embeddings 与 Rerankers]
+  F --> F3[RAG 框架]
+  D --> G[训练与评估层]
+  G --> G1[微调训练]
+  G --> G2[评估与护栏]
+  D --> H[可观测性 LLMOps]
+  A --> I[聊天 UI 与低代码构建器]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">编码智能体工作流</p>
+    <div class="mermaid">graph LR
+  U[用户需求] --> CLI[CLI/IDE 智能体]
+  CLI --> RM[仓库上下文映射]
+  RM --> LLM[LLM 后端<br/>Claude/GPT/本地模型]
+  LLM --> ACT{行动决策}
+  ACT --> EDIT[文件编辑]
+  ACT --> SH[Shell 命令]
+  ACT --> BR[浏览器操作]
+  EDIT --> GIT[自动 Git 提交]
+  SH --> SB[沙箱执行]
+  BR --> SB
+  GIT --> U
+  SB --> U</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sami-Uysal/awesome-open-ai-developer-tools" target="_blank">Sami-Uysal/awesome-open-ai-developer-tools</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/nuyoah-ai-works/nuyoah-xiezhen-prompt" target="_blank">南鸢写真提示词 Skill</a></span>
+    <span class="stars">⭐ 121</span>
+  </div>
+  <p class="one-liner">面向人像写真的中文提示词 Agent Skill</p>
+  <div class="tags">
+    <span class="tag">Agent Skill 规范</span><span class="tag">Markdown（SKILL.md 规则）</span><span class="tag">npx / Node.js CLI</span><span class="tag">Prompt Engineering</span>
+  </div>
+  <div class="summary">南鸢写真提示词是一个面向 Agent 生态的 Skill 插件，专注于中文人像与写真摄影场景的提示词生成。项目定位清晰：不直接调用图像模型生图，而是作为 Agent 的能力扩展，输出高质量、可复用的中文写真提示词，交由下游图像模型完成成片。核心能力覆盖四种典型工作流：完整中文提示词撰写、系列母版设计、同系列变体扩展，以及网页端抽卡关键词与参考图拆解，能够帮助用户在保持统一风格的前提下衍生出构图、动作、服装均不重复的系列作品。在专业性上，Skill 明确区分了固定成像机制、单张现场光线与皮肤区域反射三层参数，从而避免直闪近景常见的全脸油膜问题，体现出对摄影布光和皮肤质感的细致理解。安装与更新通过 npx skills 命令行完成，支持全局安装以及在 Agent 内以自然语言触发更新，但不支持热更新，需要重新加载任务。完整规则约束记录在 SKILL.md 中，采用 MIT 协议开源。整体项目体现了 Agent Skill 生态下垂直领域知识的封装范式：以提示词工程为核心，以规范化文档为载体，将摄影领域的经验沉淀为可分发、可组合的能力单元。</div>
+  <div class="why-notable">在 AI 写真赛道中，多数项目直接绑定特定图像模型，而本项目将提示词能力从生图流程中解耦，作为可复用的 Agent Skill 分发，体现了垂直领域知识资产化的思路。摄影层面对布光与皮肤反射的分层建模，也超出了通用提示词模板的粒度，对同类中文写真提示词工程具有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Skill 安装与调用流程</p>
+    <div class="mermaid">graph TD
+  A[用户] -->|npx skills add| B[Agent 环境]
+  B --> C[加载 nuyoah-xiezhen-prompt]
+  C --> D[读取 SKILL.md 规则]
+  A -->|自然语言指令| E[Agent]
+  E -->|调用 Skill| C
+  C --> F[生成中文写真提示词]
+  F --> G[下游图像模型]
+  G --> H[写真成片]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">提示词生成能力矩阵</p>
+    <div class="mermaid">graph LR
+  A[输入意图] --> B{任务类型}
+  B --> C[完整中文提示词]
+  B --> D[系列母版]
+  B --> E[同系列变体]
+  B --> F[抽卡关键词]
+  B --> G[参考图拆解]
+  C --> H[分层参数]
+  D --> H
+  E --> H
+  H --> I[固定成像机制]
+  H --> J[现场光线]
+  H --> K[皮肤区域反射]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/nuyoah-ai-works/nuyoah-xiezhen-prompt" target="_blank">nuyoah-ai-works/nuyoah-xiezhen-prompt</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/realchendahuang/pi-config" target="_blank">Pi Coding Agent 配置合集</a></span>
+    <span class="stars">⭐ 105</span>
+  </div>
+  <p class="one-liner">开箱即用的 Pi 终端代理配置</p>
+  <div class="tags">
+    <span class="tag">Pi Coding Agent (@earendil-works/pi-coding-agent)</span><span class="tag">TypeScript Extensions</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Agent Skills 标准 (Markdown)</span><span class="tag">ast-grep / tree-sitter / LSP</span><span class="tag">Bash 安装脚本</span><span class="tag">npm 包分发</span>
+  </div>
+  <div class="summary">pi-config 是作者 realchendahuang 分享的一份可直接复刻的 Pi Coding Agent 配置，把日常筛选出来的 17 个插件、18 个全局 Skill 和 2 个 MCP Server 打包整理，并配一键安装脚本 install.sh，目标是把 Pi（开源终端 AI 编码代理，npm 包 @earendil-works/pi-coding-agent）改造成一个能多代理协作、能省 token、能驱动浏览器的全能编码助手。README 兼具教程属性，先系统性讲解 Pi 的分层架构：TUI/RPC 交互层、Agent Loop 代理循环、Providers/Models 多模型抽象、Tools 工具层、Extensions TypeScript 扩展、Skills/Prompts 过程知识、Themes 主题以及 Packages 分发单位，并说明 npm、git、本地路径三种包来源和各配置文件位置。然后按轻中重三档介绍改造方式：写 Skill（纯 Markdown）、接 MCP Server（跨 agent 工具协议）、写 Extension（订阅生命周期事件、注册工具/命令/主题）。插件按用途分组，覆盖代理编排（pi-subagents 支持 single/chain/parallel/async/forked-context 五种模式、pi-goal、pi-plan-mode）、代码智能（pi-lens 提供 ast-grep 结构化搜索、tree-sitter 规则、LSP 诊断）等场景，非常适合想深入定制终端 AI 代理的开发者参考。</div>
+  <div class="why-notable">在终端 AI 编码代理生态里，Pi 相对 Claude Code、Codex 尚属新兴，公开的实战配置很少。本仓库不仅给出可复刻的完整配置和一键脚本，还把 Pi 的插件驱动架构、生命周期事件、包市场机制讲成了体系化教程，兼具「配置模板」和「入门指南」双重价值，对想搭建自己的多代理工作流或写 Pi 扩展的开发者是难得的参考样本。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Pi 分层架构</p>
+    <div class="mermaid">graph TD
+  U[用户终端] --> TUI[TUI / RPC / Print 交互层]
+  TUI --> LOOP[Agent Loop 代理循环]
+  LOOP --> PROV[Providers / Models 多模型抽象]
+  LOOP --> TOOLS[Tools 工具层<br/>bash/read/edit/web/mcp]
+  LOOP --> EXT[Extensions<br/>TypeScript 事件订阅]
+  LOOP --> SK[Skills / Prompts<br/>Markdown 过程知识]
+  TOOLS --> MCP[MCP Servers<br/>context7 / chrome-devtools]
+  EXT --> HOOK[tool_call / agent_end<br/>等生命周期事件]
+  PROV --> M[OpenAI / Anthropic / 本地]
+  SK --> PKG[Packages<br/>npm / git / 本地路径]
+  EXT --> PKG
+  TOOLS --> PKG</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">代理循环与扩展介入点</p>
+    <div class="mermaid">sequenceDiagram
+  participant User as 用户
+  participant Pi as Pi Agent
+  participant Ext as Extension
+  participant Model as 模型
+  participant Tool as 工具/MCP
+  User->>Pi: 输入 prompt
+  Pi->>Ext: before_agent_start
+  Ext-->>Pi: 注入消息/改系统提示
+  loop turn 循环
+    Pi->>Model: 发送上下文
+    Model-->>Pi: 请求调用工具
+    Pi->>Ext: tool_call 事件
+    Ext-->>Pi: 允许/拦截/修改
+    Pi->>Tool: 执行工具
+    Tool-->>Pi: 返回结果
+    Pi->>Ext: tool_result 事件
+    Ext-->>Pi: 可改结果
+    Pi->>Model: 回传结果
+  end
+  Pi->>Ext: agent_end / agent_settled
+  Pi-->>User: 输出最终答复</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/realchendahuang/pi-config" target="_blank">realchendahuang/pi-config</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
