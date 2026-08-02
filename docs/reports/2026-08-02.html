@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-02</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-02 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Sami-Uysal/awesome-open-ai-developer-tools" target="_blank">开源 AI 开发者工具精选</a></span>
+    <span class="stars">⭐ 69</span>
+  </div>
+  <p class="one-liner">开源 AI 开发全栈工具导航</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">Rust</span><span class="tag">Ollama</span><span class="tag">LiteLLM</span><span class="tag">VS Code Extension</span><span class="tag">Docker</span><span class="tag">Model Context Protocol</span>
+  </div>
+  <div class="summary">Awesome Open AI Developer Tools 是一份面向现代 AI 开发者的精选开源工具指南与目录，覆盖从模型推理到应用交付的完整 AI 技术栈。项目按照功能层级组织内容，涵盖编码代理与结对编程、Prompt 转应用生成器、自主与常驻代理、代理沙箱与浏览器控制、代理框架与编排、Model Context Protocol (MCP)、本地推理引擎、推理服务器与网关、聊天前端、向量数据库、嵌入与重排、RAG 框架、微调与训练、评测测试与护栏、可观测性与 LLMOps、语音视觉与多模态、低代码可视化搭建等类别。每个条目统一回答三个问题：它是做什么的、可替代哪个闭源产品、为什么值得选它，并附上语言、许可证、成熟度徽章（🟢 稳定、🟡 活跃、🟠 实验性）。目录仅收录 OSI 许可证项目，无联盟链接与赞助位，并提供多语言版本，帮助团队为自研 AI 平台挑选可自托管、可组合的开源替代方案。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">开源 AI 开发栈分层架构</p>
+    <div class="mermaid">graph TD
+  A[开发者] --> B[编码代理层<br/>aider/Cline/Continue]
+  A --> C[自主代理与编排<br/>OpenHands/Goose/Orkas]
+  B --> D[代理框架与 MCP]
+  C --> D
+  D --> E[推理服务器与网关]
+  E --> F[本地推理引擎<br/>Ollama/llama.cpp]
+  E --> G[云端模型<br/>Claude/GPT/Gemini]
+  D --> H[RAG 与向量数据库]
+  H --> I[嵌入与重排模型]
+  D --> J[评测/护栏/可观测性]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">编码代理典型数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant A as 编码代理
+  participant R as 仓库上下文
+  participant M as LLM 后端
+  participant S as 沙箱/终端
+  U->>A: 自然语言任务
+  A->>R: 构建仓库映射
+  R-->>A: 相关代码片段
+  A->>M: 提示 + 上下文
+  M-->>A: 代码修改建议
+  A->>U: 展示 diff 待批准
+  U-->>A: 确认执行
+  A->>S: 应用编辑并运行命令
+  S-->>A: 执行结果
+  A->>R: 自动 git 提交</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Sami-Uysal/awesome-open-ai-developer-tools" target="_blank">Sami-Uysal/awesome-open-ai-developer-tools</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Anionex/codex-deepseek-vision" target="_blank">codex-deepseek-vision</a></span>
+    <span class="stars">⭐ 119</span>
+  </div>
+  <p class="one-liner">让纯文本 DeepSeek 在 Codex 中无痛看图</p>
+  <div class="tags">
+    <span class="tag">Python 3.11+</span><span class="tag">OpenAI-compatible Chat Completions API</span><span class="tag">SSE 流式转发</span><span class="tag">本地 HTTP 代理</span><span class="tag">DeepSeek</span><span class="tag">Codex CLI</span>
+  </div>
+  <div class="summary">codex-deepseek-vision 是一个本地代理方案，专为已经在 Codex 中接入 DeepSeek 等纯文本大模型的用户设计。它解决的核心痛点是：纯文本模型没有多模态能力，一旦用户贴图或模型调用 Codex 内置的 view_image 工具就会被系统拦截报错，导致体验断裂。该项目通过在 127.0.0.1:19100 起一个本地代理，拦截 Codex 与 DeepSeek 上游之间的请求，当检测到消息中包含图片（贴图形式的 message.content 或工具调用返回的 function_call_output.output）时，自动调用一个 OpenAI 兼容的多模态视觉 API 将图片转成文字描述，再把描述替换回请求中转发给 DeepSeek，从而让纯文本模型也能顺畅处理图片问答、截图分析、GUI 操作等场景。项目实现了多图并行调用、按 sha256 缓存图片描述以避免重复请求、以及仅在 catalog 声明为 text-only 时才补充 image 支持等细节优化。除了代理主体，仓库还附带两个可选 CLI：glance 用于对单张图片直接提问或做 OCR，ground 用于用自然语言在原图中定位目标并输出像素级边界框。DeepSeek 的认证由 Codex 原样透传，代理只需配置 VISION_API_KEY、VISION_BASE_URL、VISION_MODEL 三个环境变量。</div>
+  <div class="why-notable">在多模态模型日益普及的当下，仍有大量用户因成本、私有化或已有工作流选择 DeepSeek 这类纯文本模型，本项目用极轻量的代理层弥合了纯文本模型与 Codex 内置视觉工具之间的鸿沟，无需引入额外的 MCP、Skills 或 CLI，就能让 view_image、贴图、截图分析、Computer Use GUI 操作等场景开箱可用。并发 + 缓存的工程细节表明作者在真实会话中做过打磨，思路也可复用到其他纯文本模型接入多模态工具链的场景，具备较强的参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求转发与图片改写流程</p>
+    <div class="mermaid">graph LR
+  A[Codex 客户端] -->|携带 Authorization 和图片| B[本地代理 127.0.0.1:19100]
+  B -->|检测到图片| C{是否命中 sha256 缓存}
+  C -->|命中| D[直接取缓存描述]
+  C -->|未命中| E[并发调用视觉 API]
+  E --> F[生成文字描述并写入缓存]
+  D --> G[用文字替换请求中的图片]
+  F --> G
+  G -->|原样转发 Authorization| H[DeepSeek 上游]
+  H -->|SSE 流式响应| B
+  B --> A</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">视力工具包组成</p>
+    <div class="mermaid">graph TD
+  U[用户或 Codex Agent] --> P[deepseek-vision-proxy.py 代理主体]
+  U --> G1[glance CLI 图片问答/OCR]
+  U --> G2[ground CLI 自然语言定位]
+  P --> VC[vision_client.py 共享视觉客户端]
+  G1 --> VC
+  G2 --> VC
+  VC --> API[OpenAI 兼容多模态 API]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Anionex/codex-deepseek-vision" target="_blank">Anionex/codex-deepseek-vision</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/nopnoping/micro-vllm" target="_blank">micro-vLLM</a></span>
+    <span class="stars">⭐ 111</span>
+  </div>
+  <p class="one-liner">教学向的轻量级 vLLM 推理引擎</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">CUDA</span><span class="tag">Triton</span><span class="tag">Hugging Face Transformers</span><span class="tag">Safetensors</span>
+  </div>
+  <div class="summary">micro-vLLM 是一个面向学习与实验的轻量级 LLM 推理引擎，定位介于极简的 nano-vllm 与生产级 vLLM 之间。项目保留了 vLLM V1 的核心架构分层，包括 Engine、Scheduler、KVCacheManager、Executor、Worker、ModelRunner、Model 与 Attention Backend 之间清晰的职责边界，同时主动收敛功能范围，专注于自回归 decoder-only（Causal LM）模型的推理流程，让读者能够在规模适中的代码库里理解 vLLM 的核心抽象。在能力上，它实现了同步离线批量生成、continuous batching 与 token-budget 调度、Paged KV Cache、prefix cache 与请求抢占，并提供 reference、PyTorch SDPA 和 Triton 三种 paged attention 后端，支持 Llama、Mistral 和 Qwen3 等 Causal LM 模型。项目复用 Hugging Face 生态加载模型配置、Tokenizer 与 Safetensors 权重，并针对调度与 KV Cache 提供结构化 trace，测试上区分了 CPU 单元测试与 GPU/真实模型集成测试。项目原则明确按语义正确、教学清晰、抽象稳定、可测量的性能优化、功能覆盖的顺序取舍，当功能扩展与核心链路清晰冲突时优先保证后者，因而非常适合作为深入理解 vLLM 架构的学习底座。</div>
+  <div class="why-notable">LLM 推理系统的学习资料要么过于简化偏离真实工程结构，要么直接面对 vLLM 庞大的代码库门槛过高。micro-vLLM 以贴近 vLLM V1 的分层实现了一条更短的学习路径，把调度、Paged KV Cache、prefix cache、抢占和多种 attention 后端等核心机制拆解到可读的规模，对研究推理引擎、想动手扩展调度或缓存策略的开发者与学习者具有较高参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求执行链路架构</p>
+    <div class="mermaid">graph TD
+  User[用户请求] --> LLM[LLM 入口]
+  LLM --> Engine[Engine 请求生命周期]
+  Engine --> Scheduler[Scheduler 调度器]
+  Engine --> Executor[Executor 执行接口]
+  Scheduler --> KVMgr[KVCacheManager 逻辑缓存/block table/prefix cache]
+  Executor --> Worker[Worker 设备进程]
+  Worker --> Runner[ModelRunner 模型加载与单轮执行]
+  Runner --> Model[Causal LM 模型 Llama/Mistral/Qwen3]
+  Runner --> Attn[Attention Backend reference/SDPA/Triton]
+  Runner --> PhysKV[物理 KV Cache]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">一次生成的数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant L as LLM
+  participant E as Engine
+  participant S as Scheduler
+  participant K as KVCacheManager
+  participant X as Executor/Worker
+  participant R as ModelRunner
+  U->>L: generate(prompts, SamplingParams)
+  L->>E: 提交请求
+  loop 每轮 step
+    E->>S: 请求调度
+    S->>K: 申请/复用 block(prefix cache)
+    S-->>E: 不可变执行计划
+    E->>X: 下发本轮 batch
+    X->>R: 前向 + Paged Attention
+    R-->>X: 新 token
+    X-->>E: 采样结果
+    E->>K: 释放/更新 block
+  end
+  E-->>L: 输出文本
+  L-->>U: outputs</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/nopnoping/micro-vllm" target="_blank">nopnoping/micro-vllm</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/juxhinr/bindwidth" target="_blank">Bindwidth 本地大模型选型计算器</a></span>
+    <span class="stars">⭐ 55</span>
+  </div>
+  <p class="one-liner">私有化本地 AI 部署选型与成本测算工具</p>
+  <div class="tags">
+    <span class="tag">JavaScript</span><span class="tag">React (CDN)</span><span class="tag">htm (CDN)</span><span class="tag">纯 HTML/CSS 无框架</span><span class="tag">JSON 数据目录</span><span class="tag">Node.js 测试</span><span class="tag">GitHub Pages</span>
+  </div>
+  <div class="summary">Bindwidth 是一款面向私有化本地大模型部署的、基于证据的选型与总拥有成本（TCO）计算器。它围绕三大真正决定单模型驻留下限的约束（KV 缓存内存、Prefill/Decode 合并服务容量、运行时会话上限）进行显式评估，帮助用户识别真正的瓶颈（bind），避免为非绑定约束买单。工具区分交互式用户与自主 Agent 两种结构性不同的负载，基于薪资、并发峰值、模型架构（总参/激活参/精度/KV 每 token/推测解码/预填解码比）等参数推算所需机器数，并透明对比自有硬件、主权云租赁与企业订阅三条路径，同时标注能力与服务差异。项目为纯前端应用，无构建、无服务器、无遥测，所有计算在浏览器内完成；模型、硬件、基准等数据以 JSON 目录分离，贡献者只需修改 JSON 即可扩展。引擎为纯函数，配套多组测试固定关键算术结果，并可导出 Markdown 决策记录与 JSON 场景。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户浏览器] --> H[index.html]
+  H --> A[src/app.js UI 层 React+htm]
+  A --> E[src/engine.js 纯函数计算引擎]
+  A --> IO[src/io.js 导入导出]
+  E --> M[data/models.json]
+  E --> HW[data/hardware.json]
+  E --> P[data/profiles.json 实测覆盖]
+  E --> D[data/defaults.json]
+  E --> S[data/scenarios.json]
+  E --> B[data/benchmarks.json]
+  IO --> MD[Markdown 决策记录]
+  IO --> JS[JSON 场景快照]
+  T[tests/*.mjs] -.验证.-> E</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">绑定约束选型数据流</p>
+    <div class="mermaid">flowchart LR
+  IN1[团队与薪资] --> C[成本/小时]
+  IN2[交互用户+Agent 负载] --> W[工作负载建模\n峰值因子 1+k/√N]
+  IN3[模型架构参数] --> MP[总参/激活参/精度/KV/推测解码]
+  W --> K[KV 内存需求]
+  W --> SV[Prefill+Decode 合并负载]
+  W --> RT[运行时会话数]
+  MP --> K
+  MP --> SV
+  K --> MAX{取 ceil 最大值}
+  SV --> MAX
+  RT --> MAX
+  MAX --> UNITS[机器台数]
+  MAX --> BIND[识别绑定约束]
+  UNITS --> CMP[对比: 自建/主权租赁/订阅]
+  BIND --> CMP
+  CMP --> OUT[决策记录 + TCO]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/juxhinr/bindwidth" target="_blank">juxhinr/bindwidth</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/0xwilliamortiz/ratchet" target="_blank">Ratchet</a></span>
+    <span class="stars">⭐ 408</span>
+  </div>
+  <p class="one-liner">为编码 Agent 加装的复杂度棘轮</p>
+  <div class="tags">
+    <span class="tag">Node.js 20+</span><span class="tag">Claude Code Hooks</span><span class="tag">JavaScript</span><span class="tag">Git</span><span class="tag">Windows 原生 UI (ratchetui.exe)</span>
+  </div>
+  <div class="summary">Ratchet 是一款面向 AI 编码 Agent（如 Claude Code）的复杂度守护工具。作者提出一个核心观察：向模型注入‘偏好标准库、不加依赖、保持小 diff’之类的极简规则只是‘开环’提示，长会话中模型必然漂移，却没有机制去验证它是否真的遵守。Ratchet 通过 Claude 的 PostToolUse 钩子在 Agent 每次 Edit/MultiEdit/Write 后立即读取改动，运行一组检测器并把发现回注到同一会话，让模型在还在工作时就看到自己的越界行为。检测项涵盖新增依赖（dep）、重复符号（exists）、手写标准库替代（stdlib）、平台已具备的能力（native）、只做转发的包装函数（wrapper）、单实现的抽象（yagni）、自造邮箱正则（validation）以及新文件、新依赖、净新增行数的预算（budget）。发现按 certain/likely/heuristic 三级分级，只有 certain 会在 strict 模式下阻断编辑。工具提供 advise/guard/strict/off 四档模式，可通过 /ratchet 指令或环境变量切换。同时以 .ratchet/mark.json 记录被接受的复杂度基线、以 ledger.jsonl 追加每次会话的净变化，用 ratchet report 输出真实趋势而非估算百分比，并支持 ratchet-ignore 注释与 baseline 对存量债务进行豁免。名字取意‘棘轮’：复杂度只能下降或持平，除非有人显式抬高基线并写下原因。</div>
+  <div class="why-notable">它触及 AI Coding Agent 工程化的一个真痛点：系统提示无法保证规则被遵守。Ratchet 用最朴素的思路——外部检测器 + 会话内反馈回路——把‘写规则’变成‘验规则’，并用可审计的 ledger 取代常见的‘AI 帮你节省了 X%’式营销数据，思路值得同类 Agent 工具生态借鉴。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">PostToolUse 反馈闭环</p>
+    <div class="mermaid">graph TD
+  U[开发者] -->|下达任务| A[编码 Agent]
+  A -->|Edit/Write/MultiEdit| F[工作区文件]
+  F -->|触发 PostToolUse| H[Ratchet 钩子]
+  H --> D[检测器<br/>dep/native/wrapper/yagni...]
+  D --> G[分级发现<br/>certain / likely / heuristic]
+  G -->|回注到同一会话| A
+  H --> L[.ratchet<br/>mark.json + ledger.jsonl]
+  L --> R[ratchet report<br/>趋势输出]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">模式与预算判定</p>
+    <div class="mermaid">flowchart LR
+  E[一次编辑] --> P[计算净新增行/文件/依赖]
+  P --> C{对照模式阈值}
+  C -->|advise| N1[仅列出发现]
+  C -->|guard| N2[发现 + 预算警告]
+  C -->|strict| N3{存在 certain 发现?}
+  N3 -->|是| B[阻断编辑]
+  N3 -->|否| N2
+  C -->|off| X[不运行]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/0xwilliamortiz/ratchet" target="_blank">0xwilliamortiz/ratchet</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
