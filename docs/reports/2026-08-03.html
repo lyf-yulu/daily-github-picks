@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-03</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-03 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/wutongyuonce/Trajex" target="_blank">Trajex 会话索引器</a></span>
+    <span class="stars">⭐ 57</span>
+  </div>
+  <p class="one-liner">多 Agent 会话统一索引与查询</p>
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">Node.js 22</span><span class="tag">Electron</span><span class="tag">SQLite (FTS5)</span><span class="tag">node:sqlite</span><span class="tag">better-sqlite3</span><span class="tag">chokidar</span><span class="tag">electron-vite</span>
+  </div>
+  <div class="summary">Trajex 是一款面向 AI 编程会话的本地索引与浏览工具，衍生自 tommy0103/obelisk 项目。它把散落在本地的 Claude Code、Codex、Kimi Code 与 Pi 等多种 Agent 的 JSONL transcripts 统一索引到同一个 SQLite 数据库（~/.trajex/trajex.sqlite）中，让数万行历史会话可被毫秒级查询。工具由两面组成：CLI 侧提供 trajex 命令与配套 skill，让 coding Agent 能自动编写 JS 查询、通过 search/context/sql 等 API 检索会话、tool calls、subagents 与 workflows，并以自然语言回答；App 侧是 Electron 桌面应用，提供 Sessions 浏览、Memory 管理、Activity 热力图、每周 Recap 卡片与 Settings 配置。索引器支持增量更新，通过 chokidar 监听多个 provider 根目录变化，App 运行时作为 active indexer 独占写权限，CLI 则保持只读，避免跨进程冲突。全文检索基于 SQLite FTS5，CLI 直接使用 Node 22 内置的 node:sqlite 零依赖运行。</div>
+  <div class="why-notable">在多个 coding Agent 并存的当下，Trajex 用一个本地 SQLite 打通了跨 Provider 的会话历史，同时兼顾 Agent 自动查询与用户可视化浏览两种使用范式，是把 AI 会话历史资产化的实用范例。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  subgraph Sources[会话数据源]
+    A1[~/.claude/projects]
+    A2[~/.codex/sessions]
+    A3[~/.kimi-code/sessions]
+    A4[~/.pi/agent/sessions]
+  end
+  Sources --> Indexer[Provider Adapters<br/>增量索引器]
+  Indexer --> DB[(~/.trajex/trajex.sqlite<br/>FTS5 全文索引)]
+  DB --> CLI[trajex CLI<br/>+ /trajex Skill]
+  DB --> App[Electron 桌面 App]
+  CLI --> Agent[Coding Agent<br/>JS 查询 & 自然语言回答]
+  App --> User[用户<br/>Sessions/Memory/Activity/Recap]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Agent 查询数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant A as Coding Agent
+  participant C as trajex CLI
+  participant S as SQLite 索引
+  U->>A: /trajex 上次 auth bug 改了哪些文件
+  A->>A: 编写 JS 查询脚本<br/>(search/context/sql)
+  A->>C: trajex --query <script>
+  C->>S: 执行 FTS5 / SQL 检索
+  S-->>C: JSON 结果集
+  C-->>A: 返回结构化数据
+  A-->>U: 自然语言总结回答
+  opt 值得沉淀
+    A->>C: trajex --attune 注册 memory
+    C->>S: 写入 memories 表
+  end</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/wutongyuonce/Trajex" target="_blank">wutongyuonce/Trajex</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Anionex/codex-vision-proxy" target="_blank">codex-vision-proxy</a></span>
+    <span class="stars">⭐ 200</span>
+  </div>
+  <p class="one-liner">让纯文本模型在 Codex 中也能看图</p>
+  <div class="tags">
+    <span class="tag">Python 3.11+</span><span class="tag">OpenAI 兼容 Chat Completions API</span><span class="tag">vtracer</span><span class="tag">Pillow</span><span class="tag">Codex Skills</span>
+  </div>
+  <div class="summary">codex-vision-proxy 是一款面向 Codex + DeepSeek 场景的本地代理工具，专门解决纯文本大模型无法调用 Codex 内置 view_image 工具的痛点。项目在 127.0.0.1:19100 架设一个透明代理，将 Codex 原始请求转发到 DeepSeek 上游；当请求中包含图像（用户粘贴的图片或模型主动调用 view_image 返回的图片）时，代理会调用外部的 OpenAI 兼容多模态 API（如通义、GPT-4o、Gemini 等），把图像内容转换为文本描述再交回给纯文本模型，从而实现近似多模态的使用体验，无需额外 MCP、CLI 或反复配置。核心亮点包括：并行处理多图、按（图像，Prompt）粒度缓存去重、以及基于 focus hint 的动态提示（依据用户诉求或助手调用理由生成更聚焦的描述）。除了代理本身，仓库还附带了一套为纯文本 LLM 设计的视觉工具包与 Codex skill：glance 用于图像问答与 OCR，ground 用于自然语言定位并返回像素级 bounding box（适合 GUI 自动化点击），trace 则基于 vtracer 在本地将图片确定性地矢量化为 SVG。这些工具通过官方 skills CLI 或手动拷贝方式接入 Codex，覆盖截图分析、Computer Use、多轮图像推理等实际使用场景。</div>
+  <div class="why-notable">在纯文本模型（如 DeepSeek）盛行但缺乏视觉能力的当下，本项目用一个轻量本地代理巧妙地把 Codex 内置的 view_image 工具接管过来，将多模态能力以透明方式补齐，避免了改造客户端或叠加 MCP 的复杂度；同时它把 focus hint、并行处理、缓存等工程细节做得相当扎实，并额外提供 grounding、矢量化等对 Computer Use 有实用价值的工具，是纯文本 Agent 视觉增强方向上一个可直接落地的参考实现。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求转发与图像转文字流程</p>
+    <div class="mermaid">graph LR
+  A[Codex 客户端] -->|原始 Authorization| B[代理 127.0.0.1:19100]
+  B -->|纯文本请求直转| C[DeepSeek 上游]
+  B -->|含图像| D{提取 focus hint}
+  D --> E[并行调用多模态 Vision API]
+  E --> F[(图像+Prompt 缓存)]
+  F --> G[图像替换为文字描述]
+  G --> C
+  C -->|文本响应| A</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">视觉工具包组成</p>
+    <div class="mermaid">graph TD
+  A[纯文本 LLM in Codex] --> B[vision-tools skill]
+  B --> C[glance CLI\n图像问答/OCR]
+  B --> D[ground CLI\n定位并返回像素坐标]
+  B --> E[trace CLI\n本地矢量化为 SVG]
+  C --> F[多模态 Vision API]
+  D --> F
+  E --> G[vtracer 本地处理]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Anionex/codex-vision-proxy" target="_blank">Anionex/codex-vision-proxy</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/ilindaniel/impeccable-lite" target="_blank">Impeccable Lite</a></span>
+    <span class="stars">⭐ 61</span>
+  </div>
+  <p class="one-liner">一份专注前端设计判断力的精简 Agent Skill</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">Agent Skills 规范</span><span class="tag">Apache License 2.0</span>
+  </div>
+  <div class="summary">Impeccable Lite 是 Impeccable 项目的独立精简衍生版，定位为面向 AI 编码代理的前端设计指导「技能包」。它剥离了原项目中的插件机制、命令、确定性检测器、生命周期钩子、实时浏览器编辑、Provider 适配器、子代理、安装器与发布工具链，只保留最核心的「设计判断层」，通过单个 SKILL.md 文件交付。内容涵盖强一致的视觉方向、面向营销页/产品 UI/编辑内容/展示场景的设计模式，以及排版、色彩、布局、交互与动效等实践指南，同时强调无障碍、响应式、性能与边界情况处理，抵御 AI 生成常见的千篇一律界面。项目通过在各平台约定的 skills 目录下放置 SKILL.md 即可安装，兼容 Claude Code、Codex、Cursor、Gemini CLI、GitHub Copilot、Kiro、OpenCode、Qoder、Grok、Antigravity、Trae 等十余种主流代理环境；对不支持 Agent Skills 的代理，可将内容并入项目指令作为回退方案。以 Apache 2.0 协议发布。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能加载与生效流程</p>
+    <div class="mermaid">graph TD
+  A[开发者] -->|下载 SKILL.md| B[平台 skills 目录]
+  B --> C{代理平台}
+  C -->|Claude Code| D[.claude/skills/impeccable-lite]
+  C -->|Codex| E[.agents/skills/impeccable-lite]
+  C -->|Cursor / Kiro / 其他| F[对应 .xxx/skills 目录]
+  C -->|不支持 Skills| G[复制进项目指令作为回退]
+  D --> H[启动新会话或 reload]
+  E --> H
+  F --> H
+  G --> H
+  H --> I[代理在前端 UI 任务中调用设计判断]
+  I --> J[高质量界面输出：排版/色彩/布局/交互/无障碍]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Impeccable 与 Impeccable Lite 能力对比</p>
+    <div class="mermaid">graph LR
+  subgraph Impeccable 完整版
+    A1[设计指导]
+    A2[命令与 CLI]
+    A3[确定性检测器]
+    A4[生命周期 Hook]
+    A5[实时浏览器编辑]
+    A6[Provider 适配器]
+    A7[子代理与安装器]
+  end
+  subgraph Impeccable Lite
+    B1[设计指导]
+    B2[设计模式集合]
+    B3[无障碍与响应式规范]
+    B4[受限的构建与校验流程]
+  end
+  A1 -->|蒸馏保留| B1
+  A2 -.裁剪.-> X((移除))
+  A3 -.裁剪.-> X
+  A4 -.裁剪.-> X
+  A5 -.裁剪.-> X
+  A6 -.裁剪.-> X
+  A7 -.裁剪.-> X</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/ilindaniel/impeccable-lite" target="_blank">ilindaniel/impeccable-lite</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/nuyoah-ai-works/nuyoah-xiezhen-prompt" target="_blank">南鸢写真提示词</a></span>
+    <span class="stars">⭐ 181</span>
+  </div>
+  <p class="one-liner">中文人像写真提示词 Agent Skill</p>
+  <div class="tags">
+    <span class="tag">Agent Skill (SKILL.md 规则)</span><span class="tag">npx skills CLI</span><span class="tag">Markdown 提示词模板</span><span class="tag">MIT License</span>
+  </div>
+  <div class="summary">南鸢写真提示词是一款面向人像与写真摄影场景的 Agent Skill，通过 npx skills 命令一键安装到本地 Agent 环境中，为用户提供结构化、可复用的中文写真提示词生成能力。项目定位清晰，专注于把摄影语言、光线机制与视觉美学转化为大模型可理解的提示词模板，覆盖完整中文提示词撰写、系列母版设定、同系列变体衍生、网页端抽卡关键词生成，以及参考图逆向拆解等典型工作流。功能上，Skill 明确区分固定成像机制（相机、镜头、胶片质感等）与单张现场变量（光线方向、皮肤区域反射等），并针对常见踩坑点做了工程化约束，例如避免直闪近景出现全脸油膜，从而提升成片的自然度与质感一致性。使用方式极简，用户只需在对话中调用 Skill，即可让 Agent 依据主题或参考图输出一组构图、动作、服装均不重复的系列提示词，Skill 本身只交付提示词而不直接生图，需配合支持的图像模型完成最终成像。项目通过 npx skills update 支持热更新，采用 MIT 协议开源，完整规则集中在 SKILL.md 中维护，配套官方产品站提供版本下载与说明。</div>
+  <div class="why-notable">在通用 AI 绘图提示词满天飞的当下，这个项目把摄影师视角的经验（光线、反射、系列一致性）沉淀成可被 Agent 直接调用的领域 Skill，而不是又一份静态 Prompt 合集。它示范了如何用 SKILL.md + skills CLI 的方式，把垂直行业 know-how 封装成可安装、可更新的 Agent 能力单元，对想做垂类提示词工程或 Agent Skill 分发的开发者具有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Skill 安装与调用流程</p>
+    <div class="mermaid">graph TD
+  A[用户终端] -->|npx skills add| B[本地 Agent 环境]
+  B --> C[加载 SKILL.md 规则]
+  D[用户对话:主题或参考图] --> E[Agent 调用 Skill]
+  C --> E
+  E --> F[生成中文写真提示词]
+  F --> G[外部图像模型]
+  G --> H[写真成片]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">提示词生成能力矩阵</p>
+    <div class="mermaid">graph LR
+  S[南鸢写真 Skill] --> P1[完整中文提示词]
+  S --> P2[系列母版]
+  S --> P3[同系列变体]
+  S --> P4[网页抽卡关键词]
+  S --> P5[参考图拆解]
+  S --> R1[固定成像机制]
+  S --> R2[现场光线与皮肤反射]
+  R2 --> X[规避直闪油膜]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/nuyoah-ai-works/nuyoah-xiezhen-prompt" target="_blank">nuyoah-ai-works/nuyoah-xiezhen-prompt</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/lyogavin" target="_blank">AirLLM</a></span>
+    <span class="stars">⭐ 819 <span class="stars-today">(+819 today)</span></span>
+  </div>
+  <p class="one-liner">4GB显存运行70B大模型推理</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Hugging Face Transformers</span><span class="tag">Safetensors</span><span class="tag">Flash Attention</span><span class="tag">CUDA</span>
+  </div>
+  <div class="summary">AirLLM 是一个专注于极致降低大语言模型推理显存占用的开源项目，其核心突破在于让 70B 参数级别的大模型能够在仅有 4GB 显存的单张 GPU 上完成推理，而无需依赖量化、蒸馏或剪枝等有损压缩手段，从而在保持模型原始精度的前提下大幅降低硬件门槛。项目定位于个人开发者、研究者以及缺乏高端 GPU 资源的中小团队，使他们能够在消费级显卡（如 3060、4060 等）甚至 8GB 显存的 Mac 设备上体验 LLaMA、Qwen、Mistral、ChatGLM、Baichuan 等主流开源大模型。技术上，AirLLM 采用逐层推理（layered inference）思想，将 Transformer 的每一层权重按需从磁盘或内存加载至 GPU，计算完成后立即释放显存，配合 flash attention、权重分块存储、KV cache 优化等策略，使显存占用与模型总参数量解耦。项目基于 PyTorch 与 Hugging Face Transformers 生态构建，兼容 safetensors 权重格式，API 设计与 Transformers 保持一致，几行代码即可完成模型加载与生成，并额外支持 4bit/8bit 压缩以进一步加速。整体来看，AirLLM 是低资源场景下运行超大模型的实用工程方案。</div>
+  <div class="why-notable">在大模型推理动辄需要数十上百 GB 显存的当下，AirLLM 通过纯工程手段将 70B 模型的运行门槛压至 4GB，让个人开发者用一张普通显卡也能跑起顶级开源模型，这对大模型民主化和边缘推理场景具有重要示范意义。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">分层推理架构</p>
+    <div class="mermaid">graph TD
+  A[用户输入 Prompt] --> B[AirLLM 推理引擎]
+  B --> C{逐层调度器}
+  C -->|加载第 N 层| D[磁盘/内存权重]
+  D --> E[GPU 显存 4GB]
+  E --> F[单层前向计算]
+  F --> G[释放该层显存]
+  G --> C
+  C -->|所有层完成| H[输出 Token]
+  H --> I[生成结果返回]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">显存占用对比</p>
+    <div class="mermaid">graph LR
+  A[70B 模型权重 ~140GB] --> B[传统方式]
+  A --> C[AirLLM 方式]
+  B --> D[需要 A100 80GB x2]
+  C --> E[单层加载 ~4GB]
+  E --> F[消费级 GPU 即可运行]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/lyogavin" target="_blank">sponsors/lyogavin</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
