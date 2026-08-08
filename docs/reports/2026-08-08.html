@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-08</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-08 · 共 4 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Anionex/agent-vision-toolkit" target="_blank">Agent 视觉工具箱</a></span>
+    <span class="stars">⭐ 348</span>
+  </div>
+  <p class="one-liner">让纯文本 LLM 智能体拥有视觉能力</p>
+  <div class="tags">
+    <span class="tag">Shell CLI</span><span class="tag">本地透明代理（Local Proxy）</span><span class="tag">Agent Skills 标准</span><span class="tag">多模态视觉 API（VLM）</span><span class="tag">Codex / Claude Code / OpenCode 等 Agent 扩展</span>
+  </div>
+  <div class="summary">agent-vision-toolkit 是一个为纯文本大模型（如 DeepSeek）设计的视觉能力增强工具箱与技能包，让原本不具备多模态能力的 Coding Agent 也能完成看图、识图、还原 UI、GUI 自动化等视觉任务。项目提供两类组件：其一是一组视觉工具 CLI（如 glance 用于图片问答、ground 用于元素定位等），配合一个名为 vision-tools 的 Skill，指导 Agent 何时调用哪个工具、按何种顺序执行、如何验证结果；其二是可选的无缝集成层，通过本地透明代理与单文件原生插件，让用户直接粘贴图片以及 Agent 内置的图片工具都能自然工作，无需额外提示。核心典型场景包括长截图与聊天记录 OCR、根据草图或设计稿还原前端 UI、图标/Logo/SVG 还原、白板草图转 Mermaid 结构化代码，以及基于截图的 GUI 操作闭环（定位—操作—再截图—校验）。项目已在 Codex + DeepSeek 上完整验证，并端到端跑通 Claude Code、Pi、Oh My Pi、OpenCode 等主流 Agent，主张视觉能力不必内置于模型，而可存在于 Harness（外壳）中，让文本模型 Agent 借助工具反超原生多模态模型。</div>
+  <div class="why-notable">它把「让文本模型看图」这件事系统化了：不只是加一个 image-to-text 工具，而是提供了一整套围绕视觉任务的方法论（何时看、看什么、如何验证），并通过本地代理让粘贴图与原生图片工具透明工作，几乎零改造接入主流 Agent。对于大量使用 DeepSeek 等纯文本模型跑 Agent 的开发者，这是一种以外部工具链绕过模型模态限制、性价比极高的补强思路。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构：文本模型 Agent 通过工具箱获得视觉能力</p>
+    <div class="mermaid">graph TD
+  U[用户/开发者] -->|粘贴图片或提出视觉任务| A[文本模型 Agent<br/>Codex/Claude Code/Pi/OpenCode]
+  A -->|Shell 调用| C[Vision CLI 工具箱<br/>glance / ground / OCR ...]
+  A -.可选无缝集成.-> P[本地透明代理 + 原生插件]
+  P -->|截获图片输入| C
+  C -->|调用| V[多模态视觉 API / VLM]
+  V -->|结构化文本结果| C
+  C -->|回传描述/坐标/OCR| A
+  S[vision-tools Skill<br/>方法论与 Playbook] -.指导.-> A</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">GUI 自动化闭环数据流</p>
+    <div class="mermaid">flowchart LR
+  T[任务指令] --> SC1[截图]
+  SC1 --> LOC[ground 定位控件]
+  LOC --> ACT[执行单步操作]
+  ACT --> SC2[再次截图]
+  SC2 --> VF{glance 校验状态}
+  VF -->|未达成| LOC
+  VF -->|达成| DONE[任务完成]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Anionex/agent-vision-toolkit" target="_blank">Anionex/agent-vision-toolkit</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/eternityspring/shuohao-skills" target="_blank">shuohao-skills</a></span>
+    <span class="stars">⭐ 188</span>
+  </div>
+  <p class="one-liner">AI 编码 agent 的通用 skill 集合</p>
+  <div class="tags">
+    <span class="tag">Node.js (≥18, 标准库)</span><span class="tag">Bash 安装脚本</span><span class="tag">Claude Code CLI</span><span class="tag">codex CLI</span><span class="tag">GitHub Actions (预留未启用)</span>
+  </div>
+  <div class="summary">shuohao-skills 是一个面向 AI 编码 agent 的 skill 集合仓库，同时兼容 Claude Code 和 codex 两种 CLI 环境。项目采用「一个 skill 一个目录、自包含可单独拷走」的组织约定，目前收录的首个 skill 是 novel-characters，它能把一篇完整小说拆解成角色设定集，产出物包括人物画像、卡通形象提示词、音色提示词以及三视图，方便后续接入图像与语音生成流程。安装环节由 scripts/install.sh 处理，脚本会自动检测本机装的是 Claude Code 还是 codex，并把 skills 目录以软链方式挂到 ~/.claude/skills 或 ~/.codex/skills，好处是 git pull 之后新版本立即生效，无需重装；同时脚本支持指定单个 skill、限定目标 CLI 以及一键卸载软链。运行前置只有两条硬要求：Node ≥ 18（脚本仅使用标准库，零 npm 依赖）和当前会话自带的模型额度，无需任何 API key；codex CLI 属于可选项，仅在需要通过内置 $imagegen 出图时才用到。仓库约定每个 skill 必须包含 SKILL.md 工作流说明和 scripts/selftest.mjs 自测脚本，且自测不得调用模型、不得消耗额度，只覆盖确定性逻辑，这为多 skill 扩展提供了统一的质量基线。项目预留了跨平台跨 Node 版本的 GitHub Actions workflow（Ubuntu/macOS × Node 18/22/24），但尚未启用，作者在 README 中坦率说明当前仅在 macOS + Node 24 验证过，并给出启用步骤。</div>
+  <div class="why-notable">在 Claude Skills 生态刚起步的阶段，这个仓库给出了一个可复制的工程化范式：跨 agent 复用、软链热更新、零依赖自测、按 skill 目录自包含。相比只面向单一平台的 prompt 合集，它把 skill 当作可维护的软件工件来对待，且首个示例 novel-characters 直击小说到多模态素材的实际痛点，对做 AI 内容创作管线的开发者有直接借鉴价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装与运行架构</p>
+    <div class="mermaid">graph TD
+  A[开发者] -->|git clone| B[shuohao-skills 仓库]
+  B --> C{install.sh 检测环境}
+  C -->|Claude Code| D[~/.claude/skills 软链]
+  C -->|codex| E[~/.codex/skills 软链]
+  D --> F[AI 编码 Agent]
+  E --> F
+  F -->|读取 SKILL.md| G[执行 skill 工作流]
+  B -->|git pull| D
+  B -->|git pull| E</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">novel-characters 数据流</p>
+    <div class="mermaid">graph LR
+  A[小说文本] --> B[novel-characters skill]
+  B --> C[人物画像]
+  B --> D[卡通形象提示词]
+  B --> E[音色提示词]
+  B --> F[三视图提示词]
+  D -.可选.-> G[codex $imagegen 出图]
+  F -.可选.-> G
+  B --> H[selftest.mjs 零额度自测]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/eternityspring/shuohao-skills" target="_blank">eternityspring/shuohao-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/HaddenHunter/SkillForge" target="_blank">SkillForge</a></span>
+    <span class="stars">⭐ 105</span>
+  </div>
+  <p class="one-liner">AI Agent 技能版 npm 运行时</p>
+  <div class="tags">
+    <span class="tag">Rust</span><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">pnpm</span><span class="tag">Fastify</span><span class="tag">SQLite</span><span class="tag">Next.js 14</span><span class="tag">Tailwind CSS</span><span class="tag">Ed25519 / minisig</span><span class="tag">MCP</span><span class="tag">macOS Seatbelt</span><span class="tag">Ollama</span>
+  </div>
+  <div class="summary">SkillForge 是一个面向 AI Coding Agent（Claude Code、Cursor、Codex、Gemini CLI 等）的本地优先、模型无关、MCP 原生的技能运行时。它把 Agent 能力封装成可校验、可组合、可分发的独立单元，让 Agent 像装 npm 包一样复用技能，同时通过白名单沙箱约束读写与网络边界。当前处于 Phase 1 MVP 阶段，已经形成完整的本地加远端闭环：Rust 编写的 core CLI 提供 run/serve/validate 三大命令，实现 skill.yml 严格校验、Plan-Act-Observe-Reflect 循环、Token 预算截断、Ollama 与 OpenAI 兼容模型接入，并在 macOS 上自动接入 Seatbelt 平台沙箱；TypeScript 编写的 registry CLI 支持多源聚合、@scope 路由、Bearer Token 鉴权、Ed25519 minisig 签名发布与安装校验，以及 GitHub Release 分发同步；registry-service 基于 Fastify 加 SQLite 对齐 /v1/skills 协议，具备 publish/yank RBAC 与完整审计日志；registry-web 用 Next.js 14 与 Tailwind 呈现首页、技能列表、版本对比、审计日志与协议文档。内置 fix-ci、grep-ts、doc-gen 三个示例技能，通过 MCP 的 tools/list 与 tools/call 直接暴露给 Agent 客户端，形成从技能编写、校验、评测到分发消费的一体化基础设施。</div>
+  <div class="why-notable">大多数 Agent 技能方案还停留在提示词片段或仓库模板层面，SkillForge 把它工程化为一个带清单、签名、RBAC、审计和沙箱的分发平台，接近 npm 之于前端的角色定位。跨 Rust 与 TypeScript 双栈交付、原生对齐 MCP 协议、并已跑通本地加远端加 Web UI 完整链路，对想构建自有 Agent 能力体系或研究 AI 工具供应链的团队都有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">SkillForge 整体架构</p>
+    <div class="mermaid">graph TD
+  Client[MCP 客户端<br/>Claude Code / Cursor] -->|MCP :18080| Core[core Rust<br/>serve / run / validate]
+  Core -->|加载 + 沙箱| Skills[skills/&lt;name&gt;<br/>skill.yml · SKILL.md · eval.md]
+  Skills -->|publish / sync| Registry[registry CLI<br/>多源聚合 + 签名]
+  Registry -->|--github-repo| GH[GitHub Releases<br/>tarball + .minisig]
+  Registry -->|--remote| Service[registry-service :18081<br/>Fastify + SQLite + RBAC]
+  Service --> Storage[归档 tar.gz<br/>Storage 抽象]
+  Service --> Audit[audit_log 表]
+  Service --> Web[registry-web :18082<br/>Next.js 14 + Tailwind]
+  Registry -->|Ed25519 sign/verify| Signer[minisig 风格签名]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能执行 Plan-Act-Observe-Reflect 流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant A as Agent
+  participant C as core CLI
+  participant M as LLM (Ollama/OpenAI)
+  participant S as Sandbox (Seatbelt)
+  A->>C: tools/call skill
+  C->>C: 加载 skill.yml + 校验白名单
+  C->>M: Plan 提示 + Token 预算
+  M-->>C: 计划
+  C->>S: Act 执行工具
+  S-->>C: Observe 结果
+  C->>M: Reflect 是否继续
+  M-->>C: 完成或下一步
+  C-->>A: 返回执行轨迹</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/HaddenHunter/SkillForge" target="_blank">HaddenHunter/SkillForge</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/AMAP-ML/LongHorizon-Harness" target="_blank">LongHorizon-Harness</a></span>
+    <span class="stars">⭐ 388</span>
+  </div>
+  <p class="one-liner">长时程电脑操作智能体执行框架</p>
+  <div class="tags">
+    <span class="tag">Python ≥ 3.10</span><span class="tag">Claude Code</span><span class="tag">Codex CLI</span><span class="tag">OpenClaw</span><span class="tag">AgentAdapter 插件协议</span><span class="tag">Environment 可插拔执行环境协议</span>
+  </div>
+  <div class="summary">LongHorizon-Harness 是由高德（AMAP-ML）团队开源的长时程（Long-Horizon）计算机操作智能体执行框架，定位为运行在 Claude Code、Codex CLI 等现有 Agent 之上的执行、状态管理与结果验证系统。它并不训练新模型，也不替代现有 Agent，而是通过独立的角色分工，让智能体在真实桌面与命令行环境中自主工作数十小时，跨应用推进复杂任务而不发生状态漂移。核心设计采用三角色架构：Manager 维护原始目标与已验证进度并规划下一步，Executor 每轮以全新上下文聚焦单一任务，Auditor 独立检查文件、接口、日志与测试，只有通过独立验证的结果才会进入持久化任务状态，从而实现新鲜上下文执行、可恢复进度和可审计的可靠推进。框架同时覆盖 GUI 与 CLI 场景，可在浏览器、电子表格、设计软件、3D 工具与终端命令间无缝流转，并通过轻量级 AgentAdapter 接入 Claude、GPT、Qwen 等任意模型，三个角色可分别选用不同后端以平衡质量、速度与成本。项目提供 doctor 诊断、统一的计算机操作插件管理、只读审计校验和进程清理等工程能力，并在 WeaveBench、OSWorld 2.0、Terminal-Bench 2.1 等基准的数百个真实任务上完成评测，覆盖前端开发、数据分析、运维调试、设计处理、游戏交互、文档演示、空间推理、桌面操作、科研教育与创意生产等十余个领域。</div>
+  <div class="why-notable">长时程 Agent 是当前工程化落地的最大瓶颈，绝大多数框架仍停留在单轮或短链任务的演示。LongHorizon-Harness 不训练模型、不改造 Agent，而是从执行层用三角色隔离＋独立验证＋持久化状态的思路解决上下文漂移这一根本问题，并在数百个真实 GUI/CLI 混合任务上给出可量化的收益，登上 Hugging Face Daily Papers 周榜第一。它把 Claude Code、Codex 这类通用 Agent 变成能连续工作数十小时的可靠执行体，对做 Agent 平台、RPA 升级或研究长时程规划的团队都具备直接参考与集成价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三角色协作与可验证状态流</p>
+    <div class="mermaid">graph TD
+  U[用户任务目标] --> M[Manager 目标与进度管理]
+  M -->|下发子任务| E[Executor 全新上下文执行]
+  E -->|产出结果| A[Auditor 独立验证]
+  A -->|通过| S[(持久化已验证状态)]
+  A -->|失败| M
+  S --> M
+  M -->|任务完成| R[自然语言最终答复]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">模型与执行环境分层架构</p>
+    <div class="mermaid">graph LR
+  subgraph Models[模型层]
+    C1[Claude]
+    C2[GPT]
+    C3[Qwen]
+  end
+  subgraph Backends[Agent 后端]
+    B1[Claude Code]
+    B2[Codex CLI]
+    B3[自定义 AgentAdapter]
+  end
+  subgraph Roles[三角色]
+    R1[Manager]
+    R2[Executor]
+    R3[Auditor]
+  end
+  subgraph Env[执行环境 Environment]
+    G[桌面 GUI]
+    T[终端 CLI]
+  end
+  Models --> Backends
+  Backends --> Roles
+  Roles --> Env
+  Env --> Roles</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/AMAP-ML/LongHorizon-Harness" target="_blank">AMAP-ML/LongHorizon-Harness</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
