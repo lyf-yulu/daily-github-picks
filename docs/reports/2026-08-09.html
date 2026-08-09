@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-09</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-09 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/eternityspring/shuohao-skills" target="_blank">shuohao-skills</a></span>
+    <span class="stars">⭐ 279</span>
+  </div>
+  <p class="one-liner">给 AI 编码 agent 用的技能集合</p>
+  <div class="tags">
+    <span class="tag">Node.js (≥18)</span><span class="tag">JavaScript (ES Modules, .mjs)</span><span class="tag">Claude Code Skills</span><span class="tag">Codex CLI</span><span class="tag">Shell 脚本</span><span class="tag">Mermaid/Markdown 文档</span>
+  </div>
+  <div class="summary">shuohao-skills 是一个面向 AI 编码 agent 的 skill 集合仓库，同时兼容 Claude Code 和 codex 两大主流 AI 编码环境。仓库当前主打 skill 是 novel-characters，它能把一整本小说自动拆解为完整的角色设定集，包括人物画像、卡通形象提示词、音色提示词以及角色三视图设定图，最终产出一份可视化的角色设定报告，报告语言和出图风格可自由配置。项目在工程约定上强调自包含与零依赖：每个 skill 独立成目录，可单独拷走使用，脚本只依赖 Node 标准库，无需 npm install，也不需要任何 API key，直接消耗用户当前 AI 会话的模型额度。安装脚本会自动识别本机安装的是 Claude Code 还是 codex，通过软链方式接入，git pull 后即刻生效，无需重装，同时支持指定 skill、指定平台以及一键卸载。仓库为每个 skill 强制要求配备 SKILL.md 工作流说明与 scripts/selftest.mjs 自测脚本，自测不调用模型、不消耗额度，运行秒级完成，覆盖全部确定性逻辑，用极轻量方式替代 CI。出图能力可选，依赖 codex CLI 内置的 imagegen，没有也不影响其余文本产出。整体呈现出面向实战短剧与内容创作的工具化思路。</div>
+  <div class="why-notable">在 AI agent skill 生态尚未标准化的当下，本仓库用一套极简的目录约定同时打通 Claude Code 与 codex 两条生态，且完全零依赖、零 API key，是研究可移植 AI skill 打包方式的优秀参考。novel-characters 面向 AI 短剧和内容创作这一正在爆发的场景，把 LLM 从写文本推进到出角色设定图的完整流水线，实用性和示范性兼具。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">仓库整体架构</p>
+    <div class="mermaid">graph TD
+  A[用户] -->|git clone| B[shuohao-skills 仓库]
+  B --> C[scripts/install.sh]
+  C -->|自动检测| D{本机环境}
+  D -->|Claude Code| E[~/.claude/skills/]
+  D -->|Codex| F[~/.codex/skills/]
+  B --> G[skills/novel-characters]
+  G --> H[SKILL.md 工作流]
+  G --> I[scripts/*.mjs 零依赖脚本]
+  G --> J[references 按需加载指令]
+  G --> K[examples 样例与夹具]
+  E -.软链.-> G
+  F -.软链.-> G</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">novel-characters 数据流</p>
+    <div class="mermaid">graph LR
+  A[输入小说文本] --> B[AI Agent 读取 SKILL.md]
+  B --> C[拆解角色列表]
+  C --> D[生成人物画像]
+  C --> E[生成形象提示词]
+  C --> F[生成音色提示词]
+  E --> G{codex imagegen 可用?}
+  G -->|是| H[生成角色三视图]
+  G -->|否| I[跳过出图]
+  D --> J[角色设定集报告]
+  F --> J
+  H --> J
+  I --> J</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/eternityspring/shuohao-skills" target="_blank">eternityspring/shuohao-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/HaddenHunter/SkillForge" target="_blank">SkillForge</a></span>
+    <span class="stars">⭐ 106</span>
+  </div>
+  <p class="one-liner">AI Coding Agent 的技能版 npm</p>
+  <div class="tags">
+    <span class="tag">Rust</span><span class="tag">TypeScript</span><span class="tag">Node.js 22+</span><span class="tag">pnpm</span><span class="tag">Fastify</span><span class="tag">SQLite</span><span class="tag">Next.js 14</span><span class="tag">Tailwind CSS</span><span class="tag">Ed25519 / minisig</span><span class="tag">MCP 协议</span><span class="tag">Ollama / OpenAI API</span>
+  </div>
+  <div class="summary">SkillForge 是一个面向 AI Coding Agent（Claude Code、Cursor、Codex、Gemini CLI 等）的本地优先技能运行时，定位为『技能版 npm』，模型无关、MCP 原生。它把 Agent 能力抽象为可校验、可组合、可分发的独立技能单元，每个技能通过 skill.yml 描述清单、SKILL.md 说明用法、eval.md 定义评测基线，并以 allow.read_paths、write_paths、net_hosts 明确执行边界。项目当前处于 Phase 1 MVP，Rust 编写的 core 提供 run/serve/validate/eval 命令，实现 Plan→Act→Observe→Reflect 循环、Token 预算截断、白名单沙箱以及 macOS Seatbelt 平台沙箱自动接入，并通过 HTTP 暴露 MCP 的 initialize/tools/list/tools/call 接口。分发侧提供 TypeScript 三件套：本地 CLI 支持多源聚合、Bearer Token 鉴权、Scope RBAC 与 Ed25519 minisig 签名发布链；registry-service 基于 Fastify + SQLite + 文件存储抽象对齐 /v1/skills 协议并带完整审计；registry-web 用 Next.js 14 + Tailwind 提供 Shadcn 风格 UI，覆盖技能列表、详情、版本对比与审计日志。模型侧同时接入 Ollama 与 OpenAI 兼容 API，内置 fix-ci、grep-ts、doc-gen 三个示例技能。</div>
+  <div class="why-notable">在 Agent 生态里，多数『技能库』还停留在 prompt 片段和仓库模板，SkillForge 少见地把包管理器的工程范式（清单、版本、签名、权限、审计、评测门禁）完整搬到 Agent 技能上，同时坚持本地优先与 MCP 原生。它既能被 Claude Code/Cursor 直接接入，又提供了从 CLI 到 Web UI 的完整分发闭环，是观察 Agent 基础设施走向标准化与可治理的一个有代表性的样本。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构总览</p>
+    <div class="mermaid">graph TD
+  Client[MCP 客户端<br/>Claude Code / Cursor]
+  Core[core Rust<br/>run/serve/validate/eval]
+  Skills[skills/&lt;name&gt;/<br/>skill.yml + SKILL.md + eval.md]
+  Reg[registry TS CLI<br/>多源聚合 + 签名]
+  Svc[registry-service Fastify<br/>:18081 /v1/skills]
+  Web[registry-web Next.js<br/>:18082]
+  GH[GitHub Releases<br/>tarball + minisig]
+  DB[(SQLite + 文件存储)]
+
+  Client -- MCP :18080 --> Core
+  Core -- 加载 + 沙箱执行 --> Skills
+  Skills -- publish / sync-github --> Reg
+  Reg -- 上传 --> Svc
+  Reg -- 发布 / 拉取 --> GH
+  Svc --> DB
+  Web -- 浏览 --> Svc
+  Reg -- install / search --> Svc</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能执行与分发流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant Agent as MCP 客户端
+  participant Core as core (Rust)
+  participant Sandbox as Seatbelt/白名单
+  participant Model as Ollama / OpenAI
+  participant Registry as registry-service
+
+  Agent->>Core: tools/call(skill, input)
+  Core->>Core: 校验 skill.yml + Token 预算
+  Core->>Sandbox: 申请文件读写
+  loop Plan -> Act -> Observe -> Reflect
+    Core->>Model: 推理请求
+    Model-->>Core: 输出与工具调用
+    Core->>Sandbox: 执行工具
+    Sandbox-->>Core: 观察结果
+  end
+  Core-->>Agent: 最终结果 + 轨迹
+  Note over Registry: 发布路径
+  Core->>Registry: publish(签名 tarball)
+  Registry->>Registry: 验证 Ed25519 + Scope RBAC + 审计</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/HaddenHunter/SkillForge" target="_blank">HaddenHunter/SkillForge</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/AMAP-ML/LongHorizon-Harness" target="_blank">长时程智能体执行框架 LongHorizon-Harness</a></span>
+    <span class="stars">⭐ 411</span>
+  </div>
+  <p class="one-liner">让 AI 智能体持续可靠完成长时程复杂任务</p>
+  <div class="tags">
+    <span class="tag">Python ≥3.10</span><span class="tag">Claude Code</span><span class="tag">Codex CLI</span><span class="tag">OpenClaw</span><span class="tag">AgentAdapter 插件机制</span><span class="tag">可插拔 Environment 协议</span><span class="tag">计算机使用（Computer-Use）插件体系</span>
+  </div>
+  <div class="summary">LongHorizon-Harness 是由高德地图机器学习团队（AMAP-ML）开源的长时程（Long-Horizon）计算机使用智能体执行框架，专注于让 AI Agent 在真实桌面与命令行环境中连续工作数十小时，完成跨应用、跨轮次的复杂任务。项目的核心定位并非训练新模型或替代现有 Agent，而是在 Claude Code、Codex CLI 等主流智能体之上构建一层执行、状态管理与结果验证系统，解决长任务中普遍存在的上下文漂移、进度丢失和结果不可信问题。框架采用三角色分离设计：Manager 负责维护原始目标与已验证进度，Executor 每轮以全新上下文专注单一子任务，Auditor 独立审计文件、接口、日志与测试，只有通过独立验证的结果才会写入持久化任务状态，从而实现新鲜上下文执行、可恢复进度、独立审计和可验证交付。它同时支持 GUI 桌面操作（浏览器、Office、设计与 3D 工具）与 CLI 命令行开发（编码、脚本、依赖安装、系统调试），并通过轻量 AgentAdapter 与可插拔 Environment 协议兼容 Claude、GPT、Qwen 等不同模型，允许三个角色各自选用不同后端以平衡质量、速度与成本。项目已在 WeaveBench、OSWorld 2.0、Terminal-Bench 2.1 等基准的数百个真实任务上验证效果，覆盖 Web 前端、数据分析、运维调试、设计图像、游戏交互、文档演示、空间推理等十余个领域。</div>
+  <div class="why-notable">长时程 Agent 是 2025-2026 年智能体研究最难啃的骨头，绝大多数框架仍停留在单轮 Demo。LongHorizon-Harness 不是又一个新模型，而是把「谁来规划、谁来执行、谁来验证」拆开，用独立审计守住持久化状态这条底线，思路更贴近工程可用性；配套在 OSWorld 2.0、Terminal-Bench 2.1 等基准上的真实评测和登顶 Hugging Face Daily Papers 周榜的关注度，使它成为想把 Claude Code / Codex 推向生产级长任务的开发者值得优先考察的开源方案。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三角色协作与可验证状态流转</p>
+    <div class="mermaid">graph TD
+  U[用户任务目标] --> M[Manager 目标与进度维护]
+  M -->|下发子任务| E[Executor 新鲜上下文执行]
+  E -->|产出交付物| A[Auditor 独立审计]
+  A -->|通过| S[(已验证持久化状态)]
+  A -->|未通过| M
+  S --> M
+  M -->|任务完成| R[自然语言结果回复]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">跨环境执行与后端适配架构</p>
+    <div class="mermaid">graph LR
+  subgraph Roles[角色层]
+    M[Manager]
+    E[Executor]
+    A[Auditor]
+  end
+  subgraph Adapter[AgentAdapter 适配层]
+    CC[Claude Code]
+    CX[Codex CLI]
+    CU[自定义 Adapter]
+  end
+  subgraph Models[模型层]
+    CL[Claude]
+    GP[GPT]
+    QW[Qwen]
+  end
+  subgraph Env[Environment 协议]
+    GUI[桌面 GUI 浏览器/Office/3D]
+    CLI[命令行 编码/脚本/调试]
+  end
+  Roles --> Adapter
+  Adapter --> Models
+  Roles --> Env
+  GUI <--> CLI</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/AMAP-ML/LongHorizon-Harness" target="_blank">AMAP-ML/LongHorizon-Harness</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/oliverb-io1902e8/agent-skills-collection" target="_blank">Agent Skills Collection（疑似恶意软件仓库）</a></span>
+    <span class="stars">⭐ 146</span>
+  </div>
+  <p class="one-liner">披着 AI 技能库外衣的可疑可执行文件分发仓库</p>
+  <div class="tags">
+    <span class="tag">Windows 可执行文件（.exe 安装器）</span><span class="tag">GitHub Releases 分发</span><span class="tag">README 中声称 Python 3.11+（无实际源码）</span>
+  </div>
+  <div class="summary">该仓库自称是一个面向 LLM 智能体（Claude、ChatGPT 及自定义 Agent）的模块化技能集合，README 中罗列了 Web 研究、数据分析、API 集成、记忆管理、文件操作、邮件自动化、社交媒体、数据库查询等 8 项技能，并附有一段调用 WebResearch 类的 Python 示例代码，看上去像是一个 Python 库。但仔细审阅安装流程后可以判断，这几乎符合典型的恶意软件分发套路：安装方式并非通过 pip 或源码构建，而是从 GitHub Releases 下载加密压缩包，压缩包带有固定解压密码（Rlt=b?*upVzL，用于规避杀毒引擎静态扫描），并明确要求用户在运行 AgentSkillInstaller.exe 前先临时关闭 Windows Defender、以管理员身份运行，同时以「误报」话术预先安抚用户对杀毒告警的疑虑。FAQ 里还专门声明「不会被封号，这是合法开发工具」，进一步强化社会工程色彩。仓库本身不存在真实可复用的 Python 源码，README 中的代码片段仅为障眼法，技能表格里的「Stable/Beta」状态也无对应实现。综合判断，这是一个伪装成开源 AI Agent 工具的可执行文件投递渠道，不建议下载、解压或运行其中任何二进制文件。</div>
+  <div class="why-notable">这是一个值得作为反面案例关注的仓库：它利用当前 AI Agent/Skills 生态的热度，套用规范的开源项目 README 模板（徽章、技能表、代码示例、FAQ、MIT 许可证）来伪装合法性，实际却在引导用户执行未经审计的二进制文件并主动削弱系统防御。对于研究供应链安全、LLM 生态钓鱼攻击面以及开源信任模型的从业者具有观察价值，同时也提醒开发者：仅通过 GitHub Releases 分发、且要求关闭杀毒软件的「AI 工具」应当一律视为高风险。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">可疑分发流程</p>
+    <div class="mermaid">graph TD
+  A[用户被 README 吸引] --> B[前往 GitHub Releases 下载加密压缩包]
+  B --> C[使用固定密码 Rlt=b?*upVzL 解压]
+  C --> D[按提示临时关闭 Windows Defender]
+  D --> E[以管理员身份运行 AgentSkillInstaller.exe]
+  E --> F{未知二进制在本机执行}
+  F --> G[潜在风险: 凭据窃取 / 后门 / 挖矿 / 勒索]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">社会工程话术拆解</p>
+    <div class="mermaid">graph LR
+  R[规范化 README 外观] --> T1[徽章与技能表制造专业感]
+  R --> T2[Python 代码示例伪装成库]
+  R --> T3[FAQ 预先否认封号风险]
+  R --> T4[将杀毒告警定义为误报]
+  T1 & T2 & T3 & T4 --> V[降低用户戒心, 促成 .exe 执行]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/oliverb-io1902e8/agent-skills-collection" target="_blank">oliverb-io1902e8/agent-skills-collection</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/TOPDEV99999/AI-Knowledge-Management-Platform" target="_blank">智能文档助手</a></span>
+    <span class="stars">⭐ 93</span>
+  </div>
+  <p class="one-liner">融合RAG与SQL推理的智能文档问答系统</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">Next.js</span><span class="tag">LLM / RAG</span><span class="tag">Vector Database</span><span class="tag">SQL Database</span><span class="tag">ReAct Agent</span>
+  </div>
+  <div class="summary">Agentic Documents Assistant 是一个基于大语言模型的智能知识管理与文档问答平台，面向企业级业务文档分析场景。项目采用 Agentic AI 架构，将 RAG 语义检索、结构化实体抽取与 SQL 分析推理相结合，支持三类问题的自动化处理：一是基于向量检索直接回答事实性问题；二是通过将自然语言转换为 SQL 查询、在结构化实体数据库上执行来解答分析型问题（例如未来三个月到期的合同列表）；三是借助 ReAct（Reason and Act）范式的 LLM 智能体，在语义搜索、SQL 查询与外部工具之间自主决策，完成多步骤复杂推理任务。项目包含文档摄取与批处理数据管道、向量存储与检索、实体抽取与结构化数据存储、后端服务，以及基于 Next.js 的前端聊天应用，具备鉴权与安全通信能力，形成完整的端到端解决方案。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户] --> FE[Next.js 聊天前端]
+  FE -->|鉴权调用| BE[后端服务]
+  BE --> AG[ReAct 智能体]
+  AG -->|事实问题| VS[向量存储/语义检索]
+  AG -->|分析问题| SQL[SQL 查询引擎]
+  AG -->|扩展能力| TOOL[外部工具]
+  VS --> DOC[(文档向量库)]
+  SQL --> DB[(结构化实体数据库)]
+  DP[文档数据管道] --> DOC
+  DP --> DB</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">文档摄取与问答数据流</p>
+    <div class="mermaid">flowchart LR
+  A[原始业务文档] --> B[数据管道批处理]
+  B --> C[文本切分与向量化]
+  B --> D[实体与元数据抽取]
+  C --> E[(向量数据库)]
+  D --> F[(SQL 数据库)]
+  Q[用户提问] --> AG[LLM 智能体]
+  AG -->|语义检索| E
+  AG -->|生成 SQL| F
+  E --> AG
+  F --> AG
+  AG --> R[自然语言回答]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/TOPDEV99999/AI-Knowledge-Management-Platform" target="_blank">TOPDEV99999/AI-Knowledge-Management-Platform</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
