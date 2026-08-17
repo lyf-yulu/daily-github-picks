@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-17</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-17 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/wanshuiyin/HERO-Anti-OverDefense" target="_blank">HERO 反过度防御契约</a></span>
+    <span class="stars">⭐ 166</span>
+  </div>
+  <p class="one-liner">一段配置制止 AI 编码代理过度防御</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">Prompt Engineering</span><span class="tag">AGENTS.md / CLAUDE.md 约定</span>
+  </div>
+  <div class="summary">HERO（Anti-OverDefense）是一份可直接粘贴到 AI 编码代理配置文件中的约束契约，用于抑制代理在写代码时表现出的四类过度防御行为：Hashing（无谓的哈希与校验和）、Edge cases（对不可达边界情况的执念）、Rubrics（机械化评分与自我审计循环）、Overbuild（多余的兼容层、迁移框架和特性开关）。项目作者观察到这些代理常常优化「不被指责」而非「把事做好」，于是把四种模式命名为 HERO，方便在协作时直接指认「刚才发生了哪一种」，而不是陷入感觉之争。仓库核心是一段中英双语的 SCOPE LIMITS 规则块，配套六条明确边界，包含一条重要例外：不覆盖用户实际请求的安全、迁移或审查工作。用户只需把它粘贴进 CLAUDE.md、AGENTS.md、.github/copilot-instructions.md、.cursorrules 等代理会自动加载的文件即可生效，兼容 Claude Code、Codex、Antigravity、Cursor、Copilot、Windsurf、Gemini CLI 等主流工具，无需安装。仓库还提供 cases 案例目录（在代理狡辩时作为反驳素材）、hosts 目录（说明各代理的粘贴位置）和 examples 目录（社区贡献者在自己项目中的适配范例）。项目源自作者另一个 13.7k★ 的 ARIS 项目的观察沉淀，专注于把跨模型审阅的价值留下、把「哈希税」丢掉。</div>
+  <div class="why-notable">它抓住了当下 AI 编码代理最普遍却最难描述的痛点——用堡垒式代码淹没真正的功能实现，并用一份四十行的可粘贴契约给出了跨工具的通用解法。命名化的 HERO 框架为团队与代理之间提供了共享词汇，衍生自 13.7k★ 的 ARIS 项目背景也让其经验密度显著高于普通提示词模板。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">HERO 契约工作流</p>
+    <div class="mermaid">graph TD
+  A[开发者提出功能需求] --> B{代理是否加载 HERO 契约}
+  B -- 未加载 --> C[产生过度防御代码]
+  C --> C1[H 无用哈希]
+  C --> C2[E 边界执念]
+  C --> C3[R 审计循环]
+  C --> C4[O 过度架构]
+  B -- 已加载 --> D[按 SCOPE LIMITS 约束提案]
+  D --> E[聚焦真正的功能实现]
+  D --> F{代理狡辩?}
+  F -- 是 --> G[引用 cases 目录反驳]
+  G --> E</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">HERO 四类过度防御分类</p>
+    <div class="mermaid">graph LR
+  HERO[HERO 四类模式] --> H[H · Hashing 哈希癖]
+  HERO --> E[E · Edge cases 边界执念]
+  HERO --> R[R · Rubrics 机械评分]
+  HERO --> O[O · Overbuild 过度建设]
+  H --> H1[无人读的校验和文件]
+  E --> E1[不可达的异常输入防护]
+  R --> R1[整夜自我审计而功能未写]
+  O --> O1[无用户系统仍加固账号]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/wanshuiyin/HERO-Anti-OverDefense" target="_blank">wanshuiyin/HERO-Anti-OverDefense</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/soumatheusgomes/vibe-coding-toolkit" target="_blank">Vibe Coding Toolkit</a></span>
+    <span class="stars">⭐ 149</span>
+  </div>
+  <p class="one-liner">生产级 AI 编码工作流工具箱</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">Superpowers 插件</span><span class="tag">ESLint</span><span class="tag">Biome</span><span class="tag">Context7</span><span class="tag">Obsidian</span><span class="tag">Node.js / npm</span><span class="tag">Mermaid</span><span class="tag">Markdown 模板</span>
+  </div>
+  <div class="summary">Vibe Coding Toolkit 是一套面向 Claude Code（同时兼顾 OpenAI Codex）的 AI 辅助编码工作流工具箱，由巴西开发者 Matheus Gomes 从真实金融科技生产项目（受 NDA 保护）中提炼并脱敏而来。作者认为「粘贴一个大 prompt 然后祈祷」不是工作流而是靠运气，因此把每天在生产环境实际使用、能解决具体问题的做法整理成可复制的模式：会话失去主线、agent 越权多写、lint 警告长期无人清理、每次新会话都要重复踩坑等痛点，都对应了工具箱里的一块拼图。核心是 Superpowers 插件——被作者视为整个工具箱最强的一环，负责逼迫 agent 先探索意图、做计划，再落笔写代码，而不是一上来就实现最先想到的方案。围绕它构建了一整套配套：并行波次的 subagent 编排协议（以结构而非纪律来消除文件冲突和 commit 争抢）、ESLint/Biome quality gates（把警告升级为错误，用 lint 强制架构边界）、Graphify + Context7 的代码地图、RTK token 代理、Ponytail / Caveman 人格约束、以及 Claude 原生记忆加 Obsidian 的跨会话上下文。仓库同时提供 CLAUDE.md 模板、`/aia-harness:init` 一键初始化命令，以及从安装到首个被评审 commit 的完整 Playbook。</div>
+  <div class="why-notable">与市面上大量「Prompt 合集」不同，这个仓库把 AI 编码从个人技巧提升为可复用的工程流程：subagent 波次编排、lint 质量门、跨会话记忆等做法直接来自受 NDA 保护的金融科技生产项目，且每条实践都对应一个真实踩过的坑。对已经在用 Claude Code / Codex、想把「碰运气式 vibe coding」升级为团队级工作流的开发者，参考价值远超普通模板集。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">端到端工作流</p>
+    <div class="mermaid">flowchart LR
+    Install[安装 Claude Code 与插件] --> Setup[配置 CLAUDE.md 与 hooks]
+    Setup --> Brain[头脑风暴]
+    Brain --> Plan[生成计划]
+    Plan --> Waves[Subagent 并行波次执行]
+    Waves --> Review[多 agent 交叉评审]
+    Review --> Ship[提交与发布]
+    subgraph SP[Superpowers 纪律层]
+      Brain
+      Plan
+    end
+    Graphify[Graphify + Context7]:::layer -.编码前给出代码地图.-> Brain
+    RTK[RTK Token 代理]:::layer -.降低整段会话成本.-> Waves
+    Persona[Ponytail + Caveman 人格]:::layer -.约束做什么与怎么做.-> Waves
+    Memory[Claude 记忆 + Obsidian]:::layer -.提供起始上下文.-> Setup
+    Gate[Quality Gates]:::layer -.守护每次提交.-> Ship
+    Ship -.沉淀经验.-> Memory
+    classDef layer fill:#fef3c7,stroke:#f59e0b,color:#111</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Subagent 并行波次编排</p>
+    <div class="mermaid">graph TD
+    Main[主会话 只做规划与决策] --> Split{按文件边界切分任务}
+    Split --> W1[波次 1]
+    Split --> W2[波次 2]
+    W1 --> A1[Reviewer Subagent]
+    W1 --> A2[Database Subagent]
+    W1 --> A3[Testing Subagent]
+    W2 --> B1[Refactor Subagent]
+    W2 --> B2[Docs Subagent]
+    A1 --> Merge[结构化合并 无文件冲突]
+    A2 --> Merge
+    A3 --> Merge
+    B1 --> Merge
+    B2 --> Merge
+    Merge --> QG[Quality Gates ESLint Biome]
+    QG -->|通过| Commit[提交]
+    QG -->|失败| Main</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/soumatheusgomes/vibe-coding-toolkit" target="_blank">soumatheusgomes/vibe-coding-toolkit</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Dominic789654/awesome-deepseek-harness" target="_blank">Awesome DeepSeek Harness</a></span>
+    <span class="stars">⭐ 90</span>
+  </div>
+  <p class="one-liner">DeepSeek Harness 生态资源精选清单</p>
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">Cordis</span><span class="tag">MCP</span><span class="tag">Node.js/npx</span><span class="tag">YAML (cordis.patch.yml)</span>
+  </div>
+  <div class="summary">Awesome DeepSeek Harness 是一个围绕 DeepSeek 官方 Agent 运行时 DSH（DeepSeek Harness）构建的精选资源清单，遵循 awesome-list 规范。DSH 以『Model + Harness = Agent』为核心理念，是一个基于 Cordis 框架、采用『一切皆插件』架构的 TypeScript Agent 运行时，负责上下文管理、工具调用编排、执行沙箱、反馈循环与会话持久化。该仓库按类别整理了官方项目、Profile 与 Patch 补丁层、Harness 与运行时、安全权限、会话与内存管理、成本追踪、IM 桥接、插件市场、可视化、PPT、编码、Agent、自动研究循环、MCP 服务器、编排聚合器、UI 客户端、Skills 等生态组件。其中 Profile 层是核心亮点，通过 bundle 堆叠 + cordis.patch.yml 分层覆盖，无需 fork 即可重塑整棵插件树，实现长任务、数学推理、幻灯片编辑等任务专用运行时。所有插件仓库需打上 #dsh GitHub topic 以便被社区中心索引。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">DSH 生态分层架构</p>
+    <div class="mermaid">graph TD
+  A[DeepSeek Model] --> B[DSH Harness 运行时]
+  B --> C[Cordis 插件内核]
+  C --> D[Profile 与 Patch 层]
+  C --> E[MCP 服务器]
+  C --> F[Skills 技能包]
+  C --> G[编排聚合器]
+  D --> H[任务专用 Profile]
+  H --> H1[长任务 Profile]
+  H --> H2[编码 Agent Profile]
+  H --> H3[QA 问答 Profile]
+  B --> I[UI 与 IM 桥接]
+  I --> I1[Web UI]
+  I --> I2[终端客户端]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Profile 补丁层叠加流程</p>
+    <div class="mermaid">flowchart LR
+  A[Bundle 插件包堆叠] --> B[Profile 级 cordis.patch.yml]
+  B --> C[DSH_HOME 全局 patch]
+  C --> D[--patch 命令行覆盖]
+  D --> E[最终插件树]
+  E --> F[启动 Agent 运行时]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Dominic789654/awesome-deepseek-harness" target="_blank">Dominic789654/awesome-deepseek-harness</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/hsusul/lore" target="_blank">Lore</a></span>
+    <span class="stars">⭐ 158</span>
+  </div>
+  <p class="one-liner">编码 Agent 会话的本地可搜索归档</p>
+  <div class="tags">
+    <span class="tag">Rust</span><span class="tag">Tauri 2</span><span class="tag">SQLite</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">Git</span>
+  </div>
+  <div class="summary">Lore 是一款面向编码 Agent 用户的本地桌面应用，专门用于浏览和搜索 Claude Code 与 Codex 的会话历史。它的定位是「编码 Agent 的 Git 记忆」，通过只读方式解析这两款工具在本地保存的会话文件，将其与对应仓库及 Git 提交历史关联起来，统一汇入一个可搜索的本地档案库。与 Agent 包装器或代理服务不同，Lore 不介入 Agent 运行流程，也不修改其原始文件，只做被动归档与检索。项目在架构上采用分层设计：底层由只读适配器读取 Claude Code 和 Codex 的日志，中间层通过 lore-core 完成数据摄取、存储、Git 关联、搜索与安全处理，将结果写入本地 SQLite 归档并保留 Git 证据；上层通过 Tauri 2 桥接 Rust 后端与 React 前端，为用户提供桌面级浏览与搜索界面。值得注意的是，Lore 明确区分不同类型的「证据」——例如会话期间记录的提交与后续摄取时观察到的仓库状态被视作独立事实，避免混淆。V0 版本坚持完全本地化，不设账户、遥测、云数据库或 LLM 调用，隐私优先。当前版本聚焦 Claude Code 和 Codex 两大生态，刻意推迟更多集成与生成式技能，先把核心归档能力打磨扎实。</div>
+  <div class="why-notable">在编码 Agent 快速普及的当下，会话记录散落在各家工具的本地目录里，缺乏统一检索手段。Lore 用「Git 记忆」的视角切入，把 Claude Code 与 Codex 的历史变成可搜索的本地知识资产，且坚守只读、本地化、无遥测的工程克制，对关注隐私与可追溯性的开发者极具吸引力。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统数据流</p>
+    <div class="mermaid">graph TD
+  A[Claude Code 会话日志] --> C[只读适配器]
+  B[Codex 会话日志] --> C
+  C --> D[lore-core 摄取与关联]
+  E[本地 Git 仓库] --> D
+  D --> F[(本地 SQLite 归档)]
+  D --> G[Git 证据存储]
+  F --> H[Tauri 桌面应用]
+  G --> H
+  H --> I[用户搜索与浏览]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">仓库分层架构</p>
+    <div class="mermaid">graph LR
+  A[src React 界面] --> B[src-tauri Tauri 应用层]
+  B --> C[crates/lore-ipc IPC 类型与 TS 绑定]
+  C --> D[crates/lore-core 核心库]
+  D --> D1[摄取 Ingestion]
+  D --> D2[存储 Storage]
+  D --> D3[Git 关联]
+  D --> D4[搜索 Search]
+  D --> D5[安全 Safety]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/hsusul/lore" target="_blank">hsusul/lore</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/yokel1121/muyang-illustration-skills" target="_blank">沐阳插画 Skills</a></span>
+    <span class="stars">⭐ 178</span>
+  </div>
+  <p class="one-liner">面向 Codex 的中文插画风格技能合集</p>
+  <div class="tags">
+    <span class="tag">Codex Skills</span><span class="tag">Markdown 提示词配方</span><span class="tag">Mermaid 流程图</span>
+  </div>
+  <div class="summary">沐阳插画 Skills 是一套专为 Codex 打造的中文插画生成技能合集，聚焦于「固定风格配方」这一核心思路。项目包含 1 个总入口技能与 8 个风格子技能，覆盖 25 套预调好的插画配方，涵盖极简编辑、撞色时装、柔焦梦幻、纯白高定、暗黑时尚、东方诗意、复古印刷与电影叙事八大类别。使用者只需明确「主体」与「具体风格」两项信息，Skill 会在内部套用预设提示词直接生成图片，全程不展示中间提示词，也不会擅自扩写主体或混合风格，从而保证输出风格的稳定与可复现。项目提供总入口路由与子技能直呼两种调用方式，并支持自定义画幅参数。安装方式为将 skills/ 目录下的 9 个子目录复制到本地 ~/.codex/skills/ 目录，兼容 macOS、Linux 与 Windows PowerShell。每种风格均配有独立的 references/recipes.md 配方文件与 assets/ 示意图，便于用户提前预览效果。整体交互采用中文，并在缺失主体或风格时主动追问，避免生成偏差。项目定位清晰，属于 Codex Skills 生态下的一款风格化图像生成工具包，将设计师的经验沉淀为可复用的提示词资产。</div>
+  <div class="why-notable">这是 Codex Skills 生态中少见的中文风格化图像技能合集，把设计经验固化为 25 套可复用配方，用「主体 + 风格」两输入即可稳定出图，为国内创作者提供了一套开箱即用的插画工作流范例，也示范了如何用 Skills 组织提示词资产。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能路由架构</p>
+    <div class="mermaid">graph TD
+  U[用户输入 主体+风格] --> R[muyang-illustration 总入口]
+  U -.直呼.-> S1
+  R --> S1[editorial-minimal]
+  R --> S2[fashion-colorblock]
+  R --> S3[soft-dream]
+  R --> S4[white-couture]
+  R --> S5[dark-fashion]
+  R --> S6[oriental-poetry]
+  R --> S7[print-poster]
+  R --> S8[cinematic-narrative]
+  S1 --> P[25 套固定配方 recipes.md]
+  S2 --> P
+  S3 --> P
+  S4 --> P
+  S5 --> P
+  S6 --> P
+  S7 --> P
+  S8 --> P
+  P --> IMG[直接生成图片]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">生成数据流</p>
+    <div class="mermaid">flowchart LR
+  A[用户指定主体] --> B[用户选择具体风格]
+  B --> C{信息是否齐全}
+  C -- 否 --> Q[Skill 追问缺失项]
+  Q --> A
+  C -- 是 --> D[读取固定配方]
+  D --> E[仅替换主体占位符]
+  E --> F[调用图像生成]
+  F --> G[输出成品图片]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/yokel1121/muyang-illustration-skills" target="_blank">yokel1121/muyang-illustration-skills</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
