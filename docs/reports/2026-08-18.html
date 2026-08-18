@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-18</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-18 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/mukul975" target="_blank">AI 智能体网络安全技能库</a></span>
+    <span class="stars">⭐ 198 <span class="stars-today">(+198 today)</span></span>
+  </div>
+  <p class="one-liner">817 个结构化 AI 安全技能集</p>
+  <div class="tags">
+    <span class="tag">agentskills.io 标准</span><span class="tag">Markdown 技能定义</span><span class="tag">MITRE ATT&CK / ATLAS / D3FEND / F3</span><span class="tag">NIST CSF 2.0 / AI RMF</span><span class="tag">Apache 2.0 License</span>
+  </div>
+  <div class="summary">该项目为 AI 智能体提供了一个包含 817 个结构化网络安全技能的标准化技能库，遵循 agentskills.io 规范。技能覆盖 29 个安全领域，并系统性映射到 6 大权威安全框架，包括 MITRE ATT&CK（攻击战术）、NIST CSF 2.0（网络安全框架）、MITRE ATLAS（AI 系统对抗）、D3FEND（防御知识图谱）、NIST AI RMF（AI 风险管理）以及 MITRE F3（反欺诈框架），确保安全能力的完整性与可追溯性。项目具备广泛的平台兼容性，可无缝对接 Claude Code、GitHub Copilot、Codex CLI、Cursor、Gemini CLI 等 20 多个主流 AI 编码与智能体平台，使开发者和安全团队能够将专业级安全知识直接嵌入 AI 工作流。采用 Apache 2.0 开源协议，便于企业和社区自由集成与扩展，是构建具备安全意识 AI 智能体的重要基础资源。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能库整体架构</p>
+    <div class="mermaid">graph TD
+  A[817 网络安全技能] --> B[29 个安全领域]
+  B --> C[agentskills.io 标准封装]
+  C --> D{框架映射层}
+  D --> D1[MITRE ATT&CK]
+  D --> D2[NIST CSF 2.0]
+  D --> D3[MITRE ATLAS]
+  D --> D4[D3FEND]
+  D --> D5[NIST AI RMF]
+  D --> D6[MITRE F3]
+  C --> E{AI 智能体平台}
+  E --> E1[Claude Code]
+  E --> E2[GitHub Copilot]
+  E --> E3[Cursor]
+  E --> E4[Codex CLI]
+  E --> E5[Gemini CLI]
+  E --> E6[20+ 其他平台]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能调用数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 开发者/安全工程师
+  participant A as AI 智能体
+  participant S as 技能库
+  participant F as 框架映射
+  U->>A: 提出安全任务
+  A->>S: 检索匹配技能
+  S->>F: 查询框架标签
+  F-->>S: 返回 ATT&CK/CSF 等映射
+  S-->>A: 返回结构化技能
+  A-->>U: 执行并给出可追溯结果</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/mukul975" target="_blank">sponsors/mukul975</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/wanshuiyin/HERO-Anti-OverDefense" target="_blank">HERO 反过度防御规则</a></span>
+    <span class="stars">⭐ 184</span>
+  </div>
+  <p class="one-liner">一段贴入配置的AI编码代理防过度防御契约</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">Prompt Engineering</span><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">Cursor</span><span class="tag">GitHub Copilot</span><span class="tag">Windsurf</span><span class="tag">Gemini CLI</span>
+  </div>
+  <div class="summary">HERO（Anti-OverDefense）是一个针对 AI 编码代理'过度防御'行为的反制方案。作者将编码代理在实际工作中偏离目标、过度自我保护的四种典型形态命名为 HERO：Hashing（无意义的哈希/校验）、Edge cases（对不可达边界情况的执着）、Rubrics（用打分表和复核循环替代判断）、Overbuild（防御性脚手架的过度堆砌）。项目定位是一份可直接粘贴到代理配置文件（如 CLAUDE.md、AGENTS.md、.github/copilot-instructions.md、.cursorrules）中的行为契约，兼容 Claude Code、Codex、Antigravity、Cursor、GitHub Copilot、Windsurf、Gemini CLI 等主流工具，无需安装任何软件。核心内容包括 RULES.md（中英文契约正文，含六条规则与'简版'）、cases/（真实观察到的过度防御案例目录，用于在代理反驳时反引）、hosts/（各代理粘贴位置说明）、examples/（贡献者在自己项目中的 AGENTS.md/CLAUDE.md 实例）。规则强调：非安全研究项目默认协作场景、禁止无用哈希、禁止为不存在的情况添加迁移框架和兼容层、边界情况必须在项目实际用途中可达、需要判断的地方就判断而非用打分表替代，同时保留用户主动要求的安全/迁移/审查工作。该项目脱胎于 ARIS（约 13.7k★）的实践观察，是对 AI 代理行为模式的经验性归纳。</div>
+  <div class="why-notable">HERO 抓住了当前 AI 编码代理最真实的痛点之一：代理为了'不被指责'而不断堆砌哈希、边界检查、评分表和防御层，最终功能反而没写完。它没有走复杂工具链路线，而是用一份可粘贴的自然语言契约给出解法，覆盖几乎所有主流编码代理，实用性和传播成本极低。同时项目坦诚说明局限（长会话中规则会被稀释、需要重新粘贴），并区分'真实发现'与'过度防御'，避免走向另一极端，这种克制在同类 prompt 项目中比较少见。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">HERO 四类过度防御与规则映射</p>
+    <div class="mermaid">graph TD
+  A[用户请求功能] --> B{AI 编码代理}
+  B -->|无契约| C[过度防御输出]
+  C --> C1[H·Hashing<br/>无用哈希/校验]
+  C --> C2[E·Edge cases<br/>不可达边界]
+  C --> C3[R·Rubrics<br/>评分表/复核循环]
+  C --> C4[O·Overbuild<br/>防御性脚手架]
+  B -->|粘贴 HERO 契约| D[聚焦真实工作]
+  D --> D1[只做需要的检查]
+  D --> D2[判断代替打分]
+  D --> D3[保留用户明确要求的安全/迁移]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">HERO 契约在多代理中的部署流程</p>
+    <div class="mermaid">flowchart LR
+  R[RULES.md<br/>SCOPE LIMITS 块] --> P[复制粘贴]
+  P --> H1[CLAUDE.md<br/>Claude Code]
+  P --> H2[AGENTS.md<br/>Codex/Antigravity]
+  P --> H3[.cursorrules<br/>Cursor]
+  P --> H4[.github/copilot-instructions.md<br/>Copilot]
+  P --> H5[Windsurf / Gemini CLI]
+  H1 & H2 & H3 & H4 & H5 --> AG[代理自动加载]
+  AG --> W[编码任务执行]
+  W -->|代理反驳| C[cases/ 案例库<br/>引用反证]
+  C --> W</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/wanshuiyin/HERO-Anti-OverDefense" target="_blank">wanshuiyin/HERO-Anti-OverDefense</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/machina-exm/film-studio-skills" target="_blank">Film Studio Skills</a></span>
+    <span class="stars">⭐ 63</span>
+  </div>
+  <p class="one-liner">AI 电影制作的 7 步一致性流水线技能包</p>
+  <div class="tags">
+    <span class="tag">Agent Skills 规范</span><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">Hermes</span><span class="tag">OpenCode</span><span class="tag">Markdown 模板</span><span class="tag">文件系统驱动的工作流</span>
+  </div>
+  <div class="summary">Film Studio Skills 是一套面向 AI 视频制作的可安装 Agent 技能包，把百万美元级 AI 电影工作室的工作流浓缩为 7 个按序运行的技能，解决视频模型没有跨镜头记忆导致人物、服装、年龄在长片中漂移的核心痛点。整条链路从 setup 采集用户的图像与视频模型栈开始，经 studio-init 搭建项目目录，film-breakdown 把剧本拆解为 22 字段镜头卡，reference-board 建立带标注的视觉圣经，asset-passport 为每个资产生成不可缩写的描述符与多角度参考图，stress-test 用组合矩阵把 draft 资产压测升级为 locked，最终由 shot-prompt 输出 15 块固定结构的生成级提示词。整套系统靠文件系统当记忆、靠两道 gate 拦截不一致工作，兼容 Claude Code、Codex、Hermes、OpenCode 四种 Agent 运行环境。</div>
+  <div class="why-notable">把真实百万美元级 AI 电影制作的工业化流程沉淀为可复用技能链，用 gate 与 passport 机制系统性解决视频模型的跨镜头一致性难题</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">七步技能链数据流</p>
+    <div class="mermaid">graph LR
+  A[/setup 配置模型栈/] --> B[/studio-init 搭建项目树/]
+  B --> C[/film-breakdown 剧本拆镜头卡/]
+  C --> D[/reference-board 视觉圣经/]
+  D --> E[/asset-passport 资产护照 draft/]
+  E --> F{/stress-test 组合矩阵压测/}
+  F -- 10/10 通过 --> G[registry: locked]
+  F -- 未达标 --> E
+  G --> H[/shot-prompt 15 块生成提示词/]
+  H --> I[generation log 单行改动记录]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">文件系统即记忆</p>
+    <div class="mermaid">graph TD
+  Root[项目根目录] --> Assets[assets/ 资产护照]
+  Root --> Prompts[prompts/ 镜头卡]
+  Root --> Gens[generations/ 原始尝试]
+  Root --> Selects[selects/ 入选镜头]
+  Root --> Docs[docs/]
+  Docs --> Breakdown[breakdown 剧本拆解]
+  Docs --> Bible[visual bible 视觉圣经]
+  Docs --> Registry[registry draft/locked]
+  Docs --> Log[generation log]
+  Selects -.唯一可见于剪辑.-> Edit[最终剪辑]
+  Assets -.描述符逐字复制.-> Prompts</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/machina-exm/film-studio-skills" target="_blank">machina-exm/film-studio-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/soumatheusgomes/vibe-coding-toolkit" target="_blank">Vibe Coding Toolkit</a></span>
+    <span class="stars">⭐ 178</span>
+  </div>
+  <p class="one-liner">生产级 AI 编码工作流工具包</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">Superpowers Plugin</span><span class="tag">ESLint</span><span class="tag">Biome</span><span class="tag">Context7</span><span class="tag">Obsidian</span><span class="tag">Mermaid</span><span class="tag">Node.js/npm</span>
+  </div>
+  <div class="summary">Vibe Coding Toolkit 是一套由 Matheus Gomes 从真实生产环境（某金融科技 NDA 项目）中提炼、并已通用化的 AI 辅助编码工作流工具包，主要面向 Claude Code，也兼顾 OpenAI Codex。项目的核心理念是把 AI 编码从『粘贴大提示词碰运气』转变为一套可复现、可测试的结构化流程，让 AI 代理真正成为团队的一员，而不是需要时刻盯梢的『多动症实习生』。工具包围绕六大支柱展开：Superpowers 插件（作者主推的核心，强制代理先探索意图、规划，再动手写代码）；子代理并行波次编排协议（在结构层面消除文件冲突和提交竞争，而非依赖纪律约束）；ESLint/Biome 质量门禁（把警告提升为可追踪的错误迁移，用 lint 强制架构边界）；Graphify + Context7 代码图谱与上下文注入；RTK Token 代理（降低会话成本）；Ponytail/Caveman 人格控制；以及基于 Claude 原生记忆和 Obsidian 的跨会话记忆系统。仓库以 Playbook 式的完整上手指南、CLAUDE.md 模板、多代理评审流程以及可直接复制的提示词为交付形式。</div>
+  <div class="why-notable">这套工具包的价值不在于代码本身，而在于把一个真实生产项目中长期打磨出的 AI 协作方法论完整拆解出来：子代理并行波次编排在作者调研的第三方合集中未曾出现，属于原创方法；把 lint 警告作为架构迁移追踪工具的思路也超越了大多数 AI 编码模板的『装好就跑』水平。对于希望把 Claude Code 从玩具升级为生产级团队成员的开发者，这是少见的、有明确落地路径且已经过实战验证的参考实现。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">完整工作流：主路径与常驻支持层</p>
+    <div class="mermaid">flowchart LR
+  Install[安装 Claude Code + 插件] --> Setup[配置 CLAUDE.md + hooks]
+  Setup --> Brain[头脑风暴]
+  Brain --> Plan[制定计划]
+  Plan --> Waves[子代理并行波次执行]
+  Waves --> Review[多代理评审]
+  Review --> Ship[提交/发布]
+  subgraph SP[Superpowers 核心]
+    Brain
+    Plan
+  end
+  Graphify((Graphify + Context7)) -.编码前引导.-> Brain
+  RTK((RTK Token 代理)) -.降低会话成本.-> Waves
+  Persona((Ponytail + Caveman)) -.控制风格与产出.-> Waves
+  Memory((Claude + Obsidian 记忆)) -.提供上下文.-> Setup
+  Gate((质量门禁)) -.保护每次提交.-> Ship
+  Ship -.回写经验教训.-> Memory</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">子代理并行波次编排结构</p>
+    <div class="mermaid">graph TD
+  Main[主会话：只做规划与决策] --> Wave1[波次 1：并行子代理]
+  Wave1 --> A1[子代理·代码评审]
+  Wave1 --> A2[子代理·数据库]
+  Wave1 --> A3[子代理·测试]
+  A1 --> Sync[波次同步点：文件隔离 + 提交去冲突]
+  A2 --> Sync
+  A3 --> Sync
+  Sync --> Wave2[波次 2：下一轮任务]
+  Sync --> QG[质量门禁：ESLint/Biome]
+  QG --> Commit[受保护的提交]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/soumatheusgomes/vibe-coding-toolkit" target="_blank">soumatheusgomes/vibe-coding-toolkit</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/santifer" target="_blank">AI 求职助手</a></span>
+    <span class="stars">⭐ 218 <span class="stars-today">(+218 today)</span></span>
+  </div>
+  <p class="one-liner">在 AI CLI 中本地化运行的智能求职助手</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">Codex CLI</span><span class="tag">OpenCode</span><span class="tag">Antigravity</span><span class="tag">Prompt Engineering</span><span class="tag">Markdown</span>
+  </div>
+  <div class="summary">该项目是一个开源的 AI 驱动求职工具，定位为运行在开发者本地 AI 编码 CLI（如 Claude Code、Codex、OpenCode、Antigravity 等）中的求职工作流助手。它的核心思路是把求职流程拆解为可自动化的几个阶段：扫描各大招聘门户抓取岗位信息、使用结构化的 A-F 六维评分标准对岗位进行系统性评估并折算为 1.0 至 5.0 的匹配分数、根据具体岗位定制化调整简历（CV）、以及跟踪申请状态。通过将这些能力沉淀为可复用的提示词与命令，用户可以在自己熟悉的 AI CLI 环境中一键触发，避免了传统 SaaS 求职平台的数据外泄风险和订阅费用。项目主打本地优先与工具无关性，理论上兼容任意支持自定义指令的 AI 编码 CLI，让求职者既能享受大模型的语义理解与文本生成能力，又能完全掌控自己的简历、岗位数据和评估记录。A-F 评分维度以结构化方式规避了大模型给分随意化的问题，让不同岗位之间的匹配度可横向比较，从而帮助求职者聚焦高价值机会。整体上它把 AI CLI 从纯编码工具扩展到了个人生产力场景，是 agentic workflow 与本地化 AI 落地的一个有趣样本。</div>
+  <div class="why-notable">该项目由 GitHub Sponsors 账户维护，代表了 AI CLI 生态从代码场景向个人事务扩展的新方向。它把结构化评分、简历定制、申请跟踪等原本属于付费 SaaS 的能力，转化为可在本地 AI CLI 中运行的开源工作流，兼顾了隐私、灵活性与低成本，是 agentic 应用落地个人生产力的典型范式。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">求职工作流</p>
+    <div class="mermaid">graph TD
+  U[求职者] --> CLI[AI 编码 CLI]
+  CLI --> S[扫描招聘门户]
+  S --> J[岗位列表]
+  J --> E[A-F 评分引擎]
+  E --> Score[1.0-5.0 匹配分]
+  Score --> T[定制简历]
+  T --> A[投递申请]
+  A --> Tr[申请跟踪库]
+  Tr --> U</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">A-F 评分维度</p>
+    <div class="mermaid">graph LR
+  Job[岗位描述] --> R[结构化评分器]
+  R --> A[A 维度]
+  R --> B[B 维度]
+  R --> C[C 维度]
+  R --> D[D 维度]
+  R --> E[E 维度]
+  R --> F[F 维度]
+  A --> Agg[加权汇总]
+  B --> Agg
+  C --> Agg
+  D --> Agg
+  E --> Agg
+  F --> Agg
+  Agg --> Final[1.0-5.0 分数]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/santifer" target="_blank">sponsors/santifer</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
