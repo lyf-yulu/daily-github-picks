@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-19</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-19 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/mukul975" target="_blank">AI 智能体网络安全技能库</a></span>
+    <span class="stars">⭐ 730 <span class="stars-today">(+730 today)</span></span>
+  </div>
+  <p class="one-liner">817 项结构化 AI 安全技能库</p>
+  <div class="tags">
+    <span class="tag">agentskills.io 技能规范</span><span class="tag">Markdown 结构化技能定义</span><span class="tag">MITRE ATT&CK / ATLAS / D3FEND / F3</span><span class="tag">NIST CSF 2.0 / NIST AI RMF</span><span class="tag">Claude Code / GitHub Copilot / Cursor / Gemini CLI 等 Agent 平台集成</span>
+  </div>
+  <div class="summary">该项目是一个面向 AI 智能体的结构化网络安全技能库，共包含 817 项标准化技能，覆盖 29 个安全领域。它遵循 agentskills.io 标准，将每项技能映射到六大主流安全框架，包括 MITRE ATT&CK（攻击战术）、NIST CSF 2.0（网络安全治理）、MITRE ATLAS（AI 系统对抗威胁）、D3FEND（防御技术）、NIST AI RMF（AI 风险管理）以及 MITRE F3（反欺诈框架），从而为 AI 智能体在攻防、合规、AI 安全和欺诈防治等场景提供统一的能力基线。项目定位于连接主流 AI 编程与智能体平台的“技能中间层”，可直接在 Claude Code、GitHub Copilot、Codex CLI、Cursor、Gemini CLI 等 20 余种平台中加载使用，让 AI 助手具备可复用、可追溯、可对齐国际标准的安全专家能力。技能采用结构化文档形式组织，便于 AI 智能体按需检索、组合调用，并支撑红队渗透、蓝队防御、SOC 运营、威胁建模、事件响应、合规审计及 AI 系统安全评估等典型工作流。项目采用 Apache 2.0 许可证开源，鼓励社区扩展与二次分发，是构建自主化安全 AI Agent 的底层能力资产。</div>
+  <div class="why-notable">在 AI Agent 快速走向工程化的当下，安全能力的“标准化封装”正成为核心竞争点。该项目一次性提供 817 项与六大权威框架对齐的可复用技能，让任意支持 agentskills 标准的 AI 智能体瞬间获得覆盖攻防、合规、AI 安全与反欺诈的专家级能力，避免了各团队重复造轮子，也为“安全 AI Agent 生态”提供了极具价值的公共基础设施。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能库整体架构</p>
+    <div class="mermaid">graph TD
+  A[817 项结构化安全技能] --> B[agentskills.io 标准封装]
+  B --> C{六大框架映射}
+  C --> C1[MITRE ATT&CK]
+  C --> C2[NIST CSF 2.0]
+  C --> C3[MITRE ATLAS]
+  C --> C4[D3FEND]
+  C --> C5[NIST AI RMF]
+  C --> C6[MITRE F3 反欺诈]
+  B --> D[29 个安全领域分类]
+  D --> E[AI Agent 平台接入层]
+  E --> E1[Claude Code]
+  E --> E2[GitHub Copilot]
+  E --> E3[Cursor]
+  E --> E4[Codex CLI]
+  E --> E5[Gemini CLI]
+  E --> E6[其他 20+ 平台]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">AI 智能体调用技能的数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 安全工程师
+  participant A as AI Agent (Claude/Cursor 等)
+  participant S as 技能库 (817 skills)
+  participant F as 框架映射层
+  U->>A: 提出安全任务(渗透/合规/威胁分析)
+  A->>S: 按领域检索匹配技能
+  S->>F: 关联 ATT&CK / CSF / ATLAS 等
+  F-->>A: 返回结构化技能与上下文
+  A->>U: 输出符合标准的安全操作与报告</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/mukul975" target="_blank">sponsors/mukul975</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/machina-exm/film-studio-skills" target="_blank">Film Studio Skills</a></span>
+    <span class="stars">⭐ 82</span>
+  </div>
+  <p class="one-liner">AI电影制作的七步技能流水线</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skills</span><span class="tag">Codex</span><span class="tag">Hermes</span><span class="tag">OpenCode</span><span class="tag">npx skills CLI</span><span class="tag">Markdown / 文件系统约定</span>
+  </div>
+  <div class="summary">Film Studio Skills 是一套为 AI 视频/电影制作打造的可安装 Agent 技能包，把百万美元级 AI 影片制作背后的工业化流程浓缩为 7 个按顺序执行的 Skill。项目要解决的核心痛点是：视频生成模型在两次生成之间没有记忆，人物面孔、服装、年龄会在相邻镜头间漂移，短片看不出、长片则致命。作者用纪律化的流水线取代运气：锁定参考、资产护照逐字复制到每个提示词、生成前设置书面闸门，用文件系统承担记忆。七个技能依次为 setup（配置模型栈）、studio-init（项目脚手架）、film-breakdown（分镜拆解）、reference-board（视觉圣经）、asset-passport（资产护照）、stress-test（压力测试并将 draft 翻转为 locked）、shot-prompt（生成 15 块结构化镜头提示词）。技能兼容 Claude Code、Codex、Hermes、OpenCode 四种 Agent 运行环境，通过 npx skills add 或复制文件夹即可安装。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">七步技能流水线</p>
+    <div class="mermaid">graph LR
+  A[setup 配置模型栈] --> B[studio-init 项目脚手架]
+  B --> C[film-breakdown 分镜拆解]
+  C --> D[reference-board 视觉圣经]
+  D --> E[asset-passport 资产护照 draft]
+  E --> F{stress-test 压力测试}
+  F -- 10/10 通过 --> G[资产 locked]
+  F -- 未通过 --> E
+  G --> H[shot-prompt 15块镜头提示词]
+  H --> I[生成日志/迭代]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">项目目录与数据流</p>
+    <div class="mermaid">graph TD
+  Script[剧本或一段创意] --> Breakdown[docs/ 分镜表 + 镜头卡]
+  Refs[参考图集] --> Board[reference-board 视觉圣经]
+  Board --> Assets[assets/ 资产护照 描述符]
+  Breakdown --> Prompts[prompts/ 镜头卡]
+  Assets -->|逐字复制| Prompts
+  Prompts --> Gen[generations/ 原始生成]
+  Gen -->|人工筛选| Selects[selects/ 入选镜头]
+  Selects --> Edit[剪辑与成片]
+  Assets -.锁定校验.-> Prompts</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/machina-exm/film-studio-skills" target="_blank">machina-exm/film-studio-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/SigmanticAI/apex-inference-chip" target="_blank">APEX 推理芯片</a></span>
+    <span class="stars">⭐ 378</span>
+  </div>
+  <p class="one-liner">位精确验证的开源LLM推理芯片瓦片</p>
+  <div class="tags">
+    <span class="tag">SystemVerilog/RTL</span><span class="tag">FPGA</span><span class="tag">INT8 脉动阵列 (MXE)</span><span class="tag">Python/NumPy 黄金模型</span><span class="tag">UVM 验证</span><span class="tag">Qwen2.5 (0.5B/7B)</span><span class="tag">在线 Softmax、RoPE、RMSNorm、SwiGLU</span>
+  </div>
+  <div class="summary">APEX 是一款完全开源、以验证为先的 LLM 推理加速器设计，实现了一个完整的 Transformer 解码器层的 RTL 电路。项目在 FPGA 硬件上实测运行真实的 Qwen2.5-0.5B 模型，实测推理速度 0.56 tok/s，相比初版提升 140 倍。核心模块涵盖注意力计算、KV 缓存压缩、Softmax、RMSNorm、RoPE、SwiGLU 与残差连接，每个 RTL 块都与可执行的 NumPy 黄金模型进行位精确比对，杜绝“近似正确”。架构上采用两个关键押注：其一是将 KV 编解码器放入数据通路内部，键值在生成瞬间被量化压缩、在消费瞬间被解压，通过 TIP 重要性单元自适应分配 KVQ8/KVQ4/KVQ4+离群值等精度层级，让阅读速度不随上下文增长而下降；其二是方法论上坚持 bit-exact 黄金模型验证、变异测试与反造假证据链。设计中一个 INT8 脉动阵列 MXE 被时分复用于解码层的全部七个矩阵任务，量化尺度随张量在同一接缝中流动，使每个作业仅凭描述符即可位精确重放。项目范围诚实限定为“单个瓦片”，不含 DRAM 控制器、PCIe 与 NoC，但架构已按 7B 级模型（head_dim=128）尺寸预留，Qwen2.5-7B 已通过软件验证的黄金流水线。所有性能数据均明确标注为“实测”或“投影”。</div>
+  <div class="why-notable">这是极少数将“LLM 推理芯片”从口号推进到 bit-exact 验证 + 真机跑通的开源项目：把 KV 压缩从软件层下沉进硅上数据通路是架构上的独立赌注，配合可复现的黄金模型和公开的实测/投影分离数据，对边缘 LLM 加速器设计与开源硬件验证方法学都具有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">解码层单步数据流</p>
+    <div class="mermaid">graph LR
+  X[输入激活 x] --> RN1[RMSNorm]
+  RN1 --> QKV[MXE: W_Q/W_K/W_V 投影]
+  QKV --> ROPE[RoPE 位置编码]
+  ROPE --> KVQ[KVQ 压缩引擎]
+  KVQ --> CACHE[(INT4+离群值 KV 缓存 SRAM)]
+  CACHE --> DQ[在线反量化]
+  ROPE --> QK[MXE: Q·K̂ᵀ]
+  DQ --> QK
+  QK --> SM[在线 Softmax ASU]
+  SM --> PV[MXE: P·V̂]
+  DQ --> PV
+  PV --> TIP[TIP 重要性单元]
+  TIP -.精度反馈.-> KVQ
+  PV --> WO[MXE: W_O 输出投影]
+  WO --> R1[+ 残差]
+  R1 --> RN2[RMSNorm]
+  RN2 --> FFN[MXE: W_gate/W_up + SwiGLU + W_down]
+  FFN --> R2[+ 残差]
+  R2 --> Y[层输出 y]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">验证与执行闭环</p>
+    <div class="mermaid">graph TD
+  SPEC[自然语言规格] --> GOLDEN[NumPy 黄金模型]
+  SPEC --> RTL[RTL 实现 MXE/ASU/KVQ/TIP]
+  GOLDEN --> CMP{位精确比对}
+  RTL --> CMP
+  CMP -->|不一致| MUT[变异测试与调试]
+  MUT --> RTL
+  CMP -->|bit-exact| JOB[作业描述符]
+  JOB --> SIM[仿真回放]
+  JOB --> FPGA[FPGA 真机运行 Qwen2.5-0.5B]
+  FPGA --> EVID[实测证据 STATUS.md]
+  SIM --> EVID</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/SigmanticAI/apex-inference-chip" target="_blank">SigmanticAI/apex-inference-chip</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/soumatheusgomes/vibe-coding-toolkit" target="_blank">Vibe Coding Toolkit</a></span>
+    <span class="stars">⭐ 194</span>
+  </div>
+  <p class="one-liner">生产级 AI 编程实战工具箱</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">Node.js / npm</span><span class="tag">ESLint</span><span class="tag">Biome</span><span class="tag">Obsidian</span><span class="tag">Context7</span><span class="tag">Mermaid</span><span class="tag">Markdown 文档模板</span>
+  </div>
+  <div class="summary">Vibe Coding Toolkit 是一套面向 Claude Code（及部分兼容 OpenAI Codex）的 AI 辅助编程工作流工具包，由巴西开发者 Matheus Gomes 基于真实金融科技（受 NDA 保护）生产项目提炼而来。项目的核心定位不是罗列插件清单，而是提供一条经过实战验证的完整流程：从安装、项目配置（CLAUDE.md、hooks），到头脑风暴与规划，再到多子代理并行编排、多代理代码评审，最后进入受质量门禁保护的提交环节。作者反复强调 Superpowers 插件是整个工具箱最重要的一环，它强制代理先探索意图、再规划、最后写码，避免把大 prompt 一股脑丢进去碰运气。围绕 Superpowers，仓库还提供了子代理波次并行编排协议（在结构层面消除文件冲突与提交竞争）、ESLint/Biome 质量门禁（把 warning 提升为 error 并作为受追踪迁移）、Graphify + Context7 编码前的知识图谱指引、RTK token 代理降本方案、Ponytail/Caveman 人格提示模板，以及基于 Claude 原生记忆和 Obsidian 的跨会话记忆体系。所有内容均以中/葡文档形式沉淀，配合 CLAUDE.md 模板和 /aia-harness:init 快速初始化命令，让开发者能把 AI 代理真正当作团队成员使用，而不是需要保姆的实习生。</div>
+  <div class="why-notable">这是极少数从真实生产项目（金融科技 NDA 项目）反向抽取并泛化的 AI 编程方法论仓库，而非「看起来很酷」的插件集合。作者明确交代每一项都为解决过至少一次真实痛点而存在，并给出可复制的目录结构、模板与协议。子代理并行编排协议和 lint 质量门禁作为架构边界的做法，在同类第三方合集里几乎看不到，对希望把 Claude Code 从玩具用成生产力工具的团队有直接参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">端到端开发工作流</p>
+    <div class="mermaid">flowchart LR
+    Install[安装 Claude Code + 插件] --> Setup[配置 CLAUDE.md 与 hooks]
+    Setup --> Brain[头脑风暴]
+    Brain --> Plan[生成计划]
+    Plan --> Waves[子代理波次并行执行]
+    Waves --> Review[多代理代码评审]
+    Review --> Ship[提交 / 发布]
+    subgraph SP[Superpowers 纪律层]
+      Brain
+      Plan
+    end
+    Graphify[Graphify + Context7] -.编码前指引.-> Brain
+    RTK[RTK Token 代理] -.降低会话成本.-> Waves
+    Persona[Ponytail / Caveman 人格] -.约束风格与内容.-> Waves
+    Memory[Claude 记忆 + Obsidian] -.提供上下文.-> Setup
+    Gate[Quality Gates] -.护栏.-> Ship
+    Ship -.沉淀经验.-> Memory</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">子代理并行编排与质量门禁</p>
+    <div class="mermaid">graph TD
+    Main[主会话: 规划与决策] --> Dispatch{任务分片}
+    Dispatch --> A1[子代理 A: 数据库]
+    Dispatch --> A2[子代理 B: 测试]
+    Dispatch --> A3[子代理 C: 评审]
+    A1 --> Merge[合并变更]
+    A2 --> Merge
+    A3 --> Merge
+    Merge --> Lint[ESLint / Biome 质量门禁]
+    Lint -->|通过| Commit[提交]
+    Lint -->|失败| Fix[纪录为受追踪迁移]
+    Fix --> Main
+    Commit --> Memo[写入跨会话记忆]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/soumatheusgomes/vibe-coding-toolkit" target="_blank">soumatheusgomes/vibe-coding-toolkit</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Dominic789654/awesome-deepseek-harness" target="_blank">Awesome DeepSeek Harness</a></span>
+    <span class="stars">⭐ 149</span>
+  </div>
+  <p class="one-liner">DeepSeek Harness 生态资源精选清单</p>
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">Cordis</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Node.js</span><span class="tag">YAML</span>
+  </div>
+  <div class="summary">Awesome DeepSeek Harness 是一份围绕 DeepSeek 官方 Agent 运行时框架 DeepSeek Harness（简称 DSH）构建的社区精选资源列表。DSH 的核心理念是「Model + Harness = Agent」，把大模型的推理能力通过上下文管理、工具调用编排、执行沙箱、反馈循环与会话持久化等机制转化为可实际执行动作的智能体，并采用「一切皆插件」的开放式架构（基于 Cordis 与 TypeScript 实现）。本仓库以 awesome-list 形式，系统性收录了官方项目、Profiles 与 Patch 层、Harness 运行时、安全与权限、会话与记忆管理、成本追踪、IM 桥接、插件市场、可视化、PPT、编码、Agents、自动研究循环、MCP Servers、编排聚合器、UI 客户端以及 Skills 等十余个大类的社区扩展。清单特别强调 DSH 独有的 Profiles 与 Patch 层机制：通过分层叠加 bundle 与 cordis.patch.yml，可在不 fork 代码的情况下，为长时任务、数学推理、幻灯片编辑等场景快速拼装出专用运行时。项目要求收录仓库带上 #dsh GitHub topic 以便社区中心索引，并提供 npx 一键启动 Web UI 与 dsh plugin add 命令行安装体验。</div>
+  <div class="why-notable">DeepSeek Harness 是国内头部大模型厂商推出的官方 Agent 运行时，官方仓库已获 3.8 万+ Star，生态正在快速形成。本清单作为社区第一份系统化的 DSH 插件与 Profile 索引，帮助开发者快速定位 Cordis 插件架构下的可复用组件与最佳实践，是理解「Model + Harness = Agent」范式与国产 Agent 生态的重要入口。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">DSH 生态分层架构</p>
+    <div class="mermaid">graph TD
+  A[DeepSeek Model] --> B[DSH Harness Runtime]
+  B --> C[Cordis 插件内核]
+  C --> D[Profiles 与 Patch 层]
+  D --> D1[Minimal/Standard 预设]
+  D --> D2[任务专用 Profile]
+  C --> E[MCP Servers]
+  C --> F[Skills 技能包]
+  C --> G[编排器与聚合器]
+  C --> H[UI 客户端]
+  E --> I[外部工具与数据源]
+  F --> I
+  H --> J[用户]
+  G --> B</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Profile 与 Patch 加载流程</p>
+    <div class="mermaid">graph LR
+  A[启动 dsh --profile xxx] --> B[加载 Profile Bundle 栈]
+  B --> C[应用 Profile 级 cordis.patch.yml]
+  C --> D[叠加 DSH_HOME 级 patch]
+  D --> E[叠加 --patch 命令行覆盖]
+  E --> F[生成最终插件树]
+  F --> G[启动 Agent 会话]
+  G --> H{工具调用?}
+  H -->|是| I[沙箱执行 + 反馈]
+  I --> G
+  H -->|否| J[输出结果]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Dominic789654/awesome-deepseek-harness" target="_blank">Dominic789654/awesome-deepseek-harness</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
