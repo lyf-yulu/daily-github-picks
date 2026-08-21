@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-21</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-21 · 共 3 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/SigmanticAI/apex-inference-chip" target="_blank">APEX 推理芯片</a></span>
+    <span class="stars">⭐ 628</span>
+  </div>
+  <p class="one-liner">FPGA 上位精确的开源 LLM 推理芯片</p>
+  <div class="tags">
+    <span class="tag">SystemVerilog/RTL</span><span class="tag">FPGA</span><span class="tag">Python/NumPy 黄金模型</span><span class="tag">UVM 验证</span><span class="tag">INT8 脉动阵列 (MXE)</span><span class="tag">INT4+离群通道 KV 量化</span><span class="tag">Qwen2.5 (0.5B/7B)</span><span class="tag">Sigmantic AI Polaris 验证引擎</span>
+  </div>
+  <div class="summary">APEX 是一款完全开源、以验证优先为核心理念的大模型推理芯片（Tile）设计。项目在真实 RTL 中实现了一个完整的 Transformer 解码器层，涵盖注意力、KV 缓存压缩、Softmax、RMSNorm、RoPE、SwiGLU 与残差连接等模块，并已成功在 FPGA 硬件上运行真实的 Qwen2.5-0.5B 模型，实测吞吐 0.56 tok/s，相较基线实现 140 倍提升。架构上采用时分复用的 INT8 脉动阵列 MXE 承担全部 7 类矩阵运算，通过 KVQ 引擎将 KV 缓存以 INT4+离群通道形式在数据通路内即时压缩/解压，并由 TIP 重要性单元动态分配精度层级（KVQ8/KVQ4/KVQ4+outliers），使得读速度在长上下文下保持平稳。每个 RTL 模块均对齐可执行 NumPy 黄金模型，做到位精确一致，配合变异测试和反造假规则，保证证据链完整可追溯。项目定位为单 Tile 演示，架构参数按 7B 级模型（head_dim=128）预留，并附有从软件黄金流水线到 FPGA 硬件的完整复现路径。</div>
+  <div class="why-notable">在 AI 芯片普遍停留在 PPT 或闭源仿真的当下，APEX 提供了一个罕见的『开源 + 真实 RTL + 真实模型 + 真实 FPGA + 位精确黄金模型』的完整证据链，把研究重心从『算得快』转向『记得住』——将 KV 缓存压缩下沉到硬件数据通路并结合自适应精度调度，直击边缘 LLM 推理最痛的内存墙问题；同时其反造假的验证方法学和实测/预估严格区分的写作规范，对硬件开源社区具有示范意义。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单次解码步在 Tile 中的数据流</p>
+    <div class="mermaid">graph TD
+  X[输入激活 x] --> RN1[RMSNorm/ASU]
+  RN1 --> QKV[MXE: W_Q/W_K/W_V 投影]
+  QKV --> ROPE[RoPE 位置编码]
+  ROPE --> KVQ[KVQ 压缩引擎<br/>INT4+离群通道]
+  KVQ --> CACHE[(片上 SRAM<br/>压缩 KV Cache)]
+  CACHE --> DQ[在线解压]
+  DQ --> QK[MXE: Q·K̂ᵀ]
+  QK --> SM[在线 Softmax/ASU]
+  SM --> PV[MXE: P·V̂]
+  PV --> WO[MXE: W_O 输出投影]
+  WO --> R1[+ 残差]
+  R1 --> RN2[RMSNorm]
+  RN2 --> FFN1[MXE: W_gate / W_up]
+  FFN1 --> SG[SwiGLU]
+  SG --> FFN2[MXE: W_down]
+  FFN2 --> R2[+ 残差]
+  R2 --> Y[输出 y]
+  SM -.重要性.-> TIP[TIP 重要性单元]
+  TIP -.精度调度.-> KVQ</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">验证优先的开发闭环</p>
+    <div class="mermaid">graph LR
+  SPEC[自然语言规格] --> GOLD[NumPy 黄金模型]
+  SPEC --> RTL[RTL 实现]
+  GOLD -->|参考向量| TB[UVM 测试平台]
+  RTL -->|DUT| TB
+  TB --> CMP{位精确比对}
+  CMP -->|一致| EVID[机器生成证据链]
+  CMP -->|不一致| FIX[修复 RTL/黄金模型]
+  FIX --> RTL
+  EVID --> FPGA[FPGA 上板]
+  FPGA --> MEAS[实测: 0.56 tok/s]
+  POLARIS[Polaris 验证引擎] -.闭环选测.-> TB</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/SigmanticAI/apex-inference-chip" target="_blank">SigmanticAI/apex-inference-chip</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/santifer" target="_blank">AI 求职助手</a></span>
+    <span class="stars">⭐ 816 <span class="stars-today">(+816 today)</span></span>
+  </div>
+  <p class="one-liner">本地 CLI 驱动的开源 AI 求职工具</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">Codex CLI</span><span class="tag">OpenCode</span><span class="tag">Antigravity</span><span class="tag">大语言模型 (LLM)</span><span class="tag">提示词工程</span><span class="tag">本地文件系统</span>
+  </div>
+  <div class="summary">该项目是一个开源的 AI 驱动求职辅助工具，定位为运行在开发者本地 AI 编码 CLI 环境中的一站式求职工作流。它借助 Claude Code、Codex、OpenCode、Antigravity 等主流 AI 编码命令行工具作为运行时载体，将大语言模型能力嵌入到求职者的日常工作流中，避免依赖云端 SaaS，从而在保护简历、求职偏好等敏感数据隐私的同时，充分利用 AI 的语义理解与生成能力。功能层面，项目覆盖求职全流程：一是职位抓取，可扫描主流招聘门户网站，聚合职位列表；二是智能评估，采用结构化的 A-F 评分维度对每个岗位进行多维打分，并归一化为 1.0 到 5.0 的综合评分，帮助用户快速筛选高匹配度机会；三是简历定制，根据目标岗位的描述自动调整并优化 CV 内容，突出与职位要求相关的经历与技能；四是投递跟踪，记录申请状态、时间线与后续动作，形成个人求职看板。技术栈上，项目并非传统意义上的独立应用，而是构建于 AI 编码 CLI 生态之上，通过提示词工程、结构化评分规则与本地文件系统协作实现能力落地，天然兼容多种模型后端。整体设计强调本地化、可组合与可移植，适合希望以工程化方式管理求职过程的开发者。</div>
+  <div class="why-notable">在 AI 求职工具普遍走 SaaS 路线的当下，该项目反其道而行之，把求职流程沉入开发者已在使用的 AI 编码 CLI，兼顾隐私、可定制与工程可控性；结构化评分 + 简历定制 + 投递跟踪的组合，将模糊的‘找工作’抽象为一个可版本化、可复现的工作流，对技术人群尤具吸引力。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[求职者] --> CLI[AI 编码 CLI<br/>Claude Code / Codex / OpenCode]
+  CLI --> S[职位抓取模块]
+  CLI --> E[A-F 评分引擎]
+  CLI --> R[简历定制模块]
+  CLI --> T[投递跟踪模块]
+  S --> P[招聘门户网站]
+  E --> LLM[大语言模型]
+  R --> LLM
+  T --> FS[本地文件存储]
+  E --> FS
+  R --> FS</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">求职数据流</p>
+    <div class="mermaid">flowchart LR
+  A[招聘门户] -->|抓取职位| B[原始岗位列表]
+  B -->|A-F 结构化评估| C[评分 1.0-5.0]
+  C -->|筛选高分岗位| D[目标岗位池]
+  D -->|匹配简历| E[定制化 CV]
+  E -->|投递| F[申请记录]
+  F -->|状态更新| G[求职看板]
+  G -.反馈优化.-> C</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/santifer" target="_blank">sponsors/santifer</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/V1ki/dsh-plugin-subscriptions" target="_blank">DSH 订阅式 LLM 插件</a></span>
+    <span class="stars">⭐ 208</span>
+  </div>
+  <p class="one-liner">用订阅账号替代 API Key 接入 DSH</p>
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">tsdown</span><span class="tag">pnpm</span><span class="tag">DeepSeek Harness Plugin API</span><span class="tag">OAuth 2.0 (PKCE)</span><span class="tag">OpenAI/Anthropic/xAI HTTP APIs</span>
+  </div>
+  <div class="summary">dsh-plugin-subscriptions 是 DeepSeek Harness (DSH) 的第三方插件，让用户直接把已有的 ChatGPT (Codex)、Claude Pro/Max 与 Grok (X Premium) 订阅接入 DSH，作为 LLM Provider 使用，无需任何 API Key。Codex 与 Grok 在 Web UI 的 Settings → Subscriptions 中通过 OAuth 登录，Claude 则从本地 Claude Code 会话（macOS Keychain 或 ~/.claude/.credentials.json）导入凭证；所有 Token 以 0600 权限保存于 ~/.dsh/plugins/subscriptions/auth.json 并自动刷新。登录后，各家的实时模型目录会加入会话模型选择器：Codex 从 chatgpt.com/backend-api/codex/models 拉取，Grok 从 api.x.ai/v1/models 拉取，Claude 使用静态目录。支持模型的 Reasoning Effort 选择、Codex Fast 优先级切换（priority tier，附 /fast 斜杠命令）、视觉输入模态自动转换，以及订阅用量面板（5 小时窗口、周窗口、按模型周窗口，含进度条与重置时间）。插件同时注册三个工具：x_search（Grok 的 X 站内搜索）、image_generate（gpt-image-2 或 grok-imagine-image-2.0，结果内联渲染并本地落盘）、video_generate（grok-imagine-video-1.5，异步提交轮询，MP4 内联播放）。通过 dsh plugin add 从 npm 或 GitHub 安装，可用 overlay.yml 覆盖模型目录与 stream 超时等参数。</div>
+  <div class="why-notable">它把消费者级的 ChatGPT Plus/Pro、Claude Pro/Max、X Premium 订阅统一封装成 DSH 的标准 Provider，为个人开发者提供了绕开按量计费 API 的实用路径，同时保留了官方 CLI 的高级能力（Codex fast tier、Grok 图像/视频生成、X 搜索），并把订阅用量、Reasoning Effort、模型目录都以工程化方式接入 UI，是订阅账号复用与多模态工具集成的一个高完成度参考实现。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户浏览器] --> W[dsh web UI]
+  W --> P[dsh-plugin-subscriptions]
+  P --> A[(auth.json<br/>0600 本地令牌)]
+  P -->|OAuth| C1[ChatGPT/Codex]
+  P -->|Claude Code 凭证| C2[Claude API]
+  P -->|OAuth| C3[Grok / xAI API]
+  P --> T1[x_search 工具]
+  P --> T2[image_generate 工具]
+  P --> T3[video_generate 工具]
+  T2 --> F1[(images/)]
+  T3 --> F2[(videos/)]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">登录与调用数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant UI as DSH Web UI
+  participant PL as Subscriptions 插件
+  participant P as 订阅厂商
+  U->>UI: 打开 Settings → Subscriptions
+  UI->>PL: 请求 Connect(provider)
+  PL->>P: OAuth 授权 / 导入 Claude Code 凭证
+  P-->>PL: 返回 token
+  PL->>PL: 写入 auth.json (0600)
+  U->>UI: 选择模型并发起会话
+  UI->>PL: chat 请求
+  PL->>P: 转发请求(自动刷新 token)
+  P-->>PL: 模型响应 / 用量信息
+  PL-->>UI: 流式结果 + 用量面板</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/V1ki/dsh-plugin-subscriptions" target="_blank">V1ki/dsh-plugin-subscriptions</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
