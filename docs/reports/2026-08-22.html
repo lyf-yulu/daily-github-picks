@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-22</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-22 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/affaan-m" target="_blank">Agent Harness 性能优化系统</a></span>
+    <span class="stars">⭐ 357 <span class="stars-today">(+357 today)</span></span>
+  </div>
+  <p class="one-liner">面向 AI 编码代理的性能优化框架</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">Opencode</span><span class="tag">Cursor</span><span class="tag">Markdown 规则/提示词工程</span>
+  </div>
+  <div class="summary">该项目是一个面向 AI 编码代理（Agent Harness）的性能优化系统，旨在为 Claude Code、Codex、Opencode、Cursor 等主流 AI 编码工具提供统一的能力增强层。项目由 sponsors/affaan-m 维护，定位为跨代理的通用增强框架，通过五大核心维度提升代理的实际开发表现：Skills（技能库，封装可复用的操作模式）、Instincts（直觉规则，让代理具备默认的最佳实践判断）、Memory（记忆系统，实现跨会话的上下文持久化）、Security（安全护栏，避免破坏性操作与敏感信息泄露）以及 Research-first Development（研究先行的开发范式，鼓励代理在动手前充分调研）。这种设计理念承认当前 AI 编码代理在长任务、复杂上下文和安全性方面的短板，通过外部化的 harness 层进行系统性补齐，而非依赖单一模型能力的提升。项目采用工具无关的抽象方式，理论上可适配任意支持插件或规则注入的 AI 编码环境，帮助开发者在不同代理之间保持一致的工作流与质量标准。由于 README 内容极为简洁，具体实现细节、配置格式和落地方式需要进一步查阅仓库源码或文档。</div>
+  <div class="why-notable">在 AI 编码代理百花齐放但各自为政的当下，提出统一的 harness 优化层是有价值的工程视角。它把关注点从模型能力转向代理的运行时约束与工作流规范，尤其是 Security 与 Research-first 两条原则，直接回应了业界对 AI 代理『鲁莽写码』的普遍担忧，对追求可控、可复用代理工作流的团队有参考意义。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[开发者] --> H[Agent Harness 优化层]
+  H --> S1[Skills 技能库]
+  H --> S2[Instincts 直觉规则]
+  H --> S3[Memory 记忆系统]
+  H --> S4[Security 安全护栏]
+  H --> S5[Research-first 研究先行]
+  S1 --> A1[Claude Code]
+  S2 --> A2[Codex]
+  S3 --> A3[Opencode]
+  S4 --> A4[Cursor]
+  S5 --> A5[其他 AI 代理]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">任务执行数据流</p>
+    <div class="mermaid">flowchart LR
+  T[用户任务] --> R[Research 研究阶段]
+  R --> M[读取 Memory 上下文]
+  M --> P[加载 Skills 与 Instincts]
+  P --> C{Security 校验}
+  C -->|通过| E[代理执行]
+  C -->|阻断| B[提示确认]
+  E --> W[写回 Memory]
+  W --> O[输出结果]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/SigmanticAI/apex-inference-chip" target="_blank">APEX 推理芯片</a></span>
+    <span class="stars">⭐ 668</span>
+  </div>
+  <p class="one-liner">FPGA上跑真实LLM的验证优先推理芯片</p>
+  <div class="tags">
+    <span class="tag">SystemVerilog/RTL</span><span class="tag">FPGA</span><span class="tag">INT8 脉动阵列</span><span class="tag">INT4 量化</span><span class="tag">NumPy 黄金模型</span><span class="tag">UVM 验证</span><span class="tag">Qwen2.5 LLM</span>
+  </div>
+  <div class="summary">APEX 是一个完全开源、以验证为先的 LLM 推理芯片设计项目，实现了一个完整的 Transformer 解码层的真实 RTL 硬件，包括注意力机制、KV 缓存压缩、Softmax、RMSNorm、RoPE、SwiGLU 和残差连接等模块。项目的核心理念是把 KV 缓存压缩编解码器直接嵌入数据通路：Key 和 Value 在产生时立即量化压缩，在使用时即时解压，配合 TIP 重要性单元动态选择精度层级（KVQ8/KVQ4/KVQ4+outlier），从架构上解决长上下文推理的内存带宽瓶颈。整个流水线由一个时间复用的 MXE（INT8 脉动阵列 GEMM 引擎）承担全部七类矩阵运算任务，通过描述符驱动的作业调度实现主机与硬件序列器的统一执行模型。项目已在真实 FPGA 硬件上跑通 Qwen2.5-0.5B 模型，测得 0.56 tok/s，相比初始基线提升 140 倍，架构规模面向 7B 级模型设计（head_dim=128 已在 RTL 中就位）。所有 RTL 模块均对齐可执行的 NumPy 黄金模型，采用变异测试的 testbench 与机器生成的证据链，做到位精确一致，而非近似匹配。项目严格区分实测值与预测值，提供完整可复现的验证证据，由 Sigmantic AI 的 Polaris 引擎自主验证工具支持开发。</div>
+  <div class="why-notable">在 AI 芯片普遍以 GPU 算力为中心的当下，APEX 以完全开源、可复现、位精确验证的方式，展示了一条差异化路径：把 KV 缓存压缩内嵌到硬件数据通路。所有数据严格标注实测或预测，证据可一键追溯，在浮夸的 AI 硬件叙事中提供了罕见的工程诚实度，对 LLM 边缘推理与开源硬件验证方法学都有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">解码层数据流</p>
+    <div class="mermaid">graph LR
+  X[输入激活 x] --> RN1[RMSNorm]
+  RN1 --> QKV[MXE: W_Q/W_K/W_V 投影]
+  QKV --> ROPE[RoPE 位置编码]
+  ROPE --> KVQ[KVQ 压缩]
+  KVQ --> CACHE[(INT4+离群值 KV 缓存)]
+  CACHE --> DEQ[即时解压]
+  DEQ --> QK[MXE: Q·K^T]
+  QK --> SM[在线 Softmax]
+  SM --> PV[MXE: P·V]
+  PV --> TIP[TIP 重要性单元]
+  TIP -.精度反馈.-> KVQ
+  PV --> WO[MXE: W_O 输出投影]
+  WO --> RES1[残差相加]
+  RES1 --> FFN[FFN + SwiGLU]
+  FFN --> Y[输出 y]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">验证方法学闭环</p>
+    <div class="mermaid">graph TD
+  SPEC[自然语言规格] --> GOLDEN[NumPy 黄金模型]
+  SPEC --> RTL[RTL 实现]
+  GOLDEN --> TB[UVM Testbench]
+  RTL --> TB
+  TB --> MUT[变异测试]
+  MUT --> POLARIS[Polaris 引擎调度仿真]
+  POLARIS --> EVIDENCE[机器生成证据链]
+  EVIDENCE --> BITEXACT{位精确一致?}
+  BITEXACT -->|否| RTL
+  BITEXACT -->|是| FPGA[FPGA 真机部署]
+  FPGA --> QWEN[Qwen2.5-0.5B 实测 0.56 tok/s]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/SigmanticAI/apex-inference-chip" target="_blank">SigmanticAI/apex-inference-chip</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/OpenLabs-so/oa-design" target="_blank">OA Design 设计语言</a></span>
+    <span class="stars">⭐ 109</span>
+  </div>
+  <p class="one-liner">可被 AI 代理执行的设计语言包</p>
+  <div class="tags">
+    <span class="tag">React</span><span class="tag">Tailwind CSS v4</span><span class="tag">motion (Motion One)</span><span class="tag">TypeScript</span><span class="tag">CSS shape() / color-mix</span><span class="tag">Node.js CLI</span>
+  </div>
+  <div class="summary">oa-design 是 Open Analytics 团队将其产品设计语言产品化的开源项目，把设计规范转化为可被 AI 代理（Agent）直接执行的形态。项目以三种方式交付同一套设计资产：面向 Claude Code 等代理的 Skill、经过类型检查的 React 组件配方（recipe），以及仿照 shadcn/ui 风格的命令行工具 getopen-design。所有色值、圆角、缓动曲线与弹簧参数均取自实际上线的 Open Analytics 仪表盘，并附带设计推理。设计语言的核心是「白色曲面卡片、灰色舞台、单一墨色、单一弹簧」，具体涵盖：由单一墨色通过 color-mix 派生的中性色体系；基于 CSS shape() 的双层 squircle 连续曲率卡片系统；七条弹簧构成的动效词汇表，以及测高对话框编排、Tab Bar 标签遮罩、着陆页玻璃变形、骨架屏模糊到位等标志性动作；此外还规定了版式、通知条、悬浮胶囊、Toast 物理、文案语气与焦点环、减弱动效等无障碍底线。工程上通过 build/sync.mjs 将 components/ 目录下经 typecheck 的源码注入到各 Markdown 配方与 npm 包，保证文档与代码同源。项目仅使用 CSS 数值和弹簧常数，运行时不依赖上游库，可移植到任意技术栈。</div>
+  <div class="why-notable">它把「设计系统」这个传统上依赖人读文档的概念，重新定义为可被 AI 代理机械执行的技能包，同时通过单一源码生成 Skill、Recipe、CLI 三种交付物，示范了 AI 时代设计资产的组织范式。对希望让代理产出高质量 UI，或想复用生产级动效与 squircle 视觉系统的团队，是极具参考价值的开源样板。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单源多形态构建流程</p>
+    <div class="mermaid">graph LR
+  A[components/ 类型检查源码] -->|build/sync.mjs| B[skills/oa-design/*.md 配方]
+  A -->|--cli 同步| C[getopen-design npm 包]
+  B --> D[DESIGN-SKILL.md 单文件汇编]
+  B --> E[.claude/skills 代理技能]
+  C --> F[npx 安装到用户项目]
+  D --> G[Cursor / Codex / 通用代理]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">用户与代理的消费路径</p>
+    <div class="mermaid">graph TD
+  U[开发者] --> Ch{选择接入方式}
+  Ch -->|CLI| CLI[npx getopen-design add]
+  Ch -->|Claude Code| SK[复制到 .claude/skills]
+  Ch -->|其他代理| MD[引用 DESIGN-SKILL.md]
+  CLI --> P[项目内 oa-design 目录]
+  SK --> Agent[Claude 代理执行]
+  MD --> Agent
+  P --> UI[生成符合规范的 UI]
+  Agent --> UI</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/OpenLabs-so/oa-design" target="_blank">OpenLabs-so/oa-design</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/santifer" target="_blank">AI求职助手</a></span>
+    <span class="stars">⭐ 921 <span class="stars-today">(+921 today)</span></span>
+  </div>
+  <p class="one-liner">本地AI驱动的开源求职工作流</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">Codex CLI</span><span class="tag">OpenCode</span><span class="tag">Antigravity</span><span class="tag">Prompt Engineering</span><span class="tag">Markdown / 结构化模板</span><span class="tag">本地文件存储</span>
+  </div>
+  <div class="summary">该项目是一个开源的AI求职助手，运行在开发者常用的AI编码命令行工具中（如 Claude Code、Codex、OpenCode、Antigravity 等），将求职流程完全本地化。它的核心定位是让求职者借助大模型的推理能力，把繁琐的求职任务自动化、结构化。项目主要覆盖四大功能：一是扫描各大招聘门户网站，抓取候选职位；二是使用一套 A-F 六维评分标准（rubric）对每条职位进行结构化评估，最终折算成 1.0 到 5.0 的匹配分数，帮助求职者快速筛除低质量岗位；三是根据具体职位自动裁剪与优化个人简历（CV Tailoring），提升与岗位关键词、技能栈的匹配度；四是提供投递跟踪，记录申请状态、面试进展与历史反馈。由于工作流全部在用户本地的 AI CLI 环境中执行，用户的简历、评分记录、投递数据都不必上传到第三方服务器，隐私可控。技术形态上，项目并非传统的独立 Web 应用，而是以提示词、工作流脚本和结构化模板的方式，寄生在现有 AI 编码 CLI 之上，充分利用宿主工具的文件读写、网页抓取与代码执行能力，实现极低成本的部署与扩展。</div>
+  <div class="why-notable">该项目代表了一种新兴范式：把 AI CLI 当作通用运行时，用提示词与工作流而非独立后端来交付完整产品。它把求职这一高频、痛点明确的场景做成可复用的本地化 AI 流水线，既避免了 SaaS 求职工具的隐私顾虑，又展示了如何用结构化 rubric 让 LLM 的主观判断变得可衡量、可复现，对想构建垂直领域 AI Agent 的开发者有很强参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[求职者] --> CLI[AI 编码 CLI<br/>Claude Code / Codex / OpenCode]
+  CLI --> S[职位扫描模块]
+  CLI --> E[A-F Rubric 评估器]
+  CLI --> T[简历裁剪模块]
+  CLI --> K[申请跟踪器]
+  S --> P[招聘门户网站]
+  E --> Score[1.0-5.0 匹配分]
+  T --> CV[定制化简历]
+  K --> DB[(本地数据文件)]
+  Score --> DB
+  CV --> DB</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">求职工作流数据流</p>
+    <div class="mermaid">flowchart LR
+  A[输入求职偏好] --> B[抓取职位列表]
+  B --> C{按 A-F 六维评分}
+  C -->|<3.0| D[丢弃]
+  C -->|>=3.0| E[纳入候选池]
+  E --> F[生成定制简历]
+  F --> G[投递]
+  G --> H[更新申请状态]
+  H --> I[本地追踪看板]
+  I --> A</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/santifer" target="_blank">sponsors/santifer</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/turkiyeyapayzekaakademisi/llm-rag-memory-ai-agents" target="_blank">LLM-RAG-记忆-AI智能体实战</a></span>
+    <span class="stars">⭐ 117</span>
+  </div>
+  <p class="one-liner">土耳其AI学院的LLM全栈实战教程</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">langchain-google-genai</span><span class="tag">Google Gemini API</span><span class="tag">FAISS</span><span class="tag">langchain-community</span><span class="tag">langchain-text-splitters</span><span class="tag">python-dotenv</span>
+  </div>
+  <div class="summary">该项目是土耳其人工智能学院（Türkiye Yapay Zeka Akademisi）发布的一套面向大语言模型（LLM）应用开发的循序渐进实战教程仓库，涵盖从基础 LLM 调用、检索增强生成（RAG）到 AI Agent（智能体）三大主题模块。项目采用 Python 生态构建，以 LangChain 为核心编排框架，结合 Google Gemini 作为底层大模型，通过分步骤的项目结构让学习者从零搭建生产级 LLM 应用。第一部分 LLM 实践聚焦于虚拟环境搭建、依赖管理、API Key 配置（通过 .env 管理 GOOGLE_API_KEY）以及首次 Gemini 模型调用；第二部分 RAG 引入了向量数据库工作流，包含 mil_std_document.py（军标文档处理）、create_vector_db.py（基于 FAISS 构建向量库）以及 rag.py（检索问答链），并使用 langchain-community 与 langchain-text-splitters 完成文档切分与嵌入；第三部分 Agent 则延伸至具备工具调用与推理能力的智能体开发。整体教程以军事标准（MIL-STD）文档为示例语料，兼顾工程规范与实用价值，适合希望系统掌握 LLM 应用开发全链路的开发者。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">项目模块架构</p>
+    <div class="mermaid">graph TD
+  A[学习者] --> B[模块1: LLM 基础实践]
+  A --> C[模块2: RAG 检索增强]
+  A --> D[模块3: AI Agent 智能体]
+  B --> B1[虚拟环境 venv]
+  B --> B2[.env 配置 GOOGLE_API_KEY]
+  B --> B3[Gemini 首次调用]
+  C --> C1[mil_std_document.py 文档预处理]
+  C --> C2[create_vector_db.py FAISS 向量库]
+  C --> C3[rag.py 检索问答链]
+  D --> D1[工具调用与推理]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">RAG 数据流</p>
+    <div class="mermaid">graph LR
+  A[MIL-STD 文档] --> B[文本切分 TextSplitter]
+  B --> C[Gemini Embedding]
+  C --> D[FAISS 向量数据库]
+  E[用户提问] --> F[Query Embedding]
+  F --> D
+  D --> G[相关文档片段检索]
+  G --> H[LangChain Prompt 组装]
+  H --> I[Gemini LLM]
+  I --> J[生成回答]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/turkiyeyapayzekaakademisi/llm-rag-memory-ai-agents" target="_blank">turkiyeyapayzekaakademisi/llm-rag-memory-ai-agents</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
