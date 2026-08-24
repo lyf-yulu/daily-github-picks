@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-24</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-24 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/VoltAgent" target="_blank">VoltAgent 技能库</a></span>
+    <span class="stars">⭐ 156 <span class="stars-today">(+156 today)</span></span>
+  </div>
+  <p class="one-liner">千款 AI 代理技能精选合集</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">Agent Skills 规范</span><span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">Gemini CLI</span><span class="tag">Cursor</span>
+  </div>
+  <div class="summary">VoltAgent 是一个由官方开发团队与社区共同维护的 AI 代理技能（Agent Skills）精选合集，目前汇集了超过 1000 种技能。项目定位为跨平台的通用技能仓库，旨在为主流 AI 编码代理和命令行工具提供即插即用的能力扩展。所收录的技能兼容 Claude Code、OpenAI Codex、Gemini CLI、Cursor 等多种主流 AI 编程助手，用户可以按需挑选并集成到自己的工作流中，从而快速为 AI 代理注入领域知识、专业工作流程与最佳实践。项目通过统一的组织与筛选机制，降低了开发者在不同 AI 工具间切换与配置技能的成本，也为社区贡献者提供了共享经验的通道，是构建 AI 驱动开发流程的重要资源库。</div>
+  <div class="why-notable">作为业界首批规模化、跨平台的 AI 代理技能聚合库，VoltAgent 打破了不同 AI 编程工具间的生态壁垒，让开发者能够以统一方式复用技能资产，具有较强的生态整合价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[官方开发团队] -->|贡献技能| C[VoltAgent 技能库]
+  B[社区开发者] -->|提交技能| C
+  C -->|策展与筛选| D[1000+ 精选技能集]
+  D --> E[Claude Code]
+  D --> F[OpenAI Codex]
+  D --> G[Gemini CLI]
+  D --> H[Cursor]
+  D --> I[其他 AI 代理工具]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能使用数据流</p>
+    <div class="mermaid">flowchart LR
+  U[开发者] -->|浏览筛选| R[VoltAgent 仓库]
+  R -->|下载技能包| L[本地 AI 工具配置]
+  L -->|加载技能| AI[AI 代理运行时]
+  AI -->|执行任务| O[增强后的开发工作流]
+  O -->|反馈改进| U</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/VoltAgent" target="_blank">sponsors/VoltAgent</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/affaan-m" target="_blank">Agent Harness 性能优化系统</a></span>
+    <span class="stars">⭐ 427 <span class="stars-today">(+427 today)</span></span>
+  </div>
+  <p class="one-liner">为 AI 编码助手打造的能力增强框架</p>
+  <div class="tags">
+    <span class="tag">Markdown 规则与 Prompt 工程</span><span class="tag">面向 Claude Code / Codex / Cursor 的配置协议</span><span class="tag">Agent Skills 与 Memory 存储</span><span class="tag">Shell / CLI 集成</span>
+  </div>
+  <div class="summary">sponsors/affaan-m 是一个面向 AI 编码代理（Agent Harness）的性能优化系统，旨在为 Claude Code、Codex、Opencode、Cursor 等主流 AI 编程助手提供统一的能力增强层。项目的核心理念是通过 Skills（技能）、Instincts（直觉）、Memory（记忆）、Security（安全）、Research-first Development（研究优先开发）五大维度，弥补当前 AI 编码代理在长期任务中容易出现的上下文丢失、决策随意、安全意识薄弱等问题。Skills 模块为代理注入可复用的专业技能包；Instincts 模块通过规则和启发式经验引导代理在关键节点做出更合理的选择；Memory 模块提供跨会话的持久化记忆，让代理在多轮甚至多天的开发任务中保持一致性；Security 模块强化对敏感操作（如生产环境、密钥文件、破坏性命令）的守护；Research-first 则强调在动手编码前先进行充分的调研和验证，避免盲目改动。该系统被设计为与具体代理无关的适配层，可跨多种 AI IDE 与命令行代理复用，帮助开发者以更低成本获得一致、可靠且负责任的 AI 协作体验。由于当前公开 README 内容较为简略，具体技术栈以官方仓库最终发布为准，本摘要基于项目定位进行合理推断。</div>
+  <div class="why-notable">在 AI 编码代理快速普及的当下，各家 IDE 与 CLI 代理能力参差不齐、行为难以约束。该项目跳出单一工具视角，抽象出跨代理的通用增强层，把'技能、记忆、直觉、安全、研究'这些真正决定长期任务成败的要素显式化，为团队沉淀可复用的 AI 工作规范提供了可能，具备成为 Agent 生态基础设施的潜力。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  User[开发者] --> Agents[AI 编码代理]
+  Agents --> Harness[Agent Harness 优化层]
+  Harness --> Skills[Skills 技能库]
+  Harness --> Instincts[Instincts 决策规则]
+  Harness --> Memory[Memory 持久记忆]
+  Harness --> Security[Security 安全守护]
+  Harness --> Research[Research-first 调研机制]
+  Skills --> Repo[用户代码仓库]
+  Instincts --> Repo
+  Memory --> Repo
+  Security --> Repo
+  Research --> Repo</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">任务执行数据流</p>
+    <div class="mermaid">flowchart LR
+  A[用户任务] --> B{Research-first 调研}
+  B --> C[读取 Memory 上下文]
+  C --> D[匹配 Skills 技能包]
+  D --> E{Instincts 判断}
+  E ->|高风险| F[Security 拦截/确认]
+  E ->|低风险| G[执行代码变更]
+  F --> G
+  G --> H[更新 Memory]
+  H --> I[返回结果给用户]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/SigmanticAI/apex-inference-chip" target="_blank">APEX 推理芯片</a></span>
+    <span class="stars">⭐ 683</span>
+  </div>
+  <p class="one-liner">验证优先的开源LLM推理芯片瓦片</p>
+  <div class="tags">
+    <span class="tag">Verilog/SystemVerilog RTL</span><span class="tag">FPGA</span><span class="tag">Python/NumPy 黄金模型</span><span class="tag">UVM 验证</span><span class="tag">Qwen2.5 系列 LLM</span><span class="tag">INT8 脉动阵列 GEMM</span><span class="tag">INT4 + 离群通道 KV 量化</span>
+  </div>
+  <div class="summary">APEX 是一款完全开源、以验证为先的 LLM 推理芯片设计，聚焦于单个 Transformer 解码器层的 RTL 实现。它把注意力计算、KV 缓存压缩、Softmax、RMSNorm、RoPE、SwiGLU、残差连接等模块都做进真实硬件，每一位数值都与可执行的 NumPy 黄金模型逐比特一致，并已在 FPGA 上跑通真实的 Qwen2.5-0.5B 模型，实测吞吐 0.56 tok/s，相较起点提升约 140×。项目的核心思路是把 KV 编解码器放进数据通路：Key/Value 在生成瞬间即被量化压缩（INT4 + 离群通道），读取时在同一路径解压，配合 TIP 重要性单元按区域动态选择 KVQ8 / KVQ4 / KVQ4+outliers 精度层级，让长上下文的读取速度保持平坦。硬件层面复用同一 INT8 脉动阵列 MXE 承担 QKV 投影、注意力两次矩阵乘、输出投影与 FFN 全部七类 GEMM 任务，由 layer walker 序列器统一调度，权重通过流式方式喂入。方法论上强调「无黄金模型不出货」，采用变异测试与机器生成的证据链、反造假规则，所有性能数字都明确标注为实测或预测。当前范围仅为单瓦片，不含 DRAM 控制器、PCIe、NoC，但架构参数已按 7B 级模型（head_dim=128）设计，Qwen2.5-7B 的 token 已跑通软件黄金流水线。</div>
+  <div class="why-notable">在开源硬件生态里，能把真实 LLM 端到端跑到 FPGA、且每个 bit 都可对齐黄金模型的项目极少。APEX 把 KV 压缩从软件后处理提升为架构级设计，并用严格证据链披露实测与预测的边界，为边缘 LLM 推理芯片提供了一个可复现、可审计的参考实现。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单步解码数据流</p>
+    <div class="mermaid">graph TD
+  X[输入激活 x] --> RMS1[RMSNorm]
+  RMS1 --> QKV[MXE: WQ/WK/WV 投影]
+  QKV --> ROPE[RoPE 位置编码]
+  ROPE --> KVQ[KVQ 压缩引擎]
+  KVQ --> CACHE[(INT4+离群 KV 缓存 SRAM)]
+  CACHE --> DEQ[在线解压]
+  DEQ --> QK[MXE: Q·K^T]
+  QK --> SM[在线 Softmax ASU]
+  SM --> PV[MXE: P·V]
+  PV --> TIP[TIP 重要性反馈]
+  TIP -.自适应精度.-> KVQ
+  PV --> WO[MXE: W_O 投影]
+  WO --> R1[+ 残差]
+  R1 --> RMS2[RMSNorm]
+  RMS2 --> FFN1[MXE: W_gate / W_up]
+  FFN1 --> SW[SwiGLU]
+  SW --> FFN2[MXE: W_down]
+  FFN2 --> R2[+ 残差]
+  R2 --> Y[输出 y]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">验证与执行闭环</p>
+    <div class="mermaid">graph LR
+  SPEC[自然语言规格] --> GOLD[NumPy 黄金模型]
+  SPEC --> RTL[RTL 硬件实现]
+  GOLD --> TB[UVM 测试平台]
+  RTL --> TB
+  TB --> DIFF{逐比特比对}
+  DIFF -- 一致 --> FPGA[FPGA 板级运行]
+  DIFF -- 失配 --> RTL
+  FPGA --> MEAS[实测数据 0.56 tok/s]
+  GOLD --> PROJ[7B 预测数据]
+  MEAS --> EVID[证据链 STATUS.md]
+  PROJ --> EVID</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/SigmanticAI/apex-inference-chip" target="_blank">SigmanticAI/apex-inference-chip</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/OpenLabs-so/oa-design" target="_blank">oa-design</a></span>
+    <span class="stars">⭐ 113</span>
+  </div>
+  <p class="one-liner">Open Analytics 设计语言的 Agent 技能包</p>
+  <div class="tags">
+    <span class="tag">React</span><span class="tag">Tailwind CSS v4</span><span class="tag">motion (ion.dev)</span><span class="tag">TypeScript</span><span class="tag">CSS shape() / color-mix</span><span class="tag">Node.js CLI (npx)</span><span class="tag">Markdown (Agent Skill 格式)</span>
+  </div>
+  <div class="summary">oa-design 是 Open Analytics 团队将其产品 UI 设计语言封装成的开源工具集，让 AI 编码代理（如 Claude Code、Cursor 等）能够直接理解并复现 Open Analytics 仪表盘的视觉与动效风格。项目将设计语言以三种形态交付：Agent Skill（供代理阅读执行的规则集）、类型检查过的组件配方（Recipes）、以及 shadcn 风格的 CLI 工具。核心理念用一句话概括即『白色曲率连续圆角表面，置于安静灰色舞台，用一种墨色描绘，由同一种弹簧驱动』。项目内置了一整套设计规范：单一墨色通过 color-mix 派生所有中性色，基于 CSS shape() 剪切路径的 Squircle 曲面系统，覆盖全产品的七种弹簧动效词汇（含对话框高度编排、标签栏文字遮罩、着陆页玻璃形变、骨架屏模糊到清晰的进场动画），以及卡片网格布局、Toast 物理、通知条与浮动药丸等模式，还包括文案语调与无障碍质量底线（焦点环、减少动效、防横向滚动）。所有配方由 node build/sync.mjs 从 components/ 目录自动注入编译后源码，确保 MD 中的代码与 npm run typecheck 通过的代码完全一致。运行时零依赖，值只是纯 CSS 数字与弹簧常数，可移植到任意技术栈。</div>
+  <div class="why-notable">这是把『设计系统』重新定义为『AI 代理可执行技能』的先锋实践。传统组件库依赖运行时安装，而 oa-design 通过 Markdown 规则 + 内嵌源码让任何 AI 编码工具都能在自家项目里复现一致的视觉与动效，且完全零运行时依赖。对于希望在 AI 辅助开发时代保持设计一致性的团队，它示范了『Skill as Design System』的新范式，也为 shadcn 之后的分发模式提供了新思路。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单一源码三种交付形态架构</p>
+    <div class="mermaid">graph TD
+  A[components/ 类型检查源码<br/>TSX + _lib/springs] ->|node build/sync.mjs| B[skills/oa-design/<br/>Agent Skill 配方 MD]
+  A -->|build/sync.mjs --cli| C[cli/ npm 包<br/>getopen-design]
+  A -->|编译合并| D[DESIGN-SKILL.md<br/>单文件全量语言]
+  B --> E[Claude Code<br/>.claude/skills]
+  C --> F[开发者项目<br/>./oa-design]
+  D --> G[Cursor / Codex / 任意代理]
+  H[npm run typecheck] -.验证.-> A</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">CLI 使用数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 开发者
+  participant CLI as npx getopen-design
+  participant Pkg as CLI 内嵌 payload
+  participant Proj as ./oa-design 目录
+  U->CLI: list
+  CLI->>U: 可用配方清单
+  U->>CLI: add tab-bar toast
+  CLI->Pkg: 读取对应 recipe
+  Pkg-->>CLI: MD + 源码
+  CLI->>Proj: 写入配方文件
+  U->>CLI: tokens
+  CLI->>Proj: 写入 _root.css 令牌
+  U->>CLI: skill
+  CLI->>Proj: 写入 .claude/skills/oa-design</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/OpenLabs-so/oa-design" target="_blank">OpenLabs-so/oa-design</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Zyrexnn/Cybermes" target="_blank">Cybermes 自主攻防安全代理</a></span>
+    <span class="stars">⭐ 263</span>
+  </div>
+  <p class="one-liner">自主化红队与漏洞赏金AI代理框架</p>
+  <div class="tags">
+    <span class="tag">Python 3.11+</span><span class="tag">Hermes Agent</span><span class="tag">Docker / Docker Compose</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Puppeter</span><span class="tag">subfinder / amass / httpx / nmap</span><span class="tag">katana / gau / waybackurls / arjun</span><span class="tag">ffuf / sqlmap / dalfox / nuclei</span><span class="tag">Telegram Bot API</span><span class="tag">POSIX ACLs</span>
+  </div>
+  <div class="summary">Cybermes 是一个面向企业级攻防安全研究、漏洞赏金和红队行动的自主化 AI 代理框架，基于 Hermes Agent 作为核心推理引擎，并通过多模型 LLM 编排实现自动化侦察、攻击面挖掘、认证漏洞研究和零误报的漏洞验证。项目当前版本为 v1.5.0，跨平台支持 Linux、macOS 和 Windows（提供 PowerShell 原生安装、WSL2 及 Docker Desktop 三种方式）。其核心差异化能力包括：零误报门控机制（要求确定性 HTTP 证据、状态码及独立 Python PoC 脚本才可上报）、智能输出过滤器（通过 smart_pipe.py 将冗长日志压缩 70-85%，显著节省 Token 消耗）、端到端的自动化 PDF/HTML 执行摘要报告引擎、以及 POSIX ACL 权限守护进程解决 Docker 与 root 进程的文件锁定问题。框架内置 50 多个进攻性安全技能模块，覆盖 Next.js AI 路由审计、IDOR/BOLA、认证绕过、业务逻辑与竞态漏洞、DOM XSS、SSRF 与注入等，并集成 subfinder、amass、httpx、nmap、katana、gau、ffuf、sqlmap、dalfox、nuclei 等主流安全工具链，通过 MCP Bridge 桥接 Puppeter、Filesystem 和 mcp-server-fetch。项目还提供 Telegram Bot 网关、六阶段作战方法论以及基于 AGENTS.md 与 .cursorrules 的通用 AI 代理标准。</div>
+  <div class="why-notable">Cybermes 将传统安全扫描器的痛点（误报泛滥、上下文爆炸、交付物粗糙）系统性地重构为工程化解决方案，通过零误报门控、Token 智能压缩与自动化 PDF 报告构建出可直接商用的自主红队工作流。相比于纯 LLM 驱动的实验性安全代理，它在工具链集成、跨平台适配（尤其 Windows 原生支持）与交付质量上都体现出企业级成熟度，是当前 AI + 攻防安全交叉领域中少见的完整框架。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Cybermes 核心架构</p>
+    <div class="mermaid">graph TD
+  A[操作员 Prompt / 目标队列] --> B[操作员授权钩子]
+  B --> C[Hermes 自主推理循环]
+  C --> D[50+ 进攻性技能模块]
+  C --> E[策展知识库<br/>PayloadsAllTheThings/HackTricks]
+  D --> F[安全工具链 & MCP 层]
+  E --> F
+  F --> G[Smart Pipe<br/>Token 压缩 70-85%]
+  G --> H[零误报验证门控]
+  H --> I[PoC 生成 & CVSS 评级]
+  I --> J[PDF/HTML 执行摘要报告]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">六阶段作战数据流</p>
+    <div class="mermaid">flowchart LR
+  P1[阶段1<br/>侦察] --> P2[阶段2<br/>攻击面发现]
+  P2 --> P3[阶段3<br/>认证与端点挖掘]
+  P3 --> P4[阶段4<br/>漏洞研究]
+  P4 --> P5[阶段5<br/>PoC 验证<br/>零误报门控]
+  P5 --> P6[阶段6<br/>自动化报告]
+  P6 --> R[REPORT.pdf<br/>HTML 仪表盘]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Zyrexnn/Cybermes" target="_blank">Zyrexnn/Cybermes</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
