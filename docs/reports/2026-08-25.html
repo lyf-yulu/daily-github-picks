@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-25</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-25 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/VoltAgent" target="_blank">VoltAgent Awesome Skills</a></span>
+    <span class="stars">⭐ 602 <span class="stars-today">(+602 today)</span></span>
+  </div>
+  <p class="one-liner">1000+ AI 智能体技能精选集</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">YAML/JSON 配置</span><span class="tag">Agent Skill 规范</span><span class="tag">Git 协作</span>
+  </div>
+  <div class="summary">VoltAgent 维护的这份仓库汇集了 1000 多个 AI 智能体技能（agent skills），来源既包括各大官方开发团队，也涵盖广泛的社区贡献。项目定位为跨平台的技能资源中心，旨在为使用大模型编程助手的开发者提供开箱即用的能力扩展。收录的技能库兼容当前主流的 AI 编码工具生态，包括 Claude Code、OpenAI Codex、Google Gemini CLI、Cursor 等 IDE 与 CLI 客户端，用户可以在不同工具间复用同一份技能定义，避免为每个平台重复维护 prompt、工作流或工具描述。项目本质上是一个策展式（curated）目录，通过统一的组织结构对海量技能进行分类整理，帮助开发者快速检索到与自身场景匹配的能力包，例如代码审查、测试生成、文档编写、框架专属最佳实践等。对于希望扩展 AI 助手能力边界的团队而言，这类资源库降低了从零构建技能的成本，同时也让社区经验能够沉淀并被反复复用。技术栈上以 Markdown 与结构化配置文件为主，通过标准化的 skill 格式实现跨工具兼容，便于版本管理与 PR 协作。仓库位于 VoltAgent 组织下，作为其 sponsors 相关生态项目对外开放，形成了官方与社区双轮驱动的贡献模式。</div>
+  <div class="why-notable">在 AI 编码助手快速多元化的当下，各家工具的技能格式趋于收敛，一个统一的、由官方与社区共建的高质量技能资源库具有显著的生态价值。VoltAgent 这份合集不仅数量可观，更强调跨工具兼容性，能够让开发者以最低迁移成本在不同 AI IDE 之间切换，也为想要发布自有技能的团队提供了参考范式。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能分发架构</p>
+    <div class="mermaid">graph TD
+  A[官方开发团队] -->|贡献技能| C[VoltAgent Skills 仓库]
+  B[社区贡献者] -->|PR 提交| C
+  C -->|策展与分类| D[统一技能目录]
+  D --> E[Claude Code]
+  D --> F[OpenAI Codex]
+  D --> G[Gemini CLI]
+  D --> H[Cursor]
+  D --> I[其他兼容客户端]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能使用流程</p>
+    <div class="mermaid">flowchart LR
+  U[开发者] -->|按场景检索| R[Skills 目录]
+  R -->|下载/引用| S[技能定义文件]
+  S -->|加载到 AI 工具| T[AI 编码助手]
+  T -->|增强能力执行| U</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/VoltAgent" target="_blank">sponsors/VoltAgent</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/OpenLabs-so/oa-design" target="_blank">oa-design</a></span>
+    <span class="stars">⭐ 114</span>
+  </div>
+  <p class="one-liner">Open Analytics 设计语言的 Agent 技能包</p>
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Tailwind CSS v4</span><span class="tag">motion.dev</span><span class="tag">CSS shape() / color-mix</span><span class="tag">Node.js CLI (npx getopen-design)</span><span class="tag">Markdown-based Agent Skill</span>
+  </div>
+  <div class="summary">oa-design 是 Open Analytics（getopen.so）产品设计语言的开源封装，将其仪表盘中经过实战打磨的视觉与动效规范打包成三种形态：可供 AI Agent 直接执行的 Skill、经过类型检查的组件配方（recipes），以及类似 shadcn 风格的 CLI 工具。项目的核心理念是把每一个十六进制色值、弹簧常数、圆角半径和缓动曲线都从已上线的产品中抽取出来，并附上设计推理，让 Claude Code、Cursor 或任何 Agent 都能理解并复现同一套视觉语言。整体风格可用一句话概括：白色表面、连续曲率圆角、静谧灰色舞台、单一墨色、单一弹簧驱动。仓库包含 skills/oa-design 目录下的 Agent Skill（含十条规则、弹簧表和组件索引）、_root.css 令牌块、每个组件一个的 Markdown 配方，以及 components/ 目录下经 TypeScript 类型检查的源码。通过 build/sync.mjs 脚本，源码会被自动注入到配方 MD 与 npm 包中，保证文档与代码严格一致。语言层面涵盖 squircle 卡片系统（CSS shape() 剪裁）、七种弹簧动效词汇、对话框高度编排、Tab Bar 标签遮罩、着陆页玻璃变形、骨架屏模糊入场等标志性动作，还包括布局、通知条、悬浮胶囊、Toast 物理效果与文案语气。运行时零依赖，基于 React + Tailwind v4 + motion 编写，但输出的都是纯 CSS 数值和弹簧常数，可移植到任意技术栈。</div>
+  <div class="why-notable">这是把生产级设计系统交付给 AI Agent 的一次范式尝试：不再让模型凭感觉猜测色板与动效，而是把已上线产品的每一个数值和背后推理压缩成可执行的 Skill 文件。同时它示范了一种优雅的仓库形态——单一源代码 + 同步脚本，同时产出 CLI、Agent Skill 和文档，避免了传统组件库文档漂移的老问题。对希望搭建自家设计语言 Agent 化的团队而言，是极具参考价值的模板。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">单一源码驱动的三种交付形态</p>
+    <div class="mermaid">graph TD
+  A[components/ 类型检查源码] -->|node build/sync.mjs| B[skills/oa-design/*.md 配方]
+  A -->|--cli 镜像| C[cli/ npm 包]
+  B --> D[DESIGN-SKILL.md 合并单文件]
+  B --> E[.claude/skills 本地 Skill]
+  C -->|npx getopen-design add| F[用户项目 ./oa-design]
+  D --> G[Cursor / Codex / 其他 Agent]
+  E --> H[Claude Code]
+  F --> I[开发者代码库]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">设计语言的层次结构</p>
+    <div class="mermaid">graph LR
+  T[_root.css 令牌层] --> S[Squircle 曲面系统]
+  T --> M[七种弹簧动效]
+  T --> C[单一墨色 + color-mix]
+  S --> R[组件配方 01-12]
+  M --> R
+  C --> R
+  R --> V[视觉: 卡片/按钮/对话框/Toast]
+  R --> A[动效: 标签遮罩/骨架入场/玻璃变形]
+  R --> W[文案语气 + 质量底线]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/OpenLabs-so/oa-design" target="_blank">OpenLabs-so/oa-design</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Zyrexnn/Cybermes" target="_blank">Cybermes 自主攻防安全智能体</a></span>
+    <span class="stars">⭐ 452</span>
+  </div>
+  <p class="one-liner">自主化红队与漏洞赏金 AI 智能体框架</p>
+  <div class="tags">
+    <span class="tag">Go 1.22+</span><span class="tag">Python 3.11+</span><span class="tag">Hermes Agent</span><span class="tag">多模型 LLM 编排</span><span class="tag">Docker / Docker Compose</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">POSIX ACL</span><span class="tag">PDF/HTML 报告引擎</span>
+  </div>
+  <div class="summary">Cybermes 是一款面向企业级攻防安全研究的自主智能体框架，聚焦漏洞赏金、红队演练和进攻性安全评估场景。项目基于 Hermes Agent 构建自主推理循环，结合多模型 LLM 编排、专业化推理技能与精选知识库（PayloadsAllTheThings、HackTricks、Claude-BugHunter 等），实现从侦察、攻击面发现、鉴权漏洞挖掘到零误报漏洞验证的端到端自动化。框架内置 50 余个进攻性技能模块，覆盖 Next.js/AI 路由审计、IDOR/BOLA、认证绕过、竞态条件、DOM XSS、SSRF 与注入等常见攻击面。为解决传统扫描器噪音大、上下文膨胀的问题，Cybermes 引入原生 Go 实现的 smart_pipe 与 Markdown MCP 转换器，可将冗长日志压缩 70–85%，显著节约 Token 成本；同时通过确定性 HTTP 证据、状态码校验与独立 Python PoC 脚本组成零误报门禁，仅上报可复现漏洞。项目提供自动化 PDF/HTML 高管报告引擎、后台权限守护进程（POSIX ACL）以及目标隔离的目录结构，支持 Linux、macOS 与 Windows（PowerShell 原生、WSL2、Docker Desktop）三大平台部署，并遵循 AGENTS.md 与 .cursorrules 通用 AI 代理规范。</div>
+  <div class="why-notable">Cybermes 已登榜 The Agentic Leaderboard「New 100」，在自主安全智能体赛道具有代表性。它把 LLM 智能体的三大痛点——误报泛滥、上下文成本失控、交付物粗糙——用工程化手段一次性解决：零误报门禁保证结果可信、Go 原生管道显著降本、自动化 PDF/HTML 报告直接对接管理层。对希望研究 AI 驱动红队、漏洞赏金自动化或 LLM 上下文压缩工程实践的开发者与安全团队而言，是一个高完成度且跨平台可用的开源参考实现。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Cybermes 核心引擎架构</p>
+    <div class="mermaid">graph TD
+  A[操作员 Prompt / 目标队列] --> B[操作员授权 Hook]
+  B --> C[Hermes 自主推理循环]
+  C --> C1[上下文记忆管理]
+  C --> C2[自愈式行动规划]
+  C --> C3[CVSS v3.1 置信度评分]
+  C --> D[50+ 进攻性技能模块]
+  C --> E[精选知识库]
+  D --> D1[Next.js / AI 路由审计]
+  D --> D2[IDOR / BOLA / 鉴权绕过]
+  D --> D3[XSS / SSRF / 注入矩阵]
+  E --> E1[PayloadsAllTheThings]
+  E --> E2[HackTricks]
+  E --> E3[Claude-BugHunter]
+  D --> F[安全工具链 + Go 原生核心]
+  E --> F
+  F --> G[零误报验证门]
+  G --> H[自动化 PDF / HTML 报告]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Token 经济数据流</p>
+    <div class="mermaid">flowchart LR
+  T[原始工具输出 5000+ 行] --> S[smart_pipe Go 原生过滤]
+  S --> M[Markdown MCP 转换器]
+  M --> R[压缩 70-85% 的结构化上下文]
+  R --> L[LLM 推理引擎]
+  L --> P[PoC 脚本 + HTTP 证据]
+  P --> V{零误报门禁}
+  V -->|通过| RPT[PDF / HTML 报告生成]
+  V -->|拒绝| C[丢弃并重新推理]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Zyrexnn/Cybermes" target="_blank">Zyrexnn/Cybermes</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/turkiyeyapayzekaakademisi/llm-rag-memory-ai-agents" target="_blank">LLM-RAG-记忆-AI Agent 实践仓库</a></span>
+    <span class="stars">⭐ 118</span>
+  </div>
+  <p class="one-liner">土耳其AI学院的LLM四阶段实战教程</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">langchain-google-genai</span><span class="tag">langchain-community</span><span class="tag">langchain-text-splitters</span><span class="tag">FAISS</span><span class="tag">Google Gemini API</span><span class="tag">python-dotenv</span>
+  </div>
+  <div class="summary">该仓库由土耳其人工智能学院（Türkiye Yapay Zeka Akademisi）维护，是一份面向初学者的大语言模型应用开发实践教程集合，采用循序渐进的方式覆盖了现代 LLM 应用开发的四大核心主题：基础 LLM 调用、检索增强生成（RAG）、记忆机制以及 AI Agent 智能体。项目以 Python 虚拟环境搭建作为起点，指导学习者从零配置开发环境，包括 venv 创建、依赖安装以及 Google Gemini API Key 的配置。第一部分聚焦于使用 LangChain 与 langchain-google-genai 完成首次 Gemini 模型调用；第二部分则围绕 RAG 构建了完整的示例流程，包括 mil_std_document.py（军标文档准备）、create_vector_db.py（基于 FAISS 构建向量数据库）与 rag.py（检索问答主逻辑）三个核心脚本，配合 langchain-community 与 langchain-text-splitters 完成文档切分、嵌入与检索。后续章节延伸到 Agent 智能体的构建。整体项目结构清晰、命名规范，README 采用逐步指令式说明，便于跟随复现，是了解 LangChain + Gemini 生态并动手实践 RAG 的入门参考。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">项目学习路径</p>
+    <div class="mermaid">graph LR
+  A[环境搭建<br/>venv+依赖] --> B[LLM 基础<br/>Gemini 调用]
+  B --> C[RAG 实践<br/>FAISS 向量库]
+  C --> D[Memory<br/>对话记忆]
+  D --> E[AI Agent<br/>智能体]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">RAG 数据流</p>
+    <div class="mermaid">graph TD
+  A[MIL-STD 文档] --> B[mil_std_document.py<br/>文档加载]
+  B --> C[Text Splitter<br/>文本切分]
+  C --> D[Gemini Embeddings<br/>向量化]
+  D --> E[create_vector_db.py<br/>FAISS 向量库]
+  F[用户提问] --> G[rag.py<br/>检索链]
+  E --> G
+  G --> H[Gemini LLM]
+  H --> I[生成答案]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/turkiyeyapayzekaakademisi/llm-rag-memory-ai-agents" target="_blank">turkiyeyapayzekaakademisi/llm-rag-memory-ai-agents</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/mindsdb/setfree" target="_blank">SetFree</a></span>
+    <span class="stars">⭐ 56</span>
+  </div>
+  <p class="one-liner">让编码 CLI 自由连接任意 LLM</p>
+  <div class="tags">
+    <span class="tag">Go</span><span class="tag">TOML 配置</span><span class="tag">Shell/PowerShell 安装脚本</span><span class="tag">Mermaid（文档）</span>
+  </div>
+  <div class="summary">SetFree 是 MindsDB 开源的一款轻量级命令行包装工具，旨在解耦编码 CLI（如 Claude Code、Codex、VS Code 中的 Claude 扩展等）与其默认绑定的 LLM 服务商，让开发者可以将喜爱的编码代理指向任意 LLM 网关、企业私有网关或本地代理。使用方式极简，只需在原命令前加上 setfree 前缀（例如 setfree claude），首次运行会交互式引导配置网关，此后保持静默透传所有参数。工具通过适配器模式支持不同 CLI，核心机制是构建环境变量后启动原生 CLI 二进制，本身不代理流量、不修改二进制、不介入认证。配置分离存储于 config.toml 与 credentials.toml（Unix 下 0600 权限），并支持环境变量覆盖，便于 CI/脚本场景。项目使用 Go 编写，单二进制分发，自带每日自动更新（含 checksums 校验），提供 curl/PowerShell 安装脚本。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与调用流程</p>
+    <div class="mermaid">graph TD
+  U[开发者] -->|setfree claude| SF[SetFree CLI]
+  SF --> DET[CLI 检测 detect.List]
+  SF --> CFG[配置加载]
+  CFG --> C1[config.toml 网关URL]
+  CFG --> C2[credentials.toml API密钥]
+  CFG --> ENV[环境变量覆盖]
+  DET --> AD[适配器 Adapter]
+  AD --> A1[claude 适配器]
+  AD --> A2[codex 适配器]
+  AD --> A3[vscode 适配器]
+  AD --> BUILD[Build 构造环境]
+  BUILD --> EXEC[exec 原生 CLI 二进制]
+  EXEC -->|直连| GW[LLM 网关/代理]
+  GW --> LLM[任意 LLM 提供商]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">配置优先级与首次运行流程</p>
+    <div class="mermaid">flowchart LR
+  START[启动 setfree] --> CHK{环境变量?}
+  CHK -- 有 --> USE_ENV[使用 SETFREE_BASE_URL/API_KEY]
+  CHK -- 无 --> SAVED{存在保存的网关?}
+  SAVED -- 是 --> USE_CFG[加载 config.toml + credentials.toml]
+  SAVED -- 否 --> TTY{是否为交互终端?}
+  TTY -- 是 --> WIZ[交互式向导设置网关]
+  TTY -- 否 --> FAIL[快速失败并提示]
+  USE_ENV --> LAUNCH[启动目标 CLI]
+  USE_CFG --> LAUNCH
+  WIZ --> SAVE[写入配置0600] --> LAUNCH</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/mindsdb/setfree" target="_blank">mindsdb/setfree</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
