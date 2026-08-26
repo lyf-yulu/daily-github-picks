@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-26</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-26 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/OpenLabs-so/oa-design" target="_blank">OA Design 设计语言</a></span>
+    <span class="stars">⭐ 114</span>
+  </div>
+  <p class="one-liner">可被AI代理执行的开源设计语言</p>
+  <div class="tags">
+    <span class="tag">React</span><span class="tag">Tailwind CSS v4</span><span class="tag">motion.dev</span><span class="tag">TypeScript</span><span class="tag">CSS shape()/color-mix</span><span class="tag">Node.js CLI</span><span class="tag">Markdown Skill</span>
+  </div>
+  <div class="summary">oa-design 是 Open Analytics 团队将其产品级设计语言开源的产物，以三种形态交付：一份可被 AI 代理直接执行的 Skill、一组经过类型检查的组件配方（recipes），以及一个 shadcn 风格的 CLI 工具。项目的核心理念是将 Open Analytics 仪表盘中已上线的每一个色号、圆角、缓动函数与弹簧参数原封不动地抽离出来，并附带设计推理，形成一份 AI 可读、可执行的设计规范。视觉语言可概括为：白色表面配连续曲率圆角（squircle），置于安静的灰色舞台之上，使用单一墨色勾勒，由单一弹簧驱动运动。开发者可通过 `npx getopen-design add` 将组件配方注入项目，或将 Skill 目录复制到 `.claude/skills` 供 Claude Code 调用，也可直接引用编译后的 `DESIGN-SKILL.md` 让 Cursor、Codex 等任意代理遵循。仓库包含 12 个组件配方（Tab Bar、Toast、Modal、多步对话框、骨架屏、头部变形等），配套 `_root.css` token 块、七种弹簧运动词表以及排版、动效、文案指南。构建脚本 `build/sync.mjs` 会把 `components/` 中通过 `npm run typecheck` 的源码注入 MD 配方，保证文档中的代码即产品代码。技术栈基于 React + Tailwind v4 + motion 库，但产物本质是纯 CSS 数值与弹簧常量，可移植到任意框架。采用 MIT 协议，运行时零依赖。</div>
+  <div class="why-notable">这是 AI Coding 时代设计系统交付方式的一次范式实验：不再把设计规范做成 Figma 文件或组件库，而是编译成 AI 代理可执行的 Skill 文件，让 Claude Code、Cursor 在生成 UI 时自动遵循真实产品的动效与视觉参数。它把'设计规范'从人类阅读物升级为机器可执行的工程契约，并示范了 recipes + skill + CLI 三态从单一源码同步的仓库结构，对希望向 AI 代理暴露自有设计语言的团队具有直接参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三态交付架构</p>
+    <div class="mermaid">graph TD
+  A[components/ 类型检查源码] -->|build/sync.mjs| B[skills/oa-design/ 配方MD]
+  A -->|--cli 镜像| C[getopen-design npm包]
+  B --> D[DESIGN-SKILL.md 单文件编译版]
+  C -->|npx add| E[用户项目 ./oa-design]
+  B -->|复制到 .claude/skills| F[Claude Code Agent]
+  D -->|规则引用| G[Cursor / Codex / 其他Agent]
+  E --> H[React + Tailwind v4 应用]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">设计语言构成</p>
+    <div class="mermaid">graph LR
+  T[_root.css Token] --> INK[单一墨色]
+  INK -->|color-mix %| N[中性色阶]
+  T --> S[Squircle 表面系统]
+  T --> M[七弹簧运动词表]
+  M --> M1[对话框高度编舞]
+  M --> M2[Tab Bar 标签遮罩]
+  M --> M3[头部玻璃变形]
+  M --> M4[骨架屏模糊入场]
+  T --> L[版式与文案规范]
+  T --> Q[可访问性底线]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/OpenLabs-so/oa-design" target="_blank">OpenLabs-so/oa-design</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Stupidoodle/swissdevjobs-cli" target="_blank">SwissDevJobs CLI</a></span>
+    <span class="stars">⭐ 64</span>
+  </div>
+  <p class="one-liner">终端里搜索 7 国透明薪资技术岗</p>
+  <div class="tags">
+    <span class="tag">Python 3.9+</span><span class="tag">Python 标准库</span><span class="tag">SQLite</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Claude Code Plugin</span><span class="tag">uv / uvx / pipx</span>
+  </div>
+  <div class="summary">swissdevjobs-cli 是一个零依赖的 Python 命令行工具，将 7 个国家、8 个招聘板块（涵盖瑞士、德国、英国、美加、荷兰、法国的 devitjobs 系列 IT 招聘站，以及瑞士全行业站 jobs.ch 与 jobup.ch）整合到统一的终端界面中，可检索约 4700 个强制公开薪资的技术岗位以及约 5 万个瑞士综合岗位。核心特色是把薪资作为一等过滤条件（--min-salary），并通过解析 MongoDB ObjectId 还原岗位的真实创建时间，避免被平台的“刷新日期”误导。工具使用本地 SQLite 记录已投递岗位，自动从列表中隐藏重复项。除 CLI 外还内置 MCP 服务器和 Claude Code 插件，所有命令均支持 --json 输出，可被 LLM Agent 直接驱动，实现自然语言搜索、筛选与投递。仅依赖 Python 3.9+ 标准库，无任何第三方包，规避供应链风险。</div>
+  <div class="why-notable">把「薪资透明」作为筛选前提并原生支持 AI Agent 调用，是少见的 agent-native 求职 CLI</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户 CLI: sdj] --> C[命令解析层]
+  A[Claude Code / LLM Agent] --> M[MCP 服务器]
+  M --> C
+  C --> F[过滤与排序引擎]
+  F --> S[(本地 SQLite<br/>已投递记录)]
+  F --> B1[devitjobs 家族<br/>CH/DE/UK/US-CA/NL/FR]
+  F --> B2[JobCloud 平台<br/>jobs.ch / jobup.ch]
+  B1 --> R[JSON 结果]
+  B2 --> R
+  R --> U
+  R --> A</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">岗位检索数据流</p>
+    <div class="mermaid">flowchart LR
+  Q[用户查询<br/>--tech --remote --min-salary] --> P[参数归一化]
+  P --> D{按 board/country<br/>分发}
+  D --> E1[抓取 devitjobs API]
+  D --> E2[抓取 jobs.ch/jobup.ch]
+  E1 --> N[解析 ObjectId<br/>还原真实发布时间]
+  E2 --> N
+  N --> H[去重: 匹配已投递 SQLite]
+  H --> FLT[薪资/技术栈/远程 过滤]
+  FLT --> OUT[表格 或 --json 输出]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Stupidoodle/swissdevjobs-cli" target="_blank">Stupidoodle/swissdevjobs-cli</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Cripacx/mediagen" target="_blank">mediagen</a></span>
+    <span class="stars">⭐ 56</span>
+  </div>
+  <p class="one-liner">面向编码智能体的图像与视频生成技能</p>
+  <div class="tags">
+    <span class="tag">Node.js 20.11+</span><span class="tag">npm/npx</span><span class="tag">TypeScript/JavaScript CLI</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Google Gemini API</span><span class="tag">OpenAI API</span><span class="tag">Kie AI API</span>
+  </div>
+  <div class="summary">mediagen 是一款为 Claude Code 等编码智能体（coding agent）设计的图像与视频生成技能（skill），通过统一的 CLI 与 MCP 服务器封装 Google Gemini、OpenAI 和 Kie AI 三大提供商，让智能体只需一次安装即可调用约 30 余种模型完成图像生成、视频生成和媒体编辑。项目内置提示词编写指导，可将模糊的自然语言需求扩写为包含主体、构图、光线、镜头与材质的完整描述；同时具备提供商智能路由能力，能根据宽高比、视频支持度与 API Key 可用性自动挑选最合适的模型（例如 21:9 走 Gemini、OpenAI 无法输出 16:9 时自动跳过）。它还遵循欧盟 AI 法案（EU AI Act）要求，可对 AI 生成内容进行可见与不可见标记。配置层面提供 init 向导、doctor 健康检查、环境变量与配置文件多层解析，并在 shadowed 值、错误码与恢复动作上做了细致处理，兼顾交互式使用与 CI 场景。所有错误均携带机器可读代码，便于智能体自主恢复。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与提供商路由</p>
+    <div class="mermaid">graph TD
+  A[编码智能体<br/>Claude Code 等] -->|自然语言指令| B[mediagen Skill]
+  B --> C[mediagen CLI / MCP Server]
+  C --> D{路由决策<br/>Provider Priority}
+  D -->|Key 可用 + 能力匹配| E[Google Gemini<br/>图像+视频, 21:9, 4K]
+  D -->|Key 可用 + 能力匹配| F[OpenAI<br/>gpt-image, DALL·E]
+  D -->|Key 可用 + 能力匹配| G[Kie AI<br/>Flux/Imagen/Grok 等 ~30 模型]
+  E --> H[生成媒体文件]
+  F --> H
+  G --> H
+  H --> I[mediagen mark<br/>AI 内容标记]
+  I --> J[输出目录<br/>output/*.png/.jpg/.mp4]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">配置解析与请求流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户/智能体
+  participant C as mediagen CLI
+  participant Cfg as 配置解析层
+  participant P as 提供商 API
+  U->>C: image "..." --aspect-ratio 21:9 --json
+  C->>Cfg: 读取环境变量
+  Cfg->>Cfg: 回退到 .env
+  Cfg->>Cfg: 回退到 config 文件
+  Cfg-->>C: Key + 模型 + 优先级
+  C->>C: 校验能力(宽高比/视频/编辑)
+  C->>P: 调用匹配的提供商
+  alt 成功
+    P-->>C: 媒体二进制
+    C-->>U: JSON {path, provider, model}
+  else 失败
+    P-->>C: 错误
+    C-->>U: {code, nextAction} 供智能体自恢复
+  end</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Cripacx/mediagen" target="_blank">Cripacx/mediagen</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Zyrexnn/Cybermes" target="_blank">Cybermes</a></span>
+    <span class="stars">⭐ 549</span>
+  </div>
+  <p class="one-liner">自主化攻击性安全与漏洞赏金自动化框架</p>
+  <div class="tags">
+    <span class="tag">Go 1.22+</span><span class="tag">Python 3.11+</span><span class="tag">Model Context Protocol (MCP)</span><span class="tag">JSON-RPC 2.0</span><span class="tag">Docker</span><span class="tag">PowerShell</span><span class="tag">subfinder / httpx / katana / ffuf / nuclei / sqlmap</span>
+  </div>
+  <div class="summary">Cybermes 是一款面向授权漏洞赏金、红队演练与渗透研究的自主化攻击性安全自动化框架，基于 Hermes 智能代理进行推理编排，并结合多模型 LLM 协同工作。项目通过原生 Go 编写的高性能工具链（如流式过滤器 smart_pipe、凭证扫描 secret_scan、离线知识检索 search_knowledge 和报告聚合器 aggregate_reports）解决传统 AI 辅助安全测试中的上下文噪声与令牌浪费问题，仅将高价值端点、状态码与敏感信息流式传递给 LLM。框架内置 200+ 模块化攻击 SOP 剧本，覆盖 API 安全（IDOR/BOLA、JWT、BPLA）、Web 漏洞（SSRF、XSS、SQLi、竞态条件）与云配置错误等场景，并集成 subfinder、httpx、katana、ffuf、nuclei、sqlmap 等主流侦察与利用工具。Cybermes 通过原生 Go 实现的 MCP（Model Context Protocol）服务器 cybermes-mcp 直接对接 Cursor、Claude Desktop、Windsurf、VS Code/Cline 等 AI 编码环境，支持一键 npx 自动安装。其核心创新在于「零误报 PoC 验证门」机制，要求生成独立、非破坏性的 Python 验证脚本并附带原始 HTTP 证据，避免推测性告警。最终输出包含 SUMMARY.md、metadata.json、交互式 HTML 与 PDF 的结构化报告，并支持 Windows、Linux、macOS 及 Docker 全平台部署。</div>
+  <div class="why-notable">Cybermes 将 AI 代理与传统攻击性安全工具链深度融合，通过 MCP 协议标准化 LLM 与安全工具的交互方式，并以原生 Go 实现解决 LLM 上下文膨胀这一实际痛点。其「零误报验证门」设计弥补了当前 AI 安全助手普遍存在的幻觉与推测性告警缺陷，使自主化红队工作流真正具备可复现性与工程落地价值，是 AI 驱动攻击性安全领域少见的兼顾性能、协议标准化与验证严谨性的开源项目。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Cybermes 闭环攻击研究流水线</p>
+    <div class="mermaid">graph LR
+  A[Hermes 推理编排] --> B[侦察与探测<br/>subfinder/httpx/katana]
+  B --> C[smart_pipe<br/>高信号过滤]
+  C --> D[技能执行<br/>200+ 攻击剧本]
+  D --> E[search_knowledge<br/>离线知识检索]
+  E --> F{零误报<br/>PoC 验证门}
+  F -->|通过| G[结构化报告<br/>MD/JSON/HTML/PDF]
+  F -->|失败| D</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">MCP 集成与工具调用架构</p>
+    <div class="mermaid">graph TD
+  U[安全研究人员] --> AI[AI 客户端<br/>Cursor/Claude/VS Code]
+  AI -->|JSON-RPC 2.0| MCP[cybermes-mcp<br/>原生 Go 服务器]
+  MCP --> T1[smart_pipe]
+  MCP --> T2[secret_scan]
+  MCP --> T3[search_knowledge]
+  MCP --> T4[aggregate_reports]
+  MCP --> T5[外部工具集<br/>nuclei/sqlmap/ffuf]
+  T1 --> WS[目标工作区<br/>reports/TARGET_SLUG/]
+  T4 --> WS</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Zyrexnn/Cybermes" target="_blank">Zyrexnn/Cybermes</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/turkiyeyapayzekaakademisi/llm-rag-memory-ai-agents" target="_blank">LLM-RAG-记忆-AI智能体实践教程</a></span>
+    <span class="stars">⭐ 118</span>
+  </div>
+  <p class="one-liner">土耳其AI学院LLM与RAG实战教程</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">langchain-google-genai</span><span class="tag">langchain-community</span><span class="tag">langchain-text-splitters</span><span class="tag">Google Gemini API</span><span class="tag">FAISS</span><span class="tag">python-dotenv</span>
+  </div>
+  <div class="summary">该仓库是土耳其人工智能学院（Türkiye Yapay Zeka Akademisi）发布的一套面向初学者的大语言模型（LLM）实践教程，围绕三个循序渐进的主题展开：LLM 基础调用、RAG（检索增强生成）以及 AI Agent（智能体）。项目采用 Python 虚拟环境进行隔离，通过 LangChain 框架对接 Google Gemini 模型，并使用 python-dotenv 管理 API 密钥。第一部分讲解如何搭建虚拟环境、安装 langchain 与 langchain-google-genai 等基础依赖，并完成首次 Gemini API 调用。第二部分聚焦 RAG 场景，以军用标准（MIL-STD）文档为语料，划分为 mil_std_document.py（文档生成）、create_vector_db.py（向量数据库构建）与 rag.py（检索问答）三个模块，引入 langchain-community、langchain-text-splitters 和 faiss-cpu 实现文本切分与向量检索。第三部分预留给 AI Agent 相关内容。整体项目结构清晰，命令与依赖列表明确，适合作为中小型团队或学员学习 LangChain 生态、Gemini 接入与本地向量检索的入门实践模板，也可作为构建领域文档问答系统（如军规、标准手册）的参考骨架。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">项目整体架构</p>
+    <div class="mermaid">graph TD
+  A[学员] --> B[LLM 基础模块]
+  A --> C[RAG 模块]
+  A --> D[Agent 模块]
+  B --> E[LangChain]
+  C --> E
+  D --> E
+  E --> F[Google Gemini API]
+  C --> G[FAISS 向量库]
+  G --> H[MIL-STD 文档]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">RAG 数据流</p>
+    <div class="mermaid">graph LR
+  A[mil_std_document.py 生成文档] --> B[文本切分 text-splitters]
+  B --> C[create_vector_db.py 向量化]
+  C --> D[FAISS 向量库]
+  E[用户提问] --> F[rag.py 检索]
+  D --> F
+  F --> G[Gemini 生成回答]
+  G --> H[返回结果]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/turkiyeyapayzekaakademisi/llm-rag-memory-ai-agents" target="_blank">turkiyeyapayzekaakademisi/llm-rag-memory-ai-agents</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
