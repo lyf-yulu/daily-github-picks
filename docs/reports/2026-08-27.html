@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-27</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-27 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/VoltAgent" target="_blank">VoltAgent 技能集</a></span>
+    <span class="stars">⭐ 242 <span class="stars-today">(+242 today)</span></span>
+  </div>
+  <p class="one-liner">千余款AI编码代理技能合集</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">Agent Skills 规范</span><span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">Gemini CLI</span><span class="tag">Cursor</span>
+  </div>
+  <div class="summary">VoltAgent 是一个由官方开发团队与社区共同维护的开源项目，汇集了 1000 余款可复用的 Agent Skills（智能体技能），旨在为主流 AI 编码助手提供统一、可移植的能力扩展库。项目定位于跨工具的技能生态中枢，所收录的技能兼容 Claude Code、OpenAI Codex、Gemini CLI、Cursor 等多款主流 AI 开发环境，开发者无需为不同工具重复编写提示词或工作流，即可在任意兼容平台上调用同一份技能定义。项目采用精选（curated）策略，对来自官方 DevRel 团队和社区贡献者的技能条目进行分类、审核与整理，覆盖代码生成、调试、测试、重构、文档编写、DevOps、前后端框架适配等多个开发场景。通过统一的技能描述规范，用户可以按需检索、组合并加载技能，快速把资深工程师沉淀的最佳实践引入日常编码工作流。对于希望构建可复用 AI 工作流、比较不同 CLI 代理能力，或在团队内统一 AI 使用规范的开发者与组织而言，VoltAgent 提供了一个开箱即用、社区驱动的技能索引与分发中心，是当前多代理生态下极具参考价值的资源集散地。</div>
+  <div class="why-notable">在 AI 编码代理工具快速涌现、各家提示词与工作流互不兼容的背景下，VoltAgent 通过统一的技能格式与跨工具兼容策略，为开发者解决了『重复造轮子』和『技能锁定』两大痛点，是当前 Agent Skills 领域规模最大、覆盖最广的社区索引之一，具备成为多代理生态事实标准资源库的潜力。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[官方开发团队] -->|贡献技能| C[VoltAgent 技能仓库]
+  B[社区贡献者] -->|贡献技能| C
+  C -->|精选与分类| D[统一技能索引]
+  D --> E[Claude Code]
+  D --> F[OpenAI Codex]
+  D --> G[Gemini CLI]
+  D --> H[Cursor]
+  D --> I[其他兼容工具]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能使用流程</p>
+    <div class="mermaid">flowchart LR
+  U[开发者] --> S[浏览技能库]
+  S --> P[选择所需技能]
+  P --> L[加载到 AI 编码工具]
+  L --> R[执行编码任务]
+  R --> F[反馈与迭代]
+  F --> S</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/VoltAgent" target="_blank">sponsors/VoltAgent</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/OpenLabs-so/oa-design" target="_blank">oa-design 设计语言技能包</a></span>
+    <span class="stars">⭐ 116</span>
+  </div>
+  <p class="one-liner">Open Analytics 设计语言的 Agent 可执行版</p>
+  <div class="tags">
+    <span class="tag">React</span><span class="tag">Tailwind CSS v4</span><span class="tag">motion.dev</span><span class="tag">TypeScript</span><span class="tag">CSS shape() / color-mix</span><span class="tag">Node.js CLI (npx getopen-design)</span><span class="tag">Markdown-based Agent Skill</span>
+  </div>
+  <div class="summary">oa-design 是 Open Analytics 官方开源的设计语言项目，将其仪表盘产品中所有的视觉与交互规范以三种形态一次性打包交付：可供 AI Agent 直接执行的 Skill、经过类型检查的组件配方（recipes），以及 shadcn 风格的 CLI 工具。项目核心理念是让 Claude Code、Cursor 或任意 Agent 都能按照统一规则复现 Open Analytics 的产品观感，一句话概括其风格便是白色表面配连续曲率圆角、静谧灰底、单一墨色与单一弹簧动画。所有色值、圆角、缓动与弹簧常数都直接来自线上产品，并附有推理说明。仓库结构清晰分为 skills/（Agent 技能与十条规则、七种弹簧表、组件配方索引及 _root.css token 块）、components/（含 squircle-card、button、dropdown、tab-bar、modal、multi-step-dialog、skeleton、notice-strip、floating-pill、toast、header-morph、reveal 等类型检查源码）、cli/（npm 包 getopen-design）以及可整体粘贴的 DESIGN-SKILL.md。配方内的代码由 build/sync.mjs 从 components/ 目录同步注入，保证与 npm run typecheck 通过的源码完全一致。它不是运行时组件库或主题包，只输出可移植的 CSS 数值与弹簧常数，可嵌入任何已有设计系统作为补齐。</div>
+  <div class="why-notable">在 Agent 编码时代，设计一致性往往是 LLM 生成 UI 最难跨越的坎。oa-design 用 Skill + Recipes + CLI 的三合一形态给出了一个可复制的样板：它把一款上线产品的视觉体系逐条拆成 Agent 可执行的规则和可注入的类型安全源码，让 AI 不再只是拼凑 shadcn 组件，而是能按同一套 token、同一组弹簧、同一种连续曲率语言产出稳定观感。对于想让 Claude Code 或 Cursor 生成品牌一致 UI 的团队，它既是范例也是可直接借用的工程结构。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三形态交付架构</p>
+    <div class="mermaid">graph TD
+  A[components/ 类型检查源码] -->|build/sync.mjs| B[skills/oa-design 配方 MD]
+  A -->|build/sync.mjs --cli| C[cli/ getopen-design npm 包]
+  B --> D[DESIGN-SKILL.md 单文件汇编]
+  B --> E[Claude Code .claude/skills]
+  C --> F[npx getopen-design add]
+  D --> G[Cursor / Codex / 任意 Agent]
+  E --> H[Agent 生成符合 OA 规范的 UI]
+  F --> H
+  G --> H</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">设计语言核心要素流</p>
+    <div class="mermaid">graph LR
+  T[_root.css Token 块] --> I[单一墨色 + color-mix 中性色]
+  T --> R[连续曲率圆角 shape 裁剪]
+  T --> S[七种弹簧常数]
+  I --> C[组件配方]
+  R --> C
+  S --> M[签名动效: dialog / tab bar / header morph / skeleton]
+  C --> U[最终 UI]
+  M --> U</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/OpenLabs-so/oa-design" target="_blank">OpenLabs-so/oa-design</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Stupidoodle/swissdevjobs-cli" target="_blank">swissdevjobs-cli 终端求职工具</a></span>
+    <span class="stars">⭐ 75</span>
+  </div>
+  <p class="one-liner">终端里搜索并投递透明薪资技术岗位</p>
+  <div class="tags">
+    <span class="tag">Python 3.9+</span><span class="tag">Python 标准库（无第三方依赖）</span><span class="tag">SQLite</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Claude Code Plugin</span><span class="tag">uv / uvx / pipx</span>
+  </div>
+  <div class="summary">swissdevjobs-cli 是一款零依赖的 Python 命令行工具，聚合了 8 个国家 9 个招聘平台的技术岗位搜索能力，包括瑞士、德国、英国、美加、荷兰、法国的 devitjobs 系列（约 4700 个强制公开薪资的 IT 岗位），以及瑞士全行业的 jobs.ch、jobup.ch（约 5 万条）和新加坡政府 MyCareersFuture 的 IT 岗位（约 9000 条）。核心特性是把薪资作为一等过滤条件（--min-salary），并通过解码 MongoDB ObjectId 还原真实发布时间，避免被平台刷新的假新岗欺骗。工具用本地 SQLite 记录已投递记录，自动去重跨平台重复岗位。除 CLI 外还内置 MCP Server 和 Claude Code 插件，所有命令支持 --json 输出，可被 LLM Agent 直接驱动；同时会检测无法投递的黑洞岗位并给出替代入口。仅使用 Python 标准库，无第三方依赖，Python 3.9+ 即可运行。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  User[用户/开发者] --> CLI[sdj CLI]
+  Agent[LLM Agent<br/>Claude Code] --> MCP[MCP Server]
+  CLI --> Core[核心引擎]
+  MCP --> Core
+  Core --> Filter[薪资/技术过滤器]
+  Core --> Dedup[ObjectId 解码<br/>去重逻辑]
+  Core --> DB[(本地 SQLite<br/>投递历史)]
+  Core --> Boards{9 大招聘平台}
+  Boards --> DIJ[devitjobs 家族<br/>CH/DE/UK/US-CA/NL/FR]
+  Boards --> JC[JobCloud<br/>jobs.ch / jobup.ch]
+  Boards --> MCF[MyCareersFuture<br/>Singapore]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">搜索与投递数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户/Agent
+  participant S as sdj CLI
+  participant D as SQLite 本地库
+  participant B as 招聘平台 API
+  U->>S: list --tech K8s --min-salary 90000
+  S->>B: 并行请求 9 个 board
+  B-->>S: 返回原始岗位列表
+  S->>S: ObjectId 解码真实发布时间
+  S->>S: 应用薪资/远程/技术过滤
+  S->>D: 查询已投递记录
+  D-->>S: 命中的岗位 ID
+  S-->>U: 输出未投递结果 (表格 / JSON)
+  U->>S: apply <job-id>
+  S->>B: 提交申请或检测黑洞岗位
+  S->>D: 记录投递状态</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Stupidoodle/swissdevjobs-cli" target="_blank">Stupidoodle/swissdevjobs-cli</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/LeeHueeng/store-screenshots" target="_blank">store-screenshots</a></span>
+    <span class="stars">⭐ 63</span>
+  </div>
+  <p class="one-liner">AI 代理一键生成应用商店营销截图</p>
+  <div class="tags">
+    <span class="tag">Claude Code Agent Skill</span><span class="tag">OpenAI Codex Agent Skill</span><span class="tag">HTML/CSS</span><span class="tag">Headless Chrome / Playwright</span><span class="tag">adb (Android)</span><span class="tag">simctl / idb / Maestro (iOS Simulator)</span><span class="tag">sips / ImageMagick</span>
+  </div>
+  <div class="summary">store-screenshots 是一款面向 Claude Code 与 OpenAI Codex 的 AI 代理技能（Agent Skill），可将原始应用截图自动转换为 App Store 与 Google Play 上架所需的营销图片。项目通过纯 HTML/CSS 绘制 iPhone、iPad、Galaxy、Fold、Flip 等设备外框，无需外部素材授权；能够解析应用的 colors.xml、.xcassets 及 App Icon 提取真实品牌配色，并提供 Modern/Minimal、Pop、Dark 等预设风格。它会读取每屏内容生成收益导向的营销文案，经用户审阅后再全量渲染；还内置了 adb、simctl、idb、Maestro 等自动化能力，可直接驱动应用完成截图采集并统一状态栏为 9:41 与满电量。最终通过 Headless Chrome 输出并使用 sips 或 ImageMagick 逐像素校验，产出 1320×2868、1284×2778、2064×2752、1080×1920 等各商店严格规格的 PNG 文件，全程本地运行，不上传任何数据。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">端到端工作流</p>
+    <div class="mermaid">graph TD
+  A[用户在 Claude Code/Codex 调用 /store-screenshots] --> B{是否已有截图?}
+  B -- 否 --> C[代理驱动应用<br/>adb / simctl / idb / Maestro]
+  C --> D[统一状态栏 9:41 & 100%电量]
+  B -- 是 --> E[扫描本地截图目录]
+  D --> F[多选提问:<br/>平台/设备/风格/张数]
+  E --> F
+  F --> G[提取应用配色<br/>colors.xml / xcassets / 图标]
+  G --> H[生成营销文案与首屏样稿]
+  H --> I{用户审批}
+  I -- 通过 --> J[HTML/CSS 合成设备框+背景+文案]
+  J --> K[Headless Chrome 渲染 PNG]
+  K --> L[sips/ImageMagick 校验像素尺寸]
+  L --> M[输出 App Store/Google Play 规格图集]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">输出规格映射</p>
+    <div class="mermaid">graph LR
+  S[原始截图] --> P1[App Store iPhone 6.9"<br/>1320×2868]
+  S --> P2[App Store iPhone 6.5"<br/>1284×2778]
+  S --> P3[App Store iPad 13"<br/>2064×2752]
+  S --> P4[Google Play Phone<br/>1080×1920]
+  S --> P5[Google Play Foldable]
+  S --> P6[Google Play Tablet<br/>1080×1920 / 1920×1080]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/LeeHueeng/store-screenshots" target="_blank">LeeHueeng/store-screenshots</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Cripacx/mediagen" target="_blank">mediagen</a></span>
+    <span class="stars">⭐ 56</span>
+  </div>
+  <p class="one-liner">编码智能体的图像视频生成技能</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">npm</span><span class="tag">TypeScript/JavaScript</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Google Gemini API</span><span class="tag">OpenAI API</span><span class="tag">Kie AI API</span>
+  </div>
+  <div class="summary">mediagen 是一款为 Claude Code 等编码智能体（AI Coding Agent）设计的图像与视频生成技能包，通过统一的 CLI 与 MCP 服务器将 Google Gemini、OpenAI 和 Kie AI 三大提供商聚合到同一接口之下。用户只需用自然语言向智能体描述需求，工具即可自动选择合适的提供商与模型（例如 Gemini 支持 21:9 及视频，OpenAI 无法生成 16:9，Kie 聚合约 30 种第三方模型），生成图像或视频，并支持基于已有素材的编辑。项目内置提示词撰写指南，能将模糊描述扩展为包含主体、构图、光线、镜头与材质的完整提示；同时提供符合欧盟 AI 法案的内容标记功能（visible label 与元数据），适用于写实或发布用途。通过 `mediagen init` 交互式向导安全配置 API Key（避免出现在 shell 历史与进程列表中），并支持环境变量、.env 与配置文件三层解析，配合 `doctor` 与 `models` 命令进行密钥探测与提供商优先级检查，实现失败自恢复。基于 Node.js 20.11+ 分发于 npm。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[编码智能体<br/>Claude Code 等] -->|自然语言指令| B[mediagen Skill]
+  B --> C[CLI / MCP Server]
+  C --> D{提供商路由器}
+  D -->|优先级+能力匹配| E[Google Gemini<br/>图像/视频/4K]
+  D --> F[OpenAI<br/>gpt-image/DALL·E]
+  D --> G[Kie AI<br/>~30 第三方模型]
+  E --> H[生成媒体文件]
+  F --> H
+  G --> H
+  H --> I[mediagen mark<br/>EU AI Act 标注]
+  I --> J[输出目录]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">配置与请求流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant A as 智能体
+  participant M as mediagen CLI
+  participant Cfg as 配置解析<br/>env→.env→config
+  participant P as 提供商 API
+  U->>A: 描述图像需求
+  A->>M: mediagen image 提示词 --json
+  M->>Cfg: 加载密钥与优先级
+  Cfg-->>M: 可用提供商列表
+  M->>M: 按能力筛选<br/>(尺寸/视频)
+  M->>P: 调用最优提供商
+  P-->>M: 返回媒体
+  M-->>A: JSON: 文件路径
+  A->>M: mediagen mark 文件
+  M-->>A: 标注后文件路径</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Cripacx/mediagen" target="_blank">Cripacx/mediagen</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
