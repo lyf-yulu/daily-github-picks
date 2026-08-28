@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-28</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-28 · 共 4 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Stupidoodle/swissdevjobs-cli" target="_blank">swissdevjobs-cli 终端求职工具</a></span>
+    <span class="stars">⭐ 81</span>
+  </div>
+  <p class="one-liner">终端搜索透明薪资技术岗位</p>
+  <div class="tags">
+    <span class="tag">Python 3.9+</span><span class="tag">Python stdlib（无第三方依赖）</span><span class="tag">SQLite</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Claude Code Plugin</span><span class="tag">uv / uvx</span><span class="tag">MongoDB ObjectId 解析</span>
+  </div>
+  <div class="summary">swissdevjobs-cli 是一个零依赖的 Python 命令行工具，聚合了 8 个国家（瑞士、德国、英国、美国、加拿大、荷兰、法国、新加坡）共 9 个招聘板块的技术岗位数据，涵盖约 4700 个强制公开薪资范围的技术职位，以及瑞士 jobs.ch/jobup.ch 的约 5 万个全行业职位和新加坡 MyCareersFuture 的约 9000 个 IT 职位。核心亮点是把薪资作为一等公民过滤条件（--min-salary），通过解析 MongoDB ObjectId 还原真实发布时间以识别被平台重新置顶的旧职位，并用本地 SQLite 记录已投递岗位实现跨板块去重。工具面向 AI Agent 场景设计，所有命令支持 --json 输出，附带 MCP Server 和 Claude Code 插件，可通过 uvx 一键接入 Claude Code，用自然语言驱动搜索与投递流程。仅使用 Python 标准库，不引入任何第三方依赖，避免供应链风险。</div>
+  <div class="why-notable">在 AI Agent 求职自动化场景下罕见地做到零依赖、跨国多板块聚合、且原生支持 MCP，把薪资透明度与 LLM 工具调用结合，是 Agent-native CLI 设计的优秀范例。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[用户 / CLI] --> SDJ[sdj CLI 入口]
+  AI[Claude Code / AI Agent] --> MCP[MCP Server]
+  MCP --> SDJ
+  SDJ --> AGG[聚合查询层]
+  AGG --> B1[devitjobs 家族<br/>CH/DE/UK/US-CA/NL/FR]
+  AGG --> B2[JobCloud<br/>jobs.ch / jobup.ch]
+  AGG --> B3[MyCareersFuture<br/>Singapore IT]
+  AGG --> DEC[ObjectId 时间解码<br/>真实发布日期]
+  SDJ --> DB[(本地 SQLite<br/>已投递记录)]
+  DB -.去重.-> AGG</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">搜索与投递数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant User as 用户/Agent
+  participant CLI as sdj CLI
+  participant DB as SQLite
+  participant API as 9 个招聘板块 API
+  User->>CLI: list --tech Kubernetes --min-salary 90000
+  CLI->>API: 并发拉取多板块 JSON
+  API-->>CLI: 原始职位列表
+  CLI->>CLI: ObjectId → 真实发布时间
+  CLI->>DB: 查询已投递记录
+  DB-->>CLI: 隐藏重复岗位
+  CLI-->>User: 过滤后结果 (表格 / JSON)
+  User->>CLI: apply <job-id>
+  CLI->>API: 直接投递或提示 ATS 链接
+  CLI->>DB: 写入投递记录</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Stupidoodle/swissdevjobs-cli" target="_blank">Stupidoodle/swissdevjobs-cli</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/LeeHueeng/store-screenshots" target="_blank">store-screenshots</a></span>
+    <span class="stars">⭐ 66</span>
+  </div>
+  <p class="one-liner">AI 一键生成应用商店营销截图</p>
+  <div class="tags">
+    <span class="tag">Claude Code Agent Skill</span><span class="tag">OpenAI Codex Skill</span><span class="tag">HTML/CSS</span><span class="tag">Headless Chrome / Playwright</span><span class="tag">adb (Android)</span><span class="tag">simctl / idb / Maestro (iOS Simulator)</span><span class="tag">sips / ImageMagick</span>
+  </div>
+  <div class="summary">store-screenshots 是一款面向 Claude Code 与 OpenAI Codex 的 AI Agent Skill，能够将开发者原始的 App 截图自动转换为可直接上架 App Store 与 Google Play 的营销素材。它使用纯 CSS 绘制 iPhone、iPad、Galaxy、Fold、Flip 等设备外框，无需下载第三方模型或担心授权问题；同时会从应用的 colors.xml、.xcassets 与应用图标中提取真实品牌色，生成 Modern、Minimal、Pop、Dark 等风格背景，并基于每屏内容撰写以用户价值为导向的营销文案，在用户确认后再全量渲染。若开发者尚未准备截图，Agent 还可通过 adb、simctl deep link、idb、Maestro 等自动驱动应用完成截屏，并将状态栏统一为 9:41 与满电。最终输出严格符合 1320×2868、1284×2778、2064×2752、1080×1920 等商店规范的 PNG，并通过 sips 或 ImageMagick 逐像素校验，全流程本地运行，无上传、无水印。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">工作流程</p>
+    <div class="mermaid">graph TD
+  A[用户调用 /store-screenshots] --> B{是否已有截图?}
+  B -- 有 --> C[扫描截图文件夹]
+  B -- 无 --> D[Agent 自动驱动 App 截屏\nadb / simctl / idb / Maestro]
+  C --> E[多选问答:\n平台/设备/风格/张数/卖点]
+  D --> E
+  E --> F[提取品牌色 & 生成营销文案]
+  F --> G[渲染首屏草稿供用户审核]
+  G -- 用户确认 --> H[HTML/CSS 合成 + Headless Chrome 渲染]
+  H --> I[sips/ImageMagick 像素校验]
+  I --> J[输出商店规格 PNG]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">输出规格映射</p>
+    <div class="mermaid">graph LR
+  S[原始截图] --> F[CSS 设备外框]
+  F --> IP69[App Store iPhone 6.9"\n1320×2868]
+  F --> IP65[App Store iPhone 6.5"\n1284×2778]
+  F --> IPAD[App Store iPad 13"\n2064×2752]
+  F --> PLAY[Google Play Phone\n1080×1920]
+  F --> FOLD[Google Play Foldable/Tablet]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/LeeHueeng/store-screenshots" target="_blank">LeeHueeng/store-screenshots</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/thedotmack" target="_blank">跨会话持久化上下文引擎</a></span>
+    <span class="stars">⭐ 143 <span class="stars-today">(+143 today)</span></span>
+  </div>
+  <p class="one-liner">为AI代理提供跨会话记忆能力</p>
+  <div class="tags">
+    <span class="tag">AI/LLM</span><span class="tag">上下文压缩</span><span class="tag">多代理集成</span><span class="tag">会话中间件</span>
+  </div>
+  <div class="summary">该项目是一款面向多种AI编程代理的持久化上下文管理工具，旨在解决AI代理会话结束后上下文丢失的问题。它能够在会话进行期间全程捕获代理的操作行为，利用AI技术对海量上下文数据进行智能压缩，并在后续新会话启动时自动注入相关的历史上下文，从而实现跨会话的记忆延续能力。项目具有广泛的兼容性，支持包括 Claude Code、OpenClaw、Codex、Gemini、Hermes、GitHub Copilot、OpenCode 等在内的主流AI编程助手与代理框架，可作为通用中间层无缝接入各类工作流。通过这种捕获-压缩-注入的三阶段机制，开发者可以让AI代理真正拥有长期记忆，避免每次会话都需要重新解释项目背景与历史决策，显著提升复杂项目中人机协作的连续性与效率。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与数据流</p>
+    <div class="mermaid">graph TD
+  A[AI代理会话] -->|实时捕获| B[上下文采集器]
+  B --> C[原始上下文存储]
+  C -->|AI压缩| D[压缩引擎]
+  D --> E[持久化记忆库]
+  F[新会话启动] --> G[上下文检索器]
+  E --> G
+  G -->|注入相关上下文| H[Claude Code / Codex / Gemini / Copilot 等]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">会话生命周期流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 开发者
+  participant A as AI代理
+  participant M as 记忆引擎
+  U->>A: 启动新会话
+  M->>A: 注入历史压缩上下文
+  A->>U: 基于历史继续工作
+  A->>M: 持续上报操作记录
+  M->>M: AI压缩存档
+  U->>A: 结束会话
+  M->>M: 最终归档持久化</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/thedotmack" target="_blank">sponsors/thedotmack</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sodiumsun/agenttrail" target="_blank">agenttrail</a></span>
+    <span class="stars">⭐ 282</span>
+  </div>
+  <p class="one-liner">本地AI编码智能体实时观测地图</p>
+  <div class="tags">
+    <span class="tag">Node.js (≥20)</span><span class="tag">原生 HTML/CSS/JS 前端</span><span class="tag">Server-Sent Events (SSE)</span><span class="tag">文件系统 Watcher</span><span class="tag">Claude Code Hooks (.claude/settings.local.json)</span><span class="tag">Markdown 约定 (PLAN.md / CLAUDE.md / AGENTS.md)</span><span class="tag">npm/npx 分发</span>
+  </div>
+  <div class="summary">agenttrail 是一个面向 AI 编码智能体（Claude Code、OpenAI Codex、Cursor 等）的本地开源可观测性工具。它将智能体的计划、工具调用、文件变更与任务进度实时可视化为一张项目地图，帮助开发者随时了解智能体是在推进、卡住，还是悄悄修改了已声明完成的部分。项目通过 `npx agenttrail` 一条命令即可启动，无需账号、无需全局安装、无遥测数据，仅绑定 127.0.0.1，保证纯本地运行。核心机制依赖两大信号：`Declared`（智能体声明正在做的组件与任务）和 `Observed`（文件系统实际发生的写入变化），当两者不一致时便能定位问题。执行 `npx agenttrail init` 后，agenttrail 会向 `CLAUDE.md`/`AGENTS.md` 注入约定、生成 `PLAN.md` 骨架，并安装 Claude Code 本地钩子，让智能体自行维护一份 5-9 个组件的仓库地图，包含依赖箭头、进度、完成/进行中/阻塞状态。界面呈现 VS Code 风格文件树、运行卡片、会话计划、任务清单与流式工具调用行。技术上仅由约 470 行无依赖的 Node.js 单文件守护进程与一个静态 HTML 页面组成，通过 SSE 推送事件，无数据库、无构建步骤，已在 7.8 万文件的大型仓库上验证可用。</div>
+  <div class="why-notable">在 LLM 可观测性普遍聚焦于 token、延迟、trace 的当下，agenttrail 独辟蹊径地关注「编码智能体在仓库里到底做了什么」，把 Agent 工作过程从事后 transcript 回放变成实时项目地图。它以极小的技术复杂度（单文件守护进程 + 静态页面）和严格的本地化设计（无云、无账号、只读观察）解决了长时间运行 Agent「是否在推进、是否偷偷回改」的真实痛点，同时通过 PLAN.md 约定让智能体自我维护项目结构，是 Agent 时代开发者工具形态的一次有意思的探索。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[编码智能体<br/>Claude/Codex/Cursor] -->|编辑文件| B[代码仓库]
+  A -->|工具调用事件| C[Claude Code Hooks]
+  B -->|文件变更| D[File Watcher]
+  C -->|HTTP 上报| E[agenttrail 守护进程<br/>127.0.0.1 单文件 Node]
+  D --> E
+  F[PLAN.md<br/>组件与任务地图] -->|解析| E
+  E -->|SSE 推流| G[静态 HTML 面板]
+  G -->|浏览器展示| H[开发者]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Declared vs Observed 数据流</p>
+    <div class="mermaid">flowchart LR
+  subgraph Declared[声明意图]
+    P[PLAN.md 组件/任务]
+    S[Agent 会话计划]
+  end
+  subgraph Observed[实际观察]
+    W[文件写入事件]
+    T[工具调用日志]
+  end
+  P --> M[实时项目地图]
+  S --> M
+  W --> M
+  T --> M
+  M -->|状态一致| OK[绿色: 正常推进]
+  M -->|状态冲突| ALERT[高亮: 回改/卡顿/偏离]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sodiumsun/agenttrail" target="_blank">sodiumsun/agenttrail</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
