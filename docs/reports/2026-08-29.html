@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-29</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-29 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Stupidoodle/swissdevjobs-cli" target="_blank">swissdevjobs-cli 命令行工具</a></span>
+    <span class="stars">⭐ 88</span>
+  </div>
+  <p class="one-liner">终端搜索薪资透明的技术岗位</p>
+  <div class="tags">
+    <span class="tag">Python 3.9+</span><span class="tag">Python 标准库（stdlib-only）</span><span class="tag">SQLite</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Claude Code Plugin</span><span class="tag">uv / uvx / pipx</span>
+  </div>
+  <div class="summary">swissdevjobs-cli 是一款零依赖的 Python 命令行工具，聚合了 8 个国家、9 个招聘平台的技术岗位数据，涵盖瑞士、德国、英国、美加、荷兰、法国、新加坡等地约 4700 个薪资透明的技术职位，并额外接入 jobs.ch、jobup.ch 的约 5 万条瑞士全行业岗位以及新加坡 MyCareersFuture 约 9000 条 IT 岗位。核心特色是将薪资作为一等过滤条件，支持 --min-salary、--remote、--tech 等多维筛选，并通过解析 MongoDB ObjectId 还原真实发布时间，避免被平台的重新置顶误导。工具使用本地 SQLite 记录已投递岗位实现自动去重，仅使用 Python 标准库无第三方依赖。除 CLI 外还内置 MCP 服务器与 Claude Code 插件，所有命令支持 --json 输出，方便 LLM Agent 调用；同时可智能识别无法直投的岗位并给出替代申请入口。</div>
+  <div class="why-notable">在 AI Agent 时代，将传统的求职门户改造为 Agent-native、JSON-first 的命令行 + MCP 工具，展示了零依赖 Python CLI 与 LLM 集成的优秀实践。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  User[用户/开发者] --> CLI[sdj CLI]
+  Agent[Claude Code / LLM Agent] --> MCP[MCP 服务器]
+  CLI --> Core[核心引擎]
+  MCP --> Core
+  Core --> Filter[过滤与排序<br/>薪资/技术栈/远程]
+  Core --> DB[(本地 SQLite<br/>去重与投递记录)]
+  Core --> Fetch[HTTP 抓取层<br/>Python stdlib]
+  Fetch --> B1[swissdevjobs.ch]
+  Fetch --> B2[germantechjobs.de]
+  Fetch --> B3[devitjobs UK/US/NL/FR]
+  Fetch --> B4[jobs.ch / jobup.ch]
+  Fetch --> B5[MyCareersFuture SG]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">搜索与投递数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant C as sdj CLI
+  participant D as SQLite
+  participant B as 招聘平台 API
+  U->>C: sdj list --tech K8s --min-salary 90k
+  C->>B: 并行请求 9 个平台
+  B-->>C: 返回原始岗位数据
+  C->>C: ObjectId 解码真实发布时间
+  C->>D: 查询已投递记录
+  D-->>C: 返回去重结果
+  C-->>U: 输出匹配岗位 (文本/JSON)
+  U->>C: sdj apply <job_id>
+  C->>B: 直投或返回替代入口
+  C->>D: 记录投递状态</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Stupidoodle/swissdevjobs-cli" target="_blank">Stupidoodle/swissdevjobs-cli</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/abhigyanpatwari" target="_blank">GitNexus</a></span>
+    <span class="stars">⭐ 202 <span class="stars-today">(+202 today)</span></span>
+  </div>
+  <p class="one-liner">浏览器端零服务器代码知识图谱引擎</p>
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">浏览器端 WebAssembly（用于代码解析，如 Tree-sitter）</span><span class="tag">前端图可视化库（如 Cytoscape/D3）</span><span class="tag">客户端向量检索与 Embedding</span><span class="tag">LLM API（Graph RAG Agent）</span>
+  </div>
+  <div class="summary">GitNexus 是一款完全运行在浏览器端的代码智能分析引擎，定位为「零服务器（Zero-Server）的客户端知识图谱构建工具」。用户只需将 GitHub、GitLab、Azure DevOps 上的 Git 仓库地址粘贴进来，或直接拖入本地 ZIP 压缩包，GitNexus 便会在本地浏览器中完成源码解析，并生成一张可交互的代码知识图谱，帮助开发者快速理解陌生项目的结构、依赖与调用关系。与传统需要后端服务的代码分析平台不同，GitNexus 将解析、图谱构建、向量检索与 LLM 推理全部下沉到浏览器，从根本上避免了源代码上传到第三方服务器带来的隐私与合规风险，特别适合企业内部代码库或敏感项目的探索场景。项目还内置了一个 Graph RAG Agent，可以基于生成的知识图谱进行自然语言问答，让开发者以对话方式追踪函数调用链、定位关键模块、分析代码演进。整体来说，GitNexus 将「代码可视化 + 图谱检索 + 大模型问答」三种能力融合到一个纯前端应用中，是代码理解、Onboarding、架构梳理与技术债盘点的高效工具。</div>
+  <div class="why-notable">GitNexus 用「零服务器」的架构挑战了传统代码智能平台的部署模式，把 Parser、知识图谱、向量库与 RAG 全部塞进浏览器，既解决了源码隐私痛点，又降低了使用门槛；同时它把 Graph RAG 落到了「代码」这个高度结构化的语料上，是当前 AI Coding 赛道中少见的、把图谱与检索增强真正结合的探索型项目，对代码理解工具与本地化 AI 应用方向具有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[用户浏览器] --> B[仓库输入层<br/>GitHub/GitLab/Azure/ZIP]
+  B --> C[客户端代码解析器<br/>Tree-sitter/WASM]
+  C --> D[知识图谱构建器<br/>节点: 文件/类/函数]
+  D --> E[图可视化界面]
+  D --> F[向量索引<br/>浏览器本地]
+  E --> G[Graph RAG Agent]
+  F --> G
+  G --> H[LLM 推理]
+  H --> I[自然语言问答结果]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">数据流：从仓库到问答</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant B as 浏览器前端
+  participant P as 解析引擎
+  participant KG as 知识图谱
+  participant R as RAG Agent
+  participant L as LLM
+  U->>B: 输入仓库地址/上传ZIP
+  B->>P: 拉取并解析源码
+  P->>KG: 生成节点与关系
+  KG-->>B: 渲染交互图谱
+  U->>R: 提出自然语言问题
+  R->>KG: 图谱检索相关子图
+  R->>L: 携带上下文调用LLM
+  L-->>R: 返回答案
+  R-->>U: 展示答案与相关节点</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/abhigyanpatwari" target="_blank">sponsors/abhigyanpatwari</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Nanako0129/sepia" target="_blank">sepia 去 AI 化写作技能</a></span>
+    <span class="stars">⭐ 358</span>
+  </div>
+  <p class="one-liner">跨平台去 AI 味写作 Agent Skill</p>
+  <div class="tags">
+    <span class="tag">Agent Skill 规范（SKILL.md）</span><span class="tag">Markdown 参考文档</span><span class="tag">Bash 安装脚本（install.sh）</span><span class="tag">Claude Code / Codex / Grok / Antigravity 插件包装（plugin.json、marketplace.json）</span><span class="tag">Git 与符号链接的分发机制</span>
+  </div>
+  <div class="summary">sepia 是一个基于 Agent Skill 规范的可移植写作技能包，同时支持 Claude Code、Codex、Grok Build 与 Antigravity 四大 AI 编程环境，用一份规范化的 SKILL.md 实现跨平台一致行为。项目定位于「去 AI 味」写作，但切入点不同于常见的润色型 humanizer：它以 StoryScope（arXiv:2604.03136）等 12 项研究为证据基础，指出仅凭叙事结构特征就能以 93.2% macro-F1 检测出 AI 小说，而表面文风改写几乎无效。因此 sepia 针对虚构文本提供三层修复流程——第一层修复叙事架构（弱化因果链、后置揭示、混合情绪表达、稀疏人物网络等），第二层调整段落级话语流，第三层再处理陈词滥调与句式模板；并附带 30 项诊断量表和针对 Claude、GPT、Gemini、DeepSeek、Kimi 的模型指纹校正。对专业文本（发布说明、PR 回复、事故复盘、工单、技术文章）则提供按场景匹配的规则集与共享的 slop 清单。技能提供 write、review、refactor、recreate 四种操作，并遵循「向人类分布校准而非反转 AI 分布」的原则，每次仅选用 3–5 条修改以避免形成新指纹。安装方式覆盖各平台原生 marketplace、统一 install.sh 脚本以及 npx skills，支持用户级与项目级两种作用域。</div>
+  <div class="why-notable">多数 AI 去味工具停留在换词改句，sepia 是少数把学术证据（StoryScope 等 12 篇论文）工程化为可执行 Agent Skill 的项目：它把「AI 味」的真实来源——叙事结构、情感表达模式、真实世界指涉的缺失——转化为可诊断、可修改的规则，同时坚持「不反转 AI 分布，只向人类分布校准」，避免生成新指纹。加上跨四大 Coding Agent 的统一分发方案，对关注 AIGC 检测对抗、写作辅助与 Agent Skill 生态的开发者都有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">sepia 三层修复流程</p>
+    <div class="mermaid">graph TD
+  A[输入文本] --> B{文本类型判定}
+  B -->|虚构小说| C[Pass 1 叙事架构层]
+  C --> D[Pass 2 话语流层]
+  D --> E[Pass 3 表层文风]
+  E --> F[模型指纹校正]
+  B -->|专业文本| G[共享 Slop 清单]
+  G --> H{场景匹配}
+  H --> I[发布说明]
+  H --> J[PR/Issue 回复]
+  H --> K[事故复盘]
+  H --> L[工单]
+  H --> M[技术文章]
+  F --> N[输出：去 AI 味文本]
+  I --> N
+  J --> N
+  K --> N
+  L --> N
+  M --> N</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">跨平台分发架构</p>
+    <div class="mermaid">graph LR
+  A[canonical SKILL.md<br/>skills/sepia/] --> B[.claude-plugin]
+  A --> C[.codex-plugin]
+  A --> D[.agents 工作区]
+  A --> E[install.sh]
+  B --> F[Claude Code<br/>~/.claude/skills/sepia]
+  C --> G[Codex<br/>~/.agents/skills/sepia]
+  D --> H[Grok Build<br/>~/.grok/skills/sepia]
+  E --> I[Antigravity<br/>~/.gemini/config/skills/sepia]
+  E -.统一安装.-> F
+  E -.统一安装.-> G
+  E -.统一安装.-> H
+  E -.统一安装.-> I</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Nanako0129/sepia" target="_blank">Nanako0129/sepia</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/UditAkhourii/cdaf" target="_blank">CDAF 视频描述缓存格式</a></span>
+    <span class="stars">⭐ 97</span>
+  </div>
+  <p class="one-liner">视频侧车格式，让AI别重复看片</p>
+  <div class="tags">
+    <span class="tag">Python 3.10+</span><span class="tag">Node.js (npx skill 安装器)</span><span class="tag">Gemini Files API</span><span class="tag">ffprobe (可选)</span><span class="tag">Markdown</span><span class="tag">SHA-256</span><span class="tag">npm (cdaf-skill 包)</span>
+  </div>
+  <div class="summary">CDAF（Cached Descriptive Asset Files）是一个开源的视频侧车文件格式规范，旨在解决 AI 智能体重复分析同一视频造成的高昂 token 成本问题。它在视频文件旁生成同名的 .cdaf 纯文本文件，包含 SHA-256 哈希、字节大小、时长等头部元数据，以及摘要、分段时间戳、转录文本、屏幕文字和标签等 Markdown 正文。AI 智能体在处理视频前先校验哈希新鲜度，若匹配则直接读取几百 token 的文本描述，替代完整的多模态视频理解。项目提供完整生态：规范文档 SPEC v1.0、零依赖的 Python 核心解析库、cdaf 命令行工具（generate/validate/read/status）、基于 Gemini Files API 的生成器、可通过 npx cdaf-skill 一键安装的 Claude Code 智能体技能包，以及可复现的基准测试。实测显示，在 gemini-2.5-flash 上准确率相当（20/20 对 19/20），prompt token 消耗降低 10.1 倍，延迟降低约 35%，规模化生产中视频工作流 AI 成本降至 1/25。</div>
+  <div class="why-notable">在 AI 智能体大规模处理视频的场景下，提出了一种极简且可验证的缓存范式：用纯文本 + 哈希新鲜度校验替代昂贵的多模态重复推理，既有规范、参考实现、CLI、智能体技能，又有可复现基准和 arXiv 预印本，形成完整的开源标准雏形，对 agentic 视频编辑工具（Remotion、HyperFrames 等）具有直接落地价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">CDAF 工作流架构</p>
+    <div class="mermaid">graph TD
+  A[原始视频 clip.mp4] --> B[cdaf generate CLI]
+  B --> C[Gemini Files API 或本地 VLM]
+  C --> D[生成 clip.cdaf 侧车<br/>含 SHA-256 + 分段描述]
+  D --> E[与视频同目录存放]
+  F[AI 智能体任务] --> G{查找 .cdaf 侧车}
+  G -->|存在| H[校验 hash 与 bytes]
+  H -->|Fresh| I[读取文本正文<br/>~300 tokens]
+  H -->|Stale| J[重新生成侧车]
+  G -->|Missing| J
+  I --> K[LLM 回答/剪辑决策]
+  J --> B</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">组件与调用关系</p>
+    <div class="mermaid">graph LR
+  subgraph 规范层
+    S[SPEC.md v1.0]
+  end
+  subgraph Python 引擎
+    S1[sidecar.py<br/>零依赖核心]
+    S2[generate.py<br/>Gemini 后端]
+    S3[probe.py<br/>ffprobe 元数据]
+    S4[local.py<br/>本地模型]
+  end
+  subgraph 命令行
+    C1[cdaf generate]
+    C2[cdaf validate]
+    C3[cdaf read]
+    C4[cdaf status]
+  end
+  subgraph 智能体侧
+    A1[npx cdaf-skill]
+    A2[Claude Code SKILL.md]
+    A3[其它 Agent 框架]
+  end
+  S --> S1
+  S1 --> C2
+  S1 --> C3
+  S1 --> C4
+  S2 --> C1
+  S3 --> C1
+  S4 --> C1
+  A1 --> A2
+  S --> A3</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/UditAkhourii/cdaf" target="_blank">UditAkhourii/cdaf</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/zhuyifang/tonghuasun-agent" target="_blank">同花顺 Agent</a></span>
+    <span class="stars">⭐ 147</span>
+  </div>
+  <p class="one-liner">让 AI 助手直连本机同花顺行情与交易</p>
+  <div class="tags">
+    <span class="tag">C# (同花顺本机插件)</span><span class="tag">Python (MCP 服务与配置器)</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">REST API (127.0.0.1:17180)</span><span class="tag">Windows 10/11</span><span class="tag">AGPL-3.0-only</span>
+  </div>
+  <div class="summary">同花顺 Agent 是一个面向同花顺远航版桌面客户端的非官方本机 AI Agent 连接工具，由独立开发者维护，与同花顺官方无授权或合作关系。项目目标是让用户能够在 Codex、Claude Code、WorkBuddy、ZCode、OpenClaw、DeepSeek Harness 等主流 AI 助手中，通过自然语言直接查询本机同花顺客户端里的实时行情、盘口、K 线、账户资产、持仓、LV2 逐笔委托和成交数据，甚至可选择性开启下单、撤单和改单等交易能力。功能实现依赖用户当前登录的同花顺账户与相应服务权限，插件本身不新增任何行情或交易权限。所有功能全部免费开放，不设订阅、会员或付费解锁。架构上，项目在本机 127.0.0.1:17180 暴露带随机访问令牌的 REST/MCP 接口，供 AI 助手调用；核心 C# 插件负责与同花顺客户端交互，Python 侧提供 MCP 服务、配置器和传输桥。数据全部在本地处理，不上传至维护者服务器，交易工具默认关闭并需二次人工确认，兼顾了易用性与安全边界。项目遵循 AGPL-3.0-only 协议，C# 本机插件暂闭源，并提供 SHA-256 清单供用户校验。</div>
+  <div class="why-notable">国内 A 股散户与量化爱好者一直缺少把本地行情客户端接入大模型的顺畅通道，该项目填补了同花顺客户端与 AI Agent 之间的空白：通过 MCP 协议直连本机同花顺远航版，覆盖行情、K 线、账户、LV2 逐笔等关键数据，还支持可选交易能力；同时坚持数据本地化、随机令牌鉴权、交易需确认等安全设计，兼顾实用性与合规边界，对研究 AI Agent 在金融场景落地的开发者有较高参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph LR
+  User[用户]
+  Agent[AI 助手<br/>Codex/Claude Code/WorkBuddy 等]
+  MCP[MCP 服务 / 传输桥<br/>Python]
+  API[本机 REST API<br/>127.0.0.1:17180]
+  Plugin[同花顺本机插件<br/>C#]
+  THS[同花顺远航版客户端]
+  Cloud[同花顺服务器 / 交易所]
+
+  User -->|自然语言| Agent
+  Agent -->|MCP 调用<br/>X-Tonghuasun-Codex-Token| MCP
+  MCP --> API
+  API --> Plugin
+  Plugin -->|读取行情/账户| THS
+  THS <-->|行情/交易| Cloud</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">查询与交易数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant A as AI Agent
+  participant M as 本机 MCP/REST
+  participant P as C# 插件
+  participant T as 同花顺客户端
+
+  U->>A: 查询茅台日K / 下单请求
+  A->>M: 带 Token 调用工具
+  M->>P: 转发接口调用
+  P->>T: 读取行情或账户数据
+  T-->>P: 返回结果
+  P-->>M: 返回结构化数据
+  M-->>A: 工具响应
+  alt 涉及交易
+    A->>U: 展示订单并请求确认
+    U-->>A: 人工确认
+    A->>M: 提交下单
+    M->>P: 调用交易接口
+    P->>T: 走同花顺交易流程
+  end
+  A-->>U: 返回最终答复</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/zhuyifang/tonghuasun-agent" target="_blank">zhuyifang/tonghuasun-agent</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
