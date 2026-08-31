@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-08-31</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-08-31 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Vuk97/forward-implementation-first" target="_blank">Forward Implementation First</a></span>
+    <span class="stars">⭐ 126</span>
+  </div>
+  <p class="one-liner">让编码代理少做记账、先出成果</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">YAML frontmatter</span><span class="tag">Shell (install.sh)</span><span class="tag">Agent Skills 规范</span><span class="tag">Claude Code</span><span class="tag">Codex</span>
+  </div>
+  <div class="summary">Forward Implementation First 是一个面向编码代理（Coding Agent）的通用技能（Agent Skill），旨在解决长周期代理流水线中普遍存在的一种失败模式：代理沉迷于服务自己发明的行政记账工作——诸如内容哈希、锁文件、执行回执、认证标记、进度元数据等，却停止交付真正的产品。该技能仅约 150 行 Markdown，模型无关、工具无关、领域无关，可用于 Claude Code、Codex 等主流代理。其核心机制是要求代理在每次动作前进行三分类：语义实现、聚焦验证、行政记账；前两类照做，第三类除非用户明确要求或属于产品本身，否则一律跳过，甚至在其无谓阻塞流程时直接删除依赖。项目同时确立了「前向游标规则」——只有输入语义变更、目标修订变更、输出损坏、运行时反证或依赖锥要求这些真实原因才允许回滚重放，缺失或过期的元数据不构成理由。此外技能还覆盖并行工作池纪律：重进程串行、廉价任务并行、根 lane 独占发布与游标推进，避免并行 worker 成为第二真相源。技能通过 install.sh 一键安装到 Claude Code、Codex 或 .agents 共享目录，遵循 Agent Skills 规范，特别适合分阶段流水线、ETL、大规模代码迁移、构建发布、批处理等长时任务场景。</div>
+  <div class="why-notable">它把资深工程师才有的直觉——识别「假装在工作的记账行为」——压缩成一份 150 行、跨模型跨工具通用的规则文件，直击当下长时代理最烧钱也最难自查的失败模式，且以「删除阻塞性行政依赖」这种反直觉但正确的做法作为默认策略，是提示工程从「让模型更快」走向「让模型更清醒」的一次范式尝试。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">动作前三分类决策流</p>
+    <div class="mermaid">graph TD
+  A[代理准备执行动作] --> B{分类}
+  B -->|语义实现| C[构建/连接生产者、消费者、适配器、Schema、最终产物]
+  B -->|聚焦验证| D[对变更依赖锥做行为/Schema/计数/时序/守恒检查]
+  B -->|行政记账| E{是否用户要求或属于产品?}
+  E -->|是| F[执行记账]
+  E -->|否| G[跳过]
+  E -->|阻塞正确路径| H[删除该行政依赖]
+  C --> I[向前推进游标]
+  D --> I
+  F --> I
+  G --> I
+  H --> I</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">前向游标与并行工作池纪律</p>
+    <div class="mermaid">graph LR
+  subgraph Root[根 Lane - 重进程串行]
+    R1[编译/全量测试/大数据作业]
+    R2[发布与游标推进]
+    R3[得出结论]
+  end
+  subgraph Parallel[并行 Lane - 廉价快模型]
+    P1[准备]
+    P2[检查]
+    P3[非重叠文件操作]
+  end
+  P1 --> V{根 Lane 自行验证}
+  P2 --> V
+  P3 --> V
+  V -->|通过| R2
+  R1 --> R2 --> R3
+  R3 -->|仅在真实原因下| Rollback[回滚最小依赖锥]
+  Rollback -.->|禁止基于缺失元数据| X[不允许]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Vuk97/forward-implementation-first" target="_blank">Vuk97/forward-implementation-first</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Stupidoodle/swissdevjobs-cli" target="_blank">swissdevjobs-cli 命令行求职工具</a></span>
+    <span class="stars">⭐ 93</span>
+  </div>
+  <p class="one-liner">终端聚合搜索薪资透明技术岗位</p>
+  <div class="tags">
+    <span class="tag">Python 3.9+</span><span class="tag">Python 标准库（零依赖）</span><span class="tag">SQLite</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">Claude Code Plugin</span><span class="tag">uv / pipx / uvx</span>
+  </div>
+  <div class="summary">swissdevjobs-cli 是一个零依赖的 Python 命令行工具，聚合了 8 个国家共 9 个招聘平台，让开发者在终端或 AI Agent 中搜索、筛选并投递技术岗位。核心覆盖 devitjobs 家族的 6 个强制披露薪资的 IT 招聘站（瑞士、德国、英国、美加、荷兰、法国，约 4700 个岗位），并扩展到瑞士 jobs.ch / jobup.ch（约 5 万条全行业岗位）和新加坡政府 MyCareersFuture（约 9000 条 IT 岗位）。工具将薪资作为一等筛选条件，通过解析 MongoDB ObjectId 还原岗位真实发布时间，避免招聘方刷新造成的『假新岗』；使用本地 SQLite 记录已投递记录，跨平台自动去重。项目内置 MCP Server 和 Claude Code 插件，所有命令支持 --json 输出，便于 LLM Agent 直接驱动。仅依赖 Python 标准库，可通过 uv/pipx/uvx 安装为 sdj 或 swissdevjobs 命令。</div>
+  <div class="why-notable">少见的将『薪资透明』作为产品核心、并以 Agent-native 方式设计的求职 CLI，零依赖 + MCP Server 组合让 LLM 可直接接管完整求职流程。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  User[开发者/AI Agent] -->|CLI 命令| SDJ[sdj CLI]
+  Claude[Claude Code] -->|MCP 协议| MCP[MCP Server]
+  MCP --> SDJ
+  SDJ --> Core[核心引擎]
+  Core --> Filter[薪资/技术/远程过滤器]
+  Core --> Dedup[去重与已投递识别]
+  Core --> ObjID[ObjectId 时间解析]
+  Core --> DB[(本地 SQLite<br/>已投递记录)]
+  Core --> Adapters[招聘板适配器]
+  Adapters --> CH[swissdevjobs.ch]
+  Adapters --> DE[germantechjobs.de]
+  Adapters --> UK[devitjobs.uk]
+  Adapters --> US[devitjobs.com]
+  Adapters --> NL[devitjobs.nl]
+  Adapters --> FR[devitjobs.fr]
+  Adapters --> JCH[jobs.ch / jobup.ch]
+  Adapters --> SG[MyCareersFuture]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">岗位搜索与投递数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户/Agent
+  participant C as sdj CLI
+  participant DB as SQLite
+  participant B as 招聘板 API
+  U->>C: sdj list --tech K8s --min-salary 90000
+  C->>B: 并发请求 9 个招聘板
+  B-->>C: 返回岗位 JSON
+  C->>C: ObjectId 解码真实发布时间
+  C->>C: 应用薪资/技术/地区过滤
+  C->>DB: 查询已投递记录
+  DB-->>C: 返回已投递 ID 列表
+  C->>C: 剔除重复岗位
+  C-->>U: 输出结果（表格或 JSON）
+  U->>C: sdj apply <job-id>
+  C->>B: 提交申请
+  C->>DB: 写入投递记录</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Stupidoodle/swissdevjobs-cli" target="_blank">Stupidoodle/swissdevjobs-cli</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/abhigyanpatwari" target="_blank">GitNexus</a></span>
+    <span class="stars">⭐ 182 <span class="stars-today">(+182 today)</span></span>
+  </div>
+  <p class="one-liner">浏览器端代码知识图谱与RAG智能体</p>
+  <div class="tags">
+    <span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">WebAssembly</span><span class="tag">Tree-sitter</span><span class="tag">React</span><span class="tag">图数据库/图可视化库</span><span class="tag">LLM API</span><span class="tag">Graph RAG</span>
+  </div>
+  <div class="summary">GitNexus 是一款零服务器、纯客户端的代码智能分析引擎，所有计算均在用户浏览器中完成，无需后端支持，从而保障源码隐私与部署便利性。用户只需拖入来自 GitHub、GitLab、Azure DevOps 的远程仓库、本地代码目录或 ZIP 压缩包，即可自动解析代码结构并生成可交互的知识图谱，直观呈现文件、类、函数及其调用与依赖关系。项目内置 Graph RAG（基于图的检索增强生成）智能体，能够结合知识图谱的结构化上下文回答代码相关问题，帮助开发者快速理解陌生代码库、追溯调用链、定位关键模块。GitNexus 适用于代码探索、架构梳理、新人上手、代码评审与技术债务分析等场景。得益于浏览器端 WebAssembly 与现代前端技术，它兼具本地化的数据安全性与丰富的可视化交互体验，是一款面向工程师的轻量级代码理解工具。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[用户浏览器] --> B[代码输入层]
+  B --> B1[GitHub/GitLab/Azure]
+  B --> B2[本地目录]
+  B --> B3[ZIP 压缩包]
+  B --> C[代码解析引擎<br/>Tree-sitter + WASM]
+  C --> D[知识图谱构建器]
+  D --> E[(客户端图存储)]
+  E --> F[图可视化界面]
+  E --> G[Graph RAG 智能体]
+  G --> H[LLM 接口]
+  F --> A
+  G --> A</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Graph RAG 问答数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant UI as 前端界面
+  participant KG as 知识图谱
+  participant RAG as Graph RAG 智能体
+  participant LLM as LLM
+  U->>UI: 提出代码相关问题
+  UI->>RAG: 转发查询
+  RAG->>KG: 检索相关节点与关系
+  KG-->>RAG: 返回子图上下文
+  RAG->>LLM: 构造提示并请求生成
+  LLM-->>RAG: 返回答案
+  RAG-->>UI: 附带图谱引用的回答
+  UI-->>U: 展示结果与可视化高亮</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/abhigyanpatwari" target="_blank">sponsors/abhigyanpatwari</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Nanako0129/sepia" target="_blank">sepia</a></span>
+    <span class="stars">⭐ 911</span>
+  </div>
+  <p class="one-liner">跨平台去AI味写作Agent技能包</p>
+  <div class="tags">
+    <span class="tag">Agent Skills 规范</span><span class="tag">Markdown (SKILL.md)</span><span class="tag">Claude Code Plugin</span><span class="tag">Codex Plugin</span><span class="tag">Grok Build Plugin</span><span class="tag">Antigravity plugin.json</span><span class="tag">Skills CLI (npx skills)</span>
+  </div>
+  <div class="summary">sepia 是一个面向 Claude Code、Codex、Grok Build 与 Antigravity 四大 AI 编程/写作代理的可移植 Agent Skill 插件，专注于消除 AI 生成文本的痕迹（De-AI writing）。它基于 StoryScope（arXiv:2604.03136）等 12 项学术研究，指出 AI 文本真正的破绽并非词汇与句法，而在于叙事结构层面——主题被叙述者直接解释、单线因果过于工整、情感只以身体反应呈现、缺少真实世界指涉、线性时间、以主角成长收尾等。项目将这些可测量的结构性缺陷转化为三阶段修订协议：叙事架构、话语流、表层风格，并配套 30 项特征诊断表与针对 Claude、GPT、Gemini、DeepSeek、Kimi 的模型指纹修正规则。对专业文体（发布说明、PR 回复、事后复盘、工单、技术文章），项目提供按场合匹配的写作规则。工具向用户暴露四个操作入口：write（创作）、review（仅诊断）、refactor（最小改动）、recreate（重写），并保留 /sepia 通用路由。核心设计原则是「向人类分布校准，而非反转 AI 分布」，每篇文本仅选用 3–5 条修订动作以避免形成新指纹。项目采用单一规范的 SKILL.md、无平台分叉，通过各平台原生插件安装器分发，支持用户级与项目级作用域。</div>
+  <div class="why-notable">在满屏「AI 人味化」工具都在改词换句时，sepia 引用 StoryScope 的实验结论——仅凭叙事结构特征就能以 93.2% 的 F1 识别 AI 小说，而表层改写几乎无效——直击真正的检测面，切入点新颖且有据可查。加上一次编写、四端通用的 Agent Skill 打包方式，以及区分虚构与专业文体的分层规则设计，使其在 AI 写作工具生态中具备研究深度与工程完成度双重稀缺性。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">sepia 插件分发与运行架构</p>
+    <div class="mermaid">graph TD
+  A[用户执行 /sepia 或子命令] --> B{平台适配层}
+  B -->|Claude Code| C1[.claude-plugin]
+  B -->|Codex| C2[.codex-plugin]
+  B -->|Grok Build| C3[grok plugin]
+  B -->|Antigravity| C4[plugin.json]
+  C1 --> D[skills/sepia/SKILL.md 规范技能]
+  C2 --> D
+  C3 --> D
+  C4 --> D
+  D --> E[references/ 三阶段规则+30项诊断+模型指纹]
+  D --> F[操作入口]
+  F --> F1[write 创作]
+  F --> F2[review 诊断]
+  F --> F3[refactor 最小改动]
+  F --> F4[recreate 重写]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三阶段去AI味修订流程</p>
+    <div class="mermaid">flowchart LR
+  I[原始或草稿文本] --> P1[Pass 1 叙事架构<br/>停止解释主题 松散因果 混合情感模式]
+  P1 --> P2[Pass 2 话语流<br/>去段落模板 修中段塌陷 变节奏]
+  P2 --> P3[Pass 3 表层风格<br/>陈词滥调 句法模板 词汇 语域]
+  P3 --> C[校准器: 仅选 3-5 条动作]
+  C --> O[产出向人类分布靠拢的文本]
+  P1 -.专业文体分支.-> D[按场合匹配规则<br/>发布说明/PR回复/复盘/工单/技术文]
+  D --> O</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Nanako0129/sepia" target="_blank">Nanako0129/sepia</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/useagenthq/useagent" target="_blank">useAgent</a></span>
+    <span class="stars">⭐ 129</span>
+  </div>
+  <p class="one-liner">开源 AI 员工协作平台</p>
+  <div class="tags">
+    <span class="tag">Bun</span><span class="tag">TypeScript</span><span class="tag">Postgres 16</span><span class="tag">pgvector</span><span class="tag">Daytona / CubeSandbox</span><span class="tag">noVNC</span><span class="tag">Slack API</span><span class="tag">GitHub App</span><span class="tag">Terraform</span><span class="tag">Docker</span>
+  </div>
+  <div class="summary">useAgent 是一款开源的 AI 协作员平台（当前处于 Alpha 阶段），把 Claude Code、Codex、OpenCode 等主流 AI 编码代理封装成拥有独立云端计算机的团队同事：它们能使用你的工具与业务上下文完成任务，并交付网站、幻灯片、电子表格、研究报告、可测试的 PR 等成品，而不仅仅是回答问题。系统的核心设计是把每次运行建模为 Postgres 中的事件溯源时间线，运行可在后端重启后自动恢复、可完整回放并事后审阅。每个会话线程都运行在隔离的 Linux 沙箱中（支持 Daytona 托管服务或自托管的 CubeSandbox），并配备终端、代码仓库、浏览器和带 MP4 录制的 noVNC 可视化桌面。所有集成（GitHub、Gmail、Linear、Notion、HubSpot、知识库、团队记忆、技能等）均通过受信任网关以类型化工具形式提供，凭据始终留在控制平面，绝不进入沙箱。平台内建人机协同审批（Web 或 Slack 卡片）、从 GitHub 导入 SKILL.md 的版本化技能库、组织级知识检索、Slack 原生的提及即运行，以及 DOCX/XLSX/PPTX/PDF 原生产物编辑。技术栈以 Bun 为运行时，前后端分离，Postgres 16 + pgvector 存储事件与向量，Terraform 提供 Hetzner 一键部署参考，支持 AWS、GCP、Azure 及裸金属自托管，采用 AGPL-3.0 协议并提供商业许可。</div>
+  <div class="why-notable">在当前 AI Coding Agent 生态高度碎片化的背景下，useAgent 用一套事件契约统一了 Claude Code、Codex、OpenCode 等主流代理，把它们从『聊天助手』升级为拥有云端工作站、能交付真实产物的团队成员。它同时解决了企业落地 AI Agent 的三大痛点——凭据安全（网关隔离）、运行可靠（事件溯源+崩溃恢复）、人机审批（HITL），并支持完全自托管与数据本地化，是少数具备生产级架构思路的开源 Agent 平台。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  subgraph 入口通道
+    A1[Web 应用]
+    A2[Slack 提及]
+    A3[REST API]
+    A4[定时任务]
+  end
+  A1 --> B[Run API 控制平面]
+  A2 --> B
+  A3 --> B
+  A4 --> B
+  B --> C[(Postgres 事件日志<br/>+ pgvector)]
+  B --> D[引擎适配器]
+  D --> E1[Claude Code]
+  D --> E2[Codex]
+  D --> E3[OpenCode]
+  D --> F[隔离 Linux 沙箱<br/>Daytona / Cube]
+  F --> G[终端 / 仓库 / 浏览器 / noVNC 桌面]
+  F -.类型化工具调用.-> H[受信任网关]
+  H --> I1[GitHub / Slack]
+  H --> I2[知识库 / 记忆 / 技能]
+  H --> I3[Gmail / Linear / Notion / HubSpot]
+  B --> J[产物渲染<br/>DOCX/XLSX/PPTX/PDF]
+  J --> K[用户获取成品]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">一次运行的事件溯源流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户/Slack
+  participant API as Run API
+  participant PG as Postgres 事件流
+  participant EN as 引擎适配器
+  participant SB as 沙箱工作站
+  participant GW as 受信网关
+  U->>API: 发起任务
+  API->>PG: 写入 run.created 事件
+  API->>EN: 分派规范化事件
+  EN->>SB: 启动隔离 Linux 会话
+  SB->>GW: 调用类型化工具（凭据不入沙箱）
+  GW-->>SB: 返回结果
+  SB-->>EN: 产出中间事件
+  EN-->>PG: 追加事件（可回放）
+  Note over API,PG: 后端重启后从事件流恢复
+  SB->>API: 提交产物（PR/DOCX/网站）
+  API->>U: 交付成品 + 审批卡片(如需)</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/useagenthq/useagent" target="_blank">useagenthq/useagent</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
