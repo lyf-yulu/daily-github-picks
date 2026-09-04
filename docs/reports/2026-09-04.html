@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-09-04</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-09-04 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Nanako0129/sepia" target="_blank">sepia</a></span>
+    <span class="stars">⭐ 1,874</span>
+  </div>
+  <p class="one-liner">基于叙事架构的去AI化写作技能</p>
+  <div class="tags">
+    <span class="tag">Agent Skills 标准</span><span class="tag">Markdown（SKILL.md 规范）</span><span class="tag">Skills CLI</span><span class="tag">原生插件（Claude Code、Codex、Grok Build、Antigravity）</span>
+  </div>
+  <div class="summary">sepia 是一个便携式 Agent Skill，专注于从叙事架构层面修复 AI 生成文本的机器痕迹，而非仅在词汇和句式层面修饰。基于 StoryScope 研究（arXiv:2604.03136，分析了 61,608 篇故事），该研究证明仅使用叙事结构特征即可以 93.2% 的 F1 值检测 AI 小说，而表层风格编辑几乎无效。sepia 针对虚构写作采用三层修复策略：叙事架构层（停止解释主题、松散因果链、后置揭示、混合情感模式）、话语流层（打破段落-问题模板、修复中段疲软）、表层风格层（消除陈词滥调和句式模板）。对于专业文档（发布说明、PR 回复、事后报告、工单、技术文章），则根据文档类型匹配场景规则。项目提供四种操作模式：write（创建）、review（诊断）、refactor（最小编辑）、recreate（完全重写）。支持 77+ 种 AI 代理（通过 Skills CLI），并为 Claude Code、Codex、Grok Build、Antigravity 提供原生插件。采用单一规范的 SKILL.md 文件，无需针对不同平台维护分支。自 v0.4.0 起实验性支持与声音/风格技能组合，允许在架构决策之上叠加品牌语调或个性化风格。</div>
+  <div class="why-notable">这是首个将学术研究（StoryScope）直接转化为实用工具的去 AI 化写作方案，突破了传统人性化工具仅修饰表层的局限，从叙事结构根源解决 AI 写作的可检测性问题。其跨平台便携性设计和针对专业文档的场景化规则，使其既适用于创意写作，也适用于工程团队的日常协作文档优化。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">三层修复架构</p>
+    <div class="mermaid">graph TD
+    A[输入文本] --> B{文本类型}
+    B -->|虚构写作| C[Pass 1: 叙事架构层]
+    B -->|专业文档| G[场景规则匹配]
+    C --> D[Pass 2: 话语流层]
+    D --> E[Pass 3: 表层风格层]
+    E --> F[输出文本]
+    G --> H[发布说明/PR回复/事后报告/工单/技术文章]
+    H --> I[共享检查清单]
+    I --> F
+    
+    C -.-> J[停止解释主题<br/>松散因果链<br/>后置揭示<br/>混合情感模式]
+    D -.-> K[打破段落模板<br/>修复中段疲软<br/>变化节奏]
+    E -.-> L[消除陈词滥调<br/>句式去模板化<br/>词汇多样性]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">跨平台部署流程</p>
+    <div class="mermaid">graph LR
+    A[SKILL.md 规范] --> B{安装方式}
+    B -->|通用| C[Skills CLI]
+    B -->|原生| D[Claude Code]
+    B -->|原生| E[Codex]
+    B -->|原生| F[Grok Build]
+    B -->|原生| G[Antigravity]
+    
+    C --> H[77+ 支持的代理]
+    D --> I[/sepia-write<br/>/sepia-review<br/>/sepia-refactor<br/>/sepia-recreate]
+    E --> J[$sepia-write<br/>$sepia-review<br/>$sepia-refactor<br/>$sepia-recreate]
+    F --> I
+    G --> I
+    
+    H --> K[用户作用域安装]
+    I --> K
+    J --> K</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Nanako0129/sepia" target="_blank">Nanako0129/sepia</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Vuk97/forward-implementation-first" target="_blank">Forward Implementation First</a></span>
+    <span class="stars">⭐ 161</span>
+  </div>
+  <p class="one-liner">防止 AI 编码代理陷入自创的事务性工作</p>
+  <div class="tags">
+    <span class="tag">Markdown（技能定义格式）</span><span class="tag">YAML Frontmatter</span><span class="tag">Agent Skills 约定</span><span class="tag">模型无关（适用 Claude Code、Codex 等）</span>
+  </div>
+  <div class="summary">Forward Implementation First 是一个面向 AI 编码代理（如 Claude Code、Codex）的技能模块，旨在解决长时间运行的代理流水线中常见的「行政化陷阱」问题。当代理在多阶段流水线中工作时，容易将内容哈希、锁文件、执行凭证、进度元数据等簿记工作误认为产品本身，从而陷入无休止地修复和验证这些中间产物的循环，而非推进真正的功能实现。该技能通过约 150 行 Markdown 定义了一套分类规则：将每个行动归类为语义实现、聚焦验证或行政簿记三类，并明确要求代理优先执行前两类，跳过第三类（除非用户明确要求或该产物属于产品本身）。核心原则是「前向游标规则」：仅在输入语义变更、输出损坏、依赖锥要求等真实原因下才重放阶段，而非因元数据过期而回滚。技能保留了对产品完整性的严格验证（如用户可见的校验和、格式签名），但剔除了仅用于证明某阶段「已运行」的无效凭证。同时覆盖并行工作的不变量规则：单写者拥有发布权、输出验证先于消费、前向推进不等待所有工作线程。该技能与模型、工具、领域无关，适用于分阶段数据流水线、大规模代码迁移、构建发布管道等场景。</div>
+  <div class="why-notable">这是首个系统化解决 AI 代理「行政化陷阱」的技能模块，直击长时间运行流水线中代理将簿记工作误认为产品的核心痛点。通过明确的三分类决策和前向游标规则，使代理能够区分真实验证与无效凭证，避免在哈希修复等无意义工作上浪费大量 token 和时间。该技能仅 150 行，轻量且模型无关，可即插即用到任何支持 Agent Skills 约定的代理中，对多阶段数据流水线、代码迁移、构建管道等场景具有立竿见影的效率提升效果。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">代理行动三分类决策流程</p>
+    <div class="mermaid">graph TD
+    A[代理准备执行行动] --> B{行动分类}
+    B -->|1. 语义实现| C[构建生产者/消费者<br/>适配器/运行时路径<br/>schema/最终输出]
+    B -->|2. 聚焦验证| D[通过行为/schema/计数<br/>样本/一致性/非截断<br/>测量时间和内存验证]
+    B -->|3. 行政簿记| E[生成/修复哈希/锁<br/>凭证/仪表板<br/>认证标记/进度元数据]
+    C --> F[立即执行]
+    D --> F
+    E --> G{是否用户要求<br/>或属于产品?}
+    G -->|是| F
+    G -->|否| H[跳过]
+    H --> I{是否阻塞路径<br/>但不保护正确性?}
+    I -->|是| J[删除依赖]
+    I -->|否| K[继续前向推进]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">前向游标规则与阶段重放判定</p>
+    <div class="mermaid">graph TD
+    A[流水线阶段 N] --> B{是否需要重放?}
+    B -->|输入语义变更| C[重放]
+    B -->|目标/版本变更| C
+    B -->|输出损坏/截断/<br/>不一致/不兼容| C
+    B -->|观察到的运行<br/>推翻静态结果| C
+    B -->|变更生产者的<br/>依赖锥要求| C
+    B -->|仅元数据过期/<br/>哈希不匹配| D[手动运行验证]
+    D --> E[验证输出正确性]
+    E --> F[发布输出]
+    F --> G[移动前向游标]
+    G --> H[移除行政门控]
+    H --> I[继续阶段 N+1]
+    C --> J[仅重放最小<br/>受影响依赖锥]
+    J --> I</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Vuk97/forward-implementation-first" target="_blank">Vuk97/forward-implementation-first</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Tyche-MKR/scientific-agent-skills" target="_blank">Scientific Agent Skills</a></span>
+    <span class="stars">⭐ 98</span>
+  </div>
+  <p class="one-liner">将AI智能体转变为科学家的技能库</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">Agent Skills Standard</span><span class="tag">Agent Plugins Standard</span><span class="tag">Bioinformatics Libraries</span><span class="tag">Cheminformatics Tools</span><span class="tag">Machine Learning Frameworks</span><span class="tag">Scientific Databases (100+)</span><span class="tag">Modal (云计算)</span><span class="tag">GitHub Actions (CI/CD)</span>
+  </div>
+  <div class="summary">Scientific Agent Skills 是一个由 K-Dense 开发的开源科学研究技能库，包含 163 个即用型验证技能和 100+ 科学数据库，覆盖生物学、化学、医学、药物发现等领域。该项目遵循开放的 Agent Skills 标准，兼容 Cursor、Claude Code、Codex、Google Antigravity 等多种 AI 智能体平台。技能涵盖生物信息学与基因组学（序列分析、单细胞RNA测序、变异注释）、化学信息学与药物发现（分子性质预测、虚拟筛选、ADMET分析、分子对接）、蛋白质组学、临床研究、医疗AI、机器学习、材料科学、物理与天文、地理空间科学、实验室自动化、科学写作等15个专业方向。配套 K-Dense BYOK 开源桌面应用，支持40+模型、本地运行、可选云计算扩展。已被全球 190,000+ 科学家使用，提供完整的研究工作流程自动化能力。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与技能分类</p>
+    <div class="mermaid">graph TB
+    A[AI Agent<br/>Cursor/Claude Code/Codex] --> B[Agent Skills Standard]
+    B --> C[Scientific Agent Skills<br/>163个技能]
+    C --> D1[🧬 生物信息学<br/>基因组/单细胞/变异分析]
+    C --> D2[🧪 化学信息学<br/>分子预测/虚拟筛选/对接]
+    C --> D3[🔬 蛋白质组学<br/>质谱处理/肽段鉴定]
+    C --> D4[🏥 临床研究<br/>PK/PD建模/文献检索]
+    C --> D5[🤖 机器学习<br/>深度学习/时序分析]
+    C --> D6[🌍 地理空间<br/>遥感/GIS/空间统计]
+    C --> D7[📊 数据分析<br/>统计/可视化/网络分析]
+    D1 --> E[100+ 科学数据库]
+    D2 --> E
+    D3 --> E
+    D4 --> E
+    E --> F[K-Dense BYOK<br/>本地桌面应用]
+    F --> G[40+ AI模型]
+    F --> H[Modal云计算<br/>可选扩展]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">研究工作流程示例</p>
+    <div class="mermaid">sequenceDiagram
+    participant U as 科学家
+    participant A as AI Agent
+    participant S as Scientific Skills
+    participant D as 科学数据库
+    participant C as 计算资源
+    
+    U->>A: 提出研究问题<br/>(如:药物靶点分析)
+    A->>S: 调用相关技能<br/>分子对接/ADMET/文献检索
+    S->>D: 查询数据库<br/>ChEMBL/PubChem/PubMed
+    D-->>S: 返回数据
+    S->>C: 执行计算<br/>(本地或Modal云)
+    C-->>S: 计算结果
+    S-->>A: 整合分析结果
+    A-->>U: 生成报告<br/>可视化+文献引用
+    
+    Note over U,C: 支持多步骤复杂工作流<br/>跨15个科学领域</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Tyche-MKR/scientific-agent-skills" target="_blank">Tyche-MKR/scientific-agent-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/useagenthq/useagent" target="_blank">useAgent</a></span>
+    <span class="stars">⭐ 282</span>
+  </div>
+  <p class="one-liner">开源 AI 协作平台，让 AI 智能体独立完成工作</p>
+  <div class="tags">
+    <span class="tag">Bun</span><span class="tag">TypeScript</span><span class="tag">Postgres + pgvector</span><span class="tag">Daytona / CubeSandbox</span><span class="tag">noVNC</span><span class="tag">Slack API</span><span class="tag">GitHub App</span><span class="tag">Terraform</span>
+  </div>
+  <div class="summary">useAgent 是一个开源的 AI 协作平台，将 Claude Code、Codex、OpenCode 等 AI 智能体转变为团队中的真正「同事」。它为每个智能体分配独立的云端 Linux 沙箱环境，配备终端、浏览器、可视桌面（noVNC）和录屏功能，让智能体能够自主完成完整的工作交付物——网站、演示文稿、电子表格、研究报告和经过测试的 PR，而不只是给出建议。核心架构基于事件溯源（event sourcing）设计，所有会话记录存储在 Postgres 中，确保运行过程可追溯、可恢复，即使后端重启也能无缝恢复工作状态。平台采用「可信网关」模式，所有凭证和敏感信息不进入沙箱，集成工具（GitHub、Slack、Gmail、Linear 等）通过类型化工具接口调用。支持从 GitHub 导入技能文件（SKILL.md）、构建组织级知识库、人机协作审批流程，以及原生文档格式（DOCX、XLSX、PPTX）的生成与编辑。技术栈使用 Bun 运行时、Postgres + pgvector 扩展、Daytona 或 CubeSandbox 作为沙箱后端，完全支持自托管部署在任意云服务商或物理服务器上。项目遵循 AGPL-3.0 协议，目前处于 Alpha 阶段但已在实际生产环境运行。</div>
+  <div class="why-notable">useAgent 突破了当前 AI 助手「只提建议」的限制，通过沙箱隔离 + 事件溯源 + 可信网关三层架构，实现了 AI 智能体真正意义上的自主工作交付。引擎无关的设计让团队不被单一 AI 提供商锁定，持久化会话保证了企业级可靠性，完全开源且支持自托管满足数据合规需求。对于希望将 AI 深度集成到工作流的团队，这是一个生产级可用的基础设施方案。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TB
+    subgraph 入口层
+        WebUI[Web 应用]
+        Slack[Slack 集成]
+        API[REST API]
+        Schedule[定时任务]
+    end
+    
+    subgraph 控制平面
+        RunAPI[Run API]
+        Auth[身份认证]
+        EventLog[(Postgres<br/>事件日志)]
+        EngineAdapter[引擎适配器]
+        Gateway[可信网关]
+    end
+    
+    subgraph AI 引擎
+        Claude[Claude Code]
+        Codex[Codex]
+        OpenCode[OpenCode]
+    end
+    
+    subgraph 沙箱环境
+        Sandbox[隔离 Linux 沙箱]
+        Terminal[终端]
+        Browser[浏览器]
+        Desktop[可视桌面 noVNC]
+    end
+    
+    subgraph 集成工具
+        GitHub[GitHub]
+        Gmail[Gmail]
+        Linear[Linear]
+        Notion[Notion]
+    end
+    
+    WebUI --> RunAPI
+    Slack --> RunAPI
+    API --> RunAPI
+    Schedule --> RunAPI
+    
+    RunAPI --> EventLog
+    RunAPI --> EngineAdapter
+    
+    EngineAdapter --> Claude
+    EngineAdapter --> Codex
+    EngineAdapter --> OpenCode
+    
+    EngineAdapter --> Sandbox
+    Sandbox --> Terminal
+    Sandbox --> Browser
+    Sandbox --> Desktop
+    
+    Gateway -.工具调用.-> GitHub
+    Gateway -.工具调用.-> Gmail
+    Gateway -.工具调用.-> Linear
+    Gateway -.工具调用.-> Notion
+    
+    EngineAdapter -.凭证隔离.-> Gateway
+    
+    style EventLog fill:#F2E3D6
+    style Gateway fill:#F2E3D6
+    style Sandbox fill:#FBF9F5</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">会话执行流程</p>
+    <div class="mermaid">sequenceDiagram
+    participant User as 用户
+    participant UI as Web/Slack
+    participant RunAPI as Run API
+    participant EventLog as Postgres 事件日志
+    participant Adapter as 引擎适配器
+    participant Engine as AI 引擎
+    participant Sandbox as 隔离沙箱
+    participant Gateway as 可信网关
+    
+    User->>UI: 发起任务
+    UI->>RunAPI: 创建 Run
+    RunAPI->>EventLog: 记录事件
+    RunAPI->>Adapter: 启动会话
+    Adapter->>Sandbox: 分配沙箱环境
+    Adapter->>Engine: 发送任务上下文
+    
+    loop 智能体工作循环
+        Engine->>Adapter: 返回操作指令
+        Adapter->>EventLog: 记录事件
+        alt 需要集成工具
+            Adapter->>Gateway: 调用工具 API
+            Gateway->>Gateway: 验证凭证
+            Gateway-->>Adapter: 返回结果
+        else 需要沙箱操作
+            Adapter->>Sandbox: 执行命令
+            Sandbox-->>Adapter: 返回输出
+        end
+        Adapter->>Engine: 反馈结果
+    end
+    
+    Engine->>Adapter: 完成任务
+    Adapter->>EventLog: 记录完成事件
+    Adapter->>RunAPI: 生成工件
+    RunAPI->>UI: 交付成果
+    UI->>User: 展示结果
+    
+    Note over EventLog: 全程事件溯源<br/>支持恢复与回放</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/useagenthq/useagent" target="_blank">useagenthq/useagent</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/cbrock84/headcount" target="_blank">Headcount</a></span>
+    <span class="stars">⭐ 1,185</span>
+  </div>
+  <p class="one-liner">Claude Code 的企业级 Agent 组织</p>
+  <div class="tags">
+    <span class="tag">Claude Code Plugin System</span><span class="tag">Agent Orchestration</span><span class="tag">Skill-based Architecture</span><span class="tag">Subagent Delegation</span>
+  </div>
+  <div class="summary">Headcount 是一个为 Claude Code 设计的模块化 Agent 组织架构，将 AI 能力结构化为一家完整的虚拟公司：1 位 CEO 统领 16 个部门，涵盖 172 项专业技能。每个部门都是独立可安装的插件，项目可按需加载所需功能而非全量引入。技能采用 `department:skill` 命名空间设计（如 `security:threat-modeling`、`finance:unit-economics`），避免命名冲突。当用户提出请求时，系统自动匹配并激活对应专家（如询问落地页转化问题时加载 `demand-generation:landing-page-cro-expert`），也可通过 `/finance:financial-modeling` 直接调用特定技能。核心部门包括 CEO 办公室（战略决策、融资、增长咨询）、技术部（架构设计、CI/CD、系统调试）、安全部（威胁建模、合规审计）、财务部（财务建模、单位经济学）、法务部（合同审查、隐私合规）、人力资源（招聘、绩效管理）、市场/销售/客户成功等完整业务条线。部分部门为 reviewer-class 类型，会在风险决策前主动介入审查而非被动给建议。每个部门同时提供 `.claude/agents/` 下的 Agent Charter，支持作为独立子代理委派任务并拥有专属写入权限。</div>
+  <div class="why-notable">首个将企业组织架构映射为 AI Agent 系统的开源项目，通过部门化和技能命名空间解决了大规模 Agent 能力管理的工程化难题，特别是 reviewer-class 机制为 AI 系统引入了类似人类组织的制衡机制。适合需要多领域专业能力协同的复杂业务场景，如 SaaS 产品全生命周期管理、企业合规审查、技术架构决策等。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Headcount 组织架构</p>
+    <div class="mermaid">graph TD
+    CEO["Office of the CEO<br/>(7 skills)"]
+    CEO --> Tech["Technology 技术部<br/>(CTO, 19 skills)"]
+    CEO --> Sec["Security 安全部<br/>(CISO, 8 skills, reviewer)"]
+    CEO --> Fin["Finance 财务部<br/>(CFO, 9 skills, reviewer)"]
+    CEO --> Legal["Legal 法务部<br/>(7 skills, reviewer)"]
+    CEO --> HR["People 人力资源<br/>(6 skills)"]
+    CEO --> Mkt["Marketing 市场部<br/>(11 skills)"]
+    CEO --> Sales["Sales 销售部<br/>(9 skills)"]
+    CEO --> CS["Customer Success<br/>(客户成功, 8 skills)"]
+    CEO --> Ops["Operations 运营<br/>(COO, 12 skills)"]
+    
+    style Sec fill:#ffcccc
+    style Fin fill:#ffcccc
+    style Legal fill:#ffcccc
+    
+    classDef reviewer stroke:#d32f2f,stroke-width:3px</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能调用流程</p>
+    <div class="mermaid">sequenceDiagram
+    participant U as 用户
+    participant C as Claude Code
+    participant M as Marketplace
+    participant D as Department Plugin
+    participant S as Skill
+    
+    U->>C: 提问或请求
+    C->>M: 匹配 department:skill
+    M->>D: 加载对应部门插件
+    D->>S: 激活具体技能
+    
+    alt 普通技能
+        S->>C: 返回执行结果
+        C->>U: 输出响应
+    else Reviewer-class 技能
+        S->>C: 拦截并审查风险
+        alt 风险可接受
+            C->>U: 继续执行
+        else 风险过高
+            C->>U: 阻止并说明原因
+        end
+    end
+    
+    Note over U,S: 也可直接调用: /finance:financial-modeling</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/cbrock84/headcount" target="_blank">cbrock84/headcount</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
