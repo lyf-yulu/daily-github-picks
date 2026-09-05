@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-09-05</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-09-05 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/affaan-m" target="_blank">Agent Harness 性能优化系统</a></span>
+    <span class="stars">⭐ 1,135 <span class="stars-today">(+1135 today)</span></span>
+  </div>
+  <p class="one-liner">为AI编码代理打造的性能增强框架</p>
+  <div class="tags">
+    <span class="tag">Markdown 规则配置</span><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">Opencode</span><span class="tag">Cursor</span><span class="tag">Agent Prompt Engineering</span>
+  </div>
+  <div class="summary">该项目是一个面向 AI 编码代理（Agent Harness）的性能优化系统，旨在为 Claude Code、Codex、Opencode、Cursor 等主流 AI 编程工具提供统一的能力增强层。项目围绕五大核心维度构建：Skills（技能库）为代理提供可复用的专业能力模块；Instincts（直觉）赋予代理更符合工程实践的决策倾向；Memory（记忆）解决跨会话的上下文持久化问题；Security（安全）建立代码执行与数据处理的防护机制；Research-first Development（研究优先开发）则强调在动手编码前先进行充分的信息收集与方案验证。整体设计理念是把资深工程师的工作习惯抽象为可配置、可复用的规则与工具集，让 AI 代理不再仅仅是代码补全器，而是具备工程判断力的协作伙伴。项目采用工具无关的架构，通过适配层对接不同的 AI 编码平台，使得同一套优化策略可以跨生态复用。这对于长期使用 AI 编码工具的开发者而言，能够显著减少重复配置、提升代理输出质量、降低幻觉与安全风险，是当前 Agent Ops 领域一个具备实用价值的探索。</div>
+  <div class="why-notable">在 AI 编码代理泛滥但质量参差不齐的当下，该项目跳出单一工具的绑定，从工程方法论层面为代理建立统一的行为规范与能力底座，是 Agent Harness 优化方向上少见的系统性尝试，对追求 AI 编码稳定性与安全性的团队具有直接参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[开发者] --> B[Agent Harness 优化层]
+  B --> C[Skills 技能库]
+  B --> D[Instincts 直觉规则]
+  B --> E[Memory 记忆系统]
+  B --> F[Security 安全防护]
+  B --> G[Research-first 研究优先]
+  C --> H[适配层]
+  D --> H
+  E --> H
+  F --> H
+  G --> H
+  H --> I[Claude Code]
+  H --> J[Codex]
+  H --> K[Opencode]
+  H --> L[Cursor]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">研究优先开发流程</p>
+    <div class="mermaid">flowchart LR
+  A[接收任务] --> B{是否已了解上下文?}
+  B -- 否 --> C[调用 Research 模块]
+  C --> D[读取代码/文档]
+  D --> E[加载 Memory 历史]
+  E --> F[制定方案]
+  B -- 是 --> F
+  F --> G[Security 校验]
+  G --> H[执行编码]
+  H --> I[写回 Memory]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Vuk97/forward-implementation-first" target="_blank">Forward Implementation First</a></span>
+    <span class="stars">⭐ 163</span>
+  </div>
+  <p class="one-liner">让 AI 编码代理专注交付而非记账</p>
+  <div class="tags">
+    <span class="tag">Markdown</span><span class="tag">YAML Frontmatter</span><span class="tag">Agent Skills 约定</span><span class="tag">Shell 安装脚本</span><span class="tag">Claude Code / Codex 兼容</span>
+  </div>
+  <div class="summary">Forward Implementation First 是一个面向 Claude Code、Codex 等 AI 编码代理的 Skill 技能包，用于解决长流水线场景下代理陷入自我制造的行政性工作的问题。当代理面对哈希、锁文件、执行回执、认证标记、进度元数据等辅助记账信息时，容易将其误认为正确性证据，从而进入无休止的元数据修复循环，实际产出却毫无变化。该技能通过约 150 行 Markdown 规则，要求代理在每次动作前进行三选一分类：语义实现（构建生产者、消费者、适配器、Schema 等真实产物）、聚焦式验证（对变更依赖锥进行行为、Schema、计数、时间与内存等测量）、行政性记账（哈希、锁、回执、仪表盘等）。前两类照做，第三类除非用户明确要求或作为产品本身的一部分否则跳过，若其阻塞路径则直接删除依赖。技能同时确立了前向游标规则，明确只有输入变更、目标修订变更、输出畸形、运行反证、依赖锥要求等真实理由才可回放阶段，缺失或过期的元数据不构成回滚依据。在并行方面，技能不充当调度器，只保留发布唯一写者、消费前验证输出、按需拉取产出、禁止编造忙碌等不变量。它是模型无关、工具无关、领域无关的纯 Markdown 规则，遵循 Agent Skills 约定，可通过 install.sh 一键安装到多种代理的 Skill 目录。</div>
+  <div class="why-notable">这个仓库并不提供代码库，而是把一种被广泛观察到的 AI 代理失败模式——把自造的记账工作当作产品——提炼为一份可复制粘贴的 150 行规则。它在保留真实证据（测试、基准、输入身份、产品级校验和）与剔除伪装成正确性的元数据之间划出了清晰边界，还前瞻性地把并行部分从调度器收敛为不变量，避免与真实运行时冲突。对于任何跑长流水线、ETL、代码迁移或多代理协作的团队，这是一份低成本、高信噪比的工程实践总结，值得作为 Agent Skill 生态中的参考样本。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">代理动作三分类决策流</p>
+    <div class="mermaid">graph TD
+  A[代理准备执行动作] --> B{分类判定}
+  B -->|语义实现| C[构建生产者/消费者/Schema/输出]
+  B -->|聚焦验证| D[对依赖锥执行行为与度量验证]
+  B -->|行政记账| E{用户要求或属于产品?}
+  E -->|是| F[执行记账动作]
+  E -->|否| G{是否阻塞路径?}
+  G -->|是| H[删除该依赖后继续]
+  G -->|否| I[跳过]
+  C --> J[前向游标推进]
+  D --> J
+  F --> J
+  H --> J
+  I --> J</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">前向游标与回放触发条件</p>
+    <div class="mermaid">graph LR
+  S[流水线阶段] --> Q{是否需要回放?}
+  Q -->|输入含义变更| R[重放受影响锥]
+  Q -->|目标或修订变更| R
+  Q -->|输出畸形/截断/不一致| R
+  Q -->|运行结果反证| R
+  Q -->|依赖锥要求| R
+  Q -->|仅元数据缺失或过期| X[手动执行 -> 验证 -> 发布 -> 移除阻塞门]
+  R --> Y[从游标继续前进]
+  X --> Y</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Vuk97/forward-implementation-first" target="_blank">Vuk97/forward-implementation-first</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Tyche-MKR/scientific-agent-skills" target="_blank">科研智能体技能库</a></span>
+    <span class="stars">⭐ 99</span>
+  </div>
+  <p class="one-liner">让AI智能体秒变科研助手的技能集合</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">Agent Skills 标准</span><span class="tag">Agent Plugins 标准</span><span class="tag">Markdown 技能定义</span><span class="tag">科学计算库（RDKit、BioPython 等）</span><span class="tag">Modal 云计算</span>
+  </div>
+  <div class="summary">Scientific Agent Skills 是由 K-Dense 团队打造的开源科研技能库，包含 163 个经过验证的即用型科研技能与 100+ 科学数据库，覆盖生物学、化学、医学、药物发现等领域。项目遵循开放的 Agent Skills 标准，兼容 Cursor、Claude Code、Codex、Google Antigravity 等主流 AI 代理平台，同时也可作为 Agent Plugins 包整体加载。技能范围涵盖生物信息学与基因组学、化学信息学与药物发现、蛋白质组学与质谱、临床研究、医疗影像与数字病理、机器学习、材料化学、天体物理、地理空间与遥感、实验室自动化、科研写作与文献综述等十余个方向，具体能力包括癌症基因组分析、1000 基因组个体级查询、分子动力学、RNA velocity、PK/PD 建模、药靶结合预测、病原体变异实时监测等。项目已被全球超过 19 万科研人员使用，并配套推出可本地运行的开源 AI 联合科学家 K-Dense BYOK，用户可自带 API 密钥调用 40+ 模型执行完整研究工作流。</div>
+  <div class="why-notable">全球最大的科研 Agent Skills 库，被 19 万+ 科学家使用，是 AI for Science 领域最具影响力的开源项目之一</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[科研人员] --> B[AI 代理客户端]
+  B --> C{兼容平台}
+  C --> C1[Cursor]
+  C --> C2[Claude Code]
+  C --> C3[Codex]
+  C --> C4[Antigravity]
+  C --> C5[K-Dense BYOK]
+  C1 & C2 & C3 & C4 & C5 --> D[Scientific Agent Skills 库]
+  D --> E[163 个验证技能]
+  D --> F[100+ 科学数据库]
+  E --> G[执行科研工作流]
+  F --> G
+  G --> H[生物/化学/医学/药物发现结果]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能分类与调用流程</p>
+    <div class="mermaid">flowchart LR
+  U[用户提问] --> AG[AI 智能体]
+  AG --> SEL[技能选择器]
+  SEL --> S1[生物信息学]
+  SEL --> S2[化学信息学]
+  SEL --> S3[临床研究]
+  SEL --> S4[医疗影像]
+  SEL --> S5[材料/物理]
+  SEL --> S6[地理空间]
+  SEL --> S7[实验室自动化]
+  S1 & S2 & S3 & S4 & S5 & S6 & S7 --> LIB[Python 库与 API]
+  LIB --> DB[(科学数据库)]
+  DB --> OUT[结果与报告]
+  OUT --> U</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Tyche-MKR/scientific-agent-skills" target="_blank">Tyche-MKR/scientific-agent-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/useagenthq/useagent" target="_blank">useAgent</a></span>
+    <span class="stars">⭐ 284</span>
+  </div>
+  <p class="one-liner">开源 AI 同事，交付成品而非答案</p>
+  <div class="tags">
+    <span class="tag">Bun</span><span class="tag">TypeScript</span><span class="tag">Postgres 16 + pgvector</span><span class="tag">Daytona / CubeSandbox</span><span class="tag">noVNC</span><span class="tag">Slack App</span><span class="tag">GitHub App</span><span class="tag">Terraform (Hetzner 参考)</span><span class="tag">OpenRouter</span>
+  </div>
+  <div class="summary">useAgent 是一款开源的团队级 AI 协作平台，把 Claude Code、Codex、OpenCode 等 AI 编码代理封装成拥有独立云端计算机的「AI 同事」。与传统只返回对话答案的助手不同，它把代理放进隔离的 Linux 沙箱工作站，配备终端、代码仓库、浏览器与可视化桌面（noVNC，支持 MP4 录制），最终交付可编辑的成品：网站、幻灯片、表格、研究报告、经过测试的 Pull Request 以及 DOCX/XLSX/PPTX/PDF 原生文档。核心设计有三条：一是引擎即插件，所有代理通过统一的规范化事件契约接入，可自由替换；二是每次运行都是事件溯源日志，以 Postgres 作为唯一真实源，运行可在后端重启后恢复、可精确回放、可事后审计；三是凭据永不进入沙箱，知识库、记忆、技能、GitHub、Web 搜索、桌面操控等都通过可信网关以类型化工具形式暴露，密钥仅存于控制面。产品原生支持 Slack（提及触发、线程回复、审批卡）、GitHub App、以及 Gmail、Linear、Notion、HubSpot 等 OAuth 连接器；支持 SKILL.md 技能导入、组织级知识检索与团队记忆学习通道。危险操作会在 Web 或 Slack 中弹出人工审批卡，凭一次性能力恢复执行。项目基于 Bun 运行时与 Postgres 16+（pgvector），可自托管到任意云或裸机，沙箱层可选托管的 Daytona 或自托管的 CubeSandbox，遵循 AGPL-3.0 协议。</div>
+  <div class="why-notable">useAgent 直面当前 AI 编码代理「只给答案不交付成品」和「凭据暴露给沙箱」两大痛点，用事件溯源 + 可信网关 + 引擎适配器的组合，把 Claude Code、Codex 等命令行代理产品化为可审批、可回放、可自托管的团队协作系统，并原生打通 Slack 与 GitHub 工作流，是少见把「AI 同事」这一叙事落到工程实处的开源方案。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  subgraph Channels[入口渠道]
+    W[Web 应用]
+    S[Slack 提及]
+    A[REST API]
+    C[定时任务]
+  end
+  Channels --> RUN[Run API 控制面]
+  RUN --> LOG[(Postgres 事件日志<br/>pgvector)]
+  RUN --> ADP[引擎适配器]
+  ADP -->|统一事件契约| E1[Claude Code]
+  ADP --> E2[Codex]
+  ADP --> E3[OpenCode]
+  RUN --> GW[可信网关<br/>类型化工具]
+  GW --> K[知识/记忆/技能]
+  GW --> G[GitHub / Slack]
+  GW --> CN[Gmail/Linear/Notion 连接器]
+  ADP --> SBX[隔离 Linux 沙箱<br/>Daytona / CubeSandbox]
+  SBX --> DESK[终端 + 浏览器 + noVNC 桌面]
+  SBX -->|产出| ART[原生成品<br/>DOCX/XLSX/PPTX/PDF/PR]
+  ART --> USER[用户交付]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">运行事件流与人工审批</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户 (Web/Slack)
+  participant API as Run API
+  participant DB as Postgres 事件日志
+  participant EN as 引擎适配器
+  participant SB as 沙箱工作站
+  participant GW as 可信网关
+  U->>API: 发起任务
+  API->>DB: 追加 run.created 事件
+  API->>EN: 启动代理
+  EN->>SB: 拉起隔离 Linux 环境
+  loop 会话循环
+    EN->>DB: 追加规范化事件
+    SB->>GW: 调用类型化工具
+    GW-->>SB: 返回结果 (凭据不下发)
+  end
+  alt 触发破坏性操作
+    GW->>U: 推送审批卡 (Web/Slack)
+    U-->>GW: 一次性能力批准
+    GW->>SB: 放行工具调用
+  end
+  EN->>API: 提交成品 (PR/文档/网站)
+  API->>U: 交付可编辑产物</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/useagenthq/useagent" target="_blank">useagenthq/useagent</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/heyman333/agent-notion-template-docs" target="_blank">notion-doc</a></span>
+    <span class="stars">⭐ 76</span>
+  </div>
+  <p class="one-liner">让 AI 生成 Notion 风格文档</p>
+  <div class="tags">
+    <span class="tag">HTML/CSS</span><span class="tag">Python 3 (标准库)</span><span class="tag">Claude Code Plugin/Skill</span><span class="tag">Prism.js (代码高亮)</span><span class="tag">GitHub Actions</span><span class="tag">Headless Browser</span>
+  </div>
+  <div class="summary">notion-doc 是一个面向 Claude Code 的 Agent Skill 插件，专门解决 AI 生成文档普遍呈现紫色渐变、堆砌 emoji、卡片阴影泛滥等审美问题。它不干预内容与大纲，只统一视觉呈现，将 AI 输出规范为 Notion 风格。项目核心是一个 template.html，定义了 720px 内容宽度、Notion 亮/暗色调色板 CSS 变量，并提供了完整的 Notion 常见块：emoji 页面图标、面包屑、目录、5 色 callout、表格、双栏布局、按钮、toggle、清单、书签卡、Prism 语法高亮代码块、韩语友好断行以及打印/PDF 布局。配套 lint.py 使用纯 Python 标准库校验生成文档是否偏离模板（禁止内联 style、随意新增类名或 CSS），并通过 PostToolUse Hook 在写入 HTML 后自动提示。GitHub Actions 每周同步 Notion 官方 token 与 block 类型基线，确保风格不漂移。除 Claude Code 外，也支持 Codex、Cursor、Gemini CLI 等任意可读取指令文件的 Agent。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">文档生成与校验流程</p>
+    <div class="mermaid">graph TD
+  A[用户请求 AI 写文档] --> B[Agent 调用 notion-doc Skill]
+  B --> C[复制 template.html]
+  C --> D[填充内容与预定义块]
+  D --> E[输出 HTML 文档]
+  E --> F[PostToolUse Hook 触发]
+  F --> G[lint.py 对比模板]
+  G -->|CSS 漂移/未知类| H[报错提示修复]
+  G -->|符合规范| I[通过, 呈现 Notion 风格]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Notion 视觉同步机制</p>
+    <div class="mermaid">graph LR
+  A[Notion 参考页面] --> B[每周 CI notion-sync]
+  B --> C[抓取 Notion 样式表 Design Tokens]
+  B --> D[通过 Page API 拉取 Block Types]
+  B --> E[Headless Browser 渲染校验]
+  C --> F[对比 sync/notion-tokens.json]
+  D --> G[对比 sync/notion-snapshot.json]
+  E --> G
+  F --> H{是否漂移?}
+  G --> H
+  H -->|是| I[提交 PR 更新模板]
+  H -->|否| J[保持基线]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/heyman333/agent-notion-template-docs" target="_blank">heyman333/agent-notion-template-docs</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
