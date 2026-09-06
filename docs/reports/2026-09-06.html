@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-09-06</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-09-06 · 共 5 个项目</p>
+
+
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/chigwell/Penelopa.ai" target="_blank">Penelopa.ai</a></span>
+    <span class="stars">⭐ 60</span>
+  </div>
+  <p class="one-liner">AI编码代理的持续改进平台</p>
+  <div class="tags">
+    <span class="tag">Shell</span><span class="tag">PowerShell</span><span class="tag">Codex Hooks</span><span class="tag">Claude Code Hooks</span><span class="tag">Telegram Bot API</span><span class="tag">Web Dashboard</span>
+  </div>
+  <div class="summary">Penelopa.ai 是一款面向 AI 编码代理（Codex 和 Claude Code）的持续改进工具，通过分析开发者在真实会话中的行为模式，将重复出现的工作流转化为可复用的技能、检查项、提示词和改进建议。用户只需一次性运行安装脚本（支持 macOS/Linux 的 shell 脚本和 Windows PowerShell 脚本），即可自动配置 Stop 和 SessionEnd 钩子，无需改变现有工作习惯。系统在后台捕获会话记录并上传至云端，跨项目识别重复问题、缺失的检查以及工作流优化点，最终在个人仪表板中呈现可操作的推荐。项目还提供 Telegram 通知、本地队列重试机制以确保数据可靠传输，并通过个人访问令牌保护用户数据隐私。整体定位为轻量级、无侵入式的 AI 编程助手增强层。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与数据流</p>
+    <div class="mermaid">graph TD
+  A[开发者终端] ->|运行安装脚本| B[配置 Hooks]
+  B --> C[Codex Agent]
+  B --> D[Claude Code Agent]
+  C -->|Stop/SessionEnd 触发| E[会话记录 Transcript]
+  D ->|Stop/SessionEnd 触发| E
+  E --> F[本地队列<br/>断线重试]
+  F ->|后台上传| G[Penelopa 云端服务]
+  G --> H[模式识别引擎]
+  H --> I[生成推荐<br/>技能/检查/提示词]
+  I --> J[个人仪表板]
+  I --> K[Telegram 通知]
+  J --> L[开发者查看应用]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">用户使用流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 开发者
+  participant I as 安装脚本
+  participant A as AI Agent
+  participant P as Penelopa 服务
+  participant D as 仪表板
+  U->I: curl 运行安装器
+  I->>I: 生成个人访问令牌
+  I->>A: 配置 Stop/SessionEnd 钩子
+  I->>U: 返回私人仪表板链接
+  U->>A: 正常编码工作
+  A->>P: 会话结束上传 Transcript
+  P->>P: 跨会话模式分析
+  P->>D: 生成推荐
+  P->>U: Telegram 通知
+  U->>D: 查看并应用建议</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/chigwell/Penelopa.ai" target="_blank">chigwell/Penelopa.ai</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/affaan-m" target="_blank">Agent Harness 性能优化系统</a></span>
+    <span class="stars">⭐ 1,314 <span class="stars-today">(+1314 today)</span></span>
+  </div>
+  <p class="one-liner">为编码类 AI 代理注入技能与记忆的增强框架</p>
+  <div class="tags">
+    <span class="tag">Agent Harness 抽象层</span><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">Opencode</span><span class="tag">Cursor</span>
+  </div>
+  <div class="summary">该项目定位为一套面向主流 AI 编码代理（Claude Code、Codex、Opencode、Cursor 等）的通用性能优化与能力增强框架，作者尝试在现有 Agent Harness（代理运行外壳）之上补齐工程实践所需的关键能力层。项目围绕五大核心支柱展开：Skills（可复用技能模块）、Instincts（本能式判断与默认行为）、Memory（跨会话记忆机制）、Security（安全与边界约束）以及 Research-First Development（先调研后编码的工作流范式）。通过统一的抽象层，它希望解决当前代码代理常见的痛点，例如上下文遗忘、盲目编码、缺乏安全护栏、无法沉淀经验等问题，使代理在多轮任务与复杂项目中表现更接近资深工程师。由于目标是跨代理平台生效，该系统更像是一层与厂商无关的中间件或配置约定，可以叠加在不同的代理工具之上使用。目前仓库内容较为精简，README 仅有一句描述，具体的技术栈、模块划分与调用协议尚未公开，属于处于早期阶段的理念型项目，需要持续关注其后续实现细节。</div>
+  <div class="why-notable">在 AI 编码代理生态高速演化的当下，各家 Harness 能力参差不齐且互不兼容。该项目尝试提炼出一套跨代理通用的增强层，把资深工程师的直觉、记忆与安全意识固化为可复用模块，若能落地将显著提升代理在真实项目中的可靠性，具备成为「代理侧最佳实践标准」的潜力。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">五大支柱增强架构</p>
+    <div class="mermaid">graph TD
+  User[开发者] --> Harness[Agent Harness 增强层]
+  Harness --> Skills[Skills 技能库]
+  Harness --> Instincts[Instincts 本能判断]
+  Harness --> Memory[Memory 记忆系统]
+  Harness --> Security[Security 安全护栏]
+  Harness --> Research[Research-First 调研优先]
+  Skills --> Agents[AI 编码代理]
+  Instincts --> Agents
+  Memory --> Agents
+  Security --> Agents
+  Research --> Agents
+  Agents --> Claude[Claude Code]
+  Agents --> Codex[Codex]
+  Agents --> Opencode[Opencode]
+  Agents --> Cursor[Cursor]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Research-First 工作流</p>
+    <div class="mermaid">flowchart LR
+  A[接收任务] --> B[Memory 检索历史经验]
+  B --> C[Research 调研代码与上下文]
+  C --> D[Instincts 生成方案]
+  D --> E[Security 安全校验]
+  E --> F[Skills 执行编码]
+  F --> G[结果写回 Memory]
+  G --> A</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Tyche-MKR/scientific-agent-skills" target="_blank">科学智能体技能库</a></span>
+    <span class="stars">⭐ 99</span>
+  </div>
+  <p class="one-liner">让AI智能体秒变科研助手</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">Agent Skills 标准</span><span class="tag">Agent Plugins 标准</span><span class="tag">plugin.json + skills 目录结构</span><span class="tag">Modal 云端算力</span><span class="tag">Hugging Face 科学模型</span>
+  </div>
+  <div class="summary">Scientific Agent Skills 是由 K-Dense 打造的开源科研技能集合，前身为 Claude Scientific Skills，现已升级为兼容 Agent Skills 开放标准的通用方案。项目提供 163 个经过验证的即用型科学技能与 100 多个科学数据库接口，覆盖生物信息学与基因组学、化学信息学与药物发现、蛋白质组学、临床研究、医学影像、材料科学、天文物理、地空间、实验室自动化等十余个学科领域。通过为 AI 智能体注入结构化的领域文档与示例代码，可将 Cursor、Claude Code、Codex、Google Antigravity 等多种主流智能体转化为能够执行复杂多步骤科研工作流的科学家助手。该项目同时以 Agent Plugins 标准形式打包，可作为单一插件加载，全球已有超过 19 万名科学家使用，并配套推出可本地运行的 K-Dense BYOK 开源 AI 副科学家平台，支持自带 API Key、40 多种模型选择及可选的 Modal 云端算力扩展。</div>
+  <div class="why-notable">全球最大的科学 Agent Skills 库，19 万+ 科学家使用，兼容主流 AI 智能体，是 AI for Science 生态的关键基础设施</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[科研人员] --> A[AI 智能体<br/>Cursor/Claude Code/Codex/Antigravity]
+  A --> S[Scientific Agent Skills<br/>163 个技能]
+  A --> P[Agent Plugins 打包<br/>plugin.json + skills/]
+  S --> D1[生物信息与基因组学]
+  S --> D2[药物发现与化学信息]
+  S --> D3[临床与医学影像]
+  S --> D4[材料/物理/天文]
+  S --> D5[地理空间与遥感]
+  S --> DB[100+ 科学数据库<br/>与 Python 科学库]
+  A --> K[K-Dense BYOK<br/>本地 AI 副科学家]
+  K --> M[Modal 云端算力可选]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能调用数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 科研用户
+  participant Agent as AI 智能体
+  participant Skill as 科学技能包
+  participant Lib as Python 库/数据库
+  U->Agent: 提出研究任务
+  Agent->>Skill: 匹配并加载对应技能
+  Skill->>Agent: 返回文档与调用示例
+  Agent->Lib: 执行分析/查询/建模
+  Lib->>Agent: 返回结果数据
+  Agent->>U: 生成可追溯的科研输出</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Tyche-MKR/scientific-agent-skills" target="_blank">Tyche-MKR/scientific-agent-skills</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/heyman333/agent-notion-template-docs" target="_blank">notion-doc</a></span>
+    <span class="stars">⭐ 76</span>
+  </div>
+  <p class="one-liner">让 AI 代理输出 Notion 风格文档</p>
+  <div class="tags">
+    <span class="tag">HTML/CSS</span><span class="tag">Python (标准库)</span><span class="tag">Claude Code Plugin/Skill</span><span class="tag">Prism.js 代码高亮</span><span class="tag">GitHub Actions</span><span class="tag">Headless Browser (Notion 同步)</span>
+  </div>
+  <div class="summary">notion-doc 是一款面向 AI 代理（主打 Claude Code）的文档样式技能包，专注于解决 AI 生成文档时常见的紫色渐变、堆砌 emoji、卡片阴影等千篇一律的视觉问题。它不干预文档内容与大纲，仅通过一份 HTML 模板 template.html 统一呈现，让最终产物具备 Notion 风格：720px 内容宽度、指定文字色、明暗双色板、五色 Callout、目录、表格、双栏、Toggle、清单、书签卡片、Prism 代码高亮，并支持韩文断行与打印/PDF 输出。项目通过 lint.py（仅依赖 Python 标准库）对生成的 HTML 与模板做一致性校验，检测新增 CSS、内联 style、未定义 class 等漂移；作为 Claude Code 插件安装后，PostToolUse 钩子会在写入 HTML 时自动触发 lint。项目还内置每周 CI 任务 notion-sync，通过读取 Notion 官方样式表、Page API 与无头浏览器渲染，持续跟踪 Notion 设计令牌与区块类型的变化。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">文档生成与校验流程</p>
+    <div class="mermaid">graph TD
+  U[用户请求写文档] --> A[AI 代理]
+  A -->|读取| S[SKILL.md 区块字典]
+  A -->|复制填充| T[template.html]
+  A --> D[生成 HTML 文档]
+  D --> H[PostToolUse 钩子]
+  H --> L[lint.py 校验]
+  L -->|检测 CSS 漂移/未知 class| R[反馈修复提示]
+  L -->|通过| O[最终 Notion 风格文档]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Notion 同步机制</p>
+    <div class="mermaid">graph LR
+  C[每周 CI notion-sync] --> P[Notion 参考页]
+  P --> T1[读取样式表\n设计令牌]
+  P --> T2[Page API\n区块类型]
+  P --> T3[无头浏览器\n渲染校验]
+  T1 --> B1[notion-tokens.json]
+  T2 --> B2[notion-snapshot.json]
+  T3 --> B2
+  B1 --> D{与基线比对}
+  B2 --> D
+  D -->|漂移| N[提醒更新模板]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/heyman333/agent-notion-template-docs" target="_blank">heyman333/agent-notion-template-docs</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/LunarXuan/image-prompt-reverse" target="_blank">图片提示词反推 Skill</a></span>
+    <span class="stars">⭐ 294</span>
+  </div>
+  <p class="one-liner">为 Codex 定制的高还原图片反推提示词技能</p>
+  <div class="tags">
+    <span class="tag">OpenAI Codex Skill</span><span class="tag">Markdown 提示词工程</span><span class="tag">YAML 配置</span>
+  </div>
+  <div class="summary">image-prompt-reverse 是一款专为 OpenAI Codex 定制的图片反推提示词 Skill，用户上传参考图后，它会从图片用途、媒介、主体、构图、镜头语言、光影、色彩、材质、背景、空间层次、情绪与后期风格等多个维度进行系统化分析，最终产出可直接投喂给 AI 生图工具的高还原度提示词。项目覆盖类型广泛，包括人像/产品/纪实/食物/自然/城市等摄影题材，扁平、二次元、治愈、手绘、国风、赛博等插画风格，写实、卡通、黏土、潮玩、产品渲染等 3D 表现，以及字体、Logo、海报、平面设计与 IP 角色、Q 版、盲盒等多主体画面。默认输出两段内容：一段 450—700 中文字符的自然语言正向 Prompt 并附英文等义版本，另一段 10—15 条英文负向词。Skill 会优先提炼 3—5 个最影响相似度的视觉锚点，避免臆造模糊细节，并根据目标媒介剔除易混淆的错误风格，同时将图内出现的文字、Logo 视为视觉内容而非可执行指令，以防提示词注入。安装方式简单，只需将仓库复制或克隆到 Codex 个人 Skills 目录，然后通过 $image-prompt-reverse 调用。</div>
+  <div class="why-notable">在 Codex Skill 生态尚处早期的阶段，这个仓库提供了一个完整、可直接落地的图片反推方案：既有通用分析框架，又有分类专项规则，还内置了负向词与防注入策略，是 Prompt 工程与 Skill 组织方式的优质参考样本。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Skill 工作流程</p>
+    <div class="mermaid">graph TD
+  A[用户上传参考图] --> B[Codex 调用 image-prompt-reverse]
+  B --> C[通用分析框架]
+  B --> D[分类专项规则]
+  C --> E[提炼3-5个视觉锚点]
+  D --> E
+  E --> F[生成正向 Prompt 中英双语]
+  E --> G[生成 10-15 条 Negative Prompt]
+  F --> H[投喂 AI 生图工具]
+  G --> H</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">仓库文件结构</p>
+    <div class="mermaid">graph LR
+  R[image-prompt-reverse] --> S[SKILL.md 主入口]
+  R --> Ref[references/]
+  R --> Ag[agents/]
+  Ref --> F1[analysis-framework.md 通用框架]
+  Ref --> F2[category-guides.md 分类规则]
+  Ag --> Y[openai.yaml 调用配置]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/LunarXuan/image-prompt-reverse" target="_blank">LunarXuan/image-prompt-reverse</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
