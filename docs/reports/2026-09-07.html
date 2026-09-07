@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-09-07</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-09-07 · 共 4 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/affaan-m" target="_blank">Agent Harness 性能优化系统</a></span>
+    <span class="stars">⭐ 1,485 <span class="stars-today">(+1485 today)</span></span>
+  </div>
+  <p class="one-liner">AI代理性能优化与增强框架</p>
+  <div class="tags">
+    <span class="tag">AI Agent Architecture</span><span class="tag">Plugin System</span><span class="tag">Memory Management</span><span class="tag">Security Framework</span><span class="tag">Performance Optimization</span>
+  </div>
+  <div class="summary">Agent Harness 是一个专为 AI 代码助手设计的性能优化与能力增强系统。该项目针对 Claude Code、Codex、Opencode、Cursor 等主流 AI 编程工具，提供了一套完整的代理性能优化解决方案。系统核心围绕五大模块构建：技能系统（Skills）用于扩展代理的专业能力、本能系统（Instincts）提供智能决策机制、记忆系统（Memory）实现上下文持久化、安全系统（Security）保障代码和数据安全、研究优先开发模式（Research-first Development）确保技术前瞻性。该框架采用模块化架构，允许开发者根据具体场景灵活组合各个子系统。通过标准化的接口和插件机制，Agent Harness 能够无缝集成到现有的 AI 开发工作流中，显著提升代码生成质量、响应速度和任务完成准确率。项目特别关注性能优化，通过智能缓存、并行处理和自适应调优等技术，大幅降低 AI 代理的延迟和资源消耗。适用于需要高性能 AI 辅助编程的企业级开发团队、开源项目维护者以及 AI 工具研发者。</div>
+  <div class="why-notable">该项目填补了 AI 代码助手性能优化领域的空白，通过系统化的模块设计解决了代理能力碎片化、性能不稳定、安全性不足等行业痛点。其跨工具兼容性和研究驱动的开发理念，使其成为 AI 辅助编程工具生态中的重要基础设施，特别适合需要定制化 AI 能力的专业开发场景。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构图</p>
+    <div class="mermaid">graph TB
+    A[AI 代码助手<br/>Claude/Codex/Cursor] --> B[Agent Harness Core]
+    B --> C[Skills Module<br/>技能扩展]
+    B --> D[Instincts Module<br/>智能决策]
+    B --> E[Memory Module<br/>上下文管理]
+    B --> F[Security Module<br/>安全防护]
+    B --> G[Research Module<br/>前沿技术集成]
+    C --> H[代码生成优化]
+    D --> H
+    E --> H
+    F --> H
+    G --> H
+    H --> I[输出：高质量代码]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">性能优化流程</p>
+    <div class="mermaid">sequenceDiagram
+    participant U as 用户请求
+    participant AH as Agent Harness
+    participant M as Memory System
+    participant AI as AI Model
+    participant S as Security
+    
+    U->>AH: 发起编码任务
+    AH->>M: 检索历史上下文
+    M-->>AH: 返回相关记忆
+    AH->>S: 安全检查
+    S-->>AH: 验证通过
+    AH->>AI: 优化后的提示词
+    AI-->>AH: 生成代码
+    AH->>M: 存储新上下文
+    AH->>U: 返回优化结果</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/Tyche-MKR/scientific-agent-skills" target="_blank">科学智能体技能库</a></span>
+    <span class="stars">⭐ 99</span>
+  </div>
+  <p class="one-liner">让AI智能体秒变科研助手</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">Agent Skills 标准</span><span class="tag">Agent Plugins 标准</span><span class="tag">Claude Code / Cursor / Codex</span><span class="tag">Hugging Face (Hugging Science)</span><span class="tag">Modal 云计算</span><span class="tag">GitHub Actions (安全扫描与技能测试)</span>
+  </div>
+  <div class="summary">Scientific Agent Skills 是由 K-Dense 团队维护的科研智能体技能库，包含 163 个开箱即用、经过验证的科学技能，以及 100 多个科学数据库接入能力，被全球超过 19 万名科学家使用。项目遵循开放的 Agent Skills 与 Agent Plugins 标准，可无缝接入 Cursor、Claude Code、Codex、Google Antigravity 等主流 AI 编程与科研助手，把通用大模型转变为能执行多步科研工作流的 AI 科学家。覆盖领域极为广泛，涵盖生物信息与基因组学、化学信息与药物发现、蛋白质组学与质谱、临床研究与药代/药效动力学建模、医疗影像与数字病理、机器学习、材料化学、天体物理、地理空间遥感、实验室自动化、科学写作与文献综述等。仓库以 plugin.json 与 skills/ 目录形式组织，支持整体作为插件加载，并配套 K-Dense BYOK 桌面端 AI 协同科学家，可自带 API Key 调用 40 多个模型，在本地保护数据隐私的同时按需扩展到 Modal 云端算力。</div>
+  <div class="why-notable">被 19 万科学家使用的开源科研智能体技能库，是 Agent Skills 标准在科研领域最具规模的落地实践</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[科研用户] --> C{AI 智能体客户端}
+  C --> C1[Cursor]
+  C --> C2[Claude Code]
+  C --> C3[Codex]
+  C --> C4[Google Antigravity]
+  C --> BYOK[K-Dense BYOK 桌面版]
+  C ->|加载| P[Scientific Agent Skills 插件]
+  P --> S[163 个科研技能]
+  P --> DB[100+ 科学数据库接口]
+  S --> D1[生物信息与基因组]
+  S --> D2[化学与药物发现]
+  S --> D3[临床与影像]
+  S --> D4[机器学习与materials]
+  S --> D5[地理空间与天文]
+  BYOK -->|可选| M[Modal 云端算力]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能调用数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 科学家
+  participant A as AI 智能体
+  participant SK as Skill 定义
+  participant LIB as Python 库/API
+  participant DB as 科学数据库
+  U->A: 提出科研任务
+  A->>SK: 匹配对应 Skill
+  SK->>A: 返回文档与示例
+  A->>LIB: 执行分析脚本
+  A->>DB: 查询数据
+  DB-->>A: 返回结果
+  LIB-->>A: 计算结果
+  A->>U: 输出研究报告与可视化</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/Tyche-MKR/scientific-agent-skills" target="_blank">Tyche-MKR/scientific-agent-skills</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/RankSpotAI/awesome-seo-agent-skills" target="_blank">Awesome SEO Agent Skills</a></span>
+    <span class="stars">⭐ 86</span>
+  </div>
+  <p class="one-liner">AI Agent SEO技能库精选清单</p>
+  <div class="tags">
+    <span class="tag">SKILL.md标准格式</span><span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span class="tag">Cursor</span><span class="tag">OpenClaw</span><span class="tag">Markdown文档</span>
+  </div>
+  <div class="summary">这是一个精心策划的SEO Agent技能库资源清单，专门为Claude Code、Codex、Cursor、OpenClaw等AI代理提供SEO工作能力。该项目由RankSpot维护，收录了涵盖技术审计、关键词研究、内容简报、结构化数据、GEO（生成式引擎优化）和AI可见性等领域的Agent技能包。技能包采用Anthropic于2025年10月发布并在12月开源的SKILL.md标准格式，包含一个包含SKILL.md文件的文件夹，Agent可按需加载。清单详细记录了每个技能包的覆盖范围、支持的Agent平台、开源许可证、GitHub星标数和最后更新时间，所有条目均经人工验证（截至2026年9月）。项目分类清晰，包括官方厂商技能、大型多技能包、技术SEO审计、GEO/AEO优化、内容关键词、框架特定技能等多个类别，是SEO领域Agent技能生态的权威导航。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">SEO Agent技能生态架构</p>
+    <div class="mermaid">graph TD
+    A[AI Agent平台] --> B[Claude Code]
+    A --> C[Codex]
+    A --> D[Cursor]
+    A --> E[OpenClaw]
+    
+    B --> F[加载SKILL.md]
+    C --> F
+    D --> F
+    E --> F
+    
+    F --> G[官方厂商技能]
+    F --> H[大型多技能包]
+    F --> I[技术SEO审计]
+    F --> J[GEO/AEO优化]
+    F --> K[内容关键词]
+    
+    G --> L[SE Ranking API]
+    H --> M[marketingskills<br/>47K星]
+    H --> N[claude-seo<br/>16K星]
+    I --> O[技术审计工具]
+    J --> P[AI可见性分析]
+    K --> Q[内容生成工具]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能包分类与应用流程</p>
+    <div class="mermaid">graph LR
+    A[SEO需求] --> B{选择类别}
+    
+    B --> C[技术SEO]
+    B --> D[内容优化]
+    B --> E[AI可见性]
+    
+    C --> F[seo-audit-skill]
+    C --> G[tech-seo-audit-skill]
+    
+    D --> H[seomachine<br/>长文内容]
+    D --> I[content-briefs]
+    
+    E --> J[GEOHub]
+    E --> K[geo-seo-claude]
+    
+    F --> L[克隆技能包]
+    G --> L
+    H --> L
+    I --> L
+    J --> L
+    K --> L
+    
+    L --> M[Agent加载SKILL.md]
+    M --> N[执行SEO任务]
+    N --> O[技术审计报告]
+    N --> P[内容优化建议]
+    N --> Q[AI引用分析]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/RankSpotAI/awesome-seo-agent-skills" target="_blank">RankSpotAI/awesome-seo-agent-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/coreyhaines31" target="_blank">Claude Code 营销技能包</a></span>
+    <span class="stars">⭐ 329 <span class="stars-today">(+329 today)</span></span>
+  </div>
+  <p class="one-liner">为 AI 代理注入营销专业能力</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">Claude Skills</span><span class="tag">Markdown</span><span class="tag">Prompt Engineering</span>
+  </div>
+  <div class="summary">该仓库是一个面向 Claude Code 和 AI 代理的营销技能集合，旨在将市场营销领域的专业知识以结构化的方式赋能给 AI 助手，使其能够胜任真实业务场景下的营销工作。项目定位聚焦于四大核心方向：转化率优化（CRO）、文案撰写（Copywriting）、搜索引擎优化（SEO）以及数据分析与增长工程（Analytics & Growth Engineering）。通过将这些营销专业技能封装为可复用的 Skills 模块，开发者和营销人员可以让 Claude Code 直接执行诸如落地页优化建议、A/B 测试设计、关键词研究、SEO 审计、销售文案撰写、漏斗分析、增长实验设计等任务。项目本质上是一种「知识插件」形态，通过预设的提示词、工作流和最佳实践，扩展 AI 代理在专业垂直领域的能力边界。该仓库的价值在于降低了非营销背景开发者接入专业营销能力的门槛，同时也为营销团队提供了 AI 辅助工作的标准化模板。整体设计遵循 Claude Skills 的规范，模块化组织便于按需调用与组合使用，适合 SaaS 团队、独立开发者、增长黑客以及需要在产品中集成营销能力的技术团队使用。</div>
+  <div class="why-notable">在 AI 编程助手快速普及的背景下，将专业营销 Know-how 系统化封装为 Skills 是一个前沿方向，既解决了开发者「懂技术不懂营销」的痛点，也让 AI 代理从单纯的代码生成延伸到业务增长层面，具备很强的复合价值和实用落地场景。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能包架构</p>
+    <div class="mermaid">graph TD
+  A[用户/开发者] --> B[Claude Code 代理]
+  B --> C{营销技能包}
+  C --> D[CRO 优化]
+  C --> E[文案撰写]
+  C --> F[SEO 分析]
+  C --> G[数据与增长]
+  D --> H[落地页建议/AB测试]
+  E --> I[销售文案/邮件]
+  F --> J[关键词/审计]
+  G --> K[漏斗分析/实验]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">调用流程</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as用户
+  participant C as Claude Code
+  participant S as Skills 模块
+  participant O as 输出结果
+  U->C: 提出营销需求
+  C->>S: 加载对应技能
+  S->>S: 应用最佳实践与模板
+  S->>C: 返回结构化方案
+  C->>O: 生成营销产出
+  O->>U: 交付可执行建议</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/coreyhaines31" target="_blank">sponsors/coreyhaines31</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
