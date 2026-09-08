@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-09-08</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-09-08 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/bangtutorial/bang-motion" target="_blank">Bang Motion 浏览器动效技能包</a></span>
+    <span class="stars">⭐ 108</span>
+  </div>
+  <p class="one-liner">让 AI 代理生成真正会动的网页动画</p>
+  <div class="tags">
+    <span class="tag">HTML5</span><span class="tag">GSAP</span><span class="tag">WebGL</span><span class="tag">JavaScript</span><span class="tag">Agent Skills (SKILL.md)</span><span class="tag">Claude Code Plugin</span><span class="tag">Node.js</span><span class="tag">Puppeteer</span><span class="tag">ffmpeg</span>
+  </div>
+  <div class="summary">Bang Motion 是一个面向 AI 编码代理（Claude Code、Codex、Gemini CLI、Cursor 等）的 Agent Skill 技能包，用于在浏览器中生成专业级动态图形作品，涵盖产品开场片、宣传片、频道包装、动态字幕、下三分之一字幕以及五种解说风格。最终交付物只有一个 index.html 文件，双击即可播放，自动循环且无播放器边框，无需 npm install。项目的核心痛点在于：让 AI 直接生成视频时，往往得到的是幻灯片式产物（一段一图一标题加淡入淡出），而 Bang Motion 把资深动效设计师的经验编码为代理可在自身代码中校验的结构性规则，例如统一的世界观、真正移动的镜头、贯穿全片的主角、嵌入场景内的数字等。它通过强制的风格简报（基于品牌调色板、显示字体、背景表面、背景运动、转场、动效签名等菜单选项，且要求与上个项目不同）来避免风格重复，并提供五种解说风格起手模板：卡通拼贴、视觉新闻、白底目录、复古手绘、连续动作矢量。技术上基于 GSAP 动画库（CDN 加载）、确定性时间线（帧是时间的纯函数）、可选 Puppeteer + ffmpeg 用于帧导出与 MP4 生成，并支持配音工作流（脚本回填音频后自动重新配时）。</div>
+  <div class="why-notable">它抓住了 AI 生成动画作品最普遍的失败模式——退化为幻灯片，并给出一套可被代理机器校验的反幻灯片规则体系，而不是单纯的 prompt 技巧。这种把设计师隐性知识转化为结构化约束和菜单选择的做法，对 Agent Skills 生态和 AI 生成创意内容的可控性都具有借鉴价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">工作流与交付架构</p>
+    <div class="mermaid">graph TD
+  U[用户请求] --> Q[代理提问: 风格/比例/时长/声音]
+  Q --> B[生成风格简报<br/>调色板/字体/背景/转场]
+  B --> C{结构规则校验}
+  C -->|通过| S[从五种起手模板选一]
+  C -->|不通过| B
+  S --> H[输出 index.html<br/>GSAP + 确定性时间线]
+  S --> V[输出配音脚本]
+  V --> A[用户录制或生成音频]
+  A --> R[脚本重新配时]
+  R --> H
+  H --> E[可选: Puppeteer + ffmpeg 导出 MP4]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">反幻灯片规则体系</p>
+    <div class="mermaid">graph LR
+  T[主题输入] --> SB[风格简报]
+  SB --> P[品牌调色板]
+  SB --> F[显示字体]
+  SB --> BG[背景表面菜单]
+  SB --> M[背景运动菜单]
+  SB --> TR[转场菜单]
+  P & F & BG & M & TR --> CK[代理自检]
+  CK --> R1[主角贯穿全片]
+  CK --> R2[镜头真实移动]
+  CK --> R3[至多两级文字]
+  CK --> R4[视角持续变化]
+  CK --> R5[禁止 section 淡入切段]
+  R1 & R2 & R3 & R4 & R5 --> OUT[交付 index.html]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/bangtutorial/bang-motion" target="_blank">bangtutorial/bang-motion</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/chigwell/Penelopa.ai" target="_blank">Penelopa.ai</a></span>
+    <span class="stars">⭐ 91</span>
+  </div>
+  <p class="one-liner">为 AI 编码代理持续改进的伴侣</p>
+  <div class="tags">
+    <span class="tag">Node.js</span><span class="tag">Electron</span><span class="tag">TypeScript</span><span class="tag">Playwright</span><span class="tag">Shell/PowerShell 安装脚本</span><span class="tag">Web Dashboard</span>
+  </div>
+  <div class="summary">Penelopa.ai 是一款面向 AI 编码代理（Codex 与 Claude Code）的持续改进工具。它通过在本地安装 Hook，捕获真实的编码会话事件，分析开发者与 AI 代理协作过程中反复出现的工作流模式，并将其转化为可复用的技能、检查项、提示词和优化建议，最终在个人 Web 仪表盘或桌面伴侣应用中呈现。项目提供 macOS、Windows、Linux 一键安装脚本，自带私有 Node/npm 运行时，无需依赖 Git、Python、Homebrew 或系统 npm。桌面端基于 Electron 构建，凭据通过 safeStorage/Keychain/DPAPI 保护，Web 端与 CI 使用 Playwright 与 Chromium 进行单元、视觉与端到端测试。安装器还支持诊断、修复、卸载、暂停采集等运维操作，Hook 事件通过后台 worker 队列可靠上传，失败会持久化重试，保障采集链路稳定。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  A[Codex / Claude Code CLI] -->|Stop / SessionEnd Hook| B[本地 Hook 脚本]
+  B --> C[事件队列 ~/.auto-improve]
+  C --> D[后台 Delivery Worker]
+  D -->|HTTPS 上传| E[Penelopa 云服务]
+  E --> F[模式分析与技能生成]
+  F --> G[Web Dashboard]
+  F --> H[Electron 桌面伴侣]
+  H -.安全存储.-> I[Keychain / DPAPI / safeStorage]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装与采集数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant I as 安装脚本
+  participant R as 私有 Node 运行时
+  participant A as AI 代理
+  participant Q as 本地队列
+  participant S as Penelopa 服务
+  U->>I: 执行 curl / PowerShell 安装
+  I->>R: 下载并校验 Node/Electron
+  I->>A: 写入 Hook 配置
+  U->>A: 继续编码会话
+  A->>Q: 触发 Stop/SessionEnd 事件
+  Q->>S: Worker 上传快照
+  S-->>U: 仪表盘展示建议与技能</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/chigwell/Penelopa.ai" target="_blank">chigwell/Penelopa.ai</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/affaan-m" target="_blank">Agent Harness 优化系统</a></span>
+    <span class="stars">⭐ 1,897 <span class="stars-today">(+1897 today)</span></span>
+  </div>
+  <p class="one-liner">AI 编程代理的性能优化框架</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">Opencode</span><span class="tag">Cursor</span><span class="tag">Prompt Engineering</span><span class="tag">Agent Harness</span>
+  </div>
+  <div class="summary">该项目是一个面向 AI 编程代理（Agent）的性能优化系统，目标是为 Claude Code、Codex、Opencode、Cursor 等主流 AI 编码助手提供统一的能力增强层。项目围绕五大核心维度构建：Skills（技能库，封装可复用的开发能力）、Instincts（直觉，让代理在决策时具备类人的判断偏好）、Memory（记忆机制，跨会话保持上下文与经验）、Security（安全防护，规避危险操作与敏感信息泄漏）以及 Research-first Development（研究先行的开发范式，鼓励代理在动手前先调研代码库与文档）。通过这套 harness，开发者可以显著提升 AI 代理在真实项目中的可靠性、准确度与协作效率，避免常见的幻觉与鲁莽操作。项目定位为跨平台的代理增强中间层，不绑定单一 AI 提供商，可作为通用 prompt/工具调用规范复用到不同代理运行时中。由于 README 内容较为精简，项目更像是一份方法论与规范集合，通过标准化的技能定义、记忆存储格式与安全护栏，形成可移植的代理最佳实践。适用于希望将 AI 编码助手引入严肃工程环境的团队，也适合研究代理架构演进方向的开发者参考。</div>
+  <div class="why-notable">在 AI 编码代理迅速普及的当下，如何让这些代理在真实工程中表现稳定、安全、可控是行业共同难题。该项目跳出单一工具视角，抽象出一套可复用于多种代理的性能优化范式，把 Skills、Memory、Security 等常被忽视的关键要素显式化，具有明显的方法论价值。对于想要构建企业级 AI 编码工作流或研究代理架构的团队，这类跨平台的 harness 系统是很值得跟踪的方向。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[开发者] --> H[Agent Harness]
+  H --> S[Skills 技能库]
+  H --> I[Instincts 决策直觉]
+  H --> M[Memory 记忆层]
+  H --> SE[Security 安全护栏]
+  H --> R[Research-first 调研机制]
+  S --> A1[Claude Code]
+  I --> A2[Codex]
+  M --> A3[Opencode]
+  SE --> A4[Cursor]
+  R --> A5[其他代理]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">代理执行流程</p>
+    <div class="mermaid">graph LR
+  T[任务输入] --> RS[Research 调研阶段]
+  RS --> MEM[Memory 加载历史上下文]
+  MEM --> INS[Instincts 判断策略]
+  INS --> SK[Skills 调用具体技能]
+  SK --> SEC[Security 校验操作安全]
+  SEC --> EXE[执行并写回记忆]
+  EXE --> OUT[结果输出]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/RankSpotAI/awesome-seo-agent-skills" target="_blank">Awesome SEO Agent Skills</a></span>
+    <span class="stars">⭐ 88</span>
+  </div>
+  <p class="one-liner">面向 SEO 场景的 Agent Skills 精选清单</p>
+  <div class="tags">
+    <span class="tag">Agent Skills (SKILL.md 开放标准)</span><span class="tag">Claude Code / Claude API</span><span class="tag">OpenAI Codex</span><span class="tag">Cursor</span><span class="tag">OpenClaw</span><span class="tag">Gemini CLI / Antigravity / Windsurf</span><span class="tag">Markdown</span><span class="tag">GitHub Actions</span>
+  </div>
+  <div class="summary">Awesome SEO Agent Skills 是由 AI 搜索可见性平台 RankSpot 维护的精选清单，收录了面向 SEO 工作的 Agent Skills 资源。Agent Skill 是 Anthropic 于 2025 年 10 月发布、12 月开源的一种标准格式：以包含 SKILL.md 的文件夹形式存在，可被 Agent 按需加载，目前已被 Claude Code、Claude.ai、Claude API、OpenAI Codex、Cursor、Gemini CLI、Antigravity、OpenClaw、Windsurf 等主流工具支持。清单按官方厂商技能、大型综合包、技术 SEO 与审计、GEO/AEO 与 AI 可见性、内容与关键词、框架专用、小众新包等类别组织，逐条标注覆盖范围、支持的 Agent、许可协议、Star 数与最近更新时间，并附有安装指南、数据源、安全提示与贡献指引。所有条目均在 2026 年 9 月人工核验，Star 数由每周工作流自动刷新，帮助用户在克隆技能到自有 Agent 前评估其活跃度与授权风险。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">清单分类与技能生态结构</p>
+    <div class="mermaid">graph TD
+  A[Awesome SEO Agent Skills] --> B[官方厂商技能]
+  A --> C[大型综合包]
+  A --> D[技术 SEO 与审计]
+  A --> E[GEO/AEO 与 AI 可见性]
+  A --> F[内容/关键词/发布]
+  A --> G[框架与语言专用]
+  A --> H[小众与新兴包]
+  B --> B1[seranking/seo-skills]
+  C --> C1[coreyhaines31/marketingskills]
+  C --> C2[AgriciDaniel/claude-seo]
+  D --> D1[Bhanunamikaze/Agentic-SEO-Skill]
+  E --> E1[yaojingang/GEOHub]
+  E --> E2[199-biotechnologies/geo-optimizer]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Agent 加载 SKILL 的数据流</p>
+    <div class="mermaid">flowchart LR
+  U[用户/开发者] -->|克隆技能包| R[SEO Skill 仓库]
+  R -->|包含 SKILL.md| S[技能文件夹]
+  S -->|按需加载| A{Agent 运行时}
+  A --> A1[Claude Code]
+  A --> A2[Codex]
+  A --> A3[Cursor]
+  A --> A4[OpenClaw]
+  A -->|调用| D[SEO 数据源/MCP]
+  D --> O[审计报告/内容简报/GEO 分析]
+  O --> U</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/RankSpotAI/awesome-seo-agent-skills" target="_blank">RankSpotAI/awesome-seo-agent-skills</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/coreyhaines31" target="_blank">Claude Code 营销技能包</a></span>
+    <span class="stars">⭐ 580 <span class="stars-today">(+580 today)</span></span>
+  </div>
+  <p class="one-liner">为 AI 智能体注入营销专业能力</p>
+  <div class="tags">
+    <span class="tag">Claude Code Skills</span><span class="tag">Markdown</span><span class="tag">Prompt Engineering</span>
+  </div>
+  <div class="summary">该仓库是一个面向 Claude Code 及各类 AI 智能体的营销技能扩展包，旨在将市场营销领域的专业知识以结构化技能（Skills）的形式注入到 AI 编程助手中，让开发者在使用 Claude Code 时能够获得转化率优化（CRO）、文案撰写（Copywriting）、搜索引擎优化（SEO）、数据分析（Analytics）以及增长工程（Growth Engineering）等多维度的营销辅助能力。项目定位于填补 AI 编程助手在业务侧尤其是营销侧的能力空白，让工程师、独立开发者、初创团队在构建产品的同时也能借助 AI 完成落地页优化、A/B 测试设计、关键词研究、转化漏斗分析、增长实验代码化等任务。技能包遵循 Claude Code 的 Skills 机制，可通过声明式配置在合适场景下自动触发，覆盖从内容生产到数据驱动优化的完整营销闭环。整体理念是把资深营销从业者的方法论沉淀为可复用的智能体指令模板，降低跨职能协作门槛，让技术团队无需外聘增长顾问也能执行标准化的营销工作流。该项目属于 Claude Code 生态的社区扩展，处于早期阶段，README 内容较为精简，主要通过技能描述本身传递价值。</div>
+  <div class="why-notable">在 AI 编程助手普遍聚焦纯技术任务的当下，该项目将营销专业能力系统性地引入到 Claude Code 生态，代表了 AI Agent 从「写代码」向「懂业务」延伸的趋势，对独立开发者和小团队实现「工程+增长」一体化尤其有价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能调用架构</p>
+    <div class="mermaid">graph TD
+  A[开发者] -->|发起请求| B[Claude Code]
+  B --> C{技能路由}
+  C --> D[CRO 技能]
+  C --> E[文案技能]
+  C --> F[SEO 技能]
+  C --> G[分析技能]
+  C --> H[增长工程技能]
+  D --> I[营销产出]
+  E --> I
+  F --> I
+  G --> I
+  H --> I
+  I --> A</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">营销工作流数据流</p>
+    <div class="mermaid">graph LR
+  A[产品需求] --> B[SEO 关键词研究]
+  B --> C[文案生成]
+  C --> D[落地页构建]
+  D --> E[CRO 优化实验]
+  E --> F[分析埋点]
+  F --> G[增长工程迭代]
+  G --> E</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/coreyhaines31" target="_blank">sponsors/coreyhaines31</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
