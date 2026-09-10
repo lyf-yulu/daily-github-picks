@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-09-10</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-09-10 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/bangtutorial/bang-motion" target="_blank">Bang Motion</a></span>
+    <span class="stars">⭐ 117</span>
+  </div>
+  <p class="one-liner">浏览器动效图形的AI Agent技能包</p>
+  <div class="tags">
+    <span class="tag">Agent Skills 规范</span><span class="tag">Claude Code Plugin</span><span class="tag">HTML/CSS/JavaScript</span><span class="tag">GSAP</span><span class="tag">WebGL</span><span class="tag">Node.js</span><span class="tag">Puppeteer</span><span class="tag">ffmpeg</span>
+  </div>
+  <div class="summary">Bang Motion 是一个面向 AI 编程代理（Claude Code、Codex、Gemini CLI、Cursor 等）的 Agent Skill，用于在浏览器中生成真正意义上的动效图形，而非常见的“幻灯片式”视频。项目遵循开放的 Agent Skills 规范，通过 SKILL.md、references、assets、scripts 等目录组织指令、模板和脚本，并同时以 Claude Code 插件形式发布，可通过 /plugin 命令安装与更新。产出物是单个 index.html，双击即可自动播放、循环，无播放器 UI，观看侧仅需浏览器和 CDN 加载的 GSAP 与字体，不需要 npm install。项目覆盖开场片头、产品促销、bumper、频道 ID、动态字幕、下三分之一字幕以及五种解说风格（卡通拼贴、视觉新闻、白底目录、复古素描、连续动作矢量），并强制要求先写“风格简报”再写代码：调色板取自品牌、字体、背景表面、背景运动、转场、动态签名等都必须从菜单中选择，且不得与历史项目重复，从结构上防止代理套用廉价默认样式。技术上采用确定性时间轴，每一帧都是时间的纯函数，因此可精确刷动与逐帧导出；配合 ?debug=1 刷动条与 ?clean=1 导出模式；语音同步流程支持 ffmpeg 或纯浏览器停顿检测脚本；可选用 Puppeteer + ffmpeg 完成截帧与 MP4 导出。代理在交付前会自检反幻灯片规则：场景切换必须来自世界或相机运动、至多两级文字、每秒都有动作、至少两种转场且含真实景深过渡。</div>
+  <div class="why-notable">多数 AI 生成的“视频”本质是滑动的幻灯片，Bang Motion 用一份 SKILL.md 把动效设计的行业直觉（持续世界、相机运动、菜单化选型、反重复约束）转成代理可自检的结构规则，配合确定性时间轴和单文件 HTML 交付，展示了 Agent Skills 作为“可执行设计规范”的一种成熟形态，对希望把领域经验固化到 AI 工作流的团队有直接借鉴价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">工作流：从需求到可播放 HTML</p>
+    <div class="mermaid">graph TD
+  A[用户需求<br/>开场/促销/解说] --> B[Agent 读取 SKILL.md]
+  B --> C{询问一个问题<br/>风格/比例/时长/声音}
+  C --> D[生成风格简报<br/>调色板·字体·背景·转场·动态签名]
+  D --> E[从 assets 选择对应 Starter]
+  E --> F[编写确定性时间轴代码]
+  F --> G[自检反幻灯片规则]
+  G -->|不通过| F
+  G -->|通过| H[输出 index.html + 配音脚本]
+  H --> I[用户录制/生成 VO]
+  I --> J[停顿检测<br/>ffmpeg 或浏览器脚本]
+  J --> K[时间轴按语音重新对齐]
+  K --> L[可选 Puppeteer+ffmpeg<br/>导出 MP4]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能包目录与分发结构</p>
+    <div class="mermaid">graph LR
+  R[bang-motion 仓库] --> S[SKILL.md<br/>frontmatter+指令]
+  R --> RF[references/<br/>explainer.md 等规范]
+  R --> AS[assets/<br/>五种风格 Starter]
+  R --> SC[scripts/<br/>snap/export-frames/vo-pauses]
+  R --> P[Plugin 清单]
+  P --> CC[Claude Code<br/>/plugin install]
+  S --> M1[手动部署]
+  M1 --> CD[Codex CLI<br/>AGENTS.md 引用]
+  M1 --> GM[Gemini CLI<br/>GEMINI.md]
+  M1 --> CU[Cursor<br/>.cursor/rules]
+  M1 --> PC[纯聊天<br/>粘贴为 System Prompt]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/bangtutorial/bang-motion" target="_blank">bangtutorial/bang-motion</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/chigwell/Penelopa.ai" target="_blank">Penelopa.ai</a></span>
+    <span class="stars">⭐ 113</span>
+  </div>
+  <p class="one-liner">AI编程代理的持续改进平台</p>
+  <div class="tags">
+    <span class="tag">Node.js 24.x</span><span class="tag">Electron</span><span class="tag">TypeScript</span><span class="tag">Playwright</span><span class="tag">Shell / PowerShell 引导脚本</span><span class="tag">Codex Hooks / Claude Code Hooks</span>
+  </div>
+  <div class="summary">Penelopa.ai 是一款面向 AI 编程代理（Codex 与 Claude Code）的持续改进工具，定位于通过分析真实编码会话来提炼可复用的工作流资产。项目通过在本地为 Codex 和 Claude Code 安装 Hook（Stop 和 SessionEnd 事件钩子）来捕获会话数据，将事件上传到服务端进行模式分析，识别用户反复出现的工作流模式，并转化为可复用的 skills、checks、prompts 和推荐建议，最终在个人 Web 仪表盘或桌面伴侣应用中呈现。安装脚本会下载经过校验的私有 Node/npm 运行时，无需依赖系统 Git、Python、Homebrew、Xcode 等前置环境，也不修改全局 PATH，安装过程较为独立与安全。桌面端基于 Electron 构建，支持 macOS 13.5+（Apple Silicon/Intel）与 Windows 10 22H2+/11 x64，Linux 仅支持 Hook 模式。凭证通过 Electron safeStorage、macOS Keychain 或 Windows DPAPI 加密存储，不暴露给 Web 渲染进程。项目还提供 Sessions 浏览器用于回溯每条消息与工具输入输出，追踪流程步骤到证据来源。此外内置诊断、修复、卸载、暂停采集等运维命令，支持离线执行，并提供确定性发布产物（ZIP、校验清单、Shell/PowerShell 引导脚本）以保证发布可追溯。</div>
+  <div class="why-notable">在 AI 编程助手快速普及的当下，Penelopa 提供了一种少见的『元层』视角——不是又一个 Copilot 竞品，而是分析你与 Codex/Claude Code 的真实交互，反向沉淀个人化的技能与检查项，形成正反馈循环。这种基于会话遥测的持续改进思路，对研究 AI 代理工程化与个性化优化的开发者具有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与数据流</p>
+    <div class="mermaid">graph TD
+  A[Codex / Claude Code CLI] -->|Stop & SessionEnd Hooks| B[本地 Hook 采集器]
+  B --> C[本地事件队列 ~/.auto-improve]
+  C -->|上传| D[Penelopa 服务端]
+  D --> E[会话分析与模式识别]
+  E --> F[生成 Skills/Checks/Prompts/推荐]
+  F --> G[Web 仪表盘]
+  F --> H[Electron 桌面客户端]
+  H -.安全凭证.-> I[safeStorage / Keychain / DPAPI]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">安装与运行流程</p>
+    <div class="mermaid">flowchart LR
+  U[用户执行安装脚本] --> R[下载校验私有 Node 运行时]
+  R --> T[创建账户 Token]
+  T --> H[写入 Codex/Claude Hook 配置]
+  H --> D{是否构建桌面端}
+  D -->|是| E[本地构建 Electron 应用]
+  D -->|no-desktop| Q[仅 Hook 模式]
+  E --> S[登录后台驻留托盘]
+  Q --> S
+  S --> L[持续捕获会话事件并投递]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/chigwell/Penelopa.ai" target="_blank">chigwell/Penelopa.ai</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/affaan-m" target="_blank">Agent Harness 性能优化系统</a></span>
+    <span class="stars">⭐ 1,133 <span class="stars-today">(+1133 today)</span></span>
+  </div>
+  <p class="one-liner">面向多种 AI 编码代理的能力增强框架</p>
+  <div class="tags">
+    <span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">Opencode</span><span class="tag">Cursor</span><span class="tag">Prompt / Agent Harness 规范</span><span class="tag">Markdown 配置</span>
+  </div>
+  <div class="summary">该项目是一个面向 AI 编码代理（Agent Harness）的性能优化系统，旨在为 Claude Code、Codex、Opencode、Cursor 等主流代码代理工具提供统一的能力增强层。其核心理念可概括为五大支柱：Skills（技能）、Instincts（直觉）、Memory（记忆）、Security（安全）以及 Research-first Development（研究先行的开发范式）。通过为代理注入结构化的技能模块，让 AI 在面对复杂任务时能够复用最佳实践；通过直觉层帮助代理在决策路径上做出更符合工程经验的选择；通过记忆机制让代理具备跨会话的上下文延续能力，减少重复解释成本；通过安全约束防止代理执行破坏性或不合规操作；通过研究先行的开发流程，要求代理在动手编码前进行充分的信息调研与方案论证。项目定位为一个跨代理的通用优化层，而非绑定某一个具体 IDE 或模型，使团队可以在不同代理工具之间迁移统一的工作方式和治理规范。由于 README 内容有限，具体实现细节（如配置文件格式、插件机制、与各代理的集成方式）需查看仓库源码进一步确认。总体而言，该项目试图把散落在 prompt 工程、上下文管理、安全审计等环节的经验沉淀为一套可复用的规范体系。</div>
+  <div class="why-notable">在 AI 编码代理生态快速分化的当下，该项目尝试建立一个跨代理的通用能力标准，把 prompt 技巧、上下文记忆和安全治理沉淀为可迁移的工程实践，对希望在多套代理工具间保持一致工作方式的团队具有参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  User[开发者] --> Harness[Agent Harness 优化层]
+  Harness --> Skills[Skills 技能库]
+  Harness --> Instincts[Instincts 决策直觉]
+  Harness --> Memory[Memory 记忆系统]
+  Harness --> Security[Security 安全约束]
+  Harness --> Research[Research-first 调研流程]
+  Skills --> Agents[AI 编码代理]
+  Instincts --> Agents
+  Memory --> Agents
+  Security --> Agents
+  Research --> Agents
+  Agents --> Claude[Claude Code]
+  Agents --> Codex[Codex]
+  Agents --> Opencode[Opencode]
+  Agents --> Cursor[Cursor]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">任务执行数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 开发者
+  participant H as Harness
+  participant R as Research 模块
+  participant M as Memory
+  participant S as Security
+  participant A as AI 代理
+  U->>H: 提交任务
+  H->>M: 加载历史上下文
+  H->>R: 触发前置调研
+  R-->>H: 返回调研结论
+  H->>S: 安全策略校验
+  S-->>H: 通过/拦截
+  H->>A: 注入 Skills 与 Instincts
+  A-->>H: 产出结果
+  H->>M: 写回记忆
+  H-->>U: 返回最终输出</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/daishuge/pcb-skill" target="_blank">PCB Skill</a></span>
+    <span class="stars">⭐ 96</span>
+  </div>
+  <p class="one-liner">从想法到可下单PCB的Agent技能包</p>
+  <div class="tags">
+    <span class="tag">Claude Code / Codex Agent Skill</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">EasyEDA Pro</span><span class="tag">Specctra DSN/SES 自动布线</span><span class="tag">Python 脚本（Gerber 解析、几何校验）</span><span class="tag">浏览器 Agent 扩展</span><span class="tag">macOS / Windows 审批看门狗</span>
+  </div>
+  <div class="summary">PCB Skill 是一个面向 Claude Code 与 Codex 桌面端的 Agent 技能包，用于把一个硬件想法完整推进到「可下单、可焊接、可点亮」的 PCB 成品。它通过 MCP 桥驱动 EasyEDA Pro 完成原理图、选型、布局、布线、验证等环节，并在浏览器中借助已登录会话完成打样与元件购物车的组装，最终停在预付款页面交给人工确认，Agent 本身不下单、不付款。项目围绕「性价比、好装配、免费打样」三大原则设计，覆盖概念、原理图与采购、布局与布线、制造与购买四个阶段，每个阶段都设有可复核的门禁（gate）。仓库内含 SKILL.md 主文件、按需加载的参考文档、以及独立于 EDA 的验证脚本，包括 Gerber 解析、间距扫描、钻孔清单、网络表断言与 3D 干涉检查，另附布局脚本（真实焊盘 courtyard、过孔通道）和 Specctra DSN/SES 自动布线链路等。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">四阶段工作流与门禁</p>
+    <div class="mermaid">graph LR
+  A[1 概念\n软硬约束] -->|关键问题已问清| B[2 原理图+采购\n网络表+BOM+购物车]
+  B -->|网表断言通过\n价格VERIFIED| C[3 布局+布线\n放置/走线/铺铜]
+  C -->|DRC通过\n对抗复核通过| D[4 制造+购买\nGerber+预付款页]
+  D -->|独立验证包| E[人工点击下单]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统组件与数据流</p>
+    <div class="mermaid">graph TD
+  User[开发者] --> Agent[Claude Code / Codex\nPCB Skill]
+  Agent -->|MCP| EDA[EasyEDA Pro]
+  Agent -->|调用| Scripts[脚本集]
+  Scripts --> Place[placement\ncourtyard/via lanes]
+  Scripts --> Route[routing\nDSN/SES + 看门狗]
+  Scripts --> Verify[verify\nGerber/间距/钻孔/网表/3D]
+  Scripts --> Notify[notify\n进度中继]
+  Agent -->|浏览器扩展| Browser[已登录浏览器]
+  Browser --> Fab[PCB 打样厂]
+  Browser --> Parts[元件供应商]
+  Fab --> Pay[预付款页 - 人工确认]
+  Parts --> Pay</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/daishuge/pcb-skill" target="_blank">daishuge/pcb-skill</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/iamzulx/crypto-rag" target="_blank">Crypto RAG - 印尼语加密货币智能助手</a></span>
+    <span class="stars">⭐ 97</span>
+  </div>
+  <p class="one-liner">实时市场数据+RAG知识库的加密货币问答系统</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">FAISS (向量检索)</span><span class="tag">FastEmbed (嵌入模型)</span><span class="tag">WebSocket (实时数据流)</span><span class="tag">BM25 (关键词检索)</span><span class="tag">Cross-encoder (重排序)</span><span class="tag">OpenAI-compatible LLM</span><span class="tag">Binance/OKX/Bybit API</span><span class="tag">DefiLlama/Mempool.space</span>
+  </div>
+  <div class="summary">这是一个面向印尼语用户的加密货币智能助手，核心创新在于将静态知识与实时市场数据严格分离：RAG向量库仅存储267个主题的概念性知识（区块链技术、交易策略、协议原理等），所有数值型数据（价格、资金费率、TVL等）通过tool-calling实时获取，彻底避免了价格幻觉问题。系统整合6大交易所现货价格对比、Binance期货衍生品数据、DefiLlama链上指标、比特币/以太坊网络状态等多维度实时数据源，支持WebSocket毫秒级价格流、条件预警、投资组合跟踪等高级功能。检索采用BM25+FAISS密集向量的混合策略，配合交叉编码器重排序和互惠排名融合算法提升精度。可选接入LLM（支持OpenAI兼容端点）进行自然语言合成，答案带引用溯源和时间戳，无LLM时回退到抽取式问答，确保系统在任何环境下可用。</div>
+  <div class="why-notable">创新性地解决了金融RAG系统的核心难题——数据时效性与知识一致性的平衡，通过架构级分离实现无幻觉的实时问答，并提供完整的印尼语加密货币教育知识库</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">查询路由与数据流架构</p>
+    <div class="mermaid">graph TD
+    A[用户查询] --> B{Router意图检测}
+    B -->|概念/教育| C[FAISS向量库<br/>267主题知识]
+    B -->|实时价格| D[6大交易所API<br/>+WebSocket流]
+    B -->|衍生品| E[Binance Futures<br/>资金费率/OI]
+    B -->|链上数据| F[DefiLlama TVL<br/>Mempool.space费用]
+    B -->|市场概览| G[Fear&Greed指数<br/>市值排行]
+    B -->|币种筛选| H[静态币种RAG<br/>BM25+FAISS+RRF]
+    C --> I{LLM可用?}
+    D --> I
+    E --> I
+    F --> I
+    G --> I
+    H --> I
+    I -->|是| J[LLM综合<br/>引用+时间戳]
+    I -->|否| K[抽取式答案<br/>直接返回]
+    J --> L[最终答案]
+    K --> L</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">混合检索与重排序流程</p>
+    <div class="mermaid">graph LR
+    A[查询文本] --> B[BM25关键词检索]
+    A --> C[FastEmbed向量化]
+    C --> D[FAISS密集检索]
+    B --> E[RRF融合<br/>互惠排名]
+    D --> E
+    E --> F{启用重排序?}
+    F -->|是| G[Cross-encoder<br/>语义重排序]
+    F -->|否| H[Top-K结果]
+    G --> H
+    H --> I[上下文+元数据]
+    I --> J[LLM/抽取式生成]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/iamzulx/crypto-rag" target="_blank">iamzulx/crypto-rag</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
