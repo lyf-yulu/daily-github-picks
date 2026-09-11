@@ -1,0 +1,39 @@
+{
+  "wecom_bot_webhook": "",
+  "summarize_articles": true,
+  "skip_external_articles_without_openai": true,
+  "llm_provider": "kimi",
+  "llm_base_url": "https://api.moonshot.cn/v1",
+  "llm_api_key": "",
+  "llm_api_key_env": "MOONSHOT_API_KEY",
+  "llm_model": "kimi-k2.6",
+  "llm_thinking": "disabled",
+  "llm_max_completion_tokens": 800,
+  "llm_timeout_seconds": 60,
+  "request_timeout_seconds": 12,
+  "article_char_limit": 5000,
+  "fallback_summary_chars": 900,
+  "message_char_limit": 3500,
+  "feeds": [
+    {
+      "name": "OpenAI Blog",
+      "url": "https://openai.com/news/rss.xml"
+    },
+    {
+      "name": "Google AI Blog",
+      "url": "https://blog.google/technology/ai/rss/"
+    },
+    {
+      "name": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/feed/"
+    },
+    {
+      "name": "Hacker News",
+      "url": "https://hnrss.org/frontpage"
+    },
+    {
+      "name": "arXiv cs.AI",
+      "url": "https://export.arxiv.org/rss/cs.AI"
+    }
+  ]
+}

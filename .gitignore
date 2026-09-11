@@ -1,0 +1,17 @@
+# config files with secrets
+config.json
+config_github.json
+
+# database
+sent.sqlite3
+
+# logs
+*.log
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/

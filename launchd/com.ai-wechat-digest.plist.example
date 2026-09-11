@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.ai-wechat-digest</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>/path/to/ai-wechat-digest/app.py</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/path/to/ai-wechat-digest</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>WECOM_BOT_WEBHOOK</key>
+    <string>PASTE_YOUR_WECOM_BOT_WEBHOOK_HERE</string>
+    <key>MOONSHOT_API_KEY</key>
+    <string>PASTE_YOUR_MOONSHOT_API_KEY_HERE</string>
+  </dict>
+
+  <key>StartInterval</key>
+  <integer>3600</integer>
+
+  <key>StandardOutPath</key>
+  <string>/path/to/ai-wechat-digest/digest.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/path/to/ai-wechat-digest/digest.err.log</string>
+</dict>
+</plist>

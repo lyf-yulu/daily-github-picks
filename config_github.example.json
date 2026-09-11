@@ -1,0 +1,16 @@
+{
+  "github_token": "",
+  "topics": {
+    "ai_llm": ["llm", "agent", "rag", "prompt", "fine-tune", "inference", "transformer"],
+    "dev_tools": ["cli", "plugin", "skill", "neovim", "vscode", "devtools", "copilot", "claude code", "codex"]
+  },
+  "top_k": 5,
+  "llm": {
+    "provider": "openai_compatible",
+    "model": "claude-opus-4-7",
+    "base_url": "https://ai.t8star.org/v1",
+    "api_key": ""
+  },
+  "feishu_webhook": "",
+  "github_pages_base_url": ""
+}
