@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 每日精选 | 2026-09-11</title>
+<style>
+:root { --bg: #f8f9fa; --card: #fff; --text: #1a1a2e; --accent: #667eea; --muted: #6c757d; --border: #e9ecef; --highlight-border: #f59e0b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1117; --card: #161b22; --text: #c9d1d9; --accent: #79c0ff; --muted: #8b949e; --border: #30363d; --highlight-border: #f59e0b; } }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.card.highlight { border-color: var(--highlight-border); border-width: 2px; position: relative; }
+.card.highlight::after { content: "值得关注"; position: absolute; top: -10px; right: 16px; background: var(--highlight-border); color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-title a { color: var(--accent); text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.stars { color: var(--muted); font-size: 0.9rem; }
+.stars-today { color: var(--highlight-border); font-weight: 500; }
+.one-liner { color: var(--muted); font-style: italic; margin-bottom: 0.75rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+.tag { background: var(--border); color: var(--text); padding: 2px 10px; border-radius: 12px; font-size: 0.8rem; }
+.summary { margin-bottom: 1rem; }
+.why-notable { background: rgba(245,158,11,0.1); border-left: 3px solid var(--highlight-border); padding: 0.5rem 1rem; margin-bottom: 1rem; border-radius: 4px; }
+.diagram-section { margin-top: 1rem; }
+.diagram-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+.empty { text-align: center; padding: 3rem; color: var(--muted); }
+footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.85rem; }
+@media (max-width: 600px) { body { padding: 1rem 0.5rem; } .card { padding: 1rem; } }
+</style>
+</head>
+<body>
+<h1>GitHub 每日精选</h1>
+<p class="subtitle">2026-09-11 · 共 5 个项目</p>
+
+
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/viettranx/3dviz-pro-max" target="_blank">3Dviz Pro Max</a></span>
+    <span class="stars">⭐ 135</span>
+  </div>
+  <p class="one-liner">把创意变成可探索的 3D 场景的 Agent 技能包</p>
+  <div class="tags">
+    <span class="tag">Three.js 0.180</span><span class="tag">Blender（烘焙管线）</span><span class="tag">Claude Code Plugin</span><span class="tag">OpenAI Codex Skill</span><span class="tag">Headless Chromium（GPU 截帧）</span><span class="tag">JSON 目录 / SHA-256 校验</span><span class="tag">Markdown 证据档案</span>
+  </div>
+  <div class="summary">3Dviz Pro Max 是一款面向创意型 3D 可视化的独立 Agent 技能包，可作为 Claude Code 插件或 Codex 技能目录直接接入，帮助 AI 助手将一句自然语言描述转化为可以真正打开探索的 Three.js/Blender 场景。项目围绕一个十步工作流展开：塑造世界、建立规则、加入交互、并对渲染帧进行截图回读，让智能体基于实际画面而非文字描述来迭代，避免出现「用动画糊弄成仿真」的问题。仓库当前收录 223 条食谱（recipes）、440 条知识记录（其中 69 条带作者标注的数值默认值）、22 个经过 SHA-256 校验四帧真图的 Kit 蓝图、37 个风格档案和 37 个可运行示例研究，覆盖环境、角色与运动、产品装配、建筑室内、物流运营、解剖学、生理生物力学、分子材料、立体几何、线性代数、微积分与场、概率统计等 24 个方向，共计 451 个来源、3599 条证据事件构成公开证据档案。技术层面基于 Three.js 0.180 与 Blender 烘焙管线，配套 headless Chromium 于 1920×1080 GPU 环境下产出 21 张展示帧。落地页会在构建期从 skills/、docs/、evals/、evidence/ 目录重新计算所有数字，从机制上杜绝文档与真实数据漂移。事实类解释必须附来源，装饰性动画则明确区分，不冒充仿真。</div>
+  <div class="why-notable">在「AI 生成 3D」赛道上，多数方案止步于 prompt 到几何体，本项目把创意 3D 的整个生产流程沉淀成可检索的技能包：既有可运行的 Three.js/Blender 模板，又用截帧回读把智能体从「口述场景」拉回「看图迭代」，同时用 SHA-256、证据事件、构建期重算等工程手段保证目录数字与实物一致。对希望把 Claude Code / Codex 用于严肃视觉化工作、而非玩具 Demo 的开发者，具备很强的参考价值。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">技能包整体架构</p>
+    <div class="mermaid">graph TD
+  U[用户一句话需求] --> A[Agent 宿主<br/>Claude Code / Codex]
+  A --> S[3dviz-pro-max SKILL]
+  S --> W[十步工作流]
+  S --> C[Catalog 目录]
+  C --> R[223 Recipes]
+  C --> K[440 Knowledge]
+  C --> B[22 Kit Blueprints]
+  C --> P[37 Style Profiles]
+  W --> E[Three.js 0.180 场景]
+  W --> BL[Blender 烘焙资产]
+  E --> CAP[Headless Chromium<br/>GPU 截帧 1920x1080]
+  CAP --> A
+  E --> EV[Evidence 档案<br/>451 sources / 3599 events]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">从创意到可探索场景的数据流</p>
+    <div class="mermaid">flowchart LR
+  Idea[创意句子] --> Pick[选方向<br/>24 directions]
+  Pick --> Recipe[匹配 Recipes]
+  Recipe --> Know[加载 Knowledge<br/>数值默认值]
+  Know --> Build[生成 Three.js / Blender 场景]
+  Build --> Render[渲染帧]
+  Render --> Inspect[Agent 回读截图]
+  Inspect -->|不符合预期| Recipe
+  Inspect -->|通过| Ship[可探索场景 + 证据链]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/viettranx/3dviz-pro-max" target="_blank">viettranx/3dviz-pro-max</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/bangtutorial/bang-motion" target="_blank">Bang Motion 动态图形技能包</a></span>
+    <span class="stars">⭐ 131</span>
+  </div>
+  <p class="one-liner">让 AI 生成真正会动的浏览器动画</p>
+  <div class="tags">
+    <span class="tag">Agent Skills 规范</span><span class="tag">HTML/CSS/JavaScript</span><span class="tag">GSAP 动画库</span><span class="tag">WebGL</span><span class="tag">Puppeteer（可选，帧截图/导出）</span><span class="tag">FFmpeg（可选，MP4 导出）</span><span class="tag">Node.js</span>
+  </div>
+  <div class="summary">Bang Motion 是一个面向 AI 编程代理（Claude Code、Codex、Gemini CLI、Cursor 等）的 Agent Skill 插件，专门用于在浏览器中生成高质量的动态图形作品，包括产品开场、宣传片、频道 ID、动感字体、下三分之一字幕以及五种解说风格的短片。项目最终交付物是一个可以双击直接播放的 index.html 文件，自带自动播放和循环，无需 npm install 即可观看。它的核心理念是解决 AI 生成动画时常见的『幻灯片化』问题——把一段视频拆成一节一节淡入淡出的段落，而是通过一套结构化规则强制代理生成连续世界、持久主体和真实运镜的动画。项目提供风格简报机制，强制从菜单中挑选调色板、显示字体、背景表面、背景运动、转场和运动签名，并禁止跨项目重复使用同一选项，从根源上避免 AI 抄用默认套路。它内置五种解说模板（卡通拼贴、视觉新闻、白色目录、复古手绘、连续动作矢量），提供确定性时间线（每一帧都是时间的纯函数），支持配音脚本回填与自动重定时，还能通过 puppeteer 与 ffmpeg 完成逐帧导出为 MP4。技术上基于 GSAP 动画库、原生 HTML/CSS/JS 与可选的 WebGL，通过 CDN 加载依赖，实现零安装即可运行。</div>
+  <div class="why-notable">这是一个非常独特的 Prompt 工程范例：它没有训练新模型，而是通过一套精心设计的『风格简报 + 菜单选择 + 结构自检』规则，把资深动态设计师的隐性经验形式化为 AI 代理能够验证的检查项。相比多数只教 AI『写代码』的技能包，Bang Motion 教 AI『避免审美惰性』，直击当前 LLM 生成视觉内容时最难解决的『平庸默认值』问题。同时它跨代理（Claude Code、Codex、Gemini、Cursor）通用，交付物是零依赖的单个 HTML，工程完成度和产品思路都值得动画创作者与 AI 工具作者研究。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">工作流数据流</p>
+    <div class="mermaid">graph TD
+  A[用户需求<br/>开场/解说/宣传片] --> B[代理提问:<br/>风格/比例/时长/音频]
+  B --> C[生成风格简报<br/>调色板+字体+运动签名]
+  C --> D{选择模板}
+  D -->|通用| E[共享运镜Rig]
+  D -->|解说| F[五种解说starter]
+  E --> G[结构自检<br/>反幻灯片规则]
+  F --> G
+  G --> H[输出 index.html]
+  H --> I[浏览器双击播放]
+  H --> J[配音脚本]
+  J --> K[用户录音回传]
+  K --> L[时间线自动重定时]
+  L --> H
+  H --> M[可选: puppeteer+ffmpeg<br/>导出 MP4]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">反幻灯片规则体系</p>
+    <div class="mermaid">graph LR
+  A[风格简报] --> B[菜单选择]
+  B --> B1[8 风格方向]
+  B --> B2[11 背景运动]
+  B --> B3[6 背景表面]
+  B --> B4[9 转场类型]
+  B --> B5[6 高亮形状]
+  B --> C[跨项目去重规则]
+  C --> D[代码级结构检查]
+  D --> D1[场景靠运镜切换<br/>禁止 section 淡入淡出]
+  D --> D2[主体/世界持久存在]
+  D --> D3[至多两级文字层]
+  D --> D4[至少两种转场<br/>含一种真实深度]
+  D --> D5[背景分层非扁平]
+  D1 & D2 & D3 & D4 & D5 --> E[通过校验才可交付]</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/bangtutorial/bang-motion" target="_blank">bangtutorial/bang-motion</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/sponsors/diegosouzapw" target="_blank">免费 AI 网关聚合器</a></span>
+    <span class="stars">⭐ 626 <span class="stars-today">(+626 today)</span></span>
+  </div>
+  <p class="one-liner">统一入口聚合 352 家 AI 服务商</p>
+  <div class="tags">
+    <span class="tag">AI Gateway</span><span class="tag">OpenAI 兼容 API</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">A2A (Agent-to-Agent)</span><span class="tag">PWA</span><span class="tag">桌面客户端</span><span class="tag">RTK + Caveman 压缩算法</span>
+  </div>
+  <div class="summary">该仓库定位为一个基于 MIT 协议开源的免费 AI 网关（AI Gateway），核心理念是 Never stop coding，即为开发者提供永不中断的编码助手能力。项目通过单一 API 端点聚合了 352 家模型服务商，其中包含 150 多个免费提供方，覆盖 Kimi、Claude、GPT、Gemini、GLM、DeepSeek、MiniMax 等超过 1200 款主流大模型。它可以无缝对接主流 AI 编码工具，包括 Claude Code、Codex、Cursor、OpenCode、Cline 和 GitHub Copilot，让用户在不修改工作流的情况下自由切换后端模型。技术亮点上，项目实现了配额感知的自动回退（Quota-aware auto-fallback），当某个提供商额度用尽或不可用时会自动切换到备用通道；同时通过 RTK 加 Caveman 压缩算法可节省 15% 至 95% 的 token 消耗，显著降低使用成本。项目还支持 MCP（Model Context Protocol）与 A2A（Agent-to-Agent）协议，并提供桌面客户端和 PWA 渐进式 Web 应用两种形态。该项目由 550 多位社区贡献者共同构建，展现出较强的开源协作规模。目前该链接指向 GitHub Sponsors 页面，是作者 diegosouzapw 的赞助入口，用于支撑上述 AI 网关项目的持续开发与免费提供。</div>
+  <div class="why-notable">在 AI 编码工具生态高速扩张、但订阅成本与配额限制日益成为痛点的背景下，该项目以 MIT 开源、免费、单端点、多提供商聚合的方式，为开发者提供了一层统一的抽象与容灾能力。配额自动回退加 token 压缩的组合直击成本与稳定性两大核心问题，兼容 Claude Code、Cursor、Copilot 等主流客户端又保证了接入门槛极低，加上 550+ 贡献者的社区规模，具备成为开发者日常基础设施的潜力。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构</p>
+    <div class="mermaid">graph TD
+  U[开发者] --> C[AI 编码客户端<br/>Claude Code / Cursor / Cline / Copilot]
+  C --> G[统一 AI 网关端点]
+  G --> Q[配额感知路由]
+  G --> Z[RTK+Caveman<br/>Token 压缩]
+  Q --> F1[免费提供商<br/>150+]
+  Q --> F2[付费提供商<br/>Claude/GPT/Gemini...]
+  Q --> F3[开源模型<br/>Kimi/GLM/DeepSeek]
+  Q -.配额耗尽.-> FB[自动回退到备用通道]
+  G --> M[MCP / A2A 协议扩展]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">请求数据流</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant C as 编码工具
+  participant GW as AI 网关
+  participant P as 提供商池
+  U->>C: 编写代码/提问
+  C->>GW: 发送请求(OpenAI 兼容)
+  GW->>GW: Token 压缩(15-95%)
+  GW->>P: 路由至最优提供商
+  P-->>GW: 返回结果
+  alt 配额不足或失败
+    GW->>P: 自动切换备用提供商
+    P-->>GW: 返回结果
+  end
+  GW-->>C: 统一格式响应
+  C-->>U: 呈现结果</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/sponsors/diegosouzapw" target="_blank">sponsors/diegosouzapw</a></p>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/daishuge/pcb-skill" target="_blank">PCB Skill</a></span>
+    <span class="stars">⭐ 99</span>
+  </div>
+  <p class="one-liner">从想法到可下单 PCB 的 Agent 技能</p>
+  <div class="tags">
+    <span class="tag">Claude Code / Codex Agent Skill</span><span class="tag">MCP (Model Context Protocol)</span><span class="tag">EasyEDA Pro</span><span class="tag">Specctra DSN/SES 自动布线</span><span class="tag">Shell / Python 校验脚本</span><span class="tag">浏览器 Agent 扩展</span>
+  </div>
+  <div class="summary">pcb-skill 是一个面向硬件开发的 Agent 技能包，运行于 Claude Code 或 Codex 桌面端，通过 MCP 协议驱动嘉立创 EasyEDA Pro，把一个硬件想法完整推进到可下单、可焊接、可点亮的 PCB。工作流分为四个阶段：概念确认、原理图与元器件采购、布局布线、制造与购买，每个阶段都有明确的验收门槛。项目秉持三条原则：性价比（价格必须来自实时页面或明确标注为估算）、好装配（禁用底部端子封装、保证手工可焊顺序）、免费 PCB（从第一笔设计就落在打样免费尺寸内）。技术亮点包括：独立于 EDA 的 Gerber 解析与净表断言校验、Specctra DSN/SES 自动布线链、四态看门狗、基于真实焊盘的 courtyard 计算，以及浏览器端将购物车推进到付款前页面（下单与付款始终由人工完成）。仓库通过一个真实案例沉淀出四条铁律：绿板不等于正确板、测量优于推断、先验证工具再验证结果、等待条件必须能在崩溃时输出日志。</div>
+  
+  
+  <div class="diagram-section">
+    <p class="diagram-title">四阶段工作流与验收门槛</p>
+    <div class="mermaid">graph LR
+  A[1 概念<br/>软硬约束] -->|关键问题闭合| B[2 原理图+采购<br/>BOM/购物车]
+  B -->|净表断言<br/>价格已核验| C[3 布局布线<br/>DRC/浇铜]
+  C -->|对抗式复核| D[4 制造+下单<br/>Gerber 验证]
+  D -->|推进到付款前| E((人工点击付款))</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">Agent 与外部系统协作</p>
+    <div class="mermaid">graph TD
+  U[用户] --> IDE[Claude Code / Codex 桌面]
+  IDE --> SK[pcb-skill<br/>SKILL.md]
+  SK --> REF[references/<br/>按需加载]
+  SK --> SCR[scripts/<br/>placement/routing/verify]
+  SK -->|MCP| EDA[EasyEDA Pro]
+  SK -->|浏览器扩展| SHOP[PCB 厂 + 元件供应商<br/>已登录]
+  SCR --> GBR[独立 Gerber<br/>校验器]
+  SHOP -.付款前停下.-> U</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/daishuge/pcb-skill" target="_blank">daishuge/pcb-skill</a></p>
+</div>
+
+<div class="card highlight">
+  <div class="card-header">
+    <span class="card-title"><a href="https://github.com/iamzulx/crypto-rag" target="_blank">Crypto-RAG 印尼语加密资产助手</a></span>
+    <span class="stars">⭐ 898</span>
+  </div>
+  <p class="one-liner">RAG 知识库融合实时行情的加密助手</p>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">FAISS</span><span class="tag">fastembed</span><span class="tag">BM25</span><span class="tag">websocket-client</span><span class="tag">OpenAI 兼容 LLM API</span><span class="tag">CoinGecko API</span><span class="tag">Binance / OKX / Bybit / KuCoin / Kraken / Coinbase API</span><span class="tag">DefiLlama API</span><span class="tag">Mempool.space API</span>
+  </div>
+  <div class="summary">crypto-rag 是一个面向印尼语用户的加密货币智能问答助手，核心理念是将 RAG（检索增强生成）与实时市场数据严格分离：静态的概念、教育、协议描述放入向量库，而价格、资金费率、TVL 等易变数值一律通过 tool-call 在查询时实时抓取，避免 LLM 对数字产生幻觉。项目内置一个意图路由器，会根据用户问题分发到不同的数据源：概念类走 FAISS 知识语料（146+ 印尼语主题），价格类调用 Binance、OKX、Bybit、KuCoin、Kraken、Coinbase 六大交易所并对比套利空间，衍生品数据取自 Binance Futures，TVL 与 DEX 数据来自 DefiLlama，情绪数据取 Fear & Greed Index，另外还接入了 Mempool.space、以太坊 EIP-1559 gas、Solana 供应与通胀等链上指标。检索层采用 BM25 + dense embedding（fastembed）经 RRF 融合的混合检索，可选 cross-encoder 重排。用户体验方面提供交互式聊天（带追问记忆）、WebSocket 亚秒级行情、多币种 watch 模式与条件告警（如 BTC>65000）、投资组合追踪、LLM token 流式输出，以及一个 tool-calling agent 用于自动编排多步复杂查询（如跨币种资金费率对比）。LLM 层兼容 OpenAI 协议，支持 StepFun、Groq、Ollama、LM Studio 等，未配置时自动回退到抽取式回答，并保留引用与免责声明。</div>
+  <div class="why-notable">该项目呈现了一种 crypto 场景下相当克制且正确的 RAG 设计范式：拒绝把易变数字塞进向量库，将 LLM 定位为语义合成器而非数据源。这种「静态走 RAG、动态走 tool-call、数字不过 LLM」的分层不仅规避了金融领域最致命的幻觉风险，也让整套系统在没有 API key 的前提下即可运行，同时兼顾意图路由、混合检索、agent 编排与流式体验，对做垂直领域 RAG 的开发者是相当值得参考的工程样本。</div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">系统架构与意图路由</p>
+    <div class="mermaid">graph TD
+  U[用户提问-印尼语] --> R[意图路由器]
+  R -->|概念/教育| K[FAISS 知识语料\nBM25+Dense+RRF]
+  R -->|实时价格| EX[6 大交易所 + WebSocket]
+  R -->|衍生品/资金费率| BF[Binance Futures]
+  R -->|TVL/DEX| DL[DefiLlama]
+  R -->|市场情绪| FG[Fear & Greed]
+  R -->|链上指标| OC[Mempool / ETH gas / Solana]
+  R -->|市值/分类| CR[FAISS 币种索引]
+  K --> S[LLM 合成层-可选]
+  EX --> S
+  BF --> S
+  DL --> S
+  FG --> S
+  OC --> S
+  CR --> S
+  S --> A[带引用与时间戳的回答]
+  S -.LLM 不可用.-> EA[抽取式回退回答]</div>
+  </div>
+  
+  <div class="diagram-section">
+    <p class="diagram-title">查询数据流与 Tool-Calling Agent</p>
+    <div class="mermaid">sequenceDiagram
+  participant U as 用户
+  participant Q as rag.py CLI
+  participant AG as Tool-Calling Agent
+  participant T as 工具集
+  participant V as FAISS 向量库
+  participant L as LLM
+  U->>Q: 复杂查询如「defi 币中资金费率最高的」
+  Q->>AG: 识别为多步查询
+  AG->>V: 检索 defi 分类币种
+  V-->>AG: 候选币列表
+  loop 每个候选币
+    AG->>T: 调用 funding_rate(symbol)
+    T-->>AG: 实时数值
+  end
+  AG->>L: 汇总上下文 + 数值
+  L-->>U: 带引用的自然语言回答</div>
+  </div>
+  
+  <p style="font-size:0.85rem;color:var(--muted)"><a href="https://github.com/iamzulx/crypto-rag" target="_blank">iamzulx/crypto-rag</a></p>
+</div>
+
+
+
+<footer>由 GitHub Trending Monitor 自动生成</footer>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'});</script>
+</body>
+</html>
